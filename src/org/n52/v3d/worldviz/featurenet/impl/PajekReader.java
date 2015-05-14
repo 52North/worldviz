@@ -8,11 +8,11 @@ public class PajekReader {
 	 * reads a feature net given in Pajek NET format from a file.
 	 *   
 	 * @param fileName File path and name
-	 * @return Feature net 
+	 * @return Feature-net 
 	 */
 	VgFeatureNet readFromFile(String fileName) {
 		
-		// TODO
+		// TODO -> Adhitya, see FeatureNetTest for an example how to construct a feature-net (here: a WvizFlowNet)
 		return null;
 	}
 }
