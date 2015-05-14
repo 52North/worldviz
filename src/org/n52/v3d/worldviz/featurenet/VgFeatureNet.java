@@ -11,7 +11,7 @@ import org.n52.v3d.triturus.vgis.VgFeature;
  * Flows of trade between regions, flight connections between airports, or the relation "same official language",
  * which would connect Australia and the United States.
  * 
- * From a mathematical perspective, a VgFeatureNet describes a graph structure consisting of vertices and edges.
+ * From a mathematical perspective, a VgFeatureNet describes a graph structure consisting of nodes and edges.
  * It is left to the concrete application, whether a VgFeatureNet implementation describes directed or undirected
  * graphs and whether weights will be given for the edges.
  * 
@@ -19,19 +19,35 @@ import org.n52.v3d.triturus.vgis.VgFeature;
  * of deriving the relations from the features' attribute values).
  * 
  * @author Benno Schmidt
- *
  */
-public interface VgFeatureNet {
+abstract public class VgFeatureNet {
 
-	/**
-	 * TODO
-	 * @return
+	 // TODO A "connection map" would be a visualization of a feature net.
+
+	 /**
+	 * Gets the feature net's geo-objects ("features").
+	 * 
+	 * @return Set of geo-objects (graph nodes)
 	 */
-	public Collection<VgFeature> getFeatures();
+	abstract public Collection<VgFeature> getFeatures();
 	
 	/**
-	 * TODO
-	 * @return
+	 * Gets the relations between the geo-objects ("features") that are held in the feature net.
+	 * 
+	 * @return Set of geo-object relations (graph edges)
 	 */
-	public Collection<VgRelation> getRelations();
+	abstract public Collection<VgRelation> getRelations();
+	
+	public String toString() 
+	{
+		int numberOfFeatures = 0;
+		if (this.getFeatures() != null)
+			numberOfFeatures = this.getFeatures().size();
+		int numberOfRelations = 0;
+		if (this.getRelations() != null)
+			numberOfRelations = this.getRelations().size();
+		return "[" +
+				"(#" + numberOfFeatures + " features), " +
+				"(#" + numberOfRelations + " relations)]";
+	}
 }
