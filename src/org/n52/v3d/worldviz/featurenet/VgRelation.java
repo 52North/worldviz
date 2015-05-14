@@ -10,7 +10,6 @@ import org.n52.v3d.triturus.vgis.VgFeature;
  * which would connect Australia and the United States.
  * 
  * @author Benno Schmidt
- *
  */
 public interface VgRelation 
 {
@@ -40,7 +39,7 @@ public interface VgRelation
 	 
 	 /**
 	  * TODO e.g., a weight-value
-      * TODO: I don't really like this method signature and name yet...
+	  * TODO: I don't really like this method signature and name yet...
 	  * @return
 	  */
 	 public Object getValue();
