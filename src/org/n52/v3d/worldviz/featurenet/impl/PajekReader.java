@@ -10,7 +10,7 @@ public class PajekReader {
 	 * @param fileName File path and name
 	 * @return Feature-net 
 	 */
-	VgFeatureNet readFromFile(String fileName) {
+	public VgFeatureNet readFromFile(String fileName) {
 		
 		// TODO -> Adhitya, see FeatureNetTest for an example how to construct a feature-net (here: a WvizFlowNet)
 		return null;
