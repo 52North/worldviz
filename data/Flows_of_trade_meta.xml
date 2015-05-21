@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+WorldViz meta-information file.
+Note: This file holds additional meta-information that is not part of an actual data file to be processed in the context of WorldViz project. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2004-01-01</begin>
+			<end>2004-12-31</end>
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>Flows_of_trade.xml</DatasetReference>
+	<SourceFileReference/>
+	<Source>
+		<ContactPersons/>
+		<URI>http://www.tandem-verlag.de/product_info.php/info/p1125_abitur-clever-vorbereitet---geografie.html</URI>
+		<AlternativeURIs/>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Dr. Peter Güttler, Berlin</CopyrightInformation>
+	<ImportProcess>
+		<Description language="DE">
+ 	   		Erstellung der Pajek-Beschreibung direkt aus aus der Grafik aus dem Buch "Geografie : Abitur clever vorbereitet", tandem-Verlag.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>
