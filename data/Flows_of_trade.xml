@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+WorldViz dataset description. 
+Note: This dataset holds information needed to set-up proper visualizations inside WorldViz. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<Dataset version="0.1" xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<GeneralInformation>
+		<Theme>
+			<Title language="EN">Global flows of trade</Title>
+			<Title language="DE">Welthandelsströme</Title>
+			<Description>
+			This dataset gives the flows of trade (volumes greater than 30 billion US-$ only, for 2004) in Pajek format. 
+			Internal trades (volumes in billion US-$, 2004) are given by loops, i.e. arcs with from-vertex = to-vertex. 
+			Markets are given as vertices with lon/lat coordinates.
+			</Description>
+		</Theme>
+		<Unit>Billion US-$</Unit>
+		<PublicReference>Dr. Peter Güttler, Berlin</PublicReference>
+		<MetadataReference>Flows_of_trade_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="">
+			<Title>Spatial extent</Title>
+			<Description/>
+			<GeoReference featureType="Wviz:Pajek" externalGeometries="false">
+				<CRS>EPSG:4326</CRS>
+			</GeoReference>
+		</Property>
+		<Property dataType="String">
+			<Title>File name</Title>
+		</Property>
+	</TableStructure>
+	<Entries>
+		<Entry>
+			<Value>-180,-90,180,90</Value>
+			<Value>Flows_of_trad.net</Value>
+		</Entry>
+	</Entries>
+</Dataset>
