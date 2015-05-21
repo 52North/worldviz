@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+XML Schema Definition (XSD) for meta-datasets to be used in the context of the WorldViz project. 
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="DatasetDescription">
+		<xs:annotation>
+			<xs:documentation>
+			This file holds additional meta-information that is not part of the actual data file. 
+			Especially meta-data which document the underlying data-source is given.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SpatialScaleHint" type="SpatialScaleHintType">
+					<xs:annotation>
+						<xs:documentation>
+						In the WorldViz context, most often this scale-hint will be 'World-wide'.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CovereredTime">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="0" name="TimePeriod">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="begin" type="xs:date"/>
+										<xs:element name="end" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DatasetReference" type="xs:string"/>
+				<xs:element name="SourceFileReference">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="format" type="xs:string"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Source">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ContactPersons" type="xs:string"/>
+							<xs:element name="URI">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="accessDate" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AlternativeURIs">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="URI" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Here additional URLs can be documented.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="1" minOccurs="0" name="Notes" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CopyrightInformation" type="xs:string"/>
+				<xs:element name="ImportProcess">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="1" name="Description" type="Description"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="QualityCheck" type="QualityCheck"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:float"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Description">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="language" type="languageCode"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="languageCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EN"/>
+			<xs:enumeration value="DE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="QualityCheck">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="date" type="xs:string"/>
+				<xs:attribute name="responsiblePerson" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SpatialScaleHintType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="World-wide"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
