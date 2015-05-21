@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+XML Schema Definition (XSD) for datasets that will be processed in the context of the WorldViz project. 
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Dataset">
+		<xs:annotation>
+			<xs:documentation>
+			This file holds the complete information needed to set-up a visualization (e.g., inside the Erlebnisraum).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GeneralInformation">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Theme">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="Title" type="Title"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="Description" type="Description"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Unit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="Title" type="Title"/>
+										<xs:element maxOccurs="1" minOccurs="0" name="Code" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PublicReference" type="xs:string"/>
+							<xs:element name="MetadataReference" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TableStructure">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="Property">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Title" type="Title"/>
+										<xs:element maxOccurs="1" minOccurs="0" name="TimeReference">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="begin" type="xs:date"/>
+													<xs:element name="end" type="xs:date"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="Description" type="Description"/>
+										<xs:element minOccurs="0" name="GeoReference">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CRS" type="crs"/>
+												</xs:sequence>
+												<xs:attribute name="featureType" type="xs:string"/>
+												<xs:attribute name="externalGeometries" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="dataType" type="xs:string" use="optional"/>
+									<xs:attribute name="uniqueID" type="xs:boolean" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Entries">
+					<xs:annotation>
+						<xs:documentation>usw.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="Entry">
+								<xs:complexType mixed="true">
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="Value" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:float"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Description">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="language" type="languageCode"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Title">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="language" type="languageCode"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="languageCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EN"/>
+			<xs:enumeration value="DE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="crs">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ENE:CountriesWorldwide:iso3166-2"/>
+			<xs:enumeration value="EPSG:4326"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
