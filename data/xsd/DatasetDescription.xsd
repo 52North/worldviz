@@ -9,7 +9,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 			<xs:documentation>
 			This file holds additional meta-information that is not part of the actual data file. 
 			Especially meta-data which document the underlying data-source is given.
-      </xs:documentation>
+      			</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
