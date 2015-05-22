@@ -1,0 +1,2524 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Dataset xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd" version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<GeneralInformation>
+		<Theme>
+			<Title language="EN">Nuclear Power Stations</Title>
+			<Title language="DE">Atomkraftwerke</Title>
+			<Description language="EN">List of Nuclear Power Stations with location</Description>
+			<Description language="DE">Liste von Atomkraftwerksstandorten</Description>
+		</Theme>
+		<Unit>
+			<Title>Längen- und Breitengrad WGS84</Title>
+			<Code>EPSG:4326</Code>
+		</Unit>
+		<PublicReference/>
+		<MetadataReference>NuclearPowerPlants_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="string">
+			<Title>POWER_STATION_NAME_FULL</Title>
+			<Description language="DE">Name des AKW komplett
+					</Description>
+		</Property>
+		<Property dataType="int">
+			<Title>ID</Title>
+			<Description language="DE">Durchlaufende eindeutige ID für jedes AKW
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>DESCRIPTION</Title>
+			<Description language="DE">Quellenangabe mit Verweis auf Tabelle
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>POWER_STATION_NAME_SHORT</Title>
+			<Description language="DE">Name des AKW
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>UNITS</Title>
+			<Description language="DE">Anzahl der Kraftwerkseinheiten am Standort
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>CAPACITY</Title>
+			<Description language="DE">Angabe in Megawatt mit Tausendertrennzeichen [,]
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>COUNTRY</Title>
+			<Description language="DE">Englischer Landesname
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>LOCATION1</Title>
+			<Description language="DE">Breiten- und Längengrad in Grad, Minute, Sekunde [°,';'']
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>CONSTRUCTION_START</Title>
+			<Description language="DE">Baustart
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>PLANED_CONNECTION</Title>
+			<Description language="DE">Geplantes Anschlussjahr
+					</Description>
+		</Property>
+		<Property dataType="string">
+			<Title>LOCATION2</Title>
+			<Description language="DE">Längen- und Breitengrad in Dezimalschreibweise
+ als kommaseparierter String
+			</Description>
+			<GeoReference featureType="ENE:Point" externalGeometries="false">
+			<CRS>EPSG:4326</CRS>
+			</GeoReference>
+		</Property>
+	</TableStructure>
+	<Entries>
+		<Entry>
+			<Value>Almaraz Nuclear Power Station</Value>
+			<Value>1</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#In_service"List of nuclear power stations</Value>
+			<Value>Almaraz</Value>
+			<Value>2</Value>
+			<Value>2,017</Value>
+			<Value>Spain</Value>
+			<Value>39°48'29''N 05°41'49''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-5.69694444444445,39.808055555555597,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Angra Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1"List of nuclear power stations</Value>
+			<Value>Angra</Value>
+			<Value>2</Value>
+			<Value>1,889</Value>
+			<Value>Brazil</Value>
+			<Value>23°00'30''S 44°28'26''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-44.473888888888901,-23.008333333333301,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Arkansas Nuclear One</Value>
+			<Value>3</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1"List of nuclear power stations</Value>
+			<Value>Arkansas Nuclear One</Value>
+			<Value>2</Value>
+			<Value>1,839</Value>
+			<Value>United States</Value>
+			<Value>35°18'37''N 93°13'53''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-93.231388888888901,35.310277777777799,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Ascó Nuclear Power Station</Value>
+			<Value>4</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1"List of nuclear power stations</Value>
+			<Value>Ascó</Value>
+			<Value>2</Value>
+			<Value>1,992</Value>
+			<Value>Spain</Value>
+			<Value>41°12'00''N 00°34'10''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.569444444444444,41.2,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Balakovo Nuclear Power Station</Value>
+			<Value>5</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1"List of nuclear power stations</Value>
+			<Value>Balakovo</Value>
+			<Value>4</Value>
+			<Value>3,8</Value>
+			<Value>Russia</Value>
+			<Value>52°05'28''N 47°57'19''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>47.955277777777802,52.091111111111097,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Beaver Valley Nuclear Power Station</Value>
+			<Value>6</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1"List of nuclear power stations</Value>
+			<Value>Beaver Valley</Value>
+			<Value>2</Value>
+			<Value>1,738</Value>
+			<Value>United States</Value>
+			<Value>40°37'24''N 80°25'50''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-80.4305555555556,40.623333333333299,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Belleville Nuclear Power Plant</Value>
+			<Value>7</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1"List of nuclear power stations</Value>
+			<Value>Belleville</Value>
+			<Value>2</Value>
+			<Value>2,62</Value>
+			<Value>France</Value>
+			<Value>47°30'35''N 02°52'30''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>2.875,47.509722222222202,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Blayais Nuclear Power Plant</Value>
+			<Value>8</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-0"List of nuclear power stations</Value>
+			<Value>Blayais</Value>
+			<Value>4</Value>
+			<Value>3,64</Value>
+			<Value>France</Value>
+			<Value>45°15'21''N 00°41'35''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.693055555555556,45.2558333333333,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Braidwood Nuclear Power Station</Value>
+			<Value>9</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1"List of nuclear power stations</Value>
+			<Value>Braidwood</Value>
+			<Value>2</Value>
+			<Value>2,33</Value>
+			<Value>United States</Value>
+			<Value>41°14'37''N 88°13'45''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-88.2291666666667,41.2436111111111,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Brokdorf Nuclear Power Station</Value>
+			<Value>10</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1"List of nuclear power stations</Value>
+			<Value>Brokdorf</Value>
+			<Value>1</Value>
+			<Value>1,41</Value>
+			<Value>Germany</Value>
+			<Value>53°51'03''N 09°20'41''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>9.34472222222222,53.850833333333298,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Browns Ferry Nuclear Power Station</Value>
+			<Value>11</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1"List of nuclear power stations</Value>
+			<Value>Browns Ferry</Value>
+			<Value>3</Value>
+			<Value>3,3</Value>
+			<Value>United States</Value>
+			<Value>34°42'14''N 87°07'07''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-87.118611111111093,34.703888888888898,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Bruce Nuclear Generating Station</Value>
+			<Value>12</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1"List of nuclear power stations</Value>
+			<Value>Bruce</Value>
+			<Value>8</Value>
+			<Value>6,234</Value>
+			<Value>Canada</Value>
+			<Value>44°42'14''N 81°35'58''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-81.599444444444401,44.703888888888898,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Brunswick Nuclear Generating Station</Value>
+			<Value>13</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-Bruce_3-0"List of nuclear power stations</Value>
+			<Value>Brunswick Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>1,858</Value>
+			<Value>United States</Value>
+			<Value>33°57'30''N 78°0'37''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-78.010277777777802,33.9583333333333,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Bugey Nuclear Power Station</Value>
+			<Value>14</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-4"List of nuclear power stations</Value>
+			<Value>Bugey Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,580</Value>
+			<Value>France</Value>
+			<Value>45°19'31''N 05°16'15''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>5.27083333333333,45.325277777777799,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Bushehr Nuclear Power Plant</Value>
+			<Value>15</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2"List of nuclear power stations</Value>
+			<Value>Bushehr Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>915</Value>
+			<Value>Iran</Value>
+			<Value>28°49'47''N 50°53'10''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>50.886111111111099,28.829722222222198,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Byron Nuclear Generating Station</Value>
+			<Value>16</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2"List of nuclear power stations</Value>
+			<Value>Byron Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,3</Value>
+			<Value>United States</Value>
+			<Value>42°4'27''N 89°16'55''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-89.281944444444406,42.074166666666699,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Callaway Plant</Value>
+			<Value>17</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2"List of nuclear power stations</Value>
+			<Value>Callaway Plant</Value>
+			<Value>1</Value>
+			<Value>1,19</Value>
+			<Value>United States</Value>
+			<Value>38°45'42''N 91°46'48''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-91.78,38.761666666666699,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Calvert Cliffs Nuclear Power Station</Value>
+			<Value>18</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2"List of nuclear power stations</Value>
+			<Value>Calvert Cliffs Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,735</Value>
+			<Value>United States</Value>
+			<Value>38°25'55''N 76°26'32''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-76.442222222222199,38.431944444444397,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Catawba Nuclear Station</Value>
+			<Value>19</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2"List of nuclear power stations</Value>
+			<Value>Catawba Nuclear Station</Value>
+			<Value>2</Value>
+			<Value>2,258</Value>
+			<Value>United States</Value>
+			<Value>35°3'6''N 81°4'12''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-81.07,35.051666666666698,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Cattenom Nuclear Power Station</Value>
+			<Value>20</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2"List of nuclear power stations</Value>
+			<Value>Cattenom Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>5,2</Value>
+			<Value>France</Value>
+			<Value>49°24'57''N 06°13'05''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>6.21805555555556,49.415833333333303,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Cernavoda Nuclear Power Station</Value>
+			<Value>21</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-3"List of nuclear power stations</Value>
+			<Value>Cernavod? Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,3</Value>
+			<Value>Romania</Value>
+			<Value>44°19'20''N 28°03'26''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>28.057222222222201,44.322222222222202,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Chinon Nuclear Power Station</Value>
+			<Value>22</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-5"List of nuclear power stations</Value>
+			<Value>Chinon Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,620</Value>
+			<Value>France</Value>
+			<Value>47°13'50''N 00°10'14''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.170555555555556,47.230555555555597,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Chin Shan Nuclear Power Plant</Value>
+			<Value>23</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-4"List of nuclear power stations</Value>
+			<Value>Chin Shan Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,208</Value>
+			<Value>Taiwan</Value>
+			<Value>25°17'29''N 121°34'4''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>121.56777777777801,25.2913888888889,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Chooz Nuclear Power Station</Value>
+			<Value>24</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-7"List of nuclear power stations</Value>
+			<Value>Chooz Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>3,000</Value>
+			<Value>France</Value>
+			<Value>50°05'24''N 04°47'22''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>4.78944444444444,50.09,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Civaux Nuclear Power Station</Value>
+			<Value>25</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-5"List of nuclear power stations</Value>
+			<Value>Civaux Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,99</Value>
+			<Value>France</Value>
+			<Value>46°27'24''N 00°39'10''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.652777777777778,46.456666666666699,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Clinton Nuclear Generating Station</Value>
+			<Value>26</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6"List of nuclear power stations</Value>
+			<Value>Clinton Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,043</Value>
+			<Value>United States</Value>
+			<Value>40°10'20''N 88°50'06''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-88.835,40.172222222222203,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Cofrentes Nuclear Power Station</Value>
+			<Value>27</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6"List of nuclear power stations</Value>
+			<Value>Cofrentes Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,064</Value>
+			<Value>Spain</Value>
+			<Value>39°13'00''N 01°03'00''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-1.05,39.216666666666697,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Columbia Nuclear Power Station</Value>
+			<Value>28</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6"List of nuclear power stations</Value>
+			<Value>Columbia Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,131</Value>
+			<Value>United States</Value>
+			<Value>46°28'16''N 119°20'02''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-119.33388888888901,46.471111111111099,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Comanche Peak Nuclear Power Station</Value>
+			<Value>29</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6"List of nuclear power stations</Value>
+			<Value>Comanche Peak Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,367</Value>
+			<Value>United States</Value>
+			<Value>32°17'54''N 97°47'06''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-97.785,32.298333333333296,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Cruas Nuclear Power Station</Value>
+			<Value>30</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6"List of nuclear power stations</Value>
+			<Value>Cruas Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,66</Value>
+			<Value>France</Value>
+			<Value>44°37'59''N 04°45'24''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>4.75666666666667,44.6330555555556,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Dampierre Nuclear Power Plant</Value>
+			<Value>31</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-7"List of nuclear power stations</Value>
+			<Value>Dampierre Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,56</Value>
+			<Value>France</Value>
+			<Value>47°43'59''N 02°31'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>2.51666666666667,47.733055555555602,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Darlington Nuclear Power Station</Value>
+			<Value>32</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-8"List of nuclear power stations</Value>
+			<Value>Darlington Nuclear Generating Station</Value>
+			<Value>4</Value>
+			<Value>3,512</Value>
+			<Value>Canada</Value>
+			<Value>43°52'22''N 78°43'11''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-78.719722222222202,43.872777777777799,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Daya Bay Nuclear Power Plant</Value>
+			<Value>33</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-8"List of nuclear power stations</Value>
+			<Value>Daya Bay Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,888</Value>
+			<Value>China</Value>
+			<Value>22°35'52''N 114°32'37''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>114.54361111111101,22.5977777777778,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Diablo Canyon Power Station</Value>
+			<Value>34</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-0"List of nuclear power stations</Value>
+			<Value>Diablo Canyon Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,24</Value>
+			<Value>United States</Value>
+			<Value>35°12'39''N 120°51'22''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-120.85611111111101,35.210833333333298,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Doel Nuclear Power Station</Value>
+			<Value>35</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-0"List of nuclear power stations</Value>
+			<Value>Doel Nuclear Power Station</Value>
+			<Value>4</Value>
+			<Value>2,911</Value>
+			<Value>Belgium</Value>
+			<Value>51°19'29''N 04°15'31''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>4.25861111111111,51.324722222222199,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Donald Cook Nuclear Power Station</Value>
+			<Value>36</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-0"List of nuclear power stations</Value>
+			<Value>Donald C. Cook Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,069</Value>
+			<Value>United States</Value>
+			<Value>41°58'31''N 86°33'57''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-86.565833333333302,41.975277777777798,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Dresden Nuclear Power Plant</Value>
+			<Value>37</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-9"List of nuclear power stations</Value>
+			<Value>Dresden Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,734</Value>
+			<Value>United States</Value>
+			<Value>41°23'23''N 88°16'5''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-88.268055555555506,41.389722222222197,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Dukovany Nuclear Power Station</Value>
+			<Value>38</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-9"List of nuclear power stations</Value>
+			<Value>Dukovany Nuclear Power Station</Value>
+			<Value>4</Value>
+			<Value>2,04</Value>
+			<Value>Czech Republic</Value>
+			<Value>49°05'06''N 16°08'56''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>16.148888888888902,49.085,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Dungeness Nuclear Power Station</Value>
+			<Value>39</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-10"List of nuclear power stations</Value>
+			<Value>Dungeness Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,040</Value>
+			<Value>United Kingdom</Value>
+			<Value>50°54'50''N 00°57'50''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.963888888888889,50.913888888888899,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Edwin Hatch Nuclear Power Station</Value>
+			<Value>40</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-10"List of nuclear power stations</Value>
+			<Value>Edwin Hatch Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,759</Value>
+			<Value>United States</Value>
+			<Value>31°56'03''N 82°20'38''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-82.343888888888898,31.934166666666702,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Enrico Fermi Nuclear Power Station</Value>
+			<Value>41</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-11"List of nuclear power stations</Value>
+			<Value>Enrico Fermi Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,122</Value>
+			<Value>United States</Value>
+			<Value>41°57'46''N 83°15'27''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-83.2575,41.962777777777802,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Emsland Nuclear Power Station</Value>
+			<Value>42</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-11"List of nuclear power stations</Value>
+			<Value>Emsland Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,329</Value>
+			<Value>Germany</Value>
+			<Value>52°28'27''N 07°19'04''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>7.31777777777778,52.474166666666697,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Fessenheim Nuclear Power Plant</Value>
+			<Value>43</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-11"List of nuclear power stations</Value>
+			<Value>Fessenheim Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,76</Value>
+			<Value>France</Value>
+			<Value>47°54'11''N 07°33'47''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>7.56305555555556,47.903055555555603,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Flamanville Nuclear Power Station</Value>
+			<Value>44</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-12"List of nuclear power stations</Value>
+			<Value>Flamanville Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,660</Value>
+			<Value>France</Value>
+			<Value>49°32'11''N 01°52'54''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-1.88166666666667,49.536388888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Forsmark Nuclear Power Station</Value>
+			<Value>45</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-10"List of nuclear power stations</Value>
+			<Value>Forsmark Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>3,138</Value>
+			<Value>Sweden</Value>
+			<Value>60°24'12''N 18°10'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>18.1666666666667,60.4033333333333,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Fukushima Daini Nuclear Power Plant</Value>
+			<Value>46</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-10"List of nuclear power stations</Value>
+			<Value>Fukushima Daini</Value>
+			<Value>4</Value>
+			<Value>4,4</Value>
+			<Value>Japan</Value>
+			<Value>37°19'10''N 141°01'16''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>141.021111111111,37.3194444444444,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Genkai Nuclear Power Station</Value>
+			<Value>47</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-0"List of nuclear power stations</Value>
+			<Value>Genkai Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,312</Value>
+			<Value>Japan</Value>
+			<Value>33°30'56''N 129°50'14''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>129.83722222222201,33.515555555555601,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Goesgen Nuclear Power Station</Value>
+			<Value>48</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-Genkai_Nuclear_Power_Plant_14-0"List of nuclear power stations</Value>
+			<Value>Goesgen Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>970</Value>
+			<Value>Switzerland</Value>
+			<Value>47°21'57''N 07°58'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>7.96666666666667,47.365833333333299,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Golfech Nuclear Power Station</Value>
+			<Value>49</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-Genkai_Nuclear_Power_Plant_14-0"List of nuclear power stations</Value>
+			<Value>Golfech Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,62</Value>
+			<Value>France</Value>
+			<Value>44°06'24''N 00°50'43''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.845277777777778,44.106666666666698,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Grafenrheinfeld Nuclear Power Station</Value>
+			<Value>50</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-11"List of nuclear power stations</Value>
+			<Value>Grafenrheinfeld Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,275</Value>
+			<Value>Germany</Value>
+			<Value>49°59'02''N 10°11'05''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>10.1847222222222,49.983888888888899,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Grand Gulf Nuclear Generating Station</Value>
+			<Value>51</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-11"List of nuclear power stations</Value>
+			<Value>Grand Gulf Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,266</Value>
+			<Value>United States</Value>
+			<Value>32°0'24''N 91°2'54''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-91.048333333333304,32.006666666666703,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Gravelines Nuclear Power Station</Value>
+			<Value>52</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-11"List of nuclear power stations</Value>
+			<Value>Gravelines</Value>
+			<Value>6</Value>
+			<Value>5,46</Value>
+			<Value>France</Value>
+			<Value>51°00'55''N 02°08'10''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>2.13611111111111,51.015277777777797,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Grohnde Nuclear Power Station</Value>
+			<Value>53</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-12"List of nuclear power stations</Value>
+			<Value>Grohnde Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,36</Value>
+			<Value>Germany</Value>
+			<Value>52°02'07''N 09°24'48''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>9.41333333333333,52.0352777777778,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Gundremmingen Nuclear Power Station</Value>
+			<Value>54</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-15"List of nuclear power stations</Value>
+			<Value>Gundremmingen Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,972</Value>
+			<Value>Germany</Value>
+			<Value>48°30'53''N 10°24'08''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>10.4022222222222,48.514722222222197,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hamaoka Nuclear Power Station</Value>
+			<Value>55</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-16"List of nuclear power stations</Value>
+			<Value>Hamaoka Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>3,473</Value>
+			<Value>Japan</Value>
+			<Value>34°37'25''N 138°08'33''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>138.1425,34.623611111111103,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hanbit Nuclear Power Plant</Value>
+			<Value>56</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-2"List of nuclear power stations</Value>
+			<Value>Hanbit Nuclear Power Station</Value>
+			<Value>6</Value>
+			<Value>5,875</Value>
+			<Value>South Korea</Value>
+			<Value>35°24'54''N 126°25'26''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>126.423888888889,35.415,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hanul Nuclear Power Plant</Value>
+			<Value>57</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-0"List of nuclear power stations</Value>
+			<Value>Hanul Nuclear Power Plant</Value>
+			<Value>6</Value>
+			<Value>5,873</Value>
+			<Value>South Korea</Value>
+			<Value>37°5'34''N 129°23'1''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>129.38361111111101,37.092777777777798,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hartlepool Nuclear Power Station</Value>
+			<Value>58</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-1"List of nuclear power stations</Value>
+			<Value>Hartlepool nuclear power station</Value>
+			<Value>2</Value>
+			<Value>1,19</Value>
+			<Value>United Kingdom</Value>
+			<Value>54°38'06''N 01°10'51''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-1.18083333333333,54.635,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Heysham nuclear power station</Value>
+			<Value>59</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-1"List of nuclear power stations</Value>
+			<Value>Heysham nuclear power station</Value>
+			<Value>4</Value>
+			<Value>2,4</Value>
+			<Value>United Kingdom</Value>
+			<Value>54°01'44''N 02°54'58''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-2.91611111111111,54.028888888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Higashidori Nuclear Power Station</Value>
+			<Value>60</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-1"List of nuclear power stations</Value>
+			<Value>Higashidori Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,067</Value>
+			<Value>Japan</Value>
+			<Value>41°11'17''N 141°23'25''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>141.39027777777801,41.1880555555556,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hinkley Point-B Nuclear Power Station</Value>
+			<Value>61</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-3"List of nuclear power stations</Value>
+			<Value>Hinkley Point B Nuclear Power Station</Value>
+			<Value>1</Value>
+			<Value>840</Value>
+			<Value>United Kingdom</Value>
+			<Value>51°12'33''N 03°07'39''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-3.1275,51.209166666666697,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hongyanhe Nuclear Power Plant</Value>
+			<Value>62</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-18"List of nuclear power stations</Value>
+			<Value>Hongyanhe Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,000</Value>
+			<Value>China</Value>
+			<Value>39°47'52''N 121°28'19''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>121.47194444444401,39.797777777777803,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hope Creek Nuclear Power Station</Value>
+			<Value>63</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-1"List of nuclear power stations</Value>
+			<Value>Hope Creek Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,191</Value>
+			<Value>United States</Value>
+			<Value>39°28'04''N 75°32'17''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-75.538055555555601,39.467777777777798,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Hunterston-B Nuclear Power Station</Value>
+			<Value>64</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-1"List of nuclear power stations</Value>
+			<Value>Hunterston B nuclear power station</Value>
+			<Value>2</Value>
+			<Value>860</Value>
+			<Value>United Kingdom</Value>
+			<Value>55°43'20''N 04°53'24''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-4.89,55.7222222222222,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Ikata Nuclear Power Station</Value>
+			<Value>65</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-1"List of nuclear power stations</Value>
+			<Value>Ikata Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>1,922</Value>
+			<Value>Japan</Value>
+			<Value>33°29'27''N 132°18'41''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>132.31138888888901,33.490833333333299,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Indian Point Energy Center</Value>
+			<Value>66</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-19"List of nuclear power stations</Value>
+			<Value>Indian Point Energy Center</Value>
+			<Value>2</Value>
+			<Value>2,062</Value>
+			<Value>United States</Value>
+			<Value>41°16'11''N 73°57'08''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-73.952222222222204,41.2697222222222,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Isar Nuclear Power Station</Value>
+			<Value>67</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-20"List of nuclear power stations</Value>
+			<Value>Isar Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,410</Value>
+			<Value>Germany</Value>
+			<Value>48°36'20''N 12°17'35''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>12.2930555555556,48.605555555555597,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Joseph Farley Nuclear Power Station</Value>
+			<Value>68</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-20"List of nuclear power stations</Value>
+			<Value>Joseph M. Farley Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>1,711</Value>
+			<Value>United States</Value>
+			<Value>31°13'23''N 85°06'42''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-85.111666666666693,31.2230555555556,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kalinin Nuclear Power Station</Value>
+			<Value>69</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-20"List of nuclear power stations</Value>
+			<Value>Kalinin Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,8</Value>
+			<Value>Russia</Value>
+			<Value>57°54'20''N 35°03'37''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>35.060277777777799,57.905555555555601,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kashiwazaki-Kariwa Nuclear Power Plant</Value>
+			<Value>70</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-21"List of nuclear power stations</Value>
+			<Value>Kashiwazaki-Kariwa Nuclear Power Plant</Value>
+			<Value>7</Value>
+			<Value>7,965</Value>
+			<Value>Japan</Value>
+			<Value>37°25'45''N 138°35'43''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>138.59527777777799,37.429166666666703,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Khmelnitskiy Nuclear Power Plant</Value>
+			<Value>71</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23"List of nuclear power stations</Value>
+			<Value>Khmelnitskiy Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,900</Value>
+			<Value>Ukraine</Value>
+			<Value>50°18'5''N 26°38'59''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>26.649722222222199,50.301388888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Koeberg Nuclear Power Station</Value>
+			<Value>72</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23"List of nuclear power stations</Value>
+			<Value>Koeberg Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,83</Value>
+			<Value>South Africa</Value>
+			<Value>33°40'35''S 18°25'55''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>18.431944444444401,-33.676388888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kola Nuclear Power Station</Value>
+			<Value>73</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23"List of nuclear power stations</Value>
+			<Value>Kola Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>1,644</Value>
+			<Value>Russia</Value>
+			<Value>67°28'00''N 32°28'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>32.466666666666697,67.466666666666697,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kori Nuclear Power Station</Value>
+			<Value>74</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23"List of nuclear power stations</Value>
+			<Value>Kori Nuclear Power Plant</Value>
+			<Value>6</Value>
+			<Value>3,227</Value>
+			<Value>South Korea</Value>
+			<Value>35°19'01''N 129°18'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>129.3,35.316944444444403,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kozloduy Nuclear Power Station</Value>
+			<Value>75</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-24"List of nuclear power stations</Value>
+			<Value>Kozloduy Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,906</Value>
+			<Value>Bulgaria</Value>
+			<Value>43°44'46''N 23°46'14''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>23.7705555555556,43.746111111111098,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kuosheng Nuclear Power Plant</Value>
+			<Value>76</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-24"List of nuclear power stations</Value>
+			<Value>Kuosheng Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,933</Value>
+			<Value>Taiwan</Value>
+			<Value>25°12'11''N 121°39'46''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>121.662777777778,25.203055555555601,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Koodankulam Nuclear Power Plant</Value>
+			<Value>77</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-25"List of nuclear power stations</Value>
+			<Value>Kudankulam Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,000</Value>
+			<Value>India</Value>
+			<Value>8°10'06''N 77°42'45''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>77.7125,8.168333333333329,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kursk Nuclear Power Station</Value>
+			<Value>78</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Kursk Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,700</Value>
+			<Value>Russia</Value>
+			<Value>51°40'30''N 35°36'20''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>35.605555555555597,51.675,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Laguna Verde Nuclear Power Station</Value>
+			<Value>79</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Laguna Verde Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,3</Value>
+			<Value>Mexico</Value>
+			<Value>19°43'15''N 96°24'23''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-96.406388888888898,19.720833333333299,0</Value>
+		</Entry>
+		<Entry>
+			<Value>LaSalle County Nuclear Generating Station</Value>
+			<Value>80</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>LaSalle County Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,238</Value>
+			<Value>United States</Value>
+			<Value>41°14'44''N 88°40'9''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-88.669166666666698,41.245555555555597,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Leibstadt Nuclear Power Station</Value>
+			<Value>81</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Leibstadt Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,19</Value>
+			<Value>Switzerland</Value>
+			<Value>47°36'11''N 08°11'05''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>8.18472222222222,47.603055555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Lemoniz Nuclear Power Station</Value>
+			<Value>82</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Lemoniz Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,8</Value>
+			<Value>Spain</Value>
+			<Value>43°26'00''N 02°52'21''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-2.8725,43.433333333333302,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Leningrad Nuclear Power Station</Value>
+			<Value>83</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Leningrad Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,7</Value>
+			<Value>Russia</Value>
+			<Value>59°50'50''N 29°02'37''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>29.043611111111101,59.8472222222222,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Limerick Nuclear Power Plant</Value>
+			<Value>84</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Limerick Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,264</Value>
+			<Value>United States</Value>
+			<Value>40°13'36''N 75°35'14''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-75.587222222222195,40.226666666666702,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Ling Ao Nuclear Power Plant</Value>
+			<Value>85</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26"List of nuclear power stations</Value>
+			<Value>Ling Ao Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,876</Value>
+			<Value>China</Value>
+			<Value>22°36'17''N 114°33'5''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>114.55138888888899,22.6047222222222,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Loviisa Nuclear Power Station</Value>
+			<Value>86</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-2"List of nuclear power stations</Value>
+			<Value>Loviisa Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>976</Value>
+			<Value>Finland</Value>
+			<Value>60°22'20''N 26°20'50''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>26.3472222222222,60.372222222222199,0</Value>
+		</Entry>
+		<Entry>
+			<Value>McGuire Nuclear Station</Value>
+			<Value>87</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-2"List of nuclear power stations</Value>
+			<Value>McGuire Nuclear Station</Value>
+			<Value>2</Value>
+			<Value>2,2</Value>
+			<Value>United States</Value>
+			<Value>35°25'57''N 80°56'54''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-80.948333333333295,35.4325,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Maanshan Nuclear Power Plant</Value>
+			<Value>88</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-2"List of nuclear power stations</Value>
+			<Value>Maanshan Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,841</Value>
+			<Value>Taiwan</Value>
+			<Value>21°57'29''N 120°45'6''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>120.75166666666701,21.9580555555556,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Mihama Nuclear Power Station</Value>
+			<Value>89</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-tai_6-2"List of nuclear power stations</Value>
+			<Value>Mihama Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>1,57</Value>
+			<Value>Japan</Value>
+			<Value>35°42'09''N 135°57'48''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>135.963333333333,35.7025,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Millstone Nuclear Power Station</Value>
+			<Value>90</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-27"List of nuclear power stations</Value>
+			<Value>Millstone Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,102</Value>
+			<Value>United States</Value>
+			<Value>41°18'43''N 72°10'07''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-72.168611111111105,41.3119444444444,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Neckarwestheim Nuclear Power Station</Value>
+			<Value>91</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-28"List of nuclear power stations</Value>
+			<Value>Neckarwestheim Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,310</Value>
+			<Value>Germany</Value>
+			<Value>49°02'30''N 09°10'30''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>9.175,49.0416666666667,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Nine Mile Point Nuclear Power Station</Value>
+			<Value>92</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-28"List of nuclear power stations</Value>
+			<Value>Nine Mile Point Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>1,764</Value>
+			<Value>United States</Value>
+			<Value>43°31'15''N 76°24'25''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-76.406944444444406,43.5208333333333,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Ningde Nuclear Power Plant</Value>
+			<Value>93</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-29"List of nuclear power stations</Value>
+			<Value>Ningde Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,036</Value>
+			<Value>China</Value>
+			<Value>27°02'46''N 120°17'18''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>120.288333333333,27.046111111111099,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Nogent Nuclear Power Station</Value>
+			<Value>94</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-3"List of nuclear power stations</Value>
+			<Value>Nogent Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,62</Value>
+			<Value>France</Value>
+			<Value>48°30'55''N 03°31'04''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>3.51777777777778,48.515277777777797,0</Value>
+		</Entry>
+		<Entry>
+			<Value>North Anna Nuclear Power Station</Value>
+			<Value>95</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-13"List of nuclear power stations</Value>
+			<Value>North Anna Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>1,875</Value>
+			<Value>United States</Value>
+			<Value>38°03'38''N 77°47'22''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-77.789444444444399,38.060555555555602,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Novovoronezhskaya Nuclear Power Station</Value>
+			<Value>96</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-30"List of nuclear power stations</Value>
+			<Value>Novovoronezhskaya Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>1,720</Value>
+			<Value>Russia</Value>
+			<Value>51°16'30''N 39°12'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>39.2,51.275,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Oconee Nuclear Power Station</Value>
+			<Value>97</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-30"List of nuclear power stations</Value>
+			<Value>Oconee Nuclear Generating Station</Value>
+			<Value>3</Value>
+			<Value>2,538</Value>
+			<Value>United States</Value>
+			<Value>34°47'38''N 82°53'53''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-82.898055555555601,34.793888888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Oi Nuclear Power Station</Value>
+			<Value>98</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-30"List of nuclear power stations</Value>
+			<Value>Oi Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>4,494</Value>
+			<Value>Japan</Value>
+			<Value>35°32'26''N 135°39'07''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>135.65194444444401,35.540555555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Olkiluoto Nuclear Power Station</Value>
+			<Value>99</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-31"List of nuclear power stations</Value>
+			<Value>Olkiluoto Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,740</Value>
+			<Value>Finland</Value>
+			<Value>61°14'13''N 21°26'27''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>21.440833333333298,61.236944444444397,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Onagawa Nuclear Power Station</Value>
+			<Value>100</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-31"List of nuclear power stations</Value>
+			<Value>Onagawa Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>2,089</Value>
+			<Value>Japan</Value>
+			<Value>38°24'04''N 141°29'59''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>141.499722222222,38.401111111111099,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Oskarshamn Nuclear Power Station</Value>
+			<Value>101</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8"List of nuclear power stations</Value>
+			<Value>Oskarshamn Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>2,511</Value>
+			<Value>Sweden</Value>
+			<Value>57°24'56''N 16°40'16''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>16.671111111111099,57.415555555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Paks Nuclear Power Station</Value>
+			<Value>102</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8"List of nuclear power stations</Value>
+			<Value>Paks Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>1,889</Value>
+			<Value>Hungary</Value>
+			<Value>46°34'21''N 18°51'15''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>18.8541666666667,46.5725,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Palo Verde Nuclear Power Station</Value>
+			<Value>103</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8"List of nuclear power stations</Value>
+			<Value>Palo Verde Nuclear Generating Station</Value>
+			<Value>3</Value>
+			<Value>4,214</Value>
+			<Value>United States</Value>
+			<Value>33°23'21''N 112°51'54''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-112.865,33.389166666666704,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Paluel Nuclear Power Plant</Value>
+			<Value>104</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8"List of nuclear power stations</Value>
+			<Value>Paluel Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>5,32</Value>
+			<Value>France</Value>
+			<Value>49°51'29''N 00°38'08''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.635555555555556,49.858055555555602,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Penly Nuclear Power Station</Value>
+			<Value>105</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-14"List of nuclear power stations</Value>
+			<Value>Penly Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,66</Value>
+			<Value>France</Value>
+			<Value>49°58'36''N 01°12'43''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>1.21194444444444,49.976666666666702,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Peach Bottom Nuclear Generating Station</Value>
+			<Value>106</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-32"List of nuclear power stations</Value>
+			<Value>Peach Bottom Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,234</Value>
+			<Value>United States</Value>
+			<Value>39°45'30''N 76°16'05''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-76.268055555555506,39.758333333333297,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Perry Nuclear Power Station</Value>
+			<Value>107</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-32"List of nuclear power stations</Value>
+			<Value>Perry Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,24</Value>
+			<Value>United States</Value>
+			<Value>41°48'03''N 81°08'36''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-81.143333333333302,41.800833333333301,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Philippsburg Nuclear Power Station</Value>
+			<Value>108</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-33"List of nuclear power stations</Value>
+			<Value>Philippsburg Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,402</Value>
+			<Value>Germany</Value>
+			<Value>49°15'09''N 08°26'11''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>8.436388888888891,49.2525,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Pickering Nuclear Generating Station</Value>
+			<Value>109</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34"List of nuclear power stations</Value>
+			<Value>Pickering Nuclear Generating Station</Value>
+			<Value>6</Value>
+			<Value>3,094</Value>
+			<Value>Canada</Value>
+			<Value>43°48'42''N 79°03'57''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-79.065833333333302,43.811666666666703,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Point Beach Nuclear Plant</Value>
+			<Value>110</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34"List of nuclear power stations</Value>
+			<Value>Point Beach Nuclear Plant</Value>
+			<Value>2</Value>
+			<Value>1,027</Value>
+			<Value>United States</Value>
+			<Value>44°16'52''N 87°32'12''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-87.536666666666704,44.281111111111102,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Prairie Island Nuclear Power Station</Value>
+			<Value>111</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34"List of nuclear power stations</Value>
+			<Value>Prairie Island Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,114</Value>
+			<Value>United States</Value>
+			<Value>44°37'18''N 92°37'59''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-92.633055555555501,44.621666666666698,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Qinshan Nuclear Power Station</Value>
+			<Value>112</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34"List of nuclear power stations</Value>
+			<Value>Qinshan Nuclear Power Plant</Value>
+			<Value>7</Value>
+			<Value>4,038</Value>
+			<Value>China</Value>
+			<Value>30°26'08''N 120°57'23''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>120.95638888888899,30.435555555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Quad Cities Nuclear Power Station</Value>
+			<Value>113</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-35"List of nuclear power stations</Value>
+			<Value>Quad Cities Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>1,774</Value>
+			<Value>United States</Value>
+			<Value>41°43'35''N 90°18'36''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-90.31,41.726388888888899,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Rajasthan Atomic Power Station</Value>
+			<Value>114</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-36"List of nuclear power stations</Value>
+			<Value>Rajasthan Atomic Power Station</Value>
+			<Value>6</Value>
+			<Value>1,085</Value>
+			<Value>India</Value>
+			<Value>24°52'20''N 75°36'50''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>75.613888888888894,24.872222222222199,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Ringhals Nuclear Power Station</Value>
+			<Value>115</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-36"List of nuclear power stations</Value>
+			<Value>Ringhals Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,649</Value>
+			<Value>Sweden</Value>
+			<Value>57°15'35''N 12°06'39''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>12.1108333333333,57.259722222222202,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Rivne Nuclear Power Station</Value>
+			<Value>116</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-36"List of nuclear power stations</Value>
+			<Value>Rivne Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>2,645</Value>
+			<Value>Ukraine</Value>
+			<Value>51°19'40''N 25°53'30''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>25.891666666666701,51.327777777777797,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Rostov Nuclear Power Plant</Value>
+			<Value>117</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-37"List of nuclear power stations</Value>
+			<Value>Rostov Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,900</Value>
+			<Value>Russia</Value>
+			<Value>47°35'58''N 42°22'19''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>42.371944444444402,47.599444444444401,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Saint-Alban Nuclear Power Station</Value>
+			<Value>118</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-37"List of nuclear power stations</Value>
+			<Value>Saint-Alban Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,67</Value>
+			<Value>France</Value>
+			<Value>45°24'16''N 04°45'16''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>4.75444444444444,45.404444444444401,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Saint-Laurent Nuclear Power Station</Value>
+			<Value>119</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-39"List of nuclear power stations</Value>
+			<Value>Saint-Laurent Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,830</Value>
+			<Value>France</Value>
+			<Value>47°43'12''N 01°34'39''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>1.5775,47.72,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Saint Lucie Nuclear Power Station</Value>
+			<Value>120</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17"List of nuclear power stations</Value>
+			<Value>Saint Lucie Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,678</Value>
+			<Value>United States</Value>
+			<Value>27°20'55''N 80°14'47''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-80.246388888888902,27.348611111111101,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Salem Nuclear Power Station</Value>
+			<Value>121</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17"List of nuclear power stations</Value>
+			<Value>Salem Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>2,332</Value>
+			<Value>United States</Value>
+			<Value>39°27'46''N 75°32'08''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-75.535555555555504,39.462777777777802,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Seabrook Station Nuclear Power Station</Value>
+			<Value>122</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17"List of nuclear power stations</Value>
+			<Value>Seabrook Station Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,247</Value>
+			<Value>United States</Value>
+			<Value>42°53'56''N 70°51'03''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-70.850833333333298,42.898888888888898,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Sendai Nuclear Power Station</Value>
+			<Value>123</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17"List of nuclear power stations</Value>
+			<Value>Sendai Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,692</Value>
+			<Value>Japan</Value>
+			<Value>31°50'01''N 130°11'23''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>130.189722222222,31.8336111111111,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Sequoyah Nuclear Power Station</Value>
+			<Value>124</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-9"List of nuclear power stations</Value>
+			<Value>Sequoyah Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,278</Value>
+			<Value>United States</Value>
+			<Value>35°13'35''N 85°05'30''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-85.091666666666697,35.226388888888899,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Shika Nuclear Power Station</Value>
+			<Value>125</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-9"List of nuclear power stations</Value>
+			<Value>Shika Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,613</Value>
+			<Value>Japan</Value>
+			<Value>37°03'40''N 136°43'35''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>136.72638888888901,37.061111111111103,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Shimane Nuclear Power Station</Value>
+			<Value>126</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-40"List of nuclear power stations</Value>
+			<Value>Shimane Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,228</Value>
+			<Value>Japan</Value>
+			<Value>35°32'18''N 132°59'57''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>132.99916666666701,35.538333333333298,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Shin Kori Nuclear Power Station</Value>
+			<Value>127</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>Shin Kori Nuclear Power Plant</Value>
+			<Value>6</Value>
+			<Value>1,945</Value>
+			<Value>South Korea</Value>
+			<Value>35°19'12''N 129°17'47''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>129.296388888889,35.32,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Sizewell-B Nuclear Power Station</Value>
+			<Value>128</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>Sizewell-B Nuclear Power Station</Value>
+			<Value>1</Value>
+			<Value>1,188</Value>
+			<Value>United Kingdom</Value>
+			<Value>52°12'48''N 01°37'07''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>1.61861111111111,52.213333333333303,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Smolensk Nuclear Power Station</Value>
+			<Value>129</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>Smolensk Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>2,775</Value>
+			<Value>Russia</Value>
+			<Value>54°10'09''N 33°14'48''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>33.246666666666698,54.169166666666698,0</Value>
+		</Entry>
+		<Entry>
+			<Value>South Texas Nuclear Power Station</Value>
+			<Value>130</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>South Texas Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>2,56</Value>
+			<Value>United States</Value>
+			<Value>28°47'44''N 96°02'56''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-96.048888888888897,28.795555555555602,0</Value>
+		</Entry>
+		<Entry>
+			<Value>South Ukraine Nuclear Power Station</Value>
+			<Value>131</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>South Ukraine Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>2,85</Value>
+			<Value>Ukraine</Value>
+			<Value>47°49'00''N 31°13'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>31.216666666666701,47.816666666666698,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Surry Nuclear Power Station</Value>
+			<Value>132</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>Surry Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,638</Value>
+			<Value>United States</Value>
+			<Value>37°09'56''N 76°41'52''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-76.697777777777802,37.165555555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Susquehanna Nuclear Power Station</Value>
+			<Value>133</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>Susquehanna Steam Electric Station</Value>
+			<Value>2</Value>
+			<Value>2,429</Value>
+			<Value>United States</Value>
+			<Value>41°05'20''N 76°08'56''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-76.148888888888905,41.088888888888903,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Takahama Nuclear Power Station</Value>
+			<Value>134</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41"List of nuclear power stations</Value>
+			<Value>Takahama Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>3,22</Value>
+			<Value>Japan</Value>
+			<Value>35°31'20''N 135°30'17''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>135.504722222222,35.522222222222197,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tarapur Nuclear Power Station</Value>
+			<Value>135</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-11"List of nuclear power stations</Value>
+			<Value>Tarapur Atomic Power Station</Value>
+			<Value>4</Value>
+			<Value>1,28</Value>
+			<Value>India</Value>
+			<Value>19°49'40''N 72°39'40''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>72.661111111111097,19.827777777777801,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Temelin Nuclear Power Station</Value>
+			<Value>136</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-11"List of nuclear power stations</Value>
+			<Value>Temelin Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,926</Value>
+			<Value>Czech Republic</Value>
+			<Value>49°10'48''N 14°22'34''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>14.376111111111101,49.18,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tianwan Nuclear Power Station</Value>
+			<Value>137</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-42"List of nuclear power stations</Value>
+			<Value>Tianwan Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,980</Value>
+			<Value>China</Value>
+			<Value>34°41'13''N 119°27'35''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>119.459722222222,34.6869444444444,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tihange Nuclear Power Station</Value>
+			<Value>138</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-43"List of nuclear power stations</Value>
+			<Value>Tihange Nuclear Power Station</Value>
+			<Value>3</Value>
+			<Value>3,016</Value>
+			<Value>Belgium</Value>
+			<Value>50°32'05''N 05°16'21''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>5.2725,50.5347222222222,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tokai Nuclear Power Station</Value>
+			<Value>139</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-44"List of nuclear power stations</Value>
+			<Value>Tokai Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,060</Value>
+			<Value>Japan</Value>
+			<Value>36°27'59''N 140°36'24''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>140.606666666667,36.466388888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tomari Nuclear Power Station</Value>
+			<Value>140</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-12"List of nuclear power stations</Value>
+			<Value>Tomari Nuclear Power Plant</Value>
+			<Value>3</Value>
+			<Value>1,966</Value>
+			<Value>Japan</Value>
+			<Value>43°02'10''N 140°30'45''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>140.5125,43.036111111111097,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Torness Nuclear Power Station</Value>
+			<Value>141</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-13"List of nuclear power stations</Value>
+			<Value>Torness Nuclear Power Station</Value>
+			<Value>2</Value>
+			<Value>1,205</Value>
+			<Value>United Kingdom</Value>
+			<Value>55°58'05''N 02°24'33''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-2.40916666666667,55.968055555555601,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tricastin Nuclear Power Station</Value>
+			<Value>142</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-13"List of nuclear power stations</Value>
+			<Value>Tricastin Nuclear Power Center</Value>
+			<Value>4</Value>
+			<Value>3,66</Value>
+			<Value>France</Value>
+			<Value>44°19'47''N 04°43'56''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>4.73222222222222,44.329722222222202,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Trillo Nuclear Power Station</Value>
+			<Value>143</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-18"List of nuclear power stations</Value>
+			<Value>Trillo Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,003</Value>
+			<Value>Spain</Value>
+			<Value>40°42'04''N 02°37'19''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-2.62194444444444,40.701111111111103,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Tsuruga Nuclear Power Station</Value>
+			<Value>144</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-18"List of nuclear power stations</Value>
+			<Value>Tsuruga Nuclear Power Plant</Value>
+			<Value>2</Value>
+			<Value>1,448</Value>
+			<Value>Japan</Value>
+			<Value>35°40'22''N 136°04'38''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>136.07722222222199,35.672777777777803,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Turkey Point Nuclear Generating Station</Value>
+			<Value>145</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-14"List of nuclear power stations</Value>
+			<Value>Turkey Point Nuclear Generating Station</Value>
+			<Value>2</Value>
+			<Value>1,386</Value>
+			<Value>United States</Value>
+			<Value>25°26'03''N 80°19'50''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-80.330555555555506,25.434166666666702,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Vandellos Nuclear Power Station</Value>
+			<Value>146</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-45"List of nuclear power stations</Value>
+			<Value>Vandellòs Nuclear Power Station</Value>
+			<Value>1</Value>
+			<Value>1,045</Value>
+			<Value>Spain</Value>
+			<Value>40°57'05''N 00°52'00''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>0.866666666666667,40.9513888888889,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Vogtle Nuclear Power Station</Value>
+			<Value>147</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-46"List of nuclear power stations</Value>
+			<Value>Vogtle Electric Generating Plant</Value>
+			<Value>2</Value>
+			<Value>2,302</Value>
+			<Value>United States</Value>
+			<Value>33°08'35''N 81°45'57''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-81.765833333333305,33.143055555555598,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Waterford Nuclear Power Station</Value>
+			<Value>148</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-46"List of nuclear power stations</Value>
+			<Value>Waterford Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,168</Value>
+			<Value>United States</Value>
+			<Value>29°59'43''N 90°28'16''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-90.471111111111099,29.995277777777801,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Watts Bar Nuclear Generating Station</Value>
+			<Value>149</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-47"List of nuclear power stations</Value>
+			<Value>Watts Bar Nuclear Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,123</Value>
+			<Value>United States</Value>
+			<Value>35°36'10''N 84°47'22''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-84.789444444444399,35.602777777777803,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Wolf Creek Power Station</Value>
+			<Value>150</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-47"List of nuclear power stations</Value>
+			<Value>Wolf Creek Generating Station</Value>
+			<Value>1</Value>
+			<Value>1,16</Value>
+			<Value>United States</Value>
+			<Value>38°14'20''N 95°41'20''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-95.688888888888897,38.238888888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Wolseong Nuclear Power Station</Value>
+			<Value>151</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-47"List of nuclear power stations</Value>
+			<Value>Wolseong Nuclear Power Plant</Value>
+			<Value>4</Value>
+			<Value>2,722</Value>
+			<Value>South Korea</Value>
+			<Value>35°42'40''N 129°28'30''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>129.475,35.711111111111101,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Yangjiang Nuclear Power Plant</Value>
+			<Value>152</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-48"List of nuclear power stations</Value>
+			<Value>Yangjiang Nuclear Power Plant</Value>
+			<Value>1</Value>
+			<Value>1,000</Value>
+			<Value>China</Value>
+			<Value>21°42'35''N 112°15'38''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>112.260555555556,21.709722222222201,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Zaporizhzhia Nuclear Power Plant</Value>
+			<Value>153</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-48"List of nuclear power stations</Value>
+			<Value>Zaporizhzhia Nuclear Power Plant</Value>
+			<Value>6</Value>
+			<Value>5,7</Value>
+			<Value>Ukraine</Value>
+			<Value>47°30'44''N 34°35'09''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>34.585833333333298,47.512222222222199,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Atucha Nuclear Power Station</Value>
+			<Value>154</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-49"List of nuclear power stations</Value>
+			<Value>Atucha Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,027</Value>
+			<Value>Argentina</Value>
+			<Value>33°58'3''S 59°12'18''W</Value>
+			<Value>1981</Value>
+			<Value>2014</Value>
+			<Value>-59.205,-33.9675,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Braka Nuclear Power Plant</Value>
+			<Value>155</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-49"List of nuclear power stations</Value>
+			<Value>Barakah Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,69</Value>
+			<Value>UAE</Value>
+			<Value>23°59'6''N 52°17'1''E</Value>
+			<Value>2012</Value>
+			<Value>2017</Value>
+			<Value>52.283611111111099,23.985,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Belarusian Nuclear Power Plant</Value>
+			<Value>156</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-49"List of nuclear power stations</Value>
+			<Value>Belarusian Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,4</Value>
+			<Value>Belarus</Value>
+			<Value>54°45'43''N 26°7'12''E</Value>
+			<Value>2012</Value>
+			<Value>2018</Value>
+			<Value>26.12,54.761944444444403,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Beloyarsk Nuclear Power Station</Value>
+			<Value>157</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50"List of nuclear power stations</Value>
+			<Value>Beloyarsk-4 (BN-800)</Value>
+			<Value></Value>
+			<Value>1,364</Value>
+			<Value>Russia</Value>
+			<Value>56°50'30''N 61°19'21''E</Value>
+			<Value>2006</Value>
+			<Value>2014</Value>
+			<Value>61.3225,56.841666666666697,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Changjiang Nuclear Power Plant</Value>
+			<Value>158</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50"List of nuclear power stations</Value>
+			<Value>Changjiang Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,22</Value>
+			<Value>China</Value>
+			<Value>19°25'23''N 108°48'45''E</Value>
+			<Value>2010</Value>
+			<Value>2014</Value>
+			<Value>108.8125,19.423055555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Fangchenggang Nuclear Power Plant</Value>
+			<Value>159</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50"List of nuclear power stations</Value>
+			<Value>Fangchenggang Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2</Value>
+			<Value>China</Value>
+			<Value>21°40'36''N 108°33'38''E</Value>
+			<Value>2010</Value>
+			<Value>2015</Value>
+			<Value>108.56055555555599,21.676666666666701,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Fangjiashan Nuclear Power Plant</Value>
+			<Value>160</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50"List of nuclear power stations</Value>
+			<Value>Fangjiashan Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2</Value>
+			<Value>China</Value>
+			<Value>30°26'29''N 120°56'30''E</Value>
+			<Value>2008</Value>
+			<Value>2014</Value>
+			<Value>120.941666666667,30.441388888888898,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Fuqing Nuclear Power Plant</Value>
+			<Value>161</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50"List of nuclear power stations</Value>
+			<Value>Fuqing Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>3</Value>
+			<Value>China</Value>
+			<Value>25°26'39''N 119°26'46''E</Value>
+			<Value>2008</Value>
+			<Value>2014</Value>
+			<Value>119.44611111111099,25.4441666666667,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Haiyang Nuclear Power Plant</Value>
+			<Value>162</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50"List of nuclear power stations</Value>
+			<Value>Haiyang Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2</Value>
+			<Value>China</Value>
+			<Value>36°42'33''N 121°22'54''E</Value>
+			<Value>2009</Value>
+			<Value>2014</Value>
+			<Value>121.381666666667,36.709166666666697,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kakrapar Atomic Power Station</Value>
+			<Value>163</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51"List of nuclear power stations</Value>
+			<Value>Kakrapar-3</Value>
+			<Value></Value>
+			<Value>1,664</Value>
+			<Value>India</Value>
+			<Value>21°14'19''N 73°21'00''E</Value>
+			<Value>2010</Value>
+			<Value>2015</Value>
+			<Value>73.35,21.238611111111101,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Kaliningrad Nuclear Power Plant</Value>
+			<Value>164</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51"List of nuclear power stations</Value>
+			<Value>Kaliningrad Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,082</Value>
+			<Value>Russia</Value>
+			<Value>54°56'20''N 22°09'40''E</Value>
+			<Value>2012</Value>
+			<Value>2017</Value>
+			<Value>22.161111111111101,54.938888888888897,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Leningrad Nuclear Power Plant II</Value>
+			<Value>165</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51"List of nuclear power stations</Value>
+			<Value>Leningrad Nuclear Power Plant II</Value>
+			<Value></Value>
+			<Value>2,17</Value>
+			<Value>Russia</Value>
+			<Value>59°49'50''N 29°3'26''E</Value>
+			<Value>2008</Value>
+			<Value>2015</Value>
+			<Value>29.057222222222201,59.830555555555598,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Lungmen Nuclear Power Station</Value>
+			<Value>166</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51"List of nuclear power stations</Value>
+			<Value>Lungmen Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,6</Value>
+			<Value>Taiwan</Value>
+			<Value>25°02'19''N 121°55'27''E</Value>
+			<Value>1999</Value>
+			<Value>2014</Value>
+			<Value>121.92416666666701,25.038611111111098,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Mochovce Nuclear Power Plant</Value>
+			<Value>167</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52"List of nuclear power stations</Value>
+			<Value>Mochovce Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,654</Value>
+			<Value>Slovakia</Value>
+			<Value>48°15'50''N 18°27'25''E</Value>
+			<Value>1987</Value>
+			<Value>2015</Value>
+			<Value>18.4569444444444,48.2638888888889,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Oma Nuclear Power Plant</Value>
+			<Value>168</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52"List of nuclear power stations</Value>
+			<Value>Oma Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,325</Value>
+			<Value>Japan</Value>
+			<Value>41°30'35''N 140°54'37''E</Value>
+			<Value>2010</Value>
+			<Value>2014</Value>
+			<Value>140.91027777777799,41.509722222222202,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Sanmen</Value>
+			<Value>169</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52"List of nuclear power stations</Value>
+			<Value>Sanmen Nuclear Power Station</Value>
+			<Value></Value>
+			<Value>2</Value>
+			<Value>China</Value>
+			<Value>29°06'04''N 121°38'23''E</Value>
+			<Value>2009</Value>
+			<Value>2014</Value>
+			<Value>121.63972222222201,29.101111111111098,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Shin Hanul Nuclear Power Plant</Value>
+			<Value>170</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52"List of nuclear power stations</Value>
+			<Value>Shin Hanul Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,68</Value>
+			<Value>South Korea</Value>
+			<Value>37°05'34''N 129°23'01''E</Value>
+			<Value>2012</Value>
+			<Value>2017</Value>
+			<Value>129.38361111111101,37.092777777777798,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Shin Wolseong Nuclear Power Station</Value>
+			<Value>171</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-53"List of nuclear power stations</Value>
+			<Value>Shin Wolseong Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,920</Value>
+			<Value>South Korea</Value>
+			<Value>35°43'20''N 129°28'44''E</Value>
+			<Value>2007</Value>
+			<Value>2014</Value>
+			<Value>129.478888888889,35.7222222222222,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Taishan</Value>
+			<Value>172</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-53"List of nuclear power stations</Value>
+			<Value>Taishan Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>3,4</Value>
+			<Value>China</Value>
+			<Value>21°54'34''N 112°58'45''E</Value>
+			<Value>2009</Value>
+			<Value>2014</Value>
+			<Value>112.979166666667,21.9094444444444,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Virgil C. Summer Nuclear Power Plant</Value>
+			<Value>173</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-54"List of nuclear power stations</Value>
+			<Value>Virgil C. Summer Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,088</Value>
+			<Value>USA</Value>
+			<Value>34°17'55''N 81°18'53''W</Value>
+			<Value>2013</Value>
+			<Value>2017</Value>
+			<Value>-81.314722222222201,34.2986111111111,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Barsebäck  Nuclear Power Station</Value>
+			<Value>174</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#Shut_down"List of nuclear power stations</Value>
+			<Value>Barsebäck Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,2</Value>
+			<Value>Sweden</Value>
+			<Value>55°44'40''N 12°55'15''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>12.920833333333301,55.744444444444397,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Biblis Nuclear Power Station</Value>
+			<Value>175</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#Shut_down"List of nuclear power stations</Value>
+			<Value>Biblis Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,407</Value>
+			<Value>Germany</Value>
+			<Value>49°42'36''N 08°24'55''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>8.41527777777778,49.71,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Bohunice Nuclear Power Plant</Value>
+			<Value>176</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Bohunice Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,760</Value>
+			<Value>Slovakia</Value>
+			<Value>48°29'40''N 17°40'55''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>17.681944444444401,48.494444444444397,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Chernobyl Nuclear Power Plant</Value>
+			<Value>177</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Chernobyl Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>3,515</Value>
+			<Value>Ukraine</Value>
+			<Value>51°23'22''N 30°05'57''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>30.099166666666701,51.389444444444401,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Fukushima I Nuclear Power Station</Value>
+			<Value>178</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Fukushima Daiichi Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>4,546</Value>
+			<Value>Japan</Value>
+			<Value>37°25'17''N 141°01'57''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>141.0325,37.421388888888899,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Greifswald Nuclear Power Plant</Value>
+			<Value>179</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Greifswald Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,04</Value>
+			<Value>Germany</Value>
+			<Value>54°08'26''N 13°39'52''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>13.664444444444401,54.140555555555601,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Ignalina Nuclear Power Station</Value>
+			<Value>180</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Ignalina Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>2,37</Value>
+			<Value>Lithuania</Value>
+			<Value>55°36'16''N 26°33'36''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>26.56,55.604444444444397,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Krummel Nuclear Power Station</Value>
+			<Value>181</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Krümmel Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,346</Value>
+			<Value>Germany</Value>
+			<Value>53°24'36''N 10°24'32''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>10.4088888888889,53.41,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Mülheim-Kärlich Nuclear Power Plant</Value>
+			<Value>182</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
+			<Value>Mülheim-Kärlich Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,219</Value>
+			<Value>Germany</Value>
+			<Value>50°24'29''N 07°29'24''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>7.49,50.408055555555599,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Three Mile Island Nuclear Generating Station</Value>
+			<Value>183</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-56"List of nuclear power stations</Value>
+			<Value>Three Mile Island Nuclear Generating Station</Value>
+			<Value></Value>
+			<Value>1,685</Value>
+			<Value>United States</Value>
+			<Value>40°09'14''N 76°43'29''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-76.724722222222198,40.153888888888901,0</Value>
+		</Entry>
+		<Entry>
+			<Value>San Onofre Nuclear Power Station</Value>
+			<Value>184</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57"List of nuclear power stations</Value>
+			<Value>San Onofre Nuclear Generating Station</Value>
+			<Value></Value>
+			<Value>2,586</Value>
+			<Value>United States</Value>
+			<Value>33°22'08''N 117°33'18''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-117.555,33.368888888888897,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Superphénix</Value>
+			<Value>185</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57"List of nuclear power stations</Value>
+			<Value>Superphénix</Value>
+			<Value></Value>
+			<Value>1,2</Value>
+			<Value>France</Value>
+			<Value>45°45'30''N 05°28'20''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>5.47222222222222,45.758333333333297,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Trojan Nuclear Power Plant</Value>
+			<Value>186</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57"List of nuclear power stations</Value>
+			<Value>Trojan Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,095</Value>
+			<Value>United States</Value>
+			<Value>46°02'18''N 122°53'06''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-122.885,46.038333333333298,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Unterweser Nuclear Power Station</Value>
+			<Value>187</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57"List of nuclear power stations</Value>
+			<Value>Unterweser Nuclear Power Plant</Value>
+			<Value></Value>
+			<Value>1,345</Value>
+			<Value>Germany</Value>
+			<Value>53°25'40''N 08°28'49''E</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>8.480277777777779,53.427777777777798,0</Value>
+		</Entry>
+		<Entry>
+			<Value>Zion Nuclear Power Station</Value>
+			<Value>188</Value>
+			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57"List of nuclear power stations</Value>
+			<Value>Zion Nuclear Power Station</Value>
+			<Value></Value>
+			<Value>2,08</Value>
+			<Value>United States</Value>
+			<Value>42°26'47''N 87°48'11''W</Value>
+			<Value></Value>
+			<Value></Value>
+			<Value>-87.803055555555602,42.446388888888897,0</Value>
+		</Entry>
+	</Entries>
+</Dataset>

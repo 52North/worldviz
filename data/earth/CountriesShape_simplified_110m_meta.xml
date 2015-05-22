@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime/>
+	<DatasetReference>CountriesShape_simplified_110m.xml</DatasetReference><!-- Dateiname-->
+	<SourceFileReference/>
+	<Source>
+		<ContactPersons>Nathaniel Vaughn KELSO</ContactPersons><!-- Kontaktpersonen betreffend der abgegriffenen Informationen-->
+		<URI accessDate="2015-01-20 +12:00">http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip</URI><!-- Datum des Zugriffes sowie deren Quelle-->
+		<AlternativeURIs><!--The follwing URI links to the website where the direct download link from above is from.-->
+			<URI>http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/</URI><!--The following URI represents the direkt download link to the shape file-->
+		</AlternativeURIs>
+		<Notes>Bie diesem Datensatz handelt es sich um generalisierte De-Facto-Grenzen. Durch die Generalisierung in einem Maßstab von 1:110m sind kleine Inseln/Länder nicht mehr enthalten!
+		Insgesamt sind noch 177 von 255 Ländern abgebildet. (255 Länder beziehen sich auf den Datensatz im Maßstab 1:10m von www.naturalearthdata.com)</Notes>
+	</Source>
+	<CopyrightInformation>Nathaniel Vaughn KELSO, Project Manager - http://www.naturalearthdata.com/</CopyrightInformation><!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE"><!-- Erklärung der Arbeitsabfolge-->
+	   		Die Shape-Datei kann direkt zusammen mit den ergänzenden DBF-, PRJ- sowie SHX-Dateien unter dem Punkt "Admin 0 – Countries" als ZIP-Archiv heruntergeladen werden. 
+			Die Option "Download Countries" zeigt auf ein ZIP-Archiv mit den politischen Grenzen der Länder, während die Option "Download without boundary lakes" eventuelle 
+			Seetopographien (Trennung von Ländern durch Seegrenzen) beinhaltet.
+			Für dieses Projekt wurde die erste Option (de-facto Grenzen) genutzt.
+	   		Nach Extraktion in den Ordner "ne_110m_admin_0_countries" stehen alle Dateien unmittelbar zur Verfügung.
+	   		
+	   		Hinweis: Die DBF-Datei wurde zusätzlich mit Hilfe von Microsoft Excel in eine äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes_simplified_110m.xml" zu erzeugen. 
+			Siehe auch "CountryCodes_simplified_110m_meta.xml".
+			
+			Update(29.04.2015): ISO3166-Einträge von Kosovo und Somaliland geändert. Eigentlich ist bei beiden kein offizielles ISO3166-Kennzeichen existent. 
+			Diese werden aber für eine eindeutige Referenzierung benötigt. Daher wurden die Kürzel 'KV' und 'KSV' für Kosovo sowie 'SOL' und 'SOL' für Somaliland benutzt.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

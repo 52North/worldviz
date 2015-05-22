@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+	<!-- 
+	Zeitraum, für welchen die Kohlenstoff Emmisionen als Daten vorliegen
+	-->
+		<TimePeriod>
+			<begin>2000-01-01+01:00</begin>
+ <!-- Startzeitraum 
+-->	
+			<end>2010-12-31+01:00</end>
+ <!-- Endzeitraum  
+-->
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>CarbonEmissions.xml</DatasetReference>
+ <!-- Dateiname der xml Datenquelle 
+-->
+	<SourceFileReference format="CSV">sourceFiles/UNEP-EDE__edgar_co2_total__1396438740.csv</SourceFileReference>
+ <!-- Dateiformat der Quelledatei: Hier Daten stammen aus einer csv Datei 
+-->
+	<Source>
+  <!-- Quelle 
+-->
+		<ContactPersons/>
+ <!-- Falls Kontaktpersonen, für die Quelldatei, vorhanden sind 
+-->
+		<URI accessDate="2014-04-12 +11:00">http://geodata.grid.unep.ch/</URI>
+  <!-- Datum, andem die Daten abgerufen wurden, mit Link zur Quelle  
+-->
+		<AlternativeURIs><!-- Here additional URLs can be documented. -->
+			<URI/>
+		</AlternativeURIs>
+		<Notes/>
+ <!-- Zusätzliche Informationen zu den Daten 
+-->
+	</Source>
+	<CopyrightInformation>UNEP - United Nations Environment Programme; European Commission, Joint Research Centre (JRC)/PBL Netherlands Environmental Assessment Agency.</CopyrightInformation>
+  <!-- Anzugebene Copyright Informationen 
+-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Hier werden die nötigen Schritte beschrieben die nötig waren, um aus der Qulldatei die nötigen Informationen zu extrahieren 
+-->
+	   		Von obiger URL (siehe 'URI'-Tag) wurde der Datensatz 'Emissions of CO2 - Total (Model Estimations, EDGAR v.4.2 FT2010)' als CSV-Datei bezogen. 
+			Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen müssen beim Auslesen der Datei geskipped werden. Erst in Zeile fünf befinden sich die Spaltenüberschriften.
+	   		Die CSV-Datei wurde schließlich genutzt, um über ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'CarbonEmissions.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
+	   		Die weiteren Informationen der 'CarbonEmissions.xml'-Datei wurden per Hand eingetragen.
+			
+			Nachtrag vom 03.06.2014:
+	   		Der Datensatz für "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
+	   	</Description>
+		<QualityCheck date="2014-04-13 +11:00" responsiblePerson="Christian Danowski">
+ <!-- Datum, andem die Daten auf ihre Qualität Kontrolliert wurden 
+-->
+	   		Datensätze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+	   	</QualityCheck>
+	</ImportProcess>
+</DatasetDescription>

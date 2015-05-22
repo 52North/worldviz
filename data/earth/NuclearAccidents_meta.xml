@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+
+Author: Benno Schmidt, Artur Grzesiuk, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+		<TimePeriod>
+			<begin>1945-08-21+01:00</begin><!-- Beginn der Aufzeichnungen der Nuklearen Unfälle-->
+			<end>2011-03-11+01:00</end><!-- Letzter verzeichneter Unfall-->
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>NuclearAccidents.xml</DatasetReference>
+	<SourceFileReference format="CSV">sourceFiles/Kernkraftwerke_Unfaelle.csv</SourceFileReference>
+	<Source>
+		<ContactPersons>none</ContactPersons>
+		<URI accessDate="2014-05-12 +10:00">http://de.wikipedia.org/wiki/Liste_von_Unf%C3%A4llen_in_kerntechnischen_Anlagen</URI>
+		<AlternativeURIs>
+			<URI>
+			http://de.wikipedia.org/wiki/Internationale_Bewertungsskala_für_nukleare_Ereignisse <!--INES-Skala für sicherheitsrelevante Ereignisse-->
+			</URI>
+			<URI/>
+		</AlternativeURIs>
+	</Source>
+	<CopyrightInformation>unknown</CopyrightInformation>
+	<ImportProcess>
+		<Description language="DE">
+	   		Die Daten der Wikipedia-Seite wurden händisch in der Excel-Tabelle 'Kernkraftwerke_Unfaelle' zusammengetragen. Die Koordinaten der einzelnen Einträge wurden dabei per GoogleMaps grob abgegriffen. 
+	   		Nicht jeder Datensatz konnte auf Grundlage des Wikipedia-Artikels eindeutig georeferenziert werden. In einem solchen Fall wurde hilfsmäßig eine grobe Koordinate des Bundesstaates gewählt.
+	   		Anschließend wurde die Tabelle als CSV-Datei exportiert. 
+	   		Diese wurde dann benutzt, um mittels des selbst entwickelten Java-Programms den 'Entries'-Teil der 'NuclearAccidents.xml'-Datei zu füllen. 
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

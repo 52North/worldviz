@@ -1,0 +1,62 @@
+ID;Region;Kürzel;Förderung;Reserven;Ressourcen;Verbl. Potenzial
+1;Albanien;AL;0.05;522;205;727
+2;Bosnien & Herzegowina;BA;6.3;2264;3010;5274
+3;Bulgarien;BG;31.0;2174;2400;4574
+4;Deutschland;DE;185.4;40400;36500;76900
+5;Frankreich;FR;-;-;114;114
+6;Griechenland;GR;61.8;2876;3554;6430
+7;Italien;IT;-;7;22;29
+9;Kroatien;HR;-;-;300;300
+10;Mazedonien;MK;7.3;332;300;632
+11;Montenegro;ME;2.0;-;-;-
+12;Österreich;AT;-;-;333;333
+13;Polen;PL;64.3;4443;222620;227063
+14;Portugal;PT;-;33;33;66
+15;Rumänien;RO;34.1;280;9640;9920
+16;Serbien;RS;45.5;8676;22336;31012
+17;Slowakei;SK;2.3;135;938;1073
+18;Slowenien;SI;4.4;315;341;656
+19;Spanien;ES;-;319;-;319
+20;Tschechische Republik;CZ;43.7;2670;7072;9742
+21;Türkei;TR;75.0;2055;11617;13672
+22;Ungarn;HU;9.3;2633;2704;5337
+23;Vereinigtes Königreich;GB;-;-;1000;1000
+24;Kasachstan;KZ;7.7;-;-;-
+25;Kirgisistan;KG;1.0;-;-;-
+26;Russland;RU;77.9;90730;1271672;1362402
+27;Ukraine;UA;0.2;2336;5381;7717
+28;Usbekistan;UZ;3.8;-;-;-
+29;Weißrussland;BY;-;-;1500;1500
+30;Madagaskar;MG;-;-;37;37
+31;Mali;ML;-;-;3;3
+32;Marokko;MA;-;-;40;40
+33;Niger;NE;-;6;-;6
+34;Nigeria;NR;-;57;320;377
+35;Sierra Leone;SL;-;-;2;2
+36;Zentralafrikanische Rep.;CF;-;3;-;3
+37;Australien;AU;69.0;44164;177578;221742
+38;Bangladesch;BD;-;-;3;3
+39;China;CN;145.0;11000;307000;318000
+40;Indien;IN;46.6;4799;37035;41834
+41;Indonesien;ID;60.0;9002;29023;38025
+42;Japan;JP;-;10;1026;1036
+43;Korea. DVR;KP;7.0;-;-;-
+44;Laos;LA;0.5;499;22;521
+45;Malaysia;MY;-;39;412;451
+46;Mongolei;MN;7.5;1350;119426;120776
+47;Myanmar;MM;-;3;2;5
+48;Neuseeland;NZ;0.3;6750;4600;11350
+49;Pakistan;PK;-;2857;176739;179596
+50;Philippinen;PH;-;105;912;1017
+51;Thailand;TH;18.8;1063;826;1889
+52;Vietnam;VN;-;244;199876;200120
+53;Kanada;CA;9.5;2236;118270;120506
+54;Mexiko;MX;-;51;-;51
+55;USA;US;71.3;30625;1367874;1398499
+56;Argentinien;AR;-;-;7300;7300
+57;Brasilien;BR;6.6;5049;12587;17636
+58;Chile;CL;0.6;-;7;7
+59;Dominikanische Rep.;DO;-;-;84;84
+60;Ecuador;EC;-;24;-;24
+61;Haiti;HT;-;-;40;40
+62;Peru;PE;-;-;100;100

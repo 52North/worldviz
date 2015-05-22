@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+ <!-- Weltweite Informationen-->
+	<CovereredTime/>
+	<DatasetReference>CountryCodes_simplified_110m.xml</DatasetReference>
+ <!-- Name der Datei-->
+	<SourceFileReference format="CSV">sourceFiles/ne_110m_admin_0_countries.csv</SourceFileReference>
+	<Source>
+ <!-- Quelle-->
+		<ContactPersons>Nathaniel Vaughn KELSO</ContactPersons>
+ <!-- Kontaktperson betreffend des abgegriffenen Datensatzes-->
+		<URI accessDate="2015-01-20 +12:00">http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries-2/</URI>
+ <!-- Datum sowie Quelle des abgegriffenen Datensatzes-->
+		<AlternativeURIs><!--The following URI represents the direkt download link to the shape file-->
+			<URI>http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip</URI>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Nathaniel Vaughn KELSO, Project Manager - http://www.naturalearthdata.com/</CopyrightInformation>
+ <!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Erklärung der Arbeitsschritte-->
+	   		Ein ZIP-Archiv mit den weltweiten de-facto Staatsgrenzen kann direkt heruntergeladen werden.
+	   		Nach Extraktion in den Ordner "ne_110m_admin_0_countries" steht insbesondere die Datei "ne_110m_admin_0_countries.dbf" zur Verfügung.
+	   		Diese wurde mit Hilfe von Microsoft Excel in eine 
+			äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes_simplified_110m.xml" zu erzeugen. 
+	   		Die DBF-/CSV-Datei umfasste bereits die ISO3166-ALPHA-2-Codes und ISO3166-ALPHA-3-Codes sowie den englischen Bezeichner jedes Staates. 
+	   		Somit konnte mittels eines eigens entwickelten Java-Programms der 'Entry'-Abschnitt der "CountryCodes_simplified_110m.xml"-Datei mit diesen drei Informationen gefüllt werden.
+	   		In einem zweiten Verarbeitungsschritt wurde die "CountryCodes_simplified_110m.xml"-Datei in ein Java-Programm eingelesen und es wurde mittels des Java-Objects 'Locale' an 
+	   		jeden Staats-Eintrag der deutsche Bezeichner angefügt.
+			
+			Update(29.04.2015): Der Eintrag Somalialand wurde manuell geändert. Da es kein international anerkanntes Land ist, existiert kein offizielles ISO3166-Kennzeichen. 
+			Stattdessen wurde einfach das Kürzel 'SOL' benutzt und als ISO-Code hinterlegt. In der originären Shape-Datei wurde diese Umbenennung ebenfalls durchgeführt.
+			Hintergrund: Vorher waren nichtexistente Einträge mit '-99' belegt. Damit dies jedoch von der Programmlogik richtig verarbeitet wird und auch in der visualisierten Szene dargestellt wird, 
+			muss das Land eindeutig sowohl innerhalb der XML-Datei als auch in der originären Shape-Datei bezeichnet sein, um Verwechselungen zu vermeiden. 
+			
+			Update(29.04.2015): Eintrag Kosovo ergänzt. Auch hier ist wie oben eigentlich kein offizielles ISO3166-Kennzeichen existent. Daher wurden die Kürzel 'KV' und 'KSV' benutzt.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

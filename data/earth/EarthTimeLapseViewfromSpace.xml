@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This sample dataset holds the complete information needed to set-up a visualization for the BO's ENE project. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<Dataset version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd">
+	<GeneralInformation>
+		<Theme>
+			<Title language="EN">Earth Time Lapse View from Space</Title>
+			<Title language="DE">Satellitenbildaufnahmen der Erde</Title>
+			<Description>
+ (Tzhe following text passages are taken from the original metadata-file of the video, link: https://archive.org/download/EarthTimeLapseViewfromSpace/EarthTimeLapseViewfromSpace_meta.xml)
+			Time lapse sequences of photographs taken by Ron Garan
+fragileoasis.org/âbloggernauts/âAstro_Ron and the crew of expedition
+28 &amp; 29 onboard the International Space Station from August to October,
+2011, who to my knowledge shot these pictures at an altitude of around
+350 km with a high ISO HD Camera developed by NHK Japan,
+nicknamed the SS-HDTV camera. All credit goes to them.
+I intend to upload a FullHD-version presently.
+
+HD, refurbished, smoothed, retimed, denoised, deflickered, cut, etc.
+All in all I tried to keep the looks of the material as original as possible,
+avoided adjusting the colors and the like, since in my opinion the original
+footage itself already has an almost surreal and aestethical visual nature.
+
+Music: Jan Jelinek | Do Dekor, faitiche back2001
+w+p by Jan Jelinek, published by Betke Edition
+janjelinek.com | faitiche.de
+
+Image Courtesy of the Image Science &amp; Analysis Laboratory,
+NASA Johnson Space Center, The Gateway to Astronaut Photography of Earth
+eol.jsc.nasa.gov
+
+Editing: Michael KÃ¶nig | koenigm.com
+
+Shooting locations in order of appearance:
+
+1. Aurora Borealis Pass over the United States at Night
+2. Aurora Borealis and eastern United States at Night
+3. Aurora Australis from Madagascar to southwest of Australia
+4. Aurora Australis south of Australia
+5. Northwest coast of United States to Central South America at Night
+6. Aurora Australis from the Southern to the Northern Pacific Ocean
+7. Halfway around the World
+8. Night Pass over Central Africa and the Middle East
+9. Evening Pass over the Sahara Desert and the Middle East
+10. Pass over Canada and Central United States at Night
+11. Pass over Southern California to Hudson Bay
+12. Islands in the Philippine Sea at Night
+13. Pass over Eastern Asia to Philippine Sea and Guam
+14. Views of the Mideast at Night
+15. Night Pass over Mediterranean Sea
+16. Aurora Borealis and the United States at Night
+17. Aurora Australis over Indian Ocean
+18. Eastern Europe to Southeastern Asia at Night
+			</Description>
+		</Theme>
+		<Unit />
+		<PublicReference>https://archive.org/details/EarthTimeLapseViewfromSpace, Jeff Kaplan</PublicReference>
+		<MetadataReference>EarthTimeLapseViewfromSpace_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="">
+			<Title>Spatial extent</Title>
+			<Description />
+			<GeoReference featureType="ENE:Video" externalGeometries="false">
+				<CRS>EPSG:4326</CRS>
+			</GeoReference>
+		</Property>
+		<Property dataType="String">
+			<Title>File name</Title>
+		</Property>
+		<Property dataType="String">
+			<Title>Video size</Title>
+			<Description>Viedo size in MB</Description>
+		</Property>
+	</TableStructure>
+	<Entries>
+		<Entry>
+			<Value>-180,-90,180,90</Value>
+			<Value>https://archive.org/download/EarthTimeLapseViewfromSpace/EarthTimeLapseViewfromSpace.mp4</Value>
+			<Value>29.7</Value>
+		</Entry>
+	</Entries>
+</Dataset>

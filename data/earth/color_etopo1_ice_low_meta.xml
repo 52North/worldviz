@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+ <!-- Weltweite abdeckung-->
+	<!-- 
+	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	--> 
+	<CovereredTime />
+	<DatasetReference>color_etopo1_ice_low.xml</DatasetReference>
+ <!-- Dateiname-->
+	<SourceFileReference />
+	<Source>
+		<ContactPersons />
+		<URI accessDate="2014-08-22 +11:00">http://www.ngdc.noaa.gov/mgg/global/global.html</URI>
+ <!-- Zeitangabe sowie Quelle der abgegriffenen Daten-->
+		<AlternativeURIs><URI accessDate="2014-08-22 +11:00">http://www.ngdc.noaa.gov/mgg/image/color_etopo1_ice_low.jpg</URI></AlternativeURIs>
+ <!-- Bemerkungen-->
+	</Source>
+	<CopyrightInformation>NOAA NGDC</CopyrightInformation>
+ <!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Erklärung der Arbeitsschritte-->
+	   		Das Image lässt sich problemlos aus dem Web herunterladen. Zu beachten ist, dass die Pixel sich auf das
+	   		lon/lat-Koordinatensystem der Erde beziehen müssen!
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

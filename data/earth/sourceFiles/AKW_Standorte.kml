@@ -1,0 +1,2465 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>AKW_Standorte</name>
+  <Placemark>
+	<name>Almaraz Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">1</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#In_service">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Almaraz</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,017</SimpleData>
+		<SimpleData name="COUNTRY">Spain</SimpleData>
+		<SimpleData name="LOCATION">39°48'29''N 05°41'49''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-5.69694444444445,39.808055555555597,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Angra Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">2</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Angra</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,889[note 1]</SimpleData>
+		<SimpleData name="COUNTRY">Brazil</SimpleData>
+		<SimpleData name="LOCATION">23°00'30''S 44°28'26''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.473888888888901,-23.008333333333301,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arkansas Nuclear One</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">3</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Arkansas Nuclear One</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,839</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">35°18'37''N 93°13'53''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-93.231388888888901,35.310277777777799,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>AscÃ³ Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">4</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Ascó</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,992</SimpleData>
+		<SimpleData name="COUNTRY">Spain</SimpleData>
+		<SimpleData name="LOCATION">41°12'00''N 00°34'10''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.569444444444444,41.2,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Balakovo Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">5</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Balakovo</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,8</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">52°05'28''N 47°57'19''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>47.955277777777802,52.091111111111097,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Beaver Valley Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">6</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Beaver Valley</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,738</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">40°37'24''N 80°25'50''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-80.4305555555556,40.623333333333299,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Belleville Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">7</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Belleville</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,62</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">47°30'35''N 02°52'30''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>2.875,47.509722222222202,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Blayais Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">8</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Blayais</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,64</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">45°15'21''N 00°41'35''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.693055555555556,45.2558333333333,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Braidwood Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">9</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Braidwood</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,33</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°14'37''N 88°13'45''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-88.2291666666667,41.2436111111111,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Brokdorf Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">10</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Brokdorf</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,41</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">53°51'03''N 09°20'41''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.34472222222222,53.850833333333298,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Browns Ferry Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">11</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Browns Ferry</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">3,3</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">34°42'14''N 87°07'07''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-87.118611111111093,34.703888888888898,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>[Bruce Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">12</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Bruce</SimpleData>
+		<SimpleData name="UNITS">8</SimpleData>
+		<SimpleData name="CAPACITY">6,234</SimpleData>
+		<SimpleData name="COUNTRY">Canada</SimpleData>
+		<SimpleData name="LOCATION">44°42'14''N 81°35'58''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-81.599444444444401,44.703888888888898,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Brunswick Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">13</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-Bruce_3-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Brunswick Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,858</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">33°57'30''N 78°0'37''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-78.010277777777802,33.9583333333333,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bugey Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">14</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-4">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Bugey Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,580[note 2]</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">45°19'31''N 05°16'15''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.27083333333333,45.325277777777799,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bushehr Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">15</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Bushehr Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">915</SimpleData>
+		<SimpleData name="COUNTRY">Iran</SimpleData>
+		<SimpleData name="LOCATION">28°49'47''N 50°53'10''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>50.886111111111099,28.829722222222198,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Byron Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">16</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Byron Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,3</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">42°4'27''N 89°16'55''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-89.281944444444406,42.074166666666699,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Callaway Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">17</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Callaway Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,19</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">38°45'42''N 91°46'48''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-91.78,38.761666666666699,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Calvert Cliffs Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">18</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Calvert Cliffs Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,735</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">38°25'55''N 76°26'32''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-76.442222222222199,38.431944444444397,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Catawba Nuclear Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">19</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Catawba Nuclear Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,258</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">35°3'6''N 81°4'12''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-81.07,35.051666666666698,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Cattenom Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">20</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Cattenom Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">5,2</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">49°24'57''N 06°13'05''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.21805555555556,49.415833333333303,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Cernavoda Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">21</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-3">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Cernavod? Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,3</SimpleData>
+		<SimpleData name="COUNTRY">Romania</SimpleData>
+		<SimpleData name="LOCATION">44°19'20''N 28°03'26''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.057222222222201,44.322222222222202,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Chinon Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">22</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-5">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Chinon Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,620[note 3]</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">47°13'50''N 00°10'14''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.170555555555556,47.230555555555597,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Chin Shan Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">23</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-4">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Chin Shan Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,208</SimpleData>
+		<SimpleData name="COUNTRY">Taiwan</SimpleData>
+		<SimpleData name="LOCATION">25°17'29''N 121°34'4''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>121.56777777777801,25.2913888888889,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Chooz Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">24</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-7">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Chooz Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">3,000[note 4]</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">50°05'24''N 04°47'22''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.78944444444444,50.09,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Civaux Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">25</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-5">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Civaux Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,99</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">46°27'24''N 00°39'10''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.652777777777778,46.456666666666699,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Clinton Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">26</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Clinton Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,043</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">40°10'20''N 88°50'06''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-88.835,40.172222222222203,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Cofrentes Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">27</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Cofrentes Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,064</SimpleData>
+		<SimpleData name="COUNTRY">Spain</SimpleData>
+		<SimpleData name="LOCATION">39°13'00''N 01°03'00''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-1.05,39.216666666666697,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Columbia Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">28</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Columbia Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,131</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">46°28'16''N 119°20'02''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-119.33388888888901,46.471111111111099,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Comanche Peak Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">29</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Comanche Peak Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,367</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">32°17'54''N 97°47'06''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-97.785,32.298333333333296,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Cruas Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">30</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-6">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Cruas Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,66</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">44°37'59''N 04°45'24''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.75666666666667,44.6330555555556,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dampierre Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">31</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-7">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Dampierre Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,56</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">47°43'59''N 02°31'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>2.51666666666667,47.733055555555602,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Darlington Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">32</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-8">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Darlington Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,512</SimpleData>
+		<SimpleData name="COUNTRY">Canada</SimpleData>
+		<SimpleData name="LOCATION">43°52'22''N 78°43'11''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-78.719722222222202,43.872777777777799,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Daya Bay Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">33</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-8">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Daya Bay Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,888</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">22°35'52''N 114°32'37''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>114.54361111111101,22.5977777777778,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Diablo Canyon Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">34</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Diablo Canyon Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,24</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">35°12'39''N 120°51'22''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-120.85611111111101,35.210833333333298,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Doel Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">35</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Doel Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">2,911</SimpleData>
+		<SimpleData name="COUNTRY">Belgium</SimpleData>
+		<SimpleData name="LOCATION">51°19'29''N 04°15'31''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.25861111111111,51.324722222222199,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Donald Cook Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">36</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Donald C. Cook Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,069</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°58'31''N 86°33'57''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-86.565833333333302,41.975277777777798,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dresden Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">37</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-9">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Dresden Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,734[note 5]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°23'23''N 88°16'5''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-88.268055555555506,41.389722222222197,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dukovany Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">38</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-9">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Dukovany Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">2,04</SimpleData>
+		<SimpleData name="COUNTRY">Czech Republic</SimpleData>
+		<SimpleData name="LOCATION">49°05'06''N 16°08'56''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>16.148888888888902,49.085,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dungeness Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">39</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-10">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Dungeness Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,040[note 6]</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">50°54'50''N 00°57'50''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.963888888888889,50.913888888888899,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Edwin Hatch Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">40</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-10">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Edwin Hatch Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,759</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">31°56'03''N 82°20'38''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-82.343888888888898,31.934166666666702,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Enrico Fermi Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">41</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Enrico Fermi Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,122[note 7]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°57'46''N 83°15'27''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-83.2575,41.962777777777802,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Emsland Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">42</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Emsland Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,329</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">52°28'27''N 07°19'04''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.31777777777778,52.474166666666697,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fessenheim Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">43</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Fessenheim Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,76</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">47°54'11''N 07°33'47''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.56305555555556,47.903055555555603,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Flamanville Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">44</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-12">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Flamanville Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,660[note 8]</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">49°32'11''N 01°52'54''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-1.88166666666667,49.536388888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Forsmark Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">45</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-10">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Forsmark Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">3,138</SimpleData>
+		<SimpleData name="COUNTRY">Sweden</SimpleData>
+		<SimpleData name="LOCATION">60°24'12''N 18°10'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>18.1666666666667,60.4033333333333,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fukushima Daini Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">46</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-10">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Fukushima Daini</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">4,4</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">37°19'10''N 141°01'16''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>141.021111111111,37.3194444444444,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Genkai Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">47</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Genkai Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,312</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">33°30'56''N 129°50'14''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.83722222222201,33.515555555555601,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Goesgen Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">48</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-Genkai_Nuclear_Power_Plant_14-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Goesgen Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">970</SimpleData>
+		<SimpleData name="COUNTRY">Switzerland</SimpleData>
+		<SimpleData name="LOCATION">47°21'57''N 07°58'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.96666666666667,47.365833333333299,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Golfech Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">49</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-Genkai_Nuclear_Power_Plant_14-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Golfech Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,62</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">44°06'24''N 00°50'43''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.845277777777778,44.106666666666698,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Grafenrheinfeld Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">50</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Grafenrheinfeld Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,275</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">49°59'02''N 10°11'05''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.1847222222222,49.983888888888899,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Grand Gulf Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">51</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Grand Gulf Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,266</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">32°0'24''N 91°2'54''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-91.048333333333304,32.006666666666703,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gravelines Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">52</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Gravelines</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">5,46</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">51°00'55''N 02°08'10''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>2.13611111111111,51.015277777777797,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Grohnde Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">53</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-12">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Grohnde Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,36</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">52°02'07''N 09°24'48''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.41333333333333,52.0352777777778,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gundremmingen Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">54</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-15">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Gundremmingen Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,972[note 9]</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">48°30'53''N 10°24'08''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.4022222222222,48.514722222222197,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hamaoka Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">55</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-16">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hamaoka Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">3,473[note 10]</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">34°37'25''N 138°08'33''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>138.1425,34.623611111111103,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hanbit Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">56</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hanbit Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">5,875</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">35°24'54''N 126°25'26''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>126.423888888889,35.415,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hanul Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">57</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-0">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hanul Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">5,873</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">37°5'34''N 129°23'1''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.38361111111101,37.092777777777798,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hartlepool Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">58</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hartlepool nuclear power station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,19</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">54°38'06''N 01°10'51''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-1.18083333333333,54.635,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heysham nuclear power station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">59</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Heysham nuclear power station</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">2,4</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">54°01'44''N 02°54'58''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.91611111111111,54.028888888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>HigashidÅri Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">60</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-ko_17-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Higashid?ri Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,067</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">41°11'17''N 141°23'25''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>141.39027777777801,41.1880555555556,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hinkley Point-B Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">61</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-3">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hinkley Point B Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">840</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">51°12'33''N 03°07'39''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.1275,51.209166666666697,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hongyanhe Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">62</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-18">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hongyanhe Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,000[note 11]</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">39°47'52''N 121°28'19''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>121.47194444444401,39.797777777777803,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hope Creek Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">63</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hope Creek Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,191</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">39°28'04''N 75°32'17''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-75.538055555555601,39.467777777777798,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hunterston-B Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">64</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Hunterston B nuclear power station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">860</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">55°43'20''N 04°53'24''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-4.89,55.7222222222222,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ikata Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">65</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-1">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Ikata Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">1,922</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">33°29'27''N 132°18'41''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>132.31138888888901,33.490833333333299,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Indian Point Energy Center</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">66</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-19">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Indian Point Energy Center</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,062[note 12]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°16'11''N 73°57'08''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-73.952222222222204,41.2697222222222,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Isar Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">67</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-20">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Isar Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,410[note 13]</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">48°36'20''N 12°17'35''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.2930555555556,48.605555555555597,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Joseph Farley Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">68</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-20">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Joseph M. Farley Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,711</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">31°13'23''N 85°06'42''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-85.111666666666693,31.2230555555556,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kalinin Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">69</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-20">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kalinin Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,8</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">57°54'20''N 35°03'37''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>35.060277777777799,57.905555555555601,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kashiwazaki-Kariwa Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">70</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-21">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kashiwazaki-Kariwa Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">7</SimpleData>
+		<SimpleData name="CAPACITY">7,965[note 14]</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">37°25'45''N 138°35'43''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>138.59527777777799,37.429166666666703,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Khmelnitskiy Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">71</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Khmelnitskiy Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,900[note 15]</SimpleData>
+		<SimpleData name="COUNTRY">Ukraine</SimpleData>
+		<SimpleData name="LOCATION">50°18'5''N 26°38'59''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.649722222222199,50.301388888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koeberg Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">72</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Koeberg Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,83</SimpleData>
+		<SimpleData name="COUNTRY">South Africa</SimpleData>
+		<SimpleData name="LOCATION">33°40'35''S 18°25'55''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>18.431944444444401,-33.676388888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kola Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">73</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kola Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">1,644</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">67°28'00''N 32°28'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>32.466666666666697,67.466666666666697,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kori Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">74</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-23">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kori Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">3,227</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">35°19'01''N 129°18'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.3,35.316944444444403,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kozloduy Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">75</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-24">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kozloduy Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,906[note 16]</SimpleData>
+		<SimpleData name="COUNTRY">Bulgaria</SimpleData>
+		<SimpleData name="LOCATION">43°44'46''N 23°46'14''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>23.7705555555556,43.746111111111098,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kuosheng Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">76</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-24">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kuosheng Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,933</SimpleData>
+		<SimpleData name="COUNTRY">Taiwan</SimpleData>
+		<SimpleData name="LOCATION">25°12'11''N 121°39'46''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>121.662777777778,25.203055555555601,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koodankulam Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">77</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-25">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kudankulam Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,000[note 17]</SimpleData>
+		<SimpleData name="COUNTRY">India</SimpleData>
+		<SimpleData name="LOCATION">8°10'06''N 77°42'45''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>77.7125,8.168333333333329,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kursk Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">78</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kursk Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,700[note 18]</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">51°40'30''N 35°36'20''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>35.605555555555597,51.675,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Laguna Verde Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">79</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Laguna Verde Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,3</SimpleData>
+		<SimpleData name="COUNTRY">Mexico</SimpleData>
+		<SimpleData name="LOCATION">19°43'15''N 96°24'23''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-96.406388888888898,19.720833333333299,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>LaSalle County Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">80</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">LaSalle County Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,238</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°14'44''N 88°40'9''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-88.669166666666698,41.245555555555597,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Leibstadt Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">81</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Leibstadt Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,19</SimpleData>
+		<SimpleData name="COUNTRY">Switzerland</SimpleData>
+		<SimpleData name="LOCATION">47°36'11''N 08°11'05''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.18472222222222,47.603055555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lemoniz Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">82</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Lemoniz Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,8</SimpleData>
+		<SimpleData name="COUNTRY">Spain</SimpleData>
+		<SimpleData name="LOCATION">43°26'00''N 02°52'21''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.8725,43.433333333333302,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Leningrad Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">83</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Leningrad Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,7</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">59°50'50''N 29°02'37''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.043611111111101,59.8472222222222,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Limerick Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">84</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Limerick Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,264</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">40°13'36''N 75°35'14''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-75.587222222222195,40.226666666666702,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ling Ao Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">85</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-26">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Ling Ao Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,876</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">22°36'17''N 114°33'5''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>114.55138888888899,22.6047222222222,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Loviisa Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">86</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Loviisa Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">976</SimpleData>
+		<SimpleData name="COUNTRY">Finland</SimpleData>
+		<SimpleData name="LOCATION">60°22'20''N 26°20'50''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.3472222222222,60.372222222222199,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>McGuire Nuclear Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">87</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">McGuire Nuclear Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,2</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">35°25'57''N 80°56'54''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-80.948333333333295,35.4325,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Maanshan Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">88</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Maanshan Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,841</SimpleData>
+		<SimpleData name="COUNTRY">Taiwan</SimpleData>
+		<SimpleData name="LOCATION">21°57'29''N 120°45'6''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>120.75166666666701,21.9580555555556,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Mihama Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">89</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-tai_6-2">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Mihama Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">1,57</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">35°42'09''N 135°57'48''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>135.963333333333,35.7025,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Millstone Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">90</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-27">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Millstone Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,102[note 19]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°18'43''N 72°10'07''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-72.168611111111105,41.3119444444444,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Neckarwestheim Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">91</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-28">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Neckarwestheim Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,310[note 20]</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">49°02'30''N 09°10'30''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.175,49.0416666666667,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nine Mile Point Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">92</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-28">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Nine Mile Point Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,764</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">43°31'15''N 76°24'25''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-76.406944444444406,43.5208333333333,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ningde Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">93</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-29">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Ningde Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,036[note 21]</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">27°02'46''N 120°17'18''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>120.288333333333,27.046111111111099,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nogent Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">94</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearChina_8-3">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Nogent Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,62</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">48°30'55''N 03°31'04''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.51777777777778,48.515277777777797,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>North Anna Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">95</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-13">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">North Anna Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,875</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">38°03'38''N 77°47'22''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-77.789444444444399,38.060555555555602,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Novovoronezhskaya Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">96</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-30">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Novovoronezhskaya Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">1,720[note 22]</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">51°16'30''N 39°12'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>39.2,51.275,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Oconee Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">97</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-30">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Oconee Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">2,538</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">34°47'38''N 82°53'53''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-82.898055555555601,34.793888888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>ÅŒi Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">98</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-30">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">?i Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">4,494</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">35°32'26''N 135°39'07''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>135.65194444444401,35.540555555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Olkiluoto Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">99</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-31">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Olkiluoto Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,740[note 23]</SimpleData>
+		<SimpleData name="COUNTRY">Finland</SimpleData>
+		<SimpleData name="LOCATION">61°14'13''N 21°26'27''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.440833333333298,61.236944444444397,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Onagawa Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">100</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-31">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Onagawa Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">2,089</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">38°24'04''N 141°29'59''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>141.499722222222,38.401111111111099,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Oskarshamn Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">101</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Oskarshamn Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">2,511</SimpleData>
+		<SimpleData name="COUNTRY">Sweden</SimpleData>
+		<SimpleData name="LOCATION">57°24'56''N 16°40'16''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>16.671111111111099,57.415555555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Paks Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">102</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Paks Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">1,889</SimpleData>
+		<SimpleData name="COUNTRY">Hungary</SimpleData>
+		<SimpleData name="LOCATION">46°34'21''N 18°51'15''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>18.8541666666667,46.5725,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Palo Verde Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">103</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Palo Verde Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">4,214</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">33°23'21''N 112°51'54''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.865,33.389166666666704,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Paluel Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">104</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-8">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Paluel Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">5,32</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">49°51'29''N 00°38'08''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.635555555555556,49.858055555555602,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Penly Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">105</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-14">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Penly Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,66</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">49°58'36''N 01°12'43''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>1.21194444444444,49.976666666666702,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Peach Bottom Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">106</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-32">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Peach Bottom Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,234[note 24]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">39°45'30''N 76°16'05''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-76.268055555555506,39.758333333333297,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Perry Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">107</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-32">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Perry Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,24</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°48'03''N 81°08'36''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-81.143333333333302,41.800833333333301,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Philippsburg Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">108</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-33">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Philippsburg Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,402[note 25]</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">49°15'09''N 08°26'11''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.436388888888891,49.2525,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Pickering Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">109</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Pickering Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">3,094[note 26]</SimpleData>
+		<SimpleData name="COUNTRY">Canada</SimpleData>
+		<SimpleData name="LOCATION">43°48'42''N 79°03'57''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-79.065833333333302,43.811666666666703,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Point Beach Nuclear Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">110</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Point Beach Nuclear Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,027</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">44°16'52''N 87°32'12''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-87.536666666666704,44.281111111111102,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prairie Island Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">111</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Prairie Island Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,114</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">44°37'18''N 92°37'59''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-92.633055555555501,44.621666666666698,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Qinshan Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">112</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-34">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Qinshan Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">7</SimpleData>
+		<SimpleData name="CAPACITY">4,038</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">30°26'08''N 120°57'23''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>120.95638888888899,30.435555555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Quad Cities Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">113</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-35">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Quad Cities Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,774</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°43'35''N 90°18'36''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-90.31,41.726388888888899,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rajasthan Atomic Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">114</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-36">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Rajasthan Atomic Power Station</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">1,085[note 27]</SimpleData>
+		<SimpleData name="COUNTRY">India</SimpleData>
+		<SimpleData name="LOCATION">24°52'20''N 75°36'50''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>75.613888888888894,24.872222222222199,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ringhals Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">115</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-36">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Ringhals Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,649</SimpleData>
+		<SimpleData name="COUNTRY">Sweden</SimpleData>
+		<SimpleData name="LOCATION">57°15'35''N 12°06'39''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.1108333333333,57.259722222222202,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rivne Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">116</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-36">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Rivne Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">2,645</SimpleData>
+		<SimpleData name="COUNTRY">Ukraine</SimpleData>
+		<SimpleData name="LOCATION">51°19'40''N 25°53'30''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>25.891666666666701,51.327777777777797,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rostov Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">117</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-37">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Rostov Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,900[note 28]</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">47°35'58''N 42°22'19''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>42.371944444444402,47.599444444444401,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Saint-Alban Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">118</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-37">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Saint-Alban Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,67</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">45°24'16''N 04°45'16''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.75444444444444,45.404444444444401,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Saint-Laurent Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">119</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-39">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Saint-Laurent Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,830[note 29]</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">47°43'12''N 01°34'39''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>1.5775,47.72,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Saint Lucie Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">120</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Saint Lucie Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,678</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">27°20'55''N 80°14'47''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-80.246388888888902,27.348611111111101,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Salem Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">121</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Salem Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,332</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">39°27'46''N 75°32'08''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-75.535555555555504,39.462777777777802,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Seabrook Station Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">122</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Seabrook Station Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,247</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">42°53'56''N 70°51'03''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.850833333333298,42.898888888888898,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sendai Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">123</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-17">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Sendai Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,692</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">31°50'01''N 130°11'23''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>130.189722222222,31.8336111111111,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sequoyah Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">124</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-9">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Sequoyah Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,278</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">35°13'35''N 85°05'30''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-85.091666666666697,35.226388888888899,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Shika Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">125</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-9">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Shika Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,613</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">37°03'40''N 136°43'35''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>136.72638888888901,37.061111111111103,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Shimane Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">126</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-40">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Shimane Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,228[note 30]</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">35°32'18''N 132°59'57''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>132.99916666666701,35.538333333333298,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Shin Kori Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">127</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Shin Kori Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">1,945[note 31]</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">35°19'12''N 129°17'47''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.296388888889,35.32,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sizewell-B Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">128</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Sizewell-B Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,188</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">52°12'48''N 01°37'07''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>1.61861111111111,52.213333333333303,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Smolensk Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">129</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Smolensk Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">2,775</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">54°10'09''N 33°14'48''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>33.246666666666698,54.169166666666698,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>South Texas Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">130</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">South Texas Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,56</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">28°47'44''N 96°02'56''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-96.048888888888897,28.795555555555602,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>South Ukraine Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">131</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">South Ukraine Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">2,85</SimpleData>
+		<SimpleData name="COUNTRY">Ukraine</SimpleData>
+		<SimpleData name="LOCATION">47°49'00''N 31°13'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>31.216666666666701,47.816666666666698,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Surry Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">132</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Surry Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,638</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">37°09'56''N 76°41'52''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-76.697777777777802,37.165555555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Susquehanna Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">133</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Susquehanna Steam Electric Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,429</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">41°05'20''N 76°08'56''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-76.148888888888905,41.088888888888903,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Takahama Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">134</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-41">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Takahama Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,22</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">35°31'20''N 135°30'17''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>135.504722222222,35.522222222222197,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tarapur Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">135</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tarapur Atomic Power Station</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">1,28</SimpleData>
+		<SimpleData name="COUNTRY">India</SimpleData>
+		<SimpleData name="LOCATION">19°49'40''N 72°39'40''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>72.661111111111097,19.827777777777801,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Temelin Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">136</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-11">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Temelin Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,926</SimpleData>
+		<SimpleData name="COUNTRY">Czech Republic</SimpleData>
+		<SimpleData name="LOCATION">49°10'48''N 14°22'34''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>14.376111111111101,49.18,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tianwan Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">137</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-42">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tianwan Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,980[note 32]</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">34°41'13''N 119°27'35''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>119.459722222222,34.6869444444444,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tihange Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">138</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-43">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tihange Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">3,016</SimpleData>
+		<SimpleData name="COUNTRY">Belgium</SimpleData>
+		<SimpleData name="LOCATION">50°32'05''N 05°16'21''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.2725,50.5347222222222,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tokai Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">139</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-44">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tokai Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,060[note 33]</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">36°27'59''N 140°36'24''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>140.606666666667,36.466388888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tomari Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">140</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-12">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tomari Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">3</SimpleData>
+		<SimpleData name="CAPACITY">1,966</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">43°02'10''N 140°30'45''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>140.5125,43.036111111111097,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Torness Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">141</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-13">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Torness Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,205</SimpleData>
+		<SimpleData name="COUNTRY">United Kingdom</SimpleData>
+		<SimpleData name="LOCATION">55°58'05''N 02°24'33''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.40916666666667,55.968055555555601,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tricastin Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">142</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-13">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tricastin Nuclear Power Center</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">3,66</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">44°19'47''N 04°43'56''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.73222222222222,44.329722222222202,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Trillo Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">143</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-18">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Trillo Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,003</SimpleData>
+		<SimpleData name="COUNTRY">Spain</SimpleData>
+		<SimpleData name="LOCATION">40°42'04''N 02°37'19''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.62194444444444,40.701111111111103,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tsuruga Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">144</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearFrance_2-18">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Tsuruga Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,448</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">35°40'22''N 136°04'38''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>136.07722222222199,35.672777777777803,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Turkey Point Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">145</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-IndustryCardsNuclearJapan_13-14">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Turkey Point Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">1,386</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">25°26'03''N 80°19'50''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-80.330555555555506,25.434166666666702,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vandellos Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">146</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-45">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Vandellòs Nuclear Power Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,045[note 34]</SimpleData>
+		<SimpleData name="COUNTRY">Spain</SimpleData>
+		<SimpleData name="LOCATION">40°57'05''N 00°52'00''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.866666666666667,40.9513888888889,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vogtle Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">147</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-46">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Vogtle Electric Generating Plant</SimpleData>
+		<SimpleData name="UNITS">2</SimpleData>
+		<SimpleData name="CAPACITY">2,302[note 35]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">33°08'35''N 81°45'57''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-81.765833333333305,33.143055555555598,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Waterford Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">148</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-46">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Waterford Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,168</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">29°59'43''N 90°28'16''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-90.471111111111099,29.995277777777801,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Watts Bar Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">149</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-47">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Watts Bar Nuclear Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,123[note 36]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">35°36'10''N 84°47'22''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-84.789444444444399,35.602777777777803,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Wolf Creek Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">150</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-47">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Wolf Creek Generating Station</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,16</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">38°14'20''N 95°41'20''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-95.688888888888897,38.238888888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Wolseong Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">151</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-47">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Wolseong Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">4</SimpleData>
+		<SimpleData name="CAPACITY">2,722</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">35°42'40''N 129°28'30''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.475,35.711111111111101,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Yangjiang Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">152</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-48">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Yangjiang Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">1</SimpleData>
+		<SimpleData name="CAPACITY">1,000[note 37]</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">21°42'35''N 112°15'38''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>112.260555555556,21.709722222222201,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zaporizhzhia Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">153</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-48">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Zaporizhzhia Nuclear Power Plant</SimpleData>
+		<SimpleData name="UNITS">6</SimpleData>
+		<SimpleData name="CAPACITY">5,7</SimpleData>
+		<SimpleData name="COUNTRY">Ukraine</SimpleData>
+		<SimpleData name="LOCATION">47°30'44''N 34°35'09''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>34.585833333333298,47.512222222222199,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Atucha Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">154</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-49">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Atucha Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,027[note 38]</SimpleData>
+		<SimpleData name="COUNTRY">Argentina</SimpleData>
+		<SimpleData name="LOCATION">33°58'3''S 59°12'18''W</SimpleData>
+		<SimpleData name="CONS_START">1981</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-59.205,-33.9675,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Braka Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">155</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-49">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Barakah Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,69</SimpleData>
+		<SimpleData name="COUNTRY">UAE</SimpleData>
+		<SimpleData name="LOCATION">23°59'6''N 52°17'1''E</SimpleData>
+		<SimpleData name="CONS_START">2012</SimpleData>
+		<SimpleData name="PLAND_CONN">2017</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>52.283611111111099,23.985,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Belarusian Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">156</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-49">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Belarusian Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,4</SimpleData>
+		<SimpleData name="COUNTRY">Belarus</SimpleData>
+		<SimpleData name="LOCATION">54°45'43''N 26°7'12''E</SimpleData>
+		<SimpleData name="CONS_START">2012</SimpleData>
+		<SimpleData name="PLAND_CONN">2018</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.12,54.761944444444403,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Beloyarsk Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">157</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Beloyarsk-4 (BN-800)</SimpleData>
+		<SimpleData name="CAPACITY">1,364[note 39]</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">56°50'30''N 61°19'21''E</SimpleData>
+		<SimpleData name="CONS_START">2006</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>61.3225,56.841666666666697,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Changjiang Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">158</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Changjiang Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,22</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">19°25'23''N 108°48'45''E</SimpleData>
+		<SimpleData name="CONS_START">2010</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>108.8125,19.423055555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fangchenggang Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">159</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Fangchenggang Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">21°40'36''N 108°33'38''E</SimpleData>
+		<SimpleData name="CONS_START">2010</SimpleData>
+		<SimpleData name="PLAND_CONN">2015</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>108.56055555555599,21.676666666666701,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fangjiashan Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">160</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Fangjiashan Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">30°26'29''N 120°56'30''E</SimpleData>
+		<SimpleData name="CONS_START">2008</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>120.941666666667,30.441388888888898,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fuqing Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">161</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Fuqing Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">3</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">25°26'39''N 119°26'46''E</SimpleData>
+		<SimpleData name="CONS_START">2008</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>119.44611111111099,25.4441666666667,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Haiyang Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">162</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-50">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Haiyang Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">36°42'33''N 121°22'54''E</SimpleData>
+		<SimpleData name="CONS_START">2009</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>121.381666666667,36.709166666666697,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kakrapar Atomic Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">163</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kakrapar-3</SimpleData>
+		<SimpleData name="CAPACITY">1,664[note 40]</SimpleData>
+		<SimpleData name="COUNTRY">India</SimpleData>
+		<SimpleData name="LOCATION">21°14'19''N 73°21'00''E</SimpleData>
+		<SimpleData name="CONS_START">2010</SimpleData>
+		<SimpleData name="PLAND_CONN">2015</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>73.35,21.238611111111101,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kaliningrad Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">164</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Kaliningrad Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,082</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">54°56'20''N 22°09'40''E</SimpleData>
+		<SimpleData name="CONS_START">2012</SimpleData>
+		<SimpleData name="PLAND_CONN">2017</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.161111111111101,54.938888888888897,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Leningrad Nuclear Power Plant II</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">165</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Leningrad Nuclear Power Plant II</SimpleData>
+		<SimpleData name="CAPACITY">2,17</SimpleData>
+		<SimpleData name="COUNTRY">Russia</SimpleData>
+		<SimpleData name="LOCATION">59°49'50''N 29°3'26''E</SimpleData>
+		<SimpleData name="CONS_START">2008</SimpleData>
+		<SimpleData name="PLAND_CONN">2015</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.057222222222201,59.830555555555598,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lungmen Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">166</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-51">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Lungmen Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,6</SimpleData>
+		<SimpleData name="COUNTRY">Taiwan</SimpleData>
+		<SimpleData name="LOCATION">25°02'19''N 121°55'27''E</SimpleData>
+		<SimpleData name="CONS_START">1999</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>121.92416666666701,25.038611111111098,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Mochovce Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">167</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Mochovce Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,654[note 41]</SimpleData>
+		<SimpleData name="COUNTRY">Slovakia</SimpleData>
+		<SimpleData name="LOCATION">48°15'50''N 18°27'25''E</SimpleData>
+		<SimpleData name="CONS_START">1987</SimpleData>
+		<SimpleData name="PLAND_CONN">2015</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>18.4569444444444,48.2638888888889,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>ÅŒma Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">168</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">?ma Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,325</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">41°30'35''N 140°54'37''E</SimpleData>
+		<SimpleData name="CONS_START">2010</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>140.91027777777799,41.509722222222202,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sanmen</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">169</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Sanmen Nuclear Power Station</SimpleData>
+		<SimpleData name="CAPACITY">2</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">29°06'04''N 121°38'23''E</SimpleData>
+		<SimpleData name="CONS_START">2009</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>121.63972222222201,29.101111111111098,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Shin Hanul Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">170</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-52">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Shin Hanul Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,68</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">37°05'34''N 129°23'01''E</SimpleData>
+		<SimpleData name="CONS_START">2012</SimpleData>
+		<SimpleData name="PLAND_CONN">2017</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.38361111111101,37.092777777777798,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Shin Wolseong Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">171</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-53">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Shin Wolseong Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,920[note 42]</SimpleData>
+		<SimpleData name="COUNTRY">South Korea</SimpleData>
+		<SimpleData name="LOCATION">35°43'20''N 129°28'44''E</SimpleData>
+		<SimpleData name="CONS_START">2007</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>129.478888888889,35.7222222222222,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Taishan</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">172</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-53">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Taishan Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">3,4</SimpleData>
+		<SimpleData name="COUNTRY">China</SimpleData>
+		<SimpleData name="LOCATION">21°54'34''N 112°58'45''E</SimpleData>
+		<SimpleData name="CONS_START">2009</SimpleData>
+		<SimpleData name="PLAND_CONN">2014</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>112.979166666667,21.9094444444444,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Virgil C. Summer Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">173</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-54">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Virgil C. Summer Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,088[note 43]</SimpleData>
+		<SimpleData name="COUNTRY">USA</SimpleData>
+		<SimpleData name="LOCATION">34°17'55''N 81°18'53''W</SimpleData>
+		<SimpleData name="CONS_START">2013</SimpleData>
+		<SimpleData name="PLAND_CONN">2017</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-81.314722222222201,34.2986111111111,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>BarsebÃ¤ck  Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">174</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#Shut_down">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Barsebäck Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,2</SimpleData>
+		<SimpleData name="COUNTRY">Sweden</SimpleData>
+		<SimpleData name="LOCATION">55°44'40''N 12°55'15''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.920833333333301,55.744444444444397,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Biblis Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">175</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#Shut_down">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Biblis Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,407</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">49°42'36''N 08°24'55''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.41527777777778,49.71,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bohunice Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">176</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Bohunice Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,760[note 44]</SimpleData>
+		<SimpleData name="COUNTRY">Slovakia</SimpleData>
+		<SimpleData name="LOCATION">48°29'40''N 17°40'55''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>17.681944444444401,48.494444444444397,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Chernobyl Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">177</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Chernobyl Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">3,515</SimpleData>
+		<SimpleData name="COUNTRY">Ukraine</SimpleData>
+		<SimpleData name="LOCATION">51°23'22''N 30°05'57''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.099166666666701,51.389444444444401,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fukushima I Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">178</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Fukushima Daiichi Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">4,546</SimpleData>
+		<SimpleData name="COUNTRY">Japan</SimpleData>
+		<SimpleData name="LOCATION">37°25'17''N 141°01'57''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>141.0325,37.421388888888899,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Greifswald Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">179</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Greifswald Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,04</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">54°08'26''N 13°39'52''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>13.664444444444401,54.140555555555601,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ignalina Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">180</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Ignalina Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">2,37</SimpleData>
+		<SimpleData name="COUNTRY">Lithuania</SimpleData>
+		<SimpleData name="LOCATION">55°36'16''N 26°33'36''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.56,55.604444444444397,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Krummel Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">181</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Krümmel Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,346</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">53°24'36''N 10°24'32''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.4088888888889,53.41,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>MÃ¼lheim-KÃ¤rlich Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">182</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Mülheim-Kärlich Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,219</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">50°24'29''N 07°29'24''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.49,50.408055555555599,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Three Mile Island Nuclear Generating Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">183</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-56">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Three Mile Island Nuclear Generating Station</SimpleData>
+		<SimpleData name="CAPACITY">1,685[note 45]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">40°09'14''N 76°43'29''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-76.724722222222198,40.153888888888901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>San Onofre Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">184</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">San Onofre Nuclear Generating Station</SimpleData>
+		<SimpleData name="CAPACITY">2,586[note 46]</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">33°22'08''N 117°33'18''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-117.555,33.368888888888897,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>SuperphÃ©nix</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">185</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Superphénix</SimpleData>
+		<SimpleData name="CAPACITY">1,2</SimpleData>
+		<SimpleData name="COUNTRY">France</SimpleData>
+		<SimpleData name="LOCATION">45°45'30''N 05°28'20''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.47222222222222,45.758333333333297,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Trojan Nuclear Power Plant</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">186</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Trojan Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,095</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">46°02'18''N 122°53'06''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.885,46.038333333333298,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Unterweser Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">187</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Unterweser Nuclear Power Plant</SimpleData>
+		<SimpleData name="CAPACITY">1,345</SimpleData>
+		<SimpleData name="COUNTRY">Germany</SimpleData>
+		<SimpleData name="LOCATION">53°25'40''N 08°28'49''E</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.480277777777779,53.427777777777798,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zion Nuclear Power Station</name>
+	<ExtendedData><SchemaData schemaUrl="#AKW_Standorte">
+		<SimpleData name="ID">188</SimpleData>
+		<SimpleData name="Descriptio">Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-57">List of nuclear power stations</SimpleData>
+		<SimpleData name="POWER_STAT">Zion Nuclear Power Station</SimpleData>
+		<SimpleData name="CAPACITY">2,08</SimpleData>
+		<SimpleData name="COUNTRY">United States</SimpleData>
+		<SimpleData name="LOCATION">42°26'47''N 87°48'11''W</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-87.803055555555602,42.446388888888897,0</coordinates></Point>
+  </Placemark>
+</Folder>
+<Schema name="AKW_Standorte" id="AKW_Standorte">
+	<SimpleField name="ID" type="int"></SimpleField>
+	<SimpleField name="Descriptio" type="string"></SimpleField>
+	<SimpleField name="POWER_STAT" type="string"></SimpleField>
+	<SimpleField name="UNITS" type="string"></SimpleField>
+	<SimpleField name="CAPACITY" type="string"></SimpleField>
+	<SimpleField name="COUNTRY" type="string"></SimpleField>
+	<SimpleField name="LOCATION" type="string"></SimpleField>
+	<SimpleField name="CONS_START" type="string"></SimpleField>
+	<SimpleField name="PLAND_CONN" type="string"></SimpleField>
+</Schema>
+</Document></kml>

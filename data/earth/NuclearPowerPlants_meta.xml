@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2014-01-01+01:00</begin>
+			<end>2014-01-01+01:00</end>
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>NuclearPowerPlants.xml</DatasetReference>
+	<SourceFileReference format="KML">sourceFiles/AKW_Standorte.kml</SourceFileReference>
+	<Source>
+		<ContactPersons/>
+		<URI accessDate="2014-04-28 +15:00">http://en.wikipedia.org/wiki/List_of_nuclear_power_stations</URI><!-- Datum der Datenbeschaffung sowie dessen Quelle -->
+		<AlternativeURIs>
+			<URI/>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Wikipedia http://en.wikipedia.org/wiki/Wikipedia:Copyrights</CopyrightInformation><!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE"><!-- Dokumentation betreffend der Abfolge der Arbeitsschritte-->
+		Download einer KML mit Namen und Koordinaten über 
+		http://toolserver.org/~para/cgi-bin/kmlexport?project=en.wikipedia.org&amp;article=List_of_nuclear_power_stations
+		Kopieren der Tabellen von der oben angegeben Wikipediaseite in eine CSV-Tabelle. ID hinzufügen.
+		Öffnen der KML in QGIS und speichern der angezeigten Layer als Shape. Shapedateien zusammenführen. (Vektor-Datenbankmanagment-...)
+		Shapedatei und CSV in QGIS öffnen. Der Shapedatei mit dem Feldrechner eine ID über $rowindex hinzufügen.
+		Shapedatei-Eigenschaften-Verknüpfungen-Join durchführen.
+		Speichern der verknüpften Shape und export als KML.
+		Überführung der KML in das XML-Schema.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

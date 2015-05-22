@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This sample dataset holds the complete information needed to set-up a visualization for the BO's ENE project. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<Dataset version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd">
+	<GeneralInformation>
+		<Theme>
+			<Title language="EN">Land cover classification map of the World</Title>
+			<Title language="DE">Landnutzungsklassifikation weltweit</Title>
+			<Description>
+			This image shows global land cover types in different colors. Each land cover has a different effect on 
+			carbon and climate cycles. Snow and ice cool the planet by reflecting sunlight. Tropical rainforests are 
+			part of an intricate land-atmosphere relationship that is disturbed by land cover changes such as 
+			deforestation. Perhaps the most significant human alteration of land cover is the creation of large areas 
+			of agricultural land. For more information, see http://earthobservatory.nasa.gov/IOTD/view.php?id=2695
+			</Description>
+		</Theme>
+		<Unit />
+		<PublicReference>NASA Earth Observatory/NOAA NGDC 2012</PublicReference>
+		<MetadataReference>LandCover_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="">
+			<Title>Spatial extent</Title>
+			<Description />
+			<GeoReference featureType="ENE:Bitmap" externalGeometries="false">
+				<CRS>EPSG:4326</CRS>
+			</GeoReference>
+		</Property>
+		<Property dataType="String">
+			<Title>File name</Title>
+		</Property>
+		<Property dataType="String">
+			<Title>Image size</Title>
+			<Description>Image size in pixels</Description>
+		</Property>
+	</TableStructure>
+	<Entries>
+		<Entry>
+			<Value>-180,-90,180,90</Value>
+			<Value>LandCover.jpg</Value>
+			<Value>2048x1024</Value>
+		</Entry>
+	</Entries>
+</Dataset>

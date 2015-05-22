@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2000-01-01+01:00</begin> 
+			<end>2000-12-31+01:00</end> 
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>ElectricityAccess.xml</DatasetReference>
+	<SourceFileReference format="XLS">sourceFiles/346_worldmapper_data.xls</SourceFileReference>
+	<Source>
+		<ContactPersons/>
+		<URI accessDate="2014-04-26 +12:46">http://www.worldmapper.org/display.php?selected=346</URI>
+		<AlternativeURIs> <!-- Here additional URLs can be documented. -->
+			<URI/>
+		</AlternativeURIs>
+		<Notes>
+		World Resources Institute. 2006. EarthTrends: Environmental Information. Available at http://earthtrends.wri.org. Washington, D.C.: World
+		</Notes>
+	</Source>
+	<CopyrightInformation>Danny Dorling, SASI, University of Sheffield, http://www.sheffield.ac.uk/sasi
+	</CopyrightInformation>
+	<ImportProcess>
+ 		<Description language="DE">
+		Von der genannten Source-URL wurde die '346_worldmapper_data.xls'-Datei geladen, aus dieser wurden Daten der Tabelle 'Data', in Spalten 'ISO 3 code', 'MAP DATA Access to Electricity 2000, millions of people estimated', 'Access to Electricity 2000, percentage of people estimated' für die Weiterverarbeitung in der Datei electricity_access.csv bezogen.
+		Neben dem ISO 3 code wurde ISO 3166-2 code zusätzlich eingetragen. Anschließend wurde die CSV-datei genutzt, um mittels eines Java-Programms den 'Entries'-Teil der 'ElectricityAccess.xml'-Datei zu füllen.
+	   	</Description>
+ 
+		<QualityCheck date="0000-00-00 +11:00" responsiblePerson="">
+		<!-- Datum, andem die Daten auf ihre Qualität Kontrolliert wurden 
+-->
+	   	</QualityCheck>
+	</ImportProcess>
+</DatasetDescription>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime/>
+	<DatasetReference>CountriesPoint.xml</DatasetReference><!-- Dateiname-->
+	<SourceFileReference>sourceFiles/CountriesPoint.xlsx</SourceFileReference>
+	<Source>
+		<ContactPersons>Bjorn Sandvik</ContactPersons><!-- Kontaktpersonen betreffend der abgegriffenen Informationen-->
+		<URI accessDate="2014-03-12 +11:00">http://thematicmapping.org/downloads/world_borders.php</URI><!-- Datum des Zugriffes sowie deren Quelle-->
+		<AlternativeURIs><!--The following URI points to the original shape-file that was manipulated by Bjorn Sandvik. Main changes: 
+    			For further information please check his website: http://thematicmapping.org/downloads/world_borders.php-->
+			<URI>http://www.mappinghacks.com/data/</URI><!--The following URI represents the direkt download link to the shape file-->
+			<URI>http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip</URI>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Bjorn Sandvik - thematicmapping.org</CopyrightInformation><!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE"><!-- Erklärung der Arbeitsabfolge-->
+		Die CountriesPoint.xml wurde aus CoutriesShape erstellt. 
+		Dafür wurde die Quelldatei (TM_World_Borders03.shp) in QGIS eingeladen und als CSV (CountriesPoint.csv) exportiert.
+		Dadurch erhält man eine CSV, welche die Daten der Shapedatei (Ländercodes, Einwohner,...) und einen
+		Landesmittelpunkt enthält. Mit Excel wurde diese CSV geladen und eine XML und KML-Struktur aufgebaut (CountriesPoint.xlsx)
+		Ergebnis: CountriesPoint.xml und kml/CountriesPoint.kml
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

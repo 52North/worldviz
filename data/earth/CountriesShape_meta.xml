@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime/>
+	<DatasetReference>CountriesShape.xml</DatasetReference><!-- Dateiname-->
+	<SourceFileReference/>
+	<Source>
+		<ContactPersons>Bjorn Sandvik</ContactPersons><!-- Kontaktpersonen betreffend der abgegriffenen Informationen-->
+		<URI accessDate="2014-03-12 +11:00">http://thematicmapping.org/downloads/world_borders.php</URI><!-- Datum des Zugriffes sowie deren Quelle-->
+		<AlternativeURIs><!--The following URI points to the original shape-file that was manipulated by Bjorn Sandvik. Main changes: 
+    			For further information please check his website: http://thematicmapping.org/downloads/world_borders.php-->
+			<URI>http://www.mappinghacks.com/data/</URI><!--The following URI represents the direkt download link to the shape file-->
+			<URI>http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip</URI>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Bjorn Sandvik - thematicmapping.org</CopyrightInformation><!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE"><!-- Erklärung der Arbeitsabfolge-->
+	   		Die Shape-Datei kann direkt zusammen mit den ergänzenden DBF-, PRJ- sowie SHX-Dateien als ZIP-Archiv heruntergeladen werden. 
+	   		Nach Extraktion in den Ordner "TM_WORLD_BORDERS-0.3" stehen alle Dateien unmittelbar zur Verfügung.
+	   		
+	   		Hinweis: Die DBF-Datei wurde zusätzlich mit Hilfe von Microsoft Excel in eine äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes.xml" zu erzeugen. Siehe auch "CountryCodes_meta.xml".
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

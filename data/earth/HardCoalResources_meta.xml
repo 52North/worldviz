@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given in such DatasetDescriptions.
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+Letzte Änderung: 02. Juni 2014 von Artur Grzesiuk
+-->
+<DatasetDescription version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<!-- 
+	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	--> 
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2012-01-01+01:00</begin>
+
+			<end>2012-12-31+01:00</end>
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>HardCoalResources.xml</DatasetReference>
+	<SourceFileReference format="XLSX">sourceFiles/Tabellen_Energiestudie_2013.xlsx</SourceFileReference>
+	<Source>
+		<ContactPersons>Dr. Harald Andruleit </ContactPersons>
+		<URI accessDate="2014-05-02 +15:38">http://www.bgr.bund.de/DE/Themen/Energie/Produkte/energiestudie2013_Zusammenfassung.html</URI>
+		<AlternativeURIs />
+		<Notes></Notes>
+	</Source>
+	<CopyrightInformation>Copyrights liegen bei der "Bundesanstalt für Geowissenschaften und Rohstoffe (BGR)" vor. Weitere Informationen sind bei dieser Instanz zu erfragen</CopyrightInformation>
+	<ImportProcess>
+		<Description language="DE">
+		Download der Daten als Excel (.xlsx) Format über http://www.bgr.bund.de/energiestudie2013.
+		Nachfolgende Änderung bzw. Ergänzung der Einzelnen Spalten um den Identifikator der Länderkürzel anhand der  ISO 3166 Alpha-2 
+		zu finden unter: http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
+		Die nun erarbeiteten Daten, müssen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Ländercodes zugeordnet werden können um in die XML Struktur
+		überführt zu werden.
+		Desweiteren wurde die Tabelle um eine Spalte namens "ID" benannt, welche als eine fortlaufende Nummerierung für jedes Land dient. Zeilen mit keinem eindeutigen Wert wurden gemittelt und Zeilen ohne Werte durch ein "-" ersetzt.
+		Die fertige Tabelle wird markiert und mittels "Speichern unter" im Datenformat "CSV-(Trennzeichen-getrennt)" gespeichert.
+		Die benennung der einzelnen Spalten wurde folgend angeordnet ( ID, Ländercode, Land - sowie die spezifischen Attribute betreffend jeder einelnen Ressource wie z.B. jährliche Förderung etc. )
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

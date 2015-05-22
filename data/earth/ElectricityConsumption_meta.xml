@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given in such DatasetDescriptions.
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2000-01-01+01:00</begin>
+			<end>2009-12-31+01:00</end>
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>ElectricityConsumption.xml</DatasetReference>
+	<SourceFileReference format="CSV">sourceFiles/Strom-Verbrauch.csv</SourceFileReference>
+	<Source>
+		<ContactPersons/>
+		<URI accessDate="2014-05-02 +15:38">
+http://de.wikipedia.org/wiki/Elektrizit%C3%A4t/Tabellen_und_Grafiken</URI>
+		<AlternativeURIs/>
+		<Notes/>
+	</Source>
+	<CopyrightInformation/>
+	<ImportProcess>
+		<Description language="DE">
+Aus Wikipedia wurde diese Tabelle von Hand kopiert. Nach dem dies geschehen ist wurde mit Excel eine CSV erstellt.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

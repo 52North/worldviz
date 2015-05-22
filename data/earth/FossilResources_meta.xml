@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+Author: Artur Grzesiuk, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2012-01-01+01:00</begin><!-- Daten beziehen sich auf das Jahr 2012-->
+			<end> 2012-01-01+01:00</end>
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>FossilResources.xml</DatasetReference><!-- Dateiname des Datensatzes der Fossilen Ressourcen-->
+	<SourceFileReference format="CSV">FossilRessources.csv</SourceFileReference>
+	<Source>
+		<ContactPersons/>
+		<URI accessDate="2014-04-12 +11:00">http://www.bgr.bund.de/energiestudie2013</URI>
+		<AlternativeURIs><!-- Here additional URLs can be documented. -->
+			<URI/>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>unknown</CopyrightInformation>
+	<ImportProcess>
+		<Description language="DE">
+		Download der Daten als Excel (.xlsx) Format über http://www.bgr.bund.de/energiestudie2013.
+		Nachfolgende Änderung bzw. Ergänzung der Einzelnen Spalten um den Identifikator der Länderkürzel anhand der  ISO 3166 Alpha-2 
+		zu finden unter: http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
+		Die nun erarbeiteten Daten, müssen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Ländercodes zugeordnet werden können um in die XML Struktur
+		überführt zu werden
+	   	</Description>
+		<QualityCheck date="04.05.2014 +22:00" responsiblePerson="Artur Grzesiuk">
+	   		Ergänzung des Metadatensatzes bezüglich der Fossilen Rohstoffe
+	   	</QualityCheck>
+	</ImportProcess>
+</DatasetDescription>

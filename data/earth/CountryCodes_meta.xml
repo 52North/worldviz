@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+ <!-- Weltweite Informationen-->
+	<CovereredTime/>
+	<DatasetReference>CountryCodes.xml</DatasetReference>
+ <!-- Name der Datei-->
+	<SourceFileReference format="CSV">sourceFiles/TM_WORLD_BORDERS-0.3.csv</SourceFileReference>
+	<Source>
+ <!-- Quelle-->
+		<ContactPersons>Bjorn Sandvik</ContactPersons>
+ <!-- Kontaktperson betreffend des abgegriffenen Datensatzes-->
+		<URI accessDate="2014-03-12 +11:00">http://thematicmapping.org/downloads/world_borders.php</URI>
+ <!-- Datum sowie Quelle des abgegriffenen Datensatzes-->
+		<AlternativeURIs><!--The following URI represents the direkt download link to the shape file-->
+			<URI>http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip</URI>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Bjorn Sandvik - thematicmapping.org</CopyrightInformation>
+ <!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Erklärung der Arbeitsschritte-->
+	   		Ein ZIP-Archiv mit den weltweiten Staatsgrenzen kann direkt heruntergeladen werden.
+	   		Nach Extraktion in den Ordner "TM_WORLD_BORDERS-0.3" steht insbesondere die Datei "TM_WORLD_BORDERS-0.3.dbf" zur Verfügung.
+	   		Diese wurde mit Hilfe von Microsoft Excel in eine 
+			äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes.xml" zu erzeugen. 
+	   		Die DBF-/CSV-Datei umfasste bereits die ISO3166-ALPHA-2-Codes und ISO3166-ALPHA-3-Codes sowie den englischen Bezeichner jedes Staates. 
+	   		Somit konnte mittels eines eigens entwickelten Java-Programms der 'Entry'-Abschnitt der "CountryCodes.xml"-Datei mit diesen drei Informationen gefüllt werden.
+	   		In einem zweiten Verarbeitungsschritt wurde die "CountryCodes.xml"-Datei in ein Java-Programm eingelesen und es wurde mittels des Java-Objects 'Locale' an 
+	   		jeden Staats-Eintrag der deutsche Bezeichner angefügt.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

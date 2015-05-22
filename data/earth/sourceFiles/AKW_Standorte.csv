@@ -1,0 +1,189 @@
+ID;POWER_STATION;UNITS;CAPACITY_MWE;COUNTRY;LOCATION;CONSTRUCTION_START;PLANNED_CONNECTION
+1;Almaraz;2;2,017;Spain;39°48'29''N 05°41'49''W;;
+2;Angra;2;1,889[note 1];Brazil;23°00'30''S 44°28'26''W;;
+3;Arkansas Nuclear One;2;1,839;United States;35°18'37''N 93°13'53''W;;
+4;Ascó;2;1,992;Spain;41°12'00''N 00°34'10''E;;
+5;Balakovo;4;3,8;Russia;52°05'28''N 47°57'19''E;;
+6;Beaver Valley;2;1,738;United States;40°37'24''N 80°25'50''W;;
+7;Belleville;2;2,62;France;47°30'35''N 02°52'30''E;;
+8;Blayais;4;3,64;France;45°15'21''N 00°41'35''E;;
+9;Braidwood;2;2,33;United States;41°14'37''N 88°13'45''W;;
+10;Brokdorf;1;1,41;Germany;53°51'03''N 09°20'41''E;;
+11;Browns Ferry;3;3,3;United States;34°42'14''N 87°07'07''W;;
+12;Bruce;8;6,234;Canada;44°42'14''N 81°35'58''W;;
+13;Brunswick Nuclear Generating Station;2;1,858;United States;33°57'30''N 78°0'37''W;;
+14;Bugey Nuclear Power Plant;4;3,580[note 2];France;45°19'31''N 05°16'15''E;;
+15;Bushehr Nuclear Power Plant;1;915;Iran;28°49'47''N 50°53'10''E;;
+16;Byron Nuclear Generating Station;2;2,3;United States;42°4'27''N 89°16'55''W;;
+17;Callaway Plant;1;1,19;United States;38°45'42''N 91°46'48''W;;
+18;Calvert Cliffs Nuclear Power Plant;2;1,735;United States;38°25'55''N 76°26'32''W;;
+19;Catawba Nuclear Station;2;2,258;United States;35°3'6''N 81°4'12''W;;
+20;Cattenom Nuclear Power Plant;4;5,2;France;49°24'57''N 06°13'05''E;;
+21;Cernavod? Nuclear Power Plant;2;1,3;Romania;44°19'20''N 28°03'26''E;;
+22;Chinon Nuclear Power Plant;4;3,620[note 3];France;47°13'50''N 00°10'14''E;;
+23;Chin Shan Nuclear Power Plant;2;1,208;Taiwan;25°17'29''N 121°34'4''E;;
+24;Chooz Nuclear Power Plant;2;3,000[note 4];France;50°05'24''N 04°47'22''E;;
+25;Civaux Nuclear Power Plant;2;2,99;France;46°27'24''N 00°39'10''E;;
+26;Clinton Nuclear Generating Station;1;1,043;United States;40°10'20''N 88°50'06''W;;
+27;Cofrentes Nuclear Power Plant;1;1,064;Spain;39°13'00''N 01°03'00''W;;
+28;Columbia Generating Station;1;1,131;United States;46°28'16''N 119°20'02''W;;
+29;Comanche Peak Nuclear Generating Station;2;2,367;United States;32°17'54''N 97°47'06''W;;
+30;Cruas Nuclear Power Plant;4;3,66;France;44°37'59''N 04°45'24''E;;
+31;Dampierre Nuclear Power Plant;4;3,56;France;47°43'59''N 02°31'00''E;;
+32;Darlington Nuclear Generating Station;4;3,512;Canada;43°52'22''N 78°43'11''W;;
+33;Daya Bay Nuclear Power Plant;2;1,888;China;22°35'52''N 114°32'37''E;;
+34;Diablo Canyon Power Plant;2;2,24;United States;35°12'39''N 120°51'22''W;;
+35;Doel Nuclear Power Station;4;2,911;Belgium;51°19'29''N 04°15'31''E;;
+36;Donald C. Cook Nuclear Generating Station;2;2,069;United States;41°58'31''N 86°33'57''W;;
+37;Dresden Nuclear Power Plant;2;1,734[note 5];United States;41°23'23''N 88°16'5''W;;
+38;Dukovany Nuclear Power Station;4;2,04;Czech Republic;49°05'06''N 16°08'56''E;;
+39;Dungeness Nuclear Power Station;2;1,040[note 6];United Kingdom;50°54'50''N 00°57'50''E;;
+40;Edwin Hatch Nuclear Power Station;2;1,759;United States;31°56'03''N 82°20'38''W;;
+41;Enrico Fermi Nuclear Generating Station;1;1,122[note 7];United States;41°57'46''N 83°15'27''W;;
+42;Emsland Nuclear Power Plant;1;1,329;Germany;52°28'27''N 07°19'04''E;;
+43;Fessenheim Nuclear Power Plant;2;1,76;France;47°54'11''N 07°33'47''E;;
+44;Flamanville Nuclear Power Plant;2;2,660[note 8];France;49°32'11''N 01°52'54''W;;
+45;Forsmark Nuclear Power Plant;3;3,138;Sweden;60°24'12''N 18°10'00''E;;
+46;Fukushima Daini;4;4,4;Japan;37°19'10''N 141°01'16''E;;
+47;Genkai Nuclear Power Plant;4;3,312;Japan;33°30'56''N 129°50'14''E;;
+48;Goesgen Nuclear Power Plant;1;970;Switzerland;47°21'57''N 07°58'00''E;;
+49;Golfech Nuclear Power Plant;2;2,62;France;44°06'24''N 00°50'43''E;;
+50;Grafenrheinfeld Nuclear Power Plant;1;1,275;Germany;49°59'02''N 10°11'05''E;;
+51;Grand Gulf Nuclear Generating Station;1;1,266;United States;32°0'24''N 91°2'54''W;;
+52;Gravelines;6;5,46;France;51°00'55''N 02°08'10''E;;
+53;Grohnde Nuclear Power Plant;1;1,36;Germany;52°02'07''N 09°24'48''E;;
+54;Gundremmingen Nuclear Power Plant;2;1,972[note 9];Germany;48°30'53''N 10°24'08''E;;
+55;Hamaoka Nuclear Power Plant;3;3,473[note 10];Japan;34°37'25''N 138°08'33''E;;
+56;Hanbit Nuclear Power Station;6;5,875;South Korea;35°24'54''N 126°25'26''E;;
+57;Hanul Nuclear Power Plant;6;5,873;South Korea;37°5'34''N 129°23'1''E;;
+58;Hartlepool nuclear power station;2;1,19;United Kingdom;54°38'06''N 01°10'51''W;;
+59;Heysham nuclear power station;4;2,4;United Kingdom;54°01'44''N 02°54'58''W;;
+60;Higashid?ri Nuclear Power Plant;1;1,067;Japan;41°11'17''N 141°23'25''E;;
+61;Hinkley Point B Nuclear Power Station;1;840;United Kingdom;51°12'33''N 03°07'39''W;;
+62;Hongyanhe Nuclear Power Plant;2;2,000[note 11];China;39°47'52''N 121°28'19''E;;
+63;Hope Creek Nuclear Generating Station;1;1,191;United States;39°28'04''N 75°32'17''W;;
+64;Hunterston B nuclear power station;2;860;United Kingdom;55°43'20''N 04°53'24''W;;
+65;Ikata Nuclear Power Plant;3;1,922;Japan;33°29'27''N 132°18'41''E;;
+66;Indian Point Energy Center;2;2,062[note 12];United States;41°16'11''N 73°57'08''W;;
+67;Isar Nuclear Power Plant;2;1,410[note 13];Germany;48°36'20''N 12°17'35''E;;
+68;Joseph M. Farley Nuclear Generating Station;2;1,711;United States;31°13'23''N 85°06'42''W;;
+69;Kalinin Nuclear Power Plant;4;3,8;Russia;57°54'20''N 35°03'37''E;;
+70;Kashiwazaki-Kariwa Nuclear Power Plant;7;7,965[note 14];Japan;37°25'45''N 138°35'43''E;;
+71;Khmelnitskiy Nuclear Power Plant;2;1,900[note 15];Ukraine;50°18'5''N 26°38'59''E;;
+72;Koeberg Nuclear Power Station;2;1,83;South Africa;33°40'35''S 18°25'55''E;;
+73;Kola Nuclear Power Plant;4;1,644;Russia;67°28'00''N 32°28'00''E;;
+74;Kori Nuclear Power Plant;6;3,227;South Korea;35°19'01''N 129°18'00''E;;
+75;Kozloduy Nuclear Power Plant;2;1,906[note 16];Bulgaria;43°44'46''N 23°46'14''E;;
+76;Kuosheng Nuclear Power Plant;2;1,933;Taiwan;25°12'11''N 121°39'46''E;;
+77;Kudankulam Nuclear Power Plant;1;1,000[note 17];India;8°10'06''N 77°42'45''E;;
+78;Kursk Nuclear Power Plant;4;3,700[note 18];Russia;51°40'30''N 35°36'20''E;;
+79;Laguna Verde Nuclear Power Station;2;1,3;Mexico;19°43'15''N 96°24'23''W;;
+80;LaSalle County Nuclear Generating Station;2;2,238;United States;41°14'44''N 88°40'9''W;;
+81;Leibstadt Nuclear Power Plant;1;1,19;Switzerland;47°36'11''N 08°11'05''E;;
+82;Lemoniz Nuclear Power Plant;2;1,8;Spain;43°26'00''N 02°52'21''W;;
+83;Leningrad Nuclear Power Plant;4;3,7;Russia;59°50'50''N 29°02'37''E;;
+84;Limerick Nuclear Power Plant;2;2,264;United States;40°13'36''N 75°35'14''W;;
+85;Ling Ao Nuclear Power Plant;4;3,876;China;22°36'17''N 114°33'5''E;;
+86;Loviisa Nuclear Power Plant;2;976;Finland;60°22'20''N 26°20'50''E;;
+87;McGuire Nuclear Station;2;2,2;United States;35°25'57''N 80°56'54''W;;
+88;Maanshan Nuclear Power Plant;2;1,841;Taiwan;21°57'29''N 120°45'6''E;;
+89;Mihama Nuclear Power Plant;3;1,57;Japan;35°42'09''N 135°57'48''E;;
+90;Millstone Nuclear Power Plant;2;2,102[note 19];United States;41°18'43''N 72°10'07''W;;
+91;Neckarwestheim Nuclear Power Plant;2;1,310[note 20];Germany;49°02'30''N 09°10'30''E;;
+92;Nine Mile Point Nuclear Generating Station;2;1,764;United States;43°31'15''N 76°24'25''W;;
+93;Ningde Nuclear Power Plant;2;2,036[note 21];China;27°02'46''N 120°17'18''E;;
+94;Nogent Nuclear Power Plant;2;2,62;France;48°30'55''N 03°31'04''E;;
+95;North Anna Nuclear Generating Station;2;1,875;United States;38°03'38''N 77°47'22''W;;
+96;Novovoronezhskaya Nuclear Power Plant;3;1,720[note 22];Russia;51°16'30''N 39°12'00''E;;
+97;Oconee Nuclear Generating Station;3;2,538;United States;34°47'38''N 82°53'53''W;;
+98;?i Nuclear Power Plant;4;4,494;Japan;35°32'26''N 135°39'07''E;;
+99;Olkiluoto Nuclear Power Plant;2;1,740[note 23];Finland;61°14'13''N 21°26'27''E;;
+100;Onagawa Nuclear Power Plant;3;2,089;Japan;38°24'04''N 141°29'59''E;;
+101;Oskarshamn Nuclear Power Plant;3;2,511;Sweden;57°24'56''N 16°40'16''E;;
+102;Paks Nuclear Power Plant;4;1,889;Hungary;46°34'21''N 18°51'15''E;;
+103;Palo Verde Nuclear Generating Station;3;4,214;United States;33°23'21''N 112°51'54''W;;
+104;Paluel Nuclear Power Plant;4;5,32;France;49°51'29''N 00°38'08''E;;
+105;Penly Nuclear Power Plant;2;2,66;France;49°58'36''N 01°12'43''E;;
+106;Peach Bottom Nuclear Generating Station;2;2,234[note 24];United States;39°45'30''N 76°16'05''W;;
+107;Perry Nuclear Generating Station;1;1,24;United States;41°48'03''N 81°08'36''W;;
+108;Philippsburg Nuclear Power Plant;2;1,402[note 25];Germany;49°15'09''N 08°26'11''E;;
+109;Pickering Nuclear Generating Station;6;3,094[note 26];Canada;43°48'42''N 79°03'57''W;;
+110;Point Beach Nuclear Plant;2;1,027;United States;44°16'52''N 87°32'12''W;;
+111;Prairie Island Nuclear Power Plant;2;1,114;United States;44°37'18''N 92°37'59''W;;
+112;Qinshan Nuclear Power Plant;7;4,038;China;30°26'08''N 120°57'23''E;;
+113;Quad Cities Nuclear Generating Station;2;1,774;United States;41°43'35''N 90°18'36''W;;
+114;Rajasthan Atomic Power Station;6;1,085[note 27];India;24°52'20''N 75°36'50''E;;
+115;Ringhals Nuclear Power Plant;4;3,649;Sweden;57°15'35''N 12°06'39''E;;
+116;Rivne Nuclear Power Plant;4;2,645;Ukraine;51°19'40''N 25°53'30''E;;
+117;Rostov Nuclear Power Plant;2;1,900[note 28];Russia;47°35'58''N 42°22'19''E;;
+118;Saint-Alban Nuclear Power Plant;2;2,67;France;45°24'16''N 04°45'16''E;;
+119;Saint-Laurent Nuclear Power Plant;2;1,830[note 29];France;47°43'12''N 01°34'39''E;;
+120;Saint Lucie Nuclear Power Station;2;1,678;United States;27°20'55''N 80°14'47''W;;
+121;Salem Nuclear Power Plant;2;2,332;United States;39°27'46''N 75°32'08''W;;
+122;Seabrook Station Nuclear Power Plant;1;1,247;United States;42°53'56''N 70°51'03''W;;
+123;Sendai Nuclear Power Plant;2;1,692;Japan;31°50'01''N 130°11'23''E;;
+124;Sequoyah Nuclear Generating Station;2;2,278;United States;35°13'35''N 85°05'30''W;;
+125;Shika Nuclear Power Plant;2;1,613;Japan;37°03'40''N 136°43'35''E;;
+126;Shimane Nuclear Power Plant;2;1,228[note 30];Japan;35°32'18''N 132°59'57''E;;
+127;Shin Kori Nuclear Power Plant;6;1,945[note 31];South Korea;35°19'12''N 129°17'47''E;;
+128;Sizewell-B Nuclear Power Station;1;1,188;United Kingdom;52°12'48''N 01°37'07''E;;
+129;Smolensk Nuclear Power Plant;3;2,775;Russia;54°10'09''N 33°14'48''E;;
+130;South Texas Nuclear Generating Station;2;2,56;United States;28°47'44''N 96°02'56''W;;
+131;South Ukraine Nuclear Power Plant;3;2,85;Ukraine;47°49'00''N 31°13'00''E;;
+132;Surry Nuclear Power Plant;2;1,638;United States;37°09'56''N 76°41'52''W;;
+133;Susquehanna Steam Electric Station;2;2,429;United States;41°05'20''N 76°08'56''W;;
+134;Takahama Nuclear Power Plant;4;3,22;Japan;35°31'20''N 135°30'17''E;;
+135;Tarapur Atomic Power Station;4;1,28;India;19°49'40''N 72°39'40''E;;
+136;Temelin Nuclear Power Station;2;1,926;Czech Republic;49°10'48''N 14°22'34''E;;
+137;Tianwan Nuclear Power Plant;2;1,980[note 32];China;34°41'13''N 119°27'35''E;;
+138;Tihange Nuclear Power Station;3;3,016;Belgium;50°32'05''N 05°16'21''E;;
+139;Tokai Nuclear Power Plant;1;1,060[note 33];Japan;36°27'59''N 140°36'24''E;;
+140;Tomari Nuclear Power Plant;3;1,966;Japan;43°02'10''N 140°30'45''E;;
+141;Torness Nuclear Power Station;2;1,205;United Kingdom;55°58'05''N 02°24'33''W;;
+142;Tricastin Nuclear Power Center;4;3,66;France;44°19'47''N 04°43'56''E;;
+143;Trillo Nuclear Power Plant;1;1,003;Spain;40°42'04''N 02°37'19''W;;
+144;Tsuruga Nuclear Power Plant;2;1,448;Japan;35°40'22''N 136°04'38''E;;
+145;Turkey Point Nuclear Generating Station;2;1,386;United States;25°26'03''N 80°19'50''W;;
+146;Vandellòs Nuclear Power Station;1;1,045[note 34];Spain;40°57'05''N 00°52'00''E;;
+147;Vogtle Electric Generating Plant;2;2,302[note 35];United States;33°08'35''N 81°45'57''W;;
+148;Waterford Nuclear Generating Station;1;1,168;United States;29°59'43''N 90°28'16''W;;
+149;Watts Bar Nuclear Generating Station;1;1,123[note 36];United States;35°36'10''N 84°47'22''W;;
+150;Wolf Creek Generating Station;1;1,16;United States;38°14'20''N 95°41'20''W;;
+151;Wolseong Nuclear Power Plant;4;2,722;South Korea;35°42'40''N 129°28'30''E;;
+152;Yangjiang Nuclear Power Plant;1;1,000[note 37];China;21°42'35''N 112°15'38''E;;
+153;Zaporizhzhia Nuclear Power Plant;6;5,7;Ukraine;47°30'44''N 34°35'09''E;;
+154;Atucha Nuclear Power Plant;;1,027[note 38];Argentina;33°58'3''S 59°12'18''W;1981;2014
+155;Barakah Nuclear Power Plant;;2,69;UAE;23°59'6''N 52°17'1''E;2012;2017
+156;Belarusian Nuclear Power Plant;;2,4;Belarus;54°45'43''N 26°7'12''E;2012;2018
+157;Beloyarsk-4 (BN-800);;1,364[note 39];Russia;56°50'30''N 61°19'21''E;2006;2014
+158;Changjiang Nuclear Power Plant;;1,22;China;19°25'23''N 108°48'45''E;2010;2014
+159;Fangchenggang Nuclear Power Plant;;2;China;21°40'36''N 108°33'38''E;2010;2015
+160;Fangjiashan Nuclear Power Plant;;2;China;30°26'29''N 120°56'30''E;2008;2014
+161;Fuqing Nuclear Power Plant;;3;China;25°26'39''N 119°26'46''E;2008;2014
+162;Haiyang Nuclear Power Plant;;2;China;36°42'33''N 121°22'54''E;2009;2014
+163;Kakrapar-3;;1,664[note 40];India;21°14'19''N 73°21'00''E;2010;2015
+164;Kaliningrad Nuclear Power Plant;;1,082;Russia;54°56'20''N 22°09'40''E;2012;2017
+165;Leningrad Nuclear Power Plant II;;2,17;Russia;59°49'50''N 29°3'26''E;2008;2015
+166;Lungmen Nuclear Power Plant;;2,6;Taiwan;25°02'19''N 121°55'27''E;1999;2014
+167;Mochovce Nuclear Power Plant;;1,654[note 41];Slovakia;48°15'50''N 18°27'25''E;1987;2015
+168;?ma Nuclear Power Plant;;1,325;Japan;41°30'35''N 140°54'37''E;2010;2014
+169;Sanmen Nuclear Power Station;;2;China;29°06'04''N 121°38'23''E;2009;2014
+170;Shin Hanul Nuclear Power Plant;;2,68;South Korea;37°05'34''N 129°23'01''E;2012;2017
+171;Shin Wolseong Nuclear Power Plant;;1,920[note 42];South Korea;35°43'20''N 129°28'44''E;2007;2014
+172;Taishan Nuclear Power Plant;;3,4;China;21°54'34''N 112°58'45''E;2009;2014
+173;Virgil C. Summer Nuclear Power Plant;;2,088[note 43];USA;34°17'55''N 81°18'53''W;2013;2017
+174;Barsebäck Nuclear Power Plant;;1,2;Sweden;55°44'40''N 12°55'15''E;;
+175;Biblis Nuclear Power Plant;;2,407;Germany;49°42'36''N 08°24'55''E;;
+176;Bohunice Nuclear Power Plant;;1,760[note 44];Slovakia;48°29'40''N 17°40'55''E;;
+177;Chernobyl Nuclear Power Plant;;3,515;Ukraine;51°23'22''N 30°05'57''E;;
+178;Fukushima Daiichi Nuclear Power Plant;;4,546;Japan;37°25'17''N 141°01'57''E;;
+179;Greifswald Nuclear Power Plant;;2,04;Germany;54°08'26''N 13°39'52''E;;
+180;Ignalina Nuclear Power Plant;;2,37;Lithuania;55°36'16''N 26°33'36''E;;
+181;Krümmel Nuclear Power Plant;;1,346;Germany;53°24'36''N 10°24'32''E;;
+182;Mülheim-Kärlich Nuclear Power Plant;;1,219;Germany;50°24'29''N 07°29'24''E;;
+183;Three Mile Island Nuclear Generating Station;;1,685[note 45];United States;40°09'14''N 76°43'29''W;;
+184;San Onofre Nuclear Generating Station;;2,586[note 46];United States;33°22'08''N 117°33'18''W;;
+185;Superphénix;;1,2;France;45°45'30''N 05°28'20''E;;
+186;Trojan Nuclear Power Plant;;1,095;United States;46°02'18''N 122°53'06''W;;
+187;Unterweser Nuclear Power Plant;;1,345;Germany;53°25'40''N 08°28'49''E;;
+188;Zion Nuclear Power Station;;2,08;United States;42°26'47''N 87°48'11''W;;
