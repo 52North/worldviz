@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.n52.v3d.triturus.vgis.VgFeature;
-import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
-import org.n52.v3d.worldviz.featurenet.VgFlow;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
 
 /**
@@ -14,16 +12,14 @@ import org.n52.v3d.worldviz.featurenet.VgRelation;
  * 
  * @author Benno Schmidt
  */
-public class WvizFlowNet extends VgFeatureNet {
+public class WvizFlowNet extends WvizUniversalFeatureNet {
 		
-	private ArrayList<VgFeature> features;
-	private ArrayList<VgRelation> relations;
-
 	/**
 	 * Constructor.
+	 * Note that relations that do not specify flows (undirected, unweighted relations) will be ignored. 
 	 * 
 	 * @param features Set of geo-objects (graph nodes) 
-	 * @param relations Set of relations between geo-objects (graph edges)
+	 * @param relations Set of relations between geo-objects (directed, weighted graph edges)
 	 */
 	public WvizFlowNet(
 			Collection<VgFeature> features, Collection<VgRelation> relations) 
@@ -34,15 +30,17 @@ public class WvizFlowNet extends VgFeatureNet {
 		}
 		this.relations = new ArrayList<VgRelation>();
 		for (VgRelation r : relations) {
-			this.relations.add(r);
+			if (r instanceof WvizFlow)
+				this.relations.add(r);
 		}
 	}
 
 	/**
 	 * Constructor.
+	 * Note that relations that do not specify flows (undirected, unweighted relations) will be ignored. 
 	 * 
 	 * @param features Set of geo-objects (graph nodes) 
-	 * @param relations Set of relations between geo-objects (graph edges)
+	 * @param relations Set of relations between geo-objects (directed, weighted graph edges)
 	 */
 	public WvizFlowNet(
 			VgFeature[] features, VgRelation[] relations) 
@@ -53,83 +51,8 @@ public class WvizFlowNet extends VgFeatureNet {
 		}
 		this.relations = new ArrayList<VgRelation>();
 		for (VgRelation r : relations) {
-			this.relations.add(r);
+			if (r instanceof WvizFlow)
+				this.relations.add(r);
 		}
 	}
-	
-	/**
-	 * Gets the flow net's geo-objects.
-	 * 
-	 * @return Set of geo-objects (graph nodes)
-	 */
-	public Collection<VgFeature> getFeatures() {
-		return this.features;
-	}
-	
-	/**
-	 * Gets the flows between the geo-objects that are held in the flow net.
-	 * 
-	 * @return Set of geo-object relations (graph edges)
-	 */
-	public Collection<VgRelation> getRelations() {
-		return this.relations;
-	}
-
-	/*
-	public int numberOfFeatures() {
-		if (this.features == null)
-			return 0;
-		else
-			return this.features.size();
-	}
-	*/
-	
-	/**
-	 * gets the outflows for a given feature, i.e. the graph edges directing away from a node.
-	 *
-	 * TODO: Note that this method is not algorithmically efficient. Later, for big numbers of 
-	 * nodes and edges, we could add an extended class WvizFlowNetTopo or sth similar. 
-	 * 
-	 * @param feature Flow net node
-	 * @return
-	 */
-	public VgFlow[] getOutFlows(VgFeature feature) {
-		return this.getFlows(feature, 'o');
-	}
-
-	/**
-	 * gets the influxes for a given feature, i.e. the graph edges directing to a node.
-	 * 
-	 * TODO: Note that this method is not algorithmically efficient. Later, for big numbers of 
-	 * nodes and edges, we could add an extended class WvizFlowNetTopo or sth similar. 
-	 * 
-	 * @param feature Flow net node
-	 * @return
-	 */
-	public VgFlow[] getInFlows(VgFeature feature) {
-		return this.getFlows(feature, 'i');
-	}
-	
-	private VgFlow[] getFlows(VgFeature feature, char inOrOut) {
-		ArrayList<VgFlow> res = new ArrayList<VgFlow>();
-		for (VgRelation r : this.relations) {
-			if (inOrOut == 'o') {
-				if (r.getFrom() == feature) {
-					res.add((VgFlow) r);
-				}
-			}
-			else {
-				if (r.getTo() == feature) {
-					res.add((VgFlow) r);
-				}				
-			}
-		}
-		VgFlow[] resArr = new VgFlow[res.size()];
-		int i = 0;
-		for (VgFlow fl : res) {
-			resArr[i] = fl;
-			i++;
-		}
-		return resArr;
-	}	
 }
