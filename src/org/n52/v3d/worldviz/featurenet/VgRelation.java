@@ -9,6 +9,12 @@ import org.n52.v3d.triturus.vgis.VgFeature;
  * Flows of trade between regions, flight connections between airports, or the relation "same official language",
  * which would connect Australia and the United States.
  * 
+ * <table border='1'>
+ *   <tr><td>edge-values:</td><td>not present</td><td>nominally scaled value</td><td>quantitative values</td></tr>
+ *   <tr><td>undirected</td><td><tt>WvizConnection</tt></td><td>not yet implemented</td><td><tt>WvizConnection</tt></td></tr>
+ *   <tr><td>directed</td><td><tt>WvizArc</tt></td><td><tt>WvizArc</tt></td><td><tt>WvizFlow</tt></td></tr>
+ * </table>
+ * 
  * @author Benno Schmidt
  */
 public interface VgRelation 
