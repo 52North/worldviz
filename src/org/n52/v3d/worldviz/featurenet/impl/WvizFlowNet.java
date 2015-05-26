@@ -21,9 +21,7 @@ public class WvizFlowNet extends WvizUniversalFeatureNet {
 	 * @param features Set of geo-objects (graph nodes) 
 	 * @param relations Set of relations between geo-objects (directed, weighted graph edges)
 	 */
-	public WvizFlowNet(
-			Collection<VgFeature> features, Collection<VgRelation> relations) 
-	{
+	public WvizFlowNet(Collection<VgFeature> features, Collection<VgRelation> relations) {
 		this.features = new ArrayList<VgFeature>();
 		for (VgFeature f : features) {
 			this.features.add(f);
@@ -42,9 +40,7 @@ public class WvizFlowNet extends WvizUniversalFeatureNet {
 	 * @param features Set of geo-objects (graph nodes) 
 	 * @param relations Set of relations between geo-objects (directed, weighted graph edges)
 	 */
-	public WvizFlowNet(
-			VgFeature[] features, VgRelation[] relations) 
-	{
+	public WvizFlowNet(VgFeature[] features, VgRelation[] relations) {
 		this.features = new ArrayList<VgFeature>();
 		for (VgFeature f : features) {
 			this.features.add(f);

@@ -18,6 +18,7 @@ public class PajekReaderApp extends FileIO{
             }
             X3DScene x3DScene= new X3DScene(pajekReaderApp.getVertices(),pajekReaderApp.getEdges());
             x3DScene.writeToX3dFile("graph.html");
+            System.out.println("done");
         }
     }
 
