@@ -71,8 +71,8 @@ public class WvizConnection implements VgRelation {
 	
 	public String toString() {
 		if (! this.hasWeight)
-			return "[" + this.from + " -> " + this.to + "]";
+			return "[" + this.from + " <-> " + this.to + "]";
 		else
-			return "[" + this.from + " -> " + this.to + ", weight = " + this.weight + "]";				
+			return "[" + this.from + " <-> " + this.to + ", weight = " + this.weight + "]";				
 	}
 }
