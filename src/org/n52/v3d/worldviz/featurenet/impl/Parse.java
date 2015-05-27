@@ -6,6 +6,7 @@ public class Parse extends PrettyPrint{
 
     public static final String VERTEX_KEYWORD = "*Vertices";
     public static final String EDGE_KEYWORD = "*Edges";
+    public static final String ARC_KEYWORD = "*Arcs";
     public static final char COMMENT_KEYWORD = '%';
 
     public static final String NUMBER_ERROR = "There should be a number here!";
@@ -17,10 +18,12 @@ public class Parse extends PrettyPrint{
     private static boolean isVerticesGoingOn = false;
     private static boolean isEdgesOver = false;
     private static boolean isEdgesGoingOn = false;
-
+    private static boolean isArcsOver = false;
+    private static boolean isArcsGoingOn = false;
+    
     public ArrayList<Vertex> vertexArrayList = new ArrayList<Vertex>();
     public ArrayList<Edge> edgeArrayList = new ArrayList<Edge>();
-
+    public ArrayList<Arc> arcArrayList = new ArrayList<Arc>();
 
     public ArrayList getVertices(){
         return vertexArrayList;
@@ -30,6 +33,11 @@ public class Parse extends PrettyPrint{
         return edgeArrayList;
     }
 
+    public ArrayList getArcs(){
+        return arcArrayList;
+    }
+
+    
     public String format(String line){
         line = line.trim();
         line = line.replaceAll("\\s+", " "); // Remove extra spaces
@@ -129,7 +137,45 @@ public class Parse extends PrettyPrint{
         }
     }
 
+    //ParseArc is exactly the same as parseEdge, with few minor changes
+    public boolean parseArc(String line){
+        line = format(line);
+        if(isComment(line)){
+            return true;
+        }
+        else {
+            String[] parts = line.split(" ");
+            if (parts.length == 3) {
+                boolean allCorrect = false;
+                int firstVertex,secondVertex,weight;
+                firstVertex = secondVertex = weight = 0;
+                try {
+                    firstVertex = Integer.parseInt(parts[0]);
+                    secondVertex = Integer.parseInt(parts[1]);
+                    weight = Integer.parseInt(parts[2]);
+                    allCorrect = true;
+                }
+                catch (NumberFormatException nfe) {
+                    System.err.println(NUMBER_ERROR);
+                    return false;
+                }
+                if (allCorrect) {
+                    Arc arc = new Arc(firstVertex,secondVertex,weight);
+                    arcArrayList.add(arc);
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            } else {
+                System.err.println("Currently supports only Number + label + Coordinates format");
+                return false;
+            }
+        }
+    }
 
+    
+    
     public boolean isVertexDeclaration(String line){
         if(line.startsWith(VERTEX_KEYWORD)){
             return true;
@@ -179,7 +225,16 @@ public class Parse extends PrettyPrint{
         }
     }
 
-
+    public boolean isArcDeclaration(String line){
+        line = line.trim();
+        if(line.startsWith(ARC_KEYWORD) && line.length()==5){
+            //If there are more characters than count(*Arcs), it is definitely wrong!
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     public boolean isComment(String line){
         if(line.charAt(0) == COMMENT_KEYWORD){
             return true;
@@ -213,8 +268,14 @@ public class Parse extends PrettyPrint{
                             value = false;
                         }
                     }
+                    else if(isArcsGoingOn && !isArcsOver){
+                        if(!parseArc(line)){
+                            System.err.println("Error!");
+                            value = false;
+                        }
+                    }
                     else{
-                        //Expecting a Comment or Vertex declaration or Edge declaration
+                        //Expecting a Comment or Vertex declaration or Edge or Arc declaration
                         if(isComment(line)){
                             //Do absolutely nothing!
                         }
@@ -231,6 +292,10 @@ public class Parse extends PrettyPrint{
                         else if(isEdgeDeclaration(line)){
                             isEdgesGoingOn = true;
                             isEdgesOver = false;
+                        }
+                        else if(isArcDeclaration(line)){
+                            isArcsGoingOn = true;
+                            isArcsOver = false;
                         }
                         else{
                             //It's pure gibberish!

@@ -1,18 +1,19 @@
-package org.n52.v3d.worldviz.featurenet;
+package org.n52.v3d.worldviz.featurenet.impl;
 
 import org.n52.v3d.triturus.vgis.VgFeature;
+import org.n52.v3d.worldviz.featurenet.VgRelation;
 
 /**
  * A VgFlow describes a directed, weighted relation between two geo-objects ("features").
  * 
  * @author Benno Schmidt
  */
-public class VgFlow implements VgRelation {
+public class WvizFlow implements VgRelation {
 	
 	private VgFeature from, to;
 	private double flowRate;
 
-	public VgFlow(VgFeature from, VgFeature to, double flowRate) {
+	public WvizFlow(VgFeature from, VgFeature to, double flowRate) {
 		this.from = from;
 		this.to = to;
 		this.flowRate = flowRate;
@@ -43,8 +44,7 @@ public class VgFlow implements VgRelation {
 	}
 	
 	public String toString() {
-		return "[" +
-				this.from + " -> " + this.to + ", flow rate = " + this.flowRate + "]";
+		return "[" + this.from + " -> " + this.to + ", flow rate = " + this.flowRate + "]";
 				
 	}
 }

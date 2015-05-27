@@ -4,8 +4,8 @@ import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
-import org.n52.v3d.worldviz.featurenet.VgFlow;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
+import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
 import org.n52.v3d.worldviz.featurenet.impl.WvizFlowNet;
 
 /**
@@ -34,9 +34,9 @@ public class FeatureNetTest {
 		
 		VgRelation[] edges = new VgRelation[3];
 		 
-		edges[0] = new VgFlow(nodes[0], nodes[1], 5.);
-		edges[1] = new VgFlow(nodes[1], nodes[2], 6.);
-		edges[2] = new VgFlow(nodes[2], nodes[1], 7.);
+		edges[0] = new WvizFlow(nodes[0], nodes[1], 5.);
+		edges[1] = new WvizFlow(nodes[1], nodes[2], 6.);
+		edges[2] = new WvizFlow(nodes[2], nodes[1], 7.);
 		
 		VgFeatureNet net = new WvizFlowNet(nodes, edges);
 
@@ -44,17 +44,17 @@ public class FeatureNetTest {
 		
 		for (VgFeature f : net.getFeatures()) {
 			System.out.println(f);
-			VgFlow[] out = (VgFlow[]) ((WvizFlowNet) net).getOutFlows(f);
+			WvizFlow[] out = (WvizFlow[]) ((WvizFlowNet) net).getOutFlows(f);
 			if (out != null && out.length > 0) {
 				System.out.println("  Out flows:");
-				for (VgFlow fl : out) {
+				for (WvizFlow fl : out) {
 					System.out.println("    " + fl);			
 				}
 			}
-			VgFlow[] in = (VgFlow[]) ((WvizFlowNet) net).getInFlows(f);
+			WvizFlow[] in = (WvizFlow[]) ((WvizFlowNet) net).getInFlows(f);
 			if (in != null && in.length > 0) {
 				System.out.println("  In flows:");
-				for (VgFlow fl : in) {
+				for (WvizFlow fl : in) {
 					System.out.println("    " + fl);			
 				}
 			}
