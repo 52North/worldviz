@@ -11,7 +11,7 @@ public class FillDataset_HardCoal {
 		String xmlFileLocation = RelativePaths.HARD_COAL_RESOURCES_XML;
 		String csvFileLocation = RelativePaths.HARD_COAL_RESOURCES_CSV;
 		Character csvSeperator = ';';
-		String[] csvHeaders = new String[] { "Kürzel", "Förderung", "Reserven",
+		String[] csvHeaders = new String[] { "Kuerzel", "Foerderung", "Reserven",
 				"Ressourcen", "Verbl. Potenzial" };
 		String nullValue = "-";
 		String zeroValue = "NODATA";

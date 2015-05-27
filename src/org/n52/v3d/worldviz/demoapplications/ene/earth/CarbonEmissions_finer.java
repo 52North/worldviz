@@ -84,7 +84,7 @@ public class CarbonEmissions_finer {
 		System.out.println("Success!");
 		long endTime = System.currentTimeMillis();
 
-		System.out.println("benötigte Zeit: " + (endTime - startTime) / 1000
+		System.out.println("required time: " + (endTime - startTime) / 1000
 				+ "s");
 
 		System.out.println("Average: " + average);

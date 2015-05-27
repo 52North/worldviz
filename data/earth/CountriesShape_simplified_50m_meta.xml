@@ -16,23 +16,23 @@ Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univers
 		<AlternativeURIs><!--The follwing URI links to the website where the direct download link from above is from.-->
 			<URI>http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/</URI><!--The following URI represents the direkt download link to the shape file-->
 		</AlternativeURIs>
-		<Notes>Bie diesem Datensatz handelt es sich um generalisierte De-Facto-Grenzen. Durch die Generalisierung in einem Maßstab von 1:50m sind kleine Inseln/Länder nicht mehr enthalten! 
-		Insgesamt sind noch 241 von 255 Ländern abgebildet. (255 Länder beziehen sich auf den Datensatz im Maßstab von 1:10m von www.naturalearthdata.com)</Notes>
+		<Notes>Bie diesem Datensatz handelt es sich um generalisierte De-Facto-Grenzen. Durch die Generalisierung in einem Maßstab von 1:50m sind kleine Inseln/Laender nicht mehr enthalten! 
+		Insgesamt sind noch 241 von 255 Laendern abgebildet. (255 Laender beziehen sich auf den Datensatz im Maßstab von 1:10m von www.naturalearthdata.com)</Notes>
 	</Source>
 	<CopyrightInformation>Nathaniel Vaughn KELSO, Project Manager - http://www.naturalearthdata.com/</CopyrightInformation><!-- Copyright Informationen-->
 	<ImportProcess>
-		<Description language="DE"><!-- Erklärung der Arbeitsabfolge-->
-	   		Die Shape-Datei kann direkt zusammen mit den ergänzenden DBF-, PRJ- sowie SHX-Dateien unter dem Punkt "Admin 0 – Countries" als ZIP-Archiv heruntergeladen werden. 
-			Die Option "Download Countries" zeigt auf ein ZIP-Archiv mit den politischen Grenzen der Länder, während die Option "Download without boundary lakes" eventuelle 
-			Seetopographien (Trennung von Ländern durch Seegrenzen) beinhaltet.
-			Für dieses Projekt wurde die erste Option (de-facto Grenzen) genutzt.
-	   		Nach Extraktion in den Ordner "ne_50m_admin_0_countries" stehen alle Dateien unmittelbar zur Verfügung.
+		<Description language="DE"><!-- Erklaerung der Arbeitsabfolge-->
+	   		Die Shape-Datei kann direkt zusammen mit den ergaenzenden DBF-, PRJ- sowie SHX-Dateien unter dem Punkt "Admin 0 – Countries" als ZIP-Archiv heruntergeladen werden. 
+			Die Option "Download Countries" zeigt auf ein ZIP-Archiv mit den politischen Grenzen der Laender, waehrend die Option "Download without boundary lakes" eventuelle 
+			Seetopographien (Trennung von Laendern durch Seegrenzen) beinhaltet.
+			Fuer dieses Projekt wurde die erste Option (de-facto Grenzen) genutzt.
+	   		Nach Extraktion in den Ordner "ne_50m_admin_0_countries" stehen alle Dateien unmittelbar zur Verfuegung.
 	   		
-	   		Hinweis: Die DBF-Datei wurde zusätzlich mit Hilfe von Microsoft Excel in eine äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes_simplified_50m.xml" zu erzeugen. 
+	   		Hinweis: Die DBF-Datei wurde zusaetzlich mit Hilfe von Microsoft Excel in eine aequivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes_simplified_50m.xml" zu erzeugen. 
 			Siehe auch "CountryCodes_simplified_50m_meta.xml".
 			
-			Update(29.04.2015): ISO3166-Einträge von Kosovo und Somaliland geändert. Eigentlich ist bei beiden kein offizielles ISO3166-Kennzeichen existent. 
-			Diese werden aber für eine eindeutige Referenzierung benötigt. Daher wurden die Kürzel 'KV' und 'KSV' für Kosovo sowie 'SOL' und 'SOL' für Somaliland benutzt.
+			Update(29.04.2015): ISO3166-Eintraege von Kosovo und Somaliland geaendert. Eigentlich ist bei beiden kein offizielles ISO3166-Kennzeichen existent. 
+			Diese werden aber fuer eine eindeutige Referenzierung benoetigt. Daher wurden die Kuerzel 'KV' und 'KSV' fuer Kosovo sowie 'SOL' und 'SOL' fuer Somaliland benutzt.
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

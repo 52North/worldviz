@@ -9,7 +9,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
@@ -32,15 +32,15 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 	<ImportProcess>
 		<Description language="DE">
 	   		Von obiger URL (siehe 'URI'-Tag) wurde der Datensatz 'Population - Total both Sexes' als CSV-Datei bezogen. 
-			Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen müssen beim Auslesen der Datei geskipped werden. Erst in Zeile fünf befinden sich die Spaltenüberschriften.
-	   		Die CSV-Datei wurde schließlich genutzt, um über ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'Population.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
+			Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen mueessen beim Auslesen der Datei geskipped werden. Erst in Zeile fueenf befinden sich die Spaltenueeberschriften.
+	   		Die CSV-Datei wurde schließlich genutzt, um ueeber ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'Population.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
 	   		Die weiteren Informationen der 'Population.xml'-Datei wurden per Hand eingetragen.
 			
 			Nachtrag vom 03.06.2014:
-	   		Der Datensatz für "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
+	   		Der Datensatz fueer "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
 	   	</Description>
 		<QualityCheck date="2014-04-28 +09:00" responsiblePerson="Christian Danowski">
-	   		Datensätze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+	   		Datensaetze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
 	   	</QualityCheck>
 	</ImportProcess>
 </DatasetDescription>

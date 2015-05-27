@@ -35,8 +35,8 @@ import org.n52.v3d.worldviz.triturusextensions.mappers.NamesForAttributes;
  */
 public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
-	// TODO Bezeichner des Landes für das DEF in X3D darf nicht verloren gehen
-	// (zwecks Klick auf ein Land und Abfrage zusätzlicher Parameter!) -->
+	// TODO Bezeichner des Landes fuer das DEF in X3D darf nicht verloren gehen
+	// (zwecks Klick auf ein Land und Abfrage zusaetzlicher Parameter!) -->
 	// Kopplung durch EAI/SAI???
 
 	protected final double offsetForBorders = 0.001;

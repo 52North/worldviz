@@ -22,11 +22,11 @@ Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univers
 	</Source>
 	<CopyrightInformation>Bjorn Sandvik - thematicmapping.org</CopyrightInformation><!-- Copyright Informationen-->
 	<ImportProcess>
-		<Description language="DE"><!-- Erklärung der Arbeitsabfolge-->
+		<Description language="DE"><!-- Erklaerung der Arbeitsabfolge-->
 		Die CountriesPoint.xml wurde aus CoutriesShape erstellt. 
-		Dafür wurde die Quelldatei (TM_World_Borders03.shp) in QGIS eingeladen und als CSV (CountriesPoint.csv) exportiert.
-		Dadurch erhält man eine CSV, welche die Daten der Shapedatei (Ländercodes, Einwohner,...) und einen
-		Landesmittelpunkt enthält. Mit Excel wurde diese CSV geladen und eine XML und KML-Struktur aufgebaut (CountriesPoint.xlsx)
+		Dafuer wurde die Quelldatei (TM_World_Borders03.shp) in QGIS eingeladen und als CSV (CountriesPoint.csv) exportiert.
+		Dadurch erhaelt man eine CSV, welche die Daten der Shapedatei (Laendercodes, Einwohner,...) und einen
+		Landesmittelpunkt enthaelt. Mit Excel wurde diese CSV geladen und eine XML und KML-Struktur aufgebaut (CountriesPoint.xlsx)
 		Ergebnis: CountriesPoint.xml und kml/CountriesPoint.kml
 	   	</Description>
 	</ImportProcess>

@@ -12,7 +12,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 	<SpatialScaleHint>World-wide</SpatialScaleHint>
  <!-- Weltweite abdeckung-->
 	<!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	--> 
 	<CovereredTime />
@@ -30,9 +30,9 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
  <!-- Copyright Informationen-->
 	<ImportProcess>
 		<Description language="DE">
- <!-- Erklärung der Arbeitsschritte-->
-	   		Das Image lässt sich problemlos aus dem Web herunterladen. Zu beachten ist, dass die Pixel sich auf das
-	   		lon/lat-Koordinatensystem der Erde beziehen müssen!
+ <!-- Erklaerung der Arbeitsschritte-->
+	   		Das Image laesst sich problemlos aus dem Web herunterladen. Zu beachten ist, dass die Pixel sich auf das
+	   		lon/lat-Koordinatensystem der Erde beziehen muessen!
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

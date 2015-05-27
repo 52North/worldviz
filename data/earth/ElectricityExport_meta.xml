@@ -8,7 +8,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
@@ -28,7 +28,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 	<CopyrightInformation/>
 	<ImportProcess>
 		<Description language="DE">
-Auf Wikipedia wurde diese Tabelle gefunden und per Hand in Excel übertragen. Nach dem die Tabelle übernommen wurde, wurde mithilfe von Excel eine CSV Datei erstellt. Dies wurde in das Java Programm eingefügt um darzustellen wieviel Strom Exportiert wird. 
+Auf Wikipedia wurde diese Tabelle gefunden und per Hand in Excel uebertragen. Nach dem die Tabelle uebernommen wurde, wurde mithilfe von Excel eine CSV Datei erstellt. Dies wurde in das Java Programm eingefuegt um darzustellen wieviel Strom Exportiert wird. 
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

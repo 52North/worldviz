@@ -8,7 +8,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 	<GeneralInformation>
 		<Theme>
 			<Title language="EN">Global flows of trade</Title>
-			<Title language="DE">Welthandelsströme</Title>
+			<Title language="DE">Welthandelsstroeme</Title>
 			<Description>
 			This dataset gives the flows of trade (volumes greater than 30 billion US-$ only, for 2004) in Pajek format. 
 			Internal trades (volumes in billion US-$, 2004) are given by loops, i.e. arcs with from-vertex = to-vertex. 
@@ -16,7 +16,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 			</Description>
 		</Theme>
 		<Unit>Billion US-$</Unit>
-		<PublicReference>Dr. Peter Güttler, Berlin</PublicReference>
+		<PublicReference>Dr. Peter Guettler, Berlin</PublicReference>
 		<MetadataReference>Flows_of_trade_meta.xml</MetadataReference>
 	</GeneralInformation>
 	<TableStructure>

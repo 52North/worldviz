@@ -8,8 +8,8 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<Theme>
 			<Title language="EN">Carbon emissions</Title><!-- Titel bezogen auf die Sprache: Englisch-->
 			<Title language="DE">C02-Emissionen</Title><!-- Titel bezogen auf die Sprache: Deutsch-->
-			<Description language="EN">This dataset gives the yearly carbon emissions for the World's countries.</Description><!-- Erklärung auf Englisch-->
-			<Description language="DE">Dieser Datensatz enthält staatenweise die jährlichen, weltweiten CO2-Emissionen.</Description><!-- Erklärung auf Deutsch-->
+			<Description language="EN">This dataset gives the yearly carbon emissions for the World's countries.</Description><!-- Erklaerung auf Englisch-->
+			<Description language="DE">Dieser Datensatz enthaelt staatenweise die jaehrlichen, weltweiten CO2-Emissionen.</Description><!-- Erklaerung auf Deutsch-->
 		</Theme>
 		<Unit>
 			<Title>Gigagrams per year</Title><!-- Einheiten auf welche sich die gegebenen Daten beziehen: Englisch-->
@@ -19,7 +19,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<MetadataReference>CarbonEmissions_meta.xml</MetadataReference><!-- Referenz der Metadatendatei-->
 	</GeneralInformation>
 	<TableStructure>
-		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezüglich der Länderkürzel-->
+		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezueglich der Laenderkuerzel-->
 			<Title>Country code</Title><!-- Titel-->
 			<Description>Country code ISO 3166-2</Description><!-- For geo-referenced 
 properties, a GeoReference element should be present: -->

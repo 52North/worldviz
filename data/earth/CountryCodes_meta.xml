@@ -27,15 +27,15 @@ Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univers
  <!-- Copyright Informationen-->
 	<ImportProcess>
 		<Description language="DE">
- <!-- Erklärung der Arbeitsschritte-->
+ <!-- Erklaerung der Arbeitsschritte-->
 	   		Ein ZIP-Archiv mit den weltweiten Staatsgrenzen kann direkt heruntergeladen werden.
-	   		Nach Extraktion in den Ordner "TM_WORLD_BORDERS-0.3" steht insbesondere die Datei "TM_WORLD_BORDERS-0.3.dbf" zur Verfügung.
+	   		Nach Extraktion in den Ordner "TM_WORLD_BORDERS-0.3" steht insbesondere die Datei "TM_WORLD_BORDERS-0.3.dbf" zur Verfuegung.
 	   		Diese wurde mit Hilfe von Microsoft Excel in eine 
-			äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes.xml" zu erzeugen. 
+			aequivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes.xml" zu erzeugen. 
 	   		Die DBF-/CSV-Datei umfasste bereits die ISO3166-ALPHA-2-Codes und ISO3166-ALPHA-3-Codes sowie den englischen Bezeichner jedes Staates. 
-	   		Somit konnte mittels eines eigens entwickelten Java-Programms der 'Entry'-Abschnitt der "CountryCodes.xml"-Datei mit diesen drei Informationen gefüllt werden.
+	   		Somit konnte mittels eines eigens entwickelten Java-Programms der 'Entry'-Abschnitt der "CountryCodes.xml"-Datei mit diesen drei Informationen gefuellt werden.
 	   		In einem zweiten Verarbeitungsschritt wurde die "CountryCodes.xml"-Datei in ein Java-Programm eingelesen und es wurde mittels des Java-Objects 'Locale' an 
-	   		jeden Staats-Eintrag der deutsche Bezeichner angefügt.
+	   		jeden Staats-Eintrag der deutsche Bezeichner angefuegt.
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

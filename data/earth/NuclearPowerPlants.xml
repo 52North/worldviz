@@ -8,7 +8,7 @@
 			<Description language="DE">Liste von Atomkraftwerksstandorten</Description>
 		</Theme>
 		<Unit>
-			<Title>Längen- und Breitengrad WGS84</Title>
+			<Title>Laengen- und Breitengrad WGS84</Title>
 			<Code>EPSG:4326</Code>
 		</Unit>
 		<PublicReference/>
@@ -22,7 +22,7 @@
 		</Property>
 		<Property dataType="int">
 			<Title>ID</Title>
-			<Description language="DE">Durchlaufende eindeutige ID für jedes AKW
+			<Description language="DE">Durchlaufende eindeutige ID fuer jedes AKW
 					</Description>
 		</Property>
 		<Property dataType="string">
@@ -52,7 +52,7 @@
 		</Property>
 		<Property dataType="string">
 			<Title>LOCATION1</Title>
-			<Description language="DE">Breiten- und Längengrad in Grad, Minute, Sekunde [°,';'']
+			<Description language="DE">Breiten- und Laengengrad in Grad, Minute, Sekunde [°,';'']
 					</Description>
 		</Property>
 		<Property dataType="string">
@@ -67,7 +67,7 @@
 		</Property>
 		<Property dataType="string">
 			<Title>LOCATION2</Title>
-			<Description language="DE">Längen- und Breitengrad in Dezimalschreibweise
+			<Description language="DE">Laengen- und Breitengrad in Dezimalschreibweise
  als kommaseparierter String
 			</Description>
 			<GeoReference featureType="ENE:Point" externalGeometries="false">
@@ -2326,10 +2326,10 @@
 			<Value>-81.314722222222201,34.2986111111111,0</Value>
 		</Entry>
 		<Entry>
-			<Value>Barsebäck  Nuclear Power Station</Value>
+			<Value>Barsebaeck  Nuclear Power Station</Value>
 			<Value>174</Value>
 			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#Shut_down"List of nuclear power stations</Value>
-			<Value>Barsebäck Nuclear Power Plant</Value>
+			<Value>Barsebaeck Nuclear Power Plant</Value>
 			<Value></Value>
 			<Value>1,2</Value>
 			<Value>Sweden</Value>
@@ -2420,7 +2420,7 @@
 			<Value>Krummel Nuclear Power Station</Value>
 			<Value>181</Value>
 			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
-			<Value>Krümmel Nuclear Power Plant</Value>
+			<Value>Kruemmel Nuclear Power Plant</Value>
 			<Value></Value>
 			<Value>1,346</Value>
 			<Value>Germany</Value>
@@ -2430,10 +2430,10 @@
 			<Value>10.4088888888889,53.41,0</Value>
 		</Entry>
 		<Entry>
-			<Value>Mülheim-Kärlich Nuclear Power Plant</Value>
+			<Value>Muelheim-Kaerlich Nuclear Power Plant</Value>
 			<Value>182</Value>
 			<Value>Source: Wikipedia article http://en.wikipedia.org/wiki/List_of_nuclear_power_stations#cite_ref-55"List of nuclear power stations</Value>
-			<Value>Mülheim-Kärlich Nuclear Power Plant</Value>
+			<Value>Muelheim-Kaerlich Nuclear Power Plant</Value>
 			<Value></Value>
 			<Value>1,219</Value>
 			<Value>Germany</Value>

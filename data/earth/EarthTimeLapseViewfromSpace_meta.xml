@@ -12,7 +12,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 	<SpatialScaleHint>World-wide</SpatialScaleHint>
  <!-- Weltweite abdeckung-->
 	<!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	--> 
 	<CovereredTime />
@@ -31,7 +31,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
  <!-- Copyright Informationen-->
 	<ImportProcess>
 		<Description language="DE">
- <!-- Erklärung der Arbeitsschritte-->
+ <!-- Erklaerung der Arbeitsschritte-->
 	   		Direkt auf der Webseite kann man nach unten scrollen und dort downloads des Videos finden.
 	   	</Description>
 	</ImportProcess>

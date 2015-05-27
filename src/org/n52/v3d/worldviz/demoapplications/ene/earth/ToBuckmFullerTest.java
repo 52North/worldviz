@@ -247,8 +247,7 @@ public class ToBuckmFullerTest {
 			}
 
 		}
-		return vgTINs; // TODO überarbeiten --> Fehlermeldung werfen, dass
-						// nur GmSimpleTINGeometry unterstützt wird
+		return vgTINs;
 	}
 
 	private static void calcColor(double attributeValue) {

@@ -96,7 +96,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>AT</Value>
 			<Value>Austria</Value>
 			<Value>AUT</Value>
-			<Value>Österreich</Value>
+			<Value>oesterreich</Value>
 		</Entry>
 		<Entry>
 			<Value>AU</Value>
@@ -234,7 +234,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>CI</Value>
 			<Value>C¶te d'Ivoire</Value>
 			<Value>CIV</Value>
-			<Value>Elfenbeinküste</Value>
+			<Value>Elfenbeinkueste</Value>
 		</Entry>
 		<Entry>
 			<Value>CL</Value>
@@ -300,7 +300,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>DK</Value>
 			<Value>Denmark</Value>
 			<Value>DNK</Value>
-			<Value>Dänemark</Value>
+			<Value>Daenemark</Value>
 		</Entry>
 		<Entry>
 			<Value>DO</Value>
@@ -330,7 +330,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>EG</Value>
 			<Value>Egypt</Value>
 			<Value>EGY</Value>
-			<Value>Ägypten</Value>
+			<Value>aegypten</Value>
 		</Entry>
 		<Entry>
 			<Value>EH</Value>
@@ -354,7 +354,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>ET</Value>
 			<Value>Ethiopia</Value>
 			<Value>ETH</Value>
-			<Value>Äthiopien</Value>
+			<Value>aethiopien</Value>
 		</Entry>
 		<Entry>
 			<Value>FI</Value>
@@ -390,7 +390,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GB</Value>
 			<Value>United Kingdom</Value>
 			<Value>GBR</Value>
-			<Value>Vereinigtes Königreich</Value>
+			<Value>Vereinigtes Koenigreich</Value>
 		</Entry>
 		<Entry>
 			<Value>GE</Value>
@@ -408,7 +408,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GL</Value>
 			<Value>Greenland</Value>
 			<Value>GRL</Value>
-			<Value>Grönland</Value>
+			<Value>Groenland</Value>
 		</Entry>
 		<Entry>
 			<Value>GM</Value>
@@ -426,7 +426,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GQ</Value>
 			<Value>Equatorial Guinea</Value>
 			<Value>GNQ</Value>
-			<Value>Äquatorial-Guinea</Value>
+			<Value>aequatorial-Guinea</Value>
 		</Entry>
 		<Entry>
 			<Value>GR</Value>
@@ -570,7 +570,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>KR</Value>
 			<Value>Republic of Korea</Value>
 			<Value>KOR</Value>
-			<Value>Südkorea</Value>
+			<Value>Suedkorea</Value>
 		</Entry>
 		<Entry>
 			<Value>KW</Value>
@@ -822,7 +822,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>PS</Value>
 			<Value>Palestine</Value>
 			<Value>PSE</Value>
-			<Value>Palästina</Value>
+			<Value>Palaestina</Value>
 		</Entry>
 		<Entry>
 			<Value>PT</Value>
@@ -846,7 +846,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>RO</Value>
 			<Value>Romania</Value>
 			<Value>ROU</Value>
-			<Value>Rumänien</Value>
+			<Value>Rumaenien</Value>
 		</Entry>
 		<Entry>
 			<Value>RS</Value>
@@ -930,7 +930,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>SS</Value>
 			<Value>South Sudan</Value>
 			<Value>SSD</Value>
-			<Value>Südsudan</Value>
+			<Value>Suedsudan</Value>
 		</Entry>
 		<Entry>
 			<Value>SV</Value>
@@ -960,7 +960,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>TF</Value>
 			<Value>French Southern and Antarctic Lands</Value>
 			<Value>ATF</Value>
-			<Value>Französische Südgebiete</Value>
+			<Value>Franzoesische Suedgebiete</Value>
 		</Entry>
 		<Entry>
 			<Value>TG</Value>
@@ -1002,7 +1002,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>TR</Value>
 			<Value>Turkey</Value>
 			<Value>TUR</Value>
-			<Value>Türkei</Value>
+			<Value>Tuerkei</Value>
 		</Entry>
 		<Entry>
 			<Value>TT</Value>
@@ -1080,7 +1080,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>ZA</Value>
 			<Value>South Africa</Value>
 			<Value>ZAF</Value>
-			<Value>Südafrika</Value>
+			<Value>Suedafrika</Value>
 		</Entry>
 		<Entry>
 			<Value>ZM</Value>

@@ -11,7 +11,7 @@ Author: Matthias Schmiedel, Department of Geodesy, Bochum University of Applied 
 			<end> 2008-01-01+01:00</end>
 		</TimePeriod>
 	</CovereredTime>
-	<DatasetReference>ElectricityProductionFromSpecificRessource.xml</DatasetReference><!-- Dateiname des Datensatzes der Erzeugung von Elektrezietät-->
+	<DatasetReference>ElectricityProductionFromSpecificRessource.xml</DatasetReference><!-- Dateiname des Datensatzes der Erzeugung von Elektrezietaet-->
 	<SourceFileReference format="XLSX">sourceFiles/ElectricityProductionFromSpecificRessource.xlsx</SourceFileReference>
 	<Source>
 		<ContactPersons/>
@@ -24,13 +24,13 @@ Author: Matthias Schmiedel, Department of Geodesy, Bochum University of Applied 
 	<CopyrightInformation>unknown</CopyrightInformation>
 	<ImportProcess>
 		<Description language="DE">
-		Nachfolgende Änderung bzw. Ergänzung der Einzelnen Spalten um den Identifikator der Länderkürzel anhand der  ISO 3166 Alpha-2 
+		Nachfolgende aenderung bzw. Ergaenzung der Einzelnen Spalten um den Identifikator der Laenderkuerzel anhand der  ISO 3166 Alpha-2 
 		zu finden unter: http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
-		Die nun erarbeiteten Daten, müssen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Ländercodes zugeordnet werden können um in die XML Struktur
-		überführt zu werden
+		Die nun erarbeiteten Daten, muessen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Laendercodes zugeordnet werden koennen um in die XML Struktur
+		ueberfuehrt zu werden
 	   	</Description>
 		<QualityCheck date="09.06.2014 +22:00" responsiblePerson="Matthias Schmiedel">
-	   		Ergänzung des Metadatensatzes bezüglich der Herstellung von Elektrizität.
+	   		Ergaenzung des Metadatensatzes bezueglich der Herstellung von Elektrizitaet.
 	   	</QualityCheck>
 	</ImportProcess>
 </DatasetDescription>

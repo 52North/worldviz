@@ -17,14 +17,14 @@ import org.n52.v3d.triturus.vgis.VgGeomObject;
  * <br />
  * <i>German:</i> <tt>VgPolygon</tt>-Implementierung, bei der die
  * Punktkoordinaten im Speicher vorgehalten werden. x- und y-Werte sind bezogen
- * auf das eingestellte rï¿½umliche Bezugssystem (SRS) anzugeben. Die Eckpunkte
+ * auf das eingestellte raeumliche Bezugssystem (SRS) anzugeben. Die Eckpunkte
  * k&ouml;nnen mit einer z-Koordinate versehen sein.<br />
  * Bem.: In der vorliegenden Implementierung erfolgt keine Pr&uuml;fung auf
  * &Uuml;berlappung der Liniensegmente. Es k&ouml;nnen auch innere L&ouml;cher
  * definiert werden. In der aktuellen Version wird jedoch nicht
  * &uuml;berpr&uuml;ft, ob die L&ouml;cher g&uuml;ltig sind, sprich ob sie den
  * Simple-Feature-Bedingungen des OGC entsprechen. Ein inneres Loch darf den
- * äu&szlig;eren Rand (outer boundary) des Polygons maximal in einem Punkt
+ * aeu&szlig;eren Rand (outer boundary) des Polygons maximal in einem Punkt
  * ber&uuml;hren. Dies wird jedoch ebenfalls aktuell nicht gepr&uuml;ft.<br/>
  * 
  * @author Christian Danowski

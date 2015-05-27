@@ -7,7 +7,7 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 	<GeneralInformation>
 		<Theme>
 			<Title language="EN">Nocturnal lighting situation</Title>
-			<Title language="DE">Nächtliche Beleuchtungsituation der Erde</Title>
+			<Title language="DE">Naechtliche Beleuchtungsituation der Erde</Title>
 			<Description>
 			This dataset illustrates the nocturnal lighting-situation. This global view of Earth's city lights is a composite 
 			assembled from data acquired by the Suomi NPP satellite. The data was acquired over nine days in April 2012 

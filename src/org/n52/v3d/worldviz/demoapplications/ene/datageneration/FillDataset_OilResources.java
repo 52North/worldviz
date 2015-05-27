@@ -12,9 +12,9 @@ public class FillDataset_OilResources {
 		String csvFileLocation = RelativePaths.OIL_RESOURCES_CSV;
 		Character csvSeperator = ';';
 		String[] csvHeaders = new String[] {
-				"Kürzel",
-				"Förderung",
-				"Kum. Förderung", "Reserven", "Ressourcen", "Gesamtpotenzial", "Verbl. Potenzial" };
+				"Kuerzel",
+				"Foerderung",
+				"Kum. Foerderung", "Reserven", "Ressourcen", "Gesamtpotenzial", "Verbl. Potenzial" };
 		String nullValue = "-";
 		String zeroValue = "NODATA";
 		int numberOfInitLinesToSkip = 0;

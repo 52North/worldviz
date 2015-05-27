@@ -9,7 +9,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
@@ -28,7 +28,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 	<Source>
 		<ContactPersons/>
 		<URI accessDate="2015-01-05 +08:30">http://geodata.grid.unep.ch/</URI>
- <!-- Verfügbarkeit sowie Quelle der Daten-->
+ <!-- Verfuegbarkeit sowie Quelle der Daten-->
 		<AlternativeURIs><!-- Here additional URLs can be documented. -->
 			<URI/>
 		</AlternativeURIs>
@@ -38,18 +38,18 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
  <!-- Copyright Informationen-->
 	<ImportProcess>
 		<Description language="DE">
- <!-- Abfolge sowie Erklärungen der betreffenden Arbeitsschritte-->
+ <!-- Abfolge sowie Erklaerungen der betreffenden Arbeitsschritte-->
 	   		Von obiger URL (siehe 'URI'-Tag) wurde der Datensatz 'CO2 emissions - per Capita (WDI)' als CSV-Datei bezogen. 
-	   		Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen müssen beim Auslesen der Datei geskipped werden. Erst in Zeile fünf befinden sich die Spaltenüberschriften.
-			Die CSV-Datei wurde schließlich genutzt, um über ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'CarbonEmissionsPerCapita.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
+	   		Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen muessen beim Auslesen der Datei geskipped werden. Erst in Zeile fuenf befinden sich die Spaltenueberschriften.
+			Die CSV-Datei wurde schließlich genutzt, um ueber ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'CarbonEmissionsPerCapita.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
 	   		Die weiteren Informationen der 'CarbonEmissionsPerCapita.xml'-Datei wurden per Hand eingetragen.
 	   		
 	   		Nachtrag vom 03.06.2014:
-	   		Der Datensatz für "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
+	   		Der Datensatz fuer "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
 	   	</Description>
 		<QualityCheck date="2014-04-23 +14:00" responsiblePerson="Christian Danowski">
- <!-- Qualitative Überprüfung der vorliegenden Daten-->
-	   		Datensätze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+ <!-- Qualitative ueberpruefung der vorliegenden Daten-->
+	   		Datensaetze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
 	   	</QualityCheck>
 	</ImportProcess>
 </DatasetDescription>

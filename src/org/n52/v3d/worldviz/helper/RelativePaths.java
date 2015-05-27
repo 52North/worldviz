@@ -108,7 +108,7 @@ public final class RelativePaths {
 	public static final String OIL_RESOURCES_META_XML = EARTH_SUB_FOLDER
 			+ "OilResources_meta.xml";
 	public static final String OIL_RESOURCES_CSV = DATA_SOURCE_FILES_FOLDER
-			+ "Ölreserven.csv";
+			+ "Oelreserven.csv";
 
 	// hard coal resources
 	public static final String HARD_COAL_RESOURCES_XML = EARTH_SUB_FOLDER

@@ -11,7 +11,7 @@
   <!--Welche Ausgabe soll erfolgen? 'point' oder 'poly'-->
   <xsl:param name="pointOrPoly" />
   <xsl:variable name="max">
-    <!--Gibt das maximale Value zurück (position=1) oder ein anderes, um die Ergebnisse zu normalisieren-->
+    <!--Gibt das maximale Value zurueck (position=1) oder ein anderes, um die Ergebnisse zu normalisieren-->
     <xsl:call-template name="getMax">
       <xsl:with-param name="position" select="200" />
     </xsl:call-template>
@@ -46,7 +46,7 @@
           <!--BallonStyle - Anzeige der Placemark-Informationen-->
           <BalloonStyle>
             <text>
-              <!--output-escaping steuert die Umwandlung bestimmter Zeichen in deren Zeichencode (<,>,äöü...)-->
+              <!--output-escaping steuert die Umwandlung bestimmter Zeichen in deren Zeichencode (<,>,ae,oe,ue...)-->
               <xsl:text disable-output-escaping="yes">
               &lt;<![CDATA[![CDATA[<p><b><font size='+2'>$[name]</font></b></p>
           <p><font size='+1'>Carbon Emission $[description]: $[Snippet] ]]></xsl:text>
@@ -63,7 +63,7 @@
             </text>
           </BalloonStyle>
         </Style>
-        <!--template 'Folder' einfügen-->
+        <!--template 'Folder' einfuegen-->
         <xsl:call-template name="folder"/>
 
       </Document>
@@ -80,7 +80,7 @@
         <name>
           <xsl:value-of select="Title"/>
         </name>
-        <!--TimeSpan, um ein gewünschtes Jahr zur Datenanzeige wählen zu können-->
+        <!--TimeSpan, um ein gewuenschtes Jahr zur Datenanzeige waehlen zu koennen-->
         <TimeSpan>
           <begin>
             <xsl:value-of select="$begin"/>

@@ -5,11 +5,11 @@ This example shows how to hold additional meta-information that is not part of a
 in the context of the BO's ENE project. 
 Primarly, meta-data which document the underlying data-source should be given in such DatasetDescriptions.
 Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
-Letzte Änderung: 02. Juni 2014 von Artur Grzesiuk
+Letzte aenderung: 02. Juni 2014 von Artur Grzesiuk
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
@@ -26,19 +26,19 @@ Letzte Änderung: 02. Juni 2014 von Artur Grzesiuk
 		<AlternativeURIs/>
 		<Notes/>
 	</Source>
-	<CopyrightInformation>Copyrights liegen bei der "Bundesanstalt für Geowissenschaften und Rohstoffe (BGR)" vor. Weitere Informationen sind bei dieser Instanz zu erfragen</CopyrightInformation>
+	<CopyrightInformation>Copyrights liegen bei der "Bundesanstalt fuer Geowissenschaften und Rohstoffe (BGR)" vor. Weitere Informationen sind bei dieser Instanz zu erfragen</CopyrightInformation>
 	<ImportProcess>
 		<Description language="DE">
-		Download der Daten als Excel (.xlsx) Format über http://www.bgr.bund.de/energiestudie2013.
-		Nachfolgende Änderung bzw. Ergänzung der Einzelnen Spalten um den Identifikator der Länderkürzel anhand der  ISO 3166 Alpha-2 
+		Download der Daten als Excel (.xlsx) Format ueber http://www.bgr.bund.de/energiestudie2013.
+		Nachfolgende aenderung bzw. Ergaenzung der Einzelnen Spalten um den Identifikator der Laenderkuerzel anhand der  ISO 3166 Alpha-2 
 		zu finden unter: http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
-		Die nun erarbeiteten Daten, müssen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Ländercodes zugeordnet werden können um in die XML Struktur
-		überführt zu werden.
-		Desweiteren wurde die Tabelle um eine Spalte namens "ID" benannt, welche als eine fortlaufende Nummerierung für jedes Land dient. Zeilen mit keinem eindeutigen Wert wurden gemittelt und Zeilen ohne Werte durch ein "-" ersetzt.
+		Die nun erarbeiteten Daten, muessen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Laendercodes zugeordnet werden koennen um in die XML Struktur
+		ueberfuehrt zu werden.
+		Desweiteren wurde die Tabelle um eine Spalte namens "ID" benannt, welche als eine fortlaufende Nummerierung fuer jedes Land dient. Zeilen mit keinem eindeutigen Wert wurden gemittelt und Zeilen ohne Werte durch ein "-" ersetzt.
 		Die fertige Tabelle wird markiert und mittels "Speichern unter" im Datenformat "CSV-(Trennzeichen-getrennt)" gespeichert.
-		Die benennung der einzelnen Spalten wurde folgend angeordnet ( ID, Ländercode, Land - sowie die spezifischen Attribute betreffend jeder einelnen Ressource wie z.B. jährliche Förderung etc. )
+		Die benennung der einzelnen Spalten wurde folgend angeordnet ( ID, Laendercode, Land - sowie die spezifischen Attribute betreffend jeder einelnen Ressource wie z.B. jaehrliche Foerderung etc. )
 	   	</Description>
-		<QualityCheck date="2014-08-08" responsiblePerson="Christian Danowski">Der Datensatz 'Sudan und Südsudan (ISO Kürzel SD und SS)' wurde unter dem ISO-Kürzel SD zusammengefasst, 
+		<QualityCheck date="2014-08-08" responsiblePerson="Christian Danowski">Der Datensatz 'Sudan und Suedsudan (ISO Kuerzel SD und SS)' wurde unter dem ISO-Kuerzel SD zusammengefasst, 
 		da die zugrunde liegenden Shape Daten nur Sudan umfassen.
 	   	</QualityCheck>
 	</ImportProcess>

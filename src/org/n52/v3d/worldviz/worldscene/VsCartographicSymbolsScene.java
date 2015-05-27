@@ -28,7 +28,7 @@ import org.n52.v3d.worldviz.triturusextensions.mappers.T3dAttrSymbolInstance;
  */
 public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 
-	// TODO Metadaten über X3DMetadataObject (MetadataSet)?!?
+	// TODO Metadaten ueber X3DMetadataObject (MetadataSet)?!?
 
 	// und man braucht eigentlich auch noch eine Legende... die einem die
 	// Thematiken anzeigt.

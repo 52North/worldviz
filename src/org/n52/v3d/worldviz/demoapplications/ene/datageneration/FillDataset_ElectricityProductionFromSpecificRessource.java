@@ -11,9 +11,9 @@ public class FillDataset_ElectricityProductionFromSpecificRessource {
 		String xmlFileLocation = RelativePaths.ELECTRICITY_PRODUCTION_FROM_SPECIFIC_RESSOURCE_XML;
 		String csvFileLocation = RelativePaths.ELECTRICITY_PRODUCTION_FROM_SPECIFIC_RESSOURCE_CSV;
 		Character csvSeperator = ';';
-		String[] csvHeaders = new String[] { "Länderkürzel", "Kohle", "Öl",
+		String[] csvHeaders = new String[] { "Laenderkuerzel", "Kohle", "Oel",
 				"Gas", "Fossil gesamt", "Nuklear", "Wasser", "Geo Thermal",
-				"Photovoltaic", "Sonne Thermal", "Wind", "Wasserströmung",
+				"Photovoltaic", "Sonne Thermal", "Wind", "Wasserstroemung",
 				"Erneuerbar gesamt", "Andere(Biomasse+Abfall+andere)", "Gesamt" };
 		String nullValue = "-";
 		String zeroValue = "NODATA";

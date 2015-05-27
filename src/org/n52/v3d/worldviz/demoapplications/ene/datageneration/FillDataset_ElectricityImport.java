@@ -11,7 +11,7 @@ public class FillDataset_ElectricityImport {
 		String xmlFileLocation = RelativePaths.ELECTRICITY_IMPORT_XML;
 		String csvFileLocation = RelativePaths.ELECTRICITY_IMPORT_CSV;
 		Character csvSeperator = ';';
-		String[] csvHeaders = new String[] { "Kürzel", "2000", "2005", "2006",
+		String[] csvHeaders = new String[] { "Kuerzel", "2000", "2005", "2006",
 				"2007", "2008", "2009", "2010"};
 		String nullValue = "NULL";
 		String zeroValue = "NODATA";

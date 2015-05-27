@@ -31,7 +31,7 @@ public class Transformator
 		this.init_stuff();
 	}
 
-	// TODO Methode für VgPoint ergänzen mit CRS-in =(!) "EPSG:4326" und CRS-out = "DYMAX",
+	// TODO Methode fuer VgPoint ergaenzen mit CRS-in =(!) "EPSG:4326" und CRS-out = "DYMAX",
 	// "DYMAX"-Werte evtl. x *= 150. und y *= 150.
 	
 	public Point2D s2pCached(PointLatLon ll) throws Exception

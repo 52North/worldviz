@@ -19,10 +19,6 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  */
 public class MpAttrFeature2AttrSymbol extends T3dProcMapper {
 
-	// FIXME sollen sämtliche Attribute der VgAttrFeatures übernommen werden,
-	// oder nur die, die dann tatsächlich für die visualle Ausgestaltung des
-	// Symbols verwendet werden?
-
 	/*
 	 * Note that all attribute-value-combinations of the feature will be
 	 * transferred to the returned symbolInstance.
@@ -143,16 +139,6 @@ public class MpAttrFeature2AttrSymbol extends T3dProcMapper {
 			VgAttrFeature feature, VgPoint position, T3dSymbolDef symbol) {
 		T3dAttrSymbolInstance attrSymbolInstance = new T3dAttrSymbolInstance(
 				symbol, position);
-
-		// TODO siehe oben, macht das hier Sinn? oder hier keine Attribute
-		// hinzufügen, sondern erst bei einem zweiten Mapper wie
-		// MpValue2ColoredSymbol?
-		// String[] attributeNames = feature.getAttributeNames();
-		//
-		// for (String attrName : attributeNames) {
-		// attrSymbolInstance.addAttributeValuePair(attrName,
-		// feature.getAttributeValue(attrName));
-		// }
 
 		return attrSymbolInstance;
 	}

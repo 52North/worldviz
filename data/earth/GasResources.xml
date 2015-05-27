@@ -8,18 +8,18 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<Theme>
 			<Title language="EN">Gas Resources</Title><!-- Titel bezogen auf die Sprache: Englisch-->
 			<Title language="DE">Gas Ressourcen</Title><!-- Titel bezogen auf die Sprache: Deutsch-->
-			<Description language="EN">This dataset gives the gas resources for the year 2012 for the World's countries.</Description><!-- Erklärung auf Englisch-->
-			<Description language="DE">Dieser Datensatz enthält staatenweise die Erdgasressourcen für das Jahr 2012.</Description><!-- Erklärung auf Deutsch-->
+			<Description language="EN">This dataset gives the gas resources for the year 2012 for the World's countries.</Description><!-- Erklaerung auf Englisch-->
+			<Description language="DE">Dieser Datensatz enthaelt staatenweise die Erdgasressourcen fuer das Jahr 2012.</Description><!-- Erklaerung auf Deutsch-->
 		</Theme>
 		<Unit>
 			<Title>Billion m³ (Giga cubic meters)</Title><!-- Einheiten auf welche sich die gegebenen Daten beziehen: Englisch-->
 			<Code>Gm³/a</Code><!-- Einheiten Kodiert-->
 		</Unit>
-		<PublicReference>BGR - Bundesanstalt für Geowissenschaften und Rohstoffe</PublicReference>
+		<PublicReference>BGR - Bundesanstalt fuer Geowissenschaften und Rohstoffe</PublicReference>
 		<MetadataReference>GasResources_meta.xml</MetadataReference><!-- Referenz der Metadatendatei-->
 	</GeneralInformation>
 	<TableStructure>
-		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezüglich der Länderkürzel-->
+		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezueglich der Laenderkuerzel-->
 			<Title>Country code</Title><!-- Titel-->
 			<Description>Country code ISO 3166-2</Description><!-- For geo-referenced 
 properties, a GeoReference element should be present: -->
@@ -29,11 +29,11 @@ properties, a GeoReference element should be present: -->
 		</Property>
 		<Property dataType="Float">
 			<Title>Extraction</Title>
-			<Description language="DE">Förderung oder Abbau des Rohstoffs.</Description>
+			<Description language="DE">Foerderung oder Abbau des Rohstoffs.</Description>
 		</Property>
 		<Property dataType="Float">
 			<Title>Cumulated extraction</Title>
-			<Description language="DE">Kumulierte Förderung; sprich wie viel Rohstoff wurde in allen Jahren seit Beginn der Förderung abgebaut.</Description>
+			<Description language="DE">Kumulierte Foerderung; sprich wie viel Rohstoff wurde in allen Jahren seit Beginn der Foerderung abgebaut.</Description>
 		</Property>
 		<Property dataType="Float">
 			<Title>Reserves</Title>
@@ -49,7 +49,7 @@ properties, a GeoReference element should be present: -->
 		</Property>
 		<Property dataType="Float">
 			<Title>Potential remaining</Title>
-			<Description language="DE">Verbleibendes Rohstoffpotential, sprich (gesamtes Potential MINUS kumulierte Förderung), sprich die Menge, die nach bisherigem Abbau noch existiert.</Description>
+			<Description language="DE">Verbleibendes Rohstoffpotential, sprich (gesamtes Potential MINUS kumulierte Foerderung), sprich die Menge, die nach bisherigem Abbau noch existiert.</Description>
 		</Property>
 	</TableStructure>
 	<Entries>

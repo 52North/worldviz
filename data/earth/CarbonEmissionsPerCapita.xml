@@ -9,7 +9,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Title language="EN">Carbon emissions per capita</Title>
 			<Title language="DE">C02-Emissionen pro Kopf</Title>
 			<Description language="EN">This dataset gives the yearly carbon emissions per capita for the World's countries.</Description>
-			<Description language="DE">Dieser Datensatz enthält staatenweise die jährlichen, weltweiten CO2-Emissionen pro Kopf.</Description>
+			<Description language="DE">Dieser Datensatz enthaelt staatenweise die jaehrlichen, weltweiten CO2-Emissionen pro Kopf.</Description>
 		</Theme>
 		<Unit>
 			<Title>Metric Tons per capita per year</Title>

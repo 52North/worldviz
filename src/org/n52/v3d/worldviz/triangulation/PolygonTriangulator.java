@@ -217,10 +217,6 @@ public class PolygonTriangulator {
 	private static VgIndexedTIN createTriturusTIN(
 			List<DelaunayTriangle> triangles) {
 
-		// 1. alle Triangles durchlaufen und deren Punkte in der Map ergänzen
-		// für erstes Triangle eine createMap-Methode
-		// für alle weiteren Triangles eine addPoints-Methode
-
 		Map<TriangulationPoint, Integer> pointIndicesMap = createPointIndicesMap(triangles);
 
 		// GmSimpleTINGeometry implements GvIndexedTIN

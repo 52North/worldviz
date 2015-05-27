@@ -10,12 +10,12 @@ Author: Benno Schmidt, Artur Grzesiuk, Christian Danowski, Department of Geodesy
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
 		<TimePeriod>
-			<begin>1945-08-21+01:00</begin><!-- Beginn der Aufzeichnungen der Nuklearen Unfälle-->
+			<begin>1945-08-21+01:00</begin><!-- Beginn der Aufzeichnungen der Nuklearen Unfaelle-->
 			<end>2011-03-11+01:00</end><!-- Letzter verzeichneter Unfall-->
 		</TimePeriod>
 	</CovereredTime>
@@ -26,7 +26,7 @@ Author: Benno Schmidt, Artur Grzesiuk, Christian Danowski, Department of Geodesy
 		<URI accessDate="2014-05-12 +10:00">http://de.wikipedia.org/wiki/Liste_von_Unf%C3%A4llen_in_kerntechnischen_Anlagen</URI>
 		<AlternativeURIs>
 			<URI>
-			http://de.wikipedia.org/wiki/Internationale_Bewertungsskala_für_nukleare_Ereignisse <!--INES-Skala für sicherheitsrelevante Ereignisse-->
+			http://de.wikipedia.org/wiki/Internationale_Bewertungsskala_fuer_nukleare_Ereignisse <!--INES-Skala fuer sicherheitsrelevante Ereignisse-->
 			</URI>
 			<URI/>
 		</AlternativeURIs>
@@ -34,10 +34,10 @@ Author: Benno Schmidt, Artur Grzesiuk, Christian Danowski, Department of Geodesy
 	<CopyrightInformation>unknown</CopyrightInformation>
 	<ImportProcess>
 		<Description language="DE">
-	   		Die Daten der Wikipedia-Seite wurden händisch in der Excel-Tabelle 'Kernkraftwerke_Unfaelle' zusammengetragen. Die Koordinaten der einzelnen Einträge wurden dabei per GoogleMaps grob abgegriffen. 
-	   		Nicht jeder Datensatz konnte auf Grundlage des Wikipedia-Artikels eindeutig georeferenziert werden. In einem solchen Fall wurde hilfsmäßig eine grobe Koordinate des Bundesstaates gewählt.
+	   		Die Daten der Wikipedia-Seite wurden haendisch in der Excel-Tabelle 'Kernkraftwerke_Unfaelle' zusammengetragen. Die Koordinaten der einzelnen Eintraege wurden dabei per GoogleMaps grob abgegriffen. 
+	   		Nicht jeder Datensatz konnte auf Grundlage des Wikipedia-Artikels eindeutig georeferenziert werden. In einem solchen Fall wurde hilfsmaeßig eine grobe Koordinate des Bundesstaates gewaehlt.
 	   		Anschließend wurde die Tabelle als CSV-Datei exportiert. 
-	   		Diese wurde dann benutzt, um mittels des selbst entwickelten Java-Programms den 'Entries'-Teil der 'NuclearAccidents.xml'-Datei zu füllen. 
+	   		Diese wurde dann benutzt, um mittels des selbst entwickelten Java-Programms den 'Entries'-Teil der 'NuclearAccidents.xml'-Datei zu fuellen. 
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

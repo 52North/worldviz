@@ -1,4 +1,4 @@
-ID;Region;Kürzel;Förderung;Reserven;Ressourcen;Verbl. Potenzial
+ID;Region;Kuerzel;Foerderung;Reserven;Ressourcen;Verbl. Potenzial
 1;Albanien;AL;0.05;522;205;727
 2;Bosnien & Herzegowina;BA;6.3;2264;3010;5274
 3;Bulgarien;BG;31.0;2174;2400;4574
@@ -9,18 +9,18 @@ ID;Region;Kürzel;Förderung;Reserven;Ressourcen;Verbl. Potenzial
 9;Kroatien;HR;-;-;300;300
 10;Mazedonien;MK;7.3;332;300;632
 11;Montenegro;ME;2.0;-;-;-
-12;Österreich;AT;-;-;333;333
+12;Oesterreich;AT;-;-;333;333
 13;Polen;PL;64.3;4443;222620;227063
 14;Portugal;PT;-;33;33;66
-15;Rumänien;RO;34.1;280;9640;9920
+15;Rumaenien;RO;34.1;280;9640;9920
 16;Serbien;RS;45.5;8676;22336;31012
 17;Slowakei;SK;2.3;135;938;1073
 18;Slowenien;SI;4.4;315;341;656
 19;Spanien;ES;-;319;-;319
 20;Tschechische Republik;CZ;43.7;2670;7072;9742
-21;Türkei;TR;75.0;2055;11617;13672
+21;Tuerkei;TR;75.0;2055;11617;13672
 22;Ungarn;HU;9.3;2633;2704;5337
-23;Vereinigtes Königreich;GB;-;-;1000;1000
+23;Vereinigtes Koenigreich;GB;-;-;1000;1000
 24;Kasachstan;KZ;7.7;-;-;-
 25;Kirgisistan;KG;1.0;-;-;-
 26;Russland;RU;77.9;90730;1271672;1362402

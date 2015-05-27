@@ -1,7 +1,7 @@
-ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Verbl. Potenzial
+ID;Region;Kuerzel;Foerderung;Kum. Foerderung;Reserven;Ressourcen;Gesamtpotenzial;Verbl. Potenzial
 1;Albanien;AL;0.05;8;2;50;60;52
 2;Bulgarien;BG;0.4;7;5;575;587;580
-3;Dänemark;DK;6.4;173;43;950;1166;993
+3;Daenemark;DK;6.4;173;43;950;1166;993
 4;Deutschland;DE;12.1;999;123;1870;2992;1993
 5;Frankreich;FR;0.5;228;11;3984;4223;3995
 6;Griechenland;GR;0.025;1;1;10;12;11
@@ -12,19 +12,19 @@ ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Ve
 11;Malta;MT;-;-;-;10;10;10
 12;Niederlande;NL;80.1;3377;1130;1505;6012;2635
 13;Norwegen;NO;114.8;1767;2090;1820;5677;3910
-14;Österreich;AT;1.7;95;15;820;930;835
+14;Oesterreich;AT;1.7;95;15;820;930;835
 15;Polen;PL;4.5;253;88;797;1138;885
 16;Portugal;PT;-;-;-;40;40;40
-17;Rumänien;RO;10.9;1276;102;1590;2968;1692
+17;Rumaenien;RO;10.9;1276;102;1590;2968;1692
 18;Schweden;SE;-;-;-;280;280;280
 19;Serbien;RS;0.5;32;48;10;90;58
 20;Slowakei;SK;0.2;26;13;10;49;23
 21;Slowenien;SI;0.025;-;1;15;16;16
 22;Spanien;ES;0.1;11;3;2435;2449;2438
 23;Tschechische Republik;CZ;0.3;15;5;130;150;135
-24;Türkei;TR;0.7;13;7;1153;1173;1160
+24;Tuerkei;TR;0.7;13;7;1153;1173;1160
 25;Ungarn;HU;2.2;225;8;347;580;355
-26;Vereinigtes Königreich;GB;41.1;2421;461;1849;4731;2310
+26;Vereinigtes Koenigreich;GB;41.1;2421;461;1849;4731;2310
 27;Zypern;CY;-;-;-;250;250;250
 28;Armenien;AM;-;-;-;180;180;180
 29;Aserbaidschan;AZ;16;527;991;2000;3518;2991
@@ -38,11 +38,11 @@ ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Ve
 37;Ukraine;UA;18.6;1965;969;5930;8864;6899
 38;Usbekistan;UZ;57.7;2136;1661;1500;5297;3161
 39;Weißrussland;BY;0.2;13;3;10;25;13
-40;Ägypten;EG;60.9;719;2190;10830;13739;13020
+40;Aegypten;EG;60.9;719;2190;10830;13739;13020
 41;Algerien;DZ;81.5;2148;4504;26720;33372;31224
 42;Angola;AO;0.8;21;297;1200;1518;1497
-43;Äquatorialguinea;GQ;6.5;35;121;120;276;241
-44;Äthiopien;ET;-;-;28;20;48;48
+43;Aequatorialguinea;GQ;6.5;35;121;120;276;241
+44;Aethiopien;ET;-;-;28;20;48;48
 45;Benin;BJ;-;-;1;100;101;101
 46;Botsuana;BW;-;-;-;1840;1840;1840
 47;Côte d'Ivoire;CI;1.7;24;16;400;440;416
@@ -72,8 +72,8 @@ ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Ve
 71;Sierra Leone;SL;-;-;-;300;300;300
 72;Simbabwe;ZW;-;-;-;10;10;10
 73;Somalia;SO;-;-;6;400;406;406
-74;Südafrika;ZA;1.4;39;16;12330;12385;12346
-75;Sudan & Südsudan;SD;-;-;85;250;335;335
+74;Suedafrika;ZA;1.4;39;16;12330;12385;12346
+75;Sudan & Suedsudan;SD;-;-;85;250;335;335
 76;Tansania;TZ;0.9;-;37;1400;1437;1437
 77;Togo;TG;-;-;-;100;100;100
 78;Tschad;TD;-;-;-;200;200;200
@@ -90,7 +90,7 @@ ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Ve
 89;Kuwait;KW;14.5;305;1784;500;2589;2284
 90;Libanon;LB;-;-;-;850;850;850
 91;Oman;OM;29;342;950;1650;2942;2600
-92;Palästina;PS;-;-;30;350;380;380
+92;Palaestina;PS;-;-;30;350;380;380
 93;Saudi-Arabien;SA;95.2;1580;8151;24664;34395;32815
 94;Syrien;SY;6.7;127;285;300;712;585
 95;V. Arab. Emirate;AE;51.7;1090;6090;1500;8680;7590
@@ -117,7 +117,7 @@ ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Ve
 116;Thailand;TH;41.4;490;256;740;1486;996
 117;Timor-Leste;TL;-;-;101;300;401;401
 118;Vietnam;VN;9.4;81;617;1392;2090;2009
-119;Grönland;GL;-;-;-;3900;3900;3900
+119;Groenland;GL;-;-;-;3900;3900;3900
 120;Kanada;CA;156.5;5678;1930;35883;43492;37813
 121;Mexiko;MX;47;1524;360;17770;19654;18130
 122;USA;US;681.5;32868;8495;53850;95213;62345
@@ -129,7 +129,7 @@ ID;Region;Kürzel;Förderung;Kum. Förderung;Reserven;Ressourcen;Gesamtpotenzial;Ve
 128;Chile;CL;1.2;107;41;1510;1658;1551
 129;Ecuador;EC;0.5;6;7;20;33;27
 130;Falklandinseln;FK;-;-;-;1500;1500;1500
-131;(Französisch-) Guyana;GY;-;-;-;400;400;400
+131;(Franzoesisch-) Guyana;GY;-;-;-;400;400;400
 132;Grenada;GD;-;-;-;25;25;25
 133;Guatemala;GT;-;-;-;10;10;10
 134;Guyana;GY;-;-;-;100;100;100

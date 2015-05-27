@@ -12,7 +12,7 @@ public class FillDataset_ElectricityGeneration {
 		String xmlFileLocation = RelativePaths.ELECTRICITY_GENERATION_XML;
 		String csvFileLocation = RelativePaths.ELECTRICITY_GENERATION_CSV;
 		Character csvSeperator = ';';
-		String[] csvHeaders = new String[] { "Kürzel", "1970", "1980", "1990",
+		String[] csvHeaders = new String[] { "Kuerzel", "1970", "1980", "1990",
 				"2000", "2007", "2008", "2009", "2010", "2011", "Anteil in %" };
 		String nullValue = "NULL";
 		String zeroValue = "NODATA";

@@ -84,7 +84,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>AN</Value>
 			<Value>Netherlands Antilles</Value>
 			<Value>ANT</Value>
-			<Value>Niederländische Antillen</Value>
+			<Value>Niederlaendische Antillen</Value>
 		</Entry>
 		<Entry>
 			<Value>AO</Value>
@@ -114,7 +114,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>AT</Value>
 			<Value>Austria</Value>
 			<Value>AUT</Value>
-			<Value>Österreich</Value>
+			<Value>Oesterreich</Value>
 		</Entry>
 		<Entry>
 			<Value>AU</Value>
@@ -300,7 +300,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>CI</Value>
 			<Value>Cote d'Ivoire</Value>
 			<Value>CIV</Value>
-			<Value>Elfenbeinküste</Value>
+			<Value>Elfenbeinkueste</Value>
 		</Entry>
 		<Entry>
 			<Value>CK</Value>
@@ -384,7 +384,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>DK</Value>
 			<Value>Denmark</Value>
 			<Value>DNK</Value>
-			<Value>Dänemark</Value>
+			<Value>Daenemark</Value>
 		</Entry>
 		<Entry>
 			<Value>DM</Value>
@@ -420,7 +420,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>EG</Value>
 			<Value>Egypt</Value>
 			<Value>EGY</Value>
-			<Value>Ägypten</Value>
+			<Value>aegypten</Value>
 		</Entry>
 		<Entry>
 			<Value>EH</Value>
@@ -444,7 +444,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>ET</Value>
 			<Value>Ethiopia</Value>
 			<Value>ETH</Value>
-			<Value>Äthiopien</Value>
+			<Value>aethiopien</Value>
 		</Entry>
 		<Entry>
 			<Value>FI</Value>
@@ -474,7 +474,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>FO</Value>
 			<Value>Faroe Islands</Value>
 			<Value>FRO</Value>
-			<Value>Färöer-Inseln</Value>
+			<Value>Faeroeer-Inseln</Value>
 		</Entry>
 		<Entry>
 			<Value>FR</Value>
@@ -492,7 +492,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GB</Value>
 			<Value>United Kingdom</Value>
 			<Value>GBR</Value>
-			<Value>Vereinigtes Königreich</Value>
+			<Value>Vereinigtes Koenigreich</Value>
 		</Entry>
 		<Entry>
 			<Value>GD</Value>
@@ -510,7 +510,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GF</Value>
 			<Value>French Guiana</Value>
 			<Value>GUF</Value>
-			<Value>Französisch-Guayana</Value>
+			<Value>Franzoesisch-Guayana</Value>
 		</Entry>
 		<Entry>
 			<Value>GG</Value>
@@ -534,7 +534,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GL</Value>
 			<Value>Greenland</Value>
 			<Value>GRL</Value>
-			<Value>Grönland</Value>
+			<Value>Groenland</Value>
 		</Entry>
 		<Entry>
 			<Value>GM</Value>
@@ -558,7 +558,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GQ</Value>
 			<Value>Equatorial Guinea</Value>
 			<Value>GNQ</Value>
-			<Value>Äquatorial-Guinea</Value>
+			<Value>aequatorial-Guinea</Value>
 		</Entry>
 		<Entry>
 			<Value>GR</Value>
@@ -570,7 +570,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>GS</Value>
 			<Value>South Georgia South Sandwich Islands</Value>
 			<Value>SGS</Value>
-			<Value>Süd-Georgia und die südlichen Sandwich-Inseln</Value>
+			<Value>Sued-Georgia und die suedlichen Sandwich-Inseln</Value>
 		</Entry>
 		<Entry>
 			<Value>GT</Value>
@@ -762,7 +762,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>KR</Value>
 			<Value>Korea, Republic of</Value>
 			<Value>KOR</Value>
-			<Value>Südkorea</Value>
+			<Value>Suedkorea</Value>
 		</Entry>
 		<Entry>
 			<Value>KW</Value>
@@ -924,7 +924,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>MP</Value>
 			<Value>Northern Mariana Islands</Value>
 			<Value>MNP</Value>
-			<Value>Nördliche Mariannen-Inseln</Value>
+			<Value>Noerdliche Mariannen-Inseln</Value>
 		</Entry>
 		<Entry>
 			<Value>MQ</Value>
@@ -1080,7 +1080,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>PF</Value>
 			<Value>French Polynesia</Value>
 			<Value>PYF</Value>
-			<Value>Französisch-Polynesien</Value>
+			<Value>Franzoesisch-Polynesien</Value>
 		</Entry>
 		<Entry>
 			<Value>PG</Value>
@@ -1128,7 +1128,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>PS</Value>
 			<Value>Palestine</Value>
 			<Value>PSE</Value>
-			<Value>Palästina</Value>
+			<Value>Palaestina</Value>
 		</Entry>
 		<Entry>
 			<Value>PT</Value>
@@ -1164,7 +1164,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>RO</Value>
 			<Value>Romania</Value>
 			<Value>ROU</Value>
-			<Value>Rumänien</Value>
+			<Value>Rumaenien</Value>
 		</Entry>
 		<Entry>
 			<Value>RS</Value>
@@ -1314,7 +1314,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>TF</Value>
 			<Value>French Southern and Antarctic Lands</Value>
 			<Value>ATF</Value>
-			<Value>Französische Südgebiete</Value>
+			<Value>Franzoesische Suedgebiete</Value>
 		</Entry>
 		<Entry>
 			<Value>TG</Value>
@@ -1368,7 +1368,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>TR</Value>
 			<Value>Turkey</Value>
 			<Value>TUR</Value>
-			<Value>Türkei</Value>
+			<Value>Tuerkei</Value>
 		</Entry>
 		<Entry>
 			<Value>TT</Value>
@@ -1410,7 +1410,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>UM</Value>
 			<Value>United States Minor Outlying Islands</Value>
 			<Value>UMI</Value>
-			<Value>Übrige Inseln im Pazifik der USA</Value>
+			<Value>uebrige Inseln im Pazifik der USA</Value>
 		</Entry>
 		<Entry>
 			<Value>US</Value>
@@ -1500,7 +1500,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 			<Value>ZA</Value>
 			<Value>South Africa</Value>
 			<Value>ZAF</Value>
-			<Value>Südafrika</Value>
+			<Value>Suedafrika</Value>
 		</Entry>
 		<Entry>
 			<Value>ZM</Value>

@@ -8,8 +8,8 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<Theme>
 			<Title language="EN">Electricity Access year 2000</Title><!-- Titel bezogen auf die Sprache: Englisch-->
 			<Title language="DE">Stromzugang Jahr 2000</Title><!-- Titel bezogen auf die Sprache: Deutsch-->
-			<Description language="EN">This dataset gives the electricity access for the year 2000 of the population of the World's countries.</Description><!-- Erklärung auf Englisch-->
-			<Description language="DE">Dieser Datensatz enthält staatenweise den Zugang zu Elektrizität der Bevölkerung für das Jahr 2000.</Description><!-- Erklärung auf Deutsch-->
+			<Description language="EN">This dataset gives the electricity access for the year 2000 of the population of the World's countries.</Description><!-- Erklaerung auf Englisch-->
+			<Description language="DE">Dieser Datensatz enthaelt staatenweise den Zugang zu Elektrizitaet der Bevoelkerung fuer das Jahr 2000.</Description><!-- Erklaerung auf Deutsch-->
 		</Theme>
 		<Unit>
 			<Title>Percentage of people per year estimated</Title><!-- Einheiten auf welche sich die gegebenen Daten beziehen: Englisch-->
@@ -19,7 +19,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<MetadataReference>ElectricityAccess_meta.xml</MetadataReference><!-- Referenz der Metadatendatei-->
 	</GeneralInformation>
 	<TableStructure>
-		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezüglich der Länderkürzel-->
+		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezueglich der Laenderkuerzel-->
 			<Title>Country code</Title><!-- Titel-->
 			<Description>Country code ISO 3166-2</Description><!-- For geo-referenced 
 properties, a GeoReference element should be present: -->

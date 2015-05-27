@@ -52,8 +52,6 @@ public class FillDataset_CountryCodes_simplified_110m {
 			e.printStackTrace();
 		}
 
-		// jetzt direkt wieder einlesen und Landesname deutsch an jedem ENtry
-		// hinzufügen
 
 		DatasetDocument countryCodesDataset;
 		try {

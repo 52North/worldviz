@@ -22,11 +22,11 @@ Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univers
 	</Source>
 	<CopyrightInformation>Bjorn Sandvik - thematicmapping.org</CopyrightInformation><!-- Copyright Informationen-->
 	<ImportProcess>
-		<Description language="DE"><!-- Erklärung der Arbeitsabfolge-->
-	   		Die Shape-Datei kann direkt zusammen mit den ergänzenden DBF-, PRJ- sowie SHX-Dateien als ZIP-Archiv heruntergeladen werden. 
-	   		Nach Extraktion in den Ordner "TM_WORLD_BORDERS-0.3" stehen alle Dateien unmittelbar zur Verfügung.
+		<Description language="DE"><!-- Erklaerung der Arbeitsabfolge-->
+	   		Die Shape-Datei kann direkt zusammen mit den ergaenzenden DBF-, PRJ- sowie SHX-Dateien als ZIP-Archiv heruntergeladen werden. 
+	   		Nach Extraktion in den Ordner "TM_WORLD_BORDERS-0.3" stehen alle Dateien unmittelbar zur Verfuegung.
 	   		
-	   		Hinweis: Die DBF-Datei wurde zusätzlich mit Hilfe von Microsoft Excel in eine äquivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes.xml" zu erzeugen. Siehe auch "CountryCodes_meta.xml".
+	   		Hinweis: Die DBF-Datei wurde zusaetzlich mit Hilfe von Microsoft Excel in eine aequivalente CSV-Datei umgewandelt, um den Datensatz "CountryCodes.xml" zu erzeugen. Siehe auch "CountryCodes_meta.xml".
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

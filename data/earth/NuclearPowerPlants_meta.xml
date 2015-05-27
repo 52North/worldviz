@@ -21,14 +21,14 @@
 	<CopyrightInformation>Wikipedia http://en.wikipedia.org/wiki/Wikipedia:Copyrights</CopyrightInformation><!-- Copyright Informationen-->
 	<ImportProcess>
 		<Description language="DE"><!-- Dokumentation betreffend der Abfolge der Arbeitsschritte-->
-		Download einer KML mit Namen und Koordinaten über 
+		Download einer KML mit Namen und Koordinaten ueber 
 		http://toolserver.org/~para/cgi-bin/kmlexport?project=en.wikipedia.org&amp;article=List_of_nuclear_power_stations
-		Kopieren der Tabellen von der oben angegeben Wikipediaseite in eine CSV-Tabelle. ID hinzufügen.
-		Öffnen der KML in QGIS und speichern der angezeigten Layer als Shape. Shapedateien zusammenführen. (Vektor-Datenbankmanagment-...)
-		Shapedatei und CSV in QGIS öffnen. Der Shapedatei mit dem Feldrechner eine ID über $rowindex hinzufügen.
-		Shapedatei-Eigenschaften-Verknüpfungen-Join durchführen.
-		Speichern der verknüpften Shape und export als KML.
-		Überführung der KML in das XML-Schema.
+		Kopieren der Tabellen von der oben angegeben Wikipediaseite in eine CSV-Tabelle. ID hinzufuegen.
+		oeffnen der KML in QGIS und speichern der angezeigten Layer als Shape. Shapedateien zusammenfuehren. (Vektor-Datenbankmanagment-...)
+		Shapedatei und CSV in QGIS oeffnen. Der Shapedatei mit dem Feldrechner eine ID ueber $rowindex hinzufuegen.
+		Shapedatei-Eigenschaften-Verknuepfungen-Join durchfuehren.
+		Speichern der verknuepften Shape und export als KML.
+		ueberfuehrung der KML in das XML-Schema.
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

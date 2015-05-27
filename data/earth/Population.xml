@@ -7,9 +7,9 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 	<GeneralInformation>
 		<Theme>
 			<Title language="EN">Population</Title>
-			<Title language="DE">Bevölkerung</Title>
+			<Title language="DE">Bevoelkerung</Title>
 			<Description language="EN">This dataset gives the yearly population data for the World's countries for both sexes.</Description>
-			<Description language="DE">Dieser Datensatz enthält staatenweise die jährlichen, weltweiten Bevölkerungsdaten beider Geschlechter.</Description>
+			<Description language="DE">Dieser Datensatz enthaelt staatenweise die jaehrlichen, weltweiten Bevoelkerungsdaten beider Geschlechter.</Description>
 		</Theme>
 		<Unit>
 			<Title>Thousand People per year</Title>

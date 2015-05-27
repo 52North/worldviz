@@ -12,7 +12,7 @@ import org.n52.v3d.triturus.vgis.VgGeomObject2d;
  * innere L&ouml;cher definiert werden. In der aktuellen Version wird jedoch
  * nicht &uuml;berpr&uuml;ft, ob die L&ouml;cher g&uuml;ltig sind, sprich ob sie
  * den Simple-Feature-Bedingungen des OGC entsprechen. Ein inneres Loch darf den
- * äu&szlig;eren Rand (outer boundary) des Polygons maximal in einem Punkt
+ * aeu&szlig;eren Rand (outer boundary) des Polygons maximal in einem Punkt
  * ber&uuml;hren. Dies wird jedoch ebenfalls aktuell nicht gepr&uuml;ft.<br/>
  * Die Polygone m&uuml;ssen <i>planar</i> sein.<br />
  * <i>Planarit&auml;t wird z. Zt. in der Implementierung <tt>GmPlane</tt> noch

@@ -9,12 +9,12 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
 	<!-- 
-	Zeitraum, für welchen die Kohlenstoff Emmisionen als Daten vorliegen
+	Zeitraum, fuer welchen die Kohlenstoff Emmisionen als Daten vorliegen
 	-->
 		<TimePeriod>
 			<begin>2000-01-01+01:00</begin>
@@ -35,7 +35,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
   <!-- Quelle 
 -->
 		<ContactPersons/>
- <!-- Falls Kontaktpersonen, für die Quelldatei, vorhanden sind 
+ <!-- Falls Kontaktpersonen, fuer die Quelldatei, vorhanden sind 
 -->
 		<URI accessDate="2014-04-12 +11:00">http://geodata.grid.unep.ch/</URI>
   <!-- Datum, andem die Daten abgerufen wurden, mit Link zur Quelle  
@@ -44,7 +44,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 			<URI/>
 		</AlternativeURIs>
 		<Notes/>
- <!-- Zusätzliche Informationen zu den Daten 
+ <!-- Zusaetzliche Informationen zu den Daten 
 -->
 	</Source>
 	<CopyrightInformation>UNEP - United Nations Environment Programme; European Commission, Joint Research Centre (JRC)/PBL Netherlands Environmental Assessment Agency.</CopyrightInformation>
@@ -52,20 +52,20 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 -->
 	<ImportProcess>
 		<Description language="DE">
- <!-- Hier werden die nötigen Schritte beschrieben die nötig waren, um aus der Qulldatei die nötigen Informationen zu extrahieren 
+ <!-- Hier werden die noetigen Schritte beschrieben die noetig waren, um aus der Qulldatei die noetigen Informationen zu extrahieren 
 -->
 	   		Von obiger URL (siehe 'URI'-Tag) wurde der Datensatz 'Emissions of CO2 - Total (Model Estimations, EDGAR v.4.2 FT2010)' als CSV-Datei bezogen. 
-			Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen müssen beim Auslesen der Datei geskipped werden. Erst in Zeile fünf befinden sich die Spaltenüberschriften.
-	   		Die CSV-Datei wurde schließlich genutzt, um über ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'CarbonEmissions.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
+			Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen muessen beim Auslesen der Datei geskipped werden. Erst in Zeile fuenf befinden sich die Spaltenueberschriften.
+	   		Die CSV-Datei wurde schließlich genutzt, um ueber ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'CarbonEmissions.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
 	   		Die weiteren Informationen der 'CarbonEmissions.xml'-Datei wurden per Hand eingetragen.
 			
 			Nachtrag vom 03.06.2014:
-	   		Der Datensatz für "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
+	   		Der Datensatz fuer "Antarctic" musste manuell angepasst werden. In der Source-File waren ISO3166-Alpha2 und ISO3166-Alpha3-Codes vertauscht! Daher musste in der XML-Datei der ENE:CountryCode von 'ATA' zu 'AQ' gesetzt werden.
 	   	</Description>
 		<QualityCheck date="2014-04-13 +11:00" responsiblePerson="Christian Danowski">
- <!-- Datum, andem die Daten auf ihre Qualität Kontrolliert wurden 
+ <!-- Datum, andem die Daten auf ihre Qualitaet kontrolliert wurden 
 -->
-	   		Datensätze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+	   		Datensaetze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
 	   	</QualityCheck>
 	</ImportProcess>
 </DatasetDescription>

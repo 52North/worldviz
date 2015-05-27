@@ -8,9 +8,9 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
-	Letzte Änderung: 02. Juni 2014 von Artur Grzesiuk
+	Letzte aenderung: 02. Juni 2014 von Artur Grzesiuk
 	-->
 	<CovereredTime>
 		<TimePeriod>
@@ -26,20 +26,20 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 		<AlternativeURIs/>
 		<Notes/>
 	</Source>
-	<CopyrightInformation>Copyrights liegen bei der "Bundesanstalt für Geowissenschaften und Rohstoffe (BGR)" vor. Weitere Informationen sind bei dieser Instanz zu erfragen</CopyrightInformation>
+	<CopyrightInformation>Copyrights liegen bei der "Bundesanstalt fuer Geowissenschaften und Rohstoffe (BGR)" vor. Weitere Informationen sind bei dieser Instanz zu erfragen</CopyrightInformation>
 	<ImportProcess>
 		<Description language="DE">
-		Download der Daten als Excel (.xlsx) Format über http://www.bgr.bund.de/energiestudie2013.
-		Nachfolgende Änderung bzw. Ergänzung der Einzelnen Spalten um den Identifikator der Länderkürzel anhand der  ISO 3166 Alpha-2 
+		Download der Daten als Excel (.xlsx) Format ueber http://www.bgr.bund.de/energiestudie2013.
+		Nachfolgende aenderung bzw. Ergaenzung der Einzelnen Spalten um den Identifikator der Laenderkuerzel anhand der  ISO 3166 Alpha-2 
 		zu finden unter: http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
-		Die nun erarbeiteten Daten, müssen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Ländercodes zugeordnet werden können um in die XML Struktur
-		überführt zu werden.
-		Desweiteren wurde die Tabelle um eine Spalte namens "ID" benannt, welche als eine fortlaufende Nummerierung für jedes Land dient. Zeilen mit keinem eindeutigen Wert wurden gemittelt und Zeilen ohne Werte durch ein "-" ersetzt.
+		Die nun erarbeiteten Daten, muessen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Laendercodes zugeordnet werden koennen um in die XML Struktur
+		ueberfuehrt zu werden.
+		Desweiteren wurde die Tabelle um eine Spalte namens "ID" benannt, welche als eine fortlaufende Nummerierung fuer jedes Land dient. Zeilen mit keinem eindeutigen Wert wurden gemittelt und Zeilen ohne Werte durch ein "-" ersetzt.
 		Die fertige Tabelle wird markiert und mittels "Speichern unter" im Datenformat "CSV-(Trennzeichen-getrennt)" gespeichert.
-		Die benennung der einzelnen Spalten wurde folgend angeordnet ( ID, Ländercode, Land - sowie die spezifischen Attribute betreffend jeder einelnen Ressource wie z.B. jährliche Förderung etc. )
-Die Daten der Länder Kosovo und Serbien wurden zu einem Eintrag unter Serbien aggregiert. Gründe: 
-1) Es existiert noch kein offizieller ISO-3166-Alpha2 Code für Kosovo; es gibt Stand heute (27.05.2014) nur ein temporäres Kürzel 'XK'. 
-2) Die im Projekt verwendete Shape-Datei führt den Kosovo noch als Teil Serbiens, sodass zwecks der Visualisierung die Daten des Kosovo auf die Daten Serbiens addiert wurden.
+		Die benennung der einzelnen Spalten wurde folgend angeordnet ( ID, Laendercode, Land - sowie die spezifischen Attribute betreffend jeder einelnen Ressource wie z.B. jaehrliche Foerderung etc. )
+Die Daten der Laender Kosovo und Serbien wurden zu einem Eintrag unter Serbien aggregiert. Gruende: 
+1) Es existiert noch kein offizieller ISO-3166-Alpha2 Code fuer Kosovo; es gibt Stand heute (27.05.2014) nur ein temporaeres Kuerzel 'XK'. 
+2) Die im Projekt verwendete Shape-Datei fuehrt den Kosovo noch als Teil Serbiens, sodass zwecks der Visualisierung die Daten des Kosovo auf die Daten Serbiens addiert wurden.
 	   	</Description>
 	</ImportProcess>
 </DatasetDescription>

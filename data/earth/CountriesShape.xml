@@ -12,8 +12,8 @@ Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Scien
 				Dieses Dokument verweist auf den Quelldatei mit den Geometrien der Staatsgrenzen weltweit 
 				(ESRI-Shape-Format). 
 				Pro Staat werden die Staatsgrenzen in Form eines Multipolygons vorgehalten.
-				In der Shape-Datei sind unter anderem Länderkürzel im ISO3166-ALPHA-2 - Format angegeben, so dass über die "CountryCodes.xml"
-				im ENE-Projekt eine Georeferenzierung länderbezogener statistischer Daten möglich wird.
+				In der Shape-Datei sind unter anderem Laenderkuerzel im ISO3166-ALPHA-2 - Format angegeben, so dass ueber die "CountryCodes.xml"
+				im ENE-Projekt eine Georeferenzierung laenderbezogener statistischer Daten moeglich wird.
 			</Description>
 		</Theme>
 		<Unit />

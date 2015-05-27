@@ -24,14 +24,14 @@ Author: Artur Grzesiuk, Department of Geodesy, Bochum University of Applied Scie
 	<CopyrightInformation>unknown</CopyrightInformation>
 	<ImportProcess>
 		<Description language="DE">
-		Download der Daten als Excel (.xlsx) Format über http://www.bgr.bund.de/energiestudie2013.
-		Nachfolgende Änderung bzw. Ergänzung der Einzelnen Spalten um den Identifikator der Länderkürzel anhand der  ISO 3166 Alpha-2 
+		Download der Daten als Excel (.xlsx) Format ueber http://www.bgr.bund.de/energiestudie2013.
+		Nachfolgende aenderung bzw. Ergaenzung der Einzelnen Spalten um den Identifikator der Laenderkuerzel anhand der  ISO 3166 Alpha-2 
 		zu finden unter: http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
-		Die nun erarbeiteten Daten, müssen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Ländercodes zugeordnet werden können um in die XML Struktur
-		überführt zu werden
+		Die nun erarbeiteten Daten, muessen nun in eine .csv Datei umgewandelt werden, welche durch den Identifier des Laendercodes zugeordnet werden koennen um in die XML Struktur
+		ueberfuehrt zu werden
 	   	</Description>
 		<QualityCheck date="04.05.2014 +22:00" responsiblePerson="Artur Grzesiuk">
-	   		Ergänzung des Metadatensatzes bezüglich der Fossilen Rohstoffe
+	   		Ergaenzung des Metadatensatzes bezueglich der Fossilen Rohstoffe
 	   	</QualityCheck>
 	</ImportProcess>
 </DatasetDescription>

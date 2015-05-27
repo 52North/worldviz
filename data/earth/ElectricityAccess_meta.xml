@@ -9,7 +9,7 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 -->
 <DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
-	For the GI-project "Gespräch mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
 	be processed, so that other values might appear. 
 	-->
 	<CovereredTime>
@@ -34,12 +34,12 @@ Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum Univer
 	</CopyrightInformation>
 	<ImportProcess>
  		<Description language="DE">
-		Von der genannten Source-URL wurde die '346_worldmapper_data.xls'-Datei geladen, aus dieser wurden Daten der Tabelle 'Data', in Spalten 'ISO 3 code', 'MAP DATA Access to Electricity 2000, millions of people estimated', 'Access to Electricity 2000, percentage of people estimated' für die Weiterverarbeitung in der Datei electricity_access.csv bezogen.
-		Neben dem ISO 3 code wurde ISO 3166-2 code zusätzlich eingetragen. Anschließend wurde die CSV-datei genutzt, um mittels eines Java-Programms den 'Entries'-Teil der 'ElectricityAccess.xml'-Datei zu füllen.
+		Von der genannten Source-URL wurde die '346_worldmapper_data.xls'-Datei geladen, aus dieser wurden Daten der Tabelle 'Data', in Spalten 'ISO 3 code', 'MAP DATA Access to Electricity 2000, millions of people estimated', 'Access to Electricity 2000, percentage of people estimated' fuer die Weiterverarbeitung in der Datei electricity_access.csv bezogen.
+		Neben dem ISO 3 code wurde ISO 3166-2 code zusaetzlich eingetragen. Anschließend wurde die CSV-datei genutzt, um mittels eines Java-Programms den 'Entries'-Teil der 'ElectricityAccess.xml'-Datei zu fuellen.
 	   	</Description>
  
 		<QualityCheck date="0000-00-00 +11:00" responsiblePerson="">
-		<!-- Datum, andem die Daten auf ihre Qualität Kontrolliert wurden 
+		<!-- Datum, andem die Daten auf ihre Qualitaet Kontrolliert wurden 
 -->
 	   	</QualityCheck>
 	</ImportProcess>

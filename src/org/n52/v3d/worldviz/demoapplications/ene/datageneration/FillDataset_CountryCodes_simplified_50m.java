@@ -52,9 +52,6 @@ public class FillDataset_CountryCodes_simplified_50m {
 			e.printStackTrace();
 		}
 
-		// jetzt direkt wieder einlesen und Landesname deutsch an jedem ENtry
-		// hinzufügen
-
 		DatasetDocument countryCodesDataset;
 		try {
 			countryCodesDataset = DatasetDocument.Factory.parse(new File(
@@ -98,8 +95,6 @@ public class FillDataset_CountryCodes_simplified_50m {
 		}
 
 		countryCodeEntries.setEntryArray(entryArray);
-//		countryCodesDataset.save(new File(
-//				"E:\\Christian\\Gespräch mit der Erde\\CountryCodes_Copy.xml"));
 		
 		File datasetFile = new File(xmlFileLocation);
 		

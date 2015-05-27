@@ -174,8 +174,7 @@ public class Wgs84ToSphereCoordsTransform {
 			return tin;
 		}
 
-		return vgIndexedTIN; // TODO überarbeiten --> Fehlermeldung werfen, dass
-								// nur GmSimpleTINGeometry unterstützt wird
+		return vgIndexedTIN;
 	}
 
 	/**

@@ -8,8 +8,8 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<Theme>
 			<Title language="EN">Electricity Consumption</Title><!-- Titel bezogen auf die Sprache: Englisch-->
 			<Title language="DE">Stromverbrauch</Title><!-- Titel bezogen auf die Sprache: Deutsch-->
-			<Description language="EN">This dataset gives the electricity comsumption for the years 2000, 2005-2009 in terrawatts per hours for the World's countries.</Description><!-- Erklärung auf Englisch-->
-			<Description language="DE">Dieser Datensatz enthält staatenweise den Stromverbrauch in Terawattstunden für die Jahre 2000, 2005-2009.</Description><!-- Erklärung auf Deutsch-->
+			<Description language="EN">This dataset gives the electricity comsumption for the years 2000, 2005-2009 in terrawatts per hours for the World's countries.</Description><!-- Erklaerung auf Englisch-->
+			<Description language="DE">Dieser Datensatz enthaelt staatenweise den Stromverbrauch in Terawattstunden fuer die Jahre 2000, 2005-2009.</Description><!-- Erklaerung auf Deutsch-->
 		</Theme>
 		<Unit>
 			<Title>Terawatt hours per year</Title><!-- Einheiten auf welche sich die gegebenen Daten beziehen: Englisch-->
@@ -19,7 +19,7 @@ Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum Univer
 		<MetadataReference>ElectricityConsumption_meta.xml</MetadataReference><!-- Referenz der Metadatendatei-->
 	</GeneralInformation>
 	<TableStructure>
-		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezüglich der Länderkürzel-->
+		<Property dataType="ENE:iso3166-2" uniqueID="true"><!-- Hier verwendete Kodierliste bezueglich der Laenderkuerzel-->
 			<Title>Country code</Title><!-- Titel-->
 			<Description>Country code ISO 3166-2</Description><!-- For geo-referenced 
 properties, a GeoReference element should be present: -->
