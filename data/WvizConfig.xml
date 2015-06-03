@@ -1,0 +1,58 @@
+<!--
+  This configuration file should be used to specify cartographic mapping parameters inside Triturus WorldViz.
+-->
+<WvizConfig>
+  <!-- Here is an example for a 3-d connection net visualization: -->
+  <ConnectionNet>
+    <Mapper>
+      <!--
+        Note: The elements used to specify the cartographic mapping should resemble the OGC/ISO SLD ('styled layer 
+        descriptors') elements! E.g.: PointVisualizer, LineSymbolizer, PolygonSymbolizer, TextSymbolizer, CssParameter, 
+        etc.
+      -->
+      <Features>
+        <!-- 
+          Visualize feature-net nodes using red spheres with red text annotations showing the ID entry from the Pajek 
+          input file: 
+        -->
+        <PointVisualizer>
+          <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
+          <T3dSymbol type="Sphere" size="3.0" color="#FF0000"/>
+        </PointVisualizer>
+        <TextVisualizer>
+          <Label>
+            <PropertyName>NAME</PropertyName>
+          </Label>
+          <Font>
+            <SvgParameter name="font-family">Verdana</SvgParameter>
+            <SvgParameter name="font-size">10</SvgParameter>
+          </Font>
+          <LabelPlacement>
+            <PointPlacement>
+              <Displacement>
+                <DisplacementX>20</DisplacementX>
+                <DisplacementY>0</DisplacementY>
+              </Displacement>
+            </PointPlacement>
+          </LabelPlacement>
+          <Fill>
+            <SvgParameter name="fill">#FF0000</SvgParameter>
+          </Fill>
+        </TextVisualizer>
+      </Features>
+      <Relations><!-- Visualize feature-net edges using straight lines with blue stroke-colour and a 2pt line-width: -->
+        <LineVisualizer>
+          <Geometry>
+            <StraightLine/>
+            <!-- It could be interesting for Adhitya to introduce other visualizations such as ribbons, arcs, ... here...-->
+          </Geometry>
+          <Stroke>
+            <SvgParameter name="stroke">#0000FF</SvgParameter>
+            <SvgParameter name="stroke-width">2</SvgParameter>
+          </Stroke>
+        </LineVisualizer>
+      </Relations>
+    </Mapper>
+  </ConnectionNet>
+  <!-- Here, there could follow configurations for ENE globe visualization etc. … -->
+</WvizConfig>
