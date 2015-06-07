@@ -23,15 +23,23 @@ public class MprConnectionMapGenerator extends T3dProcRendererMapper
 	public void setTargetFormat(TargetFormats targetFormat) {
 		this.targetFormat = targetFormat;
 	}
+        
+        public TargetFormats getTargetFormat(){
+            return targetFormat;
+        }
 
 	/**
      * performs the mapping process.
      */
-    public Object transform(WvizVirtualConnectionMapScene s) throws T3dException
-    {
-    	System.out.println(this.log()); // just to see something...
+    public Object transform(WvizVirtualConnectionMapScene s) throws T3dException{
     	
-    	throw new T3dNotYetImplException();
+        if( getTargetFormat() == TargetFormats.X3D ){
+            return new WvizConnectionMapSceneX3d(s);
+        }
+        else{
+            return null;
+        }
+        
     }
 
 	@Override

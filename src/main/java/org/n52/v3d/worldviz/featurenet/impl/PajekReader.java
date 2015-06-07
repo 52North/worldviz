@@ -7,6 +7,7 @@ import org.n52.v3d.worldviz.featurenet.VgRelation;
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.vgis.VgFeature;
+import org.n52.v3d.triturus.vgis.VgPoint;
 
 public class PajekReader extends FileIO {
 
@@ -74,7 +75,8 @@ public class PajekReader extends FileIO {
         PajekReader reader = new PajekReader();
         WvizUniversalFeatureNet wvizuniversalfeaturenet = reader.readFromFile(args[0]);
         for (VgFeature f : wvizuniversalfeaturenet.getFeatures()) {
-            System.out.println(f);
+            String name = (String)((GmAttrFeature) f).getAttributeValue("name");
+            System.out.println(name);
         }
         
         for (VgRelation r : wvizuniversalfeaturenet.getRelations()) {

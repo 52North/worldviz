@@ -1,17 +1,16 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.Map;
+import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+
 
 import org.n52.v3d.triturus.vgis.VgFeature;
+import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
-import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
-import org.n52.v3d.worldviz.featurenet.impl.Parse.PajekException;
 import org.n52.v3d.worldviz.featurenet.impl.WvizConnection;
-import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
 
 /**
  * Abstract scene model for 3-d visualizations of connection-maps.
@@ -31,6 +30,9 @@ import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
  *
  * @author Benno Schmidt, Adhitya Kamakshidasan, Christian Danowski
  */
+
+
+//Is this Class doing what it is meant to be?
 public class WvizVirtualConnectionMapScene {
 
     public List<VgFeature> vertices = null;
@@ -38,14 +40,13 @@ public class WvizVirtualConnectionMapScene {
 
     public ArrayList<VgRelation> edges = new ArrayList<VgRelation>();
     public ArrayList<VgRelation> arcs = new ArrayList<VgRelation>();
+    
+    public WvizConfig style;
 
-    //I have hardcoded the path over here --> This is definitely not the correct way
-    public WvizVirtualConnectionMapScene() throws PajekException {
-        PajekReader pajekReader = new PajekReader();
-        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile("F:\\Downloads\\worldviz-maven-integration\\worldviz-maven-integration\\data\\graph.net");
-
-        vertices = (List<VgFeature>) wvizUniversalFeatureNet.getFeatures();
-        relations = (List<VgRelation>) wvizUniversalFeatureNet.getRelations();
+    public WvizVirtualConnectionMapScene(VgFeatureNet net, WvizConfig style){
+        
+        vertices = (List<VgFeature>) net.getFeatures();
+        relations = (List<VgRelation>) net.getRelations();
 
         /*This is one of the ways, Adhitya can differentiate between an Arc and Edge.
          Let me know if you have a better way of doing it. Can this be shifted to VgRelation? */
@@ -58,7 +59,28 @@ public class WvizVirtualConnectionMapScene {
                 arcs.add(r);
             }
         }
+        
+        
+        this.style = style;
 
     }
-
+    
+    public List<VgFeature> getVertices(){
+        return vertices;
+    }
+    
+    public ArrayList<VgRelation> getEdges(){
+        return edges;
+    }
+    
+    public ArrayList<VgRelation> getArcs(){
+        return arcs;
+    }
+    
+    public WvizConfig getStyle(){
+        return style;
+    }
+    
+    
+    
 }

@@ -17,26 +17,26 @@
         -->
         <PointVisualizer>
           <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
-          <T3dSymbol type="Sphere" size="3.0" color="#FF0000"/>
+          <T3dSymbol type="Sphere" size="0.15" color="1 0 0"/>
         </PointVisualizer>
         <TextVisualizer>
           <Label>
-            <PropertyName>NAME</PropertyName>
+            <PropertyName>name</PropertyName>
           </Label>
           <Font>
-            <SvgParameter name="font-family">Verdana</SvgParameter>
-            <SvgParameter name="font-size">10</SvgParameter>
+            <SvgParameter name="font-family">MS Sans Serif</SvgParameter>
+            <SvgParameter name="font-size">0.4</SvgParameter>
           </Font>
           <LabelPlacement>
             <PointPlacement>
               <Displacement>
-                <DisplacementX>20</DisplacementX>
+                <DisplacementX>0.3</DisplacementX>
                 <DisplacementY>0</DisplacementY>
               </Displacement>
             </PointPlacement>
           </LabelPlacement>
           <Fill>
-            <SvgParameter name="fill">#FF0000</SvgParameter>
+            <SvgParameter name="fill">0 0 0</SvgParameter>
           </Fill>
         </TextVisualizer>
       </Features>
@@ -45,7 +45,7 @@
           <Geometry type= "StraightLine"/>
             <!-- It could be interesting for Adhitya to introduce other visualizations such as ribbons, arcs, ... here...-->
           <Stroke>
-            <SvgParameter name="stroke">#0000FF</SvgParameter>
+            <SvgParameter name="stroke">0 0 1</SvgParameter>
             <SvgParameter name="stroke-width">2</SvgParameter>
           </Stroke>
         </LineVisualizer>

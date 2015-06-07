@@ -8,4 +8,9 @@ import java.util.List;
 class Stroke{
     @XStreamImplicit
     private List<SvgParameter> svgParameter;
+    
+    public List getSvgParameter(){
+        return svgParameter;
+    }
+    
 }

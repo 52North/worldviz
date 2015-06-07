@@ -6,15 +6,15 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Displacement")
 class Displacement{
     @XStreamAlias("DisplacementX")
-    protected int DisplacementX;
+    protected double DisplacementX;
     @XStreamAlias("DisplacementY")
-    protected int DisplacementY;
+    protected double DisplacementY;
     
-    public int getDisplacementX(){
+    public double getDisplacementX(){
         return DisplacementX;
     }
     
-    public int getDisplacementY(){
+    public double getDisplacementY(){
         return DisplacementY;
     }
     

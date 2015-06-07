@@ -7,7 +7,7 @@ import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 
 @XStreamAlias("SvgParameter")
 @XStreamConverter(value=ToAttributedValueConverter.class, strings={"value"})
-class SvgParameter{
+public class SvgParameter{
     @XStreamAlias("name")
     @XStreamAsAttribute
     protected String name;
