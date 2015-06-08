@@ -44,6 +44,11 @@ public class WvizConfig {
         return wvizConfig;
     }
 
+    /*
+     * TODO: Discuss whether we should put this test into a JUnit-test
+     * -> automated test
+     * -> remove testing from the class itself
+     */
     private static void testConfiguration(WvizConfig wvizConfig) {
 
         String symbolType, symbolSize, symbolColor, propertyName, geometryType;

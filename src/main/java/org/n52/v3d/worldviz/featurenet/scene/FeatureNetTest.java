@@ -18,12 +18,24 @@ import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
 //Currently, I have hardcoded the paths. I am aware that this is not the correct way to do it.
 //However, I am not acertain of the relative path scheme in different IDE's.
 //Please change it and let me know of the correct way to do it future as well. -- Adhitya
+/*
+ * Christian: I just used hardcoded relative paths. 
+ * TODO Maybe you could check whether you can run it without errors?
+ * --> then we should at least define relative paths as member variables 
+ * and not in the code directly.
+ */
 
 public class FeatureNetTest {
 
     public static void main(String[] args) throws PajekException {
         FeatureNetTest app = new FeatureNetTest();
         app.run();
+        
+        /*
+         * for test purposes I (Christian) find it helpful to have small console output
+         * "Done" to know when the output process is finished.
+         */
+        System.out.println("Done!");
     }
 
     private void run() throws PajekException {

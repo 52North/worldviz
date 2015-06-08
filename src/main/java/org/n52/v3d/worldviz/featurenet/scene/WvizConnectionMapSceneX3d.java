@@ -170,6 +170,14 @@ public class WvizConnectionMapSceneX3d {
             writeLine();
             writeLine("  <Scene>");
             writeLine();
+            
+            /*
+             * Christian: I added a Background node to have a white Background for now
+             * (it is hardcoded for now)
+             * --> maybe we should add such a parameter in the XML-file?
+             */
+            writeLine("  	   <Background skyColor='1 1 1' />");
+            writeLine();
 
             for (VgRelation edge : scene.getEdges()) {
                 VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
@@ -234,7 +242,7 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("        <Appearance>");
                 writeLine("          <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("        </Appearance>");
-                writeLine("        <Text string='" + getLabels().get(vertex) + "'/>");
+                writeLine("        <Text string='" + getLabels().get(vertex) + "'>");
                 writeLine("            <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
                 writeLine("        </Text>");
                 writeLine("      </Shape>");
