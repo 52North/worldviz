@@ -31,12 +31,12 @@ public class FeatureNetTest {
 
         //this.print(net); // Test output
         WvizConnectionMapSceneX3d res = this.generateX3dScene(net);
-        res.writeToFile("F:\\Downloads\\worldviz-maven-integration\\worldviz-maven-integration\\data\\graph.x3d");
+        res.writeToFile("test\\graph.x3d");
     }
 
     private VgFeatureNet generateFeatureNet() throws PajekException {
         PajekReader pajekReader = new PajekReader();
-        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile("F:\\Downloads\\worldviz-maven-integration\\worldviz-maven-integration\\data\\graph.net");
+        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile("data\\graph.net");
         /*
          VgFeature[] nodes = new VgFeature[3];
 
@@ -90,7 +90,7 @@ public class FeatureNetTest {
         // Construct virtual connection-map scene:
 
         MpFeatureNetVisualizer t1 = new MpFeatureNetVisualizer();
-        WvizConfig style = new WvizConfig("F:\\Downloads\\worldviz-maven-integration\\worldviz-maven-integration\\data\\WvizConfig.xml");
+        WvizConfig style = new WvizConfig("data\\WvizConfig.xml");
         style = style.getConfiguration();
         t1.setStyle(style);
         WvizVirtualConnectionMapScene s = t1.transform(net);
