@@ -37,9 +37,12 @@ The community's vision is to establish a creative surrounding, which allows effi
 development of innovative software solutions in the context of 3d geovisualization at world scale.
 
 ## Installation
-...
+Since this is a Maven project, the typical Maven installation tasks can be executed to build this project.
+To compile the Triturus WorldViz library, simply run Maven's 'package' task.
 
-Note that Triturus WorldViz requires the 52°North Triturus library (JAR).
+To use the Triturus WorldViz library, just add the WorldViz JAR file to your Java project.
+
+Note that Triturus WorldViz requires the 52°North Triturus library (JAR) which is already included as a dependency in the pom.xml-file.
 
 ## License information
 This program is free software; you can redistribute it and/or modify it under the terms of the 
