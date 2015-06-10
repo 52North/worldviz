@@ -30,8 +30,8 @@
           <LabelPlacement>
             <PointPlacement>
               <Displacement>
-                <DisplacementX>0.3</DisplacementX>
-                <DisplacementY>0</DisplacementY>
+                <DisplacementX>0</DisplacementX>
+                <DisplacementY>0.3</DisplacementY>
               </Displacement>
             </PointPlacement>
           </LabelPlacement>
