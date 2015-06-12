@@ -217,11 +217,11 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 	private double[] determineAngles(double angleXY, double angleZ,
 			VgPoint position) {
 
-		double longitude = Math.toDegrees(angleXY);
-		double latitude = Math.toDegrees(angleZ);
-
-		VgPoint latLonPoint = new GmPoint(longitude, latitude, 0);
-		latLonPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
+//		double longitude = Math.toDegrees(angleXY);
+//		double latitude = Math.toDegrees(angleZ);
+//
+//		VgPoint latLonPoint = new GmPoint(longitude, latitude, 0);
+//		latLonPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
 
 		T3dVector normalVector = new T3dVector(position);
 

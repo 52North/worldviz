@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+import org.n52.v3d.triturus.gisimplm.GmPoint;
+import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
@@ -182,18 +185,44 @@ public class WvizConnectionMapSceneX3d {
             for (VgRelation edge : scene.getEdges()) {
                 VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
-                writeLine("    <Transform>");
-                writeLine("      <Shape>");
-                writeLine("        <Appearance>");
-                writeLine("          <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
-                writeLine("        </Appearance>");
-                writeLine("        <LineSet vertexCount='2'" + ">");
-                writeLine("          <Coordinate point='");
-                writeLine("                             " + firstVertex.getX() + " " + firstVertex.getY() + " " + firstVertex.getZ());
-                writeLine("                             " + secondVertex.getX() + " " + secondVertex.getY() + " " + secondVertex.getZ());
-                writeLine("            '></Coordinate>");
-                writeLine("        </LineSet>");
-                writeLine("      </Shape>");
+                
+                //calculate angles/rotation
+                SceneSymbolTransformer angleCalc = new SceneSymbolTransformer(firstVertex, secondVertex);
+                double angleX = angleCalc.getAngleX();
+                double angleY = angleCalc.getAngleY();
+                double angleZ = angleCalc.getAngleZ();
+                
+                //calculate translation (mid-point between both end-points of the edge)
+                VgPoint midPoint = angleCalc.getMidPoint();
+                
+                //cylinder heigt
+                double cylinderHeight = angleCalc.getLengthFromTo();
+                
+                writeLine("    <Transform translation=\"" + midPoint.getX() + " " 
+                		+ midPoint.getY() + " " + midPoint.getZ() + "\">");
+                writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
+                writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+                
+                
+                
+                writeLine("            <Shape>");
+                writeLine("              <Appearance>");
+                writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
+                writeLine("              </Appearance>");
+//                writeLine("        <LineSet vertexCount='2'" + ">");
+//                writeLine("          <Coordinate point='");
+//                writeLine("                             " + firstVertex.getX() + " " + firstVertex.getY() + " " + firstVertex.getZ());
+//                writeLine("                             " + secondVertex.getX() + " " + secondVertex.getY() + " " + secondVertex.getZ());
+//                writeLine("            '></Coordinate>");
+//                writeLine("        </LineSet>");
+                
+                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\"0.10\"/>");
+                
+                writeLine("            </Shape>");
+                writeLine("          </Transform>");
+                writeLine("        </Transform>");
+                writeLine("      </Transform>");
                 writeLine("    </Transform>");
                 writeLine();
             }
@@ -201,19 +230,45 @@ public class WvizConnectionMapSceneX3d {
             for (VgRelation arc : scene.getArcs()) {
                 VgPoint firstVertex = (VgPoint) (arc.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (arc.getTo()).getGeometry();
-                writeLine("    <Transform>");
-                writeLine("      <Shape>");
-                writeLine("        <Appearance>");
-                writeLine("          <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
-                writeLine("        </Appearance>");
-                writeLine("        <LineSet vertexCount='2'" + ">");
-                writeLine("          <Coordinate point='");
-                writeLine("                             " + firstVertex.getX() + " " + firstVertex.getY() + " " + firstVertex.getZ());
-                writeLine("                             " + secondVertex.getX() + " " + secondVertex.getY() + " " + secondVertex.getZ());
-                writeLine("            '></Coordinate>");
-                writeLine("        </LineSet>");
-                writeLine("      </Shape>");
+                
+                
+              //calculate angles/rotation
+                SceneSymbolTransformer angleCalc = new SceneSymbolTransformer(firstVertex, secondVertex);
+                double angleX = angleCalc.getAngleX();
+                double angleY = angleCalc.getAngleY();
+                double angleZ = angleCalc.getAngleZ();
+                
+                //calculate translation (mid-point between both end-points of the edge)
+                VgPoint midPoint = angleCalc.getMidPoint();
+                
+                //cylinder heigt
+                double cylinderHeight = angleCalc.getLengthFromTo();
+                
+                writeLine("    <Transform translation=\"" + midPoint.getX() + " " 
+                		+ midPoint.getY() + " " + midPoint.getZ() + "\">");
+                writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
+                writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+                
+                writeLine("            <Shape>");
+                writeLine("              <Appearance>");
+                writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
+                writeLine("              </Appearance>");
+//                writeLine("              <LineSet vertexCount='2'" + ">");
+//                writeLine("                <Coordinate point='");
+//                writeLine("                             " + firstVertex.getX() + " " + firstVertex.getY() + " " + firstVertex.getZ());
+//                writeLine("                             " + secondVertex.getX() + " " + secondVertex.getY() + " " + secondVertex.getZ());
+//                writeLine("            '></Coordinate>");
+//                writeLine("        </LineSet>");
+                
+                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\"0.10\"/>");
+                
+                writeLine("            </Shape>");
+                writeLine("          </Transform>");
+                writeLine("        </Transform>");
+                writeLine("      </Transform>");
                 writeLine("    </Transform>");
+                
                 writeLine();
             }
 
