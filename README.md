@@ -81,6 +81,7 @@ certain functionality added, let us know at:
  - Benno Schmidt (b.schmidt@52north.org)
  - Christian Danowski (christian.danowski@hs-bochum.de)
  - Martin May (m.may@52north.org)
+ - Adhitya Kamakshidasan (a.kamakshidasan@52north.org)
 
 The 3D Community
 
