@@ -5,88 +5,94 @@
 
   	   <Background skyColor='1 1 1' />
 
-    <Transform>
-      <Shape>
-        <Appearance>
-          <Material emissiveColor="0 0 1"/>
-        </Appearance>
-        <LineSet vertexCount='2'>
-          <Coordinate point='
-                             -2.2428 2.1 0.0
-                             -1.7472 2.1 0.0
-            '></Coordinate>
-        </LineSet>
-      </Shape>
+    <Transform translation="-1.995 2.1 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.4955999999999998" radius="0.1"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
     </Transform>
 
-    <Transform>
-      <Shape>
-        <Appearance>
-          <Material emissiveColor="0 0 1"/>
-        </Appearance>
-        <LineSet vertexCount='2'>
-          <Coordinate point='
-                             -1.7472 2.1 0.0
-                             -1.179 -0.9 0.0
-            '></Coordinate>
-        </LineSet>
-      </Shape>
+    <Transform translation="-1.4631 0.6000000000000001 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -2.9544098654170607">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="3.0533344461424465" radius="0.1"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
     </Transform>
 
-    <Transform>
-      <Shape>
-        <Appearance>
-          <Material emissiveColor="0 0 1"/>
-        </Appearance>
-        <LineSet vertexCount='2'>
-          <Coordinate point='
-                             -1.179 -0.9 0.0
-                             -1.6536 -0.9 0.0
-            '></Coordinate>
-        </LineSet>
-      </Shape>
+    <Transform translation="-1.4163000000000001 -0.9 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.4745999999999999" radius="0.1"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
     </Transform>
 
-    <Transform>
-      <Shape>
-        <Appearance>
-          <Material emissiveColor="0 0 1"/>
-        </Appearance>
-        <LineSet vertexCount='2'>
-          <Coordinate point='
-                             -1.6536 -0.9 0.0
-                             -2.3034 -0.3 0.0
-            '></Coordinate>
-        </LineSet>
-      </Shape>
+    <Transform translation="-1.9785 -0.6 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -0.8252234704076729">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.8844433503622491" radius="0.1"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
     </Transform>
 
-    <Transform>
-      <Shape>
-        <Appearance>
-          <Material emissiveColor="0 0 1"/>
-        </Appearance>
-        <LineSet vertexCount='2'>
-          <Coordinate point='
-                             -2.3034 -0.3 0.0
-                             -2.718 -0.3 0.0
-            '></Coordinate>
-        </LineSet>
-      </Shape>
+    <Transform translation="-2.5107 -0.3 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.4146000000000001" radius="0.1"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
     </Transform>
 
-    <Transform>
-      <Shape>
-        <Appearance>
-          <Material emissiveColor="0 0 1"/>
-        </Appearance>
-        <LineSet vertexCount='2'>
-          <Coordinate point='
-                             -2.718 -0.3 0.0
-                             -2.2428 2.1 0.0
-            '></Coordinate>
-        </LineSet>
-      </Shape>
+    <Transform translation="-2.4804 0.9 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.19547174537063425">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="2.4465925365699945" radius="0.1"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
     </Transform>
 
     <Transform translation='-2.2428 2.1 0.0'>

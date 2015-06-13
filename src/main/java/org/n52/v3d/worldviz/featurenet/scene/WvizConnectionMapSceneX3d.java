@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
-import org.n52.v3d.triturus.gisimplm.GmPoint;
-import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
@@ -44,8 +42,8 @@ public class WvizConnectionMapSceneX3d {
 
     public double displacementX, displacementY;
 
-    //Currently, geometryType,stroke-width is not being used.
-    //Ask Benno, if he can generate a X3D file, using a cylinder between 2 points
+    //Currently, this file supports only Cylinders, when more parameters are used,
+    //this paramenter should be used and more if statements should be added.
     public String geometryType;
 
     private BufferedWriter document;
@@ -85,9 +83,9 @@ public class WvizConnectionMapSceneX3d {
         Font font = (Font) textVisualizer.getFont().get(0);
         List svgParameter = font.getSvgParameter();
 
-        for (Object sp : svgParameter) {
-            String name = ((SvgParameter) sp).getName();
-            String value = ((SvgParameter) sp).getValue();
+        for (Object object : svgParameter) {
+            String name = ((SvgParameter) object).getName();
+            String value = ((SvgParameter) object).getValue();
             svgMap.put(name, value);
         }
 
@@ -101,9 +99,9 @@ public class WvizConnectionMapSceneX3d {
         Fill fill = (Fill) textVisualizer.getFill().get(0);
         svgParameter = fill.getSvgParameter();
 
-        for (Object sp : svgParameter) {
-            String name = ((SvgParameter) sp).getName();
-            String value = ((SvgParameter) sp).getValue();
+        for (Object object : svgParameter) {
+            String name = ((SvgParameter) object).getName();
+            String value = ((SvgParameter) object).getValue();
             svgMap.put(name, value);
         }
 
@@ -116,14 +114,14 @@ public class WvizConnectionMapSceneX3d {
 
         svgParameter = stroke.getSvgParameter();
 
-        for (Object sp : svgParameter) {
-            String name = ((SvgParameter) sp).getName();
-            String value = ((SvgParameter) sp).getValue();
+        for (Object object : svgParameter) {
+            String name = ((SvgParameter) object).getName();
+            String value = ((SvgParameter) object).getValue();
             svgMap.put(name, value);
         }
 
-        for (VgFeature f : scene.getVertices()) {
-            labels.put(f, (String) ((GmAttrFeature) f).getAttributeValue(propertyName));
+        for (VgFeature feature : scene.getVertices()) {
+            labels.put(feature, (String) ((GmAttrFeature) feature).getAttributeValue(propertyName));
         }
 
     }
@@ -151,10 +149,10 @@ public class WvizConnectionMapSceneX3d {
         }
     }
 
-    public void writeToFile(String pFilename) {
+    public void writeToFile(String fileName) {
 
         try {
-            document = new BufferedWriter(new FileWriter(pFilename));
+            document = new BufferedWriter(new FileWriter(fileName));
 
             if (x3domMode) {
                 writeLine("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">");
@@ -187,19 +185,18 @@ public class WvizConnectionMapSceneX3d {
                 VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
                 
                 //calculate angles/rotation
-                SceneSymbolTransformer angleCalc = new SceneSymbolTransformer(firstVertex, secondVertex);
-                double angleX = angleCalc.getAngleX();
-                double angleY = angleCalc.getAngleY();
-                double angleZ = angleCalc.getAngleZ();
+                SceneSymbolTransformer sceneSymbolTransformer = new SceneSymbolTransformer(firstVertex, secondVertex);
+                double angleX = sceneSymbolTransformer.getAngleX();
+                double angleY = sceneSymbolTransformer.getAngleY();
+                double angleZ = sceneSymbolTransformer.getAngleZ();
                 
                 //calculate translation (mid-point between both end-points of the edge)
-                VgPoint midPoint = angleCalc.getMidPoint();
+                VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
                 
-                //cylinder heigt
-                double cylinderHeight = angleCalc.getLengthFromTo();
+                //cylinder height
+                double cylinderHeight = sceneSymbolTransformer.getLengthFromTo();
                 
-                writeLine("    <Transform translation=\"" + midPoint.getX() + " " 
-                		+ midPoint.getY() + " " + midPoint.getZ() + "\">");
+                writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                 writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                 writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
                 writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
@@ -217,7 +214,7 @@ public class WvizConnectionMapSceneX3d {
 //                writeLine("            '></Coordinate>");
 //                writeLine("        </LineSet>");
                 
-                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\"0.10\"/>");
+                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
                 
                 writeLine("            </Shape>");
                 writeLine("          </Transform>");
@@ -232,7 +229,7 @@ public class WvizConnectionMapSceneX3d {
                 VgPoint secondVertex = (VgPoint) (arc.getTo()).getGeometry();
                 
                 
-              //calculate angles/rotation
+                //calculate angles/rotation
                 SceneSymbolTransformer angleCalc = new SceneSymbolTransformer(firstVertex, secondVertex);
                 double angleX = angleCalc.getAngleX();
                 double angleY = angleCalc.getAngleY();
@@ -241,7 +238,7 @@ public class WvizConnectionMapSceneX3d {
                 //calculate translation (mid-point between both end-points of the edge)
                 VgPoint midPoint = angleCalc.getMidPoint();
                 
-                //cylinder heigt
+                //cylinder height
                 double cylinderHeight = angleCalc.getLengthFromTo();
                 
                 writeLine("    <Transform translation=\"" + midPoint.getX() + " " 
@@ -261,7 +258,7 @@ public class WvizConnectionMapSceneX3d {
 //                writeLine("            '></Coordinate>");
 //                writeLine("        </LineSet>");
                 
-                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\"0.10\"/>");
+                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
                 
                 writeLine("            </Shape>");
                 writeLine("          </Transform>");
@@ -319,14 +316,14 @@ public class WvizConnectionMapSceneX3d {
 
             document.close();
         }
-        catch (FileNotFoundException e) {
-            System.err.println("Could not access file \"" + pFilename + "\".");
+        catch (FileNotFoundException fileNotFoundException) {
+            System.err.println("Could not access file \"" + fileName + "\".");
         }
-        catch (IOException e) {
-            System.err.println(e.getMessage());
+        catch (IOException exception) {
+            System.err.println(exception.getMessage());
         }
-        catch (Exception e) {
-            System.err.println(e.getMessage());
+        catch (Exception exception) {
+            System.err.println(exception.getMessage());
         }
 
     }

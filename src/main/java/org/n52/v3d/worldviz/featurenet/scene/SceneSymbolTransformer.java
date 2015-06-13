@@ -30,9 +30,7 @@ public class SceneSymbolTransformer {
 	private T3dVector fromToVector;
 	private double lengthFromTo;
 
-	private double angleX;
-	private double angleY;
-	private double angleZ;
+	private double angleX,angleY,angleZ;
 
 	private VgPoint midPoint;
 
@@ -67,13 +65,11 @@ public class SceneSymbolTransformer {
 		// angleXZ is the angle between the xAxis and the 2d (!!!) fromToVector
 		// consisting only of X and Z coordinate (corresponds to longitude angle
 		// in WGS84)
-		double angleXZ = calculateAngle(this.xAxis, new T3dVector(
-				this.fromToVector.getX(), 0, this.fromToVector.getZ()));
+		double angleXZ = calculateAngle(this.xAxis, new T3dVector(this.fromToVector.getX(), 0, this.fromToVector.getZ()));
 
 		// diffAngleToHeightAxis describes the angle between the height axis
 		// (here y-axis because of Virtual Reality scene) and the from-to-vector
-		double diffAngleToHeightAxis = calculateAngle(symbolDirectionVector,
-				fromToVector);
+		double diffAngleToHeightAxis = calculateAngle(symbolDirectionVector, fromToVector);
 
 		this.angleX = 0;
 		this.angleY = angleXZ;
@@ -141,20 +137,20 @@ public class SceneSymbolTransformer {
 	 * Computes the angle in radiant between two vectors using the scalar product and the
 	 * lengths of both vectors.
 	 * 
-	 * @param vec1
-	 * @param vec2
+	 * @param vector1
+	 * @param vector2
 	 * @return
 	 */
-	private double calculateAngle(T3dVector vec1, T3dVector vec2) {
+	private double calculateAngle(T3dVector vector1, T3dVector vector2) {
 
-		double scalarProd = vec1.scalarProd(vec2);
+		double scalarProd = vector1.scalarProd(vector2);
 
-		double lengthVec1 = vec1.length();
-		double lengthVec2 = vec2.length();
-		if (lengthVec1 == 0. || lengthVec2 == 0.)
+		double lengthVector1 = vector1.length();
+		double lengthVector2 = vector2.length();
+		if (lengthVector1 == 0. || lengthVector2 == 0.)
 			return 0.;
 
-		double cosPhi = scalarProd / (lengthVec1 * lengthVec2);
+		double cosPhi = scalarProd / (lengthVector1 * lengthVector2);
 		return Math.acos(cosPhi);
 	}
 

@@ -46,7 +46,7 @@
             <!-- It could be interesting for Adhitya to introduce other visualizations such as ribbons, arcs, ... here...-->
           <Stroke>
             <SvgParameter name="stroke">0 0 1</SvgParameter>
-            <SvgParameter name="stroke-width">2</SvgParameter>
+            <SvgParameter name="stroke-width">0.1</SvgParameter>
           </Stroke>
         </LineVisualizer>
       </Relations>
