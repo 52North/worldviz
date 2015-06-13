@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("Fill")
-class Fill{
+public class Fill{
     @XStreamImplicit
     private List<SvgParameter> svgParameter;
     

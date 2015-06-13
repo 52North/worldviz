@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("TextVisualizer")
-class TextVisualizer{
+public class TextVisualizer{
     @XStreamImplicit
     protected List<Label> label;
     @XStreamImplicit

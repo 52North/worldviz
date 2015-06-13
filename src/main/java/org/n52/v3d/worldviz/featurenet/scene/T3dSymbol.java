@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 
 @XStreamAlias("T3dSymbol")
-class T3dSymbol{
+public class T3dSymbol{
     @XStreamAlias("type")
     @XStreamAsAttribute
     String type;

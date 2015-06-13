@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("Features")
-class Features{
+public class Features{
     @XStreamImplicit
     protected List <PointVisualizer> pointVisualizer;
     @XStreamImplicit

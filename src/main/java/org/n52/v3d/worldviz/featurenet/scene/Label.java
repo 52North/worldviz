@@ -1,11 +1,15 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 
 @XStreamAlias("Label")
-class Label{
+public class Label{
     @XStreamAlias("PropertyName")
-    String PropertyName;
+    private String PropertyName;
+    
+    public String getPropertyName(){
+        return PropertyName;
+    }
+    
 }

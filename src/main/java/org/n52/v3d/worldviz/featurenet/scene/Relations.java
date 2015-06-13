@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("Relations")
-class Relations{
+public class Relations{
     @XStreamImplicit
     protected List<LineVisualizer> lineVisualizer;
     

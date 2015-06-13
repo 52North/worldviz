@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("ConnectionNet")
-class ConnectionNet{
+public class ConnectionNet{
     
     @XStreamImplicit
     protected List<Mapper> mapper;

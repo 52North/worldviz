@@ -1,10 +1,8 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+
 
 
 import org.n52.v3d.triturus.vgis.VgFeature;
@@ -32,7 +30,7 @@ import org.n52.v3d.worldviz.featurenet.impl.WvizConnection;
  */
 
 
-//Is this Class doing what it is meant to be?
+//Adhitya: Is this Class doing what it is meant to be?
 public class WvizVirtualConnectionMapScene {
 
     public List<VgFeature> vertices = null;
@@ -48,7 +46,7 @@ public class WvizVirtualConnectionMapScene {
         vertices = (List<VgFeature>) net.getFeatures();
         relations = (List<VgRelation>) net.getRelations();
 
-        /*This is one of the ways, Adhitya can differentiate between an Arc and Edge.
+        /*Adhitya: This is one of the ways, we can differentiate between an Arc and Edge.
          Let me know if you have a better way of doing it. Can this be shifted to VgRelation? */
         
         for (VgRelation r : relations) {
@@ -80,7 +78,5 @@ public class WvizVirtualConnectionMapScene {
     public WvizConfig getStyle(){
         return style;
     }
-    
-    
-    
+
 }

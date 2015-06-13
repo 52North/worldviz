@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("Font")
-class Font{
+public class Font{
     @XStreamImplicit
     protected List<SvgParameter> svgParameter;
     

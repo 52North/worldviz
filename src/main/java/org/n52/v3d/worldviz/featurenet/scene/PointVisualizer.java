@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("PointVisualizer")
-class PointVisualizer{
+public class PointVisualizer{
     @XStreamImplicit
     protected List<T3dSymbol> t3dsymbol;
     

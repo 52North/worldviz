@@ -52,6 +52,8 @@ public class Parse extends PrettyPrint {
         }
         else {
             List<String> parts = new ArrayList<String>();
+            
+            //This is used to remove quotes from the Line processed
             Matcher matcher = Pattern.compile("([^\"]\\S*|\".+?\")\\s*").matcher(line);
             while (matcher.find()) {
                 parts.add(matcher.group(1).replace("\"", ""));
@@ -113,14 +115,16 @@ public class Parse extends PrettyPrint {
         }
         else {
             String[] parts = line.split(" ");
-            if (parts.length == 3) {
+            if (parts.length >= 2) {
                 boolean allCorrect = false;
                 int firstVertex, secondVertex, weight;
                 firstVertex = secondVertex = weight = 0;
                 try {
                     firstVertex = Integer.parseInt(parts[0]);
                     secondVertex = Integer.parseInt(parts[1]);
-                    weight = Integer.parseInt(parts[2]);
+                    if(parts.length == 3){
+                        weight = Integer.parseInt(parts[2]);
+                    }
                     allCorrect = true;
                 }
                 catch (NumberFormatException nfe) {
@@ -137,7 +141,7 @@ public class Parse extends PrettyPrint {
                 }
             }
             else {
-                System.err.println("Currently supports only Node1 + Node2 + Weight format");
+                System.err.println("Currently supports only Node + Node +/- Weight");
                 return false;
             }
         }
@@ -151,14 +155,16 @@ public class Parse extends PrettyPrint {
         }
         else {
             String[] parts = line.split(" ");
-            if (parts.length == 3) {
+            if (parts.length >= 2) {
                 boolean allCorrect = false;
                 int firstVertex, secondVertex, weight;
                 firstVertex = secondVertex = weight = 0;
                 try {
                     firstVertex = Integer.parseInt(parts[0]);
                     secondVertex = Integer.parseInt(parts[1]);
-                    weight = Integer.parseInt(parts[2]);
+                    if(parts.length == 3){
+                        weight = Integer.parseInt(parts[2]);
+                    }
                     allCorrect = true;
                 }
                 catch (NumberFormatException nfe) {
@@ -175,19 +181,14 @@ public class Parse extends PrettyPrint {
                 }
             }
             else {
-                System.err.println("Currently supports only Node1 + Node2 + Weight format");
+                System.err.println("Currently supports only Node + Node +/- Weight");
                 return false;
             }
         }
     }
 
     public boolean isVertexDeclaration(String line) {
-        if (line.startsWith(VERTEX_KEYWORD)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return line.startsWith(VERTEX_KEYWORD);
     }
 
     public boolean isVertexDeclarationSyntax(String line) {
@@ -231,22 +232,11 @@ public class Parse extends PrettyPrint {
 
     public boolean isArcDeclaration(String line) {
         line = line.trim();
-        if (line.startsWith(ARC_KEYWORD) && line.length() == 5) {
-            //If there are more characters than count(*Arcs), it is definitely wrong!
-            return true;
-        }
-        else {
-            return false;
-        }
+        return line.startsWith(ARC_KEYWORD) && line.length() == 5; //If there are more characters than count(*Arcs), it is definitely wrong!
     }
 
     public boolean isComment(String line) {
-        if (line.charAt(0) == COMMENT_KEYWORD) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return line.charAt(0) == COMMENT_KEYWORD;
     }
 
     public boolean readFile(BufferedReader bufferedReader) throws PajekException{

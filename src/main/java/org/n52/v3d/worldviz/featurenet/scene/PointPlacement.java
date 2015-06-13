@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("PointPlacement")
-class PointPlacement{
+public class PointPlacement{
     @XStreamImplicit
     protected List<Displacement> displacement;
     

@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("LineVisualizer")
-class LineVisualizer{
+public class LineVisualizer{
     @XStreamImplicit
     private List <Geometry> geometry;
     @XStreamImplicit

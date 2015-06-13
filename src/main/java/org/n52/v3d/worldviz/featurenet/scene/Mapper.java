@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("Mapper")
-class Mapper {
+public class Mapper {
     @XStreamImplicit
     protected List <Features> features;
     @XStreamImplicit

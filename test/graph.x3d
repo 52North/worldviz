@@ -3,7 +3,7 @@
 
   <Scene>
 
-  	   <Background skyColor='1 1 1' />
+    <Background skyColor='1 1 1' />
 
     <Transform translation="-1.995 2.1 0.0">
       <Transform rotation="1 0 0 0.0">

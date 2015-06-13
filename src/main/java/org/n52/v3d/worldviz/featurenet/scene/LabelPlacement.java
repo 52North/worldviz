@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 @XStreamAlias("LabelPlacement")
-class LabelPlacement{
+public class LabelPlacement{
     @XStreamImplicit
     protected List<PointPlacement> pointPlacement;
     

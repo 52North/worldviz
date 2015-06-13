@@ -24,6 +24,7 @@ import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
 
 public class FeatureNetTest {
 
+    
     public static void main(String[] args) throws PajekException {
         FeatureNetTest app = new FeatureNetTest();
         app.run();
@@ -38,9 +39,22 @@ public class FeatureNetTest {
     private void run() throws PajekException {
         VgFeatureNet net = this.generateFeatureNet();
 
+        String outputFile = "test\\graph";
+        
         //this.print(net); // Test output
-        WvizConnectionMapSceneX3d res = this.generateX3dScene(net);
-        res.writeToFile("test\\graph.x3d");
+        
+        WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
+        
+        //result.setX3domMode(true);
+        
+        if(result.isX3domMode()){
+            outputFile += ".html";
+        }
+        else{
+            outputFile += ".x3d";
+        }
+        
+        result.writeToFile(outputFile);
     }
 
     private VgFeatureNet generateFeatureNet() throws PajekException {
@@ -112,7 +126,8 @@ public class FeatureNetTest {
         Object result = t2.transform(s);
 
         if (result instanceof WvizConnectionMapSceneX3d) {
-            return (WvizConnectionMapSceneX3d) result;
+            WvizConnectionMapSceneX3d wvizConnectionMapSceneX3d = (WvizConnectionMapSceneX3d) result;
+            return wvizConnectionMapSceneX3d;
         }
         else {
             return null;

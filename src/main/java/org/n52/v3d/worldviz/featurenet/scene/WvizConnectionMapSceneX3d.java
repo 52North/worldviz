@@ -78,7 +78,7 @@ public class WvizConnectionMapSceneX3d {
         symbolColor = t3dSymbol.getColor();
         TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
         Label label = (Label) textVisualizer.getLabel().get(0);
-        propertyName = label.PropertyName;
+        propertyName = label.getPropertyName();
 
         Font font = (Font) textVisualizer.getFont().get(0);
         List svgParameter = font.getSvgParameter();
@@ -177,7 +177,7 @@ public class WvizConnectionMapSceneX3d {
              * (it is hardcoded for now)
              * --> maybe we should add such a parameter in the XML-file?
              */
-            writeLine("  	   <Background skyColor='1 1 1' />");
+            writeLine("    <Background skyColor='1 1 1' />");
             writeLine();
 
             for (VgRelation edge : scene.getEdges()) {

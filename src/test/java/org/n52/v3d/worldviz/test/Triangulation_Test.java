@@ -21,8 +21,7 @@ public class Triangulation_Test {
 
 	@Before
 	public void before() {
-		DatasetLoader countryCodeTest = new DatasetLoader(
-				RelativePaths.CARBON_EMISSIONS_PER_CAPITA_XML);
+		DatasetLoader countryCodeTest = new DatasetLoader(RelativePaths.CARBON_EMISSIONS_PER_CAPITA_XML);
 
 		try {
 			carbonEmissionsPerCapita = countryCodeTest.loadDataset();
@@ -46,8 +45,7 @@ public class Triangulation_Test {
 
 		VgMultiPolygon multiPolygon = (VgMultiPolygon) geometry;
 
-		List<VgIndexedTIN> vgTINs = PolygonTriangulator
-				.triangulateMultiPolygon(multiPolygon);
+		List<VgIndexedTIN> vgTINs = PolygonTriangulator.triangulateMultiPolygon(multiPolygon);
 
 		assertTrue(vgTINs.size() > 0);
 

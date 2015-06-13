@@ -4,11 +4,11 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 
 @XStreamAlias("Displacement")
-class Displacement{
+public class Displacement{
     @XStreamAlias("DisplacementX")
-    protected double DisplacementX;
+    protected double DisplacementX = 0.;
     @XStreamAlias("DisplacementY")
-    protected double DisplacementY;
+    protected double DisplacementY = 0.;
     
     public double getDisplacementX(){
         return DisplacementX;
