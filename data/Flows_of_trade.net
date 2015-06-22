@@ -3,13 +3,13 @@
 % arcs with from-vertex = to-vertex. 
 % Markets as vertices with lon/lat coordinates:
 *Vertices 7
-1 "North America" -90 45 0 
+1 "North America" -90 45 0
 2 "Latin America" -55 -20 0
 3 "Western Europe" 0 55 0 
 4 "Eastern Europe" 75 55 0 
 5 "Mid east" 50 25 0
 6 "Africa" 20 0 0 
-7 "Asia & Oceania" 110 15 0 
+7 "Asia and Oceania" 110 15 0 
 % Trade flows as arcs:
 *Arcs
 1 1 742 

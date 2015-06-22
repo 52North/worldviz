@@ -28,11 +28,11 @@ import org.n52.v3d.worldviz.featurenet.scene.SvgParameter;
 import org.n52.v3d.worldviz.featurenet.scene.T3dSymbol;
 import org.n52.v3d.worldviz.featurenet.scene.TextVisualizer;
 import org.n52.v3d.worldviz.featurenet.scene.WvizConfig;
+import org.n52.v3d.worldviz.helper.RelativePaths;
 
 public class WvizConfig_Test {
 
-    //Adhitya: This should be later moved to the RelativePaths Class
-    public static final String filePath = "data\\WvizConfig.xml";
+    public static final String filePath = RelativePaths.STYLE_CONFIGURATION_XML;
     
     private WvizConfig wvizConfig;
 

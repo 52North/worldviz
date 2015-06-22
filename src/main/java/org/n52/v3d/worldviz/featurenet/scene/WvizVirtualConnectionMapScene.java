@@ -33,8 +33,8 @@ import org.n52.v3d.worldviz.featurenet.impl.WvizConnection;
 //Adhitya: Is this Class doing what it is meant to be?
 public class WvizVirtualConnectionMapScene {
 
-    public List<VgFeature> vertices = null;
-    public List<VgRelation> relations = null;
+    public ArrayList<VgFeature> vertices = null;
+    public ArrayList<VgRelation> relations = null;
 
     public ArrayList<VgRelation> edges = new ArrayList<VgRelation>();
     public ArrayList<VgRelation> arcs = new ArrayList<VgRelation>();
@@ -43,8 +43,8 @@ public class WvizVirtualConnectionMapScene {
 
     public WvizVirtualConnectionMapScene(VgFeatureNet net, WvizConfig style){
         
-        vertices = (List<VgFeature>) net.getFeatures();
-        relations = (List<VgRelation>) net.getRelations();
+        vertices = (ArrayList<VgFeature>) net.getFeatures();
+        relations = (ArrayList<VgRelation>) net.getRelations();
 
         /*Adhitya: This is one of the ways, we can differentiate between an Arc and Edge.
          Let me know if you have a better way of doing it. Can this be shifted to VgRelation? */
@@ -63,7 +63,7 @@ public class WvizVirtualConnectionMapScene {
 
     }
     
-    public List<VgFeature> getVertices(){
+    public ArrayList<VgFeature> getVertices(){
         return vertices;
     }
     

@@ -12,6 +12,8 @@ public final class RelativePaths {
 
 	// general
 	private static final String DATA_FOLDER = "data/";
+        private static final String TEST_FOLDER = "test/";
+        
 	private static final String EARTH_SUB_FOLDER = DATA_FOLDER + "earth/";
 	private static final String DATA_SOURCE_FILES_FOLDER = EARTH_SUB_FOLDER
 			+ "sourceFiles/";
@@ -212,5 +214,15 @@ public final class RelativePaths {
 			+ "Population_meta.xml";
 	public static final String POPULATION_CSV = DATA_SOURCE_FILES_FOLDER
 			+ "UNEP-EDE__pop_total__1398251955.csv";
+        
+        public static final String PAJEK_GRAPH_NET = DATA_FOLDER + "graph.net";
+        
+        public static final String FLOWS_OF_TRADE_NET = DATA_FOLDER + "Flows_of_trade.net";
 
+        public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER + "WvizConfig.xml";
+        
+        public static final String OUTPUT_GRAPH = TEST_FOLDER + "graph";
+        public static final String OUTPUT_GRAPH_HTML = OUTPUT_GRAPH + ".html";
+        public static final String OUTPUT_GRAPH_X3D = OUTPUT_GRAPH + ".x3d";
+        
 }

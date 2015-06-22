@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
+import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
 
 /**
  * Concrete X3D scene description of a 3-d connection-map.
@@ -36,6 +38,8 @@ public class WvizConnectionMapSceneX3d {
     
     public String propertyName;
 
+    public Map<VgPoint, VgPoint> pointMap = new HashMap<VgPoint, VgPoint>(); //This is used to map the geo-coordinates to the scene coordinates
+    
     public Map<VgFeature, String> labels = new HashMap<VgFeature, String>();
 
     public Map<String, String> svgMap = new HashMap<String, String>(); // Cannot be viable once there are more properties
@@ -48,6 +52,9 @@ public class WvizConnectionMapSceneX3d {
 
     private BufferedWriter document;
 
+    
+    public ArrayList <VgPoint> geoCoordinates;
+    
     public boolean isX3domMode() {
         return x3domMode;
     }
@@ -55,9 +62,27 @@ public class WvizConnectionMapSceneX3d {
     public void setX3domMode(boolean x3dom) {
         this.x3domMode = x3dom;
     }
+    
+    
+    public ArrayList <VgPoint> getGeoCoordinates(){
+        return this.geoCoordinates;
+    }
+    
 
     public WvizConnectionMapSceneX3d(WvizVirtualConnectionMapScene scene) {
         this.scene = scene;
+        
+        Wgs84ToX3DTransform x3dTransform = new Wgs84ToX3DTransform();
+        
+        ArrayList<VgPoint> sceneCoordinates = x3dTransform.transform(
+                x3dTransform.transformVertices(scene.getVertices())
+        );
+        
+        geoCoordinates = x3dTransform.transformVertices(scene.getVertices());
+        
+        for(int i=0; i<geoCoordinates.size(); i++){
+            pointMap.put(geoCoordinates.get(i), sceneCoordinates.get(i));
+        }
         
         //Check in XML file, if there is a default configuration or not
         getDefaultConfiguration(scene);
@@ -184,6 +209,9 @@ public class WvizConnectionMapSceneX3d {
                 VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
                 
+                firstVertex = pointMap.get(firstVertex);
+                secondVertex = pointMap.get(secondVertex);
+                
                 //calculate angles/rotation
                 SceneSymbolTransformer sceneSymbolTransformer = new SceneSymbolTransformer(firstVertex, secondVertex);
                 double angleX = sceneSymbolTransformer.getAngleX();
@@ -207,12 +235,6 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("              <Appearance>");
                 writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
                 writeLine("              </Appearance>");
-//                writeLine("        <LineSet vertexCount='2'" + ">");
-//                writeLine("          <Coordinate point='");
-//                writeLine("                             " + firstVertex.getX() + " " + firstVertex.getY() + " " + firstVertex.getZ());
-//                writeLine("                             " + secondVertex.getX() + " " + secondVertex.getY() + " " + secondVertex.getZ());
-//                writeLine("            '></Coordinate>");
-//                writeLine("        </LineSet>");
                 
                 writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
                 
@@ -228,6 +250,8 @@ public class WvizConnectionMapSceneX3d {
                 VgPoint firstVertex = (VgPoint) (arc.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (arc.getTo()).getGeometry();
                 
+                firstVertex = pointMap.get(firstVertex);
+                secondVertex = pointMap.get(secondVertex);
                 
                 //calculate angles/rotation
                 SceneSymbolTransformer angleCalc = new SceneSymbolTransformer(firstVertex, secondVertex);
@@ -251,12 +275,6 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("              <Appearance>");
                 writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
                 writeLine("              </Appearance>");
-//                writeLine("              <LineSet vertexCount='2'" + ">");
-//                writeLine("                <Coordinate point='");
-//                writeLine("                             " + firstVertex.getX() + " " + firstVertex.getY() + " " + firstVertex.getZ());
-//                writeLine("                             " + secondVertex.getX() + " " + secondVertex.getY() + " " + secondVertex.getZ());
-//                writeLine("            '></Coordinate>");
-//                writeLine("        </LineSet>");
                 
                 writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
                 
@@ -271,6 +289,7 @@ public class WvizConnectionMapSceneX3d {
 
             for (VgFeature vertex : scene.getVertices()) {
                 VgPoint point = (VgPoint) (vertex.getGeometry());
+                point = pointMap.get(point);
                 writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                 writeLine("      <Shape>");
                 writeLine("        <Appearance>");
@@ -294,7 +313,7 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("        <Appearance>");
                 writeLine("          <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("        </Appearance>");
-                writeLine("        <Text string='" + getLabels().get(vertex) + "'>");
+                writeLine("        <Text string=\"" + getLabels().get(vertex) + "\">");
                 writeLine("            <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
                 writeLine("        </Text>");
                 writeLine("      </Shape>");

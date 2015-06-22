@@ -10,8 +10,8 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * <p />
  * <code>
  * x -&gt; X<br />
- * y -&gt; -Z<br />
- * z -&gt; Y<br />
+ * y -&gt; Z<br />
+ * z -&gt; -Y<br />
  * </code>
  * <p />
  * Hence, this transformation maps typical real-world coordinate-axes 
@@ -33,8 +33,8 @@ public class AxisSwitchTransform implements CoordinateTransform
 	{
 		double 
 			x = loc.getX(),
-			y = -loc.getZ(), 
-			z = loc.getY();
+			y = loc.getZ(), 
+			z = -loc.getY();
 		return new T3dVector(x, y, z);
 	}
 
@@ -42,8 +42,8 @@ public class AxisSwitchTransform implements CoordinateTransform
 	{
 		double 
 			x = pnt.getX(),
-			y = -pnt.getZ(), 
-			z = pnt.getY();
+			y = pnt.getZ(), 
+			z = -pnt.getY();
 		return new T3dVector(x, y, z);
 	}
 }

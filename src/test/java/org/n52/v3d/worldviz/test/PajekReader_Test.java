@@ -14,14 +14,14 @@ import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
 import org.n52.v3d.worldviz.featurenet.impl.WvizConnection;
 import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
+import org.n52.v3d.worldviz.helper.RelativePaths;
 
 public class PajekReader_Test {
 
     public PajekReader reader;
     public WvizUniversalFeatureNet wvizuniversalfeaturenet;
 
-    //Adhitya: This should be later moved to the RelativePaths Class
-    public static final String filePath = "data\\graph.net";
+    public static final String filePath = RelativePaths.PAJEK_GRAPH_NET;
 
     @Before
     public void before() {
