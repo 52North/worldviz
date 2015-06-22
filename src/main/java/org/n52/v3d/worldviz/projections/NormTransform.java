@@ -10,10 +10,36 @@ import org.n52.v3d.triturus.vgis.VgPoint;
 
 /**
  * Normalization transformation. This transformation maps a set of given 
- * point-coordinates to the unit-box, i.e. to the range (-1, -1, 1) - (1, 1, 1). 
- * Basically, both a scaling and a translation operation will be performed.
- * Note that the aspect ratio of the given points will be maintained.
- *
+ * point-coordinates to the the ground-plane's range (-1, -1) - (+1, +1). 
+ * I.e., after applying this transformation, all points will lie inside this 
+ * unit-quad. Additionally, the aspect-ratios with respect to <i>x</i>, 
+ * <i>y,</i> and <i>z</i> will be preserved. Basically, both a scaling and a 
+ * translation operation will be performed. 
+ * <p />
+ * This kind of transformation makes sense especially for positions, where all 
+ * coordinates refer to the same metric dimension, e.g. ground-values <i>x</i> and 
+ * <i>y</i> in meters and <i>z</i>-values in meters above ground.
+ * <p />
+ * Example:<br />
+ * <tt><br />
+ * VgPoint[] loc = new VgPoint[2];<br />
+ * loc[0] = new GmPoint(-180., -90., 0.);<br />
+ * loc[1] = new GmPoint(+180., +90., 8.848); // Mt Everest elevation in km<br />
+ * NormTransform t = new NormTransform(loc);<br />
+ * System.out.println(loc[0] + " -> " + t.transform(loc[0]));<br /> 
+ * System.out.println(loc[1] + " -> " + t.transform(loc[1]));
+ * </tt>
+ * <p />
+ * The console output for the code above would look like this:<br />
+ * <tt><br />
+ * (-180.0, -90.0, 0.0 (none)) -> (-1.0, -0.5, 0.0)<br />
+ * (180.0, 90.0, 8.848 (none)) -> (1.0, 0.5, 0.04915555555555556)
+ * </tt>
+ * <p />
+ * Note that the aspect ratio of the given points will be maintained! Thus the 
+ * envelope (bounding-box) of the output point-set must not be (-1, -1, -1) - 
+ * (1, 1, 1)! 
+ * 
  * @author Benno Schmidt
  */
 public class NormTransform implements CoordinateTransform
