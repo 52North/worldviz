@@ -197,11 +197,7 @@ public class WvizConnectionMapSceneX3d {
             writeLine("  <Scene>");
             writeLine();
             
-            /*
-             * Christian: I added a Background node to have a white Background for now
-             * (it is hardcoded for now)
-             * --> maybe we should add such a parameter in the XML-file?
-             */
+            //@ToDo: Instead of Hardcoding the skyColor, we should include it in the XML file
             writeLine("    <Background skyColor='1 1 1' />");
             writeLine();
 
@@ -265,8 +261,7 @@ public class WvizConnectionMapSceneX3d {
                 //cylinder height
                 double cylinderHeight = angleCalc.getLengthFromTo();
                 
-                writeLine("    <Transform translation=\"" + midPoint.getX() + " " 
-                		+ midPoint.getY() + " " + midPoint.getZ() + "\">");
+                writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                 writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                 writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
                 writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
@@ -295,6 +290,7 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("        <Appearance>");
                 writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
                 writeLine("        </Appearance>");
+                
                 if ("Sphere".equals(symbolType)) {
                     writeLine("        <Sphere radius='" + symbolSize + "'/>");
                 }
@@ -304,19 +300,23 @@ public class WvizConnectionMapSceneX3d {
                 else {
                     writeLine("        <Sphere radius='" + defaultSymbolSize + "'/>"); // If an incorrect symbol type has been specified
                 }
+                
                 writeLine("      </Shape>");
                 writeLine("    </Transform>");
                 writeLine();
 
                 writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + point.getZ() + "'>");
-                writeLine("      <Shape>");
-                writeLine("        <Appearance>");
-                writeLine("          <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
-                writeLine("        </Appearance>");
-                writeLine("        <Text string=\"" + getLabels().get(vertex) + "\">");
-                writeLine("            <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
-                writeLine("        </Text>");
-                writeLine("      </Shape>");
+                //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
+                writeLine("        <Billboard axisOfRotation='0 0 0'>");
+                writeLine("          <Shape>");
+                writeLine("            <Appearance>");
+                writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
+                writeLine("            </Appearance>");
+                writeLine("            <Text string=\"" + getLabels().get(vertex) + "\">");
+                writeLine("                <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
+                writeLine("            </Text>");
+                writeLine("          </Shape>");
+                writeLine("        </Billboard>");
                 writeLine("    </Transform>");
                 writeLine();
 
