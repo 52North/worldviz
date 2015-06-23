@@ -40,7 +40,7 @@ public class PajekReader extends FileIO {
                 int first = e.getFirstVertex();
                 int second = e.getSecondVertex();
 
-                /*This is under the assumption that all nodes that are present in vertexArrayList are present in proper order (1,2,...n) 
+                /*This is under the assumption that all nodes that are present in vertexArrayList are in proper order (1,2,...n) 
                  If this is not the case, then a sorting operation can be performed on the list based on vertexNumber
                  We do vertexNumber-1 in nodes.get() because Pajek is 1-indexed while Java is 0-indexed
                  */
@@ -52,7 +52,7 @@ public class PajekReader extends FileIO {
                 int first = a.getFirstVertex();
                 int second = a.getSecondVertex();
 
-                /*This is under the assumption that all nodes that are presetnt in vertexArrayList are present in proper order (1,2,...n) 
+                /*This is under the assumption that all nodes that are present in vertexArrayList are in proper order (1,2,...n) 
                  In case if this is not the case, then a sorting operation can be performed on the list based on vertexNumber
                  We do vertexNumber-1 in nodes.get() because Pajek is 1-indexed while Java is 0-indexed
                  */
