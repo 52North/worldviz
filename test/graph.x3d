@@ -5,7 +5,7 @@
 
     <Background skyColor='1 1 1' />
 
-    <Transform translation="-1.995 2.1 0.0">
+    <Transform translation="-0.030999999999999805 0.9999999999999998 0.0">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.0">
           <Transform rotation="0 0 1 -1.5707963267948966">
@@ -13,29 +13,29 @@
               <Appearance>
                 <Material emissiveColor="0 0 1"/>
               </Appearance>
-              <Cylinder height="0.4955999999999998" radius="0.1"/>
+              <Cylinder height="0.3303999999999998" radius="0.01"/>
             </Shape>
           </Transform>
         </Transform>
       </Transform>
     </Transform>
 
-    <Transform translation="-1.4631 0.6000000000000001 0.0">
+    <Transform translation="0.3236000000000001 -1.1102230246251565E-16 0.0">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.0">
-          <Transform rotation="0 0 1 -2.9544098654170607">
+          <Transform rotation="0 0 1 -2.954409865417061">
             <Shape>
               <Appearance>
                 <Material emissiveColor="0 0 1"/>
               </Appearance>
-              <Cylinder height="3.0533344461424465" radius="0.1"/>
+              <Cylinder height="2.0355562974282972" radius="0.01"/>
             </Shape>
           </Transform>
         </Transform>
       </Transform>
     </Transform>
 
-    <Transform translation="-1.4163000000000001 -0.9 0.0">
+    <Transform translation="0.3548000000000002 -1.0 0.0">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 3.141592653589793">
           <Transform rotation="0 0 1 -1.5707963267948966">
@@ -43,29 +43,29 @@
               <Appearance>
                 <Material emissiveColor="0 0 1"/>
               </Appearance>
-              <Cylinder height="0.4745999999999999" radius="0.1"/>
+              <Cylinder height="0.3163999999999998" radius="0.01"/>
             </Shape>
           </Transform>
         </Transform>
       </Transform>
     </Transform>
 
-    <Transform translation="-1.9785 -0.6 0.0">
+    <Transform translation="-0.019999999999999685 -0.8 0.0">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 3.141592653589793">
-          <Transform rotation="0 0 1 -0.8252234704076729">
+          <Transform rotation="0 0 1 -0.8252234704076731">
             <Shape>
               <Appearance>
                 <Material emissiveColor="0 0 1"/>
               </Appearance>
-              <Cylinder height="0.8844433503622491" radius="0.1"/>
+              <Cylinder height="0.5896289002414993" radius="0.01"/>
             </Shape>
           </Transform>
         </Transform>
       </Transform>
     </Transform>
 
-    <Transform translation="-2.5107 -0.3 0.0">
+    <Transform translation="-0.3747999999999997 -0.6000000000000001 0.0">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 3.141592653589793">
           <Transform rotation="0 0 1 -1.5707963267948966">
@@ -73,14 +73,14 @@
               <Appearance>
                 <Material emissiveColor="0 0 1"/>
               </Appearance>
-              <Cylinder height="0.4146000000000001" radius="0.1"/>
+              <Cylinder height="0.2764" radius="0.01"/>
             </Shape>
           </Transform>
         </Transform>
       </Transform>
     </Transform>
 
-    <Transform translation="-2.4804 0.9 0.0">
+    <Transform translation="-0.3545999999999997 0.19999999999999984 0.0">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.0">
           <Transform rotation="0 0 1 -0.19547174537063425">
@@ -88,131 +88,143 @@
               <Appearance>
                 <Material emissiveColor="0 0 1"/>
               </Appearance>
-              <Cylinder height="2.4465925365699945" radius="0.1"/>
+              <Cylinder height="1.6310616910466629" radius="0.01"/>
             </Shape>
           </Transform>
         </Transform>
       </Transform>
     </Transform>
 
-    <Transform translation='-2.2428 2.1 0.0'>
+    <Transform translation='-0.1961999999999997 0.9999999999999998 0.0'>
       <Shape>
         <Appearance>
           <Material diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.15'/>
+        <Sphere radius='0.1'/>
       </Shape>
     </Transform>
 
-    <Transform translation='-2.2428 2.4 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="0 0 0"/>
-        </Appearance>
-        <Text string='1'>
-            <FontStyle family='MS Sans Serif' size='0.4'/>
-        </Text>
-      </Shape>
+    <Transform translation='-0.1961999999999997 1.2999999999999998 0.00.015'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string="1">
+                <FontStyle family='MS Sans Serif' size='0.4'/>
+            </Text>
+          </Shape>
+        </Billboard>
     </Transform>
 
-    <Transform translation='-1.7472 2.1 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="1 0 0"/>
-        </Appearance>
-        <Sphere radius='0.15'/>
-      </Shape>
-    </Transform>
-
-    <Transform translation='-1.7472 2.4 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="0 0 0"/>
-        </Appearance>
-        <Text string='2'>
-            <FontStyle family='MS Sans Serif' size='0.4'/>
-        </Text>
-      </Shape>
-    </Transform>
-
-    <Transform translation='-1.6536 -0.9 0.0'>
+    <Transform translation='0.1342000000000001 0.9999999999999998 0.0'>
       <Shape>
         <Appearance>
           <Material diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.15'/>
+        <Sphere radius='0.1'/>
       </Shape>
     </Transform>
 
-    <Transform translation='-1.6536 -0.6000000000000001 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="0 0 0"/>
-        </Appearance>
-        <Text string='3'>
-            <FontStyle family='MS Sans Serif' size='0.4'/>
-        </Text>
-      </Shape>
+    <Transform translation='0.1342000000000001 1.2999999999999998 0.00.015'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string="2">
+                <FontStyle family='MS Sans Serif' size='0.4'/>
+            </Text>
+          </Shape>
+        </Billboard>
     </Transform>
 
-    <Transform translation='-2.718 -0.3 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="1 0 0"/>
-        </Appearance>
-        <Sphere radius='0.15'/>
-      </Shape>
-    </Transform>
-
-    <Transform translation='-2.718 0.0 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="0 0 0"/>
-        </Appearance>
-        <Text string='4'>
-            <FontStyle family='MS Sans Serif' size='0.4'/>
-        </Text>
-      </Shape>
-    </Transform>
-
-    <Transform translation='-2.3034 -0.3 0.0'>
+    <Transform translation='0.19660000000000033 -1.0 0.0'>
       <Shape>
         <Appearance>
           <Material diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.15'/>
+        <Sphere radius='0.1'/>
       </Shape>
     </Transform>
 
-    <Transform translation='-2.3034 0.0 0.0'>
-      <Shape>
-        <Appearance>
-          <Material diffuseColor="0 0 0"/>
-        </Appearance>
-        <Text string='5'>
-            <FontStyle family='MS Sans Serif' size='0.4'/>
-        </Text>
-      </Shape>
+    <Transform translation='0.19660000000000033 -0.7 0.00.015'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string="3">
+                <FontStyle family='MS Sans Serif' size='0.4'/>
+            </Text>
+          </Shape>
+        </Billboard>
     </Transform>
 
-    <Transform translation='-1.179 -0.9 0.0'>
+    <Transform translation='-0.5129999999999997 -0.6000000000000001 0.0'>
       <Shape>
         <Appearance>
           <Material diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.15'/>
+        <Sphere radius='0.1'/>
       </Shape>
     </Transform>
 
-    <Transform translation='-1.179 -0.6000000000000001 0.0'>
+    <Transform translation='-0.5129999999999997 -0.3000000000000001 0.00.015'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string="4">
+                <FontStyle family='MS Sans Serif' size='0.4'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='-0.2365999999999997 -0.6000000000000001 0.0'>
       <Shape>
         <Appearance>
-          <Material diffuseColor="0 0 0"/>
+          <Material diffuseColor="1 0 0"/>
         </Appearance>
-        <Text string='6'>
-            <FontStyle family='MS Sans Serif' size='0.4'/>
-        </Text>
+        <Sphere radius='0.1'/>
       </Shape>
+    </Transform>
+
+    <Transform translation='-0.2365999999999997 -0.3000000000000001 0.00.015'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string="5">
+                <FontStyle family='MS Sans Serif' size='0.4'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.5130000000000001 -1.0 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.5130000000000001 -0.7 0.00.015'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string="6">
+                <FontStyle family='MS Sans Serif' size='0.4'/>
+            </Text>
+          </Shape>
+        </Billboard>
     </Transform>
 
   </Scene>

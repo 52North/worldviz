@@ -17,7 +17,7 @@
         -->
         <PointVisualizer>
           <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
-          <T3dSymbol type="Sphere" size="0.15" color="1 0 0"/>
+          <T3dSymbol type="Sphere" size="0.1" color="1 0 0"/>
         </PointVisualizer>
         <TextVisualizer>
           <Label>
@@ -46,7 +46,7 @@
             <!-- It could be interesting for Adhitya to introduce other visualizations such as ribbons, arcs, ... here...-->
           <Stroke>
             <SvgParameter name="stroke">0 0 1</SvgParameter>
-            <SvgParameter name="stroke-width">0.1</SvgParameter>
+            <SvgParameter name="stroke-width">0.01</SvgParameter>
           </Stroke>
         </LineVisualizer>
       </Relations>
