@@ -191,14 +191,14 @@ public class WvizConnectionMapSceneX3d {
                 writeLine();
             }
 
-            writeLine("<X3D xmlns=\"http://www.web3d.org/specifications/x3d-namespace\" showStat=\"true\" showriteLineog=\"true\"");
+            writeLine("<X3D xmlns=\"http://www.web3d.org/specifications/x3d-namespace\" showStat=\"true\" showriteLineog=\"true\" showLog=\"true\"");
             writeLine("  x=\"0px\" y=\"0px\" width=\"400px\" height=\"400px\">");
             writeLine();
             writeLine("  <Scene>");
             writeLine();
             
             //@ToDo: Instead of Hardcoding the skyColor, we should include it in the XML file
-            writeLine("    <Background skyColor='1 1 1' />");
+            //writeLine("    <Background skyColor='1 1 1' />");
             writeLine();
 
             for (VgRelation edge : scene.getEdges()) {
@@ -305,14 +305,14 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("    </Transform>");
                 writeLine();
 
-                writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + point.getZ()+svgMap.get("stroke-width")+5 + "'>");
+                writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + point.getZ() + "'>");
                 //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
                 writeLine("        <Billboard axisOfRotation='0 0 0'>");
                 writeLine("          <Shape>");
                 writeLine("            <Appearance>");
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("            </Appearance>");
-                writeLine("            <Text string=\"" + getLabels().get(vertex) + "\">");
+                writeLine("            <Text string='" + getLabels().get(vertex) + "'>");
                 writeLine("                <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
                 writeLine("            </Text>");
                 writeLine("          </Shape>");

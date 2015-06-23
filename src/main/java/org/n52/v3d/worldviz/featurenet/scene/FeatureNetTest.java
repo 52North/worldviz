@@ -45,7 +45,7 @@ public class FeatureNetTest {
         
         WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
         
-        //result.setX3domMode(true);
+        result.setX3domMode(true);
         
         if(result.isX3domMode()){
             outputFile += ".html";
