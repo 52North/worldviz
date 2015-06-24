@@ -5,15 +5,21 @@ package org.n52.v3d.worldviz.featurenet.scene;
  * 
  * @author Adhitya Kamakshidasan
  */
-public class WvizConnectionMapSceneKml 
-{
+public class WvizConnectionMapSceneKml extends WvizConcreteConnectionMapScene {
+	
+	public WvizConnectionMapSceneKml(WvizVirtualConnectionMapScene scene) {
+		super(scene);
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * exports the KML description to a file.
 	 * 
-	 * @param fileName File name (and path)
+	 * @param fileName
+	 *            File name (and path)
 	 */
-	public void writeToFile(String fileName) 
-	{	
+	@Override
+	public void writeToFile(String fileName) {
 		// TODO
 	}
 }

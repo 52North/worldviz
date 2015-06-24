@@ -6,10 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
@@ -20,40 +18,14 @@ import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
  *
  * @author Adhitya Kamakshidasan
  */
-public class WvizConnectionMapSceneX3d {
+public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
     private boolean x3domMode = false;
 
-    /**
-     * exports the X3D description to a file.
-     *
-     * @param fileName File name (and path)
-     */
-    private WvizVirtualConnectionMapScene scene;
-
-    //List of Style Parameters that were defined in the XML sheet - More will be added!
-    public String symbolType, symbolColor, symbolSize;
-
-    public static final String defaultSymbolSize = "0.15";
+    //This is used to map the geo-coordinates to the scene coordinates
+    private Map<VgPoint, VgPoint> pointMap = new HashMap<VgPoint, VgPoint>(); 
     
-    public String propertyName;
-
-    public Map<VgPoint, VgPoint> pointMap = new HashMap<VgPoint, VgPoint>(); //This is used to map the geo-coordinates to the scene coordinates
-    
-    public Map<VgFeature, String> labels = new HashMap<VgFeature, String>();
-
-    public Map<String, String> svgMap = new HashMap<String, String>(); // Cannot be viable once there are more properties
-
-    public double displacementX, displacementY;
-
-    //Currently, this file supports only Cylinders, when more parameters are used,
-    //this paramenter should be used and more if statements should be added.
-    public String geometryType;
-
-    private BufferedWriter document;
-
-    
-    public ArrayList <VgPoint> geoCoordinates;
+    private ArrayList <VgPoint> geoCoordinates;
     
     public boolean isX3domMode() {
         return x3domMode;
@@ -62,16 +34,10 @@ public class WvizConnectionMapSceneX3d {
     public void setX3domMode(boolean x3dom) {
         this.x3domMode = x3dom;
     }
-    
-    
-    public ArrayList <VgPoint> getGeoCoordinates(){
-        return this.geoCoordinates;
-    }
-    
 
     public WvizConnectionMapSceneX3d(WvizVirtualConnectionMapScene scene) {
-        this.scene = scene;
-        
+        super(scene);
+
         Wgs84ToX3DTransform x3dTransform = new Wgs84ToX3DTransform();
         
         ArrayList<VgPoint> sceneCoordinates = x3dTransform.transform(
@@ -83,97 +49,14 @@ public class WvizConnectionMapSceneX3d {
         for(int i=0; i<geoCoordinates.size(); i++){
             pointMap.put(geoCoordinates.get(i), sceneCoordinates.get(i));
         }
-        
-        //Check in XML file, if there is a default configuration or not
-        getDefaultConfiguration(scene);
     }
 
-    private void getDefaultConfiguration(WvizVirtualConnectionMapScene scene) {
-        //We will use 0, for default configuration
-
-        //For specific configuration, we should change our current XML schema
-        WvizConfig wvizConfig = scene.getStyle();
-        ConnectionNet connectionNet = (ConnectionNet) wvizConfig.getConnectionNet().get(0);
-        Mapper mapper = (Mapper) connectionNet.getMapper().get(0);
-        Features features = (Features) mapper.getFeatures().get(0);
-        PointVisualizer pointVisualizer = (PointVisualizer) features.getPointVisualizer().get(0);
-        T3dSymbol t3dSymbol = (T3dSymbol) pointVisualizer.getT3dSymbol().get(0);
-        symbolType = t3dSymbol.getType();
-        symbolSize = t3dSymbol.getSize();
-        symbolColor = t3dSymbol.getColor();
-        TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
-        Label label = (Label) textVisualizer.getLabel().get(0);
-        propertyName = label.getPropertyName();
-
-        Font font = (Font) textVisualizer.getFont().get(0);
-        List svgParameter = font.getSvgParameter();
-
-        for (Object object : svgParameter) {
-            String name = ((SvgParameter) object).getName();
-            String value = ((SvgParameter) object).getValue();
-            svgMap.put(name, value);
-        }
-
-        LabelPlacement labelPlacement = (LabelPlacement) textVisualizer.getLabelPlacement().get(0);
-        PointPlacement pointPlacement = (PointPlacement) labelPlacement.getPointPlacement().get(0);
-        Displacement displacement = (Displacement) pointPlacement.getDisplacement().get(0);
-
-        displacementX = displacement.getDisplacementX();
-        displacementY = displacement.getDisplacementY();
-
-        Fill fill = (Fill) textVisualizer.getFill().get(0);
-        svgParameter = fill.getSvgParameter();
-
-        for (Object object : svgParameter) {
-            String name = ((SvgParameter) object).getName();
-            String value = ((SvgParameter) object).getValue();
-            svgMap.put(name, value);
-        }
-
-        Relations relations = (Relations) mapper.getRelations().get(0);
-        LineVisualizer lineVisualizer = (LineVisualizer) relations.getLineVisualizer().get(0);
-        Geometry geometry = (Geometry) lineVisualizer.getGeometry().get(0);
-        geometryType = geometry.getType();
-
-        Stroke stroke = (Stroke) lineVisualizer.getStroke().get(0);
-
-        svgParameter = stroke.getSvgParameter();
-
-        for (Object object : svgParameter) {
-            String name = ((SvgParameter) object).getName();
-            String value = ((SvgParameter) object).getValue();
-            svgMap.put(name, value);
-        }
-
-        for (VgFeature feature : scene.getVertices()) {
-            labels.put(feature, (String) ((GmAttrFeature) feature).getAttributeValue(propertyName));
-        }
-
-    }
-
-    public Map<VgFeature, String> getLabels() {
-        return labels;
-    }
-
-    private void writeLine(String pLine) {
-        try {
-            document.write(pLine);
-            document.newLine();
-        }
-        catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
-    }
-
-    private void writeLine() {
-        try {
-            document.newLine();
-        }
-        catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
-    }
-
+    /**
+     * exports the X3D description to a file.
+     *
+     * @param fileName File name (and path)
+     */
+    @Override
     public void writeToFile(String fileName) {
 
         try {
@@ -312,7 +195,7 @@ public class WvizConnectionMapSceneX3d {
                 writeLine("            <Appearance>");
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("            </Appearance>");
-                writeLine("            <Text string='" + getLabels().get(vertex) + "'>");
+                writeLine("            <Text string='" + labels.get(vertex) + "'>");
                 writeLine("                <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
                 writeLine("            </Text>");
                 writeLine("          </Shape>");
