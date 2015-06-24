@@ -12,6 +12,8 @@ import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
 import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Concrete X3D scene description of a 3-d connection-map.
@@ -20,6 +22,8 @@ import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
  */
 public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
+	final Logger logger = LoggerFactory.getLogger(WvizConnectionMapSceneX3d.class);
+	
     private boolean x3domMode = false;
 
     //This is used to map the geo-coordinates to the scene coordinates
@@ -58,7 +62,11 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
      */
     @Override
     public void writeToFile(String fileName) {
-
+    	
+    	//small logging test
+    	
+    	logger.info("Start to write output file!");
+    	
         try {
             document = new BufferedWriter(new FileWriter(fileName));
 
