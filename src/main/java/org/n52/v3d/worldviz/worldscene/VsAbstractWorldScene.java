@@ -225,7 +225,7 @@ public abstract class VsAbstractWorldScene extends VsScene {
 				wl("    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />");
 				wl("    <title>" + lTitle + "</title>");
 				wl("    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'></link>");
-				wl("    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>");
+				wl("    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom-full.js'></script>");
 				wl("  </head>");
 				wl("  <body style='padding: 0px; margin: 0px; border: 0px; width:100%; height:100%;'>");
 				wl();
