@@ -1,0 +1,49 @@
+2015-06-30 06:37:42,900 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-06-30 06:38:15,142 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-06-30 06:55:58,341 INFO o.n.v.w.f.i.Parse [main] Expected vertices: 6
+2015-06-30 06:55:58,341 INFO o.n.v.w.f.i.Parse [main] Vertex Syntax Declaration statement encountered 
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:55:58,356 INFO o.n.v.w.f.i.Parse [main] Edge Syntax Declaration statement encountered 
+2015-06-30 06:55:58,372 INFO o.n.v.w.f.i.Parse [main] Edge Parsed
+2015-06-30 06:55:58,372 INFO o.n.v.w.f.i.Parse [main] Edge Parsed
+2015-06-30 06:55:58,372 INFO o.n.v.w.f.i.Parse [main] Edge Parsed
+2015-06-30 06:55:58,372 INFO o.n.v.w.f.i.Parse [main] Arcs Syntax Declaration statement encountered 
+2015-06-30 06:55:58,388 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-06-30 06:55:58,388 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-06-30 06:55:58,388 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-06-30 06:55:58,388 INFO o.n.v.w.f.i.Parse [main] Added Vertices into FeatureNet
+2015-06-30 06:55:58,403 INFO o.n.v.w.f.i.Parse [main] Added Edges into FeatureNet
+2015-06-30 06:55:58,403 INFO o.n.v.w.f.i.Parse [main] Added Arcs into FeatureNet
+2015-06-30 06:55:59,013 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-06-30 06:55:59,013 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Edges
+2015-06-30 06:55:59,028 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Arcs
+2015-06-30 06:55:59,028 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Vertices
+2015-06-30 06:58:25,457 INFO o.n.v.w.f.i.Parse [main] Expected vertices: 6
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Syntax Declaration statement encountered 
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Edge Syntax Declaration statement encountered 
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Edge Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Edge Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Edge Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Arcs Syntax Declaration statement encountered 
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-06-30 06:58:25,473 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-06-30 06:58:25,489 INFO o.n.v.w.f.i.Parse [main] Added Vertices into FeatureNet
+2015-06-30 06:58:25,489 INFO o.n.v.w.f.i.Parse [main] Added Edges into FeatureNet
+2015-06-30 06:58:25,489 INFO o.n.v.w.f.i.Parse [main] Added Arcs into FeatureNet
+2015-06-30 06:58:25,723 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-06-30 06:58:25,723 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Edges
+2015-06-30 06:58:25,723 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Arcs
+2015-06-30 06:58:25,723 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Vertices
+2015-06-30 06:58:25,723 INFO o.n.v.w.f.s.FeatureNetTest [main] Result written to file!

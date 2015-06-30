@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
  */
 public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
-	final Logger logger = LoggerFactory.getLogger(WvizConnectionMapSceneX3d.class);
+    final Logger logger = LoggerFactory.getLogger(WvizConnectionMapSceneX3d.class);
 	
     private boolean x3domMode = false;
 
@@ -44,9 +44,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
         Wgs84ToX3DTransform x3dTransform = new Wgs84ToX3DTransform();
         
-        ArrayList<VgPoint> sceneCoordinates = x3dTransform.transform(
-                x3dTransform.transformVertices(scene.getVertices())
-        );
+        ArrayList<VgPoint> sceneCoordinates = x3dTransform.transform(x3dTransform.transformVertices(scene.getVertices()));
         
         geoCoordinates = x3dTransform.transformVertices(scene.getVertices());
         
@@ -92,6 +90,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             //writeLine("    <Background skyColor='1 1 1' />");
             writeLine();
 
+            logger.info("Parsing Edges");
+            
             for (VgRelation edge : scene.getEdges()) {
                 VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
@@ -133,6 +133,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine();
             }
 
+            logger.info("Parsing Arcs");
+            
             for (VgRelation arc : scene.getArcs()) {
                 VgPoint firstVertex = (VgPoint) (arc.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (arc.getTo()).getGeometry();
@@ -172,6 +174,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 writeLine();
             }
+            
+            logger.info("Parsing Vertices");
 
             for (VgFeature vertex : scene.getVertices()) {
                 VgPoint point = (VgPoint) (vertex.getGeometry());

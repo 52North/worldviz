@@ -8,6 +8,9 @@ import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
 import org.n52.v3d.worldviz.featurenet.impl.Parse.PajekException;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
+import org.n52.v3d.worldviz.helper.RelativePaths;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Simple demonstrator illustrating how to construct a feature-net.
@@ -16,30 +19,20 @@ import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
  */
 
 
-/*
- * Christian: I just used hardcoded relative paths. 
- * TODO we should at least define relative paths as member variables 
- * and not in the code directly.
- */
 
 public class FeatureNetTest {
 
+    final static Logger logger = LoggerFactory.getLogger(FeatureNetTest.class);
     
     public static void main(String[] args) throws PajekException {
         FeatureNetTest app = new FeatureNetTest();
         app.run();
-        
-        /*
-         * for test purposes I (Christian) find it helpful to have small console output
-         * "Done" to know when the output process is finished.
-         */
-        System.out.println("Done!");
     }
 
     private void run() throws PajekException {
         VgFeatureNet net = this.generateFeatureNet();
 
-        String outputFile = "test\\graph";
+        String outputFile;
         
         //this.print(net); // Test output
         
@@ -48,18 +41,19 @@ public class FeatureNetTest {
         result.setX3domMode(true);
         
         if(result.isX3domMode()){
-            outputFile += ".html";
+            outputFile = RelativePaths.PAJEK_GRAPH_HTML;
         }
         else{
-            outputFile += ".x3d";
+            outputFile = RelativePaths.PAJEK_GRAPH_X3D;
         }
         
         result.writeToFile(outputFile);
+        logger.info("Result written to file!");
     }
 
     private VgFeatureNet generateFeatureNet() throws PajekException {
         PajekReader pajekReader = new PajekReader();
-        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile("data\\graph.net");
+        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(RelativePaths.PAJEK_GRAPH_NET);
         /*
          VgFeature[] nodes = new VgFeature[3];
 
@@ -113,7 +107,7 @@ public class FeatureNetTest {
         // Construct virtual connection-map scene:
 
         MpFeatureNetVisualizer t1 = new MpFeatureNetVisualizer();
-        WvizConfig style = new WvizConfig("data\\WvizConfig.xml");
+        WvizConfig style = new WvizConfig(RelativePaths.STYLE_CONFIGURATION_XML);
         style = style.getConfiguration();
         t1.setStyle(style);
         WvizVirtualConnectionMapScene s = t1.transform(net);

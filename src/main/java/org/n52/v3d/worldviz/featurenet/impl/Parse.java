@@ -6,7 +6,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Parse extends PrettyPrint {
+    
+    public static final Logger logger = LoggerFactory.getLogger(Parse.class);
 
     public static final String VERTEX_KEYWORD = "*Vertices";
     public static final String EDGE_KEYWORD = "*Edges";
@@ -79,17 +84,18 @@ public class Parse extends PrettyPrint {
                             allCorrect = true;
                         }
                         catch (NumberFormatException nfe) {
-                            System.err.println(NUMBER_ERROR);
+                            logger.error(NUMBER_ERROR);
                         }
                     }
                 }
                 catch (NumberFormatException nfe) {
-                    System.err.println(NUMBER_ERROR);
+                    logger.error(NUMBER_ERROR);
                     return false;
                 }
                 if (allCorrect) {
                     Vertex vertex = new Vertex(vertexNumber, label, x, y, z);
                     vertexArrayList.add(vertex);
+                    logger.info("Vertex Parsed");
                     if (countVertices == totalVertices) {
                         /*All vertices mentioned have been parsed*/
                         isVerticesOver = true;
@@ -102,7 +108,7 @@ public class Parse extends PrettyPrint {
                 }
             }
             else {
-                System.out.println("Currently supports only Number + label + Coordinates format");
+                logger.error("Currently supports only Number + label + Coordinates format");
                 return false;
             }
         }
@@ -128,12 +134,13 @@ public class Parse extends PrettyPrint {
                     allCorrect = true;
                 }
                 catch (NumberFormatException nfe) {
-                    System.err.println(NUMBER_ERROR);
+                    logger.error(NUMBER_ERROR);
                     return false;
                 }
                 if (allCorrect) {
                     Edge edge = new Edge(firstVertex, secondVertex, weight);
                     edgeArrayList.add(edge);
+                    logger.info("Edge Parsed");
                     return true;
                 }
                 else {
@@ -141,7 +148,7 @@ public class Parse extends PrettyPrint {
                 }
             }
             else {
-                System.err.println("Currently supports only Node + Node +/- Weight");
+                logger.error("Currently supports only Node + Node +/- Weight");
                 return false;
             }
         }
@@ -174,6 +181,7 @@ public class Parse extends PrettyPrint {
                 if (allCorrect) {
                     Arc arc = new Arc(firstVertex, secondVertex, weight);
                     arcArrayList.add(arc);
+                    logger.info("Arc Parsed");
                     return true;
                 }
                 else {
@@ -181,7 +189,7 @@ public class Parse extends PrettyPrint {
                 }
             }
             else {
-                System.err.println("Currently supports only Node + Node +/- Weight");
+                logger.error("Currently supports only Node + Node +/- Weight");
                 return false;
             }
         }
@@ -197,14 +205,14 @@ public class Parse extends PrettyPrint {
             String[] parts = line.split(" ");
             if (parts.length != 2) {
                 //Should contain *Vertices followed by a single integer
-                System.err.println("Invalid syntax declaration for Vertices");
+                logger.error("Invalid syntax declaration for Vertices");
                 return false;
             }
             else {
                 try {
                     int vertices = Integer.parseInt(parts[1]);
                     totalVertices = vertices;
-                    System.out.println("Expected vertices: " + totalVertices);
+                    logger.info("Expected vertices: " + totalVertices);
                 }
                 catch (NumberFormatException nfe) {
                     System.err.println(NUMBER_ERROR);
@@ -214,7 +222,7 @@ public class Parse extends PrettyPrint {
             }
         }
         else {
-            System.err.println(line + " does not contain a space");
+            logger.error(line + " does not contain a space");
             return false;
         }
     }
@@ -255,10 +263,12 @@ public class Parse extends PrettyPrint {
                     else {
                         //Expecting a Comment or Vertex declaration or Edge or Arc declaration
                         if (isComment(line)) {
+                            logger.info("Comment encountered");
                             //Do absolutely nothing!
                         }
                         else if (isVertexDeclaration(line)) {
                             if (isVertexDeclarationSyntax(line)) { //See if it is of proper syntax!
+                                logger.info("Vertex Syntax Declaration statement encountered ");
                                 isVerticesGoingOn = true;
                                 isVerticesOver = false;
                             }
@@ -267,40 +277,42 @@ public class Parse extends PrettyPrint {
                             }
                         }
                         else if (isEdgeDeclaration(line)) {
+                            logger.info("Edge Syntax Declaration statement encountered ");
                             isEdgesGoingOn = true;
                             isArcsGoingOn = false;
                         }
                         else if (isArcDeclaration(line)) {
+                            logger.info("Arcs Syntax Declaration statement encountered ");
                             isArcsGoingOn = true;
                             isEdgesGoingOn = false;
                         }
                         else if (isEdgesGoingOn) { /*Edges is going on*/
                             if (!parseEdge(line)) {
-                                System.err.println("Error!");
+                                logger.error("Error!");
                                 value = false;
                             }
                         }
                         else if (isArcsGoingOn) {
                             if (!parseArc(line)) {
-                                System.err.println("Error!");
+                                logger.error("Error!");
                                 value = false;
                             }
                         }
                         else {
-                            System.err.println("What you have written is pure gibberish! :D ");
+                            logger.error("What you have written is pure gibberish! :D ");
                             value = false;
                         }
                     }
 
                 }
                 else {
-                    System.out.println("End of file");
+                    logger.info("End of file");
                     value = false;
                 }
             }
         }
         catch (Exception ex) {
-            System.err.println(ex.getMessage());
+            logger.info(ex.getMessage());
             value = false;
         }
         if(!value){
@@ -311,7 +323,7 @@ public class Parse extends PrettyPrint {
 
     public static class PajekException extends Exception {
         public PajekException() {
-            System.err.println("Check your Pajek file");
+            logger.error("Check your Pajek file");
         }
     }
 

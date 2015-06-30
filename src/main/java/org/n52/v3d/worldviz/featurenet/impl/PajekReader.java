@@ -35,6 +35,8 @@ public class PajekReader extends FileIO {
                 ((GmAttrFeature) node).addAttribute("name", "String", vertex.getLabel());
                 features.add(node);
             }
+            
+            logger.info("Added Vertices into FeatureNet");
 
             for (Edge e : edges) {
                 int first = e.getFirstVertex();
@@ -48,6 +50,8 @@ public class PajekReader extends FileIO {
                 relations.add(edge);
             }
             
+            logger.info("Added Edges into FeatureNet");
+            
             for (Arc a : arcs) {
                 int first = a.getFirstVertex();
                 int second = a.getSecondVertex();
@@ -59,6 +63,8 @@ public class PajekReader extends FileIO {
                 VgRelation arc = new WvizFlow(features.get(first - 1), features.get(second - 1), a.getWeight());
                 relations.add(arc);
             }
+            
+            logger.info("Added Arcs into FeatureNet");
 
             WvizUniversalFeatureNet net = new WvizUniversalFeatureNet(features, relations);
             return net;
