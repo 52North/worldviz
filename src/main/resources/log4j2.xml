@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn">
+
+	<Properties>
+		<Property name="logFile">log/${pom.artifactId}-${project.version}
+		</Property>
+	</Properties>
+
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
-		<File name="MyFile" fileName="log/worldviz.log">
+		
+<!--    <File name="MyFile" fileName="${logFile}.log">
 			<PatternLayout>
 				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
 			</PatternLayout>
 		</File>
+-->	
+
+		<RollingFile name="RollingFile" fileName="${logFile}.log"
+			filePattern="${logFile}/-%d{yyyy-MM-dd-HH}-%i.log">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="24" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+		</RollingFile>
+
 	</Appenders>
 	<Loggers>
-		
+
 		<Logger name="org.n52" level="all" additivity="true">
-			<AppenderRef ref="MyFile" />
+			<AppenderRef ref="RollingFile" />
 		</Logger>
 
 		<Root level="error">
