@@ -1,0 +1,628 @@
+<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="true" showriteLineog="true" showLog="true"
+  x="0px" y="0px" width="400px" height="400px">
+
+  <Scene>
+
+
+    <Transform translation="-1.0 0.275 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.825 -0.04999999999999999 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -2.647651284670212">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.73824115301167" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.55 0.32500000000000007 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.460139105621001">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.9055385138137417" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.0 0.125 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.719686274404394">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="2.0223748416156684" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.825 -0.04999999999999999 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -0.4939413689195811">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.73824115301167" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.65 -0.375 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.375 2.7755575615628914E-17 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.632748835002183">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.9300537618869137" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.175 -0.2 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.361773383988632">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="1.6867127793432999" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.55 0.32500000000000007 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.6814535479687922">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.9055385138137417" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.375 2.7755575615628914E-17 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -2.5088438185876103">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.9300537618869137" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1 0.37500000000000006 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.275 0.37500000000000006 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.75" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.15000000000000002 0.22500000000000003 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -2.1112158270654806">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.5830951894845301" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.0 0.10000000000000003 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -2.792821650005887">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.5852349955359812" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.45 0.17500000000000004 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.9195673303788037">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="1.1704699910719625" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.275 0.37500000000000006 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.75" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.65 0.37500000000000006 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.825 0.17500000000000004 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -2.4227626539681686">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.5315072906367325" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.3 0.17500000000000002 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.4288992721907328">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="1.414213562373095" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.15000000000000002 0.22500000000000003 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.0303768265243123">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.5830951894845301" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.4 0.07500000000000001 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.7 0.02500000000000001 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.7359450042095235">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.6082762530298219" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.45 0.05000000000000002 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.1824776086224307">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="1.1884864324004714" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.0 0.10000000000000003 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -0.34877100358390656">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.5852349955359812" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1 -0.175 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.55 -0.09999999999999999 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -1.4056476493802699">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.9124143795447329" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.0 0.125 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.4219063791853994">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="2.0223748416156684" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.45 0.17500000000000004 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.2220253232109894">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="1.1704699910719625" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.7 0.02500000000000001 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.4056476493802696">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.6082762530298219" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.55 -0.09999999999999999 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 3.141592653589793">
+          <Transform rotation="0 0 1 -1.7359450042095235">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.9124143795447329" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="1.0 -0.024999999999999994 0.0">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.0">
+          <Transform rotation="0 0 1 -0.0">
+            <Shape>
+              <Appearance>
+                <Material emissiveColor="0 0 1"/>
+              </Appearance>
+              <Cylinder height="0.0" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation='-1.0 0.275 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='-1.0 0.575 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='North America'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='-0.65 -0.375 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='-0.65 -0.07500000000000001 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Latin America'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='-0.1 0.37500000000000006 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='-0.1 0.675 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Western Europe'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.65 0.37500000000000006 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.65 0.675 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Eastern Europe'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.4 0.07500000000000001 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.4 0.375 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Mid east'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.1 -0.175 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.1 0.125 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Africa'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='1.0 -0.024999999999999994 0.0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.1'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='1.0 0.275 0.0'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Asia and Oceania'>
+                <FontStyle family='MS Sans Serif' size='0.1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+  </Scene>
+
+</X3D>

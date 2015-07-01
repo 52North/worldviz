@@ -1,0 +1,20 @@
+<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="true" showriteLineog="true"
+  x="0px" y="0px" width="400px" height="400px">
+
+  <Scene>
+
+  	   <Background skyColor='1 1 1' />
+
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material emissiveColor="0 0 1"/>
+		  <ImageTexture url='World_Map_WSF.svg.png' />
+        </Appearance>
+        <Box size='2 0.001 1'/>
+      </Shape>
+    </Transform>
+
+  </Scene>
+
+</X3D>

@@ -12,10 +12,9 @@ public final class RelativePaths {
 
 	// general
 	private static final String DATA_FOLDER = "data/";
-        
-        private static final String TEST_FOLDER = "test/";
-        
-        
+
+	private static final String TEST_FOLDER = "test/";
+
 	private static final String EARTH_SUB_FOLDER = DATA_FOLDER + "earth/";
 	private static final String DATA_SOURCE_FILES_FOLDER = EARTH_SUB_FOLDER
 			+ "sourceFiles/";
@@ -197,10 +196,12 @@ public final class RelativePaths {
 			+ "EarthAtNight.jpg";
 
 	// Land Cover
-	public static final String LAND_COVER_XML = EARTH_SUB_FOLDER + "LandCover.xml";
+	public static final String LAND_COVER_XML = EARTH_SUB_FOLDER
+			+ "LandCover.xml";
 	public static final String LAND_COVER_META_XML = EARTH_SUB_FOLDER
 			+ "LandCover_meta.xml";
-	public static final String LAND_COVER_JPG = EARTH_SUB_FOLDER + "LandCover.jpg";
+	public static final String LAND_COVER_JPG = EARTH_SUB_FOLDER
+			+ "LandCover.jpg";
 
 	// NuclearAccidents
 	public static final String NUCLEAR_ACCIDENTS_XML = EARTH_SUB_FOLDER
@@ -211,20 +212,33 @@ public final class RelativePaths {
 			+ "Kernkraftwerke_Unfaelle.csv";
 
 	// population
-	public static final String POPULATION_XML = EARTH_SUB_FOLDER + "Population.xml";
+	public static final String POPULATION_XML = EARTH_SUB_FOLDER
+			+ "Population.xml";
 	public static final String POPULATION_META_XML = EARTH_SUB_FOLDER
 			+ "Population_meta.xml";
 	public static final String POPULATION_CSV = DATA_SOURCE_FILES_FOLDER
 			+ "UNEP-EDE__pop_total__1398251955.csv";
-        
-        public static final String PAJEK_GRAPH = DATA_FOLDER + "graph";
-        
-        public static final String PAJEK_GRAPH_NET = PAJEK_GRAPH + ".net";
-        
-        public static final String PAJEK_GRAPH_X3D = TEST_FOLDER + "graph" + ".x3d";
-        
-        public static final String PAJEK_GRAPH_HTML = TEST_FOLDER + "graph" + ".html";
-        
-        public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER +"WvizConfig.xml";
+
+	//Connection map project (input and output paths for connection maps)
+	public static final String PAJEK_GRAPH = DATA_FOLDER + "graph";
+
+	public static final String PAJEK_GRAPH_NET = PAJEK_GRAPH + ".net";
+
+	public static final String PAJEK_GRAPH_X3D = TEST_FOLDER + "graph" + ".x3d";
+
+	public static final String PAJEK_GRAPH_HTML = TEST_FOLDER + "graph"
+			+ ".html";
+
+	public static final String PAJEK_FLOWS_OF_TRADE = DATA_FOLDER + "Flows_of_trade";
+
+	public static final String PAJEK_FLOWS_OF_TRADE_NET = PAJEK_FLOWS_OF_TRADE + ".net";
+
+	public static final String PAJEK_FLOWS_OF_TRADE_X3D = TEST_FOLDER + "Flows_of_trade" + ".x3d";
+
+	public static final String PAJEK_FLOWS_OF_TRADE_HTML = TEST_FOLDER + "Flows_of_trade"
+			+ ".html";
+
+	public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER
+			+ "WvizConfig.xml";
 
 }

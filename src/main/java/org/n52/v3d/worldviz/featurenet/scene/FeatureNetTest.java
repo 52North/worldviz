@@ -38,13 +38,15 @@ public class FeatureNetTest {
         
         WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
         
-        result.setX3domMode(true);
+        result.setX3domMode(false);
         
         if(result.isX3domMode()){
-            outputFile = RelativePaths.PAJEK_GRAPH_HTML;
+//            outputFile = RelativePaths.PAJEK_GRAPH_HTML;
+        	outputFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_HTML;
         }
         else{
-            outputFile = RelativePaths.PAJEK_GRAPH_X3D;
+//            outputFile = RelativePaths.PAJEK_GRAPH_X3D;
+        	outputFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_X3D;
         }
         
         result.writeToFile(outputFile);
@@ -53,7 +55,8 @@ public class FeatureNetTest {
 
     private VgFeatureNet generateFeatureNet() throws PajekException {
         PajekReader pajekReader = new PajekReader();
-        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(RelativePaths.PAJEK_GRAPH_NET);
+//        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(RelativePaths.PAJEK_GRAPH_NET);
+        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(RelativePaths.PAJEK_FLOWS_OF_TRADE_NET);
         /*
          VgFeature[] nodes = new VgFeature[3];
 
