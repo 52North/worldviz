@@ -8,7 +8,7 @@
     <Transform>
       <Shape>
         <Appearance>
-          <Material emissiveColor="0 0 1"/>
+          <Material diffuseColor="1 1 1"/>
 		  <ImageTexture url='World_Map_WSF.svg.png' />
         </Appearance>
         <Box size='2 0.001 1'/>
