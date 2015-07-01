@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
@@ -27,6 +30,8 @@ public abstract class VsAbstractWorldScene extends VsScene {
 	private T3dColor backgroundColor = new T3dColor(1.f, 1.f, 1.f);
 
 	private BufferedWriter docWriter;
+	
+	protected DecimalFormat decimalFormatter;
 
 	/**
 	 * Constructor
@@ -38,6 +43,12 @@ public abstract class VsAbstractWorldScene extends VsScene {
 	public VsAbstractWorldScene(String filePath) {
 
 		this.outputFile = new File(filePath);
+		
+		DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.GERMAN);
+		formatSymbols.setDecimalSeparator('.');
+		
+		this.decimalFormatter = new DecimalFormat("#0.000", formatSymbols);
+		
 	}
 
 	public File getOutputFile() {

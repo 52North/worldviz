@@ -15,8 +15,7 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * @author Christian Danowski
  * 
  */
-public class VsDrapedWorldSphereScene extends
-		VsAbstractWorldScene {
+public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 
 	private String pathToMainSphereTexture;
 	private String[] additionalTexturePaths;
@@ -58,8 +57,7 @@ public class VsDrapedWorldSphereScene extends
 	 * @param imagePath
 	 *            a path to the image file, that will be used as single texture
 	 */
-	public VsDrapedWorldSphereScene(String filePath,
-			String imagePath) {
+	public VsDrapedWorldSphereScene(String filePath, String imagePath) {
 		super(filePath);
 
 		this.pathToMainSphereTexture = imagePath;
@@ -79,8 +77,8 @@ public class VsDrapedWorldSphereScene extends
 	 *            one or more paths to additional images (e.g. for use as a bump
 	 *            map) that will be used in combination with the main texture.
 	 */
-	public VsDrapedWorldSphereScene(String filePath,
-			String mainImagePath, String[] furtherImages) {
+	public VsDrapedWorldSphereScene(String filePath, String mainImagePath,
+			String[] furtherImages) {
 		super(filePath);
 
 		this.pathToMainSphereTexture = mainImagePath;
@@ -411,8 +409,10 @@ public class VsDrapedWorldSphereScene extends
 		if (Math.abs(z) > 2. * R)
 			System.out.println("Warning: z = " + z);
 		// System.out.println("" + pX + " " + pY + " -> " + x + " " + y);
-		return "" + x + " " + z + " " + -y; // TODO Optim.: Nachkommastellen
-											// begrenzen
+		String coordinateString = "" + this.decimalFormatter.format(x) + " "
+				+ this.decimalFormatter.format(z) + " "
+				+ this.decimalFormatter.format(-y);
 
+		return coordinateString; 
 	}
 }

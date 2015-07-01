@@ -3,10 +3,7 @@ package org.n52.v3d.worldviz.worldscene;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.n52.v3d.worldviz.triturusextensions.mappers.T3dAttrSymbolInstance;
-
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
-import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.t3dutil.T3dSymbolDef;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
@@ -15,8 +12,8 @@ import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCone;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCube;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCylinder;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dSphere;
-import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.triturusextensions.mappers.T3dAttrSymbolInstance;
 
 /**
  * Class to create a scene description which contains cartographic visualization
@@ -159,13 +156,19 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 		double scaleY = attrSymbol.getyScale() * scaleTotal;
 		double scaleZ = attrSymbol.getzScale() * scaleTotal;
 
-		wl("<Transform translation=\"" + position.getX() + " "
-				+ position.getZ() + " " + (-position.getY()) + "\">");
-		wl("	<Transform rotation=\"1 0 0 " + angle_xAxis + "\">");
-		wl("		<Transform rotation=\"0 1 0 " + angle_yAxis + "\">");
-		wl("			<Transform rotation=\"0 0 1 " + angle_zAxis + "\">");
-		wl("				<Transform scale=\"" + scaleX + " " + scaleY + " " + scaleZ
-				+ "\">");
+		wl("<Transform translation=\""
+				+ this.decimalFormatter.format(position.getX()) + " "
+				+ this.decimalFormatter.format(position.getZ()) + " "
+				+ this.decimalFormatter.format((-position.getY())) + "\">");
+		wl("	<Transform rotation=\"1 0 0 "
+				+ this.decimalFormatter.format(angle_xAxis) + "\">");
+		wl("		<Transform rotation=\"0 1 0 "
+				+ this.decimalFormatter.format(angle_yAxis) + "\">");
+		wl("			<Transform rotation=\"0 0 1 "
+				+ this.decimalFormatter.format(angle_zAxis) + "\">");
+		wl("				<Transform scale=\"" + this.decimalFormatter.format(scaleX)
+				+ " " + this.decimalFormatter.format(scaleY) + " "
+				+ this.decimalFormatter.format(scaleZ) + "\">");
 
 		/*
 		 * Shape
@@ -217,11 +220,11 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 	private double[] determineAngles(double angleXY, double angleZ,
 			VgPoint position) {
 
-//		double longitude = Math.toDegrees(angleXY);
-//		double latitude = Math.toDegrees(angleZ);
-//
-//		VgPoint latLonPoint = new GmPoint(longitude, latitude, 0);
-//		latLonPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
+		// double longitude = Math.toDegrees(angleXY);
+		// double latitude = Math.toDegrees(angleZ);
+		//
+		// VgPoint latLonPoint = new GmPoint(longitude, latitude, 0);
+		// latLonPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
 
 		T3dVector normalVector = new T3dVector(position);
 

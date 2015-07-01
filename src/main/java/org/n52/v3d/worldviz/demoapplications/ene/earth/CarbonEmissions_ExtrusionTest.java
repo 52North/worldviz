@@ -34,7 +34,7 @@ public class CarbonEmissions_ExtrusionTest {
 
 		XmlDataset carbonEmissions = null;
 
-		CountryBordersLODEnum worldBordersLOD = CountryBordersLODEnum.SIMPLIFIED_110m;
+		CountryBordersLODEnum worldBordersLOD = CountryBordersLODEnum.SIMPLIFIED_50m;
 
 		DatasetLoader countryCodeTest = new DatasetLoader(dataXML,
 				worldBordersLOD);

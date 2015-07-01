@@ -488,7 +488,9 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 	 *            a point with GEO(!!!) coordinates
 	 */
 	private void writePoint(VgPoint point) {
-		w("" + point.getX() + " " + point.getZ() + " " + (-point.getY()) + " ");
+		w("" + this.decimalFormatter.format(point.getX()) + " "
+				+ this.decimalFormatter.format(point.getZ()) + " "
+				+ this.decimalFormatter.format((-point.getY())) + " ");
 	}
 
 	/**
@@ -996,7 +998,7 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 			// top triangles
 
-//			int numberOfBottomPoints = bottomTIN.numberOfPoints();
+			// int numberOfBottomPoints = bottomTIN.numberOfPoints();
 
 			for (int i = 0; i < topTIN.numberOfTriangles(); i++) {
 				int[] triangleVertexIndices = topTIN
@@ -1005,13 +1007,13 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 				// the number of bottom points must be skipped to have the
 				// correct mesh for the top TINs
 
-//				int firstIndex = numberOfBottomPoints
-//						+ triangleVertexIndices[0];
-//				int secondIndex = numberOfBottomPoints
-//						+ triangleVertexIndices[1];
-//				int thirdIndex = numberOfBottomPoints
-//						+ triangleVertexIndices[2];
-				
+				// int firstIndex = numberOfBottomPoints
+				// + triangleVertexIndices[0];
+				// int secondIndex = numberOfBottomPoints
+				// + triangleVertexIndices[1];
+				// int thirdIndex = numberOfBottomPoints
+				// + triangleVertexIndices[2];
+
 				int firstIndex = triangleVertexIndices[0];
 				int secondIndex = triangleVertexIndices[1];
 				int thirdIndex = triangleVertexIndices[2];
@@ -1030,12 +1032,12 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 			 * TIN 2. top TIN
 			 */
 
-//			// bottom points
-//			w("<Coordinate point=\"");
-//			for (int j = 0; j < bottomTIN.numberOfPoints(); j++) {
-//				VgPoint point = bottomTIN.getPoint(j);
-//				writePoint(point);
-//			}
+			// // bottom points
+			// w("<Coordinate point=\"");
+			// for (int j = 0; j < bottomTIN.numberOfPoints(); j++) {
+			// VgPoint point = bottomTIN.getPoint(j);
+			// writePoint(point);
+			// }
 
 			// top points
 			w("<Coordinate point=\"");
