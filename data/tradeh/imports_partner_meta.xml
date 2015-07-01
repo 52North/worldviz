@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+WorldViz meta-information file.
+Note: This file holds additional meta-information that is not part of an actual data file to be processed in the context of WorldViz project. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint>
+	<CovereredTime>
+		<TimePeriod>
+			<begin>1998-01-01</begin>
+			<end>1998-12-31</end>
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>imports_partner.csv</DatasetReference>
+	<SourceFileReference/>
+	<Source>
+		<ContactPersons/>
+		<URI>http://www.economicswebinstitute.org/essays/tradehierarchy.htm</URI>
+		<AlternativeURIs/>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Valentino Piana, Rome - Italy</CopyrightInformation>
+	<ImportProcess>
+		<Description language="DE">
+ 	   		Erstellung der Import-Matrix aus der Excel-Tabelle tradeh.xls der ZIP-Datei "http://www.economicswebinstitute.org/essays/tradeh.zip" , 
+ 	   		Tabellenblatt "Imports partner matrix" (Speichern als CSV.). 
+ 	   		Vorab wurden noch die Ländernamen der Zeilen- und Spaltenbezeichner durch deren zweistelligen ISO3166 country code ersetzt.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>
