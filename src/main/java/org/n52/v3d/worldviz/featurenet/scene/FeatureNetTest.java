@@ -43,7 +43,6 @@ public class FeatureNetTest {
         this.pajekFile = pajekFile;
         this.X3DOMMode = X3DOMMode;
         Path path = Paths.get(pajekFile);
-        String parentPath = path.getParent().toString();
         String fileName = path.getFileName().toString();
         fileName = fileName.split("\\.")[0];
         if(X3DOMMode){
