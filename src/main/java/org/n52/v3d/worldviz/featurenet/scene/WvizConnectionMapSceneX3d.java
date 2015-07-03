@@ -81,7 +81,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             }
 
             writeLine("<X3D xmlns=\"http://www.web3d.org/specifications/x3d-namespace\" showStat=\"true\" showriteLineog=\"true\" showLog=\"true\"");
-            writeLine("  x=\"0px\" y=\"0px\" width=\"400px\" height=\"400px\">");
+            writeLine("  x=\"0px\" y=\"0px\" width=\"800px\" height=\"800px\">");
             writeLine();
             writeLine("  <Scene>");
             writeLine();
@@ -97,6 +97,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             logger.info("Parsing Edges");
             
             for (VgRelation edge : scene.getEdges()) {
+                
+                logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
+                
                 VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
                 
@@ -140,6 +143,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             logger.info("Parsing Arcs");
             
             for (VgRelation arc : scene.getArcs()) {
+                
+                logger.info("Parsing Arc: "+arc.getFrom().toString()+" --> "+arc.getTo().toString());
+                
                 VgPoint firstVertex = (VgPoint) (arc.getFrom()).getGeometry();
                 VgPoint secondVertex = (VgPoint) (arc.getTo()).getGeometry();
                 
@@ -182,6 +188,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             logger.info("Parsing Vertices");
 
             for (VgFeature vertex : scene.getVertices()) {
+                
+                logger.info("Parsing Vertex : "+vertex.getName());
+                
                 VgPoint point = (VgPoint) (vertex.getGeometry());
                 point = pointMap.get(point);
                 writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");

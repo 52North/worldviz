@@ -226,8 +226,7 @@ public final class RelativePaths {
 
 	public static final String PAJEK_GRAPH_X3D = TEST_FOLDER + "graph" + ".x3d";
 
-	public static final String PAJEK_GRAPH_HTML = TEST_FOLDER + "graph"
-			+ ".html";
+	public static final String PAJEK_GRAPH_HTML = TEST_FOLDER + "graph"+ ".html";
 
 	public static final String PAJEK_FLOWS_OF_TRADE = DATA_FOLDER + "Flows_of_trade";
 

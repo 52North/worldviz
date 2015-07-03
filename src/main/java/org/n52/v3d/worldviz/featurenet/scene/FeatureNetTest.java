@@ -1,5 +1,6 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
@@ -28,7 +29,7 @@ public class FeatureNetTest {
     public String outputFile_X3DOM = RelativePaths.PAJEK_FLOWS_OF_TRADE_HTML; //RelativePaths.PAJEK_GRAPH_HTML;
     public String outputFile_X3D = RelativePaths.PAJEK_FLOWS_OF_TRADE_X3D;    //RelativePaths.PAJEK_GRAPH_X3D;
     public String outputFile = RelativePaths.TEST_FOLDER;
-    public boolean X3DOMMode = true;
+    public boolean X3DOMMode = false;
     
 
     final static Logger logger = LoggerFactory.getLogger(FeatureNetTest.class);
@@ -47,14 +48,23 @@ public class FeatureNetTest {
         fileName = fileName.split("\\.")[0];
         if(X3DOMMode){
             fileName = fileName + ".html";
-            outputFile_X3DOM = outputFile +fileName;            
+            outputFile_X3DOM = new File(outputFile, fileName).toString();            
             outputFile = outputFile_X3DOM;
         }
         else{
             fileName = fileName+ ".x3d";
-            outputFile_X3DOM = outputFile +fileName;
+            outputFile_X3D = new File(outputFile, fileName).toString();
             outputFile = outputFile_X3D;
         }
+    }
+    
+    
+    public void setOutputFile(String outputFile){
+        this.outputFile = outputFile;
+    }
+    
+    public String getOutputFile(String outputFile){
+        return this.outputFile;
     }
 
     public void run() throws PajekException {
@@ -63,16 +73,7 @@ public class FeatureNetTest {
         //this.print(net); // Test output
         
         WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
-        
         result.setX3domMode(X3DOMMode);
-        
-        if(result.isX3domMode()){
-            outputFile = outputFile_X3DOM;
-        }
-        else{
-            outputFile = outputFile_X3D;
-        }
-        
         result.writeToFile(outputFile);
         logger.info("Result written to file! "+ outputFile);
     }

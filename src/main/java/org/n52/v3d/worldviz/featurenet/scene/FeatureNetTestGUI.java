@@ -191,12 +191,12 @@ public class FeatureNetTestGUI extends javax.swing.JFrame {
         }
         else{
             FeatureNetTest app = new FeatureNetTest();
+            if(!outputPath.isEmpty()){
+                app.setOutputFile(outputPath);
+            }
             app.setConfig(pajekFile, configurationFile, X3DOMMode);
             try {
                 app.run();
-                if(!outputPath.isEmpty()){
-                    app.outputFile = outputPath;
-                }
                 JOptionPane.showMessageDialog(null, "Done! File created at "+app.outputFile);
                 
                 //Close the frame!
