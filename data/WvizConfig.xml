@@ -25,13 +25,13 @@
           </Label>
           <Font>
             <SvgParameter name="font-family">MS Sans Serif</SvgParameter>
-            <SvgParameter name="font-size">0.1</SvgParameter>
+            <SvgParameter name="font-size">0.3</SvgParameter>
           </Font>
           <LabelPlacement>
             <PointPlacement>
               <Displacement>
                 <DisplacementX>0</DisplacementX>
-                <DisplacementY>0.3</DisplacementY>
+                <DisplacementY>0.1</DisplacementY>
               </Displacement>
             </PointPlacement>
           </LabelPlacement>

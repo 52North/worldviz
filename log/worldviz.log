@@ -448,3 +448,168 @@
 2015-07-03 12:12:50,859 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Arcs
 2015-07-03 12:12:50,874 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Vertices
 2015-07-03 12:12:50,874 INFO o.n.v.w.f.s.FeatureNetTest [main] Result written to file! test/Flows_of_trade.x3d
+2015-07-03 12:25:53,294 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:25:53,300 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:25:53,301 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:25:53,302 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:25:53,303 INFO o.n.v.w.f.i.Parse [main] Expected vertices: 7
+2015-07-03 12:25:53,304 INFO o.n.v.w.f.i.Parse [main] Vertex Syntax Declaration statement encountered 
+2015-07-03 12:25:53,312 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,314 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,316 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,319 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,322 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,324 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,327 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:25:53,328 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:25:53,328 INFO o.n.v.w.f.i.Parse [main] Arcs Syntax Declaration statement encountered 
+2015-07-03 12:25:53,331 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,333 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,334 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,335 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,337 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,338 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,339 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,340 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,341 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,342 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,343 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,344 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,345 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,346 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,347 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,348 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,349 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,350 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,351 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,352 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,354 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,356 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,357 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,358 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,359 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,361 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,362 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,363 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,365 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,366 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,366 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:25:53,367 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:25:53,380 INFO o.n.v.w.f.i.Parse [main] Added Vertices into FeatureNet
+2015-07-03 12:25:53,381 INFO o.n.v.w.f.i.Parse [main] Added Edges into FeatureNet
+2015-07-03 12:25:53,390 INFO o.n.v.w.f.i.Parse [main] Added Arcs into FeatureNet
+2015-07-03 12:25:54,116 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-07-03 12:25:54,119 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Edges
+2015-07-03 12:25:54,120 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Arcs
+2015-07-03 12:25:54,135 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Vertices
+2015-07-03 12:25:54,149 INFO o.n.v.w.f.s.FeatureNetTest [main] Result written to file! test/Flows_of_trade.html
+2015-07-03 12:27:34,098 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:27:34,105 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:27:34,106 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:27:34,107 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:27:34,109 INFO o.n.v.w.f.i.Parse [main] Expected vertices: 7
+2015-07-03 12:27:34,110 INFO o.n.v.w.f.i.Parse [main] Vertex Syntax Declaration statement encountered 
+2015-07-03 12:27:34,123 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,127 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,130 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,133 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,135 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,136 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,138 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:27:34,139 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:27:34,140 INFO o.n.v.w.f.i.Parse [main] Arcs Syntax Declaration statement encountered 
+2015-07-03 12:27:34,143 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,145 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,147 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,148 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,150 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,151 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,156 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,158 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,160 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,163 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,165 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,166 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,167 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,168 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,169 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,171 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,172 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,173 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,174 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,176 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,178 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,179 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,182 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,184 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,185 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,188 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,190 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,192 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,193 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,194 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,195 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:27:34,197 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:27:34,213 INFO o.n.v.w.f.i.Parse [main] Added Vertices into FeatureNet
+2015-07-03 12:27:34,216 INFO o.n.v.w.f.i.Parse [main] Added Edges into FeatureNet
+2015-07-03 12:27:34,222 INFO o.n.v.w.f.i.Parse [main] Added Arcs into FeatureNet
+2015-07-03 12:27:35,197 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-07-03 12:27:35,201 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Edges
+2015-07-03 12:27:35,203 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Arcs
+2015-07-03 12:27:35,224 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Vertices
+2015-07-03 12:27:35,241 INFO o.n.v.w.f.s.FeatureNetTest [main] Result written to file! test/Flows_of_trade.html
+2015-07-03 12:28:02,522 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:28:02,527 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:28:02,528 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:28:02,529 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:28:02,531 INFO o.n.v.w.f.i.Parse [main] Expected vertices: 7
+2015-07-03 12:28:02,531 INFO o.n.v.w.f.i.Parse [main] Vertex Syntax Declaration statement encountered 
+2015-07-03 12:28:02,538 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,540 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,543 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,545 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,547 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,549 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,551 INFO o.n.v.w.f.i.Parse [main] Vertex Parsed
+2015-07-03 12:28:02,552 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:28:02,553 INFO o.n.v.w.f.i.Parse [main] Arcs Syntax Declaration statement encountered 
+2015-07-03 12:28:02,556 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,557 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,558 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,559 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,560 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,561 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,562 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,563 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,563 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,564 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,565 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,566 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,567 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,568 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,569 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,570 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,571 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,573 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,575 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,576 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,577 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,579 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,581 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,582 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,582 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,583 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,584 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,585 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,586 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,587 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,587 INFO o.n.v.w.f.i.Parse [main] Arc Parsed
+2015-07-03 12:28:02,588 INFO o.n.v.w.f.i.Parse [main] Comment encountered
+2015-07-03 12:28:02,600 INFO o.n.v.w.f.i.Parse [main] Added Vertices into FeatureNet
+2015-07-03 12:28:02,601 INFO o.n.v.w.f.i.Parse [main] Added Edges into FeatureNet
+2015-07-03 12:28:02,606 INFO o.n.v.w.f.i.Parse [main] Added Arcs into FeatureNet
+2015-07-03 12:28:03,363 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Start to write output file!
+2015-07-03 12:28:03,366 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Edges
+2015-07-03 12:28:03,367 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Arcs
+2015-07-03 12:28:03,381 INFO o.n.v.w.f.s.WvizConnectionMapSceneX3d [main] Parsing Vertices
+2015-07-03 12:28:03,393 INFO o.n.v.w.f.s.FeatureNetTest [main] Result written to file! test/Flows_of_trade.html

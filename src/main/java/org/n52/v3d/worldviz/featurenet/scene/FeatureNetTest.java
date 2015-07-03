@@ -28,7 +28,7 @@ public class FeatureNetTest {
     public String outputFile_X3DOM = RelativePaths.PAJEK_FLOWS_OF_TRADE_HTML; //RelativePaths.PAJEK_GRAPH_HTML;
     public String outputFile_X3D = RelativePaths.PAJEK_FLOWS_OF_TRADE_X3D;    //RelativePaths.PAJEK_GRAPH_X3D;
     public String outputFile = RelativePaths.TEST_FOLDER;
-    public boolean X3DOMMode = false;
+    public boolean X3DOMMode = true;
     
 
     final static Logger logger = LoggerFactory.getLogger(FeatureNetTest.class);
