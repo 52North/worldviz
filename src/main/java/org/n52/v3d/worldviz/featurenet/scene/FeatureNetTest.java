@@ -1,5 +1,7 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
 import org.n52.v3d.worldviz.featurenet.impl.WvizFlowNet;
@@ -19,8 +21,15 @@ import org.slf4j.LoggerFactory;
  */
 
 
-
 public class FeatureNetTest {
+    
+    public String pajekFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_NET;         //RelativePaths.PAJEK_GRAPH_NET
+    public String configurationFile = RelativePaths.STYLE_CONFIGURATION_XML;
+    public String outputFile_X3DOM = RelativePaths.PAJEK_FLOWS_OF_TRADE_HTML; //RelativePaths.PAJEK_GRAPH_HTML;
+    public String outputFile_X3D = RelativePaths.PAJEK_FLOWS_OF_TRADE_X3D;    //RelativePaths.PAJEK_GRAPH_X3D;
+    public String outputFile = RelativePaths.TEST_FOLDER;
+    public boolean X3DOMMode = false;
+    
 
     final static Logger logger = LoggerFactory.getLogger(FeatureNetTest.class);
     
@@ -28,35 +37,50 @@ public class FeatureNetTest {
         FeatureNetTest app = new FeatureNetTest();
         app.run();
     }
+    
+    public void setConfig(String pajekFile, String configurationFile, boolean X3DOMMode){
+        this.configurationFile = configurationFile;
+        this.pajekFile = pajekFile;
+        this.X3DOMMode = X3DOMMode;
+        Path path = Paths.get(pajekFile);
+        String parentPath = path.getParent().toString();
+        String fileName = path.getFileName().toString();
+        fileName = fileName.split("\\.")[0];
+        if(X3DOMMode){
+            fileName = fileName + ".html";
+            outputFile_X3DOM = outputFile +fileName;            
+            outputFile = outputFile_X3DOM;
+        }
+        else{
+            fileName = fileName+ ".x3d";
+            outputFile_X3DOM = outputFile +fileName;
+            outputFile = outputFile_X3D;
+        }
+    }
 
-    private void run() throws PajekException {
+    public void run() throws PajekException {
         VgFeatureNet net = this.generateFeatureNet();
-
-        String outputFile;
         
         //this.print(net); // Test output
         
         WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
         
-        result.setX3domMode(false);
+        result.setX3domMode(X3DOMMode);
         
         if(result.isX3domMode()){
-//            outputFile = RelativePaths.PAJEK_GRAPH_HTML;
-        	outputFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_HTML;
+            outputFile = outputFile_X3DOM;
         }
         else{
-//            outputFile = RelativePaths.PAJEK_GRAPH_X3D;
-        	outputFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_X3D;
+            outputFile = outputFile_X3D;
         }
         
         result.writeToFile(outputFile);
-        logger.info("Result written to file!");
+        logger.info("Result written to file! "+ outputFile);
     }
 
     private VgFeatureNet generateFeatureNet() throws PajekException {
         PajekReader pajekReader = new PajekReader();
-//        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(RelativePaths.PAJEK_GRAPH_NET);
-        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(RelativePaths.PAJEK_FLOWS_OF_TRADE_NET);
+        WvizUniversalFeatureNet wvizUniversalFeatureNet = pajekReader.readFromFile(pajekFile);
         /*
          VgFeature[] nodes = new VgFeature[3];
 
@@ -110,7 +134,7 @@ public class FeatureNetTest {
         // Construct virtual connection-map scene:
 
         MpFeatureNetVisualizer t1 = new MpFeatureNetVisualizer();
-        WvizConfig style = new WvizConfig(RelativePaths.STYLE_CONFIGURATION_XML);
+        WvizConfig style = new WvizConfig(configurationFile);
         style = style.getConfiguration();
         t1.setStyle(style);
         WvizVirtualConnectionMapScene s = t1.transform(net);

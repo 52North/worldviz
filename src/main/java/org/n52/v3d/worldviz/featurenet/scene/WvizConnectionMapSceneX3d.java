@@ -87,7 +87,11 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             writeLine();
             
             //@ToDo: Instead of Hardcoding the skyColor, we should include it in the XML file
-            //writeLine("    <Background skyColor='1 1 1' />");
+            
+            if(!x3domMode){
+                writeLine("    <Background skyColor='1 1 1' />");
+            }
+            
             writeLine();
 
             logger.info("Parsing Edges");

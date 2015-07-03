@@ -11,9 +11,9 @@ package org.n52.v3d.worldviz.helper;
 public final class RelativePaths {
 
 	// general
-	private static final String DATA_FOLDER = "data/";
+	public static final String DATA_FOLDER = "data/";
 
-	private static final String TEST_FOLDER = "test/";
+	public static final String TEST_FOLDER = "test/";
 
 	private static final String EARTH_SUB_FOLDER = DATA_FOLDER + "earth/";
 	private static final String DATA_SOURCE_FILES_FOLDER = EARTH_SUB_FOLDER
@@ -235,10 +235,8 @@ public final class RelativePaths {
 
 	public static final String PAJEK_FLOWS_OF_TRADE_X3D = TEST_FOLDER + "Flows_of_trade" + ".x3d";
 
-	public static final String PAJEK_FLOWS_OF_TRADE_HTML = TEST_FOLDER + "Flows_of_trade"
-			+ ".html";
+	public static final String PAJEK_FLOWS_OF_TRADE_HTML = TEST_FOLDER + "Flows_of_trade"+ ".html";
 
-	public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER
-			+ "WvizConfig.xml";
+	public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER + "WvizConfig.xml";
 
 }

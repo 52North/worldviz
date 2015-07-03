@@ -28,7 +28,7 @@ public class MprConnectionMapGenerator extends T3dProcRendererMapper
             return targetFormat;
         }
 
-	/**
+    /**
      * performs the mapping process.
      */
     public Object transform(WvizVirtualConnectionMapScene s) throws T3dException{
