@@ -235,6 +235,20 @@ public final class RelativePaths {
 	public static final String PAJEK_FLOWS_OF_TRADE_X3D = TEST_FOLDER + "Flows_of_trade" + ".x3d";
 
 	public static final String PAJEK_FLOWS_OF_TRADE_HTML = TEST_FOLDER + "Flows_of_trade"+ ".html";
+	
+	public static final String TRADE_FOLDER = "tradeh/";
+	
+	public static final String IMPORTS_PARTNER_CSV = DATA_FOLDER + TRADE_FOLDER + "imports_partner.csv";
+	
+	public static final String EXPORTS_PARTNER_CSV = DATA_FOLDER + TRADE_FOLDER + "exports_partner.csv";
+	
+	public static final String IMPORTS_PARTNER_X3D = TEST_FOLDER + "Imports_partner" + ".x3d";
+
+	public static final String IMPORTS_PARTNER_HTML = TEST_FOLDER + "Imports_partner"+ ".html";
+	
+	public static final String EXPORTS_PARTNER_X3D = TEST_FOLDER + "Exports_partner" + ".x3d";
+
+	public static final String EXPORTS_PARTNER_HTML = TEST_FOLDER + "Exports_partner"+ ".html";
 
 	public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER + "WvizConfig.xml";
 
