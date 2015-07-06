@@ -24,7 +24,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
     final Logger logger = LoggerFactory.getLogger(WvizConnectionMapSceneX3d.class);
 	
-    private boolean x3domMode = false;
+    private boolean x3domMode = true;
 
     //This is used to map the geo-coordinates to the scene coordinates
     private Map<VgPoint, VgPoint> pointMap = new HashMap<VgPoint, VgPoint>(); 
@@ -213,7 +213,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    </Transform>");
                 writeLine();
 
-                writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + point.getZ() + "'>");
+                writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + point.getZ() + "'" 
+                			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
                 //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
                 writeLine("        <Billboard axisOfRotation='0 0 0'>");
                 writeLine("          <Shape>");
@@ -221,7 +222,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("            </Appearance>");
                 writeLine("            <Text string='" + labels.get(vertex) + "'>");
-                writeLine("                <FontStyle family='"+svgMap.get("font-family")+"' size='"+svgMap.get("font-size")+"'/>");
+                writeLine("                <FontStyle family='"+svgMap.get("font-family")+"' size='1'/>");
                 writeLine("            </Text>");
                 writeLine("          </Shape>");
                 writeLine("        </Billboard>");
