@@ -1,20 +1,14 @@
-<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="true" showriteLineog="true"
-  x="0px" y="0px" width="400px" height="400px">
-
+<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="true" showriteLineog="true" x="0px" y="0px" width="400px" height="400px">
   <Scene>
-
   	   <Background skyColor='1 1 1' />
-
     <Transform>
       <Shape>
         <Appearance>
           <Material diffuseColor="1 1 1"/>
-		  <ImageTexture url='color_etopo1_ice_low.jpg' />
+		  <ImageTexture url='../images/image2.png' />
         </Appearance>
         <Box size='2 0.001 1'/>
       </Shape>
     </Transform>
-
   </Scene>
-
 </X3D>

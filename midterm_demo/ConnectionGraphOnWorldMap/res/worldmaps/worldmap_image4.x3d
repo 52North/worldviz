@@ -5,13 +5,15 @@
 
   	   <Background skyColor='1 1 1' />
 
-    <Transform translation='-0.08 -0.15 -0.1' rotation='1 0 0 1.571' scale='1.85 1 1.85'>
-      <Inline url='resources/WorldMap4.x3d' />
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 1 1"/>
+		  <ImageTexture url='../images/image4.jpg' />
+        </Appearance>
+        <Box size='2 0.001 1'/>
+      </Shape>
     </Transform>
-	
-	<Transform>
-		<Inline url='resources/flows_of_trade.x3d' />
-	</Transform>
 
   </Scene>
 
