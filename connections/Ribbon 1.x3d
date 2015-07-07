@@ -1,0 +1,39 @@
+<X3D>
+  <Scene>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor='1 0.5 0'/>
+      </Appearance>
+      <Extrusion creaseAngle='0.785'
+	  crossSection='
+	  -1  1
+	   1  1
+	   1 -1
+	  -1 -1
+	  -1  1
+	  '
+	  orientation='
+	  0 1 0 0
+	  0 1 0 0.175
+	  0 1 0 0.349
+	  0 1 0 0.524
+	  0 1 0 0.698
+	  0 1 0 0.873
+	  0 1 0 1.047
+	  0 1 0 1.222
+	  0 1 0 1.396
+	  '
+	  spine='
+	  0 -1.0 0
+	  0 -0.75 0
+	  0 -0.50 0
+	  0 -0.25 0
+	  0 0.0 0
+	  0 0.25 0
+	  0 0.50 0
+	  0 0.75 0
+	  0 1.0 0
+	  '/>
+    </Shape>
+  </Scene>
+</X3D>

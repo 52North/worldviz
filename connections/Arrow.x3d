@@ -1,0 +1,20 @@
+<X3D>
+  <Scene>
+      <Group>
+        <Shape>
+          <Cylinder radius='.1' height='2.0' top='false'/>
+          <Appearance>
+            <Material diffuseColor='.1 .6 .1' emissiveColor='.05 .2 .05'/>
+          </Appearance>
+        </Shape>
+        <Transform translation='0 1 0'>
+          <Shape>
+            <Cone bottomRadius='.5' height='1'/>
+            <Appearance>
+				<Material diffuseColor='.7 .1 .1' emissiveColor='.33 0 0'/>
+			</Appearance>
+          </Shape>
+        </Transform>
+      </Group>
+  </Scene>
+</X3D>

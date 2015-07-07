@@ -5,12 +5,12 @@
 
   	   <Background skyColor='1 1 1' />
 
-    <Transform translation='-0.08 -0.15 -0.1' rotation='1 0 0 1.571' scale='1.85 1 1.85'>
-      <Inline url='resources/WorldMap.x3d' />
+    <Transform translation='0.2 -0.2 -0.1' rotation='1 0 0 1.571' scale='1.85 1 1.85'>
+		<Inline url='../res/worldmaps/worldmap_image2.x3d' />
     </Transform>
 	
 	<Transform>
-		<Inline url='resources/flows_of_trade.x3d' />
+		<Inline url='../res/featurenets/Flows_of_trade.x3d' />
 	</Transform>
 
   </Scene>
