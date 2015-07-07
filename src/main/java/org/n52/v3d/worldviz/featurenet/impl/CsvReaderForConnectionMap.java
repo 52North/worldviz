@@ -271,6 +271,7 @@ public class CsvReaderForConnectionMap {
 					.getAttributeValue(countriesPointLatitudeHeader));
 
 			VgPoint referencePoint = new GmPoint(longitude, latitude, 0);
+			referencePoint.setSRS(VgPoint.SRSLatLonWgs84);
 
 			// create VgFeature-object
 			VgFeature node = new GmAttrFeature();
