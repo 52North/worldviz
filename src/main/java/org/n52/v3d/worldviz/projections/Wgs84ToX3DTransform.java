@@ -1,6 +1,7 @@
 package org.n52.v3d.worldviz.projections;
 
 import java.util.ArrayList;
+
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgFeature;
@@ -23,7 +24,8 @@ public class Wgs84ToX3DTransform {
         }
         
         
-        NormTransform t2 = new NormTransform(geoPos);
+//        NormTransform t2 = new NormTransform(geoPos);
+        NormTransform_Wgs84 t2 = new NormTransform_Wgs84(geoPos);
         
         for(int i =0; i<geoPos.size();i++){
             vector = t2.transform(geoPos.get(i));
