@@ -118,7 +118,19 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 
 	@Override
 	protected void generateSceneContentX3D(boolean asX3DOM) {
-		for (T3dAttrSymbolInstance attrSymbol : cartographicSymbols) {
+
+		int amountOfFeatures = cartographicSymbols.size();
+		
+		for (int i = 0; i < amountOfFeatures; i++) {
+			if (i % 30 == 0) {
+				if (logger.isInfoEnabled()) {
+					logger.info("Processed {} / {} features.", i,
+							amountOfFeatures);
+				}
+			}
+
+			T3dAttrSymbolInstance attrSymbol = cartographicSymbols.get(i);
+
 			writeT3dAttrSymbolInstance(attrSymbol);
 		}
 

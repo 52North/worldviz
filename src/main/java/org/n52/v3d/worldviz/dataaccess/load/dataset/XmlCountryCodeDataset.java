@@ -50,7 +50,7 @@ public class XmlCountryCodeDataset extends AbstractXmlDataset {
 
 	public XmlCountryCodeDataset(DatasetDocument doc,
 			CountryBordersLODEnum countryBordersLOD) throws Exception {
-		super(doc);
+		super(doc, countryBordersLOD);
 
 	}
 
