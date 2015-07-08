@@ -160,28 +160,56 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 //calculate translation (mid-point between both end-points of the edge)
                 VgPoint midPoint = angleCalc.getMidPoint();
                 
-                //cylinder height
-                double cylinderHeight = angleCalc.getLengthFromTo();
+                double distance = angleCalc.getLengthFromTo();
                 
-                writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
-                writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
-                writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
-                writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+                double cylinderHeight = distance;
+                double coneHeight = 0.1; //To be removed
+               
+                //First translate by y/2 units
+                //We subtract 1 symbolSize unit, because the edge starts from that that point and our symbol overlaps it
+                //We subtract 1 more symbolSize unit, to make sure the cone starts from the bounding edge of the symbol
                 
-                writeLine("            <Shape>");
-                writeLine("              <Appearance>");
-                writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
-                writeLine("              </Appearance>");
+                //There is some overlapping issue, that is why I'm keeping to 1.5 now. If this looks good, we could keep that!
                 
-                writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
+                double coneTranslation = (distance/2) - (symbolSize*1.5);
+                //double coneTranslation = (distance/2) - (symbolSize*2.0); 
                 
-                writeLine("            </Shape>");
-                writeLine("          </Transform>");
-                writeLine("        </Transform>");
-                writeLine("      </Transform>");
-                writeLine("    </Transform>");
+                double cylinderRadius = Double.parseDouble(svgMap.get("stroke-width"));
+                double coneRadius = cylinderRadius * 5; //To be removed
                 
-                writeLine();
+                if(distance != 0){
+                    writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
+                    writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                    writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
+                    writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+
+                    writeLine("            <Group>");
+                    writeLine("              <Shape>");
+                    writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
+                    writeLine("                <Appearance>");
+                    writeLine("                  <Material diffuseColor='.1 .6 .1' emissiveColor='.05 .2 .05'/>");
+                    writeLine("                </Appearance>");   
+                    writeLine("              </Shape>");                
+
+
+                    writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
+                    writeLine("                <Shape>");
+                    writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
+                    writeLine("                  <Appearance>");
+                    writeLine("                    <Material diffuseColor='0 0.7 1'/>");
+                    writeLine("                  </Appearance>");   
+                    writeLine("                </Shape>");
+                    writeLine("              </Transform>");
+                    writeLine("            </Group>");
+
+                    writeLine("          </Transform>");
+                    writeLine("        </Transform>");
+                    writeLine("      </Transform>");
+                    writeLine("    </Transform>");
+
+                    writeLine();    
+                }
+                
             }
             
             logger.info("Parsing Vertices");

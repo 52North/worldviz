@@ -54,7 +54,9 @@ public class WvizConfig_Test {
         try {
             assertTrue(wvizConfig != null);
 
-            String symbolType, symbolSize, symbolColor, propertyName, geometryType;
+            String symbolType, symbolColor, propertyName, geometryType;
+            
+            double symbolSize;
 
             Map<Object, Object> svgMap = new HashMap<Object, Object>(); // Cannot be viable once there are more properties
 
@@ -85,10 +87,6 @@ public class WvizConfig_Test {
             symbolType = t3dSymbol.getType();
             
             assertTrue(symbolType != null);
-            
-            symbolSize = t3dSymbol.getSize();
-            
-            assertTrue(symbolSize != null);
             
             symbolColor = t3dSymbol.getColor();
             
@@ -133,6 +131,7 @@ public class WvizConfig_Test {
             assertTrue(displacement != null);
             
             //It's of no use, but still let it be here. :P
+            symbolSize = t3dSymbol.getSize();
             displacementX = displacement.getDisplacementX();
             displacementY = displacement.getDisplacementY();
 

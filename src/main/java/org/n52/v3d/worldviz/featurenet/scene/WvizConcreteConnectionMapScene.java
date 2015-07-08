@@ -24,9 +24,10 @@ public abstract class WvizConcreteConnectionMapScene {
 
 	// List of Style Parameters that were defined in the XML sheet - More will
 	// be added!
-	protected String symbolColor, symbolSize;
+	protected String symbolColor;
+        protected double symbolSize;
 
-	protected static final String defaultSymbolSize = "0.15";
+	protected static final double defaultSymbolSize = 0.15;
 
 	protected String propertyName;
 

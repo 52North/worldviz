@@ -12,7 +12,7 @@ public class T3dSymbol{
     
     @XStreamAlias("size")
     @XStreamAsAttribute
-    String size;
+    double size;
         
     @XStreamAlias("color")
     @XStreamAsAttribute
@@ -22,7 +22,7 @@ public class T3dSymbol{
         return type;
     }
     
-    public String getSize(){
+    public double getSize(){
         return size;
     }
     
