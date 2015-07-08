@@ -35,7 +35,7 @@ public abstract class WvizConcreteConnectionMapScene {
 	// Cannot be viable once there are more properties
 	protected Map<String, String> svgMap = new HashMap<String, String>();
 
-	protected double displacementX, displacementY;
+	protected double displacementX, displacementY,displacementZ;
 
 	// Currently, this file supports only Cylinders, when more parameters are
 	// used, this parameter should be used and more if statements should be
@@ -89,6 +89,7 @@ public abstract class WvizConcreteConnectionMapScene {
 
 		displacementX = displacement.getDisplacementX();
 		displacementY = displacement.getDisplacementY();
+                displacementZ = displacement.getDisplacementZ();
 
 		Fill fill = (Fill) textVisualizer.getFill().get(0);
 		svgParameter = fill.getSvgParameter();
@@ -116,8 +117,7 @@ public abstract class WvizConcreteConnectionMapScene {
 		}
 
 		for (VgFeature feature : scene.getVertices()) {
-			labels.put(feature, (String) ((GmAttrFeature) feature)
-					.getAttributeValue(propertyName));
+			labels.put(feature, (String) ((GmAttrFeature) feature).getAttributeValue(propertyName));
 		}
 
 	}

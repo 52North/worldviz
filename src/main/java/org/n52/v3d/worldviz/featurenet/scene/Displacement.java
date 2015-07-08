@@ -9,6 +9,8 @@ public class Displacement{
     protected double DisplacementX = 0.;
     @XStreamAlias("DisplacementY")
     protected double DisplacementY = 0.;
+    @XStreamAlias("DisplacementZ")
+    protected double DisplacementZ = 0.;
     
     public double getDisplacementX(){
         return DisplacementX;
@@ -16,6 +18,10 @@ public class Displacement{
     
     public double getDisplacementY(){
         return DisplacementY;
+    }
+    
+    public double getDisplacementZ(){
+        return DisplacementZ;
     }
     
 }

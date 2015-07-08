@@ -24,10 +24,7 @@ import org.slf4j.LoggerFactory;
 
 public class FeatureNetTest {
     
-    public String pajekFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_NET;         //RelativePaths.PAJEK_GRAPH_NET
-    public String configurationFile = RelativePaths.STYLE_CONFIGURATION_XML;
-    public String outputFile_X3DOM = RelativePaths.PAJEK_FLOWS_OF_TRADE_HTML; //RelativePaths.PAJEK_GRAPH_HTML;
-    public String outputFile_X3D = RelativePaths.PAJEK_FLOWS_OF_TRADE_X3D;    //RelativePaths.PAJEK_GRAPH_X3D;
+    public String pajekFile,configurationFile;
     public String outputFile = RelativePaths.TEST_FOLDER;
     public boolean X3DOMMode = false;
     
@@ -35,7 +32,12 @@ public class FeatureNetTest {
     final static Logger logger = LoggerFactory.getLogger(FeatureNetTest.class);
     
     public static void main(String[] args) throws PajekException {
+        
+        String pajekFile = RelativePaths.PAJEK_FLOWS_OF_TRADE_NET;
+        String configurationFile = RelativePaths.STYLE_CONFIGURATION_XML;
+        
         FeatureNetTest app = new FeatureNetTest();
+        app.setConfig(pajekFile,configurationFile, false);
         app.run();
     }
     
@@ -47,15 +49,12 @@ public class FeatureNetTest {
         String fileName = path.getFileName().toString();
         fileName = fileName.split("\\.")[0];
         if(X3DOMMode){
-            fileName = fileName + ".html";
-            outputFile_X3DOM = new File(outputFile, fileName).toString();            
-            outputFile = outputFile_X3DOM;
+            fileName = fileName + ".html";            
         }
         else{
             fileName = fileName+ ".x3d";
-            outputFile_X3D = new File(outputFile, fileName).toString();
-            outputFile = outputFile_X3D;
         }
+        outputFile = new File(outputFile, fileName).toString();
     }
     
     

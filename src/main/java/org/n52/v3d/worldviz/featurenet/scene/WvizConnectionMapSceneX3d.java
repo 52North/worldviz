@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
@@ -60,8 +61,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
      */
     @Override
     public void writeToFile(String fileName) {
-    	
-    	//small logging test
     	
     	logger.info("Start to write output file!");
     	
@@ -186,10 +185,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             }
             
             logger.info("Parsing Vertices");
-
             for (VgFeature vertex : scene.getVertices()) {
-                
-                logger.info("Parsing Vertex : "+vertex.getName());
+                Object vertexName = ((GmAttrFeature) vertex).getAttributeValue("name");
+                logger.info("Parsing Vertex : "+(String)vertexName);
                 
                 VgPoint point = (VgPoint) (vertex.getGeometry());
                 point = pointMap.get(point);
@@ -213,7 +211,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    </Transform>");
                 writeLine();
 
-                writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + point.getZ() + "'" 
+                writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + (point.getZ() + displacementZ)+ "'" 
                 			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
                 //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
                 writeLine("        <Billboard axisOfRotation='0 0 0'>");
