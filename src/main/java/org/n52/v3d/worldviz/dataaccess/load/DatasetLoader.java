@@ -1,7 +1,10 @@
 package org.n52.v3d.worldviz.dataaccess.load;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
+import org.apache.xmlbeans.XmlException;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlBitmapDataset;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlCountryCodeDataset;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
@@ -11,6 +14,9 @@ import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.GeoReferenceFeatureTy
 import org.n52.v3d.worldviz.exception.NoValidFeatureTypeException;
 import org.n52.v3d.worldviz.helper.FileHelper;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import noNamespace.DatasetDocument;
 import noNamespace.DatasetDocument.Dataset.TableStructure.Property;
 import noNamespace.DatasetDocument.Dataset.TableStructure.Property.GeoReference;
@@ -29,6 +35,8 @@ import noNamespace.DatasetDocument.Dataset.TableStructure.Property.GeoReference;
  * 
  */
 public class DatasetLoader {
+
+	private Logger logger = LoggerFactory.getLogger(DatasetLoader.class);
 
 	private CountryBordersLODEnum countryBordersLOD = CountryBordersLODEnum.DETAILED;
 
@@ -94,27 +102,65 @@ public class DatasetLoader {
 	 *             -element of the XMl document does not match any of the types
 	 *             listed in the {@link GeoReferenceFeatureTypeEnum}
 	 */
-	public XmlDataset loadDataset() throws Exception {
-		File xmlFile = new File(this.xmlFilePath);
-		// check if file exists
-		FileHelper.filesExist(xmlFile);
+	public XmlDataset loadDataset() {
+		if (logger.isInfoEnabled()) {
+			logger.info("Starting to load the XML-dataset from {}.",
+					this.xmlFilePath);
+		}
 
-		// use XMLBeans to parse the document
-		DatasetDocument doc = null;
+		XmlDataset dataset = null;
 
-		doc = DatasetDocument.Factory.parse(xmlFile);
+		try {
+			File xmlFile = new File(this.xmlFilePath);
+			// check if file exists
 
-		// now the question is, what data does the dataset contain? Images,
-		// point data, country codes
-		// for this the documents propertyArray is searched for the
-		// GeoReference-element
-		// Note: It is assumed, that only one unique GeoReference-element is
-		// present
-		GeoReference geoReference = extractGeoReference(doc);
-		String featureType = geoReference.getFeatureType();
-		String featureTypeWithoutENE = removeENEfromFeatureType(featureType);
+			FileHelper.filesExist(xmlFile);
 
-		return determineType(featureTypeWithoutENE, doc);
+			// use XMLBeans to parse the document
+			DatasetDocument doc = null;
+
+			doc = DatasetDocument.Factory.parse(xmlFile);
+
+			// now the question is, what data does the dataset contain? Images,
+			// point data, country codes
+			// for this the documents propertyArray is searched for the
+			// GeoReference-element
+			// Note: It is assumed, that only one unique GeoReference-element is
+			// present
+			GeoReference geoReference = extractGeoReference(doc);
+			String featureType = geoReference.getFeatureType();
+			String featureTypeWithoutENE = removeENEfromFeatureType(featureType);
+
+			dataset = determineType(featureTypeWithoutENE, doc);
+
+		} catch (FileNotFoundException e) {
+			if (logger.isErrorEnabled())
+				logger.error(
+						"An error (FileNotFound-Exception) occured during parsing the XML-file {}.",
+						this.xmlFilePath, e);
+		} catch (XmlException e) {
+			if (logger.isErrorEnabled())
+				logger.error(
+						"An error (XmlException) occured during parsing the XML-file {}.",
+						this.xmlFilePath, e);
+		} catch (IOException e) {
+			if (logger.isErrorEnabled())
+				logger.error(
+						"An error (IOException) occured during parsing the XML-file {}.",
+						this.xmlFilePath, e);
+		} catch (Exception e) {
+			if (logger.isErrorEnabled())
+				logger.error(
+						"An error occured during determining the concrete instance of XmlDataset for file {}.",
+						this.xmlFilePath, e);
+		}
+		
+		if(dataset == null){
+			if (logger.isWarnEnabled())
+				logger.warn("The Xml-dataset should be initialized and loaded but is still NULL!");
+		}
+
+		return dataset;
 
 	}
 
@@ -139,6 +185,7 @@ public class DatasetLoader {
 
 		if (featureType.equals(GeoReferenceFeatureTypeEnum.Bitmap.toString()))
 			return new XmlBitmapDataset(doc);
+
 		else if (featureType.equals(GeoReferenceFeatureTypeEnum.CountryCode
 				.toString()))
 			return new XmlCountryCodeDataset(doc, this.countryBordersLOD);

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.n52.v3d.worldviz.dataaccess.importtools.Country;
-import org.n52.v3d.worldviz.dataaccess.importtools.CountryEnumGenerator;
+import org.n52.v3d.worldviz.dataaccess.importtools.CountryIsoCodeMapGenerator;
 import org.n52.v3d.worldviz.dataaccess.importtools.CsvImporter;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import noNamespace.DatasetDocument;
@@ -31,7 +31,7 @@ public class FillDataset_CountryCodes {
 
 	public static void main(String[] args) {
 
-		Map<String, Country> countryMap = CountryEnumGenerator
+		Map<String, Country> countryMap = CountryIsoCodeMapGenerator
 				.createCountryMap();
 
 		String xmlFileLocation = RelativePaths.COUNTRY_CODES_XML;

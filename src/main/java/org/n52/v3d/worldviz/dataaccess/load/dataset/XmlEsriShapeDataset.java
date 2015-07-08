@@ -22,13 +22,17 @@ public class XmlEsriShapeDataset extends AbstractXmlDataset {
 	public XmlEsriShapeDataset(DatasetDocument doc)
 			throws Exception {
 		super(doc);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected void setGeometry(VgAttrFeature newFeature, Property property,
 			String entryValue) throws Exception {
 
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Creating a polygon-geometry (BBOX) from the feature property '{}' with value '{}'.",
+					property.getTitle().getStringValue(), entryValue);
+		
 		String crs = property.getGeoReference().getCRS().toString();
 
 		VgPolygon polygon = BoundingBoxExtractor.createPolygonFromBoundingBox(

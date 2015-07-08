@@ -14,6 +14,7 @@ import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.ShapeReader_Simplifie
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.Unit;
 import org.n52.v3d.worldviz.exception.UnmatchingEntryPropertyArrayException;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
+
 import noNamespace.DatasetDocument;
 import noNamespace.DatasetDocument.Dataset.Entries.Entry;
 import noNamespace.DatasetDocument.Dataset.GeneralInformation;
@@ -24,6 +25,8 @@ import noNamespace.Title;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract class that implements the interface {@link XmlDataset}. It parses
@@ -35,6 +38,8 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
  * 
  */
 public abstract class AbstractXmlDataset implements XmlDataset {
+
+	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	private String[] titles;
 	private String[] descriptions;
@@ -78,6 +83,8 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 	 * 
 	 * @param doc
 	 *            the XmlDataset-document that shall be parsed.
+	 * @param countryBordersLOD
+	 *            the level of detail of world borders.
 	 * @throws Exception
 	 * @see {@link DatasetLoader} the method <code>loadDataset()</code> creates
 	 *      an instance of <code>XmlDataset</code>
@@ -143,6 +150,9 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 	 * xml-document and sets the corresponding member variables.
 	 */
 	private void processGeneralInformation() {
+
+		if (logger.isDebugEnabled())
+			logger.debug("Parsing general information from XML document.");
 
 		GeneralInformation generalInformation = this.xmlDoc.getDataset()
 				.getGeneralInformation();
@@ -233,6 +243,11 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 	 */
 	private void generateFeatures() throws Exception {
 
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Parsing feature information from XML document for {} feature-entries.",
+					this.features);
+
 		Property[] propertyArray = this.xmlDoc.getDataset().getTableStructure()
 				.getPropertyArray();
 		Entry[] entryArray = this.xmlDoc.getDataset().getEntries()
@@ -243,7 +258,7 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 
 			VgAttrFeature newFeature = new GmAttrFeature();
 
-			processProperties(newFeature, propertyArray, entry);
+			processFeatureProperties(newFeature, propertyArray, entry);
 
 			// only add the feature if a any geometry could be set!
 			// else: do not add this feature, as it cannot be displayed later
@@ -266,7 +281,7 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 	 *            the entry of the Ene-Dataset
 	 * @throws Exception
 	 */
-	private void processProperties(VgAttrFeature newFeature,
+	private void processFeatureProperties(VgAttrFeature newFeature,
 			Property[] propertyArray, Entry entry) throws Exception {
 		String[] entryValueArray = entry.getValueArray();
 		// iterate over properties and set each property-value-combination

@@ -18,15 +18,18 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  */
 public class XmlPointDataset extends AbstractXmlDataset {
 
-	public XmlPointDataset(DatasetDocument doc)
-			throws Exception {
+	public XmlPointDataset(DatasetDocument doc) throws Exception {
 		super(doc);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected void setGeometry(VgAttrFeature newFeature, Property property,
 			String entryValue) {
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Creating a point-geometry from the feature property '{}' with value '{}'.",
+					property.getTitle().getStringValue(), entryValue);
 
 		String crs = property.getGeoReference().getCRS().toString();
 
