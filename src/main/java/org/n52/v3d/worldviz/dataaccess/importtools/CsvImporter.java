@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.Set;
 
 import org.n52.v3d.worldviz.helper.FileHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import noNamespace.DatasetDocument;
 import noNamespace.DatasetDocument.Dataset.Entries;
 import noNamespace.DatasetDocument.Dataset.Entries.Entry;
@@ -28,6 +31,8 @@ import com.csvreader.CsvReader;
  * 
  */
 public class CsvImporter implements Importer {
+
+	private Logger logger = LoggerFactory.getLogger(CsvImporter.class);
 
 	private String xmlFileLocation;
 	private String csvFileLocation;
@@ -133,7 +138,19 @@ public class CsvImporter implements Importer {
 		this.csvHeaders = csvHeaders;
 	}
 
+	/**
+	 * Reads the CSV-file from {@link CsvImporter#csvFileLocation} and writes
+	 * it's content to the 'Entries'-tag-part of the XML file at
+	 * {@link CsvImporter#xmlFileLocation}.
+	 */
 	public void fillDatasetEntries() throws FileNotFoundException {
+
+		if (logger.isInfoEnabled()) {
+			logger.info(
+					"The 'Entries'-Tag-part of the XML-document at {} will be overridden by the contents of the CSV-file at {}",
+					this.xmlFileLocation, this.csvFileLocation);
+		}
+
 		// the files should already exist
 		FileHelper.filesExist(new File(this.csvFileLocation), new File(
 				this.xmlFileLocation));
@@ -165,22 +182,25 @@ public class CsvImporter implements Importer {
 			// create new list of Entries
 			createNewEntries(dataset, datasetEntries);
 
-			// System.out.println(dataset.toString());
-
 			// save changes to datasetFile
 			dataset.save(datasetFile);
 
+			if (logger.isInfoEnabled()) {
+				logger.info(
+						"Successfully overridden the 'Entries'-Tag-part of the XML-document at {}.",
+						this.xmlFileLocation);
+			}
+
 		} catch (XmlException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			if (logger.isErrorEnabled())
+				logger.error("An error (XmlException) occured on file {}.",
+						this.xmlFileLocation, e);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			if (logger.isErrorEnabled())
+				logger.error("An error (IOException) occured.", e);
 		} finally {
 			if (csvReader != null)
 				csvReader.close();
-
-			System.out.println("\nSuccess!");
 		}
 
 	}
@@ -194,8 +214,8 @@ public class CsvImporter implements Importer {
 	 * @return a Map that contains the Entry and it's key-value.
 	 * @throws IOException
 	 */
-	private Map<String, DatasetEntry> readEntries(
-			CsvReader csvReader) throws IOException {
+	private Map<String, DatasetEntry> readEntries(CsvReader csvReader)
+			throws IOException {
 
 		Map<String, DatasetEntry> datasetEntries = new HashMap<String, DatasetEntry>();
 
@@ -207,8 +227,8 @@ public class CsvImporter implements Importer {
 			String[] values = getCsvValues(csvReader);
 
 			if (!values[0].isEmpty()) {
-				DatasetEntry datasetEntry = new DatasetEntry(
-						this.csvHeaders, values);
+				DatasetEntry datasetEntry = new DatasetEntry(this.csvHeaders,
+						values);
 
 				datasetEntries.put(datasetEntry.getKeyAttributeValue(),
 						datasetEntry);
@@ -228,8 +248,7 @@ public class CsvImporter implements Importer {
 	 * @throws IOException
 	 */
 	private void createNewEntries(DatasetDocument dataset,
-			Map<String, DatasetEntry> csvEntries)
-			throws IOException {
+			Map<String, DatasetEntry> csvEntries) throws IOException {
 
 		Set<String> keySet = csvEntries.keySet();
 		List<String> sortedKeyList = new ArrayList<String>(keySet);
@@ -257,8 +276,8 @@ public class CsvImporter implements Importer {
 	 * @throws IOException
 	 */
 	private void addNewEntries(Entries entries,
-			Map<String, DatasetEntry> csvEntries,
-			List<String> sortedKeyList) throws IOException {
+			Map<String, DatasetEntry> csvEntries, List<String> sortedKeyList)
+			throws IOException {
 
 		for (String key : sortedKeyList) {
 			Entry newEntry = entries.addNewEntry();

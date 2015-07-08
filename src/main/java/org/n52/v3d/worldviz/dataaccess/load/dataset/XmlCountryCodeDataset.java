@@ -3,17 +3,17 @@ package org.n52.v3d.worldviz.dataaccess.load.dataset;
 import java.io.IOException;
 import java.util.List;
 
+import noNamespace.DatasetDocument;
+import noNamespace.DatasetDocument.Dataset.TableStructure.Property;
+
+import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.GeometryConverter;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.JTSHelper;
 import org.n52.v3d.worldviz.exception.ShapeGeometryNotFoundException;
 import org.n52.v3d.worldviz.exception.UnknownCountryCodeCrsException;
 import org.n52.v3d.worldviz.triturusextensions.VgMultiPolygon;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
-import noNamespace.DatasetDocument;
-import noNamespace.DatasetDocument.Dataset.TableStructure.Property;
-
-import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
-import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.opengis.feature.simple.SimpleFeature;
 
 import com.vividsolutions.jts.geom.MultiPolygon;
@@ -58,6 +58,11 @@ public class XmlCountryCodeDataset extends AbstractXmlDataset {
 	protected void setGeometry(VgAttrFeature newFeature, Property property,
 			String entryValue) throws UnknownCountryCodeCrsException,
 			IOException, ShapeGeometryNotFoundException {
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Creating a MultiPolygon-geometry from the feature property '{}' with value '{}'.",
+					property.getTitle().getStringValue(), entryValue);
 
 		determineJoinHeader(property);
 

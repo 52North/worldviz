@@ -7,9 +7,9 @@ import java.util.Map;
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
-
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Use this class to generate a map of all world countries. Key =
@@ -18,7 +18,10 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
  * @author Christian Danowski
  * 
  */
-public abstract class AbstractGeneratorForMapOfAllCountries implements GeneratorForMapOfAllCountries{
+public abstract class AbstractGeneratorForMapOfAllCountries implements
+		GeneratorForMapOfAllCountries {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	protected String pathToEneDatasetWithAllWorldCountries = RelativePaths.COUNTRY_CODES_XML;
 	private String attributeName_iso3166_alpha2_code = "ISO 3166-2 code";
@@ -30,7 +33,8 @@ public abstract class AbstractGeneratorForMapOfAllCountries implements Generator
 	/**
 	 * Use this method to generate a map of all world countries. Key =
 	 * iso3166-alpha2-code; Value = country as VgAttrFeature
-	 * @param worldBordersLOD 
+	 * 
+	 * @param worldBordersLOD
 	 * 
 	 * @return a map of all world's countries
 	 */
@@ -39,6 +43,12 @@ public abstract class AbstractGeneratorForMapOfAllCountries implements Generator
 		XmlDataset countryCodes = null;
 
 		DatasetLoader countryCodesLoader = setupDatasetLoader();
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Generating a map of all world's countries from dataset {} with level of detail {}",
+					this.pathToEneDatasetWithAllWorldCountries,
+					countryCodesLoader.getCountryBordersLOD());
 
 		try {
 			countryCodes = countryCodesLoader.loadDataset();

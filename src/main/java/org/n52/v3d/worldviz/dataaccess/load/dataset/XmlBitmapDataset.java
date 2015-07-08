@@ -1,12 +1,12 @@
 package org.n52.v3d.worldviz.dataaccess.load.dataset;
 
-import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.BoundingBoxExtractor;
 import noNamespace.DatasetDocument;
 import noNamespace.DatasetDocument.Dataset.TableStructure.Property;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.triturus.vgis.VgPolygon;
+import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.BoundingBoxExtractor;
 
 /**
  * Specialization of XmlDataset that is used for image-datasets (datasets that
@@ -19,14 +19,18 @@ import org.n52.v3d.triturus.vgis.VgPolygon;
  */
 public class XmlBitmapDataset extends AbstractXmlDataset {
 
-	public XmlBitmapDataset(DatasetDocument doc)
-			throws Exception {
+	public XmlBitmapDataset(DatasetDocument doc) throws Exception {
 		super(doc);
 	}
 
 	@Override
 	protected void setGeometry(VgAttrFeature newFeature, Property property,
 			String entryValue) throws Exception {
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Creating a polygon-geometry from the feature property '{}' with value '{}'.",
+					property.getTitle().getStringValue(), entryValue);
 
 		// As this concerns images, the geographical bounding box shall be
 		// expressed as a polygon.

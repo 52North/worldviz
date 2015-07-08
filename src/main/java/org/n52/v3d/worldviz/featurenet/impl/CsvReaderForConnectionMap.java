@@ -82,7 +82,7 @@ public class CsvReaderForConnectionMap {
 
 	private final String zeroValue = "0";
 
-	Logger logger = LoggerFactory.getLogger(CsvReaderForConnectionMap.class);
+	private Logger logger = LoggerFactory.getLogger(CsvReaderForConnectionMap.class);
 
 	private final String countryNameColumnHeader = "CountryCode";
 
@@ -134,8 +134,8 @@ public class CsvReaderForConnectionMap {
 		// maybe some consistency checks
 		try {
 
-			if (logger.isDebugEnabled())
-				logger.debug(
+			if (logger.isInfoEnabled())
+				logger.info(
 						"Trying to parse the CSV-file {} to create a FeatureNet from it.",
 						csvFilePath);
 
@@ -161,7 +161,7 @@ public class CsvReaderForConnectionMap {
 						.get(fromNodeCountryCode);
 				featureNodes.add(fromFeatureNode);
 
-				for (int indexDataColumn = 1; indexDataColumn < numberOfHeaders-1; indexDataColumn++) {
+				for (int indexDataColumn = 1; indexDataColumn < numberOfHeaders - 1; indexDataColumn++) {
 					String nextDataEntry = csvReader.get(indexDataColumn);
 
 					// if nextDataEntry is != 0 then a new connection has been
@@ -219,6 +219,9 @@ public class CsvReaderForConnectionMap {
 			if (logger.isWarnEnabled())
 				logger.warn("No FeatureNet could be created! NULL will be returned then.");
 		}
+
+		if (logger.isInfoEnabled())
+			logger.info("Parsing the CSV-file {} finished.", csvFilePath);
 
 		return featureNet;
 	}

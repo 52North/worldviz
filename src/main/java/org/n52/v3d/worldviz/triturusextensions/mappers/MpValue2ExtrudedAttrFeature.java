@@ -6,6 +6,8 @@ import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dProcMapper;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mapper that maps a numeric extent to an attributed feature. The numeric is
@@ -19,6 +21,8 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
  *
  */
 public class MpValue2ExtrudedAttrFeature extends T3dProcMapper {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	private MpValue2NumericExtent numericExtentMapper;
 
@@ -162,13 +166,12 @@ public class MpValue2ExtrudedAttrFeature extends T3dProcMapper {
 			try {
 				doubleValue = Double.parseDouble(attributeValueString);
 			} catch (Exception e) {
-				System.out.println("WARNING: The attributeValue '"
-						+ attributeValue + "' of the attribute '" + attrName
-						+ "' cannot be parsed as a double-value! +"
-						+ "Thus the extrusion height will be set to "
-						+ "the default extrusion height for "
-						+ "non double values!! (" + this.neutralExtrusionHeight
-						+ ")");
+
+				if (logger.isWarnEnabled())
+					logger.warn(
+							"The attributeValue '{}' of the attribute '{}' cannot be parsed as a double-value! Thus the extrusion height will be set to the default extrusion height for non double values!! ({})",
+							attributeValue, attrName,
+							this.neutralExtrusionHeight);
 
 				addExtrusionAttribute(feature, this.neutralExtrusionHeight);
 
@@ -220,7 +223,7 @@ public class MpValue2ExtrudedAttrFeature extends T3dProcMapper {
 	public VgAttrFeature extrudeWithNeutralHeight(VgAttrFeature feature) {
 
 		addExtrusionAttribute(feature, neutralExtrusionHeight);
-		
+
 		return feature;
 
 	}

@@ -5,10 +5,12 @@ import org.n52.v3d.triturus.t3dutil.MpSimpleHypsometricColor;
 import org.n52.v3d.triturus.t3dutil.MpValue2Symbol;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * This is a class to map a numerical value to a colored symbol. The
- * color is interpolated by using the {@link MpHypsometricColor}-mapper of the
+ * This is a class to map a numerical value to a colored symbol. The color is
+ * interpolated by using the {@link MpHypsometricColor}-mapper of the
  * Triturus-framework.
  * 
  * <br/>
@@ -27,6 +29,8 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
  * 
  */
 public class MpValue2ColoredSymbol extends MpValue2Symbol {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	protected MpSimpleHypsometricColor colorMapper;
 
@@ -93,12 +97,12 @@ public class MpValue2ColoredSymbol extends MpValue2Symbol {
 			try {
 				doubleValue = Double.parseDouble(attributeValueString);
 			} catch (Exception e) {
-				System.out.println("WARNING: The attributeValue '"
-						+ attributeValue + "' of the attribute '"
-						+ attrValuePair.getAttributeName()
-						+ "' cannot be parsed as a double-value! +"
-						+ "Thus the defaultDoubleValue '" + doubleValue
-						+ "' will be used!!");
+
+				if (logger.isWarnEnabled())
+					logger.warn(
+							"The attributeValue '{}' of the attribute '{}' cannot be parsed as a double-value! Thus the defaultDoubleValue '{}' will be used!!",
+							attributeValue, attrValuePair.getAttributeName(),
+							doubleValue);
 			}
 		}
 

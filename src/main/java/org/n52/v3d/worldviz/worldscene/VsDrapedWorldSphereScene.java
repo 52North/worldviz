@@ -191,7 +191,8 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 			writeToX3dSphere(elevationGrid, asX3DOM);
 
 		} catch (Exception e) {
-			System.out.println("An error occured: " + e.getMessage());
+			if (logger.isErrorEnabled())
+				logger.error("An error occured: " + e.getMessage());
 		}
 
 	}
@@ -403,16 +404,19 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 
 		// TODO pElev ist noch reinzurechnen! bezogen auf R = 1
 		if (Math.abs(x) > 2. * R)
-			System.out.println("Warning: x = " + x);
+			if (logger.isWarnEnabled())
+				logger.warn("Warning: x = " + x);
 		if (Math.abs(y) > 2. * R)
-			System.out.println("Warning: y = " + y);
+			if (logger.isWarnEnabled())
+				logger.warn("Warning: y = " + y);
 		if (Math.abs(z) > 2. * R)
-			System.out.println("Warning: z = " + z);
+			if (logger.isWarnEnabled())
+				logger.warn("Warning: z = " + z);
 		// System.out.println("" + pX + " " + pY + " -> " + x + " " + y);
 		String coordinateString = "" + this.decimalFormatter.format(x) + " "
 				+ this.decimalFormatter.format(z) + " "
 				+ this.decimalFormatter.format(-y);
 
-		return coordinateString; 
+		return coordinateString;
 	}
 }

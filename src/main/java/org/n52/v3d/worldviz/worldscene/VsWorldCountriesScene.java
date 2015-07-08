@@ -187,7 +187,18 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 	protected void generateSceneContentX3D(boolean asX3DOM) {
 
 		// write all scene objects (coloredWorldCountries) into X3D
-		for (VgAttrFeature colAttrFeature : worldCountries) {
+		int amountOfFeatures = worldCountries.size();
+		
+		for (int i=0; i< amountOfFeatures; i++){
+			
+			if (i % 30 == 0){
+				if (logger.isInfoEnabled()){
+					logger.info("Processed {} / {} features.", i, amountOfFeatures);
+				}
+			}
+			
+			VgAttrFeature colAttrFeature = worldCountries.get(i);
+			
 			writeAttrFeature(colAttrFeature);
 		}
 

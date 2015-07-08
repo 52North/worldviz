@@ -11,13 +11,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.n52.v3d.worldviz.helper.RelativePaths;
-
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
 import org.geotools.data.FeatureSource;
 import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.FeatureIterator;
 import org.opengis.feature.simple.SimpleFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Used to extract the geometry of all MultiPolygon-features from a shape file.
@@ -30,6 +31,8 @@ import org.opengis.feature.simple.SimpleFeature;
  * 
  */
 public abstract class AbstractShapeReader implements ShapeReader {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	private List<SimpleFeature> simpleFeatureCollection = null;
 
@@ -53,6 +56,41 @@ public abstract class AbstractShapeReader implements ShapeReader {
 			extractJtsSimpleFeaturesFromDefaultShape();
 
 		return simpleFeatureCollection;
+	}
+	
+	/**
+	 * This method extracts all simple features from the declared shapeFile as
+	 * JTS (Java Topology Suite) SimpleFeatures and assigns them to the variable
+	 * simpleFeatureCollection.
+	 * 
+	 * @param shapeFilePath
+	 *            the filePath to the shape file
+	 * @throws IOException
+	 */
+	private void extractJtsSimpleFeaturesFromDefaultShape() throws IOException {
+
+		if (logger.isDebugEnabled())
+			logger.debug("Extracting all simple features from shapefile at {}",
+					this.shapeFileLocation);
+		
+		List<SimpleFeature> jtsSimpleFeatures = new ArrayList<SimpleFeature>();
+
+		FeatureCollection<?, ?> featureCollection = null;
+
+		featureCollection = getFeatureCollectionFromShapeFile(shapeFileLocation);
+
+		FeatureIterator<?> iterator = featureCollection.features();
+
+		while (iterator.hasNext()) {
+			SimpleFeature feature = (SimpleFeature) iterator.next();
+
+			jtsSimpleFeatures.add(feature);
+
+		}
+
+		simpleFeatureCollection = jtsSimpleFeatures;
+
+		iterator.close();
 	}
 
 	private FeatureCollection<?, ?> getFeatureCollectionFromShapeFile(
@@ -90,35 +128,6 @@ public abstract class AbstractShapeReader implements ShapeReader {
 		return dataStore;
 	}
 
-	/**
-	 * This method extracts all simple features from the declared shapeFile as
-	 * JTS (Java Topology Suite) SimpleFeatures and assigns them to the variable
-	 * simpleFeatureCollection.
-	 * 
-	 * @param shapeFilePath
-	 *            the filePath to the shape file
-	 * @throws IOException
-	 */
-	private void extractJtsSimpleFeaturesFromDefaultShape() throws IOException {
-
-		List<SimpleFeature> jtsSimpleFeatures = new ArrayList<SimpleFeature>();
-
-		FeatureCollection<?, ?> featureCollection = null;
-
-		featureCollection = getFeatureCollectionFromShapeFile(shapeFileLocation);
-
-		FeatureIterator<?> iterator = featureCollection.features();
-
-		while (iterator.hasNext()) {
-			SimpleFeature feature = (SimpleFeature) iterator.next();
-
-			jtsSimpleFeatures.add(feature);
-
-		}
-
-		simpleFeatureCollection = jtsSimpleFeatures;
-
-		iterator.close();
-	}
+	
 
 }

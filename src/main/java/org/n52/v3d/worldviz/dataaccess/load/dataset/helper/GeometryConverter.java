@@ -147,7 +147,7 @@ public class GeometryConverter {
 	 * @param sridEPSG
 	 * @return
 	 */
-	private static VgLinearRing convertJtsLinearRing2TriturusLinearRing(
+	public static VgLinearRing convertJtsLinearRing2TriturusLinearRing(
 			LineString jtsLinearRing, String sridEPSG) {
 
 		Coordinate[] jtsCoordinates = jtsLinearRing.getCoordinates();
@@ -212,10 +212,10 @@ public class GeometryConverter {
 	 * @param triturusLinearRing
 	 * @param srid
 	 *            only the numbers of the corresponding EPSG-code. e.g. for
-	 *            "EPSG:4326" ony use "4326"
+	 *            "EPSG:4326" only use "4326"
 	 * @return
 	 */
-	private static LinearRing convertTriturusLinearRing2JtsLinearRing(
+	public static LinearRing convertTriturusLinearRing2JtsLinearRing(
 			VgLinearRing triturusLinearRing, int srid) {
 
 		int numberOfVertices = triturusLinearRing.getNumberOfVertices();

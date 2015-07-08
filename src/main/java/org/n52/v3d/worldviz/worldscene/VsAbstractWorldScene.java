@@ -13,6 +13,8 @@ import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vscene.VsScene;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract class that contains common parameters for scene descriptions.
@@ -22,6 +24,8 @@ import org.n52.v3d.triturus.vscene.VsScene;
  */
 public abstract class VsAbstractWorldScene extends VsScene {
 
+	protected Logger logger = LoggerFactory.getLogger(getClass());
+
 	// file object where the generated Scene-description will be saved.
 	private File outputFile;
 
@@ -30,7 +34,7 @@ public abstract class VsAbstractWorldScene extends VsScene {
 	private T3dColor backgroundColor = new T3dColor(1.f, 1.f, 1.f);
 
 	private BufferedWriter docWriter;
-	
+
 	protected DecimalFormat decimalFormatter;
 
 	/**
@@ -43,12 +47,13 @@ public abstract class VsAbstractWorldScene extends VsScene {
 	public VsAbstractWorldScene(String filePath) {
 
 		this.outputFile = new File(filePath);
-		
-		DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.GERMAN);
+
+		DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(
+				Locale.GERMAN);
 		formatSymbols.setDecimalSeparator('.');
-		
+
 		this.decimalFormatter = new DecimalFormat("#0.000", formatSymbols);
-		
+
 	}
 
 	public File getOutputFile() {
@@ -78,11 +83,20 @@ public abstract class VsAbstractWorldScene extends VsScene {
 	@Override
 	public final Object generateScene() {
 
+		if (logger.isInfoEnabled())
+			logger.info(
+					"Starting to generate scene! Output format = '{}', output destination = '{}'",
+					this.outputFormat, this.outputFile);
+
 		startSceneDescription();
 
 		addSceneObjects();
 
 		endSceneDescription();
+
+		if (logger.isInfoEnabled())
+			logger.info("Finished to generate scene! output file = '{}'",
+					this.outputFile);
 
 		return outputFile;
 

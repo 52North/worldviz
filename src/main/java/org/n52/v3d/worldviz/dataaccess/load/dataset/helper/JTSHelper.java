@@ -4,9 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.n52.v3d.worldviz.exception.ShapeGeometryNotFoundException;
-
 import org.opengis.feature.GeometryAttribute;
 import org.opengis.feature.simple.SimpleFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.MultiPolygon;
@@ -19,11 +20,13 @@ import com.vividsolutions.jts.geom.MultiPolygon;
  */
 public class JTSHelper {
 
+	private static Logger logger = LoggerFactory.getLogger(JTSHelper.class);
+
 	/**
-	 * This methods iterates through all <code>SimpleFeature</code> objects to find one
-	 * specific feature that has a certain attribute-value-combination. <br />
-	 * Note: The algorithm expects that a <b>certain attribute-value-combination is
-	 * unique for all features</b>. Thus it returns the first multipolygonal
+	 * This methods iterates through all <code>SimpleFeature</code> objects to
+	 * find one specific feature that has a certain attribute-value-combination. <br />
+	 * Note: The algorithm expects that a <b>certain attribute-value-combination
+	 * is unique for all features</b>. Thus it returns the first multipolygonal
 	 * geometry of the first feature that matches the
 	 * attribute-value-combination.
 	 * 
@@ -32,8 +35,8 @@ public class JTSHelper {
 	 * @param attributeValue
 	 *            the value of the feature's attribute
 	 * @param jtsSimpleFeatures
-	 *            a collection of JTS <code>SimpleFeature</code> objects (only <code>MultiPolygon</code> features
-	 *            are processed)
+	 *            a collection of JTS <code>SimpleFeature</code> objects (only
+	 *            <code>MultiPolygon</code> features are processed)
 	 * @return
 	 * @throws ShapeGeometryNotFoundException
 	 */
@@ -51,7 +54,7 @@ public class JTSHelper {
 			SimpleFeature nextFeature = (SimpleFeature) sfIterator.next();
 
 			if (nextFeature.getAttribute(attributeName).equals(attributeValue)) {
-				
+
 				Geometry geometry = getGeometryFromFeature(nextFeature);
 
 				if (geometry instanceof MultiPolygon) {
@@ -66,16 +69,13 @@ public class JTSHelper {
 
 		if (mPolygon == null) {
 			// no geometry could be found
-			
-			// only display as an error message 
+
+			// only display as an error message
 			// catch geometry=null later (in class XmlCountryCodeDataset.java)!
-			System.out.println("WARNING: No geometry could be determined for the 'attribute-value'-combination '"
-							+ attributeName + "-" + attributeValue + "'!");
-			
-			
-//			throw new ShapeGeometryNotFoundException(
-//					"No geometry could be determined for the 'attribute-value'-combination '"
-//							+ attributeName + "-" + attributeValue + "'!");
+			if (logger.isWarnEnabled())
+				logger.warn(
+						"No geometry could be determined for the 'attribute-value'-combination '{} - {}'!",
+						attributeName, attributeValue);
 		}
 
 		return mPolygon;
@@ -90,11 +90,11 @@ public class JTSHelper {
 				.getAttribute(defaultGeometryProperty.getName());
 		return geometry;
 	}
-	
+
 	/*
 	 * Further future methods:
 	 */
-	
+
 	// getPolygonFromMultipolygon?
 
 	// getCoordinates

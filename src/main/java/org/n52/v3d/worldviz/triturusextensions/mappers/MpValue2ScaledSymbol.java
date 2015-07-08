@@ -3,6 +3,8 @@ package org.n52.v3d.worldviz.triturusextensions.mappers;
 import org.n52.v3d.triturus.t3dutil.MpValue2Symbol;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This mapper is meant to map any numerical (attribute) value to a scale
@@ -30,6 +32,8 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
  * 
  */
 public class MpValue2ScaledSymbol extends MpValue2Symbol {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	protected MpValue2NumericExtent scaleMapper;
 
@@ -74,8 +78,9 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *            attribute's value has to be either a double value or a String
 	 *            that can be parsed into a double value
 	 * @return a scaled version of the symbol (scale in x-direction). The
-	 *         scale-factor is interpolated by using the {@link MpValue2NumericExtent}
-	 *         -mapper and double value of the attribute
+	 *         scale-factor is interpolated by using the
+	 *         {@link MpValue2NumericExtent} -mapper and double value of the
+	 *         attribute
 	 */
 	public T3dAttrSymbolInstance scaleX(T3dAttrSymbolInstance symbol,
 			AttributeValuePair attrValuePair) {
@@ -107,8 +112,9 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *            attribute's value has to be either a double value or a String
 	 *            that can be parsed into a double value
 	 * @return a scaled version of the symbol (scale in y-direction). The
-	 *         scale-factor is interpolated by using the {@link MpValue2NumericExtent}
-	 *         -mapper and double value of the attribute
+	 *         scale-factor is interpolated by using the
+	 *         {@link MpValue2NumericExtent} -mapper and double value of the
+	 *         attribute
 	 */
 	public T3dAttrSymbolInstance scaleY(T3dAttrSymbolInstance symbol,
 			AttributeValuePair attrValuePair) {
@@ -140,8 +146,9 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *            attribute's value has to be either a double value or a String
 	 *            that can be parsed into a double value
 	 * @return a scaled version of the symbol (scale in z-direction). The
-	 *         scale-factor is interpolated by using the {@link MpValue2NumericExtent}
-	 *         -mapper and double value of the attribute
+	 *         scale-factor is interpolated by using the
+	 *         {@link MpValue2NumericExtent} -mapper and double value of the
+	 *         attribute
 	 */
 	public T3dAttrSymbolInstance scaleZ(T3dAttrSymbolInstance symbol,
 			AttributeValuePair attrValuePair) {
@@ -172,7 +179,8 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *            that can be parsed into a double value
 	 * @return a scaled version of the symbol (same scale for all coordinate
 	 *         axes). The scale-factor is interpolated by using the
-	 *         {@link MpValue2NumericExtent}-mapper and double value of the attribute
+	 *         {@link MpValue2NumericExtent}-mapper and double value of the
+	 *         attribute
 	 */
 	public T3dAttrSymbolInstance scaleTotal(T3dAttrSymbolInstance symbol,
 			AttributeValuePair attrValuePair) {
@@ -197,12 +205,12 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 			try {
 				doubleValue = Double.parseDouble(attributeValueString);
 			} catch (Exception e) {
-				System.out.println("WARNING: The attributeValue '"
-						+ attributeValue + "' of the attribute '"
-						+ attrValuePair.getAttributeName()
-						+ "' cannot be parsed as a double-value! +"
-						+ "Thus the defaultDoubleValue '" + doubleValue
-						+ "' will be used!!");
+
+				if (logger.isWarnEnabled())
+					logger.warn(
+							"The attributeValue '{}' of the attribute '{}' cannot be parsed as a double-value! Thus the defaultDoubleValue '{}' will be used!",
+							attributeValue, attrValuePair.getAttributeName(),
+							doubleValue);
 			}
 		}
 
