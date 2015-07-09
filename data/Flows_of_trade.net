@@ -11,14 +11,14 @@
 6 "Africa" 20 0 0 
 7 "Asia and Oceania" 110 15 0 
 % Trade flows as arcs:
-*Arcs
+*Edges
 1 1 742 
 1 3 216
 1 7 249
 2 1 93
 2 2 64
 2 3 59
-2 7 39 %There is overlapping of edges, over here %There is also intersecting of a vertex over here
+2 7 39 
 3 1 367
 3 2 51
 3 3 2973
@@ -36,12 +36,12 @@
 6 1 43
 6 3 99
 6 6 23
-%6 7 39 %This arcs encompasses two other connections 
+6 7 39
 7 1 533
 7 3 417
 7 5 75
 7 7 1201
-*Edges 
+*Arcs 
 1 2 71
 7 6 45
 % end of file
