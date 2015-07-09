@@ -187,7 +187,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              <Shape>");
                     writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("                <Appearance>");
-                    writeLine("                  <Material diffuseColor='.1 .6 .1' emissiveColor='.05 .2 .05'/>");
+                    writeLine("                  <Material diffuseColor='.1 .6 .1'/>");
                     writeLine("                </Appearance>");   
                     writeLine("              </Shape>");                
 
