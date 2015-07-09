@@ -1,17 +1,17 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
+import static java.lang.Math.floor;
+
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import static java.lang.Math.floor;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
-
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
@@ -35,9 +35,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
     
     private ArrayList <VgPoint> geoCoordinates;
     
-    private boolean ribbonMode = true;
+    private boolean ribbonMode = false;
     
-    private boolean curveMode = false;
+    private boolean curveMode = true;
     
     public boolean isX3domMode() {
         return x3domMode;
@@ -115,7 +115,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     secondVertex = pointMap.get(secondVertex);
 
                     //calculate angles/rotation
-                    SceneSymbolTransformer sceneSymbolTransformer = new SceneSymbolTransformer(firstVertex, secondVertex);
+                    SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
                     double angleX = sceneSymbolTransformer.getAngleX();
                     double angleY = sceneSymbolTransformer.getAngleY();
                     double angleZ = sceneSymbolTransformer.getAngleZ();
@@ -180,6 +180,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             }
             
             else if(curveMode){
+            	
+            	T3dVector curveDirection = new T3dVector(0, 1, 0);
+            	
                 for (VgRelation edge : scene.getEdges()) {
                 
                     logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
@@ -191,7 +194,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     secondVertex = pointMap.get(secondVertex);
 
                     //calculate angles/rotation
-                    SceneSymbolTransformer sceneSymbolTransformer = new SceneSymbolTransformer(firstVertex, secondVertex);
+                    SceneSymbolTransformer_CurvedConnections sceneSymbolTransformer = new SceneSymbolTransformer_CurvedConnections(firstVertex, secondVertex, curveDirection);
                     double angleX = sceneSymbolTransformer.getAngleX();
                     double angleY = sceneSymbolTransformer.getAngleY();
                     double angleZ = sceneSymbolTransformer.getAngleZ();
@@ -207,9 +210,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     if(distance !=0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
-                        writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                        writeLine("      <Transform rotation=\"1 0 0 " + (angleX + 1.57) + "\">");
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
-                        //writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+//                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
 
 
@@ -244,7 +247,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         }
                         writeLine("              '/>");
                         writeLine("            </Shape>");
-                        //writeLine("          </Transform>");
+//                        writeLine("          </Transform>");
                         writeLine("        </Transform>");
                         writeLine("      </Transform>");
                         writeLine("    </Transform>");
@@ -268,7 +271,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     secondVertex = pointMap.get(secondVertex);
 
                     //calculate angles/rotation
-                    SceneSymbolTransformer sceneSymbolTransformer = new SceneSymbolTransformer(firstVertex, secondVertex);
+                    SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
                     double angleX = sceneSymbolTransformer.getAngleX();
                     double angleY = sceneSymbolTransformer.getAngleY();
                     double angleZ = sceneSymbolTransformer.getAngleZ();
@@ -316,7 +319,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 secondVertex = pointMap.get(secondVertex);
                 
                 //calculate angles/rotation
-                SceneSymbolTransformer angleCalc = new SceneSymbolTransformer(firstVertex, secondVertex);
+                SceneSymbolTransformer_StraightConnections angleCalc = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
                 double angleX = angleCalc.getAngleX();
                 double angleY = angleCalc.getAngleY();
                 double angleZ = angleCalc.getAngleZ();

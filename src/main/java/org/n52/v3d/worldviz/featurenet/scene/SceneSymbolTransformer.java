@@ -1,14 +1,13 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
-import org.n52.v3d.triturus.gisimplm.GmPoint;
-import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgPoint;
 
 /**
- * This class is meant to take two points, that represent a from-to-vector
- * relationship. The class computes the necessary rotation (as angles for x-, y-
- * and z-axis) and translation (as mid-point between the two given points)
- * parameters.<br/>
+ * This interface provides necessary information to place a symbol as a
+ * connection between two points. These points represent a from-to-vector
+ * relationship. The implementing class computes the necessary rotation (as
+ * angles for x-, y- and z-axis) and translation (as mid-point between the two
+ * given points) parameters for a connection between those points.<br/>
  * <br/>
  * Please note that any symbol in a Virtual Reality scene description like X3D
  * is directed with respect to the y-axis of the scene coordinate system
@@ -18,80 +17,14 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * @author Christian Danowski
  *
  */
-public class SceneSymbolTransformer {
-
-	private final T3dVector xAxis = new T3dVector(1, 0, 0);
-	private final T3dVector yAxis = new T3dVector(0, 1, 0);
-	private final T3dVector zAxis = new T3dVector(0, 0, 1);
-
-	// in Virtual Reality the y-axis is the height axis!!!
-	private final T3dVector symbolDirectionVector = yAxis;
-
-	private T3dVector fromToVector;
-	private double lengthFromTo;
-
-	private double angleX,angleY,angleZ;
-
-	private VgPoint midPoint;
-
-	/**
-	 * Constructor that computes all necessary rotation (as angles for x-, y-
-	 * and z-axis) and translation (as mid-point between the two given points)
-	 * parameters. <br/>
-	 * <br/>
-	 * A symbol can be rotated and translated according to the vector specified
-	 * by the two points 'from' and 'to'. <br/>
-	 * <br/>
-	 * Please note that any symbol in a Virtual Reality scene description like
-	 * X3D is directed with respect to the y-axis of the scene coordinate system
-	 * (meaning that a height-parameter of a symbol like a cylinder will extrude
-	 * the cylinder in y-direction!). Thus each angle is computed according to
-	 * this definition!
-	 * 
-	 * @param from
-	 * @param to
-	 */
-	public SceneSymbolTransformer(VgPoint from, VgPoint to) {
-
-		this.fromToVector = new T3dVector();
-
-		// assign "to - from" to the vector
-		this.fromToVector.assignDiff(to, from);
-
-		this.lengthFromTo = this.fromToVector.length();
-
-		// calculate angles for each coordinate axis
-
-		// angleXZ is the angle between the xAxis and the 2d (!!!) fromToVector
-		// consisting only of X and Z coordinate (corresponds to longitude angle
-		// in WGS84)
-		double angleXZ = calculateAngle(this.xAxis, new T3dVector(this.fromToVector.getX(), 0, this.fromToVector.getZ()));
-
-		// diffAngleToHeightAxis describes the angle between the height axis
-		// (here y-axis because of Virtual Reality scene) and the from-to-vector
-		double diffAngleToHeightAxis = calculateAngle(symbolDirectionVector, fromToVector);
-
-		this.angleX = 0;
-		this.angleY = angleXZ;
-		this.angleZ = -diffAngleToHeightAxis;
-
-		// caclulate mid-point
-		T3dVector midPointVec = new T3dVector();
-		midPointVec.assignSum(from, to);
-		double x = midPointVec.getX() / 2;
-		double y = midPointVec.getY() / 2;
-		double z = midPointVec.getZ() / 2;
-		this.midPoint = new GmPoint(x, y, z);
-	}
+public interface SceneSymbolTransformer {
 
 	/**
 	 * Returns the length of the vector between the points 'from' and 'to'
 	 * 
 	 * @return
 	 */
-	public double getLengthFromTo() {
-		return lengthFromTo;
-	}
+	public double getLengthFromTo();
 
 	/**
 	 * Returns the rotation of a symbol with respect to the x-axis (pointing to
@@ -99,9 +32,7 @@ public class SceneSymbolTransformer {
 	 * 
 	 * @return
 	 */
-	public double getAngleX() {
-		return angleX;
-	}
+	public double getAngleX();
 
 	/**
 	 * Returns the rotation of a symbol with respect to the y-axis (pointing
@@ -109,9 +40,7 @@ public class SceneSymbolTransformer {
 	 * 
 	 * @return
 	 */
-	public double getAngleY() {
-		return angleY;
-	}
+	public double getAngleY();
 
 	/**
 	 * Returns the rotation of a symbol with respect to the z-axis (pointing
@@ -119,9 +48,7 @@ public class SceneSymbolTransformer {
 	 * 
 	 * @return
 	 */
-	public double getAngleZ() {
-		return angleZ;
-	}
+	public double getAngleZ();
 
 	/**
 	 * Returns the mid-point between the points 'from' and 'to' defined in the
@@ -129,29 +56,6 @@ public class SceneSymbolTransformer {
 	 * 
 	 * @return
 	 */
-	public VgPoint getMidPoint() {
-		return midPoint;
-	}
-
-	/**
-	 * Computes the angle in radiant between two vectors using the scalar product and the
-	 * lengths of both vectors.
-	 * 
-	 * @param vector1
-	 * @param vector2
-	 * @return
-	 */
-	private double calculateAngle(T3dVector vector1, T3dVector vector2) {
-
-		double scalarProd = vector1.scalarProd(vector2);
-
-		double lengthVector1 = vector1.length();
-		double lengthVector2 = vector2.length();
-		if (lengthVector1 == 0. || lengthVector2 == 0.)
-			return 0.;
-
-		double cosPhi = scalarProd / (lengthVector1 * lengthVector2);
-		return Math.acos(cosPhi);
-	}
+	public VgPoint getMidPoint();
 
 }
