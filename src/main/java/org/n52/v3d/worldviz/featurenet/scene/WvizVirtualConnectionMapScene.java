@@ -1,10 +1,6 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
 import java.util.ArrayList;
-import java.util.List;
-
-
-
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
