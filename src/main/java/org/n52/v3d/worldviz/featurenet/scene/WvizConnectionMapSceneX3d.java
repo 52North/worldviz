@@ -352,19 +352,19 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     writeLine("            <Group>");
                     writeLine("              <Shape>");
-                    writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("                <Appearance>");
                     writeLine("                  <Material diffuseColor='.1 .6 .1'/>");
-                    writeLine("                </Appearance>");   
+                    writeLine("                </Appearance>");
+                    writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("              </Shape>");                
 
 
                     writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
                     writeLine("                <Shape>");
-                    writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
                     writeLine("                  <Appearance>");
                     writeLine("                    <Material diffuseColor='0 0.7 1'/>");
-                    writeLine("                  </Appearance>");   
+                    writeLine("                  </Appearance>"); 
+                    writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
                     writeLine("                </Shape>");
                     writeLine("              </Transform>");
                     writeLine("            </Group>");
