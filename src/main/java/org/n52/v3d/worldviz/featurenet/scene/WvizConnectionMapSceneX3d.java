@@ -210,7 +210,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     if(distance !=0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
-                        writeLine("      <Transform rotation=\"1 0 0 " + (angleX + 1.57) + "\">");
+                        writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
                         writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 

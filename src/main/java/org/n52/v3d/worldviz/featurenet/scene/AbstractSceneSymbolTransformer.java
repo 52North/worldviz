@@ -99,7 +99,10 @@ public abstract class AbstractSceneSymbolTransformer implements
 
 	/**
 	 * Computes the angle in radiant between two vectors using the scalar
-	 * product and the lengths of both vectors.
+	 * product and the lengths of both vectors.<br/>
+	 * Between two vectors there will always be two angles. A small inner angle
+	 * and a large outer angle.<br/>
+	 * This method always computes the <b>small inner angle</b>!
 	 * 
 	 * @param vector1
 	 * @param vector2

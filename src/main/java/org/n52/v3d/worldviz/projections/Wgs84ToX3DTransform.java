@@ -16,15 +16,16 @@ public class Wgs84ToX3DTransform {
         T3dVector vector;
         AxisSwitchTransform t1 = new AxisSwitchTransform();
         
-        for (VgPoint point:geoPos) {
+        for (int i=0; i<geoPos.size(); i++) {
+        	VgPoint point = geoPos.get(i);
+        	
             point.setSRS(VgPoint.SRSLatLonWgs84);
-            point = Wgs84ToSphereCoordsTransform.wgs84ToSphere(point, 6370.);
             vector = t1.transform(point);
             point = new GmPoint(vector.getX(), vector.getY(), vector.getZ());
-        }
+            
+            geoPos.set(i, point);
+        }      
         
-        
-//        NormTransform t2 = new NormTransform(geoPos);
         NormTransform_Wgs84 t2 = new NormTransform_Wgs84(geoPos);
         
         for(int i =0; i<geoPos.size();i++){

@@ -50,13 +50,27 @@ public class SceneSymbolTransformer_StraightConnections extends
 		double angleXZ = calculateAngle(this.xAxis, new T3dVector(
 				this.fromToVector.getX(), 0, this.fromToVector.getZ()));
 
+		/*
+		 * as angleXZ is always computed as the small inner angle between two
+		 * vectors we need to adjust the direction of the rotation by looking at
+		 * what quadrant the fromToVector points to! So if it points to
+		 * quadrants 3 or 4 (the z-coordinate is negative) we need to rotate in
+		 * opposite direction
+		 */
+		if (this.fromToVector.getZ() < 0)
+			angleXZ = -angleXZ;
+
 		// diffAngleToHeightAxis describes the angle between the height axis
 		// (here y-axis because of Virtual Reality scene) and the from-to-vector
 		double diffAngleToHeightAxis = calculateAngle(symbolDirectionVector,
 				fromToVector);
 
+		/*
+		 * the '-' before each angle is necessary due to the different
+		 * coordinate rotation direction in computer graphic coordinate systems
+		 */
 		this.angleX = 0;
-		this.angleY = angleXZ;
+		this.angleY = -angleXZ;
 		this.angleZ = -diffAngleToHeightAxis;
 	}
 

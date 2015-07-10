@@ -22,12 +22,6 @@ public class SceneSymbolTransformer_CurvedConnections extends
 
 	private T3dVector curveDirection = null;
 
-	/*
-	 * This is the vector pointing to the direction of the spatial extent f the
-	 * curved symbol
-	 */
-	private final T3dVector symbolExtentDirection = new T3dVector(1, 0, 0);
-
 	/**
 	 * Constructor that computes all necessary rotation (as angles for x-, y-
 	 * and z-axis) and translation (as mid-point between the two given points)
@@ -71,23 +65,35 @@ public class SceneSymbolTransformer_CurvedConnections extends
 			// consisting only of X and Z coordinate (corresponds to longitude
 			// angle
 			// in WGS84)
-//			double angleXZ = calculateAngle(this.xAxis, new T3dVector(
-//					this.fromToVector.getX(), 0, this.fromToVector.getZ()));
-//
-//			// diffAngleToHeightAxis describes the angle between the height axis
-//			// (here y-axis because of Virtual Reality scene) and the
-//			// from-to-vector
-//			double diffAngleToHeightAxis = calculateAngle(
-//					symbolDirectionVector, fromToVector);
+			double angleXZ = calculateAngle(this.xAxis, new T3dVector(
+					this.fromToVector.getX(), 0, this.fromToVector.getZ()));
 
-			this.angleX = calculateAngle(this.symbolDirectionVector,
-					new T3dVector(0, this.curveDirection.getY(),
-							this.curveDirection.getZ()));
-			this.angleY = - calculateAngle(this.symbolExtentDirection,
-					new T3dVector(this.fromToVector.getX(), this.fromToVector.getY(),
-							this.fromToVector.getZ()));
-			this.angleZ = - calculateAngle(new T3dVector(0, 0, 1), new T3dVector(
-					this.curveDirection.getX(), this.curveDirection.getY(), 0)) / 2;
+			/*
+			 * as angleXZ is always computed as the small inner angle between
+			 * two vectors we need to adjust the direction of the rotation by
+			 * looking at what quadrant the fromToVector points to! So if it
+			 * points to quadrants 3 or 4 (the z-coordinate is negative) we need
+			 * to rotate in opposite direction
+			 */
+			if (this.fromToVector.getZ() < 0)
+				angleXZ = -angleXZ;
+
+			/*
+			 * diffAngleToCurveDirection describes the angle between the height
+			 * axis (here y-axis because of Virtual Reality scene) and the
+			 * curveDirection
+			 */
+			double diffAngleToCurveDirection = calculateAngle(
+					symbolDirectionVector, this.curveDirection);
+
+			/*
+			 * the '-' before each angle is necessary due to the different
+			 * coordinate rotation direction in computer graphic coordinate
+			 * systems
+			 */
+			this.angleX = 0;
+			this.angleY = -angleXZ;
+			this.angleZ = -diffAngleToCurveDirection;
 		}
 
 	}
