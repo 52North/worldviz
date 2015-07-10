@@ -35,9 +35,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
     
     private ArrayList <VgPoint> geoCoordinates;
     
-    private boolean ribbonMode = false;
+    private boolean ribbonMode = true;
     
-    private boolean curveMode = false;
+    private boolean curveMode = true;
     
     public boolean isX3domMode() {
         return x3domMode;
@@ -179,7 +179,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 }
             }
             
-            else if(curveMode){
+            if(curveMode){
             	
             	T3dVector curveDirection = new T3dVector(0, 1, 0);
             	
@@ -224,7 +224,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+1.57+"'");
                         writeLine("              crossSection='");
                         Circle circle = new Circle();
-                        ArrayList<T3dVector> circlePoints = circle.generateCircle(0.025, 24);
+                        ArrayList<T3dVector> circlePoints = circle.generateCircle(0.01, 24);
                         for(T3dVector vector: circlePoints){
                             //double x = vector.getX();
                             //double y = vector.getY();
