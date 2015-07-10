@@ -37,7 +37,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
     
     private boolean ribbonMode = false;
     
-    private boolean curveMode = true;
+    private boolean curveMode = false;
     
     public boolean isX3domMode() {
         return x3domMode;
@@ -212,7 +212,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
-                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+//                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
 
 
@@ -247,7 +247,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         }
                         writeLine("              '/>");
                         writeLine("            </Shape>");
-                        writeLine("          </Transform>");
+//                      writeLine("          </Transform>");
                         writeLine("        </Transform>");
                         writeLine("      </Transform>");
                         writeLine("    </Transform>");
