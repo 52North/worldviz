@@ -26,4 +26,10 @@ public class AttributeValuePair {
 		return attributeValue;
 	}
 
+	@Override
+	public String toString() {
+		return "AttributeValuePair [attributeName=" + attributeName
+				+ ", attributeValue=" + attributeValue + "]";
+	}
+
 }

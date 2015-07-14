@@ -99,6 +99,10 @@ public class MpValue2ExtrudedAttrFeature extends T3dProcMapper {
 	 */
 	public VgAttrFeature transform(double value, VgAttrFeature feature) {
 		double extrusionHeight = this.numericExtentMapper.transform(value);
+		
+		if (logger.isDebugEnabled())
+			logger.debug("Attribute value: '{}';    extrusion height: '{}'",
+					value, extrusionHeight);
 
 		addExtrusionAttribute(feature, extrusionHeight);
 
@@ -155,6 +159,11 @@ public class MpValue2ExtrudedAttrFeature extends T3dProcMapper {
 		// check if that object is either a double or a String value!
 		Object attributeValue = feature.getAttributeValue(attrName);
 		double doubleValue = 0;
+		
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Mapping the value '{}' of the attribute '{}' of the feature '{}' to an extrusion height.",
+					attributeValue, attrName, feature);
 
 		if (attributeValue == null)
 			throw new T3dException("The feature " + feature

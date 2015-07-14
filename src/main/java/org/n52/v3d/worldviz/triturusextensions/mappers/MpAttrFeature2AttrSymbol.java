@@ -9,6 +9,8 @@ import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCylinder;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dSphere;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This mapper shall be used to create {@link T3dAttrSymbolInstance}-objects
@@ -19,6 +21,8 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  */
 public class MpAttrFeature2AttrSymbol extends T3dProcMapper {
 
+	Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/*
 	 * Note that all attribute-value-combinations of the feature will be
 	 * transferred to the returned symbolInstance.
@@ -139,6 +143,16 @@ public class MpAttrFeature2AttrSymbol extends T3dProcMapper {
 			VgAttrFeature feature, VgPoint position, T3dSymbolDef symbol) {
 		T3dAttrSymbolInstance attrSymbolInstance = new T3dAttrSymbolInstance(
 				symbol, position);
+		
+		String[] attributeNames = feature.getAttributeNames();
+		
+		for (String attributeName : attributeNames) {
+			Object attributeValue = feature.getAttributeValue(attributeName);
+			
+			attrSymbolInstance.addAttributeValuePair(attributeName, attributeValue);
+		}
+		
+		logger.debug("Created a {}-instance representing the feature {}", symbol.getClass().getSimpleName(), feature);
 
 		return attrSymbolInstance;
 	}

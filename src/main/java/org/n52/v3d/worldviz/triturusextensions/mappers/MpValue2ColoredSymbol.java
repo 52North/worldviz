@@ -78,12 +78,20 @@ public class MpValue2ColoredSymbol extends MpValue2Symbol {
 			AttributeValuePair attrValuePair) {
 		Object attributeValue = attrValuePair.getAttributeValue();
 
+		if (logger.isDebugEnabled())
+			logger.debug("Mapping the value '{}' of the attribute '{}' to a color.",
+					attributeValue, attrValuePair.getAttributeName());
+
 		double doubleValue = parseDoubleValue(attrValuePair, attributeValue);
 
 		symbol.addAttributeValuePair(attrValuePair);
 
 		T3dColor color = this.colorMapper.transform(doubleValue);
 		symbol.setColor(color);
+
+		if (logger.isDebugEnabled())
+			logger.debug("Attribute value: '{}';    interpolated color: '{}'",
+					attributeValue, color);
 
 		return symbol;
 

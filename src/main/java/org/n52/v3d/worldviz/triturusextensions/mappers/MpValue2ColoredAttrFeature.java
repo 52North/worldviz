@@ -8,6 +8,8 @@ import org.n52.v3d.triturus.t3dutil.MpSimpleHypsometricColor;
 import org.n52.v3d.triturus.t3dutil.MpValue2Symbol;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mapper that maps a color to an attributed feature. The color is interpolated
@@ -26,6 +28,7 @@ public class MpValue2ColoredAttrFeature extends MpValue2Symbol {
 
 	private MpSimpleHypsometricColor colorMapper;
 	private T3dColor neutralColor = new T3dColor(0.4f, 0.4f, 0.4f);
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	/**
 	 * Constructor. Note that you should also call
@@ -96,7 +99,12 @@ public class MpValue2ColoredAttrFeature extends MpValue2Symbol {
 	 *         feature in a new attribute (see information above)
 	 */
 	public VgAttrFeature transform(double value, VgAttrFeature feature) {
+
 		T3dColor interpolatedColor = this.colorMapper.transform(value);
+
+		if (logger.isDebugEnabled())
+			logger.debug("Attribute value: '{}';    interpolated color: '{}'",
+					value, interpolatedColor);
 
 		addColorAttribute(feature, interpolatedColor);
 
@@ -149,6 +157,11 @@ public class MpValue2ColoredAttrFeature extends MpValue2Symbol {
 		// check if that object is either a double or a String value!
 		Object attributeValue = feature.getAttributeValue(attrName);
 		double doubleValue = 0;
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"Mapping the value '{}' of the attribute '{}' of the feature '{}' to a color.",
+					attributeValue, attrName, feature);
 
 		if (attributeValue == null)
 			throw new T3dException("The feature " + feature

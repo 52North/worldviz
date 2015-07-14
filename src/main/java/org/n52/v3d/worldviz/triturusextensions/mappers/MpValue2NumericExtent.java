@@ -6,6 +6,8 @@ import java.util.List;
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dProcMapper;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This mapper is meant to determine numericExtent-values. First the mapping
@@ -37,13 +39,15 @@ public class MpValue2NumericExtent extends T3dProcMapper {
 	private List<Double> outputExtents = new ArrayList<Double>();
 	private boolean interpolationMode = true;
 
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
 	public MpValue2NumericExtent() {
 		this.setClassicalPalette();
 	}
 
 	/**
-	 * Provides the corresponding numericExtent-parameter for the input value. Note
-	 * that you should have called/noticed the
+	 * Provides the corresponding numericExtent-parameter for the input value.
+	 * Note that you should have called/noticed the
 	 * {@link #setPalette(double[], T3dColor[], boolean)} and
 	 * {@link #setInterpolMode(boolean)} beforehand.
 	 * 
@@ -54,33 +58,72 @@ public class MpValue2NumericExtent extends T3dProcMapper {
 	 * @throws T3dException
 	 */
 	public double transform(double inputValue) throws T3dException {
-		if (inputValue <= ((Double) inputValues.get(0)).doubleValue())
-			return outputExtents.get(0);
+		double numericExtent = 0;
+
+		if (logger.isDebugEnabled())
+			logger.debug("Mapping the value '{}' to a numeric extent.",
+					inputValue);
+
+		if (inputValue <= ((Double) inputValues.get(0)).doubleValue()) {
+
+			numericExtent = outputExtents.get(0);
+
+			if (logger.isDebugEnabled())
+				logger.debug("Value: '{}';    numeric extent: '{}'",
+						inputValue, numericExtent);
+
+			return numericExtent;
+		}
+
 		for (int i = 1; i < inputValues.size(); i++) {
 			double higherValue = ((Double) inputValues.get(i)).doubleValue();
 			if (inputValue <= higherValue) {
-				if (!this.getInterpolMode())
-					return outputExtents.get(i - 1);
-				else {
+				if (!this.getInterpolMode()) {
+
+					numericExtent = outputExtents.get(i - 1);
+
+					if (logger.isDebugEnabled())
+						logger.debug("Value: '{}';    numeric extent: '{}'",
+								inputValue, numericExtent);
+
+					return numericExtent;
+				} else {
 
 					double lowerValue = ((Double) inputValues.get(i - 1))
 							.doubleValue();
 					double interpolationFactor = (double) ((inputValue - lowerValue) / (higherValue - lowerValue));
-					return this.interpolateExtent(outputExtents.get(i - 1),
-							outputExtents.get(i), interpolationFactor);
+
+					numericExtent = this.interpolateExtent(
+							outputExtents.get(i - 1), outputExtents.get(i),
+							interpolationFactor);
+
+					if (logger.isDebugEnabled())
+						logger.debug("Value: '{}';    numeric extent: '{}'",
+								inputValue, numericExtent);
+
+					return numericExtent;
 				}
 			}
 		}
-		return outputExtents.get(inputValues.size() - 1);
+
+		numericExtent = outputExtents.get(inputValues.size() - 1);
+
+		if (logger.isDebugEnabled())
+			logger.debug("Value: '{}';    numeric extent: '{}'", inputValue,
+					numericExtent);
+
+		return numericExtent;
 	}
 
 	/**
 	 * Sets the numericExtent palette and thus the mapping of input-values to
-	 * output-numericExtent-values. Here, the input value <i>inputValues[i]</i> will be
-	 * mapped to the output numericExtent <i>outputExtents[i]</i>. Dependent on
-	 * the given interpolation mode, the mapper will interpolate between the
-	 * numericExtent values, or for the overall interval <tt>inputValues[i] &lt; h &lt;=
-	 * inputValues[i + 1]</tt> a uniform numericExtent value <tt>outputExtents[i]
+	 * output-numericExtent-values. Here, the input value <i>inputValues[i]</i>
+	 * will be mapped to the output numericExtent <i>outputExtents[i]</i>.
+	 * Dependent on the given interpolation mode, the mapper will interpolate
+	 * between the numericExtent values, or for the overall interval
+	 * <tt>inputValues[i] &lt; h &lt;=
+	 * inputValues[i + 1]</tt> a uniform numericExtent value
+	 * <tt>outputExtents[i]
 	 * </tt> will be assigned.
 	 * 
 	 * @param inputValues

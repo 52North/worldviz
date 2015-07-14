@@ -134,4 +134,12 @@ public class T3dAttrSymbolInstance extends T3dSymbolInstance {
 				.add(new AttributeValuePair(attrName, attrValue));
 	}
 
+	@Override
+	public String toString() {
+		return "T3dAttrSymbolInstance [type="
+				+ this.getSymbol().getClass().getSimpleName() + ", position="
+				+ this.getPosition() + ", attributeValuePairs="
+				+ attributeValuePairs + "]";
+	}
+
 }

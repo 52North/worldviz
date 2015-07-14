@@ -93,6 +93,12 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 		double scaleFactor = this.scaleMapper.transform(doubleValue);
 		symbol.setxScale(scaleFactor);
 
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"The symbol {} will be scaled along the X-axis. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
+					symbol, attributeValue, attrValuePair.getAttributeName(),
+					scaleFactor);
+
 		return symbol;
 
 	}
@@ -126,6 +132,12 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 
 		double scaleFactor = this.scaleMapper.transform(doubleValue);
 		symbol.setyScale(scaleFactor);
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"The symbol {} will be scaled along the Y-axis. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
+					symbol, attributeValue, attrValuePair.getAttributeName(),
+					scaleFactor);
 
 		return symbol;
 
@@ -161,6 +173,12 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 		double scaleFactor = this.scaleMapper.transform(doubleValue);
 		symbol.setxScale(scaleFactor);
 
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"The symbol {} will be scaled along the Z-axis. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
+					symbol, attributeValue, attrValuePair.getAttributeName(),
+					scaleFactor);
+
 		return symbol;
 
 	}
@@ -192,6 +210,12 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 
 		double scaleFactor = this.scaleMapper.transform(doubleValue);
 		symbol.setScale(scaleFactor);
+
+		if (logger.isDebugEnabled())
+			logger.debug(
+					"The symbol {} will be scaled along all axes equally. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
+					symbol, attributeValue, attrValuePair.getAttributeName(),
+					scaleFactor);
 
 		return symbol;
 
