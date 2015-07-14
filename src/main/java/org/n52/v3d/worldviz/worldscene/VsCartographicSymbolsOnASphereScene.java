@@ -112,13 +112,17 @@ public class VsCartographicSymbolsOnASphereScene extends
 	@Override
 	protected void generateSceneContentX3D(boolean asX3DOM) {
 		// set position and angles
-
+		
 		for (T3dAttrSymbolInstance attrSymbol : cartographicSymbols) {
 
 			VgPoint wgs84position = attrSymbol.getPosition();
 
 			// transform into Sphere-coordinates
-			transformIntoSpherePosition(attrSymbol, wgs84position);
+			VgPoint spherePosition = computeSphereCoordinates(attrSymbol,
+					wgs84position);
+			
+			// set sphere position
+			attrSymbol.setPosition(spherePosition);
 
 			// set angles
 			setAngles(wgs84position, attrSymbol);
@@ -138,7 +142,7 @@ public class VsCartographicSymbolsOnASphereScene extends
 		attrSymbol.setAngleZ(Math.toRadians(latitude));
 	}
 
-	private void transformIntoSpherePosition(T3dAttrSymbolInstance attrSymbol,
+	private VgPoint computeSphereCoordinates(T3dAttrSymbolInstance attrSymbol,
 			VgPoint wgs84position) {
 		// before: add offset to the altitude
 		if (addOffsetInHeightDirection) {
@@ -151,8 +155,7 @@ public class VsCartographicSymbolsOnASphereScene extends
 
 		VgPoint spherePosition = Wgs84ToSphereCoordsTransform.wgs84ToSphere(
 				wgs84position, this.radius);
-		// set sphere position
-		attrSymbol.setPosition(spherePosition);
+		return spherePosition;
 	}
 
 	private double determineOffset(T3dAttrSymbolInstance attrSymbol) {
@@ -182,7 +185,6 @@ public class VsCartographicSymbolsOnASphereScene extends
 		double cylinderHeight = ((T3dCylinder) symbol).getHeight();
 
 		return (cylinderHeight * heightScale * totalScale) / 2;
-
 	}
 
 	private double determineOffsetForCone(T3dSymbolDef symbol,
@@ -192,7 +194,6 @@ public class VsCartographicSymbolsOnASphereScene extends
 		double coneHeight = ((T3dCone) symbol).getHeight();
 
 		return (coneHeight * heightScale * totalScale) / 2;
-
 	}
 
 	private double determineOffsetForCube(T3dSymbolDef symbol,
@@ -201,7 +202,6 @@ public class VsCartographicSymbolsOnASphereScene extends
 		double cubeHeight = ((T3dCube) symbol).getSize();
 
 		return (cubeHeight * heightScale * totalScale) / 2;
-
 	}
 
 	private double determineOffsetForBox(T3dSymbolDef symbol,
@@ -210,7 +210,6 @@ public class VsCartographicSymbolsOnASphereScene extends
 		double boxHeight = ((T3dBox) symbol).getSizeY();
 
 		return (boxHeight * heightScale * totalScale) / 2;
-
 	}
 
 	private double determineOffsetForSphere(T3dSymbolDef symbol,
@@ -219,6 +218,5 @@ public class VsCartographicSymbolsOnASphereScene extends
 		double cylinderHeight = ((T3dSphere) symbol).getRadius() * 2;
 
 		return (cylinderHeight * heightScale * totalScale) / 2;
-
 	}
 }

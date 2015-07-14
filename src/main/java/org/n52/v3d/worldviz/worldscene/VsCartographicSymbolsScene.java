@@ -270,34 +270,29 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 		else
 			throw new T3dNotYetImplException("The symbol geometry of type '"
 					+ symbol.getClass() + "' is not yet supported!");
-
 	}
 
 	private void writeCylinder(T3dSymbolDef symbol) {
 		wl("					<Cylinder height=\"" + ((T3dCylinder) symbol).getHeight()
 				+ "\" radius=\"" + ((T3dCylinder) symbol).getRadius() + "\"/>");
-
 	}
 
 	private void writeCone(T3dSymbolDef symbol) {
 		wl("					<Cone height=\"" + ((T3dCone) symbol).getHeight()
 				+ "\" bottomRadius=\"" + ((T3dCone) symbol).getRadius()
 				+ "\"/>");
-
 	}
 
 	private void writeCube(T3dSymbolDef symbol) {
 		wl("					<Box size=\"" + ((T3dCube) symbol).getSize() + " "
 				+ ((T3dCube) symbol).getSize() + " "
 				+ ((T3dCube) symbol).getSize() + "\"/>");
-
 	}
 
 	private void writeBox(T3dSymbolDef symbol) {
 		wl("					<Box size=\"" + ((T3dBox) symbol).getSizeX() + " "
 				+ ((T3dBox) symbol).getSizeY() + " "
 				+ ((T3dBox) symbol).getSizeZ() + "\"/>");
-
 	}
 
 	private void writeSphere(T3dSymbolDef symbol) {
