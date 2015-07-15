@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.demoapplications;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -6,11 +6,15 @@ import java.nio.file.Paths;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.impl.CsvReaderForConnectionMap;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
-import org.n52.v3d.worldviz.featurenet.scene.FeatureNetTest;
+import org.n52.v3d.worldviz.demoapplications.FeatureNetTest;
 import org.n52.v3d.worldviz.featurenet.scene.MpFeatureNetVisualizer;
+import org.n52.v3d.worldviz.featurenet.scene.MpFeatureNetVisualizer;
+import org.n52.v3d.worldviz.featurenet.scene.MprConnectionMapGenerator;
 import org.n52.v3d.worldviz.featurenet.scene.MprConnectionMapGenerator;
 import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
 import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
+import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
+import org.n52.v3d.worldviz.featurenet.scene.WvizVirtualConnectionMapScene;
 import org.n52.v3d.worldviz.featurenet.scene.WvizVirtualConnectionMapScene;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.slf4j.Logger;

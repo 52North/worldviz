@@ -7,7 +7,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.n52.v3d.worldviz.featurenet.impl.Parse;
-import org.n52.v3d.worldviz.featurenet.scene.FeatureNetTest;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 
 /**
