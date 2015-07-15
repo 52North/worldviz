@@ -5,7 +5,7 @@ import java.util.List;
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
-import org.n52.v3d.worldviz.triturusextensions.mappers.MpValue2ColoredAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesScene;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
 import org.n52.v3d.worldviz.worldscene.helper.FindExtrudeAndColorMissingCountriesHelper;

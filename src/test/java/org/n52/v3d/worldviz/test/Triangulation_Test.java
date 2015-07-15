@@ -13,7 +13,7 @@ import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.triangulation.PolygonTriangulator;
-import org.n52.v3d.worldviz.triturusextensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
 
 public class Triangulation_Test {
 

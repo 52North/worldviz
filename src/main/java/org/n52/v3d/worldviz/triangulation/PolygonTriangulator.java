@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.n52.v3d.worldviz.triturusextensions.VgLinearRing;
-import org.n52.v3d.worldviz.triturusextensions.VgMultiPolygon;
-import org.n52.v3d.worldviz.triturusextensions.VgPolygon;
+import org.n52.v3d.worldviz.extensions.VgLinearRing;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
 
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.gisimplm.GmSimpleTINGeometry;

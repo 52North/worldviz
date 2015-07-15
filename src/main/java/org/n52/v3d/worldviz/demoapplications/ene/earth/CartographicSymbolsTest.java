@@ -6,11 +6,11 @@ import java.util.List;
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
-import org.n52.v3d.worldviz.triturusextensions.mappers.AttributeValuePair;
-import org.n52.v3d.worldviz.triturusextensions.mappers.MpAttrFeature2AttrSymbol;
-import org.n52.v3d.worldviz.triturusextensions.mappers.MpValue2ColoredSymbol;
-import org.n52.v3d.worldviz.triturusextensions.mappers.MpValue2ScaledSymbol;
-import org.n52.v3d.worldviz.triturusextensions.mappers.T3dAttrSymbolInstance;
+import org.n52.v3d.worldviz.extensions.mappers.AttributeValuePair;
+import org.n52.v3d.worldviz.extensions.mappers.MpAttrFeature2AttrSymbol;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredSymbol;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ScaledSymbol;
+import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
 import org.n52.v3d.worldviz.worldscene.VsCartographicSymbolsOnASphereScene;
 
 import org.n52.v3d.triturus.t3dutil.T3dColor;

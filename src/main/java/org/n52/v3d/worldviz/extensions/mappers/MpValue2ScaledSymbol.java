@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.triturusextensions.mappers;
+package org.n52.v3d.worldviz.extensions.mappers;
 
 import org.n52.v3d.triturus.t3dutil.MpValue2Symbol;
 import org.n52.v3d.triturus.t3dutil.T3dColor;

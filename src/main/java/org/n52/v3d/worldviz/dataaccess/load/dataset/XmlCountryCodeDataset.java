@@ -12,7 +12,7 @@ import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.GeometryConverter;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.JTSHelper;
 import org.n52.v3d.worldviz.exception.ShapeGeometryNotFoundException;
 import org.n52.v3d.worldviz.exception.UnknownCountryCodeCrsException;
-import org.n52.v3d.worldviz.triturusextensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
 import org.opengis.feature.simple.SimpleFeature;
 

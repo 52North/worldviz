@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.n52.v3d.worldviz.triturusextensions.GmLinearRing;
-import org.n52.v3d.worldviz.triturusextensions.GmMultiPolygon;
-import org.n52.v3d.worldviz.triturusextensions.GmPolygon;
-import org.n52.v3d.worldviz.triturusextensions.VgLinearRing;
-import org.n52.v3d.worldviz.triturusextensions.VgMultiPolygon;
-import org.n52.v3d.worldviz.triturusextensions.VgPolygon;
+import org.n52.v3d.worldviz.extensions.GmLinearRing;
+import org.n52.v3d.worldviz.extensions.GmMultiPolygon;
+import org.n52.v3d.worldviz.extensions.GmPolygon;
+import org.n52.v3d.worldviz.extensions.VgLinearRing;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
 
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.vgis.VgPoint;

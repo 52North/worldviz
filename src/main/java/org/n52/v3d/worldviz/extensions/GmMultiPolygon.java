@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.triturusextensions;
+package org.n52.v3d.worldviz.extensions;
 
 import java.util.ArrayList;
 import java.util.List;

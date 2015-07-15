@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.n52.v3d.worldviz.triturusextensions.mappers.MpValue2ColoredAttrFeature;
-import org.n52.v3d.worldviz.triturusextensions.mappers.MpValue2ExtrudedAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
 
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;

@@ -1,7 +1,7 @@
 package org.n52.v3d.worldviz.worldscene;
 
 import org.n52.v3d.worldviz.projections.Wgs84ToSphereCoordsTransform;
-import org.n52.v3d.worldviz.triturusextensions.mappers.T3dAttrSymbolInstance;
+import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
 
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.t3dutil.T3dSymbolDef;

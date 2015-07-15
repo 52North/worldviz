@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.GeometryConverter;
-import org.n52.v3d.worldviz.triturusextensions.VgPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
 
 import org.n52.v3d.triturus.vgis.VgPoint;
 

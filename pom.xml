@@ -129,7 +129,7 @@
                                 <source>
                                     if (org.apache.commons.lang.SystemUtils.IS_OS_WINDOWS) {
                                     project.properties.myDynamicProperty =
-                                    project.basedir.absolutePath.replace('\\','\\\\');
+                                    project.basedir.absolutePath.replace('\\','////');
                                     }
                                 </source>
                             </configuration>

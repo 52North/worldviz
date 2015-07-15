@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.triturusextensions.mappers;
+package org.n52.v3d.worldviz.extensions.mappers;
 
 import org.n52.v3d.triturus.core.T3dProcMapper;
 import org.n52.v3d.triturus.t3dutil.T3dSymbolDef;

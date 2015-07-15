@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.triturusextensions;
+package org.n52.v3d.worldviz.extensions;
 
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.vgis.VgGeomObject;
