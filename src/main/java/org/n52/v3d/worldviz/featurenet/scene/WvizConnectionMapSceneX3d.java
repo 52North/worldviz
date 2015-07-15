@@ -236,8 +236,15 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         }
                         writeLine("              '");
                         writeLine("              spine='");
-                        Curve curve = new Curve();
-                        ArrayList<T3dVector> curvePoints = curve.generateCurve(distance/2, 24); // The radius will be half the distance between the two points
+                        
+                        //Curve curve = new Curve();
+                        //ArrayList<T3dVector> curvePoints = curve.generateCurve(distance/2, 24); // The radius will be half the distance between the two points
+ 
+                        double ellipse_x = distance/2;
+                        double ellipse_y = 1.5 * ellipse_x;
+                        Ellipse ellipse = new Ellipse();
+                        ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, 24);
+                        
                         for(T3dVector vector: curvePoints){
                             //double x = vector.getX();
                             //double y = vector.getY();
