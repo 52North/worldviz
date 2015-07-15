@@ -42,7 +42,7 @@ public class FeatureNetTest {
         String configurationFile = RelativePaths.STYLE_CONFIGURATION_XML;
         
         FeatureNetTest app = new FeatureNetTest();
-        app.setConfig(pajekFile,configurationFile, false);
+        app.setConfig(pajekFile,configurationFile, true);
         app.run();
     }
     

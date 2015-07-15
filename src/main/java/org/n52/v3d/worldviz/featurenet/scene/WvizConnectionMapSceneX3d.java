@@ -82,6 +82,29 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("  <head>");
                 writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.x3dom.org/x3dom/release/x3dom.css\" />");
                 writeLine("    <script type=\"text/javascript\" src=\"http://www.x3dom.org/x3dom/release/x3dom-full.js\"></script>");
+                
+                writeLine("    <script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-2.1.0.min.js\" ></script>");
+                
+                writeLine("    <script>");
+                
+                //Handle click on a shape
+                writeLine("    function handleSingleClick(shape){");
+                writeLine("        $('#lastClickedObject').html($(shape).attr(\"def\"));");
+                writeLine("     }");
+                
+                writeLine("    $(document).ready(function(){");
+                //Add a onclick callback to every shape
+                writeLine("        $(\"shape\").each(function() {");
+                writeLine("            $(this).attr(\"onclick\", \"handleSingleClick(this)\");");
+                writeLine("        });");
+                writeLine("    });");
+                
+                writeLine("    </script>");
+                
+                
+                
+                
+                
                 writeLine("  </head>");
                 writeLine("  <body>");
                 writeLine();
@@ -139,7 +162,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
 
 
-                        writeLine("            <Shape>");
+                        writeLine("            <Shape DEF=\"ribbonShape\">");
                         writeLine("              <Appearance>");
                         writeLine("                <Material diffuseColor='1 0.5 0'/>");
                         writeLine("              </Appearance>");
@@ -218,7 +241,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
 
 
-                        writeLine("            <Shape>");
+                        writeLine("            <Shape DEF=\"ellipseShape\">");
                         writeLine("              <Appearance>");
                         writeLine("                <Material diffuseColor='1 0 1'/>");
                         writeLine("              </Appearance>");
@@ -298,7 +321,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
 
 
-                        writeLine("            <Shape>");
+                        writeLine("            <Shape DEF=\"cylinderShape\">");
                         writeLine("              <Appearance>");
                         writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
                         writeLine("              </Appearance>");
@@ -360,7 +383,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
                     writeLine("            <Group>");
-                    writeLine("              <Shape>");
+                    writeLine("              <Shape DEF=\"arrowConeShape\">");
                     writeLine("                <Appearance>");
                     writeLine("                  <Material diffuseColor='.1 .6 .1'/>");
                     writeLine("                </Appearance>");
@@ -369,7 +392,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
 
                     writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
-                    writeLine("                <Shape>");
+                    writeLine("                <Shape DEF=\"arrowCylinderShape\">");
                     writeLine("                  <Appearance>");
                     writeLine("                    <Material diffuseColor='0 0.7 1'/>");
                     writeLine("                  </Appearance>"); 
@@ -395,19 +418,28 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 VgPoint point = (VgPoint) (vertex.getGeometry());
                 point = pointMap.get(point);
-                writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
-                writeLine("      <Shape>");
-                writeLine("        <Appearance>");
-                writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
-                writeLine("        </Appearance>");
-                
                 if ("Sphere".equals(symbolType)) {
+                    writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
+                    writeLine("      <Shape DEF=\"sphereShape\">");
+                    writeLine("        <Appearance>");
+                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + symbolSize + "'/>");
                 }
                 else if ("Box".equals(symbolType)) {
+                    writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
+                    writeLine("      <Shape DEF=\"boxShape\">");
+                    writeLine("        <Appearance>");
+                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("        </Appearance>");
                     writeLine("        <Box size='" + symbolSize + "'/>");
                 }
                 else {
+                    writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
+                    writeLine("      <Shape DEF=\"sphereShape\">");
+                    writeLine("        <Appearance>");
+                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + defaultSymbolSize + "'/>"); // If an incorrect symbol type has been specified
                 }
                 
@@ -419,7 +451,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
                 //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
                 writeLine("        <Billboard axisOfRotation='0 0 0'>");
-                writeLine("          <Shape>");
+                writeLine("          <Shape DEF=\"labelText\">");
                 writeLine("            <Appearance>");
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("            </Appearance>");
@@ -440,6 +472,12 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             if (x3domMode) {
                 writeLine();
                 writeLine();
+                
+                writeLine("<div style=\"position:absolute;left:1000px;top:70px;width:200px\">");
+                writeLine("    <h3>Last clicked object:</h3> ");
+                writeLine("    <span id=\"lastClickedObject\">-</span>");
+                writeLine("</div>");
+                
                 writeLine("  </body>");
                 writeLine("</html>");
             }
