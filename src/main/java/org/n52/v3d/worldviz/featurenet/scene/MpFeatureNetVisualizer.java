@@ -4,6 +4,7 @@ import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dProcMapper;
+import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
 
 /**
  * Mapper to perform the transformation of a feature-nets to an abstract 3-d

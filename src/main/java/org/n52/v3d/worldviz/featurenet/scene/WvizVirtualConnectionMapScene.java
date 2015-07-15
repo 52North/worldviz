@@ -5,6 +5,7 @@ import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
 import org.n52.v3d.worldviz.featurenet.impl.WvizConnection;
+import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
 
 /**
  * Abstract scene model for 3-d visualizations of connection-maps.

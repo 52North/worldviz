@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.demoapplications;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -7,6 +7,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.n52.v3d.worldviz.featurenet.impl.Parse;
+import org.n52.v3d.worldviz.featurenet.scene.FeatureNetTest;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 
 /**
@@ -37,10 +38,10 @@ public class FeatureNetTestGUI extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
+        submit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-		submit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 

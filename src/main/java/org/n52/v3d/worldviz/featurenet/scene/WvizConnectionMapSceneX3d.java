@@ -19,6 +19,8 @@ import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.n52.v3d.worldviz.featurenet.shapes.*;
+
 /**
  * Concrete X3D scene description of a 3-d connection-map.
  *

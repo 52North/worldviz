@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.featurenet.shapes;
 
 import java.util.ArrayList;
 import org.n52.v3d.triturus.t3dutil.T3dVector;

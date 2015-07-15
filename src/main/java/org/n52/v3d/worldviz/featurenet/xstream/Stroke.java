@@ -1,13 +1,13 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.featurenet.xstream;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
-@XStreamAlias("Font")
-public class Font{
+@XStreamAlias("Stroke")
+public class Stroke{
     @XStreamImplicit
-    protected List<SvgParameter> svgParameter;
+    private List<SvgParameter> svgParameter;
     
     public List getSvgParameter(){
         return svgParameter;

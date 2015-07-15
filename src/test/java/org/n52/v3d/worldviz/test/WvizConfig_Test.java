@@ -10,24 +10,7 @@ import java.util.Map;
 import org.junit.Before;
 
 import org.junit.Test;
-import org.n52.v3d.worldviz.featurenet.scene.ConnectionNet;
-import org.n52.v3d.worldviz.featurenet.scene.Displacement;
-import org.n52.v3d.worldviz.featurenet.scene.Features;
-import org.n52.v3d.worldviz.featurenet.scene.Fill;
-import org.n52.v3d.worldviz.featurenet.scene.Font;
-import org.n52.v3d.worldviz.featurenet.scene.Geometry;
-import org.n52.v3d.worldviz.featurenet.scene.Label;
-import org.n52.v3d.worldviz.featurenet.scene.LabelPlacement;
-import org.n52.v3d.worldviz.featurenet.scene.LineVisualizer;
-import org.n52.v3d.worldviz.featurenet.scene.Mapper;
-import org.n52.v3d.worldviz.featurenet.scene.PointPlacement;
-import org.n52.v3d.worldviz.featurenet.scene.PointVisualizer;
-import org.n52.v3d.worldviz.featurenet.scene.Relations;
-import org.n52.v3d.worldviz.featurenet.scene.Stroke;
-import org.n52.v3d.worldviz.featurenet.scene.SvgParameter;
-import org.n52.v3d.worldviz.featurenet.scene.T3dSymbol;
-import org.n52.v3d.worldviz.featurenet.scene.TextVisualizer;
-import org.n52.v3d.worldviz.featurenet.scene.WvizConfig;
+import org.n52.v3d.worldviz.featurenet.xstream.*;
 
 public class WvizConfig_Test {
 

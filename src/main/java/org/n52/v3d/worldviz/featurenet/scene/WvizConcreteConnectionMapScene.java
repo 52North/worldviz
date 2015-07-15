@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.vgis.VgFeature;
+import org.n52.v3d.worldviz.featurenet.xstream.*;
 
 /**
  * Abstract base class for 3D 'Connection Map' scene descriptions. The class holds

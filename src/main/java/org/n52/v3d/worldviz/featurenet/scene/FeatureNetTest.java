@@ -11,6 +11,7 @@ import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
 import org.n52.v3d.worldviz.featurenet.impl.Parse.PajekException;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
+import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.featurenet.xstream;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;

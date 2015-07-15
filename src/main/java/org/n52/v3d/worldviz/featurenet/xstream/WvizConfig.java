@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.featurenet.xstream;
 
 /**
  * A <tt>WvizConfig</tt> object holds the complete description of presentation

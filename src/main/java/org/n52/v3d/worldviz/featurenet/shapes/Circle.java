@@ -1,4 +1,4 @@
-package org.n52.v3d.worldviz.featurenet.scene;
+package org.n52.v3d.worldviz.featurenet.shapes;
 
 import java.util.ArrayList;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
@@ -10,9 +10,9 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * @author Adhitya Kamakshidasan
  */
 
-public class Curve {
+public class Circle {
     
-    public ArrayList<T3dVector> curvePoints = new ArrayList<T3dVector>();
+    public ArrayList<T3dVector> circlePoints = new ArrayList<T3dVector>();
     
     public VgPoint generatePoint(double radius, double angle){
         //Angle to be specified in radians
@@ -33,20 +33,20 @@ public class Curve {
     
     
     
-    public ArrayList<T3dVector> generateCurve(double radius, int theta){
+    public ArrayList<T3dVector> generateCircle(double radius, int theta){
         
         VgPoint point;
         T3dVector vector;
         double angle;
         
-        //We want only half the curve - That is why we have not multiplied it by two
-        for(long i=0; i<=theta; i++){
+        for(long i=0; i<=2*theta; i++){
             angle = (i * Math.PI)/theta;
             point = generatePoint(radius,angle);
             point.setZ(0.0);
             vector = generateVector(point);
-            curvePoints.add(vector);
+            circlePoints.add(vector);
         }
-        return curvePoints;
+        
+        return circlePoints;
     }
 }
