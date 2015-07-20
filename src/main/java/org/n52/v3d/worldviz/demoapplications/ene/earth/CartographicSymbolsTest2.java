@@ -8,9 +8,11 @@ import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.extensions.mappers.MpAttrFeature2AttrSymbol;
 import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
 import org.n52.v3d.worldviz.worldscene.VsCartographicSymbolsOnASphereScene;
-
+import org.n52.v3d.worldviz.worldscene.VsCartographicSymbolsScene;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
+import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 
 public class CartographicSymbolsTest2 {
@@ -42,6 +44,8 @@ public class CartographicSymbolsTest2 {
 		MpAttrFeature2AttrSymbol symbolMapper = new MpAttrFeature2AttrSymbol();
 		List<T3dAttrSymbolInstance> attrSymbols = new ArrayList<T3dAttrSymbolInstance>(
 				features.size());
+		
+		AxisSwitchTransform axisSwitch = new AxisSwitchTransform();
 
 		for (VgAttrFeature vgAttrFeature : features) {
 			// the geometry in THIS case is a point, thus we may cast it
@@ -50,9 +54,13 @@ public class CartographicSymbolsTest2 {
 			
 			double latitude = Double.parseDouble((String)vgAttrFeature.getAttributeValue(latAttr));
 			double longitude = Double.parseDouble((String)vgAttrFeature.getAttributeValue(lonAttr));
+			GmPoint gmPoint = new GmPoint(longitude, latitude, 0);
+			
+			//point in virtual world (axes need to be switched.)
+			T3dVector virtualPoint = axisSwitch.transform(gmPoint);
 			
 			attrSymbols.add(symbolMapper.createConeSymbol(vgAttrFeature,
-					(new GmPoint(longitude, latitude, 0))));
+					new GmPoint(virtualPoint.getX(), virtualPoint.getY(), virtualPoint.getZ())));
 		}
 
 //		MpValue2ScaledSymbol symbolScaleMapper = new MpValue2ScaledSymbol();
@@ -96,6 +104,9 @@ public class CartographicSymbolsTest2 {
 
 		VsCartographicSymbolsOnASphereScene scene = new VsCartographicSymbolsOnASphereScene(
 				outputFile);
+		
+//		VsCartographicSymbolsScene scene = new VsCartographicSymbolsScene(
+//				outputFile);
 
 		for (T3dAttrSymbolInstance attrSymbol : attrSymbols) {
 

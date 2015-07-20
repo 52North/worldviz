@@ -152,7 +152,7 @@ public class MpAttrFeature2AttrSymbol extends T3dProcMapper {
 			attrSymbolInstance.addAttributeValuePair(attributeName, attributeValue);
 		}
 		
-		logger.debug("Created a {}-instance representing the feature {}", symbol.getClass().getSimpleName(), feature);
+		logger.debug("Created a {}-instance", symbol.getClass().getSimpleName());
 
 		return attrSymbolInstance;
 	}

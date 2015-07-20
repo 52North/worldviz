@@ -162,8 +162,8 @@ public class MpValue2ExtrudedAttrFeature extends T3dProcMapper {
 		
 		if (logger.isDebugEnabled())
 			logger.debug(
-					"Mapping the value '{}' of the attribute '{}' of the feature '{}' to an extrusion height.",
-					attributeValue, attrName, feature);
+					"Mapping the value '{}' of the attribute '{}' to an extrusion height.",
+					attributeValue, attrName);
 
 		if (attributeValue == null)
 			throw new T3dException("The feature " + feature

@@ -1,10 +1,12 @@
 package org.n52.v3d.worldviz.worldscene;
 
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
 import org.n52.v3d.worldviz.projections.Wgs84ToSphereCoordsTransform;
 import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
-
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
+import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.T3dSymbolDef;
+import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dBox;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCone;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCube;
@@ -16,13 +18,18 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * This class is a specialization of {@link VsCartographicSymbolsScene} that
  * projects the cartographic symbols into their spherical representatives that
  * can be used as an overlay for a world sphere. The expected coordinate
- * reference system of the input data is EPSG:4326 (WGS84). The transformation
- * (translation and rotation of each symbol) is done during the scene generation
- * (you only need to specify the ground level position (altitude=0) in
- * WGS84-coordinates). This includes that any geometry will additionally be
- * offsetted in height direction for half of it's extent (E.g. if you want to
- * place a box with height=24 on top of the sphere then the box will have an
- * offset of 12). For further information please refer to
+ * reference system of the input data is EPSG:4326 (WGS84), <b>but referring to
+ * virtual coordinate axes (Y-Axis = height axis, Z-axis points towards the
+ * user)</b>. So any WGS84-point (longitude, latitude, altitude) must be prior
+ * transformed to scene coordinates (longitude, altitude, -latitude) via
+ * {@link AxisSwitchTransform}. <br/>
+ * <br/>
+ * The transformation (translation and rotation of each symbol) is done during
+ * the scene generation (you only need to specify the ground level position
+ * (altitude=0) in WGS84-coordinates). This includes that any geometry will
+ * additionally be offsetted in height direction for half of it's extent (E.g.
+ * if you want to place a box with height=24 on top of the sphere then the box
+ * will have an offset of 12). For further information please refer to
  * {@link #setAddOffsetInHeightDirection(boolean)}.<br/>
  * Note that you should inspect all setter-methods before you generate a scene.
  * 
@@ -35,6 +42,8 @@ public class VsCartographicSymbolsOnASphereScene extends
 	private boolean addOffsetInHeightDirection = true;
 
 	private double radius = 10;
+
+	private AxisSwitchTransform axisSwitch = new AxisSwitchTransform();
 
 	public VsCartographicSymbolsOnASphereScene(String filePath) {
 		super(filePath);
@@ -109,20 +118,30 @@ public class VsCartographicSymbolsOnASphereScene extends
 
 	}
 
+
 	@Override
 	protected void generateSceneContentX3D(boolean asX3DOM) {
 		// set position and angles
-		
+
 		for (T3dAttrSymbolInstance attrSymbol : cartographicSymbols) {
 
-			VgPoint wgs84position = attrSymbol.getPosition();
+			// switching back the axes from scene coordinates of real world
+			// coordinates in WGS84-CRS
+			T3dVector wgs84Vector = axisSwitch.retransform(attrSymbol
+					.getPosition());
+			VgPoint wgs84position = new GmPoint(wgs84Vector.getX(),
+					wgs84Vector.getY(), wgs84Vector.getZ());
+			wgs84position.setSRS(VgPoint.SRSLatLonWgs84);
 
 			// transform into Sphere-coordinates
 			VgPoint spherePosition = computeSphereCoordinates(attrSymbol,
 					wgs84position);
-			
-			// set sphere position
-			attrSymbol.setPosition(spherePosition);
+
+			// switching back to scene coordinates
+			T3dVector scenePosition = axisSwitch.transform(spherePosition);
+			// set sphere scene position
+			attrSymbol.setPosition(new GmPoint(scenePosition.getX(),
+					scenePosition.getY(), scenePosition.getZ()));
 
 			// set angles
 			setAngles(wgs84position, attrSymbol);

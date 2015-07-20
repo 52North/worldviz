@@ -14,6 +14,7 @@ import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCylinder;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dSphere;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
 
 /**
  * Class to create a scene description which contains cartographic visualization
@@ -27,6 +28,9 @@ import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
 public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 
 	// TODO Metadaten ueber X3DMetadataObject (MetadataSet)?!?
+
+	private static final T3dVector HEIGHT_AXIS_IN_VIRTUAL_WORLD = new T3dVector(
+			0, 1, 0);
 
 	// und man braucht eigentlich auch noch eine Legende... die einem die
 	// Thematiken anzeigt.
@@ -74,7 +78,9 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 	/**
 	 * Simply adds a cartographic symbol to the scene. Note, that you are
 	 * responsible for the consistency of the scene. This method does not check
-	 * any duplicates.
+	 * any duplicates. The coordinates of the position of the symbol are
+	 * expected in scene coordinates (Y-Axis = height axis, Z-axis points
+	 * towards the user)
 	 * 
 	 * @param symbol
 	 *            a cartographic symbol
@@ -120,7 +126,7 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 	protected void generateSceneContentX3D(boolean asX3DOM) {
 
 		int amountOfFeatures = cartographicSymbols.size();
-		
+
 		for (int i = 0; i < amountOfFeatures; i++) {
 			if (i % 30 == 0) {
 				if (logger.isInfoEnabled()) {
@@ -170,8 +176,8 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 
 		wl("<Transform translation=\""
 				+ this.decimalFormatter.format(position.getX()) + " "
-				+ this.decimalFormatter.format(position.getZ()) + " "
-				+ this.decimalFormatter.format((-position.getY())) + "\">");
+				+ this.decimalFormatter.format(position.getY()) + " "
+				+ this.decimalFormatter.format(position.getZ()) + "\">");
 		wl("	<Transform rotation=\"1 0 0 "
 				+ this.decimalFormatter.format(angle_xAxis) + "\">");
 		wl("		<Transform rotation=\"0 1 0 "
@@ -231,6 +237,7 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 	 */
 	private double[] determineAngles(double angleXY, double angleZ,
 			VgPoint position) {
+		double[] angles = new double[] { 0, 0, 0 };
 
 		// double longitude = Math.toDegrees(angleXY);
 		// double latitude = Math.toDegrees(angleZ);
@@ -238,22 +245,30 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 		// VgPoint latLonPoint = new GmPoint(longitude, latitude, 0);
 		// latLonPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
 
-		T3dVector normalVector = new T3dVector(position);
+		if (getClass().equals(VsCartographicSymbolsScene.class)) {
+			double angleXaxis = 0;
+			double angleYaxis = 0;
+			double angleZaxis = 0;
 
-		T3dVector normalVectorInVirtualWorld = new T3dVector(
-				normalVector.getX(), normalVector.getZ(), -normalVector.getY());
-		T3dVector initialObjectVector = new T3dVector(0, 1, 0);
+			angles = new double[] { angleXaxis, angleYaxis, angleZaxis };
+		}
 
-		double diffAngle = Math.acos(normalVectorInVirtualWorld
-				.scalarProd(initialObjectVector)
-				/ (normalVectorInVirtualWorld.length() * initialObjectVector
-						.length()));
+		else {
+			T3dVector normalVector = new T3dVector(position);
 
-		double angleXaxis = 0;
-		double angleYaxis = angleXY;
-		double angleZaxis = -diffAngle;
+			double diffAngle = Math.acos(normalVector
+					.scalarProd(HEIGHT_AXIS_IN_VIRTUAL_WORLD)
+					/ (normalVector.length() * HEIGHT_AXIS_IN_VIRTUAL_WORLD
+							.length()));
 
-		return new double[] { angleXaxis, angleYaxis, angleZaxis };
+			double angleXaxis = 0;
+			double angleYaxis = angleXY;
+			double angleZaxis = -diffAngle;
+
+			angles = new double[] { angleXaxis, angleYaxis, angleZaxis };
+		}
+
+		return angles;
 	}
 
 	private void writeSymbolGeometry(T3dSymbolDef symbol) {

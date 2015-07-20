@@ -160,8 +160,8 @@ public class MpValue2ColoredAttrFeature extends MpValue2Symbol {
 
 		if (logger.isDebugEnabled())
 			logger.debug(
-					"Mapping the value '{}' of the attribute '{}' of the feature '{}' to a color.",
-					attributeValue, attrName, feature);
+					"Mapping the value '{}' of the attribute '{}' to a color.",
+					attributeValue, attrName);
 
 		if (attributeValue == null)
 			throw new T3dException("The feature " + feature
@@ -173,14 +173,11 @@ public class MpValue2ColoredAttrFeature extends MpValue2Symbol {
 			try {
 				doubleValue = Double.parseDouble(attributeValueString);
 			} catch (Exception e) {
-				System.out
-						.println("WARNING: The attributeValue '"
-								+ attributeValue
-								+ "' of the attribute '"
-								+ attrName
-								+ "' cannot be parsed as a double-value! +"
-								+ "Thus the defaultColorForNonDoubleValue will be used!! ("
-								+ this.neutralColor + ")");
+
+				if (logger.isWarnEnabled())
+					logger.warn(
+							"WARNING: The attributeValue '{}' of the attribute '{}' cannot be parsed as a double-value! Thus the defaultColorForNonDoubleValue will be used!! ({})",
+							attributeValue, attrName, this.neutralColor);
 
 				addColorAttribute(feature, neutralColor);
 

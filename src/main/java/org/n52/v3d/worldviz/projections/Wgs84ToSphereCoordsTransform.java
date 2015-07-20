@@ -9,7 +9,6 @@ import org.n52.v3d.worldviz.extensions.GmPolygon;
 import org.n52.v3d.worldviz.extensions.VgLinearRing;
 import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
 import org.n52.v3d.worldviz.extensions.VgPolygon;
-
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
@@ -19,8 +18,13 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgIndexedTIN;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Wgs84ToSphereCoordsTransform {
+
+	private static Logger logger = LoggerFactory
+			.getLogger(Wgs84ToSphereCoordsTransform.class);
 
 	/**
 	 * WGS84 coordinates in degrees!
@@ -34,9 +38,10 @@ public class Wgs84ToSphereCoordsTransform {
 
 		if (!coordsWGS84.getSRS().equalsIgnoreCase(VgGeomObject.SRSLatLonWgs84)) {
 
-			System.out
-					.println("WARNING: The geo reference system of the point is not 'EPSG:4326' (WGS84)! "
-							+ coordsWGS84);
+			if (logger.isWarnEnabled())
+				logger.warn(
+						"WARNING: The geo reference system of the point '{}' is not 'EPSG:4326' (WGS84)!",
+						coordsWGS84);
 
 			// throw new T3dException(
 			// "The geo reference system of the point is not 'EPSG:4326' (WGS84)! "
@@ -235,22 +240,23 @@ public class Wgs84ToSphereCoordsTransform {
 
 	}
 
-	public static VgPoint sphereToWgs84(VgPoint coordsSphere, double radius){
-		
+	public static VgPoint sphereToWgs84(VgPoint coordsSphere, double radius) {
+
 		// x, y, z from sphere coordinates
 		double x = coordsSphere.getX();
 		double y = coordsSphere.getY();
 		double z = coordsSphere.getZ();
-		
+
 		// transform to latitude and longitude
-		
-		double lat = Math.atan2(z, (Math.sqrt(x*x + y*y))) * (180/Math.PI);
-		double lon = Math.atan2(y , x) * 180 / Math.PI;
-		double alt = Math.sqrt(x*x + y*y + z*z) - radius;
-		
+
+		double lat = Math.atan2(z, (Math.sqrt(x * x + y * y)))
+				* (180 / Math.PI);
+		double lon = Math.atan2(y, x) * 180 / Math.PI;
+		double alt = Math.sqrt(x * x + y * y + z * z) - radius;
+
 		GmPoint pointWgs84 = new GmPoint(lon, lat, alt);
 		pointWgs84.setSRS(VgGeomObject.SRSLatLonWgs84);
-		
+
 		return pointWgs84;
 	}
 }

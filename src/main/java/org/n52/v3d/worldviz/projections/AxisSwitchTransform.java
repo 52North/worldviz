@@ -11,7 +11,7 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * <p />
  * <table border=1>
  * <tr>
- * <th>real-world coordinate</th>
+ * <th>real-world coordinates</th>
  * <th></th>
  * <th>scene coordinates</th>
  * </tr>
@@ -45,23 +45,100 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * @see ScaleTransform
  * @see NormTransform
  */
-public class AxisSwitchTransform implements CoordinateTransform
-{
-	public T3dVector transform(VgPoint loc) 
-	{
-		double 
-			x = loc.getX(),
-			y = loc.getZ(), 
-			z = -loc.getY();
+public class AxisSwitchTransform implements CoordinateTransform {
+	public T3dVector transform(VgPoint loc) {
+		double x = loc.getX();
+		double y = loc.getZ();
+		double z = -loc.getY();
+
 		return new T3dVector(x, y, z);
 	}
 
-	public T3dVector transform(T3dVector pnt) 
-	{
-		double 
-			x = pnt.getX(),
-			y = pnt.getZ(), 
-			z = -pnt.getY();
+	public T3dVector transform(T3dVector pnt) {
+		double x = pnt.getX();
+		double y = pnt.getZ();
+		double z = -pnt.getY();
+
+		return new T3dVector(x, y, z);
+	}
+
+	/**
+	 * Retransforms a point with scene coordinates to a point with real world
+	 * coordinates.
+	 * 
+	 * <p />
+	 * <table border=1>
+	 * <tr>
+	 * <th>scene coordinates</th>
+	 * <th></th>
+	 * <th>real-world coordinates</th>
+	 * </tr>
+	 * <tr align=center>
+	 * <td>x</td>
+	 * <td>-&gt;</td>
+	 * <td>X</td>
+	 * </tr>
+	 * <tr align=center>
+	 * <td>y</td>
+	 * <td>-&gt;</td>
+	 * <td>Z</td>
+	 * </tr>
+	 * <tr align=center>
+	 * <td>z</td>
+	 * <td>-&gt;</td>
+	 * <td>-Y</td>
+	 * </tr>
+	 * </table>
+	 * <p />
+	 * 
+	 * @param loc
+	 * @return
+	 */
+	public T3dVector retransform(VgPoint loc) {
+		double x = loc.getX();
+		double y = -loc.getZ();
+		double z = loc.getY();
+
+		return new T3dVector(x, y, z);
+	}
+
+	/**
+	 * Retransforms a point with scene coordinates to a point with real world
+	 * coordinates.
+	 * 
+	 * <p />
+	 * <table border=1>
+	 * <tr>
+	 * <th>scene coordinates</th>
+	 * <th></th>
+	 * <th>real-world coordinates</th>
+	 * </tr>
+	 * <tr align=center>
+	 * <td>x</td>
+	 * <td>-&gt;</td>
+	 * <td>X</td>
+	 * </tr>
+	 * <tr align=center>
+	 * <td>y</td>
+	 * <td>-&gt;</td>
+	 * <td>Z</td>
+	 * </tr>
+	 * <tr align=center>
+	 * <td>z</td>
+	 * <td>-&gt;</td>
+	 * <td>-Y</td>
+	 * </tr>
+	 * </table>
+	 * <p />
+	 * 
+	 * @param loc
+	 * @return
+	 */
+	public T3dVector retransform(T3dVector pnt) {
+		double x = pnt.getX();
+		double y = -pnt.getZ();
+		double z = pnt.getY();
+
 		return new T3dVector(x, y, z);
 	}
 }
