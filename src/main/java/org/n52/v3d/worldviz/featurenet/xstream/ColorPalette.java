@@ -9,7 +9,7 @@ public class ColorPalette{
     @XStreamImplicit
     protected List<ColorEntry> colorEntry;
     
-    public List getEntry(){
+    public List getColorEntry(){
         return colorEntry;
     }
     

@@ -2,152 +2,245 @@ package org.n52.v3d.worldviz.featurenet.scene;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.worldviz.featurenet.xstream.*;
 
 /**
- * Abstract base class for 3D 'Connection Map' scene descriptions. The class holds
- * common attributes and methods.
- * 
+ * Abstract base class for 3D 'Connection Map' scene descriptions. The class
+ * holds common attributes and methods.
+ *
  * @author Christian Danowski, Adhitya Kamakshidasan
  *
  */
 public abstract class WvizConcreteConnectionMapScene {
 
-	protected WvizVirtualConnectionMapScene scene;
+    protected WvizVirtualConnectionMapScene scene;
 
-	protected String symbolType;
+    protected String symbolType;
 
-	// List of Style Parameters that were defined in the XML sheet - More will
-	// be added!
-	protected String symbolColor;
-        protected double symbolSize;
+    // List of Style Parameters that were defined in the XML sheet - More will
+    // be added!
+    protected String symbolColor;
 
-	protected static final double defaultSymbolSize = 0.15;
+    protected double symbolSize;
 
-	protected String propertyName;
+    protected static final double defaultSymbolSize = 0.15;
 
-	protected Map<VgFeature, String> labels = new HashMap<VgFeature, String>();
+    protected String propertyName;
 
-	// Cannot be viable once there are more properties
-	protected Map<String, String> svgMap = new HashMap<String, String>();
+    protected Map<VgFeature, String> labels = new HashMap<VgFeature, String>();
 
-	protected double displacementX, displacementY,displacementZ;
+    // Cannot be viable once there are more properties
+    protected Map<String, String> svgMap = new HashMap<String, String>();
 
-	// Currently, this file supports only Cylinders, when more parameters are
-	// used, this parameter should be used and more if statements should be
-	// added.
-	public String geometryType;
+    protected double displacementX, displacementY, displacementZ;
 
-	protected BufferedWriter document;
+    // Currently, this file supports only Cylinders, when more parameters are
+    // used, this parameter should be used and more if statements should be
+    // added.
+    public String geometryType;
+    
+    public boolean linearColorInterpolation = false;
+    
+    public boolean linearWidthInterpolation = false;
 
-	public WvizConcreteConnectionMapScene(WvizVirtualConnectionMapScene scene) {
-		this.scene = scene;
+    public double[] inputColorValues, inputWidthValues, outputWidthValues;
+    public T3dColor[] outputColorValues;
+    
+    protected BufferedWriter document;
 
-		// Check in XML file, if there is a default configuration or not
-		getDefaultConfiguration(scene);
-	}
+    public WvizConcreteConnectionMapScene(WvizVirtualConnectionMapScene scene) {
+        this.scene = scene;
 
-	private void getDefaultConfiguration(WvizVirtualConnectionMapScene scene) {
-		// We will use 0, for default configuration
+        // Check in XML file, if there is a default configuration or not
+        getDefaultConfiguration(scene);
+    }
 
-		// For specific configuration, we should change our current XML schema
-		WvizConfig wvizConfig = scene.getStyle();
-		ConnectionNet connectionNet = (ConnectionNet) wvizConfig
-				.getConnectionNet().get(0);
-		Mapper mapper = (Mapper) connectionNet.getMapper().get(0);
-		Features features = (Features) mapper.getFeatures().get(0);
-		PointVisualizer pointVisualizer = (PointVisualizer) features
-				.getPointVisualizer().get(0);
-		T3dSymbol t3dSymbol = (T3dSymbol) pointVisualizer.getT3dSymbol().get(0);
-		symbolType = t3dSymbol.getType();
-		symbolSize = t3dSymbol.getSize();
-		symbolColor = t3dSymbol.getColor();
-		TextVisualizer textVisualizer = (TextVisualizer) features
-				.getTextVisualizer().get(0);
-		Label label = (Label) textVisualizer.getLabel().get(0);
-		propertyName = label.getPropertyName();
+    private void getDefaultConfiguration(WvizVirtualConnectionMapScene scene) {
+	// IMPORTANT: We will use 0, for default configuration
 
-		Font font = (Font) textVisualizer.getFont().get(0);
-		List svgParameter = font.getSvgParameter();
+        // For specific configuration, we should change our current XML schema
+        WvizConfig wvizConfig = scene.getStyle();
+        ConnectionNet connectionNet = (ConnectionNet) wvizConfig.getConnectionNet().get(0);
+        Mapper mapper = (Mapper) connectionNet.getMapper().get(0);
+        Features features = (Features) mapper.getFeatures().get(0);
+        PointVisualizer pointVisualizer = (PointVisualizer) features.getPointVisualizer().get(0);
+        T3dSymbol t3dSymbol = (T3dSymbol) pointVisualizer.getT3dSymbol().get(0);
+        symbolType = t3dSymbol.getType();
+        symbolSize = t3dSymbol.getSize();
+        symbolColor = t3dSymbol.getColor();
+        TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
+        Label label = (Label) textVisualizer.getLabel().get(0);
+        propertyName = label.getPropertyName();
 
-		for (Object object : svgParameter) {
-			String name = ((SvgParameter) object).getName();
-			String value = ((SvgParameter) object).getValue();
-			svgMap.put(name, value);
-		}
+        Font font = (Font) textVisualizer.getFont().get(0);
+        List svgParameter = font.getSvgParameter();
 
-		LabelPlacement labelPlacement = (LabelPlacement) textVisualizer
-				.getLabelPlacement().get(0);
-		PointPlacement pointPlacement = (PointPlacement) labelPlacement
-				.getPointPlacement().get(0);
-		Displacement displacement = (Displacement) pointPlacement
-				.getDisplacement().get(0);
+        for (Object object : svgParameter) {
+            String name = ((SvgParameter) object).getName();
+            String value = ((SvgParameter) object).getValue();
+            svgMap.put(name, value);
+        }
 
-		displacementX = displacement.getDisplacementX();
-		displacementY = displacement.getDisplacementY();
-                displacementZ = displacement.getDisplacementZ();
+        LabelPlacement labelPlacement = (LabelPlacement) textVisualizer.getLabelPlacement().get(0);
+        PointPlacement pointPlacement = (PointPlacement) labelPlacement.getPointPlacement().get(0);
+        Displacement displacement = (Displacement) pointPlacement.getDisplacement().get(0);
 
-		Fill fill = (Fill) textVisualizer.getFill().get(0);
-		svgParameter = fill.getSvgParameter();
+        displacementX = displacement.getDisplacementX();
+        displacementY = displacement.getDisplacementY();
+        displacementZ = displacement.getDisplacementZ();
 
-		for (Object object : svgParameter) {
-			String name = ((SvgParameter) object).getName();
-			String value = ((SvgParameter) object).getValue();
-			svgMap.put(name, value);
-		}
+        Fill fill = (Fill) textVisualizer.getFill().get(0);
+        svgParameter = fill.getSvgParameter();
 
-		Relations relations = (Relations) mapper.getRelations().get(0);
-		LineVisualizer lineVisualizer = (LineVisualizer) relations
-				.getLineVisualizer().get(0);
-		Geometry geometry = (Geometry) lineVisualizer.getGeometry().get(0);
-		geometryType = geometry.getType();
+        for (Object object : svgParameter) {
+            String name = ((SvgParameter) object).getName();
+            String value = ((SvgParameter) object).getValue();
+            svgMap.put(name, value);
+        }
 
-		Stroke stroke = (Stroke) lineVisualizer.getStroke().get(0);
+        Relations relations = (Relations) mapper.getRelations().get(0);
+        LineVisualizer lineVisualizer = (LineVisualizer) relations.getLineVisualizer().get(0);
+        Geometry geometry = (Geometry) lineVisualizer.getGeometry().get(0);
+        geometryType = geometry.getType(); //Currently, this is not being used
 
-		svgParameter = stroke.getSvgParameter();
+        Stroke stroke = (Stroke) lineVisualizer.getStroke().get(0);
 
-		for (Object object : svgParameter) {
-			String name = ((SvgParameter) object).getName();
-			String value = ((SvgParameter) object).getValue();
-			svgMap.put(name, value);
-		}
+        svgParameter = stroke.getSvgParameter();
 
-		for (VgFeature feature : scene.getVertices()) {
-			labels.put(feature, (String) ((GmAttrFeature) feature).getAttributeValue(propertyName));
-		}
+        for (Object object : svgParameter) {
+            String name = ((SvgParameter) object).getName();
+            String value = ((SvgParameter) object).getValue();
+            svgMap.put(name, value);
+        }
+        
+        ColorMapper colorMapper = (ColorMapper) lineVisualizer.getColorMapper().get(0);
+        InterpolationMode colorInterpolationMode = (InterpolationMode) colorMapper.getInterpolationMode().get(0); 
+        
+        String colorInterpolationType = colorInterpolationMode.getType();
+        
+        if ("linear".equals(colorInterpolationType.toLowerCase()) ){
+            linearColorInterpolation = true;
+        }
+        
+        ColorPalette colorPalette = (ColorPalette) colorMapper.getColorPalette().get(0);
+        
+        List colorEntries = colorPalette.getColorEntry();
+        
+        ArrayList<Double> inputColorValueList = new ArrayList<Double>();
+        ArrayList<T3dColor> outputColorValueList = new ArrayList<T3dColor>();
+        float red,blue,green;
+        
+        for (Object object : colorEntries) {
+            ColorEntry colorEntry = (ColorEntry) object;
+            double inputValue = colorEntry.getInputValue();
+            OutputColor outputColor = (OutputColor)(colorEntry.getOutputColor().get(0));
+            String colorType = outputColor.getType();
+            String colorValue = outputColor.getValue();
+            
+            if(colorType.equalsIgnoreCase("rgb")){
+                String[] parts = colorValue.split(" ");
+                red = Float.parseFloat(parts[0]);
+                green = Float.parseFloat(parts[1]);
+                blue = Float.parseFloat(parts[2]);
+                T3dColor color = new T3dColor(red, green, blue);
+                outputColorValueList.add(color);
+            }
+            inputColorValueList.add(inputValue);
+        }
+        
+        //Convert the ArrayList(s) into Arrays
+        
+        inputColorValues = new double[inputColorValueList.size()];
+        outputColorValues = new T3dColor[outputColorValueList.size()];
+        
+        for (int i=0; i<inputColorValueList.size();i++){
+            inputColorValues[i] = inputColorValueList.get(i);
+        }
+        
+        for (int i=0; i<outputColorValueList.size();i++){
+            outputColorValues[i] = outputColorValueList.get(i);
+        }
+        
+        for (VgFeature feature : scene.getVertices()) {
+            labels.put(feature, (String) ((GmAttrFeature) feature).getAttributeValue(propertyName));
+        }
 
-	}
+        
+        WidthMapper widthMapper = (WidthMapper) lineVisualizer.getWidthMapper().get(0);
+        InterpolationMode widthInterpolationMode = (InterpolationMode) widthMapper.getInterpolationMode().get(0); 
+        
+        String widthInterpolationType = widthInterpolationMode.getType();
+        
+        if ("linear".equalsIgnoreCase(widthInterpolationType.toLowerCase()) ){
+            linearWidthInterpolation = true;
+        }
+        
+        WidthPalette widthPalette = (WidthPalette) widthMapper.getWidthPalette().get(0);
+        
+        List widthEntries = widthPalette.getWidthEntry();
+        
+        ArrayList<Double> inputWidthValueList = new ArrayList<Double>();
+        ArrayList<Double> outputWidthValueList = new ArrayList<Double>();
+        
+        
+        for (Object object : widthEntries) {
+            WidthEntry widthEntry = (WidthEntry) object;
+            double inputValue = widthEntry.getInputValue();
+            double outputWidth = widthEntry.getOutputWidth();
+            inputWidthValueList.add(inputValue);
+            outputWidthValueList.add(outputWidth);
+        }
+        
+        //Convert the ArrayList(s) into Arrays
+        
+        inputWidthValues = new double[inputWidthValueList.size()];
+        outputWidthValues = new double[outputWidthValueList.size()];
+        
+        for (int i=0; i<inputWidthValueList.size();i++){
+            inputWidthValues[i] = inputWidthValueList.get(i);
+        }
+        
+        for (int i=0; i<outputWidthValueList.size();i++){
+            outputWidthValues[i] = outputWidthValueList.get(i);
+        }
+        
+        for (VgFeature feature : scene.getVertices()) {
+            labels.put(feature, (String) ((GmAttrFeature) feature).getAttributeValue(propertyName));
+        }
 
-	/**
-	 * 
-	 * exports the scene description to a file.
-	 *
-	 * @param fileName
-	 *            File name (and path)
-	 */
-	public abstract void writeToFile(String fileName);
+    }
 
-	protected void writeLine(String pLine) {
-		try {
-			document.write(pLine);
-			document.newLine();
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-	}
+    /**
+     *
+     * exports the scene description to a file.
+     *
+     * @param fileName File name (and path)
+     */
+    public abstract void writeToFile(String fileName);
 
-	protected void writeLine() {
-		try {
-			document.newLine();
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-	}
+    protected void writeLine(String pLine) {
+        try {
+            document.write(pLine);
+            document.newLine();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    protected void writeLine() {
+        try {
+            document.newLine();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
 }

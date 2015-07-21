@@ -9,7 +9,7 @@ public class WidthPalette{
     @XStreamImplicit
     protected List<WidthEntry> widthEntry;
     
-    public List getEntry(){
+    public List getWidthEntry(){
         return widthEntry;
     }
     
