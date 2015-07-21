@@ -1,0 +1,67 @@
+<WvizConfig>
+  <ConnectionNet>
+    <Mapper>
+      <Features>
+        <PointVisualizer>
+          <T3dSymbol type="Sphere" size="0.05" color="1 0 0"/>
+        </PointVisualizer>
+        <TextVisualizer>
+          <Label>
+            <PropertyName>name</PropertyName>
+          </Label>
+          <Font>
+            <SvgParameter name="font-family">MS Sans Serif</SvgParameter>
+            <SvgParameter name="font-size">0.1</SvgParameter>
+          </Font>
+          <LabelPlacement>
+            <PointPlacement>
+              <Displacement>
+                <DisplacementX>0.0</DisplacementX>
+                <DisplacementY>0.1</DisplacementY>
+                <DisplacementZ>0.05</DisplacementZ>
+              </Displacement>
+            </PointPlacement>
+          </LabelPlacement>
+          <Fill>
+            <SvgParameter name="fill">0 0 0</SvgParameter>
+          </Fill>
+        </TextVisualizer>
+      </Features>
+      <Relations>
+        <LineVisualizer>
+          <Geometry type="StraightLine"/>
+          <Stroke>
+            <SvgParameter name="stroke">0 0 1</SvgParameter>
+            <SvgParameter name="stroke-width">0.01</SvgParameter>
+          </Stroke>
+          <ColorMapper>
+            <InterpolationMode type="linear"/>
+            <ColorPalette>
+              <ColorEntry>
+                <InputValue>0.0</InputValue>
+                <OutputColor type="RGB">0 1 0</OutputColor>
+              </ColorEntry>
+              <ColorEntry>
+                <InputValue>100.0</InputValue>
+                <OutputColor type="RGB">1 0 0</OutputColor>
+              </ColorEntry>
+            </ColorPalette>
+          </ColorMapper>
+          <WidthMapper>
+            <InterpolationMode type="linear"/>
+            <WidthPalette>
+              <WidthEntry>
+                <InputValue>0.0</InputValue>
+                <OutputWidth>0.01</OutputWidth>
+              </WidthEntry>
+              <WidthEntry>
+                <InputValue>100.0</InputValue>
+                <OutputWidth>1.0</OutputWidth>
+              </WidthEntry>
+            </WidthPalette>
+          </WidthMapper>
+        </LineVisualizer>
+      </Relations>
+    </Mapper>
+  </ConnectionNet>
+</WvizConfig>

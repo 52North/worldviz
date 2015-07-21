@@ -143,8 +143,7 @@ public class MappersDemo {
             /*
              * this will save the color in an additional attribute
              */
-            VgAttrFeature coloredAttrFeature = colorMapper4AttrFeatures
-                    .transform(this.ATTRIBUTE_NAME, attrFeature);
+            VgAttrFeature coloredAttrFeature = colorMapper4AttrFeatures.transform(this.ATTRIBUTE_NAME, attrFeature);
 
             String colorAttributeName = NamesForAttributes.attributeNameForColor;
 

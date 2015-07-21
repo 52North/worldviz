@@ -49,6 +49,35 @@
             <SvgParameter name="stroke">0 0 1</SvgParameter>
             <SvgParameter name="stroke-width">0.01</SvgParameter>
           </Stroke>
+		  
+		  <ColorMapper>
+			<InterpolationMode type="linear" />
+			<ColorPalette>
+			  <ColorEntry> 
+				<InputValue>0</InputValue>
+				<OutputColor type="RGB">0 1 0</OutputColor>
+			  </ColorEntry>
+			  <ColorEntry> 
+				<InputValue>100</InputValue>
+				<OutputColor type="RGB">1 0 0</OutputColor>
+			  </ColorEntry>
+			</ColorPalette>
+		  </ColorMapper>
+
+		  <WidthMapper>
+			<InterpolationMode type="linear" />
+			<WidthPalette>
+			  <WidthEntry> 
+				<InputValue>0</InputValue>
+				<OutputWidth>0.01</OutputWidth>
+			  </WidthEntry>
+			  <WidthEntry> 
+				<InputValue>100</InputValue>
+				<OutputWidth>1</OutputWidth>
+			  </WidthEntry>
+			</WidthPalette>
+		  </WidthMapper>
+		  
         </LineVisualizer>
       </Relations>
     </Mapper>
