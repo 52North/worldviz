@@ -159,7 +159,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     //cylinder height
                     double distance = sceneSymbolTransformer.getLengthFromTo();
                     
-                    if(distance !=0){
+                    if(distance != 0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
@@ -247,7 +247,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     
                     double weight = (Double) edge.getValue();
 
-                    if(distance !=0){
+                    if(distance != 0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
@@ -336,7 +336,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     //cylinder height
                     double cylinderHeight = sceneSymbolTransformer.getLengthFromTo();
-                    if(cylinderHeight !=0){
+                    if(cylinderHeight != 0){
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
