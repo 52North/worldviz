@@ -41,8 +41,12 @@
                 <InputValue>0.0</InputValue>
                 <OutputColor type="RGB">0 1 0</OutputColor>
               </ColorEntry>
+			  <ColorEntry>
+                <InputValue>150.0</InputValue>
+                <OutputColor type="RGB">1 1 0</OutputColor>
+              </ColorEntry>
               <ColorEntry>
-                <InputValue>100.0</InputValue>
+                <InputValue>367.0</InputValue>
                 <OutputColor type="RGB">1 0 0</OutputColor>
               </ColorEntry>
             </ColorPalette>
@@ -52,11 +56,11 @@
             <WidthPalette>
               <WidthEntry>
                 <InputValue>0.0</InputValue>
-                <OutputWidth>0.01</OutputWidth>
+                <OutputWidth>0.001</OutputWidth>
               </WidthEntry>
               <WidthEntry>
-                <InputValue>100.0</InputValue>
-                <OutputWidth>1.0</OutputWidth>
+                <InputValue>367.0</InputValue>
+                <OutputWidth>0.01</OutputWidth>
               </WidthEntry>
             </WidthPalette>
           </WidthMapper>
