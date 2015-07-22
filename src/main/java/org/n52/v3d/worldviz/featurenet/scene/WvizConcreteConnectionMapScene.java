@@ -111,16 +111,6 @@ public abstract class WvizConcreteConnectionMapScene {
         Geometry geometry = (Geometry) lineVisualizer.getGeometry().get(0);
         geometryType = geometry.getType(); //Currently, this is not being used
 
-        Stroke stroke = (Stroke) lineVisualizer.getStroke().get(0);
-
-        svgParameter = stroke.getSvgParameter();
-
-        for (Object object : svgParameter) {
-            String name = ((SvgParameter) object).getName();
-            String value = ((SvgParameter) object).getValue();
-            svgMap.put(name, value);
-        }
-        
         ColorMapper colorMapper = (ColorMapper) lineVisualizer.getColorMapper().get(0);
         InterpolationMode colorInterpolationMode = (InterpolationMode) colorMapper.getInterpolationMode().get(0); 
         

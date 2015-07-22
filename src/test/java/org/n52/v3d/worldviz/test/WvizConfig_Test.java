@@ -148,14 +148,6 @@ public class WvizConfig_Test {
 
             assertTrue(geometryType != null);
             
-            Stroke stroke = (Stroke) lineVisualizer.getStroke().get(0);
-
-            assertTrue(stroke != null);
-            
-            svgParameter = stroke.getSvgParameter();
-            
-            assertTrue(svgParameter != null);
-
             for (Object sp : svgParameter) {
                 Object name = ((SvgParameter) sp).getName();
                 Object value = ((SvgParameter) sp).getValue();

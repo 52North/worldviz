@@ -12,9 +12,6 @@ public class LineVisualizer{
     private List <Geometry> geometry;
     
     @XStreamImplicit
-    private List <Stroke> stroke;
-    
-    @XStreamImplicit
     private List <ColorMapper> colorMapper;
     
     @XStreamImplicit
@@ -22,10 +19,6 @@ public class LineVisualizer{
     
     public List getGeometry(){
         return geometry;
-    }
-    
-    public List getStroke(){
-        return stroke;
     }
     
     public List getColorMapper(){
