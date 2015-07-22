@@ -9,7 +9,6 @@ import org.n52.v3d.triturus.t3dutil.MpSimpleHypsometricColor;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.triturus.vgis.VgFeature;
-import static org.n52.v3d.worldviz.demoapplications.FeatureNetTest.logger;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2NumericExtent;
 import org.n52.v3d.worldviz.extensions.mappers.NamesForAttributes;
@@ -18,7 +17,6 @@ import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
 import org.n52.v3d.worldviz.featurenet.impl.Parse.PajekException;
 import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
-import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 
 /**

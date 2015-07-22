@@ -11,9 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+import org.n52.v3d.triturus.t3dutil.MpSimpleHypsometricColor;
+import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgFeature;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2NumericExtent;
 import org.n52.v3d.worldviz.featurenet.VgRelation;
 import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
 import org.slf4j.Logger;
@@ -126,7 +129,11 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             writeLine();
 
             logger.info("Parsing Edges");
-            
+            MpSimpleHypsometricColor simpleColorMapper = new MpSimpleHypsometricColor();
+            MpValue2NumericExtent widthMapper = new MpValue2NumericExtent();
+                
+            simpleColorMapper.setPalette(inputColorValues, outputColorValues, linearWidthInterpolation);
+                
 
             if(ribbonMode){
                 for (VgRelation edge : scene.getEdges()) {
@@ -151,26 +158,33 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     //cylinder height
                     double distance = sceneSymbolTransformer.getLengthFromTo();
                     
-                    double radius = Double.parseDouble(svgMap.get("stroke-width"));
-
                     if(distance !=0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
                         writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
-
-
-
+                        
                         writeLine("            <Shape DEF=\"ribbonShape\">");
                         writeLine("              <Appearance>");
-                        writeLine("                <Material diffuseColor='1 0.5 0'/>");
+                        
+                        double weight = (Double) edge.getValue();
+                        T3dColor color = simpleColorMapper.transform(weight);
+                        
+                        float red = color.getRed();
+                        float green = color.getGreen();
+                        float blue = color.getBlue();
+                        
+                        writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
 
                         writeLine("              <Extrusion creaseAngle='"+0.785+"'");
                         writeLine("              crossSection='");
                         Circle circle = new Circle();
-                        ArrayList<T3dVector> circlePoints = circle.generateCircle(0.01, 24);
+                        
+                        double radius = widthMapper.transform(weight);
+                        
+                        ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
                         for(T3dVector vector: circlePoints){
                             //double x = vector.getX();
                             //double y = vector.getY();
@@ -181,7 +195,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         writeLine("              '");
                         writeLine("              spine='");
                         Ribbon ribbon = new Ribbon();
-                        ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(0.01,distance, 3);
+                        ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance, 3);
                         for(T3dVector vector: ribbonPoints){
                             //double x = vector.getX();
                             //double y = vector.getY();
@@ -230,7 +244,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     //cylinder height
                     double distance = sceneSymbolTransformer.getLengthFromTo();
                     
-                    double radius = Double.parseDouble(svgMap.get("stroke-width"));
+                    double weight = (Double) edge.getValue();
 
                     if(distance !=0){
 
@@ -243,13 +257,21 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                         writeLine("            <Shape DEF=\"ellipseShape\">");
                         writeLine("              <Appearance>");
-                        writeLine("                <Material diffuseColor='1 0 1'/>");
+                        T3dColor color = simpleColorMapper.transform(weight);
+                        float red = color.getRed();
+                        float green = color.getGreen();
+                        float blue = color.getBlue();
+                        
+                        writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
 
                         writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+1.57+"'");
                         writeLine("              crossSection='");
                         Circle circle = new Circle();
-                        ArrayList<T3dVector> circlePoints = circle.generateCircle(0.01, 24);
+                        
+                        double radius = widthMapper.transform(weight);
+                        
+                        ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
                         for(T3dVector vector: circlePoints){
                             //double x = vector.getX();
                             //double y = vector.getY();
@@ -320,13 +342,21 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
 
-
+                        double weight = (Double)edge.getValue();
+                        double radius = widthMapper.transform(weight);
+                        
+                        T3dColor color = simpleColorMapper.transform(weight);
+                        
+                        float red = color.getRed();
+                        float green = color.getGreen();
+                        float blue = color.getBlue();
+                        
                         writeLine("            <Shape DEF=\"cylinderShape\">");
                         writeLine("              <Appearance>");
-                        writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
+                        writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
 
-                        writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
+                        writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+radius+ "\"/>");
 
                         writeLine("            </Shape>");
                         writeLine("          </Transform>");
@@ -373,8 +403,15 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double coneTranslation = (distance/2) - (symbolSize*1.5);
                 //double coneTranslation = (distance/2) - (symbolSize*2.0); 
                 
-                double cylinderRadius = Double.parseDouble(svgMap.get("stroke-width"));
+                double weight = (Double)arc.getValue();
+                
+                double cylinderRadius = widthMapper.transform(weight);
                 double coneRadius = cylinderRadius * 5; //To be removed
+                
+                T3dColor color = simpleColorMapper.transform(weight);
+                float red = color.getRed();
+                float green = color.getGreen();
+                float blue = color.getBlue();
                 
                 if(distance != 0){
                     writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
@@ -385,7 +422,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("            <Group>");
                     writeLine("              <Shape DEF=\"arrowConeShape\">");
                     writeLine("                <Appearance>");
-                    writeLine("                  <Material diffuseColor='.1 .6 .1'/>");
+                    
+                    writeLine("                  <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
+
                     writeLine("                </Appearance>");
                     writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("              </Shape>");                
@@ -394,7 +433,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
                     writeLine("                <Shape DEF=\"arrowCylinderShape\">");
                     writeLine("                  <Appearance>");
-                    writeLine("                    <Material diffuseColor='0 0.7 1'/>");
+                    writeLine("                    <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                  </Appearance>"); 
                     writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
                     writeLine("                </Shape>");
