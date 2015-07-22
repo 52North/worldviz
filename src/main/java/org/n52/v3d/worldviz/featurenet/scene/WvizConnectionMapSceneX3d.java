@@ -132,7 +132,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             MpSimpleHypsometricColor simpleColorMapper = new MpSimpleHypsometricColor();
             MpValue2NumericExtent widthMapper = new MpValue2NumericExtent();
                 
-            simpleColorMapper.setPalette(inputColorValues, outputColorValues, linearWidthInterpolation);
+            simpleColorMapper.setPalette(inputColorValues, outputColorValues, linearColorInterpolation);
+            widthMapper.setPalette(inputWidthValues, outputWidthValues, linearWidthInterpolation);
                 
 
             if(ribbonMode){
