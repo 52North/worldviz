@@ -23,7 +23,7 @@
             </PointPlacement>
 			
 			<!-- Billboard is up for discussion!-->
-			<Billboard>0 0 0</Billboard>
+            <BillboardAxis>0 0 0</BillboardAxis>
 			
           </LabelPlacement>
           <Fill>
