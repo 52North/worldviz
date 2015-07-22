@@ -21,6 +21,10 @@
                 <DisplacementZ>0.05</DisplacementZ>
               </Displacement>
             </PointPlacement>
+			
+			<!-- Billboard is up for discussion!-->
+			<Billboard>0 0 0</Billboard>
+			
           </LabelPlacement>
           <Fill>
             <SvgParameter name="fill">0 0 0</SvgParameter>
@@ -29,11 +33,29 @@
       </Features>
       <Relations>
         <LineVisualizer>
-          <Geometry type="StraightLine"/>
-          <Stroke>
-            <SvgParameter name="stroke">0 0 1</SvgParameter>
-            <SvgParameter name="stroke-width">0.01</SvgParameter>
-          </Stroke>
+		
+		<!-- Geometry is up for discussion! -->
+          <Geometry>
+			<type>Ribbon</type>
+			<CreaseAngle>0.785</CreaseAngle>
+			<CircleTurns>24</CircleTurns>
+			<HelixTurns>3</HelixTurns>
+		  </Geometry>
+		  <Geometry>
+			<type>Curve</type>
+			<CreaseAngle>0.785</CreaseAngle>
+			<CircleTurns>24</CircleTurns>
+			<EllipseTurns>24</EllipseTurns>
+			<Ratio>1.5</Ratio>
+		  </Geometry>
+		  <Geometry>
+			<type>Arrow</type>
+			<ConeHeight>0.1</ConeHeight>
+			<Ratio>5</Ratio>
+		  </Geometry>		  
+		  
+		  
+		  
           <ColorMapper>
             <InterpolationMode type="linear"/>
             <ColorPalette>
