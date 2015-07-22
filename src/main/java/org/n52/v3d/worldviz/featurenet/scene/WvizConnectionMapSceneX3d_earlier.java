@@ -151,8 +151,6 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
                     //cylinder height
                     double distance = sceneSymbolTransformer.getLengthFromTo();
                     
-                    double radius = Double.parseDouble(svgMap.get("stroke-width"));
-
                     if(distance !=0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
@@ -230,8 +228,6 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
                     //cylinder height
                     double distance = sceneSymbolTransformer.getLengthFromTo();
                     
-                    double radius = Double.parseDouble(svgMap.get("stroke-width"));
-
                     if(distance !=0){
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
@@ -323,10 +319,10 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
 
                         writeLine("            <Shape DEF=\"cylinderShape\">");
                         writeLine("              <Appearance>");
-                        writeLine("                <Material emissiveColor=\"" + svgMap.get("stroke") + "\"/>");
+                        writeLine("                <Material emissiveColor=\"0 0 1\"/>");
                         writeLine("              </Appearance>");
 
-                        writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ svgMap.get("stroke-width")+ "\"/>");
+                        writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+ 0.1 + "\"/>");
 
                         writeLine("            </Shape>");
                         writeLine("          </Transform>");
@@ -373,7 +369,7 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
                 double coneTranslation = (distance/2) - (symbolSize*1.5);
                 //double coneTranslation = (distance/2) - (symbolSize*2.0); 
                 
-                double cylinderRadius = Double.parseDouble(svgMap.get("stroke-width"));
+                double cylinderRadius = 0.01;
                 double coneRadius = cylinderRadius * 5; //To be removed
                 
                 if(distance != 0){
