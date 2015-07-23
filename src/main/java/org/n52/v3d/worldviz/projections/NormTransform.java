@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.n52.v3d.triturus.core.T3dException;
+import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.gisimplm.GmEnvelope;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgEnvelope;
+import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.extensions.VgLinearRing;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
 
 // TODO: Check, if this class should be migrated to the 52N Triturus core package in the future.
 /**
@@ -174,5 +179,25 @@ public class NormTransform implements CoordinateTransform {
 	protected void addSpecialCoordinates(List<VgPoint> geoPos) {
 		// here there is no content
 		// only specialized classes have content in this method
+	}
+
+	@Override
+	public VgGeomObject transform(VgGeomObject geom) {
+		throw new T3dNotYetImplException();
+	}
+
+	@Override
+	public VgMultiPolygon transform(VgMultiPolygon multiPolygon) {
+		throw new T3dNotYetImplException();
+	}
+
+	@Override
+	public VgPolygon transform(VgPolygon polygon) {
+		throw new T3dNotYetImplException();
+	}
+
+	@Override
+	public VgLinearRing transform(VgLinearRing linearRing) {
+		throw new T3dNotYetImplException();
 	}
 }

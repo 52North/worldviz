@@ -257,11 +257,11 @@ public class VsWorldCountriesOnASphereScene extends VsWorldCountriesScene {
 
 		VgGeomObject geometry = coloredWorldFeature.getGeometry();
 		String srs = geometry.getSRS();
-		if (!srs.equals(VgGeomObject.SRSLatLonWgs84))
-			throw new T3dException(
-					"A geometry with coordinate reference system (CRS) 'EPSG:4326' (WGS84) "
-							+ "is expected. The CRS of the geometry was: "
-							+ srs + "'.");
+//		if (!srs.equals(VgGeomObject.SRSLatLonWgs84))
+//			throw new T3dException(
+//					"A geometry with coordinate reference system (CRS) 'EPSG:4326' (WGS84) "
+//							+ "is expected. The CRS of the geometry was: "
+//							+ srs + "'.");
 
 		super.addWorldCountry(coloredWorldFeature);
 	}
