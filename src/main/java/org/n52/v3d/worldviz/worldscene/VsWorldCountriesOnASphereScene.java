@@ -3,33 +3,31 @@ package org.n52.v3d.worldviz.worldscene;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.n52.v3d.worldviz.projections.Wgs84ToSphereCoordsTransform;
-import org.n52.v3d.worldviz.triangulation.InnerPointsForPolygonClass;
-import org.n52.v3d.worldviz.triangulation.PolygonTriangulator;
-import org.n52.v3d.worldviz.extensions.VgLinearRing;
-import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
-import org.n52.v3d.worldviz.extensions.VgPolygon;
-
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgIndexedTIN;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.extensions.VgLinearRing;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
+import org.n52.v3d.worldviz.projections.Wgs84ToSphereCoordsTransform;
+import org.n52.v3d.worldviz.triangulation.InnerPointsForPolygonClass;
+import org.n52.v3d.worldviz.triangulation.PolygonTriangulator;
 
 /**
- * This class is a specialization of {@link VsWorldCountriesScene} that
- * projects the polygonal geometries into spherical geometries that can be used
- * as an overlay for a world sphere. The expected coordinate reference system of
- * the input data is EPSG:4326 (WGS84). The transformation into spherical
+ * This class is a specialization of {@link VsWorldCountriesScene} that projects
+ * the polygonal geometries into spherical geometries that can be used as an
+ * overlay for a world sphere. The expected coordinate reference system of the
+ * input data is EPSG:4326 (WGS84). The transformation into spherical
  * coordinates is done during the scene generation.<br/>
  * Note that you should inspect all setter-methods before you generate a scene.
  * 
  * @author Christian Danowski
  * 
  */
-public class VsWorldCountriesOnASphereScene extends
-		VsWorldCountriesScene {
+public class VsWorldCountriesOnASphereScene extends VsWorldCountriesScene {
 
 	// raster width is used to create additional points inside a polygon!
 	private boolean generateAdditionalInnerPolygonPoints = true;
@@ -256,7 +254,7 @@ public class VsWorldCountriesOnASphereScene extends
 	public void addWorldCountry(VgAttrFeature coloredWorldFeature) {
 
 		// check CRS
-	
+
 		VgGeomObject geometry = coloredWorldFeature.getGeometry();
 		String srs = geometry.getSRS();
 		if (!srs.equals(VgGeomObject.SRSLatLonWgs84))
@@ -275,7 +273,7 @@ public class VsWorldCountriesOnASphereScene extends
 	@Override
 	protected List<VgIndexedTIN> calculateTriangulation(
 			VgMultiPolygon multiPolygon) {
-		
+
 		int numberOfGeometries = multiPolygon.getNumberOfGeometries();
 		List<VgIndexedTIN> vgTINs = new ArrayList<VgIndexedTIN>(
 				numberOfGeometries);
@@ -322,8 +320,7 @@ public class VsWorldCountriesOnASphereScene extends
 	/**
 	 * The offset of the border is simply added to the radius of the sphere on
 	 * which the geometries will be displayed. The radius is stored in the
-	 * class-attribute
-	 * {@link VsWorldCountriesOnASphereScene#radiusForBorder}
+	 * class-attribute {@link VsWorldCountriesOnASphereScene#radiusForBorder}
 	 */
 	@Override
 	protected VgPoint calculateOffsetBorderPoint(VgPolygon polygon, int i,
@@ -353,14 +350,12 @@ public class VsWorldCountriesOnASphereScene extends
 	protected VgPoint extrudePoint(VgPoint pointSphere, T3dVector normalVector,
 			double extrusionHeight) {
 
-		// first transform back from sphere to WGS84!
-		VgPoint pointWgs84 = Wgs84ToSphereCoordsTransform.sphereToWgs84(
-				pointSphere, radius);
+		T3dVector pointSphereVector = new T3dVector(pointSphere);
+		pointSphereVector = pointSphereVector.norm();
 
-		// then transform from WGS84 to sphere with extended radius
-		VgPoint pointSphereExtruded = Wgs84ToSphereCoordsTransform
-				.wgs84ToSphere(pointWgs84, radius + extrusionHeight);
+		VgPoint pointSphereExtruded = addOffsetInNormalDirection(
+				pointSphereVector, pointSphere, 0, extrusionHeight);
+
 		return pointSphereExtruded;
-
 	}
 }

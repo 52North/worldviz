@@ -7,13 +7,14 @@ import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesOnASphereScene;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesScene;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
 import org.n52.v3d.worldviz.worldscene.helper.FindExtrudeAndColorMissingCountriesHelper;
-
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.n52.v3d.triturus.vgis.VgGeomObject;
 
 public class CarbonEmissions_ExtrusionTest {
 
@@ -87,6 +88,8 @@ public class CarbonEmissions_ExtrusionTest {
 		// VsColoredWorldCountriesScene scene = new
 		// VsColoredWorldCountriesScene(
 		// outputFile);
+		
+		AxisSwitchTransform axisSwitch = new AxisSwitchTransform();
 
 		VsWorldCountriesScene scene = new VsWorldCountriesOnASphereScene(
 				outputFile);
@@ -101,7 +104,10 @@ public class CarbonEmissions_ExtrusionTest {
 		// outputFile);
 
 		for (VgAttrFeature coloredExtrudedFeature : allColoredWorldCountries) {
-
+			
+			VgGeomObject geometry = coloredExtrudedFeature.getGeometry();
+//			axisSwitch.transform(geometry);
+			
 			scene.addWorldCountry(coloredExtrudedFeature);
 		}
 

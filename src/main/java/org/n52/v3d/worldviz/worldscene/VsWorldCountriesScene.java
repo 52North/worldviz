@@ -3,14 +3,6 @@ package org.n52.v3d.worldviz.worldscene;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.n52.v3d.worldviz.triangulation.PolygonTriangulator;
-import org.n52.v3d.worldviz.extensions.VgLinearRing;
-import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
-import org.n52.v3d.worldviz.extensions.VgPolygon;
-import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
-import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
-import org.n52.v3d.worldviz.extensions.mappers.NamesForAttributes;
-
 import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
@@ -22,6 +14,14 @@ import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgIndexedTIN;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.triturus.vgis.VgTIN;
+import org.n52.v3d.worldviz.extensions.VgLinearRing;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.NamesForAttributes;
+import org.n52.v3d.worldviz.triangulation.PolygonTriangulator;
+import org.n52.v3d.worldviz.worldscene.helper.NormalVectorHelper;
 
 /**
  * This class is meant to produce a scene description in which the world's
@@ -188,17 +188,18 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 		// write all scene objects (coloredWorldCountries) into X3D
 		int amountOfFeatures = worldCountries.size();
-		
-		for (int i=0; i< amountOfFeatures; i++){
-			
-			if (i % 30 == 0){
-				if (logger.isInfoEnabled()){
-					logger.info("Processed {} / {} features.", i, amountOfFeatures);
+
+		for (int i = 0; i < amountOfFeatures; i++) {
+
+			if (i % 30 == 0) {
+				if (logger.isInfoEnabled()) {
+					logger.info("Processed {} / {} features.", i,
+							amountOfFeatures);
 				}
 			}
-			
+
 			VgAttrFeature colAttrFeature = worldCountries.get(i);
-			
+
 			writeAttrFeature(colAttrFeature);
 		}
 
@@ -233,7 +234,7 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 			T3dColor color = (T3dColor) colorAttributeValue;
 
-			double extrusionHeight = 0;
+			double extrusionHeight = this.defaultExtrusionHeight;
 
 			if (extrusionAttributeValue instanceof Double)
 				extrusionHeight = (Double) extrusionAttributeValue;
@@ -519,8 +520,8 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 			double extrusionHeight) {
 
 		// normal vector determines the height direction
-		T3dVector normalVector = calculateNormalVectorFromThreePoints(vgTINs
-				.get(0));
+		T3dVector normalVector = NormalVectorHelper
+				.calculateNormalVectorFromThreePoints(vgTINs.get(0));
 
 		List<VgIndexedTIN> extrusionTINs = new ArrayList<VgIndexedTIN>(
 				vgTINs.size());
@@ -543,7 +544,6 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 						extrusionHeight);
 
 				extrusionTIN.setPoint(i, extrusionPoint);
-
 			}
 
 			// add triangles
@@ -553,13 +553,10 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 				extrusionTIN.setTriangle(t, triangleVertexIndices[0],
 						triangleVertexIndices[1], triangleVertexIndices[2]);
-
 			}
 
 			extrusionTINs.add(extrusionTIN);
-
 		}
-
 		return extrusionTINs;
 	}
 
@@ -580,10 +577,9 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 		// use extrusionHeight to offset the new point!
 		VgPoint extrusionPoint = addOffsetInNormalDirection(normalVector,
-				point, this.offsetForBorders, extrusionHeight);
+				point, 0, extrusionHeight);
 
 		return extrusionPoint;
-
 	}
 
 	/**
@@ -604,7 +600,6 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 			writeBorderForPolygon(polygon, extrusionHeight);
 		}
-
 	}
 
 	/**
@@ -760,7 +755,7 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 	 * @param extrusionHeight
 	 * @return
 	 */
-	private VgPoint addOffsetInNormalDirection(T3dVector normalVector,
+	protected VgPoint addOffsetInNormalDirection(T3dVector normalVector,
 			VgPoint point, double offsetFactor, double extrusionHeight) {
 		double offsetPointX = point.getX() + normalVector.getX() * offsetFactor
 				+ normalVector.getX() * extrusionHeight;
@@ -775,139 +770,6 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 		offsetPoint.setSRS(point.getSRS());
 
 		return offsetPoint;
-	}
-
-	/**
-	 * This method uses the three points of the triangle and calculates the
-	 * normal-vector of these three points.
-	 * 
-	 * @param vgIndexedTIN
-	 * @return
-	 */
-	private T3dVector calculateNormalVectorFromThreePoints(
-			VgIndexedTIN vgIndexedTIN) {
-
-		// counterclockwise
-		VgPoint p0 = vgIndexedTIN.getPoint(0);
-		VgPoint p1 = vgIndexedTIN.getPoint(1);
-		VgPoint p2 = vgIndexedTIN.getPoint(2);
-
-		T3dVector normalVector = calculateNormalVectorFromThreePoints(p0, p1,
-				p2);
-
-		return normalVector;
-
-	}
-
-	/**
-	 * This method uses three neighbor points (indices (i-1), i, (i+1)) and
-	 * calculates the normal-vector of these three points.
-	 * 
-	 * @param linearRing
-	 * @param i
-	 *            the index position of the vertex of interest
-	 * @return
-	 */
-	private T3dVector calculateNormalVectorFromThreePoints(
-			VgLinearRing linearRing, int i) {
-		// actual Point!
-		VgPoint actualPoint = linearRing.getVertex(i);
-		// nextPoint
-		VgPoint nextPoint = getNextPoint(linearRing, i);
-		// previousPoint
-		VgPoint previousPoint = getPreviousPoint(linearRing, i);
-
-		// determine the two vectors in the actual point through it's
-		// neighboring points
-		T3dVector normalVector = calculateNormalVectorFromThreePoints(
-				actualPoint, nextPoint, previousPoint);
-
-		return normalVector;
-	}
-
-	private T3dVector calculateNormalVectorFromThreePoints(VgPolygon polygon,
-			int i) {
-		return calculateNormalVectorFromThreePoints(polygon.getOuterBoundary(),
-				i);
-	}
-
-	/**
-	 * To solve this problem this method uses three neighbor points (indices
-	 * (i-1), i, (i+1)) and calculates the normal-vector of these three points. <br/>
-	 * <br/>
-	 * From the point actualPoint two vectors are constructed
-	 * (nextPoint-actualPoint) and (previousPoint-actualPoint). <br/>
-	 * Then the cross-product of these two vectors results in the normal vector.
-	 * See {@link T3dVector#ortho(T3dVector, T3dVector)}.
-	 * 
-	 * 
-	 * @param actualPoint
-	 * @param nextPoint
-	 * @param previousPoint
-	 * @return
-	 */
-	private T3dVector calculateNormalVectorFromThreePoints(VgPoint actualPoint,
-			VgPoint nextPoint, VgPoint previousPoint) {
-		T3dVector vector1 = new T3dVector(
-				nextPoint.getX() - actualPoint.getX(), nextPoint.getY()
-						- actualPoint.getY(), nextPoint.getZ()
-						- actualPoint.getZ());
-		T3dVector vector2 = new T3dVector(previousPoint.getX()
-				- actualPoint.getX(),
-				previousPoint.getY() - actualPoint.getY(), previousPoint.getZ()
-						- actualPoint.getZ());
-		T3dVector normalVector = new T3dVector();
-		normalVector.ortho(vector1, vector2);
-		return normalVector;
-	}
-
-	/**
-	 * Determines the previous point for a specific index of a polygon.
-	 * 
-	 * <p>
-	 * If index=0, then the previous point index is (numberOfVertices-1)
-	 * </p>
-	 * <p>
-	 * else the previous point index is (index-1)
-	 * </p>
-	 * 
-	 * @param polygon
-	 * @param index
-	 * @return
-	 */
-	private VgPoint getPreviousPoint(VgLinearRing polygon, int index) {
-
-		int numberOfVertices = polygon.getNumberOfVertices();
-		if (index == 0) {
-			// we have the first point of the polygonPointList. So now we need
-			// the last point
-			return polygon.getVertex(numberOfVertices - 1);
-		} else
-			return polygon.getVertex(index - 1);
-	}
-
-	/**
-	 * Determines the next point for a specific index of a polygon.
-	 * 
-	 * <p>
-	 * If index=(numberOfVertices-1), then the next point index is (0)
-	 * </p>
-	 * <p>
-	 * else the next point index is (index+1)
-	 * </p>
-	 * 
-	 * @param polygon
-	 * @param index
-	 * @return
-	 */
-	private VgPoint getNextPoint(VgLinearRing polygon, int index) {
-		int numberOfVertices = polygon.getNumberOfVertices();
-		if (index == numberOfVertices - 1) {
-			// we have the last point of the polygonPointList. So now we need
-			// the first point
-			return polygon.getVertex(0);
-		} else
-			return polygon.getVertex(index + 1);
 	}
 
 	/**
