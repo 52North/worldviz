@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 import org.n52.v3d.worldviz.featurenet.shapes.*;
 
 /**
- * Concrete X3D scene description of a 3-d connection-map.
+ * Concrete X3D scene description of a 3-d relation-map.
  *
  * @author Adhitya Kamakshidasan
  */
@@ -36,7 +36,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
     private boolean x3domMode = true;
 
     //This is used to map the geo-coordinates to the scene coordinates
-    private Map<VgPoint, VgPoint> pointMap = new HashMap<VgPoint, VgPoint>(); 
+    private Map<VgPoint, VgPoint> pointMap = new HashMap<VgPoint, VgPoint>();
+    private Map<VgPoint, Integer> indexPointMap = new HashMap<VgPoint, Integer>();
     
     private ArrayList <VgPoint> geoCoordinates;
     
@@ -63,6 +64,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
         
         for(int i=0; i<geoCoordinates.size(); i++){
             pointMap.put(geoCoordinates.get(i), sceneCoordinates.get(i));
+            indexPointMap.put(sceneCoordinates.get(i),i+1);
         }
     }
 
@@ -92,9 +94,53 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 //Handle click on a shape
                 writeLine("    function handleSingleClick(shape){");
-                writeLine("        $('#lastClickedObject').html($(shape).attr(\"def\"));");
-                writeLine("     }");
+                writeLine("        var data_class = $(shape).attr(\"data-class\"); ");
+                writeLine("            if(data_class != \"feature\"){");
+                writeLine("                document.getElementById(\"lastClickedObject\").innerHTML = data_class + \" false\";");
+                writeLine("            }");
+                writeLine("            else{");
+                writeLine("                var data_index = $(shape).attr(\"data-index\"); ");
+                writeLine("                document.getElementById(\"lastClickedObject\").innerHTML = data_class + \" \" + data_index;");
+                writeLine("                showRelationsForNode(data_index);");
+                writeLine("            }");
+                writeLine("    }");
+
+                writeLine();
                 
+                writeLine("    function showRelationsForNode(nodeId) {");
+                writeLine("        var x = document.getElementsByTagName(\"shape\");");
+                writeLine("        var i;");
+                writeLine("        for (i = 0; i < x.length; i++) {");
+                writeLine("            var data_class = x[i].getAttribute(\"data-class\");");
+                writeLine("            if(data_class == \"relation\"){");
+                writeLine("                var firstId = x[i].getAttribute(\"data-firstId\");");
+                writeLine("                var secondId = x[i].getAttribute(\"data-secondId\");");
+                writeLine("                if(firstId == nodeId || secondId == nodeId){");
+                writeLine("                    x[i].render = \"true\";");
+                writeLine("                }");
+                writeLine("                else{");
+                writeLine("                    x[i].render = \"false\";");
+                writeLine("                }");
+                writeLine("            }");
+                writeLine("        }");
+                writeLine("    }");
+             
+                writeLine();
+                
+                
+                writeLine("    function showAllRelations() {");
+                writeLine("        var x = document.getElementsByTagName(\"shape\");");
+                writeLine("        var i;");
+                writeLine("        for (i = 0; i < x.length; i++) {");
+                writeLine("            var data_class = x[i].getAttribute(\"data-class\");");
+                writeLine("            if(data_class == \"relation\"){");
+                writeLine("                x[i].render = \"true\";");
+                writeLine("            }");
+                writeLine("        }");
+                writeLine("    }");
+                
+                writeLine();
+                                
                 writeLine("    $(document).ready(function(){");
                 //Add a onclick callback to every shape
                 writeLine("        $(\"shape\").each(function() {");
@@ -103,8 +149,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    });");
                 
                 writeLine("    </script>");
-                
-                
                 
                 
                 
@@ -126,7 +170,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <Background skyColor='1 1 1' />");
             }
             
-            writeLine();
+            writeLine("    <Viewpoint position='0 0.5 2.5'> </Viewpoint>");
+            
+            writeLine("");
 
             logger.info("Parsing Edges");
             MpSimpleHypsometricColor simpleColorMapper = new MpSimpleHypsometricColor();
@@ -146,6 +192,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     firstVertex = pointMap.get(firstVertex);
                     secondVertex = pointMap.get(secondVertex);
+                    
+                    int firstId = indexPointMap.get(firstVertex);
+                    int secondId = indexPointMap.get(secondVertex);
 
                     //calculate angles/rotation
                     SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
@@ -166,7 +215,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
                         writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
                         
-                        writeLine("            <Shape DEF=\"ribbonShape\">");
+                        writeLine("            <Shape render=\"true\" DEF=\"ribbonShape\" " +"data-class=\"relation\" "+ "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                         writeLine("              <Appearance>");
                         
                         double weight = (Double) edge.getValue();
@@ -232,6 +281,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     firstVertex = pointMap.get(firstVertex);
                     secondVertex = pointMap.get(secondVertex);
+                    
+                    int firstId = indexPointMap.get(firstVertex);
+                    int secondId = indexPointMap.get(secondVertex);
 
                     //calculate angles/rotation
                     SceneSymbolTransformer_CurvedConnections sceneSymbolTransformer = new SceneSymbolTransformer_CurvedConnections(firstVertex, secondVertex, curveDirection);
@@ -256,7 +308,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
 
 
-                        writeLine("            <Shape DEF=\"ellipseShape\">");
+                        writeLine("            <Shape render=\"true\" DEF=\"ellipseShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                         writeLine("              <Appearance>");
                         T3dColor color = simpleColorMapper.transform(weight);
                         float red = color.getRed();
@@ -325,6 +377,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     firstVertex = pointMap.get(firstVertex);
                     secondVertex = pointMap.get(secondVertex);
 
+                    int firstId = indexPointMap.get(firstVertex);
+                    int secondId = indexPointMap.get(secondVertex);
+                    
                     //calculate angles/rotation
                     SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
                     double angleX = sceneSymbolTransformer.getAngleX();
@@ -337,6 +392,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     //cylinder height
                     double cylinderHeight = sceneSymbolTransformer.getLengthFromTo();
                     if(cylinderHeight != 0){
+                        
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                         writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
@@ -352,7 +408,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         float green = color.getGreen();
                         float blue = color.getBlue();
                         
-                        writeLine("            <Shape DEF=\"cylinderShape\">");
+                        writeLine("            <Shape render=\"true\" DEF=\"cylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                         writeLine("              <Appearance>");
                         writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
@@ -380,6 +436,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 firstVertex = pointMap.get(firstVertex);
                 secondVertex = pointMap.get(secondVertex);
+                
+                int firstId = indexPointMap.get(firstVertex);
+                int secondId = indexPointMap.get(secondVertex);
+                    
                 
                 //calculate angles/rotation
                 SceneSymbolTransformer_StraightConnections angleCalc = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
@@ -421,18 +481,16 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
                     writeLine("            <Group>");
-                    writeLine("              <Shape DEF=\"arrowConeShape\">");
+                    writeLine("              <Shape render=\"true\" DEF=\"arrowCylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("                <Appearance>");
-                    
                     writeLine("                  <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
-
                     writeLine("                </Appearance>");
                     writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("              </Shape>");                
 
 
                     writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
-                    writeLine("                <Shape DEF=\"arrowCylinderShape\">");
+                    writeLine("                <Shape render=\"true\" DEF=\"arrowConeShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("                  <Appearance>");
                     writeLine("                    <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                  </Appearance>"); 
@@ -445,7 +503,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("        </Transform>");
                     writeLine("      </Transform>");
                     writeLine("    </Transform>");
-
                     writeLine();    
                 }
                 
@@ -458,9 +515,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 VgPoint point = (VgPoint) (vertex.getGeometry());
                 point = pointMap.get(point);
+                int indexPoint = indexPointMap.get(point);
                 if ("Sphere".equals(symbolType)) {
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
-                    writeLine("      <Shape DEF=\"sphereShape\">");
+                    writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
                     writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
                     writeLine("        </Appearance>");
@@ -468,7 +526,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 }
                 else if ("Box".equals(symbolType)) {
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
-                    writeLine("      <Shape DEF=\"boxShape\">");
+                    writeLine("      <Shape render=\"true\" DEF=\"boxShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
                     writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
                     writeLine("        </Appearance>");
@@ -476,7 +534,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 }
                 else {
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
-                    writeLine("      <Shape DEF=\"sphereShape\">");
+                    writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
                     writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
                     writeLine("        </Appearance>");
@@ -491,7 +549,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
                 //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
                 writeLine("        <Billboard axisOfRotation='0 0 0'>");
-                writeLine("          <Shape DEF=\"labelText\">");
+                writeLine("          <Shape DEF=\"labelText\" data-class=\"information\">");
                 writeLine("            <Appearance>");
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("            </Appearance>");
@@ -517,6 +575,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <h3>Last clicked object:</h3> ");
                 writeLine("    <span id=\"lastClickedObject\">-</span>");
                 writeLine("</div>");
+                writeLine("<button onclick=\"showAllRelations()\">Show all</button>");
                 
                 writeLine("  </body>");
                 writeLine("</html>");
