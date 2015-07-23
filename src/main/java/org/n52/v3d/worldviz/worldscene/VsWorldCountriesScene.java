@@ -502,7 +502,7 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 	private void writePoint(VgPoint point) {
 		w("" + this.decimalFormatter.format(point.getX()) + " "
 				+ this.decimalFormatter.format(point.getZ()) + " "
-				+ this.decimalFormatter.format((-point.getY())) + " ");
+				+ this.decimalFormatter.format(-point.getY()) + " ");
 	}
 
 	/**
