@@ -92,17 +92,17 @@ public class CarbonEmissions_ExtrusionTest {
 		
 		AxisSwitchTransform axisSwitch = new AxisSwitchTransform();
 
-//		VsWorldCountriesScene scene = new VsWorldCountriesOnASphereScene(
-//				outputFile);
-//
-//		// this is for quick test purposes
-//		((VsWorldCountriesOnASphereScene) scene)
-//				.setGenerateAdditionalInnerPolygonPoints(false);
+		VsWorldCountriesScene scene = new VsWorldCountriesOnASphereScene(
+				outputFile);
+
+		// this is for quick test purposes
+		((VsWorldCountriesOnASphereScene) scene)
+				.setGenerateAdditionalInnerPolygonPoints(false);
 		// scene.setxRasterWidth(2.5f);
 		// scene.setyRasterWidth(2.5f);
 
-		 VsWorldCountriesScene scene = new VsWorldCountriesScene(
-		 outputFile);
+//		 VsWorldCountriesScene scene = new VsWorldCountriesScene(
+//		 outputFile);
 
 		for (VgAttrFeature coloredExtrudedFeature : allColoredWorldCountries) {
 			
