@@ -46,6 +46,115 @@
         }
     }
 
+	function addNewColor(){
+		var table = document.getElementById("colorTable");
+		var done = false;
+
+		var newInputColor = document.getElementById("NewInputColor").value;
+		var newOutputColor = document.getElementById("NewOutputColor").value;
+
+		if((newInputColor.split(" ")).length == 1){
+			newInputColor = parseFloat(newInputColor);
+		}
+
+		newOutputColor = newOutputColor.split(" ");
+
+		if(newOutputColor.length == 3){
+			var red = parseFloat(newOutputColor[0]);
+			var green = parseFloat(newOutputColor[1]);
+			var blue = parseFloat(newOutputColor[2]);
+
+			if( !isNaN(newInputColor) && red>=0 && red<=1 && green>=0 && green<=1 && blue>=0 && blue<=1 ){
+				var valuePresent = false;
+				var i = 1;
+				var table_length = table.rows.length;
+
+				for(;i<table_length;i++){
+					if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputColor){
+						valuePresent = true;
+						break;
+					}
+				}
+
+				if(!valuePresent){
+					var rows = table.rows.length;
+					var newRow = table.insertRow(rows);
+					var inputColor = newRow.insertCell(0);
+					var outputColor = newRow.insertCell(1);
+					inputColor.innerHTML = newInputColor;
+					outputColor.innerHTML = red + " "+green +" "+blue;
+				}
+				else{
+					table.rows[i].cells[1].innerHTML = red + " "+green +" "+blue;
+				}
+				done = true;
+			}
+			
+		}
+		
+		if(done){
+			document.getElementById("NewInputColor").value = "";
+			document.getElementById("NewOutputColor").value = "";
+		}
+			
+	}
+	
+	function addNewWidth(){
+		var done = false;
+		var table = document.getElementById("widthTable");
+	
+		var newInputWidth = document.getElementById("NewInputWidth").value;
+		var newOutputWidth = document.getElementById("NewOutputWidth").value;
+		
+		if( (newInputWidth.split(" ")).length == 1 && (newOutputWidth.split(" ")).length == 1){
+			newInputWidth = parseFloat(newInputWidth);
+			newOutputWidth = parseFloat(newOutputWidth);
+		}
+		
+		if( !isNaN(newInputWidth) && !isNaN(newOutputWidth) ){
+		
+			var valuePresent = false;
+			var i = 1;
+			var table_length = table.rows.length;
+			
+			for(;i<table_length;i++){
+				if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputWidth){
+					valuePresent = true;
+					break;
+				}
+			}
+			
+			if(!valuePresent){
+				var rows = table.rows.length;
+				var newRow = table.insertRow(rows);
+				var inputWidth = newRow.insertCell(0);
+				var outputWidth = newRow.insertCell(1);
+				inputWidth.innerHTML = newInputWidth;
+				outputWidth.innerHTML = newOutputWidth;
+			}
+			else{
+				table.rows[i].cells[1].innerHTML = newOutputWidth;
+			}
+			done = true;
+		}
+		if(done){
+			document.getElementById("NewInputWidth").value = "";
+			document.getElementById("NewOutputWidth").value = "";
+		}
+		
+	}
+	
+	function deleteNewColor(){
+		var table = document.getElementById("colorTable");
+		var rows = document.getElementById("colorTable").rows.length;
+		table.deleteRow(rows-1);
+	}
+	
+	function deleteNewWidth(){
+		var table = document.getElementById("widthTable");
+		var rows = document.getElementById("widthTable").rows.length;
+		table.deleteRow(rows-1);
+	}
     $(document).ready(function(){
         $("shape").each(function() {
             $(this).attr("onclick", "handleSingleClick(this)");
@@ -4993,10 +5102,61 @@
 </X3D>
 
 
-<div style="position:absolute;left:1000px;top:70px;width:200px">
-    <h3>Last clicked object:</h3> 
-    <span id="lastClickedObject">-</span>
-</div>
 <button onclick="showAllRelations()">Show all</button>
+<br>
+<br>
+<table id = "colorTable">
+<tr><th>Input Colour</th><th>Output Color</th></tr>
+<tr><td>
+0.0
+</td><td>
+0.0 1.0 0.0
+</td></tr>
+<tr><td>
+150.0
+</td><td>
+1.0 1.0 0.0
+</td></tr>
+<tr><td>
+367.0
+</td><td>
+1.0 0.0 0.0
+</td></tr>
+</table>
+<br>
+<br>
+<table id = "widthTable">
+<tr><th>Input Width</th><th>Output Width</th></tr>
+<tr><td>
+0.0
+</td><td>
+0.001
+</td></tr>
+<tr><td>
+367.0
+</td><td>
+0.01
+</td></tr>
+</table>
+<br>
+<br>
+Input Color: <input type="text" id="NewInputColor">
+Output Color: <input type="text" id="NewOutputColor">
+<br>
+<br>
+<button id="ColorAddButton" onclick="addNewColor()">Add Color</button>
+<button id="ColorAddButton" onclick="deleteNewColor()">Delete Color</button>
+<br>
+<br>
+Input Width: <input type="text" id="NewInputWidth">
+Output Width: <input type="text" id="NewOutputWidth">
+<br>
+<br>
+<button id="WidthAddButton" onclick="addNewWidth()">Add Width</button>
+<button id="WidthDeleteButton" onclick="deleteNewWidth()">Delete Width</button>
+<br>
+<br>
+<h3>Last clicked object:</h3> 
+<span id="lastClickedObject">-</span>
   </body>
 </html>
