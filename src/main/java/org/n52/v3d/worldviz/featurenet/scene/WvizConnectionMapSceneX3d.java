@@ -140,6 +140,121 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    }");
                 
                 writeLine();
+                
+                writeLine("	function addNewColor(){");
+                writeLine("		var table = document.getElementById(\"colorTable\");");
+                writeLine("		var done = false;");
+                writeLine();
+                writeLine("		var newInputColor = document.getElementById(\"NewInputColor\").value;");
+                writeLine("		var newOutputColor = document.getElementById(\"NewOutputColor\").value;");
+                writeLine();
+                writeLine("		if((newInputColor.split(\" \")).length == 1){");
+                writeLine("			newInputColor = parseFloat(newInputColor);");
+                writeLine("		}");
+                writeLine();
+                writeLine("		newOutputColor = newOutputColor.split(\" \");");
+                writeLine();
+                writeLine("		if(newOutputColor.length == 3){");
+                writeLine("			var red = parseFloat(newOutputColor[0]);");
+                writeLine("			var green = parseFloat(newOutputColor[1]);");
+                writeLine("			var blue = parseFloat(newOutputColor[2]);");
+                writeLine();
+                writeLine("			if( !isNaN(newInputColor) && red>=0 && red<=1 && green>=0 && green<=1 && blue>=0 && blue<=1 ){");
+                writeLine("				var valuePresent = false;");
+                writeLine("				var i = 1;");
+                writeLine("				var table_length = table.rows.length;");
+                writeLine();
+                writeLine("				for(;i<table_length;i++){");
+                writeLine("					if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputColor){");
+                writeLine("						valuePresent = true;");
+                writeLine("						break;");
+                writeLine("					}");
+                writeLine("				}");
+                writeLine();
+                writeLine("				if(!valuePresent){");
+                writeLine("					var rows = table.rows.length;");
+                writeLine("					var newRow = table.insertRow(rows);");
+                writeLine("					var inputColor = newRow.insertCell(0);");
+                writeLine("					var outputColor = newRow.insertCell(1);");
+                writeLine("					inputColor.innerHTML = newInputColor;");
+                writeLine("					outputColor.innerHTML = red + \" \"+green +\" \"+blue;");
+                writeLine("				}");
+                writeLine("				else{");
+                writeLine("					table.rows[i].cells[1].innerHTML = red + \" \"+green +\" \"+blue;");
+                writeLine("				}");
+                writeLine("				done = true;");
+                writeLine("			}");
+                writeLine("			");
+                writeLine("		}");
+                writeLine("		");
+                writeLine("		if(done){");
+                writeLine("			document.getElementById(\"NewInputColor\").value = \"\";");
+                writeLine("			document.getElementById(\"NewOutputColor\").value = \"\";");
+                writeLine("		}");
+                writeLine("			");	
+                writeLine("	}");
+                writeLine("	");
+                
+                writeLine("	function addNewWidth(){");
+                writeLine("		var done = false;");
+                writeLine("		var table = document.getElementById(\"widthTable\");");
+                writeLine("	");
+                writeLine("		var newInputWidth = document.getElementById(\"NewInputWidth\").value;");
+                writeLine("		var newOutputWidth = document.getElementById(\"NewOutputWidth\").value;");
+                writeLine("		");
+                writeLine("		if( (newInputWidth.split(\" \")).length == 1 && (newOutputWidth.split(\" \")).length == 1){");
+                writeLine("			newInputWidth = parseFloat(newInputWidth);");
+                writeLine("			newOutputWidth = parseFloat(newOutputWidth);");
+                writeLine("		}");
+                writeLine("		");
+                writeLine("		if( !isNaN(newInputWidth) && !isNaN(newOutputWidth) ){");
+                writeLine("		");
+                writeLine("			var valuePresent = false;");
+                writeLine("			var i = 1;");
+                writeLine("			var table_length = table.rows.length;");
+                writeLine("			");
+                writeLine("			for(;i<table_length;i++){");
+                writeLine("				if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputWidth){");
+                writeLine("					valuePresent = true;");
+                writeLine("					break;");
+                writeLine("				}");
+                writeLine("			}");
+                writeLine("			");
+                writeLine("			if(!valuePresent){");
+                writeLine("				var rows = table.rows.length;");
+                writeLine("				var newRow = table.insertRow(rows);");
+                writeLine("				var inputWidth = newRow.insertCell(0);");
+                writeLine("				var outputWidth = newRow.insertCell(1);");
+                writeLine("				inputWidth.innerHTML = newInputWidth;");
+                writeLine("				outputWidth.innerHTML = newOutputWidth;");
+                writeLine("			}");
+                writeLine("			else{");
+                writeLine("				table.rows[i].cells[1].innerHTML = newOutputWidth;");
+                writeLine("			}");
+                writeLine("			done = true;");
+                writeLine("		}");
+                writeLine("		if(done){");
+                writeLine("			document.getElementById(\"NewInputWidth\").value = \"\";");
+                writeLine("			document.getElementById(\"NewOutputWidth\").value = \"\";");
+                writeLine("		}");
+                writeLine("		");
+                writeLine("	}");
+                writeLine("	");
+                
+                writeLine("	function deleteNewColor(){");
+                
+                writeLine("		var table = document.getElementById(\"colorTable\");");
+                writeLine("		var rows = document.getElementById(\"colorTable\").rows.length;");
+                writeLine("		table.deleteRow(rows-1);");
+                writeLine("	}");
+                writeLine("	");
+                
+                writeLine("	function deleteNewWidth(){");
+                writeLine("		var table = document.getElementById(\"widthTable\");");
+                writeLine("		var rows = document.getElementById(\"widthTable\").rows.length;");
+                writeLine("		table.deleteRow(rows-1);");
+                writeLine("	}");
+                
                                 
                 writeLine("    $(document).ready(function(){");
                 //Add a onclick callback to every shape
@@ -570,12 +685,62 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             if (x3domMode) {
                 writeLine();
                 writeLine();
-                
-                writeLine("<div style=\"position:absolute;left:1000px;top:70px;width:200px\">");
-                writeLine("    <h3>Last clicked object:</h3> ");
-                writeLine("    <span id=\"lastClickedObject\">-</span>");
-                writeLine("</div>");
+                                
                 writeLine("<button onclick=\"showAllRelations()\">Show all</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<table id = \"colorTable\">");
+                writeLine("<tr><th>Input Colour</th><th>Output Color</th></tr>");
+                for (int i=0;i<inputColorValues.length;i++){ 
+                  writeLine("<tr><td>");
+                  writeLine(String.valueOf(inputColorValues[i]));
+                  writeLine("</td><td>");
+                  writeLine(outputColorValues[i].getRed() + " "+ outputColorValues[i].getGreen()+ " "+outputColorValues[i].getBlue());
+                  writeLine("</td></tr>");
+                }
+                writeLine("</table>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<table id = \"widthTable\">");
+                writeLine("<tr><th>Input Width</th><th>Output Width</th></tr>");
+                for (int i=0;i<inputWidthValues.length;i++){ 
+                  writeLine("<tr><td>");
+                  writeLine(String.valueOf(inputWidthValues[i]));
+                  writeLine("</td><td>");
+                  writeLine(String.valueOf(outputWidthValues[i]));
+                  writeLine("</td></tr>");
+                }
+                writeLine("</table>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("Input Color: <input type=\"text\" id=\"NewInputColor\">");
+                writeLine("Output Color: <input type=\"text\" id=\"NewOutputColor\">");
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<button id=\"ColorAddButton\" onclick=\"addNewColor()\">Add Color</button>");
+                writeLine("<button id=\"ColorAddButton\" onclick=\"deleteNewColor()\">Delete Color</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+
+                writeLine("Input Width: <input type=\"text\" id=\"NewInputWidth\">");
+                writeLine("Output Width: <input type=\"text\" id=\"NewOutputWidth\">");
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<button id=\"WidthAddButton\" onclick=\"addNewWidth()\">Add Width</button>");
+                writeLine("<button id=\"WidthDeleteButton\" onclick=\"deleteNewWidth()\">Delete Width</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<h3>Last clicked object:</h3> ");
+                writeLine("<span id=\"lastClickedObject\">-</span>");
                 
                 writeLine("  </body>");
                 writeLine("</html>");
