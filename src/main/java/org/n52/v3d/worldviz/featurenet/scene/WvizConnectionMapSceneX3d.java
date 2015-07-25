@@ -255,6 +255,76 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("		table.deleteRow(rows-1);");
                 writeLine("	}");
                 
+                
+                writeLine("	function sortColorTable(f,n){ ");
+                writeLine("	  var rows = $('#colorTable tbody  tr').get(); ");
+                writeLine(" ");
+                writeLine("	  rows.sort(function(a, b) { ");
+                writeLine(" ");
+                writeLine("	  var A = $(a).children('td').eq(n).text().toUpperCase(); ");
+                writeLine("	  var B = $(b).children('td').eq(n).text().toUpperCase(); ");
+                writeLine("	   ");
+                writeLine("	  A = parseFloat(A); ");
+                writeLine("	  B = parseFloat(B); ");
+                writeLine(" ");
+                writeLine("	  if(A < B) { ");
+                writeLine("		return 1*f; ");
+                writeLine("	  } ");
+                writeLine("	  if(A > B) { ");
+                writeLine("		return -1*f; ");
+                writeLine("	  } ");
+                writeLine("	  return 0; ");
+                writeLine("	  }); ");
+                writeLine(" ");
+                writeLine("	  $.each(rows, function(index, row) { ");
+                writeLine("		$('#colorTable').children('tbody').append(row); ");
+                writeLine("	  }); ");
+                writeLine("	} ");
+                writeLine("	 ");
+                writeLine("	 ");
+                
+                writeLine("	function sortColorFunction(){ ");
+                writeLine("		var f_sl = 1; ");
+                writeLine("		f_sl *= -1; ");
+                writeLine("		var n = 0; ");
+                writeLine("		sortColorTable(f_sl,n); ");
+                writeLine("	}; ");
+                writeLine("	 ");
+                
+                writeLine("	function sortWidthTable(f,n){ ");
+                writeLine("	  var rows = $('#widthTable tbody  tr').get(); ");
+                writeLine(" ");
+                writeLine("	  rows.sort(function(a, b) { ");
+                writeLine(" ");
+                writeLine("	  var A = $(a).children('td').eq(n).text().toUpperCase(); ");
+                writeLine("	  var B = $(b).children('td').eq(n).text().toUpperCase(); ");
+                writeLine("	   ");
+                writeLine("	  A = parseFloat(A); ");
+                writeLine("	  B = parseFloat(B); ");
+                writeLine(" ");
+                writeLine("	  if(A < B) { ");
+                writeLine("		return 1*f; ");
+                writeLine("	  } ");
+                writeLine("	  if(A > B) { ");
+                writeLine("		return -1*f; ");
+                writeLine("	  } ");
+                writeLine("	  return 0; ");
+                writeLine("	  }); ");
+                writeLine(" ");
+                writeLine("	  $.each(rows, function(index, row) { ");
+                writeLine("		$('#widthTable').children('tbody').append(row); ");
+                writeLine("	  }); ");
+                writeLine("	} ");
+                writeLine("	 ");
+                writeLine("	 ");
+                
+                writeLine("	function sortWidthFunction(){ ");
+                writeLine("		var f_sl = 1; ");
+                writeLine("		f_sl *= -1; ");
+                writeLine("		var n = 0; ");
+                writeLine("		sortWidthTable(f_sl,n); ");
+                writeLine("	}; ");
+                
                                 
                 writeLine("    $(document).ready(function(){");
                 //Add a onclick callback to every shape
@@ -692,7 +762,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<br>");
                 
                 writeLine("<table id = \"colorTable\">");
-                writeLine("<tr><th>Input Colour</th><th>Output Color</th></tr>");
+                writeLine("<thead>");
+                writeLine("<tr><th onclick = \"sortColorFunction()\">Input Colour</th><th>Output Color</th></tr>");
+                writeLine("</thead>");
+                writeLine("<tbody>");
                 for (int i=0;i<inputColorValues.length;i++){ 
                   writeLine("<tr><td>");
                   writeLine(String.valueOf(inputColorValues[i]));
@@ -700,13 +773,17 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                   writeLine(outputColorValues[i].getRed() + " "+ outputColorValues[i].getGreen()+ " "+outputColorValues[i].getBlue());
                   writeLine("</td></tr>");
                 }
+                writeLine("</tbody>");
                 writeLine("</table>");
                 
                 writeLine("<br>");
                 writeLine("<br>");
                 
                 writeLine("<table id = \"widthTable\">");
-                writeLine("<tr><th>Input Width</th><th>Output Width</th></tr>");
+                writeLine("<thead>");
+                writeLine("<tr><th onclick = \"sortWidthFunction()\">Input Width</th><th>Output Width</th></tr>");
+                writeLine("</thead>");
+                writeLine("<tbody>");
                 for (int i=0;i<inputWidthValues.length;i++){ 
                   writeLine("<tr><td>");
                   writeLine(String.valueOf(inputWidthValues[i]));
@@ -714,6 +791,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                   writeLine(String.valueOf(outputWidthValues[i]));
                   writeLine("</td></tr>");
                 }
+                writeLine("</tbody>");
                 writeLine("</table>");
                 
                 writeLine("<br>");
