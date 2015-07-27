@@ -394,6 +394,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     double distance = sceneSymbolTransformer.getLengthFromTo();
                     
                     if(distance != 0){
+                        
+                        double weight = (Double) edge.getValue();
 
                         writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                         writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
@@ -403,14 +405,12 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         writeLine("            <Shape render=\"true\" DEF=\"ribbonShape\" " +"data-class=\"relation\" "+ "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                         writeLine("              <Appearance>");
                         
-                        double weight = (Double) edge.getValue();
                         T3dColor color = simpleColorMapper.transform(weight);
-                        
                         float red = color.getRed();
                         float green = color.getGreen();
                         float blue = color.getBlue();
                         
-                        writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                        writeLine("                <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
 
                         writeLine("              <Extrusion creaseAngle='"+0.785+"'");
@@ -500,7 +500,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         float green = color.getGreen();
                         float blue = color.getBlue();
                         
-                        writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                        writeLine("                <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
 
                         writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+1.57+"'");
@@ -595,7 +595,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                         
                         writeLine("            <Shape render=\"true\" DEF=\"cylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                         writeLine("              <Appearance>");
-                        writeLine("                <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                        writeLine("                <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                         writeLine("              </Appearance>");
 
                         writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+radius+ "\"/>");
@@ -668,7 +668,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("            <Group>");
                     writeLine("              <Shape render=\"true\" DEF=\"arrowCylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("                <Appearance>");
-                    writeLine("                  <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("                  <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                </Appearance>");
                     writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("              </Shape>");                
@@ -677,7 +677,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
                     writeLine("                <Shape render=\"true\" DEF=\"arrowConeShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("                  <Appearance>");
-                    writeLine("                    <Material diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("                    <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                  </Appearance>"); 
                     writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
                     writeLine("                </Shape>");

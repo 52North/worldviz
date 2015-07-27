@@ -32,7 +32,7 @@ MpSimpleHypsometricColor.prototype.transform = function(inputValue) {
 			}
 		}
 	}
-	return outputColors[inputValues.length - 1];
+	return this.outputColors[inputValues.length - 1];
 }
 
 function interpolateHSV(pColFrom, pColTo, pFactor) {
