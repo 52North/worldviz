@@ -120,247 +120,241 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             simpleColorMapper.setPalette(inputColorValues, outputColorValues, linearColorInterpolation);
             widthMapper.setPalette(inputWidthValues, outputWidthValues, linearWidthInterpolation);
                 
+            for (VgRelation edge : scene.getEdges()) {
 
-            if(ribbonMode){
-                for (VgRelation edge : scene.getEdges()) {
-                
-                    logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
+                logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
 
-                    VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
-                    VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
+                VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
+                VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
 
-                    firstVertex = pointMap.get(firstVertex);
-                    secondVertex = pointMap.get(secondVertex);
-                    
-                    int firstId = indexPointMap.get(firstVertex);
-                    int secondId = indexPointMap.get(secondVertex);
+                firstVertex = pointMap.get(firstVertex);
+                secondVertex = pointMap.get(secondVertex);
 
-                    //calculate angles/rotation
-                    SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
-                    double angleX = sceneSymbolTransformer.getAngleX();
-                    double angleY = sceneSymbolTransformer.getAngleY();
-                    double angleZ = sceneSymbolTransformer.getAngleZ();
+                int firstId = indexPointMap.get(firstVertex);
+                int secondId = indexPointMap.get(secondVertex);
 
-                    //calculate translation (mid-point between both end-points of the edge)
-                    VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
+                //calculate angles/rotation
+                SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
+                double angleX = sceneSymbolTransformer.getAngleX();
+                double angleY = sceneSymbolTransformer.getAngleY();
+                double angleZ = sceneSymbolTransformer.getAngleZ();
 
-                    //cylinder height
-                    double distance = sceneSymbolTransformer.getLengthFromTo();
-                    
-                    if(distance != 0){
-                        
-                        double weight = (Double) edge.getValue();
+                //calculate translation (mid-point between both end-points of the edge)
+                VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
 
-                        writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
-                        writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
-                        writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
-                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
-                        
-                        writeLine("            <Shape render=\"true\" DEF=\"ribbonShape\" " +"data-class=\"relation\" "+ "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
-                        writeLine("              <Appearance>");
-                        
-                        T3dColor color = simpleColorMapper.transform(weight);
-                        float red = color.getRed();
-                        float green = color.getGreen();
-                        float blue = color.getBlue();
-                        
-                        writeLine("                <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
-                        writeLine("              </Appearance>");
+                //cylinder height
+                double distance = sceneSymbolTransformer.getLengthFromTo();
 
-                        writeLine("              <Extrusion creaseAngle='"+0.785+"'");
-                        writeLine("              crossSection='");
-                        Circle circle = new Circle();
-                        
-                        double radius = widthMapper.transform(weight);
-                        
-                        ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
-                        for(T3dVector vector: circlePoints){
-                            //double x = vector.getX();
-                            //double y = vector.getY();
-                            double x = floor(100000*vector.getX() +0.5)/100000;
-                            double y = floor(100000*vector.getY() +0.5)/100000;
-                            writeLine("              "+x+" "+y);
-                        }
-                        writeLine("              '");
-                        writeLine("              spine='");
-                        Ribbon ribbon = new Ribbon();
-                        ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance, 3);
-                        for(T3dVector vector: ribbonPoints){
-                            //double x = vector.getX();
-                            //double y = vector.getY();
-                            //double z = vector.getZ();
-                            double x = floor(100000*vector.getX() +0.5)/100000;
-                            double y = floor(100000*vector.getY() +0.5)/100000;
-                            double z = floor(100000*vector.getZ() +0.5)/100000;
-                            writeLine("              "+x+" "+y+" "+z);
-                        }
-                        writeLine("              '/>");
-                        writeLine("            </Shape>");
-                        writeLine("          </Transform>");
-                        writeLine("        </Transform>");
-                        writeLine("      </Transform>");
-                        writeLine("    </Transform>");
-                        writeLine();
+                if(distance != 0){
 
-                    }
-                    
-                }
-            }
-            
-            if(curveMode){
-            	
-            	T3dVector curveDirection = new T3dVector(0, 1, 0);
-            	
-                for (VgRelation edge : scene.getEdges()) {
-                
-                    logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
-
-                    VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
-                    VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
-
-                    firstVertex = pointMap.get(firstVertex);
-                    secondVertex = pointMap.get(secondVertex);
-                    
-                    int firstId = indexPointMap.get(firstVertex);
-                    int secondId = indexPointMap.get(secondVertex);
-
-                    //calculate angles/rotation
-                    SceneSymbolTransformer_CurvedConnections sceneSymbolTransformer = new SceneSymbolTransformer_CurvedConnections(firstVertex, secondVertex, curveDirection);
-                    double angleX = sceneSymbolTransformer.getAngleX();
-                    double angleY = sceneSymbolTransformer.getAngleY();
-                    double angleZ = sceneSymbolTransformer.getAngleZ();
-
-                    //calculate translation (mid-point between both end-points of the edge)
-                    VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
-
-                    //cylinder height
-                    double distance = sceneSymbolTransformer.getLengthFromTo();
-                    
                     double weight = (Double) edge.getValue();
 
-                    if(distance != 0){
+                    writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
+                    writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                    writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
+                    writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
-                        writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
-                        writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
-                        writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
+                    writeLine("            <Shape render=\"false\" DEF=\"ribbonShape\" " +"data-class=\"relation\" "+ "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
+                    writeLine("              <Appearance>");
+
+                    T3dColor color = simpleColorMapper.transform(weight);
+                    float red = color.getRed();
+                    float green = color.getGreen();
+                    float blue = color.getBlue();
+
+                    writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("              </Appearance>");
+
+                    writeLine("              <Extrusion creaseAngle='"+0.785+"'");
+                    writeLine("              crossSection='");
+                    Circle circle = new Circle();
+
+                    double radius = widthMapper.transform(weight);
+
+                    ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
+                    for(T3dVector vector: circlePoints){
+                        //double x = vector.getX();
+                        //double y = vector.getY();
+                        double x = floor(100000*vector.getX() +0.5)/100000;
+                        double y = floor(100000*vector.getY() +0.5)/100000;
+                        writeLine("              "+x+" "+y);
+                    }
+                    writeLine("              '");
+                    writeLine("              spine='");
+                    Ribbon ribbon = new Ribbon();
+                    ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance, 3);
+                    for(T3dVector vector: ribbonPoints){
+                        //double x = vector.getX();
+                        //double y = vector.getY();
+                        //double z = vector.getZ();
+                        double x = floor(100000*vector.getX() +0.5)/100000;
+                        double y = floor(100000*vector.getY() +0.5)/100000;
+                        double z = floor(100000*vector.getZ() +0.5)/100000;
+                        writeLine("              "+x+" "+y+" "+z);
+                    }
+                    writeLine("              '/>");
+                    writeLine("            </Shape>");
+                    writeLine("          </Transform>");
+                    writeLine("        </Transform>");
+                    writeLine("      </Transform>");
+                    writeLine("    </Transform>");
+                    writeLine();
+
+                }
+
+            }
+
+            
+            	
+            T3dVector curveDirection = new T3dVector(0, 1, 0);
+
+            for (VgRelation edge : scene.getEdges()) {
+
+                logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
+
+                VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
+                VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
+
+                firstVertex = pointMap.get(firstVertex);
+                secondVertex = pointMap.get(secondVertex);
+
+                int firstId = indexPointMap.get(firstVertex);
+                int secondId = indexPointMap.get(secondVertex);
+
+                //calculate angles/rotation
+                SceneSymbolTransformer_CurvedConnections sceneSymbolTransformer = new SceneSymbolTransformer_CurvedConnections(firstVertex, secondVertex, curveDirection);
+                double angleX = sceneSymbolTransformer.getAngleX();
+                double angleY = sceneSymbolTransformer.getAngleY();
+                double angleZ = sceneSymbolTransformer.getAngleZ();
+
+                //calculate translation (mid-point between both end-points of the edge)
+                VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
+
+                //cylinder height
+                double distance = sceneSymbolTransformer.getLengthFromTo();
+
+                double weight = (Double) edge.getValue();
+
+                if(distance != 0){
+
+                    writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
+                    writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                    writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
 //                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
 
 
-                        writeLine("            <Shape render=\"true\" DEF=\"ellipseShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
-                        writeLine("              <Appearance>");
-                        T3dColor color = simpleColorMapper.transform(weight);
-                        float red = color.getRed();
-                        float green = color.getGreen();
-                        float blue = color.getBlue();
-                        
-                        writeLine("                <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
-                        writeLine("              </Appearance>");
+                    writeLine("            <Shape render=\"true\" DEF=\"ellipseShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
+                    writeLine("              <Appearance>");
+                    T3dColor color = simpleColorMapper.transform(weight);
+                    float red = color.getRed();
+                    float green = color.getGreen();
+                    float blue = color.getBlue();
 
-                        writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+1.57+"'");
-                        writeLine("              crossSection='");
-                        Circle circle = new Circle();
-                        
-                        double radius = widthMapper.transform(weight);
-                        
-                        ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
-                        for(T3dVector vector: circlePoints){
-                            //double x = vector.getX();
-                            //double y = vector.getY();
-                            double x = floor(100000*vector.getX() +0.5)/100000;
-                            double y = floor(100000*vector.getY() +0.5)/100000;
-                            writeLine("              "+x+" "+y);
-                        }
-                        writeLine("              '");
-                        writeLine("              spine='");
-                        
-                        //Curve curve = new Curve();
-                        //ArrayList<T3dVector> curvePoints = curve.generateCurve(distance/2, 24); // The radius will be half the distance between the two points
- 
-                        double ellipse_x = distance/2;
-                        double ellipse_y = 1.5 * ellipse_x;
-                        Ellipse ellipse = new Ellipse();
-                        ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, 24);
-                        
-                        for(T3dVector vector: curvePoints){
-                            //double x = vector.getX();
-                            //double y = vector.getY();
-                            //double z = vector.getZ();
-                            double x = floor(100000*vector.getX() +0.5)/100000;
-                            double y = floor(100000*vector.getY() +0.5)/100000;
-                            double z = floor(100000*vector.getZ() +0.5)/100000;
-                            writeLine("              "+x+" "+y+" "+z);
-                        }
-                        writeLine("              '/>");
-                        writeLine("            </Shape>");
-//                      writeLine("          </Transform>");
-                        writeLine("        </Transform>");
-                        writeLine("      </Transform>");
-                        writeLine("    </Transform>");
-                        writeLine();
+                    writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("              </Appearance>");
 
+                    writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+1.57+"'");
+                    writeLine("              crossSection='");
+                    Circle circle = new Circle();
+
+                    double radius = widthMapper.transform(weight);
+
+                    ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
+                    for(T3dVector vector: circlePoints){
+                        //double x = vector.getX();
+                        //double y = vector.getY();
+                        double x = floor(100000*vector.getX() +0.5)/100000;
+                        double y = floor(100000*vector.getY() +0.5)/100000;
+                        writeLine("              "+x+" "+y);
                     }
-                    
+                    writeLine("              '");
+                    writeLine("              spine='");
+
+                    //Curve curve = new Curve();
+                    //ArrayList<T3dVector> curvePoints = curve.generateCurve(distance/2, 24); // The radius will be half the distance between the two points
+
+                    double ellipse_x = distance/2;
+                    double ellipse_y = 1.5 * ellipse_x;
+                    Ellipse ellipse = new Ellipse();
+                    ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, 24);
+
+                    for(T3dVector vector: curvePoints){
+                        //double x = vector.getX();
+                        //double y = vector.getY();
+                        //double z = vector.getZ();
+                        double x = floor(100000*vector.getX() +0.5)/100000;
+                        double y = floor(100000*vector.getY() +0.5)/100000;
+                        double z = floor(100000*vector.getZ() +0.5)/100000;
+                        writeLine("              "+x+" "+y+" "+z);
+                    }
+                    writeLine("              '/>");
+                    writeLine("            </Shape>");
+//                      writeLine("          </Transform>");
+                    writeLine("        </Transform>");
+                    writeLine("      </Transform>");
+                    writeLine("    </Transform>");
+                    writeLine();
+
                 }
+
             }
             
-            else if(!ribbonMode && !curveMode){
             
-                for (VgRelation edge : scene.getEdges()) {
+            for (VgRelation edge : scene.getEdges()) {
 
-                    logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
+                logger.info("Parsing Edge: "+edge.getFrom().toString()+" <--> "+edge.getTo().toString());
 
-                    VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
-                    VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
+                VgPoint firstVertex = (VgPoint) (edge.getFrom()).getGeometry();
+                VgPoint secondVertex = (VgPoint) (edge.getTo()).getGeometry();
 
-                    firstVertex = pointMap.get(firstVertex);
-                    secondVertex = pointMap.get(secondVertex);
+                firstVertex = pointMap.get(firstVertex);
+                secondVertex = pointMap.get(secondVertex);
 
-                    int firstId = indexPointMap.get(firstVertex);
-                    int secondId = indexPointMap.get(secondVertex);
-                    
-                    //calculate angles/rotation
-                    SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
-                    double angleX = sceneSymbolTransformer.getAngleX();
-                    double angleY = sceneSymbolTransformer.getAngleY();
-                    double angleZ = sceneSymbolTransformer.getAngleZ();
+                int firstId = indexPointMap.get(firstVertex);
+                int secondId = indexPointMap.get(secondVertex);
 
-                    //calculate translation (mid-point between both end-points of the edge)
-                    VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
+                //calculate angles/rotation
+                SceneSymbolTransformer_StraightConnections sceneSymbolTransformer = new SceneSymbolTransformer_StraightConnections(firstVertex, secondVertex);
+                double angleX = sceneSymbolTransformer.getAngleX();
+                double angleY = sceneSymbolTransformer.getAngleY();
+                double angleZ = sceneSymbolTransformer.getAngleZ();
 
-                    //cylinder height
-                    double cylinderHeight = sceneSymbolTransformer.getLengthFromTo();
-                    if(cylinderHeight != 0){
-                        
-                        writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
-                        writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
-                        writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
-                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
+                //calculate translation (mid-point between both end-points of the edge)
+                VgPoint midPoint = sceneSymbolTransformer.getMidPoint();
+
+                //cylinder height
+                double cylinderHeight = sceneSymbolTransformer.getLengthFromTo();
+                if(cylinderHeight != 0){
+
+                    writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
+                    writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
+                    writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
+                    writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
 
 
-                        double weight = (Double)edge.getValue();
-                        double radius = widthMapper.transform(weight);
-                        
-                        T3dColor color = simpleColorMapper.transform(weight);
-                        
-                        float red = color.getRed();
-                        float green = color.getGreen();
-                        float blue = color.getBlue();
-                        
-                        writeLine("            <Shape render=\"true\" DEF=\"cylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
-                        writeLine("              <Appearance>");
-                        writeLine("                <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
-                        writeLine("              </Appearance>");
+                    double weight = (Double)edge.getValue();
+                    double radius = widthMapper.transform(weight);
 
-                        writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+radius+ "\"/>");
+                    T3dColor color = simpleColorMapper.transform(weight);
 
-                        writeLine("            </Shape>");
-                        writeLine("          </Transform>");
-                        writeLine("        </Transform>");
-                        writeLine("      </Transform>");
-                        writeLine("    </Transform>");
-                        writeLine();
-                    }
+                    float red = color.getRed();
+                    float green = color.getGreen();
+                    float blue = color.getBlue();
+
+                    writeLine("            <Shape render=\"false\" DEF=\"cylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
+                    writeLine("              <Appearance>");
+                    writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("              </Appearance>");
+
+                    writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+radius+ "\"/>");
+
+                    writeLine("            </Shape>");
+                    writeLine("          </Transform>");
+                    writeLine("        </Transform>");
+                    writeLine("      </Transform>");
+                    writeLine("    </Transform>");
+                    writeLine();
                 }
             }
 
@@ -422,7 +416,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("            <Group>");
                     writeLine("              <Shape render=\"true\" DEF=\"arrowCylinderShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("                <Appearance>");
-                    writeLine("                  <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("                  <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                </Appearance>");
                     writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("              </Shape>");                
@@ -431,7 +425,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              <Transform translation='0 "+coneTranslation+" 0'>");
                     writeLine("                <Shape render=\"true\" DEF=\"arrowConeShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("                  <Appearance>");
-                    writeLine("                    <Material data-weight = \""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
+                    writeLine("                    <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                  </Appearance>"); 
                     writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
                     writeLine("                </Shape>");

@@ -1,12 +1,18 @@
-    function handleSingleClick(shape){
+	function handleSingleClick(shape){
         var data_class = $(shape).attr("data-class"); 
-            if(data_class != "feature"){
-                document.getElementById("lastClickedObject").innerHTML = data_class + " false";
-            }
-            else{
+            if(data_class == "feature"){
                 var data_index = $(shape).attr("data-index"); 
                 document.getElementById("lastClickedObject").innerHTML = data_class + " " + data_index;
                 showRelationsForNode(data_index);
+            }
+			if(data_class == "relation"){
+				var shape_type = $(shape).attr("def");
+				var first = shape.getAttribute("data-firstId");
+				var second = shape.getAttribute("data-secondId");
+                document.getElementById("lastClickedObject").innerHTML = data_class + " " +shape_type +" "+first + " "+ second; 
+            }
+            else{
+				document.getElementById("lastClickedObject").innerHTML = data_class + " false";
             }
     }
 
