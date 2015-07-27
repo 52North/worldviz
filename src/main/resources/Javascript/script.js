@@ -9,7 +9,8 @@
 				var shape_type = $(shape).attr("def");
 				var first = shape.getAttribute("data-firstId");
 				var second = shape.getAttribute("data-secondId");
-                document.getElementById("lastClickedObject").innerHTML = data_class + " " +shape_type +" "+first + " "+ second; 
+                document.getElementById("lastClickedObject").innerHTML = data_class + " " +shape_type +" "+first + " "+ second;
+				changeRelation(shape);
             }
             else{
 				document.getElementById("lastClickedObject").innerHTML = data_class + " false";
@@ -309,6 +310,38 @@
 				x[i].setAttribute('diffuseColor', color);
 			}
         }
+    }
+	
+    function changeRelation(relation) {
+        var x = document.getElementsByTagName("shape");
+		var shape_type = relation.getAttribute("def");
+		if(shape_type == "ellipseShape"){
+			shape_type = "cylinderShape";
+		}
+		else if(shape_type == "cylinderShape"){
+			shape_type = "ribbonShape";
+		}
+		else if(shape_type == "ribbonShape"){
+			shape_type = "ellipseShape";
+		}
+		else{
+			shape_type = "cylinderShape";
+		}
+		
+		var first_id = relation.getAttribute("data-firstId");
+		var second_id = relation.getAttribute("data-secondId");
+		
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if(x[i].getAttribute("data-class") == "relation" &&
+			x[i].getAttribute("data-firstId") == first_id &&
+			x[i].getAttribute("data-secondId") == second_id &&
+			x[i].getAttribute("def") == shape_type){
+                    x[i].render = "true";
+                
+            }
+        }
+		relation.render = "false";
     }
 	
 	
