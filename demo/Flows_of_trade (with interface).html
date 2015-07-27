@@ -5,7 +5,364 @@
     <script type="text/javascript" src="http://www.x3dom.org/x3dom/release/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
     <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/mapper.js"></script>
-    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js"></script>
+    <script>
+	
+		function handleSingleClick(shape){
+        var data_class = $(shape).attr("data-class"); 
+            if(data_class == "feature"){
+                var data_index = $(shape).attr("data-index"); 
+                document.getElementById("lastClickedObject").innerHTML = data_class + " " + data_index;
+                showRelationsForNode(data_index);
+            }
+			if(data_class == "relation"){
+				var shape_type = $(shape).attr("def");
+				var first = shape.getAttribute("data-firstId");
+				var second = shape.getAttribute("data-secondId");
+                document.getElementById("lastClickedObject").innerHTML = data_class + " " +shape_type +" "+first + " "+ second;
+				changeRelation(shape);
+            }
+            else{
+				document.getElementById("lastClickedObject").innerHTML = data_class + " false";
+            }
+    }
+
+    function showRelationsForNode(nodeId) {
+        var x = document.getElementsByTagName("shape");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            var data_class = x[i].getAttribute("data-class");
+            if(data_class == "relation"){
+                var firstId = x[i].getAttribute("data-firstId");
+                var secondId = x[i].getAttribute("data-secondId");
+                if(firstId == nodeId || secondId == nodeId){
+                    x[i].render = "true";
+                }
+                else{
+                    x[i].render = "false";
+                }
+            }
+        }
+    }
+
+    function showAllRelations() {
+        var x = document.getElementsByTagName("shape");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            var data_class = x[i].getAttribute("data-class");
+            if(data_class == "relation"){
+                x[i].render = "true";
+            }
+        }
+    }
+
+	function addNewColor(){
+		var table = document.getElementById("colorTable");
+		var done = false;
+
+		var newInputColor = document.getElementById("NewInputColor").value;
+		var newOutputColor = document.getElementById("NewOutputColor").value;
+
+		if((newInputColor.split(" ")).length == 1){
+			newInputColor = parseFloat(newInputColor);
+		}
+
+		newOutputColor = newOutputColor.split(" ");
+
+		if(newOutputColor.length == 3){
+			var red = parseFloat(newOutputColor[0]);
+			var green = parseFloat(newOutputColor[1]);
+			var blue = parseFloat(newOutputColor[2]);
+
+			if( !isNaN(newInputColor) && red>=0 && red<=1 && green>=0 && green<=1 && blue>=0 && blue<=1 ){
+				var valuePresent = false;
+				var i = 1;
+				var table_length = table.rows.length;
+
+				for(;i<table_length;i++){
+					if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputColor){
+						valuePresent = true;
+						break;
+					}
+				}
+
+				if(!valuePresent){
+					var rows = table.rows.length;
+					var newRow = table.insertRow(rows);
+					var inputColor = newRow.insertCell(0);
+					var outputColor = newRow.insertCell(1);
+					inputColor.innerHTML = newInputColor;
+					outputColor.innerHTML = red + " "+green +" "+blue;
+				}
+				else{
+					table.rows[i].cells[1].innerHTML = red + " "+green +" "+blue;
+				}
+				done = true;
+			}
+			
+		}
+		
+		if(done){
+			document.getElementById("NewInputColor").value = "";
+			document.getElementById("NewOutputColor").value = "";
+		}
+			
+	}
+	
+	function addNewWidth(){
+		var done = false;
+		var table = document.getElementById("widthTable");
+	
+		var newInputWidth = document.getElementById("NewInputWidth").value;
+		var newOutputWidth = document.getElementById("NewOutputWidth").value;
+		
+		if( (newInputWidth.split(" ")).length == 1 && (newOutputWidth.split(" ")).length == 1){
+			newInputWidth = parseFloat(newInputWidth);
+			newOutputWidth = parseFloat(newOutputWidth);
+		}
+		
+		if( !isNaN(newInputWidth) && !isNaN(newOutputWidth) ){
+		
+			var valuePresent = false;
+			var i = 1;
+			var table_length = table.rows.length;
+			
+			for(;i<table_length;i++){
+				if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputWidth){
+					valuePresent = true;
+					break;
+				}
+			}
+			
+			if(!valuePresent){
+				var rows = table.rows.length;
+				var newRow = table.insertRow(rows);
+				var inputWidth = newRow.insertCell(0);
+				var outputWidth = newRow.insertCell(1);
+				inputWidth.innerHTML = newInputWidth;
+				outputWidth.innerHTML = newOutputWidth;
+			}
+			else{
+				table.rows[i].cells[1].innerHTML = newOutputWidth;
+			}
+			done = true;
+		}
+		if(done){
+			document.getElementById("NewInputWidth").value = "";
+			document.getElementById("NewOutputWidth").value = "";
+		}
+		
+	}
+	
+	function deleteNewColor(){
+		var table = document.getElementById("colorTable");
+		var rows = document.getElementById("colorTable").rows.length;
+		table.deleteRow(rows-1);
+	}
+	
+	function deleteNewWidth(){
+		var table = document.getElementById("widthTable");
+		var rows = document.getElementById("widthTable").rows.length;
+		table.deleteRow(rows-1);
+	}
+	function sortColorTable(f,n){ 
+	  var rows = $('#colorTable tbody  tr').get(); 
+ 
+	  rows.sort(function(a, b) { 
+ 
+	  var A = $(a).children('td').eq(n).text().toUpperCase(); 
+	  var B = $(b).children('td').eq(n).text().toUpperCase(); 
+	   
+	  A = parseFloat(A); 
+	  B = parseFloat(B); 
+ 
+	  if(A < B) { 
+		return 1*f; 
+	  } 
+	  if(A > B) { 
+		return -1*f; 
+	  } 
+	  return 0; 
+	  }); 
+ 
+	  $.each(rows, function(index, row) { 
+		$('#colorTable').children('tbody').append(row); 
+	  }); 
+	} 
+	 
+	 
+	function sortColorFunction(){ 
+		var f_sl = 1; 
+		f_sl *= -1; 
+		var n = 0; 
+		sortColorTable(f_sl,n); 
+	}; 
+	 
+	function sortWidthTable(f,n){ 
+	  var rows = $('#widthTable tbody  tr').get(); 
+ 
+	  rows.sort(function(a, b) { 
+ 
+	  var A = $(a).children('td').eq(n).text().toUpperCase(); 
+	  var B = $(b).children('td').eq(n).text().toUpperCase(); 
+	   
+	  A = parseFloat(A); 
+	  B = parseFloat(B); 
+ 
+	  if(A < B) { 
+		return 1*f; 
+	  } 
+	  if(A > B) { 
+		return -1*f; 
+	  } 
+	  return 0; 
+	  }); 
+ 
+	  $.each(rows, function(index, row) { 
+		$('#widthTable').children('tbody').append(row); 
+	  }); 
+	} 
+	 
+	 
+	function sortWidthFunction(){ 
+		var f_sl = 1; 
+		f_sl *= -1; 
+		var n = 0; 
+		sortWidthTable(f_sl,n); 
+	}; 
+	
+	function getInputColors(){ 
+		var inputColors = []
+		var table = document.getElementById("colorTable");
+		var table_length = table.rows.length;
+			
+		for(var i = 1;i<table_length;i++){
+			var inputColorValue = table.rows[i].cells[0].innerHTML;
+			inputColors.push(inputColorValue);
+		}
+		return inputColors;
+	};
+	
+	function getOutputColors(){ 
+		var outputColors = []
+		var table = document.getElementById("colorTable");
+		var table_length = table.rows.length;
+			
+		for(var i = 1;i<table_length;i++){
+			var outputColorValue = table.rows[i].cells[1].innerHTML;
+			outputColorValue = outputColorValue.split(" ");
+			var red = parseFloat(outputColorValue[0]);
+			var green = parseFloat(outputColorValue[1]);
+			var blue = parseFloat(outputColorValue[2]);
+			var color = new T3dColor("RGB", red, green, blue, 1);
+			outputColors.push(color);
+		}
+		return outputColors;
+	};
+	
+	function getInputWidths(){ 
+		var inputWidths = []
+		var table = document.getElementById("widthTable");
+		var table_length = table.rows.length;
+			
+		for(var i = 1;i<table_length;i++){
+			var inputWidthValue = table.rows[i].cells[0].innerHTML;
+			inputWidths.push(inputWidthValue);
+		}
+		return inputWidths;
+	};
+
+	function getOutputWidths(){ 
+		var outputWidths = []
+		var table = document.getElementById("widthTable");
+		var table_length = table.rows.length;
+			
+		for(var i = 1;i<table_length;i++){
+			var outputWidthValue = table.rows[i].cells[1].innerHTML;
+			outputWidths.push(outputWidthValue);
+		}
+		return outputWidths;
+	};
+	
+	function getColorMapper(){
+		sortColorFunction();
+		var inputColors = getInputColors();
+		var outputColors = getOutputColors();
+		
+		var colorMapper = new MpSimpleHypsometricColor();
+		colorMapper.setPalette(inputColors, outputColors, true);
+		return colorMapper;
+	}
+	
+	function getWidthMapper(){
+		sortWidthFunction();
+		var inputWidths = getInputWidths();
+		var outputWidths = getOutputWidths();
+		
+		var widthMapper = new MpValue2NumericExtent();
+		widthMapper.setPalette(inputWidths, outputWidths, true);
+		return widthMapper;
+	}
+	
+	function changeColors(nodeId) {
+		var colorMapper = getColorMapper();
+        var x = document.getElementsByTagName("material");
+        var i;
+        for (i = 0; i < x.length; i++) {
+			if(x[i].hasAttribute("data-weight")){
+				var data_weight = x[i].getAttribute("data-weight");
+				data_weight = parseFloat(data_weight);
+				var transformedColor = colorMapper.transform(data_weight);
+				var red = transformedColor.mRed;
+				var green = transformedColor.mGreen;
+				var blue = transformedColor.mBlue;
+				var color = red + ' '+ blue + ' ' + green;
+				x[i].setAttribute('diffuseColor', color);
+			}
+        }
+    }
+	
+    function changeRelation(relation) {
+        var x = document.getElementsByTagName("shape");
+		var shape_type = relation.getAttribute("def");
+		if(shape_type == "ellipseShape"){
+			shape_type = "cylinderShape";
+		}
+		else if(shape_type == "cylinderShape"){
+			shape_type = "ribbonShape";
+		}
+		else if(shape_type == "ribbonShape"){
+			shape_type = "ellipseShape";
+		}
+		else{
+			shape_type = "cylinderShape";
+		}
+		
+		var first_id = relation.getAttribute("data-firstId");
+		var second_id = relation.getAttribute("data-secondId");
+		
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if(x[i].getAttribute("data-class") == "relation" &&
+			x[i].getAttribute("data-firstId") == first_id &&
+			x[i].getAttribute("data-secondId") == second_id &&
+			x[i].getAttribute("def") == shape_type){
+                    x[i].render = "true";
+                
+            }
+        }
+		relation.render = "false";
+    }
+	
+	
+    $(document).ready(function(){
+        $("shape").each(function() {
+            $(this).attr("onclick", "handleSingleClick(this)");
+        });
+    });
+
+
+	
+	</script>
     <!-- Change the path, when the repository is changed! -->
   </head>
   <body>
@@ -22,9 +379,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.11065722117389562">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="1" data-secondId="3">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="1" data-secondId="3">
               <Appearance>
-                <Material data-weight = "216.0" diffuseColor='1.0 0.6958525 0.0'/>
+                <Material data-weight="216.0" diffuseColor='1.0 0.6958525 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -141,9 +498,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -0.14888994760949661">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="1" data-secondId="7">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="1" data-secondId="7">
               <Appearance>
-                <Material data-weight = "249.0" diffuseColor='1.0 0.5437788 0.0'/>
+                <Material data-weight="249.0" diffuseColor='1.0 0.5437788 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -322,9 +679,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.0647376957144776">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="2" data-secondId="1">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="2" data-secondId="1">
               <Appearance>
-                <Material data-weight = "93.0" diffuseColor='0.6199999 1.0 0.0'/>
+                <Material data-weight="93.0" diffuseColor='0.6199999 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -432,9 +789,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.9380474917927135">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="2" data-secondId="3">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="2" data-secondId="3">
               <Appearance>
-                <Material data-weight = "59.0" diffuseColor='0.39333332 1.0 0.0'/>
+                <Material data-weight="59.0" diffuseColor='0.39333332 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -553,9 +910,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.20902294280626424">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="2" data-secondId="7">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="2" data-secondId="7">
               <Appearance>
-                <Material data-weight = "39.0" diffuseColor='0.26 1.0 0.0'/>
+                <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -716,9 +1073,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -3.0309354324158977">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="1">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="1">
               <Appearance>
-                <Material data-weight = "367.0" diffuseColor='1.0 0.0 0.0'/>
+                <Material data-weight="367.0" diffuseColor='1.0 0.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -835,9 +1192,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -2.20354516179708">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="2">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="2">
               <Appearance>
-                <Material data-weight = "51.0" diffuseColor='0.34000003 1.0 0.0'/>
+                <Material data-weight="51.0" diffuseColor='0.34000003 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -956,9 +1313,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -0.0">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="4">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="4">
               <Appearance>
-                <Material data-weight = "88.0" diffuseColor='0.5866666 1.0 0.0'/>
+                <Material data-weight="88.0" diffuseColor='0.5866666 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1067,9 +1424,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -0.5404195002705842">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="5">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="5">
               <Appearance>
-                <Material data-weight = "105.0" diffuseColor='0.70000005 1.0 0.0'/>
+                <Material data-weight="105.0" diffuseColor='0.70000005 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1168,9 +1525,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -1.2220253232109897">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="6">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="6">
               <Appearance>
-                <Material data-weight = "98.0" diffuseColor='0.6533333 1.0 0.0'/>
+                <Material data-weight="98.0" diffuseColor='0.6533333 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1270,9 +1627,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -0.3487710035839069">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="7">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="3" data-secondId="7">
               <Appearance>
-                <Material data-weight = "308.0" diffuseColor='1.0 0.2718894 0.0'/>
+                <Material data-weight="308.0" diffuseColor='1.0 0.2718894 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1404,9 +1761,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -3.141592653589793">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="4" data-secondId="3">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="4" data-secondId="3">
               <Appearance>
-                <Material data-weight = "129.0" diffuseColor='0.86 1.0 0.0'/>
+                <Material data-weight="129.0" diffuseColor='0.86 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1515,9 +1872,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -0.8519663271732721">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="4" data-secondId="7">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="4" data-secondId="7">
               <Appearance>
-                <Material data-weight = "30.0" diffuseColor='0.20000005 1.0 0.0'/>
+                <Material data-weight="30.0" diffuseColor='0.20000005 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1614,9 +1971,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.9996955989856287">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="5" data-secondId="1">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="5" data-secondId="1">
               <Appearance>
-                <Material data-weight = "55.0" diffuseColor='0.36666667 1.0 0.0'/>
+                <Material data-weight="55.0" diffuseColor='0.36666667 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1762,9 +2119,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.601173153319209">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="5" data-secondId="3">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="5" data-secondId="3">
               <Appearance>
-                <Material data-weight = "64.0" diffuseColor='0.42666662 1.0 0.0'/>
+                <Material data-weight="64.0" diffuseColor='0.42666662 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1863,9 +2220,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -0.16514867741462674">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="5" data-secondId="7">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="5" data-secondId="7">
               <Appearance>
-                <Material data-weight = "193.0" diffuseColor='1.0 0.8018433 0.0'/>
+                <Material data-weight="193.0" diffuseColor='1.0 0.8018433 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -1966,9 +2323,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.7532739354173277">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="6" data-secondId="1">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="6" data-secondId="1">
               <Appearance>
-                <Material data-weight = "43.0" diffuseColor='0.28666663 1.0 0.0'/>
+                <Material data-weight="43.0" diffuseColor='0.28666663 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -2101,9 +2458,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 1.9195673303788037">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="6" data-secondId="3">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="6" data-secondId="3">
               <Appearance>
-                <Material data-weight = "99.0" diffuseColor='0.65999997 1.0 0.0'/>
+                <Material data-weight="99.0" diffuseColor='0.65999997 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -2203,9 +2560,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 0.16514867741462608">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="6" data-secondId="7">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="6" data-secondId="7">
               <Appearance>
-                <Material data-weight = "39.0" diffuseColor='0.26 1.0 0.0'/>
+                <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -2323,9 +2680,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.9927027059802964">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="7" data-secondId="1">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="7" data-secondId="1">
               <Appearance>
-                <Material data-weight = "533.0" diffuseColor='1.0 0.0 0.0'/>
+                <Material data-weight="533.0" diffuseColor='1.0 0.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -2504,9 +2861,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.7928216500058864">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="7" data-secondId="3">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="7" data-secondId="3">
               <Appearance>
-                <Material data-weight = "417.0" diffuseColor='1.0 0.0 0.0'/>
+                <Material data-weight="417.0" diffuseColor='1.0 0.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -2638,9 +2995,9 @@
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 2.9764439761751667">
           <Transform rotation="0 0 1 -1.5707963267948966">
-            <Shape render="true" DEF="ribbonShape" data-class="relation" data-firstId="7" data-secondId="5">
+            <Shape render="false" DEF="ribbonShape" data-class="relation" data-firstId="7" data-secondId="5">
               <Appearance>
-                <Material data-weight = "75.0" diffuseColor='0.5 1.0 0.0'/>
+                <Material data-weight="75.0" diffuseColor='0.5 1.0 0.0'/>
               </Appearance>
               <Extrusion creaseAngle='0.785'
               crossSection='
@@ -2742,7 +3099,7 @@
         <Transform rotation="0 1 0 0.11065722117389562">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="1" data-secondId="3">
               <Appearance>
-                <Material data-weight = "216.0" diffuseColor='1.0 0.6958525 0.0'/>
+                <Material data-weight="216.0" diffuseColor='1.0 0.6958525 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -2833,7 +3190,7 @@
         <Transform rotation="0 1 0 -0.14888994760949661">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="1" data-secondId="7">
               <Appearance>
-                <Material data-weight = "249.0" diffuseColor='1.0 0.5437788 0.0'/>
+                <Material data-weight="249.0" diffuseColor='1.0 0.5437788 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -2924,7 +3281,7 @@
         <Transform rotation="0 1 0 2.0647376957144776">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="2" data-secondId="1">
               <Appearance>
-                <Material data-weight = "93.0" diffuseColor='0.6199999 1.0 0.0'/>
+                <Material data-weight="93.0" diffuseColor='0.6199999 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3015,7 +3372,7 @@
         <Transform rotation="0 1 0 0.9380474917927135">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="2" data-secondId="3">
               <Appearance>
-                <Material data-weight = "59.0" diffuseColor='0.39333332 1.0 0.0'/>
+                <Material data-weight="59.0" diffuseColor='0.39333332 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3106,7 +3463,7 @@
         <Transform rotation="0 1 0 0.20902294280626424">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="2" data-secondId="7">
               <Appearance>
-                <Material data-weight = "39.0" diffuseColor='0.26 1.0 0.0'/>
+                <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3197,7 +3554,7 @@
         <Transform rotation="0 1 0 -3.0309354324158977">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="3" data-secondId="1">
               <Appearance>
-                <Material data-weight = "367.0" diffuseColor='1.0 0.0 0.0'/>
+                <Material data-weight="367.0" diffuseColor='1.0 0.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3288,7 +3645,7 @@
         <Transform rotation="0 1 0 -2.20354516179708">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="3" data-secondId="2">
               <Appearance>
-                <Material data-weight = "51.0" diffuseColor='0.34000003 1.0 0.0'/>
+                <Material data-weight="51.0" diffuseColor='0.34000003 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3379,7 +3736,7 @@
         <Transform rotation="0 1 0 -0.0">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="3" data-secondId="4">
               <Appearance>
-                <Material data-weight = "88.0" diffuseColor='0.5866666 1.0 0.0'/>
+                <Material data-weight="88.0" diffuseColor='0.5866666 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3470,7 +3827,7 @@
         <Transform rotation="0 1 0 -0.5404195002705842">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="3" data-secondId="5">
               <Appearance>
-                <Material data-weight = "105.0" diffuseColor='0.70000005 1.0 0.0'/>
+                <Material data-weight="105.0" diffuseColor='0.70000005 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3561,7 +3918,7 @@
         <Transform rotation="0 1 0 -1.2220253232109897">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="3" data-secondId="6">
               <Appearance>
-                <Material data-weight = "98.0" diffuseColor='0.6533333 1.0 0.0'/>
+                <Material data-weight="98.0" diffuseColor='0.6533333 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3652,7 +4009,7 @@
         <Transform rotation="0 1 0 -0.3487710035839069">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="3" data-secondId="7">
               <Appearance>
-                <Material data-weight = "308.0" diffuseColor='1.0 0.2718894 0.0'/>
+                <Material data-weight="308.0" diffuseColor='1.0 0.2718894 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3743,7 +4100,7 @@
         <Transform rotation="0 1 0 -3.141592653589793">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="4" data-secondId="3">
               <Appearance>
-                <Material data-weight = "129.0" diffuseColor='0.86 1.0 0.0'/>
+                <Material data-weight="129.0" diffuseColor='0.86 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3834,7 +4191,7 @@
         <Transform rotation="0 1 0 -0.8519663271732721">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="4" data-secondId="7">
               <Appearance>
-                <Material data-weight = "30.0" diffuseColor='0.20000005 1.0 0.0'/>
+                <Material data-weight="30.0" diffuseColor='0.20000005 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -3925,7 +4282,7 @@
         <Transform rotation="0 1 0 2.9996955989856287">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="5" data-secondId="1">
               <Appearance>
-                <Material data-weight = "55.0" diffuseColor='0.36666667 1.0 0.0'/>
+                <Material data-weight="55.0" diffuseColor='0.36666667 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4016,7 +4373,7 @@
         <Transform rotation="0 1 0 2.601173153319209">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="5" data-secondId="3">
               <Appearance>
-                <Material data-weight = "64.0" diffuseColor='0.42666662 1.0 0.0'/>
+                <Material data-weight="64.0" diffuseColor='0.42666662 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4107,7 +4464,7 @@
         <Transform rotation="0 1 0 -0.16514867741462674">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="5" data-secondId="7">
               <Appearance>
-                <Material data-weight = "193.0" diffuseColor='1.0 0.8018433 0.0'/>
+                <Material data-weight="193.0" diffuseColor='1.0 0.8018433 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4198,7 +4555,7 @@
         <Transform rotation="0 1 0 2.7532739354173277">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="6" data-secondId="1">
               <Appearance>
-                <Material data-weight = "43.0" diffuseColor='0.28666663 1.0 0.0'/>
+                <Material data-weight="43.0" diffuseColor='0.28666663 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4289,7 +4646,7 @@
         <Transform rotation="0 1 0 1.9195673303788037">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="6" data-secondId="3">
               <Appearance>
-                <Material data-weight = "99.0" diffuseColor='0.65999997 1.0 0.0'/>
+                <Material data-weight="99.0" diffuseColor='0.65999997 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4380,7 +4737,7 @@
         <Transform rotation="0 1 0 0.16514867741462608">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="6" data-secondId="7">
               <Appearance>
-                <Material data-weight = "39.0" diffuseColor='0.26 1.0 0.0'/>
+                <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4471,7 +4828,7 @@
         <Transform rotation="0 1 0 2.9927027059802964">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="7" data-secondId="1">
               <Appearance>
-                <Material data-weight = "533.0" diffuseColor='1.0 0.0 0.0'/>
+                <Material data-weight="533.0" diffuseColor='1.0 0.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4562,7 +4919,7 @@
         <Transform rotation="0 1 0 2.7928216500058864">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="7" data-secondId="3">
               <Appearance>
-                <Material data-weight = "417.0" diffuseColor='1.0 0.0 0.0'/>
+                <Material data-weight="417.0" diffuseColor='1.0 0.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4653,7 +5010,7 @@
         <Transform rotation="0 1 0 2.9764439761751667">
             <Shape render="true" DEF="ellipseShape" data-class="relation" data-firstId="7" data-secondId="5">
               <Appearance>
-                <Material data-weight = "75.0" diffuseColor='0.5 1.0 0.0'/>
+                <Material data-weight="75.0" diffuseColor='0.5 1.0 0.0'/>
               </Appearance>
               <Extrusion beginCap='true' convex='false' creaseAngle='1.57'
               crossSection='
@@ -4739,6 +5096,336 @@
       </Transform>
     </Transform>
 
+    <Transform translation="-0.25 0.0 -0.2777777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.11065722117389562">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="1" data-secondId="3">
+              <Appearance>
+                <Material data-weight="216.0" diffuseColor='1.0 0.6958525 0.0'/>
+              </Appearance>
+              <Cylinder height="0.5030769521187454" radius="0.006297002724795641"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555558 0.0 -0.16666666666666669">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.14888994760949661">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="1" data-secondId="7">
+              <Appearance>
+                <Material data-weight="249.0" diffuseColor='1.0 0.5437788 0.0'/>
+              </Appearance>
+              <Cylinder height="1.1235415786753713" radius="0.007106267029972753"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.4027777777777778 0.0 -0.06944444444444445">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.0647376957144776">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="2" data-secondId="1">
+              <Appearance>
+                <Material data-weight="93.0" diffuseColor='0.6199999 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.4101339738953722" radius="0.0032806539509536788"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1527777777777778 0.0 -0.09722222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.9380474917927135">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="2" data-secondId="3">
+              <Appearance>
+                <Material data-weight="59.0" diffuseColor='0.39333332 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.5166965343816188" radius="0.002446866485013624"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1527777777777778 0.0 0.013888888888888888">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.20902294280626424">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="2" data-secondId="7">
+              <Appearance>
+                <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.9370626551907223" radius="0.0019564032697547687"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.25 0.0 -0.2777777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -3.0309354324158977">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="3" data-secondId="1">
+              <Appearance>
+                <Material data-weight="367.0" diffuseColor='1.0 0.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.5030769521187454" radius="0.010000000000000002"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1527777777777778 0.0 -0.09722222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -2.20354516179708">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="3" data-secondId="2">
+              <Appearance>
+                <Material data-weight="51.0" diffuseColor='0.34000003 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.5166965343816188" radius="0.002250681198910082"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.20833333333333334 0.0 -0.3055555555555556">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.0">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="3" data-secondId="4">
+              <Appearance>
+                <Material data-weight="88.0" diffuseColor='0.5866666 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.4166666666666667" radius="0.003158038147138965"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1388888888888889 0.0 -0.22222222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.5404195002705842">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="3" data-secondId="5">
+              <Appearance>
+                <Material data-weight="105.0" diffuseColor='0.70000005 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.32394177193585005" radius="0.003574931880108992"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555556 0.0 -0.1527777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -1.2220253232109897">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="3" data-secondId="6">
+              <Appearance>
+                <Material data-weight="98.0" diffuseColor='0.6533333 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.32513055307554517" radius="0.0034032697547683927"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.3055555555555556 0.0 -0.19444444444444448">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.3487710035839069">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="3" data-secondId="7">
+              <Appearance>
+                <Material data-weight="308.0" diffuseColor='1.0 0.2718894 0.0'/>
+              </Appearance>
+              <Cylinder height="0.6502611061510903" radius="0.008553133514986377"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.20833333333333334 0.0 -0.3055555555555556">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -3.141592653589793">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="4" data-secondId="3">
+              <Appearance>
+                <Material data-weight="129.0" diffuseColor='0.86 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.4166666666666667" radius="0.004163487738419619"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.513888888888889 0.0 -0.19444444444444448">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.8519663271732721">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="4" data-secondId="7">
+              <Appearance>
+                <Material data-weight="30.0" diffuseColor='0.20000005 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.2952818281315181" radius="0.0017356948228882834"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1111111111111111 0.0 -0.19444444444444445">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.9996955989856287">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="5" data-secondId="1">
+              <Appearance>
+                <Material data-weight="55.0" diffuseColor='0.36666667 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.7856742013183862" radius="0.002348773841961853"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1388888888888889 0.0 -0.22222222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.601173153319209">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="5" data-secondId="3">
+              <Appearance>
+                <Material data-weight="64.0" diffuseColor='0.42666662 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.32394177193585005" radius="0.002569482288828338"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.4444444444444445 0.0 -0.11111111111111112">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.16514867741462674">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="5" data-secondId="7">
+              <Appearance>
+                <Material data-weight="193.0" diffuseColor='1.0 0.8018433 0.0'/>
+              </Appearance>
+              <Cylinder height="0.33793125168323446" radius="0.005732970027247957"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.19444444444444445 0.0 -0.125">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.7532739354173277">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="6" data-secondId="1">
+              <Appearance>
+                <Material data-weight="43.0" diffuseColor='0.28666663 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.660270240222484" radius="0.0020544959128065395"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555556 0.0 -0.1527777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 1.9195673303788037">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="6" data-secondId="3">
+              <Appearance>
+                <Material data-weight="99.0" diffuseColor='0.65999997 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.32513055307554517" radius="0.0034277929155313355"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.36111111111111116 0.0 -0.04166666666666667">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.16514867741462608">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="6" data-secondId="7">
+              <Appearance>
+                <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.5068968775248516" radius="0.0019564032697547687"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555558 0.0 -0.16666666666666669">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.9927027059802964">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="7" data-secondId="1">
+              <Appearance>
+                <Material data-weight="533.0" diffuseColor='1.0 0.0 0.0'/>
+              </Appearance>
+              <Cylinder height="1.1235415786753713" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.3055555555555556 0.0 -0.19444444444444448">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.7928216500058864">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="7" data-secondId="3">
+              <Appearance>
+                <Material data-weight="417.0" diffuseColor='1.0 0.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.6502611061510903" radius="0.01"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.4444444444444445 0.0 -0.11111111111111112">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.9764439761751667">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Shape render="false" DEF="cylinderShape" data-class="relation" data-firstId="7" data-secondId="5">
+              <Appearance>
+                <Material data-weight="75.0" diffuseColor='0.5 1.0 0.0'/>
+              </Appearance>
+              <Cylinder height="0.33793125168323446" radius="0.0028392370572207087"/>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
     <Transform translation="-0.4027777777777778 0.0 -0.06944444444444445">
       <Transform rotation="1 0 0 0.0">
         <Transform rotation="0 1 0 -1.0768549578753155">
@@ -4746,14 +5433,14 @@
             <Group>
               <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="1" data-secondId="2">
                 <Appearance>
-                  <Material data-weight = "71.0" diffuseColor='0.47333336 1.0 0.0'/>
+                  <Material data-weight="71.0" diffuseColor='0.47333336 1.0 0.0'/>
                 </Appearance>
                 <Cylinder radius='0.0027411444141689375' height='0.4101339738953722' top='false'/>
               </Shape>
               <Transform translation='0 0.1300669869476861 0'>
                 <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="1" data-secondId="2">
                   <Appearance>
-                    <Material data-weight = "71.0" diffuseColor='0.47333336 1.0 0.0'/>
+                    <Material data-weight="71.0" diffuseColor='0.47333336 1.0 0.0'/>
                   </Appearance>
                   <Cone bottomRadius='0.013705722070844688' height='0.1' top='true'/>
                 </Shape>
@@ -4771,14 +5458,14 @@
             <Group>
               <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="7" data-secondId="6">
                 <Appearance>
-                  <Material data-weight = "45.0" diffuseColor='0.29999995 1.0 0.0'/>
+                  <Material data-weight="45.0" diffuseColor='0.29999995 1.0 0.0'/>
                 </Appearance>
                 <Cylinder radius='0.0021035422343324253' height='0.5068968775248516' top='false'/>
               </Shape>
               <Transform translation='0 0.17844843876242578 0'>
                 <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="7" data-secondId="6">
                   <Appearance>
-                    <Material data-weight = "45.0" diffuseColor='0.29999995 1.0 0.0'/>
+                    <Material data-weight="45.0" diffuseColor='0.29999995 1.0 0.0'/>
                   </Appearance>
                   <Cone bottomRadius='0.010517711171662126' height='0.1' top='true'/>
                 </Shape>
