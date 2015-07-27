@@ -14,62 +14,48 @@
 		//width mapper
 		var widthMapper = new MpValue2NumericExtent();
 
-		alert("inputs" + widthMapper.inputValues + "\n" + "outputs: "
-				+ widthMapper.outputExtents);
-
-		alert("giving new mapping definition");
+		document.getElementById("display").innerHTML = "width inputs = " + widthMapper.inputValues + " width outputs = "+ widthMapper.outputExtents;
 
 		var inputs = [ 0, 347 ];
 		var outputs = [ 0.001, 0.01 ];
 
 		widthMapper.setPalette(inputs, outputs, true);
 
-		alert("inputs" + widthMapper.inputValues + "\n" + "outputs: "
-				+ widthMapper.outputExtents);
+		document.getElementById("display").innerHTML += "<br>"+ "new width inputs = " + widthMapper.inputValues+ " new width outputs = " + widthMapper.outputExtents;
 
 		var transformInput = 150;
 
-		alert("transformation: \ninput = " + transformInput
-				+ ", \ntransformedOutput = "
-				+ widthMapper.transform(transformInput));
+		document.getElementById("display").innerHTML += "<br>"+ "transformation input = " + transformInput+ " transformedOutput = " + widthMapper.transform(transformInput);
 
-		
-		//simple color decleration
+		//simple color declaration
 		var color = new T3dColor("RGB", 1, 0.5, 0.2, 1);
 
-		alert("Color: " + color.mRed + " " + color.mGreen + " " + color.mBlue);
-
-		
+		document.getElementById("display").innerHTML += "<br>"+ "declare color = " + color.mRed + " " + color.mGreen + " " + color.mBlue;
 		
 		//color mapper
 		var colorMapper = new MpSimpleHypsometricColor();
 
-		alert("inputs" + colorMapper.inputValues + "\n" + "outputs: "
-				+ colorMapper.outputColors);
+		document.getElementById("display").innerHTML += "<br>"+ "color inputs = " + colorMapper.inputValues+ " color outputs = " + colorMapper.outputColors;
 
 		var colorInputValues = [ 0, 150, 347 ];
-		var outputColors = [ new T3dColor("RGB", 0, 1, 0),
-				new T3dColor("RGB", 1, 1, 0), new T3dColor("RGB", 1, 0, 0) ];
+		var outputColors = [ new T3dColor("RGB", 0, 1, 0),new T3dColor("RGB", 1, 1, 0),new T3dColor("RGB", 1, 0, 0) ];
 
 		colorMapper.setPalette(colorInputValues, outputColors, true);
 
-		alert("inputs" + colorMapper.inputValues + "\n" + "outputs: "
-				+ colorMapper.outputColors);
+		document.getElementById("display").innerHTML += "<br>"+ "new color inputs = " + colorMapper.inputValues+ " new color outputs = " + colorMapper.outputColors;
 
 		var colorTransformInput = 200;
 		
 		var transformedColor = colorMapper.transform(colorTransformInput);
 
-		alert("transformation: \ninput = " + transformInput
-				+ ", \ntransformedOutput = " + "Color: "
-				+ transformedColor.mRed + " " + transformedColor.mGreen + " "
-				+ transformedColor.mBlue);
+		document.getElementById("display").innerHTML += "<br>"+ "transformation input = " + colorTransformInput+ " transformedOutput = "+ transformedColor.mRed + " " + transformedColor.mGreen + " " + transformedColor.mBlue;
 
 	}
 </script>
 </head>
 <body>
 	<button id="ClickMe" onclick="testFunction()">Click me</button>
-
+	<br>
+	<span id="display">-</span>
 </body>
 </html>

@@ -2,8 +2,7 @@ var T3dColor = function(a, b, c, d, e) {
 	this.mRed, this.mGreen, this.mBlue, this.mAlpha;
 	var mColMod = 1;
 
-	if (a === undefined && b === undefined && c === undefined
-			&& d === undefined) {
+	if (a === undefined && b === undefined && c === undefined && d === undefined) {
 		this.mRed = 1.0;
 		this.mGreen = 1.0;
 		this.mBlue = 1.0;
@@ -124,5 +123,3 @@ T3dColor.prototype.getValue = function() {
 
 	return lMax;
 }
-
-var color = new T3dColor("HSV", 1, 0, 1);
