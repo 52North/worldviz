@@ -324,9 +324,6 @@
 		else if(shape_type == "ribbonShape"){
 			shape_type = "ellipseShape";
 		}
-		else{
-			shape_type = "cylinderShape";
-		}
 		
 		var first_id = relation.getAttribute("data-firstId");
 		var second_id = relation.getAttribute("data-secondId");
@@ -341,7 +338,9 @@
                 
             }
         }
-		relation.render = "false";
+		if(shape_type != "arrowConeShape" || shape_type != "arrowCylinderShape"){
+			relation.render = "false";
+		}
     }
 	
 	
