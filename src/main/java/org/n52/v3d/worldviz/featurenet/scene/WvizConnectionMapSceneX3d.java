@@ -511,7 +511,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 writeLine("<table id = \"colorTable\">");
                 writeLine("<thead>");
-                writeLine("<tr><th onclick = \"sortColorFunction()\">Input Colour</th><th>Output Color</th></tr>");
+                writeLine("<tr><th onclick = \"sortColorFunction()\">Input Weight</th><th>Output Color</th></tr>");
                 writeLine("</thead>");
                 writeLine("<tbody>");
                 for (int i=0;i<inputColorValues.length;i++){ 
@@ -529,7 +529,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 writeLine("<table id = \"widthTable\">");
                 writeLine("<thead>");
-                writeLine("<tr><th onclick = \"sortWidthFunction()\">Input Width</th><th>Output Width</th></tr>");
+                writeLine("<tr><th onclick = \"sortWidthFunction()\">Input Weight</th><th>Output Width</th></tr>");
                 writeLine("</thead>");
                 writeLine("<tbody>");
                 for (int i=0;i<inputWidthValues.length;i++){ 
@@ -545,7 +545,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<br>");
                 writeLine("<br>");
                 
-                writeLine("Input Color: <input type=\"text\" id=\"NewInputColor\">");
+                writeLine("Input Weight: <input type=\"text\" id=\"NewInputColor\">");
                 writeLine("Output Color: <input type=\"text\" id=\"NewOutputColor\">");
                 writeLine("<br>");
                 writeLine("<br>");
@@ -555,7 +555,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<br>");
                 writeLine("<br>");
 
-                writeLine("Input Width: <input type=\"text\" id=\"NewInputWidth\">");
+                writeLine("Input Weight: <input type=\"text\" id=\"NewInputWidth\">");
                 writeLine("Output Width: <input type=\"text\" id=\"NewOutputWidth\">");
                 writeLine("<br>");
                 writeLine("<br>");
