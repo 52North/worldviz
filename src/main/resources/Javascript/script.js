@@ -338,7 +338,7 @@
                 
             }
         }
-		if(shape_type != "arrowConeShape" || shape_type != "arrowCylinderShape"){
+		if(shape_type != "arrowConeShape" && shape_type != "arrowCylinderShape"){
 			relation.render = "false";
 		}
     }
