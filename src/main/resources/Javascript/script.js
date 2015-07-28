@@ -306,7 +306,7 @@
 				var red = transformedColor.mRed;
 				var green = transformedColor.mGreen;
 				var blue = transformedColor.mBlue;
-				var color = red + ' '+ blue + ' ' + green;
+				var color = red + ' '+ green + ' ' + blue;
 				x[i].setAttribute('diffuseColor', color);
 			}
         }
@@ -342,7 +342,6 @@
 			relation.render = "false";
 		}
     }
-	
 	
     $(document).ready(function(){
         $("shape").each(function() {
