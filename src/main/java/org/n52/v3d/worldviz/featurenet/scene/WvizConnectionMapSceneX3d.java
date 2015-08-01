@@ -97,7 +97,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine();
             }
 
-            writeLine("<X3D xmlns=\"http://www.web3d.org/specifications/x3d-namespace\" showStat=\"true\" showriteLineog=\"true\" showLog=\"true\"");
+            writeLine("<X3D xmlns=\"http://www.web3d.org/specifications/x3d-namespace\" showStat=\"false\" showriteLineog=\"false\" showLog=\"false\"");
             writeLine("  x=\"0px\" y=\"0px\" width=\"800px\" height=\"800px\">");
             writeLine();
             writeLine("  <Scene>");
@@ -572,7 +572,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 writeLine("<h3>Last clicked object:</h3> ");
                 writeLine("<span id=\"lastClickedObject\">-</span>");
-                
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<button id=\"SourceCodeButton\" onclick=\"saveTextAsFile()\">Export File</button>");
                 writeLine("  </body>");
                 writeLine("</html>");
             }
