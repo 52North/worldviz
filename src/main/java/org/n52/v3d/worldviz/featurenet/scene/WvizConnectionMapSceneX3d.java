@@ -91,6 +91,42 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/mapper.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js\"></script>");
                 writeLine("    <!-- Change the path, when the repository is changed! -->");
+                writeLine("<script type=\"text/javascript\">");
+               
+                writeLine("function highlightFeatures(indices){");
+		writeLine("     for ( var i = 0; i < indices.length; i++ ) {");
+		writeLine("	     var x = \"feature\" + indices[i];");
+                writeLine("          var feature = document.getElementById(x);");
+		writeLine("	     feature.setAttribute('diffuseColor' , '"+"1 1 1"+"');");
+		writeLine("     }");
+                writeLine("restorePreviousFeatures(indices)");
+                writeLine("");
+                writeLine("}");
+	
+                writeLine("function restoreFeatures(){");
+                writeLine("        var features_length = " + scene.getVertices().size() +";");
+                writeLine("        for ( var i = 0; i < features_length; i++ ) {");
+                writeLine("                feature_id = \"feature\" + (i+1);");
+                writeLine("                document.getElementById(feature_id).setAttribute('diffuseColor','"+symbolColor+"');");
+                writeLine("        }");
+                writeLine("}");
+                
+                writeLine("function restorePreviousFeatures(indices){");
+		writeLine("for (var i=0; i<indices.length; i++){");
+		writeLine("	indices[i] = parseInt(indices[i], 10);");
+		writeLine("}");
+		writeLine("var all_indices = Array.range(1, "+scene.getVertices().size()+");");
+		writeLine("var indices = arrayDifference(all_indices,indices);");
+		writeLine("for ( var i = 0; i < indices.length; i++ ) {");
+		writeLine("	var x = \"feature\" + indices[i];");
+                writeLine("var feature = document.getElementById(x);");
+		writeLine("                feature.setAttribute('diffuseColor','"+symbolColor+"');");
+		writeLine("}");
+                writeLine("}");
+                writeLine();
+
+                               
+                writeLine("</script>");
                 writeLine("  </head>");
                 writeLine("  <body>");
                 writeLine();
@@ -453,7 +489,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + symbolColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + symbolSize + "'/>");
                 }
@@ -461,7 +497,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"boxShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + symbolColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Box size='" + symbolSize + "'/>");
                 }
@@ -469,7 +505,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + symbolColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + defaultSymbolSize + "'/>"); // If an incorrect symbol type has been specified
                 }

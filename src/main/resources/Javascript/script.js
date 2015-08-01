@@ -4,6 +4,7 @@
                 var data_index = $(shape).attr("data-index"); 
                 document.getElementById("lastClickedObject").innerHTML = data_class + " " + data_index;
                 var indices = showRelationsForNode(data_index);
+				highlightFeatures(indices);
             }
 			else if(data_class == "relation"){
 				var shape_type = $(shape).attr("def");
@@ -84,6 +85,7 @@
 				x[i].render = "false";
 			}
         }
+		restoreFeatures();
     }
 
 	function addNewColor(){
@@ -403,6 +405,35 @@
 
 	function destroyClickedElement(event){
 		document.body.removeChild(event.target);
+	}
+	
+	function arrayDifference(a1, a2){
+		var a=[], diff=[];
+		for(var i=0;i<a1.length;i++){
+			a[a1[i]]=true;
+		}
+		for(var i=0;i<a2.length;i++){
+			if(a[a2[i]]){
+				delete a[a2[i]];
+			}
+			else{
+				a[a2[i]]=true;
+			}
+		}
+		for(var k in a){
+			diff.push(k);
+		}
+		return diff;
+	}
+	
+	Array.range= function(a, b){
+		var A= [];
+		A[0]= a;
+		step = 1;
+		while(a+step<= b){
+			A[A.length]= a+= step;
+		}		
+		return A;
 	}
 	
     $(document).ready(function(){
