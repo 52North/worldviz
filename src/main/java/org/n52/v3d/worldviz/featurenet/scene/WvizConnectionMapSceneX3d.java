@@ -294,7 +294,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("              </Appearance>");
 
-                    writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+1.57+"'");
+                    writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+curveCreaseAngle+"'");
                     writeLine("              crossSection='");
                     Circle circle = new Circle();
 
