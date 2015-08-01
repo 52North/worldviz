@@ -5,7 +5,7 @@
                 document.getElementById("lastClickedObject").innerHTML = data_class + " " + data_index;
                 showRelationsForNode(data_index);
             }
-			if(data_class == "relation"){
+			else if(data_class == "relation"){
 				var shape_type = $(shape).attr("def");
 				var first = shape.getAttribute("data-firstId");
 				var second = shape.getAttribute("data-secondId");
@@ -36,6 +36,7 @@
     function showRelationsForNode(nodeId) {
         var x = document.getElementsByTagName("shape");
         var i;
+		var feature_id = [];
         for (i = 0; i < x.length; i++) {
             var data_class = x[i].getAttribute("data-class");
 			var shapeString = getRadioShape();
@@ -45,6 +46,12 @@
 				var data_def = x[i].getAttribute("def");
                 if( (data_def == shapeString || data_def == "arrowConeShape" || data_def == "arrowCylinderShape") && (firstId == nodeId || secondId == nodeId)){
                     x[i].render = "true";
+					if(firstId == nodeId){
+						feature_id.push(firstId);
+					}
+					else{
+						feature_id.push(secondId);
+					}
                 }
                 else{
                     x[i].render = "false";
