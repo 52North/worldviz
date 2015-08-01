@@ -16,16 +16,34 @@
 				document.getElementById("lastClickedObject").innerHTML = data_class + " false";
             }
     }
+	
+	function getRadioShape(){
+		var radios = document.getElementsByName("shapeRadioButton");
+		var shapeString = "";
+		for (var i = 0, length = radios.length; i < length; i++) {
+			if (radios[i].checked) {
+				shapeString = radios[i].value;
+				break;
+			}
+		}
+		if(shapeString == ""){
+			document.getElementById("ellipseRadioButton").checked = true;
+			shapeString = "ellipseShape";
+		}
+		return shapeString;
+	}
 
     function showRelationsForNode(nodeId) {
         var x = document.getElementsByTagName("shape");
         var i;
         for (i = 0; i < x.length; i++) {
             var data_class = x[i].getAttribute("data-class");
+			var shapeString = getRadioShape();
             if(data_class == "relation"){
                 var firstId = x[i].getAttribute("data-firstId");
                 var secondId = x[i].getAttribute("data-secondId");
-                if(firstId == nodeId || secondId == nodeId){
+				var data_def = x[i].getAttribute("def");
+                if( (data_def == shapeString || data_def == "arrowConeShape" || data_def == "arrowCylinderShape") && (firstId == nodeId || secondId == nodeId)){
                     x[i].render = "true";
                 }
                 else{
@@ -36,13 +54,21 @@
     }
 
     function showAllRelations() {
+		var shapeString = getRadioShape();
         var x = document.getElementsByTagName("shape");
         var i;
         for (i = 0; i < x.length; i++) {
             var data_class = x[i].getAttribute("data-class");
-            if(data_class == "relation"){
+			var data_def = x[i].getAttribute("def");
+			if(data_class == "relation" && (data_def == shapeString || data_def == "arrowConeShape" || data_def == "arrowCylinderShape")){
                 x[i].render = "true";
             }
+			else if(data_class != "relation"){
+				x[i].render = "true";
+			}
+			else{
+				x[i].render = "false";
+			}
         }
     }
 

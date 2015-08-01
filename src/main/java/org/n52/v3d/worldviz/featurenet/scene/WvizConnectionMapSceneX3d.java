@@ -505,6 +505,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine();
                                 
                 writeLine("<button onclick=\"showAllRelations()\">Show all</button>");
+                writeLine("<input id =\"cylinderRadioButton\" type=\"radio\" name=\"shapeRadioButton\" value=\"cylinderShape\">Cylinder");
+                writeLine("<input id =\"ribbonRadioButton\" type=\"radio\" name=\"shapeRadioButton\" value=\"ribbonShape\">Ribbon");
+                writeLine("<input id =\"ellipseRadioButton\" type=\"radio\" name=\"shapeRadioButton\" value=\"ellipseShape\" checked>Ellipse");
                 
                 writeLine("<br>");
                 writeLine("<br>");
