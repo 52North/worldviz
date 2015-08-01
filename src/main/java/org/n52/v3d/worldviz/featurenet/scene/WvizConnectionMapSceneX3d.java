@@ -97,7 +97,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("        for ( var i = 0; i < indices.length; i++ ) {");
 		writeLine("	       var x = \"feature\" + indices[i];");
                 writeLine("            var feature = document.getElementById(x);");
-		writeLine("	       feature.setAttribute('diffuseColor' , '"+"1 1 0"+"');");
+		writeLine("	       feature.setAttribute('diffuseColor' , '"+highlightColor+"');");
 		writeLine("        }");
                 writeLine("        restorePreviousFeatures(indices)");
                 writeLine("    }");
@@ -106,7 +106,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("        var features_length = " + scene.getVertices().size() +";");
                 writeLine("            for ( var i = 0; i < features_length; i++ ) {");
                 writeLine("                feature_id = \"feature\" + (i+1);");
-                writeLine("                document.getElementById(feature_id).setAttribute('diffuseColor','"+symbolColor+"');");
+                writeLine("                document.getElementById(feature_id).setAttribute('diffuseColor','"+normalColor+"');");
                 writeLine("            }");
                 writeLine("    }");
                 
@@ -119,12 +119,12 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("        for ( var i = 0; i < indices.length; i++ ) {");
 		writeLine("	       var x = \"feature\" + indices[i];");
                 writeLine("            var feature = document.getElementById(x);");
-		writeLine("            feature.setAttribute('diffuseColor','"+symbolColor+"');");
+		writeLine("            feature.setAttribute('diffuseColor','"+normalColor+"');");
 		writeLine("        }");
                 writeLine("    }");
                 
                 writeLine("    function getCurrentColor(){");
-		writeLine("        return '1 0.4 0'" );
+		writeLine("        return '"+currentColor+"';" );
                 writeLine("    }");
                 
                 writeLine();
@@ -493,7 +493,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + normalColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + symbolSize + "'/>");
                 }
@@ -501,7 +501,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"boxShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + normalColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Box size='" + symbolSize + "'/>");
                 }
@@ -509,7 +509,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material id = \"feature"+indexPoint+"\" diffuseColor=\"" + normalColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + defaultSymbolSize + "'/>"); // If an incorrect symbol type has been specified
                 }

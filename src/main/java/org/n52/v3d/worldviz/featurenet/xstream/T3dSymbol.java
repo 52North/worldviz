@@ -14,9 +14,17 @@ public class T3dSymbol{
     @XStreamAsAttribute
     double size;
         
-    @XStreamAlias("color")
+    @XStreamAlias("normalColor")
     @XStreamAsAttribute
-    String color;
+    String normalColor;
+    
+    @XStreamAlias("currentColor")
+    @XStreamAsAttribute
+    String currentColor;
+
+    @XStreamAlias("highlightColor")
+    @XStreamAsAttribute
+    String highlightColor;
     
     public String getType(){
         return type;
@@ -25,10 +33,17 @@ public class T3dSymbol{
     public double getSize(){
         return size;
     }
-    
-    public String getColor(){
-        return color;
+
+    public String getNormalColor(){
+        return normalColor;
     }
     
+    public String getCurrentColor(){
+        return currentColor;
+    }
     
+    public String getHighlightColor(){
+        return highlightColor;
+    }
+
 }

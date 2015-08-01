@@ -418,7 +418,7 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape DEF=\"sphereShape\">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material diffuseColor=\"" + normalColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + symbolSize + "'/>");
                 }
@@ -426,7 +426,7 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape DEF=\"boxShape\">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material diffuseColor=\"" + normalColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Box size='" + symbolSize + "'/>");
                 }
@@ -434,7 +434,7 @@ public class WvizConnectionMapSceneX3d_earlier extends WvizConcreteConnectionMap
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape DEF=\"sphereShape\">");
                     writeLine("        <Appearance>");
-                    writeLine("          <Material diffuseColor=\"" + symbolColor + "\"/>");
+                    writeLine("          <Material diffuseColor=\"" + normalColor + "\"/>");
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + defaultSymbolSize + "'/>"); // If an incorrect symbol type has been specified
                 }

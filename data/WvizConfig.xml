@@ -17,7 +17,7 @@
         -->
         <PointVisualizer>
           <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
-          <T3dSymbol type="Sphere" size="0.05" color="1 0 0"/>
+          <T3dSymbol type="Sphere" size="0.05" normalColor="1 0 0" currentColor="1 0.4 0" highlightColor="1 1 0"/>
         </PointVisualizer>
         <TextVisualizer>
           <Label>

@@ -37,7 +37,7 @@ public class WvizConfig_Test {
         try {
             assertTrue(wvizConfig != null);
 
-            String symbolType, symbolColor, propertyName, geometryType;
+            String symbolType, normalColor, propertyName, geometryType;
             
             double symbolSize;
 
@@ -71,9 +71,9 @@ public class WvizConfig_Test {
             
             assertTrue(symbolType != null);
             
-            symbolColor = t3dSymbol.getColor();
+            normalColor = t3dSymbol.getNormalColor();
             
-            assertTrue(symbolColor != null);
+            assertTrue(normalColor != null);
             
             TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
             

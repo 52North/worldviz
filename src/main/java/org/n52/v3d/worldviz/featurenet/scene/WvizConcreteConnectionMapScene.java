@@ -27,7 +27,7 @@ public abstract class WvizConcreteConnectionMapScene {
 
     // List of Style Parameters that were defined in the XML sheet - More will
     // be added!
-    protected String symbolColor;
+    protected String normalColor, currentColor, highlightColor;
 
     protected double symbolSize;
 
@@ -75,7 +75,11 @@ public abstract class WvizConcreteConnectionMapScene {
         T3dSymbol t3dSymbol = (T3dSymbol) pointVisualizer.getT3dSymbol().get(0);
         symbolType = t3dSymbol.getType();
         symbolSize = t3dSymbol.getSize();
-        symbolColor = t3dSymbol.getColor();
+        
+        normalColor = t3dSymbol.getNormalColor();
+        currentColor = t3dSymbol.getCurrentColor();
+        highlightColor = t3dSymbol.getHighlightColor();
+        
         TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
         Label label = (Label) textVisualizer.getLabel().get(0);
         propertyName = label.getPropertyName();
