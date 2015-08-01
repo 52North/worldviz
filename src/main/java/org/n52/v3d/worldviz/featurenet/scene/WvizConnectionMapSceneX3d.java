@@ -97,7 +97,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("     for ( var i = 0; i < indices.length; i++ ) {");
 		writeLine("	     var x = \"feature\" + indices[i];");
                 writeLine("          var feature = document.getElementById(x);");
-		writeLine("	     feature.setAttribute('diffuseColor' , '"+"1 1 1"+"');");
+		writeLine("	     feature.setAttribute('diffuseColor' , '"+"1 1 0"+"');");
 		writeLine("     }");
                 writeLine("restorePreviousFeatures(indices)");
                 writeLine("");
