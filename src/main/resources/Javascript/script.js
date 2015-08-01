@@ -189,15 +189,70 @@
 	
 	function deleteNewColor(){
 		var table = document.getElementById("colorTable");
-		var rows = document.getElementById("colorTable").rows.length;
-		table.deleteRow(rows-1);
+		var done = false;	
+		var deleteColor = document.getElementById("DeleteColor").value;
+
+		if( (deleteColor.split(" ")).length == 1 ){
+			deleteColor = parseFloat(deleteColor);
+		}
+		
+		if( !isNaN(deleteColor) ){
+		
+			var valuePresent = false;
+			var i = 1;
+			var table_length = table.rows.length;
+			
+			for(;i<table_length;i++){
+				if (parseFloat(table.rows[i].cells[0].innerHTML) == deleteColor){
+					valuePresent = true;
+					break;
+				}
+			}
+			
+			if(valuePresent){
+				table.deleteRow(i);
+				done = true;
+			}
+		}
+		if(done){
+			document.getElementById("DeleteColor").value = "";
+		}
+
 	}
 	
 	function deleteNewWidth(){
 		var table = document.getElementById("widthTable");
-		var rows = document.getElementById("widthTable").rows.length;
-		table.deleteRow(rows-1);
+		var done = false;	
+		var deleteWidth = document.getElementById("DeleteWidth").value;
+
+		if( (deleteWidth.split(" ")).length == 1 ){
+			deleteWidth = parseFloat(deleteWidth);
+		}
+		
+		if( !isNaN(deleteWidth) ){
+		
+			var valuePresent = false;
+			var i = 1;
+			var table_length = table.rows.length;
+			
+			for(;i<table_length;i++){
+				if (parseFloat(table.rows[i].cells[0].innerHTML) == deleteWidth){
+					valuePresent = true;
+					break;
+				}
+			}
+			
+			if(valuePresent){
+				table.deleteRow(i);
+				done = true;
+			}
+		}
+		if(done){
+			document.getElementById("DeleteWidth").value = "";
+		}
+
 	}
+
 	function sortColorTable(f,n){ 
 	  var rows = $('#colorTable tbody  tr').get(); 
  
