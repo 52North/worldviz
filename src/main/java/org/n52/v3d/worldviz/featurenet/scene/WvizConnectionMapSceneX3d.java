@@ -213,8 +213,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, ribbonCircleTurns);
                     for(T3dVector vector: circlePoints){
-                        //double x = vector.getX();
-                        //double y = vector.getY();
                         double x = floor(100000*vector.getX() +0.5)/100000;
                         double y = floor(100000*vector.getY() +0.5)/100000;
                         writeLine("              "+x+" "+y);
@@ -224,9 +222,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     Ribbon ribbon = new Ribbon();
                     ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance,ribbonHelixTurns);
                     for(T3dVector vector: ribbonPoints){
-                        //double x = vector.getX();
-                        //double y = vector.getY();
-                        //double z = vector.getZ();
                         double x = floor(100000*vector.getX() +0.5)/100000;
                         double y = floor(100000*vector.getY() +0.5)/100000;
                         double z = floor(100000*vector.getZ() +0.5)/100000;
@@ -280,9 +275,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("    <Transform translation=\"" + midPoint.getX() + " " + midPoint.getY() + " " + midPoint.getZ() + "\">");
                     writeLine("      <Transform rotation=\"1 0 0 " + angleX + "\">");
                     writeLine("        <Transform rotation=\"0 1 0 " + angleY + "\">");
-//                        writeLine("          <Transform rotation=\"0 0 1 " + angleZ + "\">");
-
-
 
                     writeLine("            <Shape render=\"true\" DEF=\"ellipseShape\" " +"data-class=\"relation\" " + "data-firstId=\""+firstId+"\""+" data-secondId=\""+secondId+"\">");
                     writeLine("              <Appearance>");
@@ -302,27 +294,19 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, curveCircleTurns);
                     for(T3dVector vector: circlePoints){
-                        //double x = vector.getX();
-                        //double y = vector.getY();
                         double x = floor(100000*vector.getX() +0.5)/100000;
                         double y = floor(100000*vector.getY() +0.5)/100000;
                         writeLine("              "+x+" "+y);
                     }
                     writeLine("              '");
                     writeLine("              spine='");
-
-                    //Curve curve = new Curve();
-                    //ArrayList<T3dVector> curvePoints = curve.generateCurve(distance/2, 24); // The radius will be half the distance between the two points
-
+                    
                     double ellipse_x = distance/2;
                     double ellipse_y = curveRatio * ellipse_x;
                     Ellipse ellipse = new Ellipse();
                     ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, curveEllipseTurns);
 
                     for(T3dVector vector: curvePoints){
-                        //double x = vector.getX();
-                        //double y = vector.getY();
-                        //double z = vector.getZ();
                         double x = floor(100000*vector.getX() +0.5)/100000;
                         double y = floor(100000*vector.getY() +0.5)/100000;
                         double z = floor(100000*vector.getZ() +0.5)/100000;
@@ -330,7 +314,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     }
                     writeLine("              '/>");
                     writeLine("            </Shape>");
-//                      writeLine("          </Transform>");
                     writeLine("        </Transform>");
                     writeLine("      </Transform>");
                     writeLine("    </Transform>");
@@ -520,7 +503,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                 writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + (point.getZ() + displacementZ)+ "'" 
                 			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
-                //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
                 writeLine("        <Billboard axisOfRotation='"+billboardAxis+"'>");
                 writeLine("          <Shape DEF=\"labelText\" data-class=\"information\">");
                 writeLine("            <Appearance>");
