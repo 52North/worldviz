@@ -3,7 +3,7 @@
             if(data_class == "feature"){
                 var data_index = $(shape).attr("data-index"); 
                 document.getElementById("lastClickedObject").innerHTML = data_class + " " + data_index;
-                showRelationsForNode(data_index);
+                var indices = showRelationsForNode(data_index);
             }
 			else if(data_class == "relation"){
 				var shape_type = $(shape).attr("def");
@@ -47,10 +47,10 @@
                 if( (data_def == shapeString || data_def == "arrowConeShape" || data_def == "arrowCylinderShape") && (firstId == nodeId || secondId == nodeId)){
                     x[i].render = "true";
 					if(firstId == nodeId){
-						feature_id.push(firstId);
+						feature_id.push(secondId);
 					}
 					else{
-						feature_id.push(secondId);
+						feature_id.push(firstId);
 					}
                 }
                 else{
@@ -58,6 +58,13 @@
                 }
             }
         }
+		var unique_id = [];
+		for(var i in feature_id){
+			if(unique_id.indexOf(feature_id[i]) === -1){
+				unique_id.push(feature_id[i]);
+			}
+		}
+		return unique_id.sort();
     }
 
     function showAllRelations() {
