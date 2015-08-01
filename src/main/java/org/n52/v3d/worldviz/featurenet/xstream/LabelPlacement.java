@@ -9,8 +9,15 @@ public class LabelPlacement{
     @XStreamImplicit
     protected List<PointPlacement> pointPlacement;
     
+    @XStreamAlias("BillboardAxis")
+    String BillboardAxis;
+    
     public List getPointPlacement(){
         return pointPlacement;
+    }
+    
+    public String getBillboardAxis(){
+        return BillboardAxis;
     }
     
 }

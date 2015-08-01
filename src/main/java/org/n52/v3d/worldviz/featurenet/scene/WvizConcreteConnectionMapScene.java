@@ -28,6 +28,8 @@ public abstract class WvizConcreteConnectionMapScene {
     // List of Style Parameters that were defined in the XML sheet - More will
     // be added!
     protected String normalColor, currentColor, highlightColor;
+    
+    protected String billboardAxis;
 
     protected double symbolSize;
 
@@ -55,7 +57,11 @@ public abstract class WvizConcreteConnectionMapScene {
     public T3dColor[] outputColorValues;
     
     protected BufferedWriter document;
+    
+    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, arrowConeHeight, arrowRatio;
 
+    public int ribbonCircleTurns, ribbonHelixTurns,curveCircleTurns, curveEllipseTurns;
+    
     public WvizConcreteConnectionMapScene(WvizVirtualConnectionMapScene scene) {
         this.scene = scene;
 
@@ -94,6 +100,7 @@ public abstract class WvizConcreteConnectionMapScene {
         }
 
         LabelPlacement labelPlacement = (LabelPlacement) textVisualizer.getLabelPlacement().get(0);
+        billboardAxis = labelPlacement.getBillboardAxis();
         PointPlacement pointPlacement = (PointPlacement) labelPlacement.getPointPlacement().get(0);
         Displacement displacement = (Displacement) pointPlacement.getDisplacement().get(0);
 
@@ -112,8 +119,26 @@ public abstract class WvizConcreteConnectionMapScene {
 
         Relations relations = (Relations) mapper.getRelations().get(0);
         LineVisualizer lineVisualizer = (LineVisualizer) relations.getLineVisualizer().get(0);
-        Geometry geometry = (Geometry) lineVisualizer.getGeometry().get(0);
-        geometryType = geometry.getType(); //Currently, this is not being used
+        List <Geometry> geometryList = (List <Geometry>) lineVisualizer.getGeometry();
+        
+        for(Geometry geometry:geometryList){
+            geometryType = geometry.getType();
+            if(geometryType.equalsIgnoreCase("ribbon")){
+                ribbonCreaseAngle = geometry.getCreaseAngle();
+                ribbonCircleTurns = geometry.getCircleTurns();
+                ribbonHelixTurns = geometry.getHelixTurns();
+            }
+            else if(geometryType.equalsIgnoreCase("curve")){
+                curveCreaseAngle = geometry.getCreaseAngle();
+                curveCircleTurns = geometry.getCircleTurns();
+                curveEllipseTurns = geometry.getEllipseTurns();
+                curveRatio = geometry.getRatio();
+            }
+            else if(geometryType.equalsIgnoreCase("arrow")){
+                arrowConeHeight = geometry.getConeHeight();
+                arrowRatio = geometry.getRatio();
+            }
+        }
 
         ColorMapper colorMapper = (ColorMapper) lineVisualizer.getColorMapper().get(0);
         InterpolationMode colorInterpolationMode = (InterpolationMode) colorMapper.getInterpolationMode().get(0); 

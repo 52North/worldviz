@@ -10,11 +10,51 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 @XStreamAlias("Geometry")
 public class Geometry {
     @XStreamAlias("type")
-    @XStreamAsAttribute
     String type;
+    
+    @XStreamAlias("CreaseAngle")
+    double CreaseAngle = 0.785;
+    
+    @XStreamAlias("HelixTurns")
+    int HelixTurns = 24;
+    
+    @XStreamAlias("EllipseTurns")
+    int EllipseTurns = 3;
 
+    @XStreamAlias("CircleTurns")
+    int CircleTurns = 24;
+    
+    @XStreamAlias("Ratio")
+    double Ratio = 1.5;
+    
+    @XStreamAlias("ConeHeight")
+    double ConeHeight = 0.1;
+    
     public String getType(){
         return type;
     }
     
+    public double getCreaseAngle(){
+        return CreaseAngle;
+    }
+    
+    public int getCircleTurns(){
+        return CircleTurns;
+    }
+    
+    public int getHelixTurns(){
+        return HelixTurns;
+    }
+    
+    public int getEllipseTurns(){
+        return EllipseTurns;
+    }
+    
+    public double getRatio(){
+        return Ratio;
+    }
+    
+    public double getConeHeight(){
+        return ConeHeight;
+    }
 }

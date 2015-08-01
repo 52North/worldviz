@@ -35,6 +35,7 @@
 				<DisplacementZ>0.05</DisplacementZ>
               </Displacement>
             </PointPlacement>
+			<BillboardAxis>0 0 0</BillboardAxis>
           </LabelPlacement>
           <Fill>
             <SvgParameter name="fill">0 0 0</SvgParameter>
@@ -43,8 +44,24 @@
       </Features>
       <Relations><!-- Visualize feature-net edges using straight lines with blue stroke-colour and a 2pt line-width: -->
         <LineVisualizer>
-          <Geometry type= "StraightLine"/>
-            <!-- It could be interesting for Adhitya to introduce other visualizations such as ribbons, arcs, ... here...-->
+          <Geometry>
+			<type>Ribbon</type>
+			<CreaseAngle>0.785</CreaseAngle>
+			<CircleTurns>24</CircleTurns>
+			<HelixTurns>3</HelixTurns>
+		  </Geometry>
+		  <Geometry>
+			<type>Curve</type>
+			<CreaseAngle>0.785</CreaseAngle>
+			<CircleTurns>24</CircleTurns>
+			<EllipseTurns>24</EllipseTurns>
+			<Ratio>1.5</Ratio>
+		  </Geometry>
+		  <Geometry>
+			<type>Arrow</type>
+			<ConeHeight>0.1</ConeHeight>
+			<Ratio>5</Ratio>
+		  </Geometry>	
 		  <ColorMapper>
             <InterpolationMode type="linear"/>
             <ColorPalette>
@@ -75,8 +92,6 @@
               </WidthEntry>
             </WidthPalette>
           </WidthMapper>
-
-		  
         </LineVisualizer>
       </Relations>
     </Mapper>

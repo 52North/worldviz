@@ -205,13 +205,13 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("              </Appearance>");
 
-                    writeLine("              <Extrusion creaseAngle='"+0.785+"'");
+                    writeLine("              <Extrusion creaseAngle='"+ribbonCreaseAngle+"'");
                     writeLine("              crossSection='");
                     Circle circle = new Circle();
 
                     double radius = widthMapper.transform(weight);
 
-                    ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
+                    ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, ribbonCircleTurns);
                     for(T3dVector vector: circlePoints){
                         //double x = vector.getX();
                         //double y = vector.getY();
@@ -222,7 +222,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              '");
                     writeLine("              spine='");
                     Ribbon ribbon = new Ribbon();
-                    ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance, 3);
+                    ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance,ribbonHelixTurns);
                     for(T3dVector vector: ribbonPoints){
                         //double x = vector.getX();
                         //double y = vector.getY();
@@ -300,7 +300,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     double radius = widthMapper.transform(weight);
 
-                    ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, 24);
+                    ArrayList<T3dVector> circlePoints = circle.generateCircle(radius, curveCircleTurns);
                     for(T3dVector vector: circlePoints){
                         //double x = vector.getX();
                         //double y = vector.getY();
@@ -315,9 +315,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     //ArrayList<T3dVector> curvePoints = curve.generateCurve(distance/2, 24); // The radius will be half the distance between the two points
 
                     double ellipse_x = distance/2;
-                    double ellipse_y = 1.5 * ellipse_x;
+                    double ellipse_y = curveRatio * ellipse_x;
                     Ellipse ellipse = new Ellipse();
-                    ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, 24);
+                    ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, curveEllipseTurns);
 
                     for(T3dVector vector: curvePoints){
                         //double x = vector.getX();
@@ -426,7 +426,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double distance = angleCalc.getLengthFromTo();
                 
                 double cylinderHeight = distance;
-                double coneHeight = 0.1; //To be removed
+                double coneHeight = arrowConeHeight;
                
                 //First translate by y/2 units
                 //We subtract 1 symbolSize unit, because the edge starts from that that point and our symbol overlaps it
@@ -440,7 +440,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double weight = (Double)arc.getValue();
                 
                 double cylinderRadius = widthMapper.transform(weight);
-                double coneRadius = cylinderRadius * 5; //To be removed
+                double coneRadius = cylinderRadius * arrowRatio;
                 
                 T3dColor color = simpleColorMapper.transform(weight);
                 float red = color.getRed();
@@ -521,7 +521,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + (point.getZ() + displacementZ)+ "'" 
                 			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
                 //@ToDo: Instead of Hardcoding the axisOfRotation, we should include it in the XML file
-                writeLine("        <Billboard axisOfRotation='0 0 0'>");
+                writeLine("        <Billboard axisOfRotation='"+billboardAxis+"'>");
                 writeLine("          <Shape DEF=\"labelText\" data-class=\"information\">");
                 writeLine("            <Appearance>");
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
