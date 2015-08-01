@@ -123,6 +123,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("                feature.setAttribute('diffuseColor','"+symbolColor+"');");
 		writeLine("}");
                 writeLine("}");
+                
+                writeLine("	function getCurrentColor(){");
+		writeLine("         return '1 0.4 0'" );
+                writeLine("	}");
                 writeLine();
 
                                

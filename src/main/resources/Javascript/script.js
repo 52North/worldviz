@@ -5,6 +5,7 @@
                 document.getElementById("lastClickedObject").innerHTML = data_class + " " + data_index;
                 var indices = showRelationsForNode(data_index);
 				highlightFeatures(indices);
+				document.getElementById("feature"+data_index).setAttribute('diffuseColor',getCurrentColor());
             }
 			else if(data_class == "relation"){
 				var shape_type = $(shape).attr("def");
