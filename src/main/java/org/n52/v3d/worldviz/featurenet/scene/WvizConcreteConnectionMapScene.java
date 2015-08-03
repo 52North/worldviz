@@ -25,8 +25,10 @@ public abstract class WvizConcreteConnectionMapScene {
 
     protected String symbolType;
 
-    // List of Style Parameters that were defined in the XML sheet - More will
-    // be added!
+    protected String skyColor;
+    
+    protected String position, orientation;
+    
     protected String normalColor, currentColor, highlightColor;
   
     protected String normalGlow, currentGlow, highlightGlow;
@@ -76,6 +78,13 @@ public abstract class WvizConcreteConnectionMapScene {
 
         // For specific configuration, we should change our current XML schema
         WvizConfig wvizConfig = scene.getStyle();
+        
+        Background background = (Background) wvizConfig.getBackground().get(0);
+        skyColor = background.getSkyColor();
+        Viewpoint viewpoint = (Viewpoint) wvizConfig.getViewpoint().get(0);
+        position = viewpoint.getPosition();
+        orientation = viewpoint.getOrientation();
+        
         ConnectionNet connectionNet = (ConnectionNet) wvizConfig.getConnectionNet().get(0);
         Mapper mapper = (Mapper) connectionNet.getMapper().get(0);
         Features features = (Features) mapper.getFeatures().get(0);

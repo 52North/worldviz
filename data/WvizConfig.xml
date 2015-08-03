@@ -3,6 +3,8 @@
 -->
 <WvizConfig>
   <!-- Here is an example for a 3-d connection net visualization: -->
+  <Background skyColor='1 1 1' />
+  <Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/> 
   <ConnectionNet>
     <Mapper>
       <!--

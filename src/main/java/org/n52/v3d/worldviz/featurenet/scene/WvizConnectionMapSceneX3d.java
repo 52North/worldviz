@@ -150,13 +150,12 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             writeLine("  <Scene>");
             writeLine();
             
-            //@ToDo: Instead of Hardcoding the skyColor, we should include it in the XML file
             
             if(!x3domMode){
-                writeLine("    <Background skyColor='1 1 1' />");
+                writeLine("    <Background skyColor='"+skyColor+"' />");
             }
             
-            writeLine("    <Viewpoint position='0 0.5 2.5'> </Viewpoint>");
+            writeLine("    <Viewpoint position='"+position+"' orientation='"+orientation+"' > </Viewpoint>");
             
             writeLine("");
 

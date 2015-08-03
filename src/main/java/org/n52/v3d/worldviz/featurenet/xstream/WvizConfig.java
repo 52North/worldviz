@@ -27,8 +27,22 @@ public class WvizConfig {
     private WvizConfig wvizConfig;
 
     @XStreamImplicit
+    protected List<Background> background;
+    
+    @XStreamImplicit
+    protected List<Viewpoint> viewpoint;
+    
+    @XStreamImplicit
     protected List<ConnectionNet> connectionNet;
 
+    public List getBackground() {
+        return background;
+    }
+    
+    public List getViewpoint() {
+        return viewpoint;
+    }
+    
     public List getConnectionNet() {
         return connectionNet;
     }
