@@ -55,7 +55,10 @@
 	*/	
 		var circle = new Circle();
 		var circlePoints = circle.generateCircle(1, 24);
-		document.getElementById("display").innerHTML += "<br>" + "CirclePoints: " + circlePoints;
+		for (var i = 0; i < circlePoints.length; i++) {
+			document.getElementById("display").innerHTML += "<br>" + "(" + circlePoints[i].x+", "+circlePoints[i].y+", "+circlePoints[i].z+") ";
+    	}
+		
 		
 		
 	}
