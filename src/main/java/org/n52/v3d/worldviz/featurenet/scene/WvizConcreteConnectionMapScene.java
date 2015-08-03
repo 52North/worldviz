@@ -99,7 +99,7 @@ public abstract class WvizConcreteConnectionMapScene {
         
         normalGlow = t3dSymbol.getNormalGlow();
         currentGlow = t3dSymbol.getCurrentGlow();
-        highlightGlow = t3dSymbol.getHighlightColor();
+        highlightGlow = t3dSymbol.getHighlightGlow();
         
         TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
         Label label = (Label) textVisualizer.getLabel().get(0);
