@@ -25,6 +25,19 @@ public class T3dSymbol{
     @XStreamAlias("highlightColor")
     @XStreamAsAttribute
     String highlightColor;
+
+    @XStreamAlias("normalGlow")
+    @XStreamAsAttribute
+    String normalGlow;
+
+    @XStreamAlias("currentGlow")
+    @XStreamAsAttribute
+    String currentGlow;
+
+    @XStreamAlias("highlightGlow")
+    @XStreamAsAttribute
+    String highlightGlow;
+
     
     public String getType(){
         return type;
@@ -45,5 +58,16 @@ public class T3dSymbol{
     public String getHighlightColor(){
         return highlightColor;
     }
+    
+    public String getNormalGlow(){
+        return normalGlow;
+    }
 
+    public String getCurrentGlow(){
+        return currentGlow;
+    }
+    
+    public String getHighlightGlow(){
+        return highlightGlow;
+    }
 }

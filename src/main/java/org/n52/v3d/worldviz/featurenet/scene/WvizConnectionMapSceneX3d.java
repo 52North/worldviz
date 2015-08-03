@@ -98,6 +98,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("	       var x = \"feature\" + indices[i];");
                 writeLine("            var feature = document.getElementById(x);");
 		writeLine("	       feature.setAttribute('diffuseColor' , '"+highlightColor+"');");
+                writeLine("	       feature.setAttribute('emissiveColor' , '"+highlightGlow+"');");
 		writeLine("        }");
                 writeLine("        restorePreviousFeatures(indices)");
                 writeLine("    }");
@@ -107,6 +108,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("            for ( var i = 0; i < features_length; i++ ) {");
                 writeLine("                feature_id = \"feature\" + (i+1);");
                 writeLine("                document.getElementById(feature_id).setAttribute('diffuseColor','"+normalColor+"');");
+                writeLine("                document.getElementById(feature_id).setAttribute('emissiveColor','"+normalGlow+"');");
                 writeLine("            }");
                 writeLine("    }");
                 
@@ -120,11 +122,16 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("	       var x = \"feature\" + indices[i];");
                 writeLine("            var feature = document.getElementById(x);");
 		writeLine("            feature.setAttribute('diffuseColor','"+normalColor+"');");
+                writeLine("            feature.setAttribute('emissiveColor','"+normalGlow+"');");
 		writeLine("        }");
                 writeLine("    }");
                 
                 writeLine("    function getCurrentColor(){");
 		writeLine("        return '"+currentColor+"';" );
+                writeLine("    }");
+                
+                writeLine("    function getCurrentGlow(){");
+		writeLine("        return '"+currentGlow+"';" );
                 writeLine("    }");
                 
                 writeLine();

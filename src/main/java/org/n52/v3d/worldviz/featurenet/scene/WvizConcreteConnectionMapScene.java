@@ -28,6 +28,8 @@ public abstract class WvizConcreteConnectionMapScene {
     // List of Style Parameters that were defined in the XML sheet - More will
     // be added!
     protected String normalColor, currentColor, highlightColor;
+  
+    protected String normalGlow, currentGlow, highlightGlow;
     
     protected String billboardAxis;
 
@@ -85,6 +87,10 @@ public abstract class WvizConcreteConnectionMapScene {
         normalColor = t3dSymbol.getNormalColor();
         currentColor = t3dSymbol.getCurrentColor();
         highlightColor = t3dSymbol.getHighlightColor();
+        
+        normalGlow = t3dSymbol.getNormalGlow();
+        currentGlow = t3dSymbol.getCurrentGlow();
+        highlightGlow = t3dSymbol.getHighlightColor();
         
         TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
         Label label = (Label) textVisualizer.getLabel().get(0);
