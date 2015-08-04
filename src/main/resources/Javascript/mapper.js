@@ -220,7 +220,7 @@ MpValue2NumericExtent.prototype.transform = function(inputValue) {
 			}
 		}
 
-		numericExtent = this.outputExtents[inputValues.length - 1];
+		numericExtent = this.outputExtents[this.inputValues.length - 1];
 
 		return numericExtent;
 	}
