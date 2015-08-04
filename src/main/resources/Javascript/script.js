@@ -509,7 +509,7 @@
 			distance = parseFloat(x[i].getAttribute("data-distance"));
 			radius = widthMapper.transform(weight);
 			
-			if(shape_type == "ellipseShape"){
+			if(shape_type == "ribbonShape"){
 				
 				circlePoints = circle.generateCircle(radius, getRibbonCircleTurns());
 				
@@ -528,7 +528,7 @@
 				x[i].setAttribute('spine',spineValue);
 				
 			}
-			else if(shape_type == "ribbonShape"){
+			else if(shape_type == "ellipseShape"){
 				circlePoints = circle.generateCircle(radius, getCurveCircleTurns());
 				
 				var crossSectionValue = "";
