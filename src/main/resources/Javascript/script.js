@@ -568,6 +568,39 @@
 		
     }
 	
+    function highlightFeatures(indices){
+        for ( var i = 0; i < indices.length; i++ ) {
+			var x = "feature" + indices[i];
+            var feature = document.getElementById(x);
+			feature.setAttribute('diffuseColor', getHighlightColor());
+			feature.setAttribute('emissiveColor', getHighlightGlow());
+        }
+        restorePreviousFeatures(indices)
+    }
+
+    function restoreFeatures(){
+            for ( var i = 0; i < getIndexSize(); i++ ) {
+                feature_id = "feature" + (i+1);
+                document.getElementById(feature_id).setAttribute('diffuseColor', getNormalColor());
+                document.getElementById(feature_id).setAttribute('emissiveColor', getNormalGlow());
+            }
+    }
+
+    function restorePreviousFeatures(indices){
+        for (var i=0; i<indices.length; i++){
+			indices[i] = parseInt(indices[i], 10);
+        }
+        var all_indices = Array.range(1, getIndexSize());
+        var indices = arrayDifference(all_indices,indices);
+        for ( var i = 0; i < indices.length; i++ ) {
+			var x = "feature" + indices[i];
+			var feature = document.getElementById(x);
+			feature.setAttribute('diffuseColor', getNormalColor());
+			feature.setAttribute('emissiveColor', getNormalGlow());
+        }
+    }
+	
+	
     $(document).ready(function(){
         $("shape").each(function() {
             $(this).attr("onclick", "handleSingleClick(this)");

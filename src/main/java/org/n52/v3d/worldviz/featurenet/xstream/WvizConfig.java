@@ -19,8 +19,6 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.io.File;
 import java.util.List;
 
-import org.n52.v3d.worldviz.helper.RelativePaths;
-
 @XStreamAlias("WvizConfig")
 public class WvizConfig {
 
@@ -57,12 +55,4 @@ public class WvizConfig {
     public WvizConfig getConfiguration() {
         return wvizConfig;
     }
-
-    //Adhitya: Christian could check the last line of the output log? 
-    public static void main(String args[]) {
-        XStream xStream = new XStream();
-        xStream.processAnnotations(WvizConfig.class);
-        System.out.println(xStream.toXML((new WvizConfig(RelativePaths.STYLE_CONFIGURATION_XML)).getConfiguration()));
-    }
-
 }

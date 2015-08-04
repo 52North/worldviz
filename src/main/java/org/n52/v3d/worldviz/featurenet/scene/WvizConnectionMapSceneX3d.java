@@ -93,38 +93,25 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/shapes.js\"></script>");
                 writeLine("    <!-- Change the path, when the repository is changed! -->");
                 writeLine("    <script type=\"text/javascript\">");
-               
-                writeLine("    function highlightFeatures(indices){");
-		writeLine("        for ( var i = 0; i < indices.length; i++ ) {");
-		writeLine("	       var x = \"feature\" + indices[i];");
-                writeLine("            var feature = document.getElementById(x);");
-		writeLine("	       feature.setAttribute('diffuseColor' , '"+highlightColor+"');");
-                writeLine("	       feature.setAttribute('emissiveColor' , '"+highlightGlow+"');");
-		writeLine("        }");
-                writeLine("        restorePreviousFeatures(indices)");
-                writeLine("    }");
-	
-                writeLine("    function restoreFeatures(){");
-                writeLine("        var features_length = " + scene.getVertices().size() +";");
-                writeLine("            for ( var i = 0; i < features_length; i++ ) {");
-                writeLine("                feature_id = \"feature\" + (i+1);");
-                writeLine("                document.getElementById(feature_id).setAttribute('diffuseColor','"+normalColor+"');");
-                writeLine("                document.getElementById(feature_id).setAttribute('emissiveColor','"+normalGlow+"');");
-                writeLine("            }");
+                
+                writeLine("    function getIndexSize(){");
+		writeLine("        return "+scene.getVertices().size()+";" );
                 writeLine("    }");
                 
-                writeLine("    function restorePreviousFeatures(indices){");
-		writeLine("        for (var i=0; i<indices.length; i++){");
-		writeLine("	       indices[i] = parseInt(indices[i], 10);");
-		writeLine("        }");
-		writeLine("        var all_indices = Array.range(1, "+scene.getVertices().size()+");");
-		writeLine("        var indices = arrayDifference(all_indices,indices);");
-		writeLine("        for ( var i = 0; i < indices.length; i++ ) {");
-		writeLine("	       var x = \"feature\" + indices[i];");
-                writeLine("            var feature = document.getElementById(x);");
-		writeLine("            feature.setAttribute('diffuseColor','"+normalColor+"');");
-                writeLine("            feature.setAttribute('emissiveColor','"+normalGlow+"');");
-		writeLine("        }");
+                writeLine("    function getNormalColor(){");
+		writeLine("        return '"+normalColor+"';" );
+                writeLine("    }");
+                
+                writeLine("    function getNormalGlow(){");
+		writeLine("        return '"+normalGlow+"';" );
+                writeLine("    }");
+                
+                writeLine("    function getHighlightColor(){");
+		writeLine("        return '"+highlightColor+"';" );
+                writeLine("    }");
+                
+                writeLine("    function getHighlightGlow(){");
+		writeLine("        return '"+highlightGlow+"';" );
                 writeLine("    }");
                 
                 writeLine("    function getCurrentColor(){");
