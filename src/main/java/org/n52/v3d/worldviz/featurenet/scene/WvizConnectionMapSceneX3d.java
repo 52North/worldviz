@@ -427,7 +427,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double distance = angleCalc.getLengthFromTo();
                 
                 double cylinderHeight = distance;
-                double coneHeight = arrowConeHeight;
+                double coneHeight = distance/15;
                
                 //First translate by y/2 units
                 //We subtract 1 symbolSize unit, because the edge starts from that that point and our symbol overlaps it
@@ -435,7 +435,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 //There is some overlapping issue, that is why I'm keeping to 1.5 now. If this looks good, we could keep that!
                 
-                double coneTranslation = (distance/2) - (symbolSize*1.5);
+                double coneTranslation = (distance/2) - (symbolSize*1);
                 //double coneTranslation = (distance/2) - (symbolSize*2.0); 
                 
                 double weight = (Double)arc.getValue();

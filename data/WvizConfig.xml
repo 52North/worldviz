@@ -19,7 +19,7 @@
         -->
         <PointVisualizer>
           <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
-          <T3dSymbol type="Sphere" size="0.05" normalColor="1 0 0" normalGlow="0 0 0" currentColor="1 0.4 0" currentGlow="0 0 0" highlightColor="1 1 0" highlightGlow="1 0 0"/>
+          <T3dSymbol type="Sphere" size="0.02" normalColor="1 0 0" normalGlow="0 0 0" currentColor="1 0.4 0" currentGlow="0 0 0" highlightColor="1 1 0" highlightGlow="1 0 0"/>
         </PointVisualizer>
         <TextVisualizer>
           <Label>
@@ -62,8 +62,8 @@
 		  </Geometry>
 		  <Geometry>
 			<type>Arrow</type>
-			<ConeHeight>0.1</ConeHeight>
-			<Ratio>5</Ratio>
+			<ConeHeight>0.2</ConeHeight>
+			<Ratio>2.5</Ratio>
 		  </Geometry>	
 		  <ColorMapper>
             <InterpolationMode type="linear"/>

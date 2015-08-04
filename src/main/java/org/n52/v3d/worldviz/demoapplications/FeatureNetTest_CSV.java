@@ -6,15 +6,10 @@ import java.nio.file.Paths;
 import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.impl.CsvReaderForConnectionMap;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
-import org.n52.v3d.worldviz.demoapplications.FeatureNetTest;
 import org.n52.v3d.worldviz.featurenet.scene.MpFeatureNetVisualizer;
-import org.n52.v3d.worldviz.featurenet.scene.MpFeatureNetVisualizer;
-import org.n52.v3d.worldviz.featurenet.scene.MprConnectionMapGenerator;
 import org.n52.v3d.worldviz.featurenet.scene.MprConnectionMapGenerator;
 import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
 import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
-import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
-import org.n52.v3d.worldviz.featurenet.scene.WvizVirtualConnectionMapScene;
 import org.n52.v3d.worldviz.featurenet.scene.WvizVirtualConnectionMapScene;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.slf4j.Logger;
@@ -37,11 +32,11 @@ public class FeatureNetTest_CSV {
     
     public static void main(String[] args){
         
-        String csvFile = RelativePaths.IMPORTS_PARTNER_CSV;
+        String csvFile = RelativePaths.EXPORTS_PARTNER_CSV;
         String configurationFile = RelativePaths.STYLE_CONFIGURATION_XML;
         
         FeatureNetTest_CSV app = new FeatureNetTest_CSV();
-        app.setConfig(csvFile,configurationFile, false);
+        app.setConfig(csvFile,configurationFile, true);
         app.run();
     }
     
