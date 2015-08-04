@@ -90,6 +90,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-2.1.0.min.js\" ></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/mapper.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js\"></script>");
+                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/shapes.js\"></script>");
                 writeLine("    <!-- Change the path, when the repository is changed! -->");
                 writeLine("    <script type=\"text/javascript\">");
                
@@ -132,6 +133,26 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 
                 writeLine("    function getCurrentGlow(){");
 		writeLine("        return '"+currentGlow+"';" );
+                writeLine("    }");
+                
+                writeLine("    function getRibbonCircleTurns(){");
+		writeLine("        return parseInt("+ribbonCircleTurns+");" );
+                writeLine("    }");
+                
+                writeLine("    function getRibbonHelixTurns(){");
+		writeLine("        return parseInt("+ribbonHelixTurns+");" );
+                writeLine("    }");
+                
+                writeLine("    function getRibbonStep(){");
+		writeLine("        return parseFloat("+ribbonStep+");" );
+                writeLine("    }");
+                
+                writeLine("    function getCurveCircleTurns(){");
+		writeLine("        return parseInt("+curveCircleTurns+");" );
+                writeLine("    }");
+
+                writeLine("    function getCurveEllipseTurns(){");
+		writeLine("        return parseInt("+curveEllipseTurns+");" );
                 writeLine("    }");
                 
                 writeLine();
@@ -211,7 +232,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("              </Appearance>");
 
-                    writeLine("              <Extrusion creaseAngle='"+ribbonCreaseAngle+"'");
+                    writeLine("              <Extrusion data-shape=\"ribbonShape\" data-weight=\""+weight+"\" data-distance=\""+distance+"\" creaseAngle='"+ribbonCreaseAngle+"'");
                     writeLine("              crossSection='");
                     Circle circle = new Circle();
 
@@ -291,8 +312,11 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
                     writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("              </Appearance>");
+                    
+                    double ellipse_x = distance/2;
+                    double ellipse_y = curveRatio * ellipse_x;
 
-                    writeLine("              <Extrusion beginCap='true' convex='false' creaseAngle='"+curveCreaseAngle+"'");
+                    writeLine("              <Extrusion data-shape=\"ellipseShape\" data-weight=\""+weight+"\" data-ellipse_x=\""+ellipse_x+"\" data-ellipse_y=\""+ellipse_y+"\" beginCap='true' convex='false' creaseAngle='"+curveCreaseAngle+"'");
                     writeLine("              crossSection='");
                     Circle circle = new Circle();
 
@@ -307,8 +331,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              '");
                     writeLine("              spine='");
                     
-                    double ellipse_x = distance/2;
-                    double ellipse_y = curveRatio * ellipse_x;
                     Ellipse ellipse = new Ellipse();
                     ArrayList<T3dVector> curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, curveEllipseTurns);
 
@@ -376,7 +398,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("                <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("              </Appearance>");
 
-                    writeLine("              <Cylinder height=\"" + cylinderHeight + "\" radius=\""+radius+ "\"/>");
+                    writeLine("              <Cylinder data-weight=\""+weight+"\" height=\"" + cylinderHeight + "\" radius=\""+radius+ "\"/>");
 
                     writeLine("            </Shape>");
                     writeLine("          </Transform>");

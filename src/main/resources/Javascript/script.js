@@ -15,7 +15,7 @@
                 document.getElementById("lastClickedObject").innerHTML = data_class + " " +shape_type +" "+first + " "+ second;
 				changeRelation(shape);
             }
-            else{
+            else{s
 				document.getElementById("lastClickedObject").innerHTML = data_class + " false";
             }
     }
@@ -492,6 +492,64 @@
 		}		
 		return A;
 	}
+	
+	function changeWidths() {
+		var widthMapper = getWidthMapper();
+        var x = document.getElementsByTagName("extrusion");
+		
+		var circle = new Circle();
+		var ribbon = new Ribbon();
+		var ellipse = new Ellipse();
+		
+        var i,weight,shape_type,radius,distance,circlePoints,ribbonPoints,curvePoints;
+        for (i = 0; i < x.length; i++) {
+			
+			shape_type = x[i].getAttribute("data-shape");
+			weight = parseFloat(x[i].getAttribute("data-weight"));
+			distance = parseFloat(x[i].getAttribute("data-distance"));
+			radius = widthMapper.transform(weight);
+			
+			if(shape_type == "ellipseShape"){
+				
+				circlePoints = circle.generateCircle(radius, getRibbonCircleTurns());
+				
+				var crossSectionValue = "";
+				for (var j = 0; j < circlePoints.length; j++) {
+					crossSectionValue +=  circlePoints[j].x+" "+circlePoints[j].y+" ";
+				}
+				x[i].setAttribute('crossSection',crossSectionValue);
+				
+				ribbonPoints = ribbon.generateRibbon(radius,distance,getRibbonHelixTurns(),getRibbonStep());
+				
+				var spineValue = "";
+				for (var j = 0; j < ribbonPoints.length; j++) {
+					spineValue +=  ribbonPoints[j].x+" "+ribbonPoints[j].y+" "+ribbonPoints[j].z+" ";
+				}
+				x[i].setAttribute('spine',spineValue);
+				
+			}
+			else if(shape_type == "ribbonShape"){
+				circlePoints = circle.generateCircle(radius, getCurveCircleTurns());
+				
+				var crossSectionValue = "";
+				for (var j = 0; j < circlePoints.length; j++) {
+					crossSectionValue +=  circlePoints[j].x+" "+circlePoints[j].y+" ";
+				}
+				x[i].setAttribute('crossSection',crossSectionValue);
+				
+				ellipse_x = parseFloat(x[i].getAttribute("data-ellipse_x"));
+				ellipse_y = parseFloat(x[i].getAttribute("data-ellipse_y"));
+				curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, getCurveEllipseTurns());
+				
+				var spineValue = "";
+				for (var j = 0; j < curvePoints.length; j++) {
+					spineValue +=  curvePoints[j].x+" "+curvePoints[j].y+" "+curvePoints[j].z+" ";
+				}
+				x[i].setAttribute('spine',spineValue);
+				
+			}
+        }
+    }
 	
     $(document).ready(function(){
         $("shape").each(function() {
