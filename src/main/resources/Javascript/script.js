@@ -575,7 +575,7 @@
 			feature.setAttribute('diffuseColor', getHighlightColor());
 			feature.setAttribute('emissiveColor', getHighlightGlow());
         }
-        restorePreviousFeatures(indices)
+        restorePreviousFeatures(indices);
     }
 
     function restoreFeatures(){
