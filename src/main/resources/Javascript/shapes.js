@@ -86,7 +86,7 @@ Ribbon.prototype.generateRibbon = function(radius, distance, thetaInRad, step) {
     
     for(var ribbonIndex=0; ribbonIndex<turns; ribbonIndex++, y+=step){
         angle = (ribbonIndex * Math.PI)/thetaInRad;
-        point = generatePoint(radius, thetaInRad);
+        point = generatePoint(radius, angle);
 		point = transformAxis(point);
 		point.y = y;
         this.ribbonPoints[ribbonIndex] = point;
