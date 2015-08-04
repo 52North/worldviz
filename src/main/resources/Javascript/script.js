@@ -537,8 +537,8 @@
 				}
 				x[i].setAttribute('crossSection',crossSectionValue);
 				
-				ellipse_x = parseFloat(x[i].getAttribute("data-ellipse_x"));
-				ellipse_y = parseFloat(x[i].getAttribute("data-ellipse_y"));
+				var ellipse_x = parseFloat(x[i].getAttribute("data-ellipse_x"));
+				var ellipse_y = parseFloat(x[i].getAttribute("data-ellipse_y"));
 				curvePoints = ellipse.generateEllipse(ellipse_x ,ellipse_y, getCurveEllipseTurns());
 				
 				var spineValue = "";
