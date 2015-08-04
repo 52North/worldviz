@@ -226,9 +226,7 @@ MpValue2NumericExtent.prototype.transform = function(inputValue) {
 	}
 }
 
-function interpolateExtent(lowerOutputExtent, higherOutputExtent,
-		interpolationFactor) {
-	var interpolatedExtent = lowerOutputExtent + interpolationFactor
-			* (higherOutputExtent - lowerOutputExtent);
+function interpolateExtent(lowerOutputExtent, higherOutputExtent,interpolationFactor) {
+	var interpolatedExtent = lowerOutputExtent + interpolationFactor* (higherOutputExtent - lowerOutputExtent);
 	return interpolatedExtent;
 }

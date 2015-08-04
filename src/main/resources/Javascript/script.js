@@ -326,7 +326,7 @@
 		var table_length = table.rows.length;
 			
 		for(var i = 1;i<table_length;i++){
-			var inputColorValue = table.rows[i].cells[0].innerHTML;
+			var inputColorValue = parseFloat(table.rows[i].cells[0].innerHTML);
 			inputColors.push(inputColorValue);
 		}
 		return inputColors;
@@ -355,7 +355,7 @@
 		var table_length = table.rows.length;
 			
 		for(var i = 1;i<table_length;i++){
-			var inputWidthValue = table.rows[i].cells[0].innerHTML;
+			var inputWidthValue = parseFloat(table.rows[i].cells[0].innerHTML);
 			inputWidths.push(inputWidthValue);
 		}
 		return inputWidths;
@@ -367,7 +367,7 @@
 		var table_length = table.rows.length;
 			
 		for(var i = 1;i<table_length;i++){
-			var outputWidthValue = table.rows[i].cells[1].innerHTML;
+			var outputWidthValue = parseFloat(table.rows[i].cells[1].innerHTML);
 			outputWidths.push(outputWidthValue);
 		}
 		return outputWidths;
