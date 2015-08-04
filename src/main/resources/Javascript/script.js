@@ -549,6 +549,23 @@
 				
 			}
         }
+		
+		var y = document.getElementsByTagName("cylinder");
+		for (i = 0; i < y.length; i++) {
+			weight = parseFloat(y[i].getAttribute("data-weight"));
+			radius = widthMapper.transform(weight);
+			y[i].setAttribute('radius',radius);
+		}
+
+		var z = document.getElementsByTagName("cone");
+		var coneRatio = getArrowRatio();
+		for (i = 0; i < z.length; i++) {
+			weight = parseFloat(z[i].getAttribute("data-weight"));
+			radius = widthMapper.transform(weight);
+			radius *= coneRatio;
+			z[i].setAttribute('bottomRadius',radius);
+		}
+		
     }
 	
     $(document).ready(function(){

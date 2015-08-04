@@ -154,7 +154,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    function getCurveEllipseTurns(){");
 		writeLine("        return parseInt("+curveEllipseTurns+");" );
                 writeLine("    }");
-                
+ 
+                writeLine("    function getArrowRatio(){");
+		writeLine("        return "+arrowRatio+";" );
+                writeLine("    }");                
                 writeLine();
 
                 
@@ -469,7 +472,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("                <Appearance>");
                     writeLine("                  <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                </Appearance>");
-                    writeLine("                <Cylinder radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
+                    writeLine("                <Cylinder data-weight=\""+weight+"\" radius='"+cylinderRadius+"' height='"+cylinderHeight+"' top='false'/>");
                     writeLine("              </Shape>");                
 
 
@@ -478,7 +481,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("                  <Appearance>");
                     writeLine("                    <Material data-weight=\""+weight+"\" diffuseColor='"+red+" "+green+" "+blue+"'/>");
                     writeLine("                  </Appearance>"); 
-                    writeLine("                  <Cone bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
+                    writeLine("                  <Cone data-weight=\""+weight+"\" bottomRadius='"+coneRadius+"' height='"+coneHeight+"' top='true'/>");
                     writeLine("                </Shape>");
                     writeLine("              </Transform>");
                     writeLine("            </Group>");
