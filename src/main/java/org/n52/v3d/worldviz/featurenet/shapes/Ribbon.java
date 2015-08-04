@@ -11,26 +11,14 @@ import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
  */
 public class Ribbon {
     public ArrayList<T3dVector> ribbonPoints = new ArrayList<T3dVector>();
-    
-    public double step = 0.01;
-    
-    public double getStep(){
-        return step;
-    }
-    
-    public void setStep(double step){
-        this.step = step;
-    }
    
-    public ArrayList<T3dVector> generateRibbon(double radius, double distance, int theta){
+    public ArrayList<T3dVector> generateRibbon(double radius, double distance, int theta, double step){
         Circle circle = new Circle();
         AxisSwitchTransform t = new AxisSwitchTransform();
         VgPoint point;
         T3dVector vector;
         double angle;
-        
-        double step = getStep();
-       
+
         long turns = Math.round(distance/step)+1;
         double y = -(distance/2);
         

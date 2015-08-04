@@ -51,6 +51,7 @@
 			<CreaseAngle>0.785</CreaseAngle>
 			<CircleTurns>24</CircleTurns>
 			<HelixTurns>3</HelixTurns>
+			<RibbonStep>0.01</RibbonStep>
 		  </Geometry>
 		  <Geometry>
 			<type>Curve</type>

@@ -226,7 +226,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("              '");
                     writeLine("              spine='");
                     Ribbon ribbon = new Ribbon();
-                    ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance,ribbonHelixTurns);
+                    ArrayList<T3dVector> ribbonPoints = ribbon.generateRibbon(radius,distance,ribbonHelixTurns,ribbonStep);
                     for(T3dVector vector: ribbonPoints){
                         double x = floor(100000*vector.getX() +0.5)/100000;
                         double y = floor(100000*vector.getY() +0.5)/100000;

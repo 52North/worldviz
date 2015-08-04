@@ -62,7 +62,7 @@ public abstract class WvizConcreteConnectionMapScene {
     
     protected BufferedWriter document;
     
-    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, arrowConeHeight, arrowRatio;
+    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, arrowConeHeight, arrowRatio, ribbonStep;
 
     public int ribbonCircleTurns, ribbonHelixTurns,curveCircleTurns, curveEllipseTurns;
     
@@ -142,6 +142,7 @@ public abstract class WvizConcreteConnectionMapScene {
                 ribbonCreaseAngle = geometry.getCreaseAngle();
                 ribbonCircleTurns = geometry.getCircleTurns();
                 ribbonHelixTurns = geometry.getHelixTurns();
+                ribbonStep = geometry.getRibbonStep();
             }
             else if(geometryType.equalsIgnoreCase("curve")){
                 curveCreaseAngle = geometry.getCreaseAngle();

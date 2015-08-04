@@ -30,6 +30,9 @@ public class Geometry {
     @XStreamAlias("ConeHeight")
     double ConeHeight = 0.1;
     
+    @XStreamAlias("RibbonStep")
+    double RibbonStep = 0.1;
+    
     public String getType(){
         return type;
     }
@@ -56,5 +59,9 @@ public class Geometry {
     
     public double getConeHeight(){
         return ConeHeight;
+    }
+    
+    public double getRibbonStep(){
+        return RibbonStep;
     }
 }
