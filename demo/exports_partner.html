@@ -48,6 +48,20 @@
     function getArrowRatio(){
         return 2.5;
     }
+    function getLinearColorInterpolation(){
+        return true;
+    }
+    function getLinearWidthInterpolation(){
+        return true;
+    }
+
+    function getViewpointPosition(){
+        return '0 0.5 2.5';
+    }
+
+    function getViewpointOrientation(){
+        return '1 0 0 -0.1';
+    }
 
   </script>
   </head>
@@ -59,7 +73,7 @@
 
   <Scene>
 
-    <Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1' > </Viewpoint>
+    <Viewpoint id="viewpoint" position='0 0.5 2.5' orientation='1 0 0 -0.1' > </Viewpoint>
 
     <Transform translation="0.014394444444444446 0.0 -0.20757777777777778">
       <Transform rotation="1 0 0 0.0">
@@ -9353,6 +9367,9 @@
 <input id ="cylinderRadioButton" type="radio" name="shapeRadioButton" value="cylinderShape">Cylinder
 <input id ="ribbonRadioButton" type="radio" name="shapeRadioButton" value="ribbonShape">Ribbon
 <input id ="ellipseRadioButton" type="radio" name="shapeRadioButton" value="ellipseShape" checked>Ellipse
+<br>
+<br>
+<button onclick="restoreViewpoint()">Restore Viewpoint</button>
 <br>
 <br>
 <table id = "colorTable">

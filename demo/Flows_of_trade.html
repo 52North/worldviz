@@ -46,7 +46,21 @@
         return parseInt(24);
     }
     function getArrowRatio(){
-        return 5.0;
+        return 2.5;
+    }
+    function getLinearColorInterpolation(){
+        return true;
+    }
+    function getLinearWidthInterpolation(){
+        return true;
+    }
+
+    function getViewpointPosition(){
+        return '0 0.5 2.5';
+    }
+
+    function getViewpointOrientation(){
+        return '1 0 0 -0.1';
     }
 
   </script>
@@ -59,7 +73,7 @@
 
   <Scene>
 
-    <Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1' > </Viewpoint>
+    <Viewpoint id="viewpoint" position='0 0.5 2.5' orientation='1 0 0 -0.1' > </Viewpoint>
 
     <Transform translation="-0.25 0.0 -0.2777777777777778">
       <Transform rotation="1 0 0 0.0">
@@ -5123,12 +5137,12 @@
                 </Appearance>
                 <Cylinder data-weight="71.0" radius='0.0027411444141689375' height='0.4101339738953722' top='false'/>
               </Shape>
-              <Transform translation='0 0.1300669869476861 0'>
+              <Transform translation='0 0.1850669869476861 0'>
                 <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="1" data-secondId="2">
                   <Appearance>
                     <Material data-weight="71.0" diffuseColor='0.47333336 1.0 0.0'/>
                   </Appearance>
-                  <Cone data-weight="71.0" bottomRadius='0.013705722070844688' height='0.1' top='true'/>
+                  <Cone data-weight="71.0" bottomRadius='0.006852861035422344' height='0.027342264926358148' top='true'/>
                 </Shape>
               </Transform>
             </Group>
@@ -5148,12 +5162,12 @@
                 </Appearance>
                 <Cylinder data-weight="45.0" radius='0.0021035422343324253' height='0.5068968775248516' top='false'/>
               </Shape>
-              <Transform translation='0 0.17844843876242578 0'>
+              <Transform translation='0 0.2334484387624258 0'>
                 <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="7" data-secondId="6">
                   <Appearance>
                     <Material data-weight="45.0" diffuseColor='0.29999995 1.0 0.0'/>
                   </Appearance>
-                  <Cone data-weight="45.0" bottomRadius='0.010517711171662126' height='0.1' top='true'/>
+                  <Cone data-weight="45.0" bottomRadius='0.005258855585831063' height='0.03379312516832344' top='true'/>
                 </Shape>
               </Transform>
             </Group>
@@ -5167,13 +5181,13 @@
         <Appearance>
           <Material id = "feature1" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='-0.5 0.1 -0.2' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel1" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5189,13 +5203,13 @@
         <Appearance>
           <Material id = "feature2" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='-0.3055555555555556 0.1 0.16111111111111112' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel2" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5211,13 +5225,13 @@
         <Appearance>
           <Material id = "feature3" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='0.0 0.1 -0.2555555555555556' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel3" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5233,13 +5247,13 @@
         <Appearance>
           <Material id = "feature4" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='0.4166666666666667 0.1 -0.2555555555555556' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel4" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5255,13 +5269,13 @@
         <Appearance>
           <Material id = "feature5" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='0.2777777777777778 0.1 -0.08888888888888889' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel5" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5277,13 +5291,13 @@
         <Appearance>
           <Material id = "feature6" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='0.11111111111111112 0.1 0.05' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel6" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5299,13 +5313,13 @@
         <Appearance>
           <Material id = "feature7" diffuseColor="1 0 0"/>
         </Appearance>
-        <Sphere radius='0.05'/>
+        <Sphere radius='0.02'/>
       </Shape>
     </Transform>
 
     <Transform translation='0.6111111111111112 0.1 -0.03333333333333334' scale='0.1 0.1 0.1'>
         <Billboard axisOfRotation='0 0 0'>
-          <Shape DEF="labelText" data-class="information">
+          <Shape id = "featureLabel7" render="true" DEF="labelText" data-class="information">
             <Appearance>
               <Material diffuseColor="0 0 0"/>
             </Appearance>
@@ -5325,6 +5339,9 @@
 <input id ="cylinderRadioButton" type="radio" name="shapeRadioButton" value="cylinderShape">Cylinder
 <input id ="ribbonRadioButton" type="radio" name="shapeRadioButton" value="ribbonShape">Ribbon
 <input id ="ellipseRadioButton" type="radio" name="shapeRadioButton" value="ellipseShape" checked>Ellipse
+<br>
+<br>
+<button onclick="restoreViewpoint()">Restore Viewpoint</button>
 <br>
 <br>
 <table id = "colorTable">
