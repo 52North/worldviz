@@ -154,7 +154,16 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 		writeLine("        return "+linearWidthInterpolation+";" );
                 writeLine("    }");                    
                 writeLine();
+                
+                writeLine("    function getViewpointPosition(){");
+		writeLine("        return '"+position+"';" );
+                writeLine("    }");                    
+                writeLine();
 
+                writeLine("    function getViewpointOrientation(){");
+		writeLine("        return '"+orientation+"';" );
+                writeLine("    }");                    
+                writeLine();
                 
                 writeLine("  </script>");
                 writeLine("  </head>");
@@ -557,6 +566,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<input id =\"ribbonRadioButton\" type=\"radio\" name=\"shapeRadioButton\" value=\"ribbonShape\">Ribbon");
                 writeLine("<input id =\"ellipseRadioButton\" type=\"radio\" name=\"shapeRadioButton\" value=\"ellipseShape\" checked>Ellipse");
                 
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<button onclick=\"restoreViewpoint()\">Restore Viewpoint</button>");
                 writeLine("<br>");
                 writeLine("<br>");
                 

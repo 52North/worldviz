@@ -612,6 +612,11 @@
         }
     }
 	
+	function restoreViewpoint(){
+		var viewpoint = document.getElementsByTagName("viewpoint");
+		viewpoint.setAttribute('position', getViewpointPosition());
+		viewpoint.setAttribute('orientation', getViewpointOrientation());
+	}
 	
     $(document).ready(function(){
         $("shape").each(function() {
