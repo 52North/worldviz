@@ -613,7 +613,7 @@
     }
 	
 	function restoreViewpoint(){
-		var viewpoint = document.getElementsByTagName("viewpoint");
+		var viewpoint = document.getElementById("viewpoint");
 		viewpoint.setAttribute('position', getViewpointPosition());
 		viewpoint.setAttribute('orientation', getViewpointOrientation());
 	}

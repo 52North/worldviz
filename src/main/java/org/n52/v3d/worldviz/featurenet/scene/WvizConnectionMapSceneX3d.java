@@ -183,7 +183,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <Background skyColor='"+skyColor+"' />");
             }
             
-            writeLine("    <Viewpoint position='"+position+"' orientation='"+orientation+"' > </Viewpoint>");
+            writeLine("    <Viewpoint id=\"viewpoint\" position='"+position+"' orientation='"+orientation+"' > </Viewpoint>");
             
             writeLine("");
 
