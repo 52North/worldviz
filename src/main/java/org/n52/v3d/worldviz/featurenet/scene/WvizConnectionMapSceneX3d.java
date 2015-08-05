@@ -507,7 +507,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 VgPoint point = (VgPoint) (vertex.getGeometry());
                 point = pointMap.get(point);
                 int indexPoint = indexPointMap.get(point);
-                if ("Sphere".equals(symbolType)) {
+                if ("sphere".equalsIgnoreCase(symbolType)) {
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"sphereShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
@@ -515,7 +515,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                     writeLine("        </Appearance>");
                     writeLine("        <Sphere radius='" + symbolSize + "'/>");
                 }
-                else if ("Box".equals(symbolType)) {
+                else if ("box".equalsIgnoreCase(symbolType)) {
                     writeLine("    <Transform translation='" + point.getX() + " " + point.getY() + " " + point.getZ() + "'>");
                     writeLine("      <Shape render=\"true\" DEF=\"boxShape\" " +"data-class=\"feature\" " + "data-index=\""+indexPoint+"\""+">");
                     writeLine("        <Appearance>");
