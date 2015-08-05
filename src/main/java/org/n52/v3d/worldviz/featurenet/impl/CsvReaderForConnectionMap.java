@@ -173,7 +173,12 @@ public class CsvReaderForConnectionMap {
                         VgFeature toNodeFeature = this.countryCodeSceneNodeMap.get(toNodeCountryCode);
 
                         // set up relation
-                        VgRelation fromToRelation = new WvizFlow(fromFeatureNode, toNodeFeature,connectionWeight);
+                        /*
+                         * TODO FIXME actually these are directled edges, thus WvizFlow-objects
+                         * For demo purposes this was changed to non-directed WvizConnection.
+                         * This should be changed again later
+                         */
+                        VgRelation fromToRelation = new WvizConnection(fromFeatureNode, toNodeFeature,connectionWeight);
                         relations.add(fromToRelation);
 
                         if (logger.isDebugEnabled()) {
