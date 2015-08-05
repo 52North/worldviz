@@ -577,7 +577,7 @@
 			
 			var y = "featureLabel" + indices[i];
 			var label = document.getElementById(y);
-			label.setAttribute('render', 'false');
+			label.setAttribute('render', 'true');
 		}
         restorePreviousFeatures(indices);
     }
