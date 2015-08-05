@@ -522,7 +522,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <Transform translation='" + (point.getX() + displacementX) + " " + (point.getY() + displacementY) + " " + (point.getZ() + displacementZ)+ "'" 
                 			+ " scale='" + svgMap.get("font-size") + " " + svgMap.get("font-size") + " " + svgMap.get("font-size") + "'>");
                 writeLine("        <Billboard axisOfRotation='"+billboardAxis+"'>");
-                writeLine("          <Shape DEF=\"labelText\" data-class=\"information\">");
+                writeLine("          <Shape id = \"featureLabel"+indexPoint+"\" render=\"true\" DEF=\"labelText\" data-class=\"information\">");
                 writeLine("            <Appearance>");
                 writeLine("              <Material diffuseColor=\"" + svgMap.get("fill") + "\"/>");
                 writeLine("            </Appearance>");

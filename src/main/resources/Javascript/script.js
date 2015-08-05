@@ -574,15 +574,22 @@
             var feature = document.getElementById(x);
 			feature.setAttribute('diffuseColor', getHighlightColor());
 			feature.setAttribute('emissiveColor', getHighlightGlow());
-        }
+			
+			var y = "featureLabel" + indices[i];
+			var label = document.getElementById(y);
+			label.setAttribute('render', 'false');
+		}
         restorePreviousFeatures(indices);
     }
 
     function restoreFeatures(){
             for ( var i = 0; i < getIndexSize(); i++ ) {
-                feature_id = "feature" + (i+1);
+                var feature_id = "feature" + (i+1);
                 document.getElementById(feature_id).setAttribute('diffuseColor', getNormalColor());
                 document.getElementById(feature_id).setAttribute('emissiveColor', getNormalGlow());
+							
+				var y = "featureLabel" + (i+1);
+				document.getElementById(y).setAttribute('render', 'true');
             }
     }
 
@@ -597,6 +604,10 @@
 			var feature = document.getElementById(x);
 			feature.setAttribute('diffuseColor', getNormalColor());
 			feature.setAttribute('emissiveColor', getNormalGlow());
+			
+			var y = "featureLabel" + indices[i];
+			var label = document.getElementById(y);
+			label.setAttribute('render', 'false');
         }
     }
 	
