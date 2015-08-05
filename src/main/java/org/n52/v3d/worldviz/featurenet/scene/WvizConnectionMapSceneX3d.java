@@ -144,7 +144,15 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
  
                 writeLine("    function getArrowRatio(){");
 		writeLine("        return "+arrowRatio+";" );
-                writeLine("    }");                
+                writeLine("    }"); 
+                
+                writeLine("    function getLinearColorInterpolation(){");
+		writeLine("        return "+linearColorInterpolation+";" );
+                writeLine("    }");                 
+
+                writeLine("    function getLinearWidthInterpolation(){");
+		writeLine("        return "+linearWidthInterpolation+";" );
+                writeLine("    }");                    
                 writeLine();
 
                 

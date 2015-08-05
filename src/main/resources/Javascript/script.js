@@ -380,7 +380,7 @@
 		var outputColors = getOutputColors();
 		
 		var colorMapper = new MpSimpleHypsometricColor();
-		colorMapper.setPalette(inputColors, outputColors, true);
+		colorMapper.setPalette(inputColors, outputColors, getLinearColorInterpolation());
 		return colorMapper;
 	}
 	
@@ -390,7 +390,7 @@
 		var outputWidths = getOutputWidths();
 		
 		var widthMapper = new MpValue2NumericExtent();
-		widthMapper.setPalette(inputWidths, outputWidths, true);
+		widthMapper.setPalette(inputWidths, outputWidths, getLinearWidthInterpolation());
 		return widthMapper;
 	}
 	
