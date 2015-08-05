@@ -7,6 +7,7 @@
 				highlightFeatures(indices);
 				document.getElementById("feature"+data_index).setAttribute('diffuseColor',getCurrentColor());
 				document.getElementById("feature"+data_index).setAttribute('emissiveColor',getCurrentGlow());
+				document.getElementById("featureLabel"+data_index).setAttribute('render','true');
             }
 			else if(data_class == "relation"){
 				var shape_type = $(shape).attr("def");
