@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 
 
-public class FeatureNetTest {
+public class FeatureNetTest implements FeatureNetInterface{
     
     public String pajekFile,configurationFile;
     public String outputFile = RelativePaths.TEST_FOLDER;
@@ -71,15 +71,21 @@ public class FeatureNetTest {
         return this.outputFile;
     }
 
-    public void run() throws PajekException {
-        VgFeatureNet net = this.generateFeatureNet();
-        
-        //this.print(net); // Test output
-        
-        WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
-        result.setX3domMode(X3DOMMode);
-        result.writeToFile(outputFile);
-        logger.info("Result written to file! "+ outputFile);
+    public void run() {
+        try{
+            VgFeatureNet net = this.generateFeatureNet();
+
+            //this.print(net); // Test output
+
+            WvizConnectionMapSceneX3d result = this.generateX3dScene(net);
+            result.setX3domMode(X3DOMMode);
+            result.writeToFile(outputFile);
+            logger.info("Result written to file! "+ outputFile);            
+        }
+        catch(Exception ex){
+            logger.error(pajekFile);
+        }
+
     }
 
     private VgFeatureNet generateFeatureNet() throws PajekException {

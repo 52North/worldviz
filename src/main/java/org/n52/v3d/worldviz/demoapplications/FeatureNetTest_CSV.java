@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Benno Schmidt, Adhitya Kamakshidasan
  */
-public class FeatureNetTest_CSV {
+public class FeatureNetTest_CSV implements FeatureNetInterface{
 
     public String csvFile, configurationFile;
     public String outputFile = RelativePaths.TEST_FOLDER;

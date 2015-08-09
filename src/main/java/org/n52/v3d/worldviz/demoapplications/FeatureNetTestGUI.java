@@ -224,43 +224,27 @@ public class FeatureNetTestGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please check your paths");
         }
         else {
-            if ("net".equals(fileType)) {
-                FeatureNetTest app = new FeatureNetTest();
-                if (!outputPath.isEmpty()) {
-                    app.setOutputFile(outputPath);
-                }
-                app.setConfig(file, configurationFile, X3DOMMode);
-                try {
-                    app.run();
-                    JOptionPane.showMessageDialog(null, "Done! File created at " + app.getOutputFile());
-
-                    //Close the frame!
-                    setVisible(false);
-                    dispose();
-                }
-                catch (Exception ex) {
-                    Logger.getLogger(FeatureNetTestGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            FeatureNetInterface app;
+            if("net".equals(fileType)){
+                app = new FeatureNetTest();
             }
-            else {
-                FeatureNetTest_CSV app = new FeatureNetTest_CSV();
-                if (!outputPath.isEmpty()) {
-                    app.setOutputFile(outputPath);
-                }
-                app.setConfig(file, configurationFile, X3DOMMode);
-                try {
-                    app.run();
-                    JOptionPane.showMessageDialog(null, "Done! File created at " + app.getOutputFile());
-
-                    //Close the frame!
-                    setVisible(false);
-                    dispose();
-                }
-                catch (Exception ex) {
-                    Logger.getLogger(FeatureNetTestGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            else{
+                app = new FeatureNetTest_CSV();
             }
-
+            if (!outputPath.isEmpty()) {
+                app.setOutputFile(outputPath);
+            }
+            app.setConfig(file, configurationFile, X3DOMMode);
+            try {
+                app.run();
+                JOptionPane.showMessageDialog(null, "Done! File created at " + app.getOutputFile());
+                //Close the frame!
+                setVisible(false);
+                dispose();
+            }
+            catch (Exception ex) {
+                Logger.getLogger(FeatureNetTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }  
         }
     }//GEN-LAST:event_submitActionPerformed
 
