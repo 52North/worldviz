@@ -20,55 +20,59 @@ import org.slf4j.LoggerFactory;
  *
  * @author Benno Schmidt, Adhitya Kamakshidasan
  */
-
-
 public class FeatureNetTest_CSV {
 
-    public String csvFile,configurationFile;
+    public String csvFile, configurationFile;
     public String outputFile = RelativePaths.TEST_FOLDER;
     public boolean X3DOMMode = false;
-    
+
     final static Logger logger = LoggerFactory.getLogger(FeatureNetTest.class);
-    
-    public static void main(String[] args){
-        
+
+    public static void main(String[] args) {
+
         String csvFile = RelativePaths.EXPORTS_PARTNER_CSV;
         String configurationFile = RelativePaths.STYLE_CONFIGURATION_XML;
-        
+
         FeatureNetTest_CSV app = new FeatureNetTest_CSV();
-        app.setConfig(csvFile,configurationFile, true);
+        app.setConfig(csvFile, configurationFile, true);
         app.run();
     }
-    
-    public void setConfig(String csvFile, String configurationFile, boolean X3DOMMode){
+
+    public void setConfig(String csvFile, String configurationFile, boolean X3DOMMode) {
         this.configurationFile = configurationFile;
         this.csvFile = csvFile;
         this.X3DOMMode = X3DOMMode;
         Path path = Paths.get(csvFile);
         String fileName = path.getFileName().toString();
         fileName = fileName.split("\\.")[0];
-        if(X3DOMMode){
-            fileName = fileName + ".html";            
-        }
-        else{
-            fileName = fileName+ ".x3d";
+        if (X3DOMMode) {
+            fileName = fileName + ".html";
+        } else {
+            fileName = fileName + ".x3d";
         }
         outputFile = new File(outputFile, fileName).toString();
     }
-    
-    public void run(){
+
+    public void setOutputFile(String outputFile) {
+        this.outputFile = outputFile;
+    }
+
+    public String getOutputFile() {
+        return this.outputFile;
+    }
+
+    public void run() {
         CsvReaderForConnectionMap csvReaderForConnectionMap = new CsvReaderForConnectionMap();
         WvizUniversalFeatureNet featureNet = csvReaderForConnectionMap.readFromFile(csvFile, ';');
-        
+
         WvizConnectionMapSceneX3d result = this.generateX3dScene(featureNet);
         result.setX3domMode(X3DOMMode);
         result.writeToFile(outputFile);
-        logger.info("Result written to file! "+ outputFile);
+        logger.info("Result written to file! " + outputFile);
     }
-    
 
     private WvizConnectionMapSceneX3d generateX3dScene(VgFeatureNet net) {
-        
+
         // Construct virtual connection-map scene
         MpFeatureNetVisualizer t1 = new MpFeatureNetVisualizer();
         WvizConfig style = new WvizConfig(configurationFile);
@@ -86,8 +90,7 @@ public class FeatureNetTest_CSV {
         if (result instanceof WvizConnectionMapSceneX3d) {
             WvizConnectionMapSceneX3d wvizConnectionMapSceneX3d = (WvizConnectionMapSceneX3d) result;
             return wvizConnectionMapSceneX3d;
-        }
-        else {
+        } else {
             return null;
         }
     }

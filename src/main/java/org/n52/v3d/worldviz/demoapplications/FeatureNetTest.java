@@ -67,7 +67,7 @@ public class FeatureNetTest {
         this.outputFile = outputFile;
     }
     
-    public String getOutputFile(String outputFile){
+    public String getOutputFile(){
         return this.outputFile;
     }
 
