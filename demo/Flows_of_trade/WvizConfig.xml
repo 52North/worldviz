@@ -1,9 +1,25 @@
+<!--
+  This configuration file should be used to specify cartographic mapping parameters inside Triturus WorldViz.
+-->
 <WvizConfig>
+  <!-- Here is an example for a 3-d connection net visualization: -->
+  <Background skyColor='1 1 1' />
+  <Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/> 
   <ConnectionNet>
     <Mapper>
+      <!--
+        Note: The elements used to specify the cartographic mapping should resemble the OGC/ISO SLD ('styled layer 
+        descriptors') elements! E.g.: PointVisualizer, LineSymbolizer, PolygonSymbolizer, TextSymbolizer, CssParameter, 
+        etc.
+      -->
       <Features>
+        <!-- 
+          Visualize feature-net nodes using red spheres with red text annotations showing the ID entry from the Pajek 
+          input file: 
+        -->
         <PointVisualizer>
-          <T3dSymbol type="Sphere" size="0.05" normalColor="1 0 0" currentColor="1 0.4 0" highlightColor="1 1 0"/>
+          <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
+          <T3dSymbol type="Sphere" size="0.05" normalColor="1 0 0" normalGlow="0 0 0" currentColor="1 0.4 0" currentGlow="0 0 0" highlightColor="1 1 0" highlightGlow="1 0 0"/>
         </PointVisualizer>
         <TextVisualizer>
           <Label>
@@ -16,30 +32,26 @@
           <LabelPlacement>
             <PointPlacement>
               <Displacement>
-                <DisplacementX>0.0</DisplacementX>
+                <DisplacementX>0</DisplacementX>
                 <DisplacementY>0.1</DisplacementY>
-                <DisplacementZ>0.05</DisplacementZ>
+				<DisplacementZ>0.05</DisplacementZ>
               </Displacement>
             </PointPlacement>
-			
-			<!-- Billboard is up for discussion!-->
-            <BillboardAxis>0 0 0</BillboardAxis>
-			
+			<BillboardAxis>0 0 0</BillboardAxis>
           </LabelPlacement>
           <Fill>
             <SvgParameter name="fill">0 0 0</SvgParameter>
           </Fill>
         </TextVisualizer>
       </Features>
-      <Relations>
+      <Relations><!-- Visualize feature-net edges using straight lines with blue stroke-colour and a 2pt line-width: -->
         <LineVisualizer>
-		
-		<!-- Geometry is up for discussion! -->
           <Geometry>
 			<type>Ribbon</type>
 			<CreaseAngle>0.785</CreaseAngle>
 			<CircleTurns>24</CircleTurns>
 			<HelixTurns>3</HelixTurns>
+			<RibbonStep>0.01</RibbonStep>
 		  </Geometry>
 		  <Geometry>
 			<type>Curve</type>
@@ -50,13 +62,10 @@
 		  </Geometry>
 		  <Geometry>
 			<type>Arrow</type>
-			<ConeHeight>0.1</ConeHeight>
-			<Ratio>5</Ratio>
-		  </Geometry>		  
-		  
-		  
-		  
-          <ColorMapper>
+			<ConeHeight>0.2</ConeHeight>
+			<Ratio>2.5</Ratio>
+		  </Geometry>	
+		  <ColorMapper>
             <InterpolationMode type="linear"/>
             <ColorPalette>
               <ColorEntry>
@@ -73,7 +82,7 @@
               </ColorEntry>
             </ColorPalette>
           </ColorMapper>
-          <WidthMapper>
+		  <WidthMapper>
             <InterpolationMode type="linear"/>
             <WidthPalette>
               <WidthEntry>
@@ -90,4 +99,5 @@
       </Relations>
     </Mapper>
   </ConnectionNet>
+  <!-- Here, there could follow configurations for ENE globe visualization etc. … -->
 </WvizConfig>

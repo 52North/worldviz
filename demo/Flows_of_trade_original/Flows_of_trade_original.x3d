@@ -1,0 +1,765 @@
+<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="false" showriteLineog="false" showLog="false"
+  x="0px" y="0px" width="800px" height="800px">
+
+  <Scene>
+
+    <Background skyColor='1 1 1' />
+    <Viewpoint id="viewpoint" position='0 0.5 2.5' orientation='1 0 0 -0.1' > </Viewpoint>
+
+    <Transform translation="-0.4027777777777778 0.0 -0.06944444444444445">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -1.0768549578753155">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="1" data-secondId="2">
+                <Appearance>
+                  <Material data-weight="71.0" diffuseColor='0.47333336 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="71.0" radius='0.0027411444141689375' height='0.4101339738953722' top='false'/>
+              </Shape>
+              <Transform translation='0 0.15506698694768611 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="1" data-secondId="2">
+                  <Appearance>
+                    <Material data-weight="71.0" diffuseColor='0.47333336 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="71.0" bottomRadius='0.006852861035422344' height='0.027342264926358148' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.25 0.0 -0.2777777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.11065722117389562">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="1" data-secondId="3">
+                <Appearance>
+                  <Material data-weight="216.0" diffuseColor='1.0 0.6958525 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="216.0" radius='0.006297002724795641' height='0.5030769521187454' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2015384760593727 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="1" data-secondId="3">
+                  <Appearance>
+                    <Material data-weight="216.0" diffuseColor='1.0 0.6958525 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="216.0" bottomRadius='0.015742506811989104' height='0.03353846347458302' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555558 0.0 -0.16666666666666669">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.14888994760949661">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="1" data-secondId="7">
+                <Appearance>
+                  <Material data-weight="249.0" diffuseColor='1.0 0.5437788 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="249.0" radius='0.007106267029972753' height='1.1235415786753713' top='false'/>
+              </Shape>
+              <Transform translation='0 0.5117707893376856 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="1" data-secondId="7">
+                  <Appearance>
+                    <Material data-weight="249.0" diffuseColor='1.0 0.5437788 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="249.0" bottomRadius='0.017765667574931882' height='0.07490277191169142' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.4027777777777778 0.0 -0.06944444444444445">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.0647376957144776">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="2" data-secondId="1">
+                <Appearance>
+                  <Material data-weight="93.0" diffuseColor='0.6199999 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="93.0" radius='0.0032806539509536788' height='0.4101339738953722' top='false'/>
+              </Shape>
+              <Transform translation='0 0.15506698694768611 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="2" data-secondId="1">
+                  <Appearance>
+                    <Material data-weight="93.0" diffuseColor='0.6199999 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="93.0" bottomRadius='0.008201634877384198' height='0.027342264926358148' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1527777777777778 0.0 -0.09722222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.9380474917927135">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="2" data-secondId="3">
+                <Appearance>
+                  <Material data-weight="59.0" diffuseColor='0.39333332 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="59.0" radius='0.002446866485013624' height='0.5166965343816188' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2083482671908094 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="2" data-secondId="3">
+                  <Appearance>
+                    <Material data-weight="59.0" diffuseColor='0.39333332 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="59.0" bottomRadius='0.00611716621253406' height='0.03444643562544125' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1527777777777778 0.0 0.013888888888888888">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.20902294280626424">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="2" data-secondId="7">
+                <Appearance>
+                  <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="39.0" radius='0.0019564032697547687' height='0.9370626551907223' top='false'/>
+              </Shape>
+              <Transform translation='0 0.41853132759536116 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="2" data-secondId="7">
+                  <Appearance>
+                    <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="39.0" bottomRadius='0.004891008174386922' height='0.06247084367938149' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.25 0.0 -0.2777777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -3.0309354324158977">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="3" data-secondId="1">
+                <Appearance>
+                  <Material data-weight="367.0" diffuseColor='1.0 0.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="367.0" radius='0.010000000000000002' height='0.5030769521187454' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2015384760593727 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="3" data-secondId="1">
+                  <Appearance>
+                    <Material data-weight="367.0" diffuseColor='1.0 0.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="367.0" bottomRadius='0.025000000000000005' height='0.03353846347458302' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1527777777777778 0.0 -0.09722222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -2.20354516179708">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="3" data-secondId="2">
+                <Appearance>
+                  <Material data-weight="51.0" diffuseColor='0.34000003 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="51.0" radius='0.002250681198910082' height='0.5166965343816188' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2083482671908094 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="3" data-secondId="2">
+                  <Appearance>
+                    <Material data-weight="51.0" diffuseColor='0.34000003 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="51.0" bottomRadius='0.005626702997275205' height='0.03444643562544125' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.20833333333333334 0.0 -0.3055555555555556">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.0">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="3" data-secondId="4">
+                <Appearance>
+                  <Material data-weight="88.0" diffuseColor='0.5866666 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="88.0" radius='0.003158038147138965' height='0.4166666666666667' top='false'/>
+              </Shape>
+              <Transform translation='0 0.15833333333333333 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="3" data-secondId="4">
+                  <Appearance>
+                    <Material data-weight="88.0" diffuseColor='0.5866666 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="88.0" bottomRadius='0.007895095367847412' height='0.02777777777777778' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1388888888888889 0.0 -0.22222222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.5404195002705842">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="3" data-secondId="5">
+                <Appearance>
+                  <Material data-weight="105.0" diffuseColor='0.70000005 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="105.0" radius='0.003574931880108992' height='0.32394177193585005' top='false'/>
+              </Shape>
+              <Transform translation='0 0.11197088596792502 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="3" data-secondId="5">
+                  <Appearance>
+                    <Material data-weight="105.0" diffuseColor='0.70000005 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="105.0" bottomRadius='0.00893732970027248' height='0.02159611812905667' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555556 0.0 -0.1527777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -1.2220253232109897">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="3" data-secondId="6">
+                <Appearance>
+                  <Material data-weight="98.0" diffuseColor='0.6533333 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="98.0" radius='0.0034032697547683927' height='0.32513055307554517' top='false'/>
+              </Shape>
+              <Transform translation='0 0.11256527653777258 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="3" data-secondId="6">
+                  <Appearance>
+                    <Material data-weight="98.0" diffuseColor='0.6533333 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="98.0" bottomRadius='0.008508174386920982' height='0.021675370205036345' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.3055555555555556 0.0 -0.19444444444444448">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.3487710035839069">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="3" data-secondId="7">
+                <Appearance>
+                  <Material data-weight="308.0" diffuseColor='1.0 0.2718894 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="308.0" radius='0.008553133514986377' height='0.6502611061510903' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2751305530755452 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="3" data-secondId="7">
+                  <Appearance>
+                    <Material data-weight="308.0" diffuseColor='1.0 0.2718894 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="308.0" bottomRadius='0.021382833787465944' height='0.04335074041007269' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.20833333333333334 0.0 -0.3055555555555556">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -3.141592653589793">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="4" data-secondId="3">
+                <Appearance>
+                  <Material data-weight="129.0" diffuseColor='0.86 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="129.0" radius='0.004163487738419619' height='0.4166666666666667' top='false'/>
+              </Shape>
+              <Transform translation='0 0.15833333333333333 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="4" data-secondId="3">
+                  <Appearance>
+                    <Material data-weight="129.0" diffuseColor='0.86 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="129.0" bottomRadius='0.010408719346049047' height='0.02777777777777778' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.513888888888889 0.0 -0.19444444444444448">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.8519663271732721">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="4" data-secondId="7">
+                <Appearance>
+                  <Material data-weight="30.0" diffuseColor='0.20000005 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="30.0" radius='0.0017356948228882834' height='0.2952818281315181' top='false'/>
+              </Shape>
+              <Transform translation='0 0.09764091406575905 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="4" data-secondId="7">
+                  <Appearance>
+                    <Material data-weight="30.0" diffuseColor='0.20000005 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="30.0" bottomRadius='0.004339237057220708' height='0.019685455208767872' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.1111111111111111 0.0 -0.19444444444444445">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.9996955989856287">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="5" data-secondId="1">
+                <Appearance>
+                  <Material data-weight="55.0" diffuseColor='0.36666667 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="55.0" radius='0.002348773841961853' height='0.7856742013183862' top='false'/>
+              </Shape>
+              <Transform translation='0 0.3428371006591931 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="5" data-secondId="1">
+                  <Appearance>
+                    <Material data-weight="55.0" diffuseColor='0.36666667 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="55.0" bottomRadius='0.005871934604904632' height='0.05237828008789241' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.1388888888888889 0.0 -0.22222222222222224">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.601173153319209">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="5" data-secondId="3">
+                <Appearance>
+                  <Material data-weight="64.0" diffuseColor='0.42666662 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="64.0" radius='0.002569482288828338' height='0.32394177193585005' top='false'/>
+              </Shape>
+              <Transform translation='0 0.11197088596792502 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="5" data-secondId="3">
+                  <Appearance>
+                    <Material data-weight="64.0" diffuseColor='0.42666662 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="64.0" bottomRadius='0.006423705722070845' height='0.02159611812905667' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.4444444444444445 0.0 -0.11111111111111112">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -0.16514867741462674">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="5" data-secondId="7">
+                <Appearance>
+                  <Material data-weight="193.0" diffuseColor='1.0 0.8018433 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="193.0" radius='0.005732970027247957' height='0.33793125168323446' top='false'/>
+              </Shape>
+              <Transform translation='0 0.11896562584161723 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="5" data-secondId="7">
+                  <Appearance>
+                    <Material data-weight="193.0" diffuseColor='1.0 0.8018433 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="193.0" bottomRadius='0.014332425068119893' height='0.02252875011221563' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="-0.19444444444444445 0.0 -0.125">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.7532739354173277">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="6" data-secondId="1">
+                <Appearance>
+                  <Material data-weight="43.0" diffuseColor='0.28666663 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="43.0" radius='0.0020544959128065395' height='0.660270240222484' top='false'/>
+              </Shape>
+              <Transform translation='0 0.28013512011124203 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="6" data-secondId="1">
+                  <Appearance>
+                    <Material data-weight="43.0" diffuseColor='0.28666663 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="43.0" bottomRadius='0.005136239782016348' height='0.04401801601483227' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555556 0.0 -0.1527777777777778">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 1.9195673303788037">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="6" data-secondId="3">
+                <Appearance>
+                  <Material data-weight="99.0" diffuseColor='0.65999997 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="99.0" radius='0.0034277929155313355' height='0.32513055307554517' top='false'/>
+              </Shape>
+              <Transform translation='0 0.11256527653777258 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="6" data-secondId="3">
+                  <Appearance>
+                    <Material data-weight="99.0" diffuseColor='0.65999997 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="99.0" bottomRadius='0.00856948228882834' height='0.021675370205036345' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.36111111111111116 0.0 -0.04166666666666667">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 0.16514867741462608">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="6" data-secondId="7">
+                <Appearance>
+                  <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="39.0" radius='0.0019564032697547687' height='0.5068968775248516' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2034484387624258 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="6" data-secondId="7">
+                  <Appearance>
+                    <Material data-weight="39.0" diffuseColor='0.26 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="39.0" bottomRadius='0.004891008174386922' height='0.03379312516832344' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.05555555555555558 0.0 -0.16666666666666669">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.9927027059802964">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="7" data-secondId="1">
+                <Appearance>
+                  <Material data-weight="533.0" diffuseColor='1.0 0.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="533.0" radius='0.01' height='1.1235415786753713' top='false'/>
+              </Shape>
+              <Transform translation='0 0.5117707893376856 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="7" data-secondId="1">
+                  <Appearance>
+                    <Material data-weight="533.0" diffuseColor='1.0 0.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="533.0" bottomRadius='0.025' height='0.07490277191169142' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.3055555555555556 0.0 -0.19444444444444448">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.7928216500058864">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="7" data-secondId="3">
+                <Appearance>
+                  <Material data-weight="417.0" diffuseColor='1.0 0.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="417.0" radius='0.01' height='0.6502611061510903' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2751305530755452 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="7" data-secondId="3">
+                  <Appearance>
+                    <Material data-weight="417.0" diffuseColor='1.0 0.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="417.0" bottomRadius='0.025' height='0.04335074041007269' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.4444444444444445 0.0 -0.11111111111111112">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 2.9764439761751667">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="7" data-secondId="5">
+                <Appearance>
+                  <Material data-weight="75.0" diffuseColor='0.5 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="75.0" radius='0.0028392370572207087' height='0.33793125168323446' top='false'/>
+              </Shape>
+              <Transform translation='0 0.11896562584161723 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="7" data-secondId="5">
+                  <Appearance>
+                    <Material data-weight="75.0" diffuseColor='0.5 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="75.0" bottomRadius='0.007098092643051772' height='0.02252875011221563' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0.36111111111111116 0.0 -0.04166666666666667">
+      <Transform rotation="1 0 0 0.0">
+        <Transform rotation="0 1 0 -2.976443976175167">
+          <Transform rotation="0 0 1 -1.5707963267948966">
+            <Group>
+              <Shape render="true" DEF="arrowCylinderShape" data-class="relation" data-firstId="7" data-secondId="6">
+                <Appearance>
+                  <Material data-weight="45.0" diffuseColor='0.29999995 1.0 0.0'/>
+                </Appearance>
+                <Cylinder data-weight="45.0" radius='0.0021035422343324253' height='0.5068968775248516' top='false'/>
+              </Shape>
+              <Transform translation='0 0.2034484387624258 0'>
+                <Shape render="true" DEF="arrowConeShape" data-class="relation" data-firstId="7" data-secondId="6">
+                  <Appearance>
+                    <Material data-weight="45.0" diffuseColor='0.29999995 1.0 0.0'/>
+                  </Appearance>
+                  <Cone data-weight="45.0" bottomRadius='0.005258855585831063' height='0.03379312516832344' top='true'/>
+                </Shape>
+              </Transform>
+            </Group>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation='-0.5 0.0 -0.25'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="1">
+        <Appearance>
+          <Material id = "feature1" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='-0.5 0.1 -0.2' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel1" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='North America'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='-0.3055555555555556 0.0 0.11111111111111112'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="2">
+        <Appearance>
+          <Material id = "feature2" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='-0.3055555555555556 0.1 0.16111111111111112' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel2" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Latin America'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.0 0.0 -0.3055555555555556'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="3">
+        <Appearance>
+          <Material id = "feature3" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.0 0.1 -0.2555555555555556' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel3" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Western Europe'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.4166666666666667 0.0 -0.3055555555555556'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="4">
+        <Appearance>
+          <Material id = "feature4" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.4166666666666667 0.1 -0.2555555555555556' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel4" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Eastern Europe'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.2777777777777778 0.0 -0.1388888888888889'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="5">
+        <Appearance>
+          <Material id = "feature5" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.2777777777777778 0.1 -0.08888888888888889' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel5" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Mid east'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.11111111111111112 0.0 -0.0'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="6">
+        <Appearance>
+          <Material id = "feature6" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.11111111111111112 0.1 0.05' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel6" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Africa'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+    <Transform translation='0.6111111111111112 0.0 -0.08333333333333334'>
+      <Shape render="true" DEF="sphereShape" data-class="feature" data-index="7">
+        <Appearance>
+          <Material id = "feature7" diffuseColor="1 0 0"/>
+        </Appearance>
+        <Sphere radius='0.05'/>
+      </Shape>
+    </Transform>
+
+    <Transform translation='0.6111111111111112 0.1 -0.03333333333333334' scale='0.1 0.1 0.1'>
+        <Billboard axisOfRotation='0 0 0'>
+          <Shape id = "featureLabel7" render="true" DEF="labelText" data-class="information">
+            <Appearance>
+              <Material diffuseColor="0 0 0"/>
+            </Appearance>
+            <Text string='Asia and Oceania'>
+                <FontStyle family='MS Sans Serif' size='1'/>
+            </Text>
+          </Shape>
+        </Billboard>
+    </Transform>
+
+  </Scene>
+
+</X3D>
