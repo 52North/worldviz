@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Worldviz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Worldviz</h1>
+      <h2 class="project-tagline">Triturus WorldViz support the development of thematic 3-d visualizations at world scale.</h2>
+      <a href="https://github.com/cDanowski/worldviz" class="btn">View on GitHub</a>
+      <a href="https://github.com/cDanowski/worldviz/zipball/master" class="btn">Download .zip</a>
+	  <a href="http://htmlpreview.github.io/?https://github.com/cDanowski/worldviz/blob/gh-pages/about.html" class="btn">About</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="52north-triturus-worldviz" class="anchor" href="#52north-triturus-worldviz" aria-hidden="true"><span class="octicon octicon-link"></span></a>52°North Triturus WorldViz</h1>
+
+<p>README file for the <a href="http://52north.org/communities/3d/triturus">52°North Triturus WorldViz library</a></p>
+
+<p>52N Triturus WorldViz supports the development of thematic 3-D visualizations at world scale.</p>
+
+<p>Regarding the traditional visualization pipeline, the framework focuses the 
+mapping step, i.e. the transformation between geo-objects and abstract 
+visualization-objects. Thus, WorldViz allows to generate concrete scene descriptions
+(e.g., a X3D document) from geo-data, thereby keeping the "cartographic" mapping process 
+configurable. </p>
+
+<p>WorldViz is based on the existing 52N Triturus module and shall offer various 
+world visualizations, e.g. globes (limited to world-scale), potato-like globe 
+deformations depending on thematic data, feature-space scenes ("attribute space"), 
+visualization of geo-object relations (connection maps in 3-d space) as well as planar 
+map-projections in 3-d space. WorldViz will offer scene export facilities for various
+concrete scene descriptions (presumably for X3D, X3DOM, KML). </p>
+
+<p>The framework will be used to set-up the experiental space ENE ("Erlebnisraum
+Nachhaltige Entwicklung") at Bochum University of Applied Science. Both the ENE and
+this framework are open to anyone who is interested. You are very welcome to participate
+or to bring in innovative visualization ideas! </p>
+
+<h2>
+<a id="basic-functionality" class="anchor" href="#basic-functionality" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic functionality:</h2>
+
+<ul>
+<li>Readers for thematic world data (XML-based ENE data) and shape geometries</li>
+<li>Simple scene export (e.g., X3D/X3DOM scene descriptions)</li>
+<li>Generation of globe representations at world-scale</li>
+</ul>
+
+<h2>
+<a id="characteristics" class="anchor" href="#characteristics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Characteristics</h2>
+
+<ul>
+<li>Development platform: Java (Windows and Linux/Unix)</li>
+<li>Visualization pipeline (filter, mapper, renderer) as reference model</li>
+<li>Abstraction of concrete (geo-)datasources and scene description environments through interfaces</li>
+</ul>
+
+<h2>
+<a id="development-goals" class="anchor" href="#development-goals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development goals</h2>
+
+<p>The community's vision is to establish a creative surrounding, which allows efficient and sustainable 
+development of innovative software solutions in the context of 3d geovisualization at world scale.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Since this is a Maven project, the typical Maven installation tasks can be executed to build this project.
+To compile the Triturus WorldViz library, simply run Maven's 'package' task.</p>
+
+<p>To use the Triturus WorldViz library, just add the WorldViz JAR file to your Java project.</p>
+
+<p>Note that Triturus WorldViz requires the 52°North Triturus library (JAR) which is already included as a dependency in the pom.xml-file.</p>
+
+<h2>
+<a id="license-information" class="anchor" href="#license-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>License information</h2>
+
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the 
+Apache License version 2.0.</p>
+
+<p>For further information please refer to 'LICENSE'-file</p>
+
+<h2>
+<a id="additional-documents-and-links" class="anchor" href="#additional-documents-and-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional documents and links</h2>
+
+<p>This sections lists documents that lead to a deeper understanding of the Triturus library and give 
+additional information.</p>
+
+<ul>
+<li>White Paper of Triturus: <a href="http://52north.org/images/stories/52n/communities/3D/triturus%20white%20paper.pdf">http://52north.org/images/stories/52n/communities/3D/triturus%20white%20paper.pdf</a> </li>
+<li>52°North 3D Community Wiki: <a href="https://wiki.52north.org/bin/view/V3d/">https://wiki.52north.org/bin/view/V3d/</a> </li>
+<li>Triturus Wiki: <a href="https://wiki.52north.org/bin/view/V3d/Triturus">https://wiki.52north.org/bin/view/V3d/Triturus</a> </li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>You are interested in contributing to the 52°North Triturus or  WorldViz  and you want to pull your
+changes to the 52N repository to make it available to all?</p>
+
+<p>In that case we need your official permission and for this purpose we have a so called contributors 
+license agreement (CLA) in place. With this agreement you grant us the rights to use and publish your 
+code under an open source license.</p>
+
+<p>A link to the contributors license agreement and further explanations are available here: </p>
+
+<pre><code>http://52north.org/about/licensing/cla-guidelines
+</code></pre>
+
+<h2>
+<a id="support-and-contact" class="anchor" href="#support-and-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support and Contact</h2>
+
+<p>You can get support in the community mailing list and forums:</p>
+
+<pre><code>http://52north.org/resources/mailing-lists-and-forums/
+</code></pre>
+
+<p>If you encounter any issues with the software or if you would like to see
+certain functionality added, let us know at:</p>
+
+<ul>
+<li>Benno Schmidt (<a href="mailto:b.schmidt@52north.org">b.schmidt@52north.org</a>)</li>
+<li>Christian Danowski (<a href="mailto:christian.danowski@hs-bochum.de">christian.danowski@hs-bochum.de</a>)</li>
+<li>Martin May (<a href="mailto:m.may@52north.org">m.may@52north.org</a>)</li>
+<li>Adhitya Kamakshidasan (<a href="mailto:a.kamakshidasan@52north.org">a.kamakshidasan@52north.org</a>)</li>
+</ul>
+
+<p>The 3D Community</p>
+
+<p>52°North Inititative for Geospatial Open Source Software GmbH, Germany</p>
+
+<h2></h2>
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
