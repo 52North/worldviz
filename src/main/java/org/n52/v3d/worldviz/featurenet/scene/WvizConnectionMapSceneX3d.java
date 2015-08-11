@@ -143,7 +143,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    }");
  
                 writeLine("    function getArrowRatio(){");
-		writeLine("        return "+arrowRatio+";" );
+		writeLine("        return "+radiusRatio+";" );
                 writeLine("    }"); 
                 
                 writeLine("    function getLinearColorInterpolation(){");
@@ -444,7 +444,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double distance = angleCalc.getLengthFromTo();
                 
                 double cylinderHeight = distance;
-                double coneHeight = distance/15;
+                double coneHeight = distance/heightRatio;
                
                 //First translate by y/2 units
                 //We subtract 1 symbolSize unit, because the edge starts from that that point and our symbol overlaps it
@@ -458,7 +458,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double weight = (Double)arc.getValue();
                 
                 double cylinderRadius = widthMapper.transform(weight);
-                double coneRadius = cylinderRadius * arrowRatio;
+                double coneRadius = cylinderRadius * radiusRatio;
                 
                 T3dColor color = simpleColorMapper.transform(weight);
                 float red = color.getRed();

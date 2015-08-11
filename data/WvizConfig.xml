@@ -62,8 +62,8 @@
 		  </Geometry>
 		  <Geometry>
 			<type>Arrow</type>
-			<ConeHeight>0.2</ConeHeight>
-			<Ratio>2.5</Ratio>
+			<HeightRatio>15</HeightRatio>
+			<RadiusRatio>2.5</RadiusRatio>
 		  </Geometry>	
 		  <ColorMapper>
             <InterpolationMode type="linear"/>

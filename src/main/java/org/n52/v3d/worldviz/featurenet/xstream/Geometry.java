@@ -1,7 +1,6 @@
 package org.n52.v3d.worldviz.featurenet.xstream;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 /*It seems to be a bad idea to have empty elements in the XML file
   with respect to XStream, therefore I've (Adhitya) altered this part of the schema */ 
@@ -27,12 +26,15 @@ public class Geometry {
     @XStreamAlias("Ratio")
     double Ratio = 1.5;
     
-    @XStreamAlias("ConeHeight")
-    double ConeHeight = 0.1;
+    @XStreamAlias("HeightRatio")
+    double HeightRatio = 15.0;
     
     @XStreamAlias("RibbonStep")
     double RibbonStep = 0.1;
     
+    @XStreamAlias("RadiusRatio")
+    double RadiusRatio = 2.5;
+
     public String getType(){
         return type;
     }
@@ -57,11 +59,16 @@ public class Geometry {
         return Ratio;
     }
     
-    public double getConeHeight(){
-        return ConeHeight;
+    public double getHeightRatio(){
+        return HeightRatio;
     }
     
     public double getRibbonStep(){
         return RibbonStep;
     }
+    
+    public double getRadiusRatio(){
+        return RadiusRatio;
+    }
+    
 }

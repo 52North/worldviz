@@ -62,7 +62,7 @@ public abstract class WvizConcreteConnectionMapScene {
     
     protected BufferedWriter document;
     
-    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, arrowConeHeight, arrowRatio, ribbonStep;
+    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, heightRatio, radiusRatio, ribbonStep;
 
     public int ribbonCircleTurns, ribbonHelixTurns,curveCircleTurns, curveEllipseTurns;
     
@@ -151,8 +151,8 @@ public abstract class WvizConcreteConnectionMapScene {
                 curveRatio = geometry.getRatio();
             }
             else if(geometryType.equalsIgnoreCase("arrow")){
-                arrowConeHeight = geometry.getConeHeight();
-                arrowRatio = geometry.getRatio();
+                heightRatio = geometry.getHeightRatio();
+                radiusRatio = geometry.getRadiusRatio();
             }
         }
 
