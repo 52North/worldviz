@@ -20,7 +20,7 @@
         -->
         <PointVisualizer>
           <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
-          <T3dSymbol type="Sphere" size="0.02" normalColor="1 0 0" normalGlow="0 0 0" currentColor="0 0.75 1" currentGlow="0 0 0" highlightColor="1 1 0" highlightGlow="1 0 0"/>
+          <T3dSymbol type="Sphere" size="0.005" normalColor="1 0 0" normalGlow="0 0 0" currentColor="0 0.75 1" currentGlow="0 0 0" highlightColor="1 1 0" highlightGlow="1 0 0"/>
         </PointVisualizer>
         <TextVisualizer>
           <Label>
@@ -65,13 +65,13 @@
 			<type>Arrow</type>
 			<HeightRatio>15</HeightRatio>
 			<RadiusRatio>2.5</RadiusRatio>
-		  </Geometry>	
+		  </Geometry>		
 		  <ColorMapper>
             <InterpolationMode type="linear"/>
             <ColorPalette>
               <ColorEntry>
                 <InputValue>0.0</InputValue>
-                <OutputColor type="RGB">0 1 0</OutputColor>
+                <OutputColor type="RGB">1 0 0</OutputColor>
               </ColorEntry>
 			  <ColorEntry>
                 <InputValue>150.0</InputValue>
@@ -102,3 +102,4 @@
   </ConnectionNet>
   <!-- Here, there could follow configurations for ENE globe visualization etc. … -->
 </WvizConfig>
+
