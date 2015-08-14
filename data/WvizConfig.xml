@@ -6,6 +6,7 @@
   <Background skyColor='1 1 1' />
   <Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/> 
   <ConnectionNet>
+  	<BackgroundWorldMap useWorldMap='true' texturePath='worldmap1.jpg'/>
     <Mapper>
       <!--
         Note: The elements used to specify the cartographic mapping should resemble the OGC/ISO SLD ('styled layer 

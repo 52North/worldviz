@@ -1,6 +1,7 @@
 package org.n52.v3d.worldviz.projections;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
@@ -13,6 +14,11 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  */
 public class Wgs84ToX3DTransform {
     public ArrayList<VgPoint> transform(ArrayList<VgPoint> geoPos) {
+        //call other transform method with an empty list of additional coordinates.
+    	return transform(geoPos, new ArrayList<VgPoint>());
+    }
+    
+    public ArrayList<VgPoint> transform(ArrayList<VgPoint> geoPos, ArrayList<VgPoint> additionalBboxCoords) {
         T3dVector vector;
         AxisSwitchTransform t1 = new AxisSwitchTransform();
         
@@ -26,7 +32,15 @@ public class Wgs84ToX3DTransform {
             geoPos.set(i, point);
         }      
         
-        NormTransform_Wgs84 t2 = new NormTransform_Wgs84(geoPos);
+        /*
+         * Create a list with the coordinates from geoPos + additional bbox relevant coordinates.
+         * Then instantiate NormTransform with that new list      
+         */
+        ArrayList bboxCoordinates = new ArrayList();
+        bboxCoordinates.addAll(geoPos);
+        bboxCoordinates.addAll(additionalBboxCoords);
+        
+        NormTransform_Wgs84 t2 = new NormTransform_Wgs84(bboxCoordinates);
         
         for(int i =0; i<geoPos.size();i++){
             vector = t2.transform(geoPos.get(i));
