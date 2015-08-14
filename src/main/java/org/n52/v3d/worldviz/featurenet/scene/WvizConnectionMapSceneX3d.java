@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.xml.crypto.NodeSetData;
-
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.MpSimpleHypsometricColor;
@@ -215,9 +213,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             	writeLine("        <Appearance>");
             	writeLine("          <Material diffuseColor=\"1 1 1\">");
             	writeLine("          </Material>");
-            	writeLine("          <ImageTexture url=\"" + texturePath + "\">");
+            	writeLine("          <ImageTexture url=\"" + texturePath + "\"/>");
             	writeLine("        </Appearance>");
-            	writeLine("        <Box size=\"2 0.001 1\">");
+            	writeLine("        <Box size=\"2 0.001 1\"/>");
             	writeLine("      </Shape>");
             	writeLine("    </Transform>");
             	
