@@ -97,7 +97,7 @@
 		var newInputColor = document.getElementById("NewInputColor").value;
 		var newOutputColor = document.getElementById("NewOutputColor").value;
 
-		if(newInputColor.split(" ")).length == 1){
+		if(newInputColor.split(" ").length == 1){
 			newInputColor = parseFloat(newInputColor);
 		}
 		else{
