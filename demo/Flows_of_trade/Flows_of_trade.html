@@ -4,9 +4,11 @@
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/x3dom/release/x3dom.css" />
     <script type="text/javascript" src="http://www.x3dom.org/x3dom/release/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
-    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/mapper.js"></script>
-    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js"></script>
-    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/shapes.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/mapper.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/script.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/shapes.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/jscolor/jscolor.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://rawgit.com/cDanowski/worldviz/master/src/main/resources/css/style.css">
     <!-- Change the path, when the repository is changed! -->
     <script type="text/javascript">
     function getIndexSize(){
@@ -5355,6 +5357,34 @@
 <button onclick="restoreViewpoint()">Restore Viewpoint</button>
 <br>
 <br>
+<br>
+<input type="text" id="NewInputColor" placeholder="Input Weight">
+<input type="text" id="NewOutputColor" class="color" placeholder="Output Color">
+<button id="ColorAddButton" onclick="addNewColor()">Add Color</button>
+<br>
+<br>
+<input type="text" id="DeleteColor" placeholder="Delete Weight">
+<button id="ColorDeleteButton" onclick="deleteNewColor()">Delete Color</button>
+<br>
+<br>
+<input type="text" id="NewInputWidth" placeholder="Input Weight">
+<input type="text" id="NewOutputWidth" placeholder="Output Width">
+<button id="WidthAddButton" onclick="addNewWidth()">Add Width</button>
+<br>
+<br>
+<input type="text" id="DeleteWidth" placeholder="Delete Weight">
+<button id="WidthDeleteButton" onclick="deleteNewWidth()">Delete Width</button>
+<br>
+<br>
+<br>
+<button id="ColorChangeButton" onclick="changeColors()">Change Colors</button>
+<button id="WidthChangeButton" onclick="changeWidths()">Change Widths</button>
+<button id="SourceCodeButton" onclick="saveTextAsFile()">Export File</button>
+<br>
+<br>
+<span id="lastClickedObject">-</span>
+<br>
+<br>
 <table id = "colorTable">
 <thead>
 <tr><th>Input Weight</th><th>Output Color</th></tr>
@@ -5377,8 +5407,6 @@
 </td></tr>
 </tbody>
 </table>
-<br>
-<br>
 <table id = "widthTable">
 <thead>
 <tr><th>Input Weight</th><th>Output Width</th></tr>
@@ -5396,43 +5424,5 @@
 </td></tr>
 </tbody>
 </table>
-<br>
-<br>
-Input Weight: <input type="text" id="NewInputColor">
-Output Color: <input type="text" id="NewOutputColor" title="Red, Blue and Green separated by spaces">
-<br>
-<br>
-<button id="ColorAddButton" onclick="addNewColor()">Add Color</button>
-<br>
-<br>
-Delete Weight: <input type="text" id="DeleteColor">
-<br>
-<br>
-<button id="ColorDeleteButton" onclick="deleteNewColor()">Delete Color</button>
-<br>
-<br>
-Input Weight: <input type="text" id="NewInputWidth">
-Output Width: <input type="text" id="NewOutputWidth">
-<br>
-<br>
-<button id="WidthAddButton" onclick="addNewWidth()">Add Width</button>
-<br>
-<br>
-Delete Weight: <input type="text" id="DeleteWidth">
-<br>
-<br>
-<button id="WidthDeleteButton" onclick="deleteNewWidth()">Delete Width</button>
-<br>
-<br>
-<br>
-<button id="ColorChangeButton" onclick="changeColors()">Change Colors</button>
-<button id="WidthChangeButton" onclick="changeWidths()">Change Widths</button>
-<br>
-<br>
-<h3>Last clicked object:</h3> 
-<span id="lastClickedObject">-</span>
-<br>
-<br>
-<button id="SourceCodeButton" onclick="saveTextAsFile()">Export File</button>
   </body>
 </html>
