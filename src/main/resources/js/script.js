@@ -618,9 +618,9 @@
 		var g = ((bigint >> 8) & 255)/255;
 		var b = (bigint & 255)/255;
 
-		r = Math.round(r * 1000) / 1000
-		g = Math.round(g * 1000) / 1000
-		b = Math.round(b * 1000) / 1000
+		r = Math.round(r * 10) / 10;
+		g = Math.round(g * 10) / 10;
+		b = Math.round(b * 10) / 10;
 		return r + " " + g + " " + b;
 	}
 	
