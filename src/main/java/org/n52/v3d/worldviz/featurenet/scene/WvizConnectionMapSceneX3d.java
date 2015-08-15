@@ -105,7 +105,10 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/mapper.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/shapes.js\"></script>");
-                writeLine("    <!-- Change the path, when the repository is changed! -->");
+                
+				writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/css/style.css\">");
+				
+				writeLine("    <!-- Change the path, when the repository is changed! -->");
                 writeLine("    <script type=\"text/javascript\">");
                 
                 writeLine("    function getIndexSize(){");
