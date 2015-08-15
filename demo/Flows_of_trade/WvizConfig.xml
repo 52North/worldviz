@@ -6,6 +6,7 @@
   <Background skyColor='1 1 1' />
   <Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/> 
   <ConnectionNet>
+	<BackgroundWorldMap useWorldMap='true' texturePath='http://rawgit.com/cDanowski/worldviz/master/demo/resources/worldmap1_reduced.jpg'/>
     <Mapper>
       <!--
         Note: The elements used to specify the cartographic mapping should resemble the OGC/ISO SLD ('styled layer 
@@ -62,8 +63,8 @@
 		  </Geometry>
 		  <Geometry>
 			<type>Arrow</type>
-			<ConeHeight>0.2</ConeHeight>
-			<Ratio>2.5</Ratio>
+			<HeightRatio>15</HeightRatio>
+			<RadiusRatio>2.5</RadiusRatio>
 		  </Geometry>	
 		  <ColorMapper>
             <InterpolationMode type="linear"/>

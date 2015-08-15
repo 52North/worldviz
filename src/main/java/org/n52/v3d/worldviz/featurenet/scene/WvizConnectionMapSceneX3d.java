@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
+import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.MpSimpleHypsometricColor;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
@@ -21,7 +22,6 @@ import org.n52.v3d.worldviz.featurenet.VgRelation;
 import org.n52.v3d.worldviz.projections.Wgs84ToX3DTransform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.n52.v3d.worldviz.featurenet.shapes.*;
 
 /**
@@ -58,9 +58,23 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
 
         Wgs84ToX3DTransform x3dTransform = new Wgs84ToX3DTransform();
         
-        ArrayList<VgPoint> sceneCoordinates = x3dTransform.transform(x3dTransform.transformVertices(scene.getVertices()));
+        /*
+         * this additional list provides additional coordinates for the bounding box of the later scene
+         * coordinates.
+         * It is needed if the worldMap shall be drawn underneath the vertices for better georeference. 
+         * Then The whole scene must be computed according to the BBOX of the world(map).
+         */
+        ArrayList<VgPoint> additionalBboxCoordinates = new ArrayList<VgPoint>();
+        if(isUseWorldMap){
+        	VgPoint lowerLeftCorner = new GmPoint(-180, -90, 0);
+        	VgPoint upperRightCorner = new GmPoint(180, 90, 0);
+        	additionalBboxCoordinates.add(lowerLeftCorner);
+        	additionalBboxCoordinates.add(upperRightCorner);
+        }	
         
         geoCoordinates = x3dTransform.transformVertices(scene.getVertices());
+        
+        ArrayList<VgPoint> sceneCoordinates = x3dTransform.transform(x3dTransform.transformVertices(scene.getVertices()), additionalBboxCoordinates);
         
         for(int i=0; i<geoCoordinates.size(); i++){
             pointMap.put(geoCoordinates.get(i), sceneCoordinates.get(i));
@@ -88,10 +102,15 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.x3dom.org/x3dom/release/x3dom.css\" />");
                 writeLine("    <script type=\"text/javascript\" src=\"http://www.x3dom.org/x3dom/release/x3dom-full.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-2.1.0.min.js\" ></script>");
-                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/mapper.js\"></script>");
-                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js\"></script>");
-                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/shapes.js\"></script>");
-                writeLine("    <!-- Change the path, when the repository is changed! -->");
+                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/mapper.js\"></script>");
+                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/script.js\"></script>");
+                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/shapes.js\"></script>");
+                
+                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/jscolor/jscolor.js\"></script>");
+                
+		writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/css/style.css\">");
+				
+		writeLine("    <!-- Change the path, when the repository is changed! -->");
                 writeLine("    <script type=\"text/javascript\">");
                 
                 writeLine("    function getIndexSize(){");
@@ -143,7 +162,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    }");
  
                 writeLine("    function getArrowRatio(){");
-		writeLine("        return "+arrowRatio+";" );
+		writeLine("        return "+radiusRatio+";" );
                 writeLine("    }"); 
                 
                 writeLine("    function getLinearColorInterpolation(){");
@@ -186,6 +205,27 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
             writeLine("    <Viewpoint id=\"viewpoint\" position='"+position+"' orientation='"+orientation+"' > </Viewpoint>");
             
             writeLine("");
+            
+            if (isUseWorldMap){
+            	logger.info("Generating background world map with texture path pointing to {}", texturePath);
+            
+            	/*
+            	 * The parameter symbolSize places the worldMap to the corresponding spot 
+            	 * (directly underneath the vertices).
+            	 */
+            	writeLine("    <Transform translation=\"0 " + (-symbolSize) + " 0\">");
+            	writeLine("      <Shape>");
+            	writeLine("        <Appearance>");
+            	writeLine("          <Material diffuseColor=\"1 1 1\">");
+            	writeLine("          </Material>");
+            	writeLine("          <ImageTexture url=\"" + texturePath + "\"/>");
+            	writeLine("        </Appearance>");
+            	writeLine("        <Box size=\"2 0.001 1\"/>");
+            	writeLine("      </Shape>");
+            	writeLine("    </Transform>");
+            	
+            	writeLine();
+            }
 
             logger.info("Parsing Edges");
             MpSimpleHypsometricColor simpleColorMapper = new MpSimpleHypsometricColor();
@@ -444,7 +484,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double distance = angleCalc.getLengthFromTo();
                 
                 double cylinderHeight = distance;
-                double coneHeight = distance/15;
+                double coneHeight = distance/heightRatio;
                
                 //First translate by y/2 units
                 //We subtract 1 symbolSize unit, because the edge starts from that that point and our symbol overlaps it
@@ -458,7 +498,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 double weight = (Double)arc.getValue();
                 
                 double cylinderRadius = widthMapper.transform(weight);
-                double coneRadius = cylinderRadius * arrowRatio;
+                double coneRadius = cylinderRadius * radiusRatio;
                 
                 T3dColor color = simpleColorMapper.transform(weight);
                 float red = color.getRed();
@@ -572,6 +612,41 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<button onclick=\"restoreViewpoint()\">Restore Viewpoint</button>");
                 writeLine("<br>");
                 writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<input type=\"text\" id=\"NewInputColor\" placeholder=\"Input Weight\">");
+                writeLine("<input type=\"text\" id=\"NewOutputColor\" class=\"color\" placeholder=\"Output Color\">");
+                writeLine("<button id=\"ColorAddButton\" onclick=\"addNewColor()\">Add Color</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<input type=\"text\" id=\"DeleteColor\" placeholder=\"Delete Weight\">");
+                writeLine("<button id=\"ColorDeleteButton\" onclick=\"deleteNewColor()\">Delete Color</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+
+                writeLine("<input type=\"text\" id=\"NewInputWidth\" placeholder=\"Input Weight\">");
+                writeLine("<input type=\"text\" id=\"NewOutputWidth\" placeholder=\"Output Width\">");
+                writeLine("<button id=\"WidthAddButton\" onclick=\"addNewWidth()\">Add Width</button>");
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<input type=\"text\" id=\"DeleteWidth\" placeholder=\"Delete Weight\">");
+                writeLine("<button id=\"WidthDeleteButton\" onclick=\"deleteNewWidth()\">Delete Width</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<button id=\"ColorChangeButton\" onclick=\"changeColors()\">Change Colors</button>");
+                writeLine("<button id=\"WidthChangeButton\" onclick=\"changeWidths()\">Change Widths</button>");
+                writeLine("<button id=\"SourceCodeButton\" onclick=\"saveTextAsFile()\">Export File</button>");
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<span id=\"lastClickedObject\">-</span>");
+                writeLine("<br>");
+                writeLine("<br>");
                 
                 writeLine("<table id = \"colorTable\">");
                 writeLine("<thead>");
@@ -588,8 +663,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("</tbody>");
                 writeLine("</table>");
                 
-                writeLine("<br>");
-                writeLine("<br>");
                 
                 writeLine("<table id = \"widthTable\">");
                 writeLine("<thead>");
@@ -606,51 +679,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("</tbody>");
                 writeLine("</table>");
                 
-                writeLine("<br>");
-                writeLine("<br>");
-                
-                writeLine("Input Weight: <input type=\"text\" id=\"NewInputColor\">");
-                writeLine("Output Color: <input type=\"text\" id=\"NewOutputColor\" title=\"Red, Blue and Green separated by spaces\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"ColorAddButton\" onclick=\"addNewColor()\">Add Color</button>");
-                
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("Delete Weight: <input type=\"text\" id=\"DeleteColor\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"ColorDeleteButton\" onclick=\"deleteNewColor()\">Delete Color</button>");
-                
-                writeLine("<br>");
-                writeLine("<br>");
 
-                writeLine("Input Weight: <input type=\"text\" id=\"NewInputWidth\">");
-                writeLine("Output Width: <input type=\"text\" id=\"NewOutputWidth\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"WidthAddButton\" onclick=\"addNewWidth()\">Add Width</button>");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("Delete Weight: <input type=\"text\" id=\"DeleteWidth\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"WidthDeleteButton\" onclick=\"deleteNewWidth()\">Delete Width</button>");
-                
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<br>");
-                
-                writeLine("<button id=\"ColorChangeButton\" onclick=\"changeColors()\">Change Colors</button>");
-                writeLine("<button id=\"WidthChangeButton\" onclick=\"changeWidths()\">Change Widths</button>");
-                writeLine("<br>");
-                writeLine("<br>");
-                
-                writeLine("<h3>Last clicked object:</h3> ");
-                writeLine("<span id=\"lastClickedObject\">-</span>");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"SourceCodeButton\" onclick=\"saveTextAsFile()\">Export File</button>");
                 writeLine("  </body>");
                 writeLine("</html>");
             }

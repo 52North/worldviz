@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script>
+	function findColor(){
+		var color = document.getElementById("colorChooser").value;
+		document.getElementById("value").innerHTML = hexToRgb(color);
+	}
+	
+	function hexToRgb(hex) {
+		var bigint = parseInt(hex, 16);
+		var r = ((bigint >> 16) & 255)/255;
+		var g = ((bigint >> 8) & 255)/255;
+		var b = (bigint & 255)/255;
+
+		r = Math.round(r * 1000) / 1000
+		g = Math.round(g * 1000) / 1000
+		b = Math.round(b * 1000) / 1000
+		return r + " " + g + " " + b;
+	}
+	</script>
+</head>
+<body>
+
+	<script type="text/javascript" src="jscolor.js"></script>
+
+	<input id="colorChooser" class="color" value="">
+	<button id="SourceCodeButton" onclick="findColor()">Colour</button>
+	<span id="value">-</span>
+</body>
+</html>

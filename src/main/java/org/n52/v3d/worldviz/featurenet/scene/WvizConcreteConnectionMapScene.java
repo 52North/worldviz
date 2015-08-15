@@ -27,6 +27,10 @@ public abstract class WvizConcreteConnectionMapScene {
 
     protected String skyColor;
     
+    protected boolean isUseWorldMap;
+    
+    protected String texturePath;
+    
     protected String position, orientation;
     
     protected String normalColor, currentColor, highlightColor;
@@ -62,7 +66,7 @@ public abstract class WvizConcreteConnectionMapScene {
     
     protected BufferedWriter document;
     
-    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, arrowConeHeight, arrowRatio, ribbonStep;
+    public double ribbonCreaseAngle, curveCreaseAngle , curveRatio, heightRatio, radiusRatio, ribbonStep;
 
     public int ribbonCircleTurns, ribbonHelixTurns,curveCircleTurns, curveEllipseTurns;
     
@@ -81,11 +85,15 @@ public abstract class WvizConcreteConnectionMapScene {
         
         Background background = (Background) wvizConfig.getBackground().get(0);
         skyColor = background.getSkyColor();
+        
         Viewpoint viewpoint = (Viewpoint) wvizConfig.getViewpoint().get(0);
         position = viewpoint.getPosition();
         orientation = viewpoint.getOrientation();
         
         ConnectionNet connectionNet = (ConnectionNet) wvizConfig.getConnectionNet().get(0);
+        BackgroundWorldMap backgroundWorldMap = (BackgroundWorldMap) connectionNet.getBackgroundWorldMap().get(0);
+        isUseWorldMap = backgroundWorldMap.isUseWorldMap();
+        texturePath = backgroundWorldMap.getTexturePath();
         Mapper mapper = (Mapper) connectionNet.getMapper().get(0);
         Features features = (Features) mapper.getFeatures().get(0);
         PointVisualizer pointVisualizer = (PointVisualizer) features.getPointVisualizer().get(0);
@@ -151,8 +159,8 @@ public abstract class WvizConcreteConnectionMapScene {
                 curveRatio = geometry.getRatio();
             }
             else if(geometryType.equalsIgnoreCase("arrow")){
-                arrowConeHeight = geometry.getConeHeight();
-                arrowRatio = geometry.getRatio();
+                heightRatio = geometry.getHeightRatio();
+                radiusRatio = geometry.getRadiusRatio();
             }
         }
 
