@@ -97,8 +97,14 @@
 		var newInputColor = document.getElementById("NewInputColor").value;
 		var newOutputColor = document.getElementById("NewOutputColor").value;
 
-		if((newInputColor.split(" ")).length == 1){
+		if(newInputColor.split(" ")).length == 1){
 			newInputColor = parseFloat(newInputColor);
+		}
+		else{
+			newInputColor = NaN;
+		}
+		
+		if(!isNaN(newInputColor)){
 			newOutputColor = hexToRgb(newOutputColor);
 			var valuePresent = false;
 			var i = 1;
@@ -138,6 +144,9 @@
 		if( (newInputWidth.split(" ")).length == 1 && (newOutputWidth.split(" ")).length == 1){
 			newInputWidth = parseFloat(newInputWidth);
 			newOutputWidth = parseFloat(newOutputWidth);
+		}
+		else{
+			newInputWidth = newOutputWidth = NaN;
 		}
 		
 		if( !isNaN(newInputWidth) && !isNaN(newOutputWidth) ){
