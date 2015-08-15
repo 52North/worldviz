@@ -106,6 +106,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/script.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/shapes.js\"></script>");
                 
+                writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/js/jscolor/jscolor.js\"></script>");
+                
 		writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/css/style.css\">");
 				
 		writeLine("    <!-- Change the path, when the repository is changed! -->");
@@ -613,7 +615,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<br>");
                 
                 writeLine("<input type=\"text\" id=\"NewInputColor\" placeholder=\"Input Weight\">");
-                writeLine("<input type=\"text\" id=\"NewOutputColor\" title=\"Red, Blue and Green separated by spaces\" placeholder=\"Output Color\">");
+                writeLine("<input type=\"text\" id=\"NewOutputColor\" class=\"color\" placeholder=\"Output Color\">");
                 writeLine("<button id=\"ColorAddButton\" onclick=\"addNewColor()\">Add Color</button>");
                 
                 writeLine("<br>");

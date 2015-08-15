@@ -93,55 +93,39 @@
 
 	function addNewColor(){
 		var table = document.getElementById("colorTable");
-		var done = false;
 
 		var newInputColor = document.getElementById("NewInputColor").value;
 		var newOutputColor = document.getElementById("NewOutputColor").value;
 
 		if((newInputColor.split(" ")).length == 1){
 			newInputColor = parseFloat(newInputColor);
-		}
+			newOutputColor = hexToRgb(newOutputColor);
+			var valuePresent = false;
+			var i = 1;
+			var table_length = table.rows.length;
 
-		newOutputColor = newOutputColor.split(" ");
-
-		if(newOutputColor.length == 3){
-			var red = parseFloat(newOutputColor[0]);
-			var green = parseFloat(newOutputColor[1]);
-			var blue = parseFloat(newOutputColor[2]);
-
-			if( !isNaN(newInputColor) && red>=0 && red<=1 && green>=0 && green<=1 && blue>=0 && blue<=1 ){
-				var valuePresent = false;
-				var i = 1;
-				var table_length = table.rows.length;
-
-				for(;i<table_length;i++){
-					if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputColor){
-						valuePresent = true;
-						break;
-					}
+			for(;i<table_length;i++){
+				if (parseFloat(table.rows[i].cells[0].innerHTML) == newInputColor){
+					valuePresent = true;
+					break;
 				}
+			}
 
-				if(!valuePresent){
-					var rows = table.rows.length;
-					var newRow = table.insertRow(rows);
-					var inputColor = newRow.insertCell(0);
-					var outputColor = newRow.insertCell(1);
-					inputColor.innerHTML = newInputColor;
-					outputColor.innerHTML = red + " "+green +" "+blue;
-				}
-				else{
-					table.rows[i].cells[1].innerHTML = red + " "+green +" "+blue;
-				}
-				done = true;
+			if(!valuePresent){
+				var rows = table.rows.length;
+				var newRow = table.insertRow(rows);
+				var inputColor = newRow.insertCell(0);
+				var outputColor = newRow.insertCell(1);
+				inputColor.innerHTML = newInputColor;
+				outputColor.innerHTML = newOutputColor;
+			}
+			else{
+				table.rows[i].cells[1].innerHTML = newOutputColor;
 			}
 			
-		}
-		
-		if(done){
 			document.getElementById("NewInputColor").value = "";
 			document.getElementById("NewOutputColor").value = "";
-		}
-			
+		}		
 	}
 	
 	function addNewWidth(){
@@ -616,6 +600,18 @@
 		var viewpoint = document.getElementById("viewpoint");
 		viewpoint.setAttribute('position', getViewpointPosition());
 		viewpoint.setAttribute('orientation', getViewpointOrientation());
+	}
+	
+	function hexToRgb(hex) {
+		var bigint = parseInt(hex, 16);
+		var r = ((bigint >> 16) & 255)/255;
+		var g = ((bigint >> 8) & 255)/255;
+		var b = (bigint & 255)/255;
+
+		r = Math.round(r * 1000) / 1000
+		g = Math.round(g * 1000) / 1000
+		b = Math.round(b * 1000) / 1000
+		return r + " " + g + " " + b;
 	}
 	
     $(document).ready(function(){
