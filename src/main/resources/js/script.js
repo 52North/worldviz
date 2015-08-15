@@ -131,6 +131,7 @@
 			
 			document.getElementById("NewInputColor").value = "";
 			document.getElementById("NewOutputColor").value = "";
+			document.getElementById("NewOutputColor").style.backgroundColor = "white";
 		}		
 	}
 	
