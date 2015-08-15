@@ -106,9 +106,9 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/script.js\"></script>");
                 writeLine("    <script type=\"text/javascript\" src=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/Javascript/shapes.js\"></script>");
                 
-				writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/css/style.css\">");
+		writeLine("    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://rawgit.com/cDanowski/worldviz/master/src/main/resources/css/style.css\">");
 				
-				writeLine("    <!-- Change the path, when the repository is changed! -->");
+		writeLine("    <!-- Change the path, when the repository is changed! -->");
                 writeLine("    <script type=\"text/javascript\">");
                 
                 writeLine("    function getIndexSize(){");
@@ -610,6 +610,41 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("<button onclick=\"restoreViewpoint()\">Restore Viewpoint</button>");
                 writeLine("<br>");
                 writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<input type=\"text\" id=\"NewInputColor\" placeholder=\"Input Weight\">");
+                writeLine("<input type=\"text\" id=\"NewOutputColor\" title=\"Red, Blue and Green separated by spaces\" placeholder=\"Output Color\">");
+                writeLine("<button id=\"ColorAddButton\" onclick=\"addNewColor()\">Add Color</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<input type=\"text\" id=\"DeleteColor\" placeholder=\"Delete Weight\">");
+                writeLine("<button id=\"ColorDeleteButton\" onclick=\"deleteNewColor()\">Delete Color</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+
+                writeLine("<input type=\"text\" id=\"NewInputWidth\" placeholder=\"Input Weight\">");
+                writeLine("<input type=\"text\" id=\"NewOutputWidth\" placeholder=\"Output Width\">");
+                writeLine("<button id=\"WidthAddButton\" onclick=\"addNewWidth()\">Add Width</button>");
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<input type=\"text\" id=\"DeleteWidth\" placeholder=\"Delete Weight\">");
+                writeLine("<button id=\"WidthDeleteButton\" onclick=\"deleteNewWidth()\">Delete Width</button>");
+                
+                writeLine("<br>");
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<button id=\"ColorChangeButton\" onclick=\"changeColors()\">Change Colors</button>");
+                writeLine("<button id=\"WidthChangeButton\" onclick=\"changeWidths()\">Change Widths</button>");
+                writeLine("<button id=\"SourceCodeButton\" onclick=\"saveTextAsFile()\">Export File</button>");
+                writeLine("<br>");
+                writeLine("<br>");
+                
+                writeLine("<span id=\"lastClickedObject\">-</span>");
+                writeLine("<br>");
+                writeLine("<br>");
                 
                 writeLine("<table id = \"colorTable\">");
                 writeLine("<thead>");
@@ -626,8 +661,6 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("</tbody>");
                 writeLine("</table>");
                 
-                writeLine("<br>");
-                writeLine("<br>");
                 
                 writeLine("<table id = \"widthTable\">");
                 writeLine("<thead>");
@@ -644,51 +677,7 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 writeLine("</tbody>");
                 writeLine("</table>");
                 
-                writeLine("<br>");
-                writeLine("<br>");
-                
-                writeLine("Input Weight: <input type=\"text\" id=\"NewInputColor\">");
-                writeLine("Output Color: <input type=\"text\" id=\"NewOutputColor\" title=\"Red, Blue and Green separated by spaces\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"ColorAddButton\" onclick=\"addNewColor()\">Add Color</button>");
-                
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("Delete Weight: <input type=\"text\" id=\"DeleteColor\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"ColorDeleteButton\" onclick=\"deleteNewColor()\">Delete Color</button>");
-                
-                writeLine("<br>");
-                writeLine("<br>");
 
-                writeLine("Input Weight: <input type=\"text\" id=\"NewInputWidth\">");
-                writeLine("Output Width: <input type=\"text\" id=\"NewOutputWidth\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"WidthAddButton\" onclick=\"addNewWidth()\">Add Width</button>");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("Delete Weight: <input type=\"text\" id=\"DeleteWidth\">");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"WidthDeleteButton\" onclick=\"deleteNewWidth()\">Delete Width</button>");
-                
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<br>");
-                
-                writeLine("<button id=\"ColorChangeButton\" onclick=\"changeColors()\">Change Colors</button>");
-                writeLine("<button id=\"WidthChangeButton\" onclick=\"changeWidths()\">Change Widths</button>");
-                writeLine("<br>");
-                writeLine("<br>");
-                
-                writeLine("<h3>Last clicked object:</h3> ");
-                writeLine("<span id=\"lastClickedObject\">-</span>");
-                writeLine("<br>");
-                writeLine("<br>");
-                writeLine("<button id=\"SourceCodeButton\" onclick=\"saveTextAsFile()\">Export File</button>");
                 writeLine("  </body>");
                 writeLine("</html>");
             }
