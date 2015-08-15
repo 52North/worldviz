@@ -132,6 +132,7 @@
 			document.getElementById("NewInputColor").value = "";
 			document.getElementById("NewOutputColor").value = "";
 			document.getElementById("NewOutputColor").style.backgroundColor = "white";
+			sortColorFunction();
 		}		
 	}
 	
@@ -179,6 +180,7 @@
 		if(done){
 			document.getElementById("NewInputWidth").value = "";
 			document.getElementById("NewOutputWidth").value = "";
+			sortWidthFunction();
 		}
 		
 	}
@@ -369,7 +371,6 @@
 	};
 	
 	function getColorMapper(){
-		sortColorFunction();
 		var inputColors = getInputColors();
 		var outputColors = getOutputColors();
 		
@@ -379,7 +380,6 @@
 	}
 	
 	function getWidthMapper(){
-		sortWidthFunction();
 		var inputWidths = getInputWidths();
 		var outputWidths = getOutputWidths();
 		
