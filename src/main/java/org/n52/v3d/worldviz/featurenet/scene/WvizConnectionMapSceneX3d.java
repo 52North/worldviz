@@ -657,7 +657,8 @@ public class WvizConnectionMapSceneX3d extends WvizConcreteConnectionMapScene{
                 for (int i=0;i<inputColorValues.length;i++){ 
                   writeLine("<tr><td>");
                   writeLine(String.valueOf(inputColorValues[i]));
-                  writeLine("</td><td>");
+                  writeLine("</td><td style=\"background:rgb("+outputColorValues[i].getRed256()+","+outputColorValues[i].getGreen256()+","+outputColorValues[i].getBlue256()+");!important;\">");
+                  //writeLine("</td><td>");
                   red = floor(10*outputColorValues[i].getRed() +0.5)/10;
                   green = floor(10*outputColorValues[i].getGreen()+0.5)/10;
                   blue = floor(10*outputColorValues[i].getBlue()+0.5)/10;
