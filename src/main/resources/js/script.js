@@ -105,7 +105,7 @@
 		}
 		
 		if(!isNaN(newInputColor)){
-			var hexColor = newOutputColor;
+			var hexColor = "#"+newOutputColor;
 			newOutputColor = hexToRgb(newOutputColor);
 			var valuePresent = false;
 			var i = 1;
