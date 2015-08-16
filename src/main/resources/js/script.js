@@ -105,6 +105,7 @@
 		}
 		
 		if(!isNaN(newInputColor)){
+			var hexColor = newOutputColor;
 			newOutputColor = hexToRgb(newOutputColor);
 			var valuePresent = false;
 			var i = 1;
@@ -116,7 +117,7 @@
 					break;
 				}
 			}
-
+			
 			if(!valuePresent){
 				var rows = table.rows.length;
 				var newRow = table.insertRow(rows);
@@ -124,9 +125,11 @@
 				var outputColor = newRow.insertCell(1);
 				inputColor.innerHTML = newInputColor;
 				outputColor.innerHTML = newOutputColor;
+				outputColor.style.background = hexColor;
 			}
 			else{
 				table.rows[i].cells[1].innerHTML = newOutputColor;
+				table.rows[i].cells[1].style.background = hexColor;
 			}
 			
 			document.getElementById("NewInputColor").value = "";
