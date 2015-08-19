@@ -7,3 +7,4 @@ log
 test/*
 !test/.gitkeep
 **/Thumbs.db
+nbactions.xml
