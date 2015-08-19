@@ -5,6 +5,6 @@ log
 .project
 .settings
 test/*
-!test/.gitkeep
+!*.gitkeep/
 **/Thumbs.db
 nbactions.xml
