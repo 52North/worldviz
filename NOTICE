@@ -1,0 +1,36 @@
+Copyright 2015 52°North Initiative for Geospatial Open Source Software GmbH
+
+Licensed under GNU GENERAL PUBLIC LICENSE Version 2
+
+This project includes:
+
+  52n-v3d-triturus under GNU Library or Lesser General Public License version 2.0 (LGPLv2)
+  Apache Log4j API under The Apache Software License, Version 2.0
+  Apache Log4j Core under The Apache Software License, Version 2.0
+  Apache Log4j SLF4J Binding under The Apache Software License, Version 2.0
+  API interfaces under Lesser General Public License (LGPL)
+  Commons Pool under The Apache Software License, Version 2.0
+  dataset under GNU Library or Lesser General Public License version 2.0 (LGPLv2)
+  DataStore Support under Lesser General Public License (LGPL)
+  jai_core under Java Advanced Imaging Distribution License, http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt
+  javacsv under GNU Library or Lesser General Public License version 2.0 (LGPLv2)
+  JDOM under Similar to Apache License but with the acknowledgment clause removed
+  jgridshift under GNU Lesser General Public License, version 2.0 (LGPLv2)
+  jsr-275 under BSD License
+  JTS Topology Suite under Lesser General Public License (LGPL)
+  JUnit under Common Public License Version 1.0
+  Main module under Lesser General Public License (LGPL)
+  Metadata under Lesser General Public License (LGPL)
+  MXP1: Xml Pull Parser 3rd Edition (XPP3) under Indiana University Extreme! Lab Software License, vesion 1.1.1 or Public Domain
+  Open GIS Interfaces under OGC copyright or Lesser General Public License (LGPL)
+  poly2tri under BSD 3-Clause
+  Referencing services under Lesser General Public License (LGPL)
+  Shapefile module under Lesser General Public License (LGPL)
+  SLF4J API Module under MIT License
+  StAX API under The Apache Software License, Version 2.0
+  vecmath under Sun Binary Code License Agreement
+  worldviz under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  XML Pull Parsing API under Public Domain
+  XmlBeans under The Apache Software License, Version 2.0
+  XStream Core under BSD style
+
