@@ -38,7 +38,10 @@ development of innovative software solutions in the context of 3d geovisualizati
 
 ## Installation
 Since this is a Maven project, the typical Maven installation tasks can be executed to build this project.
-To compile the Triturus WorldViz library, simply run Maven's 'package' task.
+To compile the Triturus WorldViz library, please execute the following Maven task 
+
+`mvn clean install`
+
 
 To use the Triturus WorldViz library, just add the WorldViz JAR file to your Java project.
 
