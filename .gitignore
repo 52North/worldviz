@@ -6,3 +6,4 @@ log
 .settings
 test/*
 !test/.gitkeep
+**/Thumbs.db
