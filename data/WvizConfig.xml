@@ -74,11 +74,11 @@
                 <OutputColor type="RGB">0 1 0</OutputColor>
               </ColorEntry>
 			  <ColorEntry>
-                <InputValue>150.0</InputValue>
+                <InputValue>10.0</InputValue>
                 <OutputColor type="RGB">1 1 0</OutputColor>
               </ColorEntry>
               <ColorEntry>
-                <InputValue>367.0</InputValue>
+                <InputValue>22.0</InputValue>
                 <OutputColor type="RGB">1 0 0</OutputColor>
               </ColorEntry>
             </ColorPalette>

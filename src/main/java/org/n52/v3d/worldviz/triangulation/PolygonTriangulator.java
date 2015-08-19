@@ -50,10 +50,26 @@ import org.poly2tri.geometry.polygon.PolygonPoint;
 import org.poly2tri.triangulation.TriangulationPoint;
 import org.poly2tri.triangulation.delaunay.DelaunayTriangle;
 
+/**
+ * <b>Note that the triangulation is only possible for flat geometries that have
+ * their spatial extent in the XY-plane. Any z-coordinate value if ignored in
+ * the external library poly2tri.</b>
+ * 
+ * @author Christian Danowski
+ *
+ */
 public class PolygonTriangulator {
 
 	private static String srs;
 
+	/**
+	 * <b>Note that the triangulation is only possible for flat geometries that
+	 * have their spatial extent in the XY-plane. Any z-coordinate value if
+	 * ignored in the external library poly2tri.</b>
+	 * 
+	 * @param vgMultiPolygons
+	 * @return
+	 */
 	public static List<VgIndexedTIN> triangulateMultiPolygons(
 			Collection<VgMultiPolygon> vgMultiPolygons) {
 
@@ -67,6 +83,14 @@ public class PolygonTriangulator {
 
 	}
 
+	/**
+	 * <b>Note that the triangulation is only possible for flat geometries that
+	 * have their spatial extent in the XY-plane. Any z-coordinate value if
+	 * ignored in the external library poly2tri.</b>
+	 * 
+	 * @param vgMultiPolygon
+	 * @return
+	 */
 	public static List<VgIndexedTIN> triangulateMultiPolygon(
 			VgMultiPolygon vgMultiPolygon) {
 
@@ -85,6 +109,14 @@ public class PolygonTriangulator {
 		return vgTINs;
 	}
 
+	/**
+	 * <b>Note that the triangulation is only possible for flat geometries that
+	 * have their spatial extent in the XY-plane. Any z-coordinate value if
+	 * ignored in the external library poly2tri.</b>
+	 * 
+	 * @param vgPolygon
+	 * @return
+	 */
 	public static VgIndexedTIN triangulatePolygon(VgPolygon vgPolygon) {
 
 		srs = vgPolygon.getSRS();
@@ -128,6 +160,10 @@ public class PolygonTriangulator {
 	 * constrained triangulation! The outer boundary of the polygon will still
 	 * be used for guaranteed triangle edges that will not be crossed by any
 	 * edges constructed through the inner points.
+	 * 
+	 * <b>Note that the triangulation is only possible for flat geometries that
+	 * have their spatial extent in the XY-plane. Any z-coordinate value if
+	 * ignored in the external library poly2tri.</b>
 	 * 
 	 * @param vgPolygon
 	 * @param additionalInnerPoints

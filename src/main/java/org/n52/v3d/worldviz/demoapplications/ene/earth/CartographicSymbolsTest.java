@@ -31,24 +31,26 @@ package org.n52.v3d.worldviz.demoapplications.ene.earth;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.n52.v3d.triturus.gisimplm.GmPoint;
+import org.n52.v3d.triturus.t3dutil.T3dColor;
+import org.n52.v3d.triturus.t3dutil.T3dVector;
+import org.n52.v3d.triturus.vgis.VgAttrFeature;
+import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
-import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.extensions.mappers.AttributeValuePair;
 import org.n52.v3d.worldviz.extensions.mappers.MpAttrFeature2AttrSymbol;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredSymbol;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ScaledSymbol;
 import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
+import org.n52.v3d.worldviz.helper.RelativePaths;
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
 import org.n52.v3d.worldviz.worldscene.VsCartographicSymbolsOnASphereScene;
-
-import org.n52.v3d.triturus.t3dutil.T3dColor;
-import org.n52.v3d.triturus.vgis.VgAttrFeature;
-import org.n52.v3d.triturus.vgis.VgGeomObject;
-import org.n52.v3d.triturus.vgis.VgPoint;
 
 public class CartographicSymbolsTest {
 
 	private static String attributeName = "INES scale level";
+
 	private static String dataXML = RelativePaths.NUCLEAR_ACCIDENTS_XML;
 	private static String outputFile = "test/NuclearAccidents.x3d";
 	private static double minValue;
@@ -74,14 +76,6 @@ public class CartographicSymbolsTest {
 		List<T3dAttrSymbolInstance> attrSymbols = new ArrayList<T3dAttrSymbolInstance>(
 				features.size());
 
-		for (VgAttrFeature vgAttrFeature : features) {
-			// the geometry in THIS case is a point, thus we may cast it
-			// normally an instanceOf-check must be done
-			VgGeomObject geometry = vgAttrFeature.getGeometry();
-			attrSymbols.add(symbolMapper.createSphereSymbol(vgAttrFeature,
-					((VgPoint) geometry)));
-		}
-
 		setMinMaxForAttribute(features);
 
 		MpValue2ScaledSymbol symbolScaleMapper = new MpValue2ScaledSymbol();
@@ -97,10 +91,21 @@ public class CartographicSymbolsTest {
 				new T3dColor(1, 0, 0) };
 		symbolColorMapper.setPalette(inputValuesForColor, outputColors);
 
-		for (int i = 0; i < features.size(); i++) {
-			VgAttrFeature vgAttrFeature = features.get(i);
+		AxisSwitchTransform axisSwitch = new AxisSwitchTransform();
 
-			T3dAttrSymbolInstance t3dAttrSymbolInstance = attrSymbols.get(i);
+		for (VgAttrFeature vgAttrFeature : features) {
+			// the geometry in THIS case is a point, thus we may cast it
+			// normally an instanceOf-check must be done
+			VgPoint geometry = (VgPoint) vgAttrFeature.getGeometry();
+
+			// point in virtual world (axes need to be switched.)
+			T3dVector virtualPoint = axisSwitch.transform(geometry);
+
+			T3dAttrSymbolInstance sphereSymbol = symbolMapper
+					.createSphereSymbol(
+							vgAttrFeature,
+							new GmPoint(virtualPoint.getX(), virtualPoint
+									.getY(), virtualPoint.getZ()));
 
 			Object attributeValue = vgAttrFeature
 					.getAttributeValue(attributeName);
@@ -110,7 +115,7 @@ public class CartographicSymbolsTest {
 
 			// TODO scale parameter anpassen und experimentieren
 			T3dAttrSymbolInstance scaledSymbol = symbolScaleMapper.scaleTotal(
-					t3dAttrSymbolInstance, attrValuePair);
+					sphereSymbol, attrValuePair);
 
 			// grundrissebene kleiner machen!
 			// scaledSymbol.setxScale(0.1);
@@ -119,7 +124,7 @@ public class CartographicSymbolsTest {
 			T3dAttrSymbolInstance scaledColoredSymbol = symbolColorMapper
 					.transform(scaledSymbol, attrValuePair);
 
-			attrSymbols.set(i, scaledColoredSymbol);
+			attrSymbols.add(scaledColoredSymbol);
 		}
 
 		VsCartographicSymbolsOnASphereScene scene = new VsCartographicSymbolsOnASphereScene(

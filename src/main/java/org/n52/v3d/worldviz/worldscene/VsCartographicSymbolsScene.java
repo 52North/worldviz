@@ -42,7 +42,6 @@ import org.n52.v3d.triturus.t3dutil.symboldefs.T3dCylinder;
 import org.n52.v3d.triturus.t3dutil.symboldefs.T3dSphere;
 import org.n52.v3d.triturus.vgis.VgPoint;
 import org.n52.v3d.worldviz.extensions.mappers.T3dAttrSymbolInstance;
-import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
 
 /**
  * Class to create a scene description which contains cartographic visualization

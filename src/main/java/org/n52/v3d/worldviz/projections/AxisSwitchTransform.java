@@ -28,8 +28,20 @@
  */
 package org.n52.v3d.worldviz.projections;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.n52.v3d.triturus.core.T3dNotYetImplException;
+import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
+import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.extensions.GmLinearRing;
+import org.n52.v3d.worldviz.extensions.GmMultiPolygon;
+import org.n52.v3d.worldviz.extensions.GmPolygon;
+import org.n52.v3d.worldviz.extensions.VgLinearRing;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
+import org.n52.v3d.worldviz.extensions.VgPolygon;
 
 //TODO: Check, if this class should be migrated to the 52N Triturus core package in the future.
 
@@ -74,6 +86,7 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  * @see NormTransform
  */
 public class AxisSwitchTransform implements CoordinateTransform {
+
 	public T3dVector transform(VgPoint loc) {
 		double x = loc.getX();
 		double y = loc.getZ();
@@ -88,6 +101,87 @@ public class AxisSwitchTransform implements CoordinateTransform {
 		double z = -pnt.getY();
 
 		return new T3dVector(x, y, z);
+	}
+
+	public VgGeomObject transform(VgGeomObject geometry)
+			throws T3dNotYetImplException {
+
+		if (geometry instanceof VgPoint)
+			return transformToVgPoint((VgPoint) geometry);
+
+		else if (geometry instanceof VgPolygon)
+			return transform((VgPolygon) geometry);
+		
+		else if (geometry instanceof VgMultiPolygon)
+			return transform((VgMultiPolygon) geometry);
+		
+		else if (geometry instanceof VgLinearRing)
+			return transform((VgLinearRing) geometry);
+
+		else
+			throw new T3dNotYetImplException("");
+
+	}
+
+	public VgMultiPolygon transform(VgMultiPolygon multiPolygon) {
+		int numberOfGeometries = multiPolygon.getNumberOfGeometries();
+
+		List<VgPolygon> polygons_transformed = new ArrayList<VgPolygon>(
+				numberOfGeometries);
+
+		for (int i = 0; i < numberOfGeometries; i++) {
+			VgPolygon polygon_old = (VgPolygon) multiPolygon.getGeometry(i);
+
+			VgPolygon polygon_transformed = this.transform(polygon_old);
+			polygons_transformed.add(polygon_transformed);
+		}
+
+		return new GmMultiPolygon(polygons_transformed);
+	}
+
+	public VgPolygon transform(VgPolygon polygon) {
+		VgLinearRing outerBoundary = polygon.getOuterBoundary();
+
+		VgLinearRing outerBoundary_transformed = transform(outerBoundary);
+
+		// inner holes
+		int numberOfHoles = polygon.getNumberOfHoles();
+		List<VgLinearRing> holes_transformed = new ArrayList<VgLinearRing>(
+				numberOfHoles);
+
+		for (int i = 0; i < numberOfHoles; i++) {
+			VgLinearRing hole_old = polygon.getHole(i);
+
+			VgLinearRing hole_transformed = this.transform(hole_old);
+			holes_transformed.add(hole_transformed);
+		}
+
+		return new GmPolygon(outerBoundary_transformed, holes_transformed);
+	}
+
+	public VgLinearRing transform(VgLinearRing linearRing) {
+		GmLinearRing linearRing_transformed = new GmLinearRing();
+
+		int numberOfVertices = linearRing.getNumberOfVertices();
+
+		for (int i = 0; i < numberOfVertices; i++) {
+			VgPoint oldPoint = linearRing.getVertex(i);
+
+			VgPoint point_transformed = this.transformToVgPoint(oldPoint);
+			linearRing_transformed.addVertex(point_transformed);
+		}
+
+		return linearRing_transformed;
+	}
+
+	private VgPoint transformToVgPoint(VgPoint geometry) {
+		T3dVector newVector = this.transform((VgPoint) geometry);
+
+		double x = newVector.getX();
+		double y = newVector.getY();
+		double z = newVector.getZ();
+
+		return new GmPoint(x, y, z);
 	}
 
 	/**
