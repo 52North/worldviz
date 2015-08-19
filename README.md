@@ -1,7 +1,7 @@
-# 52캮orth Triturus WorldViz
-README file for the [52캮orth Triturus WorldViz library][1]
+# 52째North Triturus WorldViz
+README file for the [52째North Triturus WorldViz library][1]
 
-52캮orth Triturus WorldViz supports the development of thematic 3-D visualizations at world scale.
+52째North Triturus WorldViz supports the development of thematic 3-D visualizations at world scale.
 
 Regarding the traditional visualization pipeline, the framework focuses the 
 mapping step, i.e. the transformation between geo-objects and abstract 
@@ -9,7 +9,7 @@ visualization-objects. Thus, WorldViz allows to generate concrete scene descript
 (e.g., a X3D document) from geo-data, thereby keeping the "cartographic" mapping process 
 configurable. 
 
-WorldViz is based on the existing 52캮orth Triturus module and shall offer various 
+WorldViz is based on the existing 52째North Triturus module and shall offer various 
 world visualizations, e.g. globes (limited to world-scale), potato-like globe 
 deformations depending on thematic data, feature-space scenes ("attribute space"), 
 visualization of geo-object relations (connection maps in 3-d space) as well as planar 
@@ -42,7 +42,7 @@ To compile the Triturus WorldViz library, simply run Maven's 'package' task.
 
 To use the Triturus WorldViz library, just add the WorldViz JAR file to your Java project.
 
-Note that Triturus WorldViz requires the 52캮orth Triturus library (JAR) which is already included as a dependency in the pom.xml-file.
+Note that Triturus WorldViz requires the 52째North Triturus library (JAR) which is already included as a dependency in the pom.xml-file.
 
 ## License information
 This program is free software; you can redistribute it and/or modify it under the terms of the 
@@ -55,20 +55,11 @@ This sections lists documents that lead to a deeper understanding of the Trituru
 additional information.
 
 * White Paper of Triturus: http://52north.org/images/stories/52n/communities/3D/triturus%20white%20paper.pdf 
-* 52째North 3D Community Wiki: https://wiki.52north.org/bin/view/V3d/ 
+* 52횂째North 3D Community Wiki: https://wiki.52north.org/bin/view/V3d/ 
 * Triturus Wiki: https://wiki.52north.org/bin/view/V3d/Triturus 
 
 ## Contributing
-You are interested in contributing to the 52째North Triturus or  WorldViz  and you want to pull your
-changes to the 52캮orth repository to make it available to all?
-
-In that case we need your official permission and for this purpose we have a so called contributors 
-license agreement (CLA) in place. With this agreement you grant us the rights to use and publish your 
-code under an open source license.
-
-A link to the contributors license agreement and further explanations are available here: 
-
-    http://52north.org/about/licensing/cla-guidelines
+Please find information for Contributing to the project in the seperate [CONTRIBUTE.md](CONTRIBUTE.md).
 
 ## Support and Contact
 You can get support in the community mailing list and forums:
@@ -85,7 +76,7 @@ certain functionality added, let us know at:
 
 The 3D Community
 
-52캮orth Inititative for Geospatial Open Source Software GmbH, Germany
+52째North Inititative for Geospatial Open Source Software GmbH, Germany
 
 --
 [1]: http://52north.org/communities/3d/triturus
