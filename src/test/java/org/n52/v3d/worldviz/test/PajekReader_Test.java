@@ -49,11 +49,12 @@ public class PajekReader_Test {
     public WvizUniversalFeatureNet wvizuniversalfeaturenet;
 
     //Adhitya: This should be later moved to the RelativePaths Class
-    public static final String filePath = "data\\graph.net";
+    public static final String filePath = "data\\Flows_of_trade.net";
 
     @Before
     public void before() {
         reader = new PajekReader();
+        System.out.println("Using file: " + filePath);
         try {
             wvizuniversalfeaturenet = reader.readFromFile(filePath);
         }
