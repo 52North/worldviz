@@ -19,7 +19,7 @@
           input file: 
         -->
         <PointVisualizer>
-          <!-- To perform 3-d cartography, 52N Triturus symbols should be used (instead of the 3D-SLD spec): -->
+          <!-- To perform 3-d cartography, 52°North Triturus symbols should be used (instead of the 3D-SLD spec): -->
           <T3dSymbol type="Sphere" size="0.005" normalColor="1 0 0" normalGlow="0 0 0" currentColor="0 0.75 1" currentGlow="0 0 0" highlightColor="1 1 0" highlightGlow="1 0 0"/>
         </PointVisualizer>
         <TextVisualizer>
