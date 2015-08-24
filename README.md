@@ -49,9 +49,9 @@ Note that Triturus WorldViz requires the 52°North Triturus library (JAR) which 
 
 ## License information
 This program is free software; you can redistribute it and/or modify it under the terms of the 
-Apache License version 2.0.
+GNU GENERAL PUBLIC LICENSE Version 2.
 
-For further information please refer to 'LICENSE'-file
+For further information please refer to [LICENSE](LICENSE)-file
 
 ## Additional documents and links
 This sections lists documents that lead to a deeper understanding of the Triturus library and give 
