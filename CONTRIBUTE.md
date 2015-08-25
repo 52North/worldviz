@@ -27,6 +27,7 @@ Find all information on our licensing page at <http://52north.org/about/licensin
 This section includes advice on how to build new features for the project & what kind of process it includes. 
 
 * Before you start working on a new feature, create a new issue and start a discussion on the mailing list.
+* Also you might want to check the Trello Board [connection maps](https://trello.com/b/890k2iEM/connection-maps), since we use this board to maintain task lists. (The connection map part has been created during the [Google Summer of Code](https://www.google-melange.com/gsoc/homepage/google/gsoc2015) project and will be continued in the future.)
 * We follow the fork & pull development model: <https://help.github.com/articles/using-pull-requests>
 
 Don’t get discouraged! We estimate that the response time from the
@@ -45,4 +46,4 @@ You can help report bugs by filing them here: <https://github.com/52North/worldv
 All documentation is either in README.md file or, in future will be added [to the 52°North 3D wiki](https://wiki.52north.org/bin/view/V3d/WebHome), and a critical read as well as feedback and documentation extensions are always welcome.
 
 
-* If you have further questions, contact: Benno: [@BennoSchmidt](https://github.com/BennoSchmidt), b.schmidt@52north.org
+* If you have further questions, contact Benno: [@BennoSchmidt](https://github.com/BennoSchmidt), b.schmidt@52north.org
