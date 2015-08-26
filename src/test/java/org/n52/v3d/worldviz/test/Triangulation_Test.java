@@ -28,10 +28,15 @@
  */
 package org.n52.v3d.worldviz.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.hamcrest.collection.IsEmptyCollection;
+import org.hamcrest.core.IsInstanceOf;
+import org.hamcrest.core.IsNot;
+import org.hamcrest.core.IsNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
@@ -39,29 +44,32 @@ import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgIndexedTIN;
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
+import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.triangulation.PolygonTriangulator;
-import org.n52.v3d.worldviz.extensions.VgMultiPolygon;
 
 public class Triangulation_Test {
 
 	XmlDataset carbonEmissionsPerCapita;
 
 	@Before
-	public void before() {
-		DatasetLoader countryCodeTest = new DatasetLoader(RelativePaths.CARBON_EMISSIONS_PER_CAPITA_XML);
+	public void parseCarbonEmissionsPerCapita() {
+		DatasetLoader countryCodeTest = new DatasetLoader(
+				RelativePaths.CARBON_EMISSIONS_PER_CAPITA_XML);
 
-		try {
-			carbonEmissionsPerCapita = countryCodeTest.loadDataset();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		carbonEmissionsPerCapita = countryCodeTest.loadDataset();
+
 	}
 
 	@Test
-	public void test() {
+	public void testCarbonEmissionsDatasetNotNull() {
 
-		assertTrue(carbonEmissionsPerCapita != null);
+		assertThat("CarbonEmissions dataset it not null",
+				carbonEmissionsPerCapita, IsNull.notNullValue());
+	}
+
+	@Test
+	public void testCarbonEmissionsDatasetContents() {
 
 		List<VgAttrFeature> features = carbonEmissionsPerCapita.getFeatures();
 
@@ -69,13 +77,18 @@ public class Triangulation_Test {
 
 		VgGeomObject geometry = firstFeature.getGeometry();
 
-		assertTrue(geometry instanceof VgMultiPolygon);
+		assertThat("Geometry is of type VgMultiPolygon", geometry,
+				IsInstanceOf.instanceOf(VgMultiPolygon.class));
 
 		VgMultiPolygon multiPolygon = (VgMultiPolygon) geometry;
 
-		List<VgIndexedTIN> vgTINs = PolygonTriangulator.triangulateMultiPolygon(multiPolygon);
+		List<VgIndexedTIN> vgTINs = PolygonTriangulator
+				.triangulateMultiPolygon(multiPolygon);
 
 		assertTrue(vgTINs.size() > 0);
+
+		assertThat("polygons that are tringulated have a non-empty TIN list",
+				vgTINs, IsNot.not(IsEmptyCollection.empty()));
 
 	}
 

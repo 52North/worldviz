@@ -48,21 +48,15 @@ public class WvizConfig_Test {
     private WvizConfig wvizConfig;
 
     @Before
-    public void before() {
-        try {
+    public void parseWvizConfigFile() {
             File file = new File(filePath);
             XStream xStream = new XStream();
             xStream.processAnnotations(WvizConfig.class);
             wvizConfig = (WvizConfig) xStream.fromXML(file);
-        }
-        catch (Exception exception) {
-            System.err.println(exception.getMessage());
-        }
     }
 
     @Test
-    public void testBitmap() {
-        try {
+    public void testContentsOfParsedWvizConfigNotNull() {
             assertTrue(wvizConfig != null);
 
             String symbolType, normalColor, propertyName, geometryType;
@@ -188,12 +182,5 @@ public class WvizConfig_Test {
                 assertTrue(key != null);
                 assertTrue(value != null);
             }
-
-        }
-        catch (Exception exception) {
-            exception.printStackTrace();
-        }
-
     }
-
 }

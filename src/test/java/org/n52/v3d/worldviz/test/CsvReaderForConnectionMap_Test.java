@@ -28,9 +28,9 @@
  */
 package org.n52.v3d.worldviz.test;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
+import org.hamcrest.core.IsNull;
+import org.hamcrest.number.OrderingComparison;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.n52.v3d.worldviz.featurenet.impl.CsvReaderForConnectionMap;
@@ -44,7 +44,7 @@ public class CsvReaderForConnectionMap_Test {
 	private static WvizUniversalFeatureNet featureNet;
 
 	@Before
-	public void before() {
+	public void parseFeatureNetFromCsv() {
 		csvReaderForConnectionMap = new CsvReaderForConnectionMap();
 
 		featureNet = csvReaderForConnectionMap.readFromFile(
@@ -52,11 +52,18 @@ public class CsvReaderForConnectionMap_Test {
 	}
 
 	@Test
-	public void test() {
-		assertNotNull(featureNet);
+	public void testFeatureNetIsNotNull() {
+		Assert.assertThat("FeatureNet is not null", featureNet,
+				IsNull.notNullValue());
+	}
+	
+	@Test
+	public void testFeatureNetIsNotEmpty() {
+		Assert.assertThat("Relations-count is greater 0", featureNet
+				.getRelations().size(), OrderingComparison.greaterThan(0));
 
-		assertTrue(featureNet.getRelations().size() > 0);
-		assertTrue(featureNet.getFeatures().size() > 0);
+		Assert.assertThat("Feature-count is greater 0", featureNet
+				.getFeatures().size(), OrderingComparison.greaterThan(0));	
 	}
 
 }
