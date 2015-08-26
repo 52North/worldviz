@@ -26,68 +26,24 @@ Find all information on our licensing page at <http://52north.org/about/licensin
 
 This section includes advice on how to build new features for the project & what kind of process it includes. 
 
-* This is how we like people to add new features:         
-* Here are some specifics on the coding style we prefer:   
-* This is how you send your pull request:                  
-* You should include the following tests:                  
-* These are the updates we hope you make to the changelog: 
+* Before you start working on a new feature, create a new issue and start a discussion on the mailing list.
+* Also you might want to check the Trello Board [connection maps](https://trello.com/b/890k2iEM/connection-maps), since we use this board to maintain task lists. (The connection map part has been created during the [Google Summer of Code](https://www.google-melange.com/gsoc/homepage/google/gsoc2015) project and will be continued in the future.)
+* We follow the fork & pull development model: <https://help.github.com/articles/using-pull-requests>
 
 Don’t get discouraged! We estimate that the response time from the
-maintainers is around: 
+maintainers is around 4 days.
 
 # Bug triage
 
-This sections explains how bug triaging is done for your project. Help beginners by including examples to good bug reports and providing them questions they should look to answer. 
+You can help report bugs by filing them here: <https://github.com/52North/worldviz/issues>
 
-* You can help report bugs by filing them here: 
-* You can look through the existing bugs here: 
-
-* Look at existing bugs and help us understand if
-** The bug is reproducible? Is it reproducible in other environments (browsers)? What are the steps to reproduce? 
-
-* You can close fixed bugs by testing old tickets to see if they are
-happening
-* You can update our change log here
-* You can remove duplicate bug reports
-
-
-# Beta testing
-
-This section explains if your project needs beta testing. Explain why early releases require heavy testing and how they can help with specially across browsers and on different hardware. 
-
-* For our project you can find the roadmap and features that require
-testing from here: 
-
-
-# Translations
-
-This section includes any instructions or translation needs your project has. 
-
-* You can help us translate our project here: 
+* Don't forget to check the existing ones first and take a look at the mailing list guidelines - going through these steps makes it likely that you can fix the bug yourself: <http://52north.org/resources/mailing-list-and-forums/mailinglist-guidelines>
+* Look at existing bugs and help us understand if the bug is reproducible. Is it reproducible in other environments (browsers)? What are the steps to reproduce? 
 
 
 # Documentation
 
-This section includes any help you need with the documentation and where it can be found. Code needs explanation, and sometimes those who know the code well have trouble explaining it to someone just getting into it. 
-
-* Help us with documentation here
+All documentation is either in README.md file or, in future will be added [to the 52°North 3D wiki](https://wiki.52north.org/bin/view/V3d/WebHome), and a critical read as well as feedback and documentation extensions are always welcome.
 
 
-# Community 
-This section includes ideas on how non-developers can help with the project. Here's a few examples:
-
-* You can help us answer questions our users have here: 
-* You can help build and design our website here:
-* You can help write blog posts about the project by: 
-* You can help with newsletters and internal communications by: 
-
-* Create an example of the project in real world by building something or
-showing what others have built. 
-* Write about other people’s projects based on this project. Show how
-it’s used in daily life. Take screenshots and make videos!
-
-
-# Your first bugfix
-This section should help a person get started with their very first bug fix and thinking through the problem.
-
-* If you have further questions, contact: 
+* If you have further questions, contact Benno: [@BennoSchmidt](https://github.com/BennoSchmidt), b.schmidt@52north.org

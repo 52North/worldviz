@@ -3,7 +3,7 @@ README file for the [52°North Triturus WorldViz library][1]
 
 52°North Triturus WorldViz supports the development of thematic 3-D visualizations at world scale.
 
-Regarding the traditional visualization pipeline, the framework focuses the 
+Regarding the traditional [visualization pipeline](http://infovis-wiki.net/index.php/Visualization_Pipeline), the framework focuses the 
 mapping step, i.e. the transformation between geo-objects and abstract 
 visualization-objects. Thus, WorldViz allows to generate concrete scene descriptions
 (e.g., a X3D document) from geo-data, thereby keeping the "cartographic" mapping process 
@@ -38,7 +38,7 @@ development of innovative software solutions in the context of 3d geovisualizati
 
 ## Installation
 Since this is a Maven project, the typical Maven installation tasks can be executed to build this project.
-To compile the Triturus WorldViz library, please execute the following Maven task 
+To compile the Triturus WorldViz library, please execute the following [Maven](http://maven.apache.org/) task 
 
 `mvn clean install`
 
@@ -49,16 +49,16 @@ Note that Triturus WorldViz requires the 52°North Triturus library (JAR) which 
 
 ## License information
 This program is free software; you can redistribute it and/or modify it under the terms of the 
-Apache License version 2.0.
+GNU GENERAL PUBLIC LICENSE Version 2.
 
-For further information please refer to 'LICENSE'-file
+For further information please refer to [LICENSE](LICENSE)-file
 
 ## Additional documents and links
 This sections lists documents that lead to a deeper understanding of the Triturus library and give 
 additional information.
 
 * White Paper of Triturus: http://52north.org/images/stories/52n/communities/3D/triturus%20white%20paper.pdf 
-* 52Â°North 3D Community Wiki: https://wiki.52north.org/bin/view/V3d/ 
+* 52°North 3D Community Wiki: https://wiki.52north.org/bin/view/V3d/ 
 * Triturus Wiki: https://wiki.52north.org/bin/view/V3d/Triturus 
 
 ## Contributing
