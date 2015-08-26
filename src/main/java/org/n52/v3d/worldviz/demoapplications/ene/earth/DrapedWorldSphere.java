@@ -33,8 +33,8 @@ import org.n52.v3d.worldviz.worldscene.VsDrapedWorldSphereScene;
 public class DrapedWorldSphere {
 
 	private static String outputFile = "test/DrapedWorldSphere_new.x3d";
-	private static String pathToMainTexture = "../data/color_etopo1_ice_low.jpg";
-	private static String[] additionalTextures = new String[] { "../data/color_etopo1_ice_low_BumpMap.jpg" };
+	private static String pathToMainTexture = "../data/earth/color_etopo1_ice_low.jpg";
+	private static String[] additionalTextures = new String[] { "../data/earth/color_etopo1_ice_low_BumpMap.jpg" };
 
 	public static void main(String[] args) {
 
