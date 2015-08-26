@@ -12,13 +12,15 @@ This project includes:
   Commons Pool under The Apache Software License, Version 2.0
   dataset under GNU Library or Lesser General Public License version 2.0 (LGPLv2)
   DataStore Support under Lesser General Public License (LGPL)
+  Hamcrest All under New BSD License
+  Hamcrest Core under New BSD License
   jai_core under Java Advanced Imaging Distribution License, http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt
   javacsv under GNU Library or Lesser General Public License version 2.0 (LGPLv2)
   JDOM under Similar to Apache License but with the acknowledgment clause removed
   jgridshift under GNU Lesser General Public License, version 2.0 (LGPLv2)
   jsr-275 under BSD License
   JTS Topology Suite under Lesser General Public License (LGPL)
-  JUnit under Common Public License Version 1.0
+  JUnit under Eclipse Public License 1.0
   Main module under Lesser General Public License (LGPL)
   Metadata under Lesser General Public License (LGPL)
   MXP1: Xml Pull Parser 3rd Edition (XPP3) under Indiana University Extreme! Lab Software License, vesion 1.1.1 or Public Domain
