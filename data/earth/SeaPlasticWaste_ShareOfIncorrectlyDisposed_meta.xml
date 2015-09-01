@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2010-01-01+01:00</begin>
+ <!-- Startzeitraum 
+-->	
+			<end>2010-12-31+01:00</end>
+ <!-- Endzeitraum  
+-->
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>SeaPlasticWaste_ShareOfIncorrectlyDisposed.xml</DatasetReference>
+ <!-- Dateiname der xml Datenquelle 
+-->
+	<SourceFileReference format=""></SourceFileReference>
+ <!-- Dateiformat der Quelledatei: Hier Daten stammen aus einer csv Datei 
+-->
+	<Source>
+  <!-- Quelle 
+-->
+		<ContactPersons/>
+ <!-- Falls Kontaktpersonen, fuer die Quelldatei, vorhanden sind 
+-->
+		<URI accessDate="2015-09-01 +09:00">http://www.spiegel.de/wissenschaft/mensch/interaktive-weltkarte-wo-der-plastikmuell-herkommt-a-1018215.html</URI>
+  <!-- Datum, andem die Daten abgerufen wurden, mit Link zur Quelle  
+-->
+		<AlternativeURIs><!-- Here additional URLs can be documented. -->
+			<URI accessDate="2015-09-01 +09:00">http://www.sciencemag.org/content/347/6223/768</URI>
+		</AlternativeURIs>
+		<Notes>
+		Der Datensatz beschreibt das Verhältnis des unsachgemäß entsorgten Plastikmülls zur Gesamtmenge des angefallenen Plastikmülls für jedes Land, 
+		welches maximal 50km von einem Meer entfernt ist. Die übrigen Länder sind nicht berücksichtigt.
+		</Notes>
+ <!-- Zusaetzliche Informationen zu den Daten 
+-->
+	</Source>
+	<CopyrightInformation>Katharina Borchert, Jesper Doub, Ericusspitze 1, 20457 Hamburg; 
+	enna R. Jambeck, Roland Geyer, Chris Wilcox, Theodore R. Siegler, Miriam Perryman, Anthony Andrady, Ramani Narayan, Kara Lavender Law</CopyrightInformation>
+  <!-- Anzugebene Copyright Informationen 
+-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Hier werden die noetigen Schritte beschrieben die noetig waren, um aus der Qulldatei die noetigen Informationen zu extrahieren 
+-->
+	   		Obige SpiegelOnline-URL (siehe 'URI'-Tag) zeigt eine interaktive Weltkarte, die die entsprechenden Werte der Länder per MouseOver-Event anzeigt. 
+			Jeder einzelne Wert wurde manuell abgelesen und in die XML-Datei unter 'DatasetReference'-Tag eingetragen.
+	   	</Description>
+		<QualityCheck date="2015-09-01 +11:00" responsiblePerson="Christian Danowski">
+ <!-- Datum, andem die Daten auf ihre Qualitaet kontrolliert wurden 
+-->
+	   		Datensaetze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+	   	</QualityCheck>
+	</ImportProcess>
+</DatasetDescription>
