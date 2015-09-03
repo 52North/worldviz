@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+		<TimePeriod>
+			<begin>2014-01-01+01:00</begin>
+ <!-- Startzeitraum 
+-->	
+			<end>2014-12-31+01:00</end>
+ <!-- Endzeitraum  
+-->
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>EWaste2014.xml</DatasetReference>
+ <!-- Dateiname der xml Datenquelle 
+-->
+	<SourceFileReference></SourceFileReference>
+	<Source>
+  <!-- Quelle 
+-->
+		<ContactPersons>Baldé, C.P (balde@unu.edu)</ContactPersons>
+ <!-- Falls Kontaktpersonen, fuer die Quelldatei, vorhanden sind 
+-->
+		<URI accessDate="2015-09-03 +11:00">http://i.unu.edu/media/unu.edu/news/52624/UNU-1stGlobal-E-Waste-Monitor-2014-small.pdf</URI>
+  <!-- Datum, andem die Daten abgerufen wurden, mit Link zur Quelle  
+-->
+		<AlternativeURIs><!-- Here additional URLs can be documented. -->
+			<URI/>
+		</AlternativeURIs>
+		<Notes/>
+ <!-- Zusaetzliche Informationen zu den Daten 
+-->
+	</Source>
+	<CopyrightInformation>Baldé, C.P., Wang, F., Kuehr, R., Huisman, J. (2015), The global e-waste monitor – 2014, United Nations 
+University, IAS – SCYCLE, Bonn, Germany. </CopyrightInformation>
+  <!-- Anzugebene Copyright Informationen 
+-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Hier werden die noetigen Schritte beschrieben die noetig waren, um aus der Qulldatei die noetigen Informationen zu extrahieren 
+-->
+	   		Von obiger URL (siehe 'URI'-Tag) wurde der Datensatz 'The Global E-waste Monitor 2014' als PDF-Datei bezogen. 
+			
+			Auf Seite 62ff befindet sich 'Annex 1 : Domestic E-waste generated per country in 2014'. 
+			Von dieser Tabelle wurden die Informationen händisch in die XML-Struktur unter Tag 'DatasetReference' eingetragen.
+			</Description>
+		<QualityCheck date="2015-09-03 +16:00" responsiblePerson="Christian Danowski">
+ <!-- Datum, andem die Daten auf ihre Qualitaet kontrolliert wurden 
+-->
+	   		Datensaetze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+	   	</QualityCheck>
+	</ImportProcess>
+</DatasetDescription>
