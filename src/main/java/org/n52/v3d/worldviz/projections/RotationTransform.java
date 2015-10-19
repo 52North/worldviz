@@ -57,25 +57,21 @@ public class RotationTransform implements CoordinateTransform
 		throw new T3dNotYetImplException(); 
 	}
 
-	@Override
 	public VgGeomObject transform(VgGeomObject geom) {
 		// TODO Auto-generated method stub
 		throw new T3dNotYetImplException();
 	}
 
-	@Override
 	public VgMultiPolygon transform(VgMultiPolygon multiPolygon) {
 		// TODO Auto-generated method stub
 		throw new T3dNotYetImplException();
 	}
 
-	@Override
 	public VgPolygon transform(VgPolygon polygon) {
 		// TODO Auto-generated method stub
 		throw new T3dNotYetImplException();
 	}
 
-	@Override
 	public VgLinearRing transform(VgLinearRing linearRing) {
 		// TODO Auto-generated method stub
 		throw new T3dNotYetImplException();

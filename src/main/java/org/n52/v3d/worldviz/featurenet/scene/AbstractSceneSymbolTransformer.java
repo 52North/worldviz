@@ -100,27 +100,22 @@ public abstract class AbstractSceneSymbolTransformer implements
 		this.fromToVector.assignDiff(to, from);
 	}
 
-	@Override
 	public double getLengthFromTo() {
 		return this.lengthFromTo;
 	}
 
-	@Override
 	public double getAngleX() {
 		return this.angleX;
 	}
 
-	@Override
 	public double getAngleY() {
 		return this.angleY;
 	}
 
-	@Override
 	public double getAngleZ() {
 		return this.angleZ;
 	}
 
-	@Override
 	public VgPoint getMidPoint() {
 		return this.midPoint;
 	}
