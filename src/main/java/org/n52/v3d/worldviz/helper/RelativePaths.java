@@ -125,6 +125,18 @@ public final class RelativePaths {
 	public static final String ELECTRICITY_ACCESS_CSV = DATA_SOURCE_FILES_FOLDER
 			+ "electricity_access.csv";
 
+	// E-Waste
+	public static final String E_WASTE_XML = EARTH_SUB_FOLDER
+			+ "EWaste2014.xml";
+	public static final String E_WASTE_META_XML = EARTH_SUB_FOLDER
+			+ "EWaste2014_meta.xml";
+
+	// E-Waste per capita
+	public static final String E_WASTE_per_capita_XML = EARTH_SUB_FOLDER
+			+ "EWastePerCapita2014.xml";
+	public static final String E_WASTE_per_capita_META_XML = EARTH_SUB_FOLDER
+			+ "EWastePerCapita2014_meta.xml";
+
 	// gas resources
 	public static final String GAS_RESOURCES_XML = EARTH_SUB_FOLDER
 			+ "GasResources.xml";
@@ -247,37 +259,68 @@ public final class RelativePaths {
 	public static final String POPULATION_CSV = DATA_SOURCE_FILES_FOLDER
 			+ "UNEP-EDE__pop_total__1398251955.csv";
 
-	//Connection map project (input and output paths for connection maps)
+	// SEA PLASTIC WASTE
+	// sea plastic waste total amount
+	public static final String SEA_PLASTIC_WASTE_AMOUNT_XML = EARTH_SUB_FOLDER
+			+ "SeaPlasticWaste_Amount.xml";
+	public static final String SEA_PLASTIC_WASTE_AMOUNT_META_XML = EARTH_SUB_FOLDER
+			+ "SeaPlasticWaste_Amount_meta.xml";
+
+	// sea plastic waste IncorrectlyDisposedWastePerCapita
+	public static final String SEA_PLASTIC_WASTE_INCORRECTLY_DISPOSED_PER_CAPITA_XML = EARTH_SUB_FOLDER
+			+ "SeaPlasticWaste_IncorrectlyDisposedPerCapita.xml";
+	public static final String SEA_PLASTIC_WASTE_INCORRECTLY_DISPOSED_PER_CAPITA_META_XML = EARTH_SUB_FOLDER
+			+ "SeaPlasticWaste_IncorrectlyDisposedPerCapita_meta.xml";
+
+	// sea plastic waste ShareOfIncorrectlyDisposedWaste
+	public static final String SEA_PLASTIC_WASTE_SHARE_OF_INCORRECTLY_DISPOSED_XML = EARTH_SUB_FOLDER
+			+ "SeaPlasticWaste_ShareOfIncorrectlyDisposed.xml";
+	public static final String SEA_PLASTIC_WASTE_SHARE_OF_INCORRECTLY_DISPOSED_META_XML = EARTH_SUB_FOLDER
+			+ "SeaPlasticWaste_ShareOfIncorrectlyDisposed_meta.xml";
+
+	// Connection map project (input and output paths for connection maps)
 	public static final String PAJEK_GRAPH = DATA_FOLDER + "graph";
 
 	public static final String PAJEK_GRAPH_NET = PAJEK_GRAPH + ".net";
 
 	public static final String PAJEK_GRAPH_X3D = TEST_FOLDER + "graph" + ".x3d";
 
-	public static final String PAJEK_GRAPH_HTML = TEST_FOLDER + "graph"+ ".html";
+	public static final String PAJEK_GRAPH_HTML = TEST_FOLDER + "graph"
+			+ ".html";
 
-	public static final String PAJEK_FLOWS_OF_TRADE = DATA_FOLDER + "Flows_of_trade";
+	public static final String PAJEK_FLOWS_OF_TRADE = DATA_FOLDER
+			+ "Flows_of_trade";
 
-	public static final String PAJEK_FLOWS_OF_TRADE_NET = PAJEK_FLOWS_OF_TRADE + ".net";
+	public static final String PAJEK_FLOWS_OF_TRADE_NET = PAJEK_FLOWS_OF_TRADE
+			+ ".net";
 
-	public static final String PAJEK_FLOWS_OF_TRADE_X3D = TEST_FOLDER + "Flows_of_trade" + ".x3d";
+	public static final String PAJEK_FLOWS_OF_TRADE_X3D = TEST_FOLDER
+			+ "Flows_of_trade" + ".x3d";
 
-	public static final String PAJEK_FLOWS_OF_TRADE_HTML = TEST_FOLDER + "Flows_of_trade"+ ".html";
-	
-	public static final String TRADE_FOLDER = DATA_FOLDER+"tradeh/";
-        
-	public static final String IMPORTS_PARTNER_CSV = TRADE_FOLDER + "imports_partner.csv";
-	
-	public static final String EXPORTS_PARTNER_CSV = TRADE_FOLDER + "exports_partner.csv";
-	
-	public static final String IMPORTS_PARTNER_X3D = TEST_FOLDER + "Imports_partner" + ".x3d";
+	public static final String PAJEK_FLOWS_OF_TRADE_HTML = TEST_FOLDER
+			+ "Flows_of_trade" + ".html";
 
-	public static final String IMPORTS_PARTNER_HTML = TEST_FOLDER + "Imports_partner"+ ".html";
-	
-	public static final String EXPORTS_PARTNER_X3D = TEST_FOLDER + "Exports_partner" + ".x3d";
+	public static final String TRADE_FOLDER = DATA_FOLDER + "tradeh/";
 
-	public static final String EXPORTS_PARTNER_HTML = TEST_FOLDER + "Exports_partner"+ ".html";
+	public static final String IMPORTS_PARTNER_CSV = TRADE_FOLDER
+			+ "imports_partner.csv";
 
-	public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER + "WvizConfig.xml";
+	public static final String EXPORTS_PARTNER_CSV = TRADE_FOLDER
+			+ "exports_partner.csv";
+
+	public static final String IMPORTS_PARTNER_X3D = TEST_FOLDER
+			+ "Imports_partner" + ".x3d";
+
+	public static final String IMPORTS_PARTNER_HTML = TEST_FOLDER
+			+ "Imports_partner" + ".html";
+
+	public static final String EXPORTS_PARTNER_X3D = TEST_FOLDER
+			+ "Exports_partner" + ".x3d";
+
+	public static final String EXPORTS_PARTNER_HTML = TEST_FOLDER
+			+ "Exports_partner" + ".html";
+
+	public static final String STYLE_CONFIGURATION_XML = DATA_FOLDER
+			+ "WvizConfig.xml";
 
 }
