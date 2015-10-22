@@ -34,18 +34,18 @@ import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesOnASphereScene;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
 import org.n52.v3d.worldviz.worldscene.helper.FindExtrudeAndColorMissingCountriesHelper;
-
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 
 public class CarbonEmissionsPerCapita_average {
 
-	private static String attributeName = "1990";
+	private static String attributeName = "2010";
 	private static String dataXML = RelativePaths.CARBON_EMISSIONS_PER_CAPITA_XML;
-	private static String outputFile = "test/CarbonEmissionsPerCapita1990_new.x3d";
+	private static String outputFile = "test/CarbonEmissionsPerCapita2010_new.x3d";
 	private static double minValue;
 	private static double maxValue;
 	private static double average;
@@ -75,15 +75,29 @@ public class CarbonEmissionsPerCapita_average {
 
 		colorMapper.setPalette(new double[] { minValue, average, maxValue },
 				new T3dColor[] { new T3dColor(0f, 1f, 0f),
-						new T3dColor(1f, 1f, 0f), new T3dColor(1f, 0f, 0f) }, true);
+						new T3dColor(1f, 1f, 0f), new T3dColor(1f, 0f, 0f) },
+				true);
 
 		List<VgAttrFeature> coloredTransfFeatures = colorMapper.transform(
 				attributeName, features);
 
+		// extrusion mapper
+		MpValue2ExtrudedAttrFeature extrusionMapper = new MpValue2ExtrudedAttrFeature();
+
+		extrusionMapper.setNeutralExtrusionHeight(0.5);
+
+		extrusionMapper.setPalette(
+				new double[] { minValue, average, maxValue }, new double[] {
+						0.5, 1.7, 3 }, true);
+
+		List<VgAttrFeature> extrudedAndColoredCountries = extrusionMapper
+				.transform(attributeName, coloredTransfFeatures);
+
 		FindExtrudeAndColorMissingCountriesHelper remainingCountriesColorer = new FindExtrudeAndColorMissingCountriesHelper(
 				worldBordersLOD);
 		List<VgAttrFeature> allWorldCountries = remainingCountriesColorer
-				.findExtrudeAndColorMissingCountries(coloredTransfFeatures);
+				.findExtrudeAndColorMissingCountries(
+						extrudedAndColoredCountries, null, 0.5);
 
 		VsWorldCountriesOnASphereScene scene = new VsWorldCountriesOnASphereScene(
 				outputFile);
@@ -95,6 +109,8 @@ public class CarbonEmissionsPerCapita_average {
 
 		// this is for quick test purposes
 		// scene.setGenerateAdditionalInnerPolygonPoints(false);
+
+		scene.setExtrudeCountries(true);
 
 		scene.generateScene();
 

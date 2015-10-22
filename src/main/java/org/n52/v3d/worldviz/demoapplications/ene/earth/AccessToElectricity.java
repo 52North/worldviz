@@ -34,10 +34,10 @@ import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
+import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesOnASphereScene;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
 import org.n52.v3d.worldviz.worldscene.helper.FindExtrudeAndColorMissingCountriesHelper;
-
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 
@@ -45,7 +45,7 @@ public class AccessToElectricity {
 
 	private static String attributeName = "Access to Electricity 2000, percentage of people estimated";
 	private static String dataXML = RelativePaths.ELECTRICITY_ACCESS_XML;
-	private static String outputFile = "test/AccessToElectricity_weniger Stuetzpunkte.x3d";
+	private static String outputFile = "test/AccessToElectricity2000_new.x3d";
 	private static double minValue;
 	private static double maxValue;
 	private static double average;
@@ -75,15 +75,28 @@ public class AccessToElectricity {
 
 		colorMapper.setPalette(new double[] { 0, 50, maxValue },
 				new T3dColor[] { new T3dColor(1f, 0f, 0f),
-						new T3dColor(1f, 1f, 0f), new T3dColor(0f, 1f, 0f) }, true);
+						new T3dColor(1f, 1f, 0f), new T3dColor(0f, 1f, 0f) },
+				true);
 
 		List<VgAttrFeature> coloredTransfFeatures = colorMapper.transform(
 				attributeName, features);
 
+		// extrusion mapper
+		MpValue2ExtrudedAttrFeature extrusionMapper = new MpValue2ExtrudedAttrFeature();
+
+		extrusionMapper.setNeutralExtrusionHeight(0.5);
+
+		extrusionMapper.setPalette(new double[] { 0, 50, maxValue },
+				new double[] { 3, 1.7, 0.5 }, true);
+
+		List<VgAttrFeature> extrudedAndColoredCountries = extrusionMapper
+				.transform(attributeName, coloredTransfFeatures);
+
 		FindExtrudeAndColorMissingCountriesHelper remainingCountriesColorer = new FindExtrudeAndColorMissingCountriesHelper(
-				CountryBordersLODEnum.DETAILED);
+				CountryBordersLODEnum.SIMPLIFIED_50m);
 		List<VgAttrFeature> allWorldCountries = remainingCountriesColorer
-				.findExtrudeAndColorMissingCountries(coloredTransfFeatures);
+				.findExtrudeAndColorMissingCountries(
+						extrudedAndColoredCountries, null, 0.5);
 
 		VsWorldCountriesOnASphereScene scene = new VsWorldCountriesOnASphereScene(
 				outputFile);
@@ -93,9 +106,10 @@ public class AccessToElectricity {
 			scene.addWorldCountry(coloredFeature);
 		}
 
+		scene.setExtrudeCountries(true);
+
 		// this is for quick test purposes
-		// scene.setxRasterWidth(10f);
-		// scene.setyRasterWidth(10f);
+		// scene.setGenerateAdditionalInnerPolygonPoints(false);
 
 		System.out
 				.println("Begin Scene generation. This might take some time (up to several minutes) because of the triangulation of all polygons!");

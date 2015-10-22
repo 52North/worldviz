@@ -209,22 +209,18 @@ public class NormTransform implements CoordinateTransform {
 		// only specialized classes have content in this method
 	}
 
-	@Override
 	public VgGeomObject transform(VgGeomObject geom) {
 		throw new T3dNotYetImplException();
 	}
 
-	@Override
 	public VgMultiPolygon transform(VgMultiPolygon multiPolygon) {
 		throw new T3dNotYetImplException();
 	}
 
-	@Override
 	public VgPolygon transform(VgPolygon polygon) {
 		throw new T3dNotYetImplException();
 	}
 
-	@Override
 	public VgLinearRing transform(VgLinearRing linearRing) {
 		throw new T3dNotYetImplException();
 	}
