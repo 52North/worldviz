@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>India</SpatialScaleHint>
+	<CovereredTime/>
+	<DatasetReference>IndiaStates_withoutTelangana_simplifiedBorders.xml</DatasetReference><!-- Dateiname-->
+	<SourceFileReference/>
+	<Source>
+		<ContactPersons>Devdatta Tengshe</ContactPersons><!-- Kontaktpersonen betreffend der abgegriffenen Informationen-->
+		<URI accessDate="2015-10-20 +12:00">https://github.com/datameet/maps/tree/master/States</URI><!-- Datum des Zugriffes sowie deren Quelle-->
+		<AlternativeURIs><!--The follwing URI links to the website where the direct download link from above is from.-->
+			<URI>https://github.com/datameet/maps</URI><!--The following URI represents the direkt download link to the shape file-->
+		</AlternativeURIs>
+		<Notes>Bie diesem Datensatz handelt es sich um vereinfachte State-Grenzen (mit deutschen Bundesländern zu vergleichen) Indiens ohne den neu gegründeten State Telangana.</Notes>
+	</Source>
+	<CopyrightInformation>Devdatta Tengshe</CopyrightInformation><!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE"><!-- Erklaerung der Arbeitsabfolge-->
+	   		Die Shape-Datei kann direkt zusammen mit den ergaenzenden DBF-, PRJ- sowie SHX-Dateien heruntergeladen werden. 
+			Anschließend wurde die Schreibweise einiger indischen States manuell korrigiert 
+			und der Spaltenname für die Bezeichner der States wurde zu "NAME" geändert (per QGIS die Attribut-Tabelle bearbeitet.)
+			Zusätzlich wurden hierbei noch die States Telangana und Andhra Pradesh zusammengefasst (als Andhra Pradesh).
+			Weiterhin wurden mittels QGIS die State-Grenzen vereinfacht.
+	   		
+	   		Hinweis: Die DBF-Datei wurde zusaetzlich mit Hilfe von Microsoft Excel in eine aequivalente CSV-Datei umgewandelt, um den Datensatz "IndiaStateNames_withoutTelangana.xml" zu erzeugen. 
+			Siehe auch "IndiaStateNames_withoutTelangana_meta.xml".
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

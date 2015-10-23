@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This sample dataset holds the complete information needed to set-up a visualization for the BO's ENE project. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+--><Dataset version="0.1" xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<GeneralInformation>
+		<Theme>
+			<Title language="EN">Tree Cover of India States in 2013</Title>
+			<Title language="DE">Baumabdeckung der indischen States im Jahr 2013</Title>
+			<Description language="DE">
+				Die Datei enthält Informationen über die Baumabdeckung der indischen States im Jahr 2013.
+			</Description>
+		</Theme>
+		<Unit/>
+		<PublicReference>Dr. Ashok A. Sonkusare</PublicReference>
+		<MetadataReference>IndiaTreeCover2013_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="String" uniqueID="true">
+			<Title>State Name</Title>
+			<Description>english name of the state</Description>
+			<GeoReference featureType="ENE:StateName" externalGeometries="true">
+				<CRS>ENE:CountryStates:name</CRS>
+			</GeoReference>
+		</Property>
+		<Property dataType="String">
+			<Title>Geographical - Area</Title>
+		</Property>
+		<Property dataType="String">
+			<Title>Tree Cover - Area</Title>
+			<Description/>
+		</Property>
+		<Property dataType="String">
+			<Title>Tree Cover - Per cent of GA</Title>
+			<Description/>
+		</Property>
+	</TableStructure>
+	<Entries><Entry><Value>Andaman and Nicobar Islands</Value><Value>8,249</Value><Value>41</Value><Value>0.5</Value></Entry><Entry><Value>Andhra Pradesh</Value><Value>2,75,069</Value><Value>7.187</Value><Value>2.61</Value></Entry><Entry><Value>Arunachal Pradesh</Value><Value>83,743</Value><Value>660</Value><Value>0.79</Value></Entry><Entry><Value>Assam</Value><Value>78,438</Value><Value>1.582</Value><Value>2.02</Value></Entry><Entry><Value>Bihar</Value><Value>94,163</Value><Value>2.164</Value><Value>2.3</Value></Entry><Entry><Value>Chandigarh</Value><Value>114</Value><Value>10</Value><Value>8.51</Value></Entry><Entry><Value>Chhattisgarh</Value><Value>1,35,191</Value><Value>3.463</Value><Value>2.56</Value></Entry><Entry><Value>Dadra and Nagar Haveli</Value><Value>491</Value><Value>29</Value><Value>5.95</Value></Entry><Entry><Value>Daman and Diu</Value><Value>112</Value><Value>9</Value><Value>8.46</Value></Entry><Entry><Value>Delhi</Value><Value>1,483</Value><Value>118</Value><Value>7.94</Value></Entry><Entry><Value>Goa</Value><Value>3,702</Value><Value>334</Value><Value>9.03</Value></Entry><Entry><Value>Gujarat</Value><Value>1,96,022</Value><Value>8.358</Value><Value>4.26</Value></Entry><Entry><Value>Haryana</Value><Value>44,212</Value><Value>1.282</Value><Value>2.9</Value></Entry><Entry><Value>Himachal Pradesh</Value><Value>55,673</Value><Value>697</Value><Value>1.25</Value></Entry><Entry><Value>Jammu and Kashmir</Value><Value>2,22,236</Value><Value>7.664</Value><Value>3.45</Value></Entry><Entry><Value>Jharkhand</Value><Value>79,714</Value><Value>2.629</Value><Value>3.3</Value></Entry><Entry><Value>Karnataka</Value><Value>1,91,791</Value><Value>5.920</Value><Value>3.09</Value></Entry><Entry><Value>Kerala</Value><Value>38,863</Value><Value>3.146</Value><Value>8.09</Value></Entry><Entry><Value>Lakshadweep</Value><Value>32</Value><Value>5</Value><Value>16.69</Value></Entry><Entry><Value>Madhya Pradesh</Value><Value>3,08,245</Value><Value>7.087</Value><Value>2.3</Value></Entry><Entry><Value>Maharashtra</Value><Value>3,07,713</Value><Value>9.142</Value><Value>2.97</Value></Entry><Entry><Value>Manipur</Value><Value>22,327</Value><Value>224</Value><Value>1</Value></Entry><Entry><Value>Meghalaya</Value><Value>22,429</Value><Value>668</Value><Value>2.98</Value></Entry><Entry><Value>Mizoram</Value><Value>21,081</Value><Value>223</Value><Value>1.06</Value></Entry><Entry><Value>Nagaland</Value><Value>16,579</Value><Value>372</Value><Value>2.24</Value></Entry><Entry><Value>Odisha</Value><Value>1,55,707</Value><Value>4.013</Value><Value>2.58</Value></Entry><Entry><Value>Puducherry</Value><Value>480</Value><Value>29</Value><Value>6.07</Value></Entry><Entry><Value>Punjab</Value><Value>50,362</Value><Value>1.499</Value><Value>2.98</Value></Entry><Entry><Value>Rajasthan</Value><Value>3,42,239</Value><Value>7.860</Value><Value>2.3</Value></Entry><Entry><Value>Sikkim</Value><Value>7,096</Value><Value>31</Value><Value>0.44</Value></Entry><Entry><Value>TOTAL</Value><Value>32,87,263</Value><Value>91.266</Value><Value>2.78</Value></Entry><Entry><Value>Tamil Nadu</Value><Value>1,30,058</Value><Value>4.866</Value><Value>3.74</Value></Entry><Entry><Value>Tripura</Value><Value>10,486</Value><Value>213</Value><Value>2.03</Value></Entry><Entry><Value>Uttar Pradesh</Value><Value>2,40,928</Value><Value>6.895</Value><Value>2.86</Value></Entry><Entry><Value>Uttarakhand</Value><Value>53,483</Value><Value>703</Value><Value>1.32</Value></Entry><Entry><Value>West Bengal</Value><Value>88,752</Value><Value>2.144</Value><Value>2.42</Value></Entry></Entries>
+</Dataset>
