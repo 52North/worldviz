@@ -43,8 +43,8 @@ public final class RelativePaths {
 
 	public static final String TEST_FOLDER = "test/";
 
-	private static final String EARTH_SUB_FOLDER = DATA_FOLDER + "earth/";
-	private static final String DATA_SOURCE_FILES_FOLDER = EARTH_SUB_FOLDER
+	public static final String EARTH_SUB_FOLDER = DATA_FOLDER + "earth/";
+	public static final String DATA_SOURCE_FILES_FOLDER = EARTH_SUB_FOLDER
 			+ "sourceFiles/";
 
 	// xsd
@@ -277,6 +277,30 @@ public final class RelativePaths {
 			+ "SeaPlasticWaste_ShareOfIncorrectlyDisposed.xml";
 	public static final String SEA_PLASTIC_WASTE_SHARE_OF_INCORRECTLY_DISPOSED_META_XML = EARTH_SUB_FOLDER
 			+ "SeaPlasticWaste_ShareOfIncorrectlyDisposed_meta.xml";
+
+	// India state names
+	public static final String INDIA_STATE_NAMES_XML = EARTH_SUB_FOLDER
+			+ "IndiaStateNames.xml";
+	public static final String INDIA_STATE_NAMES_META_XML = EARTH_SUB_FOLDER
+			+ "IndiaStateNames_meta.xml";
+	public static final String INDIA_STATE_NAMES_CSV = DATA_SOURCE_FILES_FOLDER
+			+ "India_Admin2.csv";
+
+	// India state names without Telangana
+	public static final String INDIA_STATE_NAMES_WITHOUT_TELANGANA_XML = EARTH_SUB_FOLDER
+			+ "IndiaStateNames_withoutTelangana.xml";
+	public static final String INDIA_STATE_NAMES_WITHOUT_TELANGANA_META_XML = EARTH_SUB_FOLDER
+			+ "IndiaStateNames_withoutTelangana_meta.xml";
+	public static final String INDIA_STATE_NAMES_WITHOUT_TELANGANA_CSV = DATA_SOURCE_FILES_FOLDER
+			+ "India_Admin2_without_Telangana.csv";
+
+	// India: Tree cover of each state 2013
+	public static final String INDIA_TREE_COVER_2013_XML = EARTH_SUB_FOLDER
+			+ "IndiaTreeCover2013.xml";
+	public static final String INDIA_TREE_COVER_2013_META_XML = EARTH_SUB_FOLDER
+			+ "IndiaTreeCover2013_meta.xml";
+	public static final String INDIA_TREE_COVER_2013_CSV = DATA_SOURCE_FILES_FOLDER
+			+ "India_TreeCover2013.csv";
 
 	// Connection map project (input and output paths for connection maps)
 	public static final String PAJEK_GRAPH = DATA_FOLDER + "graph";

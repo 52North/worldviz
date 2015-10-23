@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Country-code information for the BO's ENE project. 
+Authors: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<Dataset version="0.1" xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<GeneralInformation>
+		<Theme>
+			<Title>India State Names without Telangana</Title>
+			<Description>
+			 This dataset gives some India state names without the state Telangana.
+			 </Description>
+		</Theme>
+		<Unit/>
+		<PublicReference/>
+		<MetadataReference>IndiaStateNames_withoutTelangana_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="String" uniqueID="true">
+			<Title>State Name</Title>
+			<Description>english name of the state</Description>
+			<GeoReference featureType="ENE:StateName" externalGeometries="true">
+				<CRS>ENE:CountryStates:name</CRS>
+			</GeoReference>
+		</Property>
+	</TableStructure>
+	<Entries>
+		<Entry>
+			<Value>Andaman and Nicobar Islands</Value>
+		</Entry>
+		<Entry>
+			<Value>Andhra Pradesh</Value>
+		</Entry>
+		<Entry>
+			<Value>Arunachal Pradesh</Value>
+		</Entry>
+		<Entry>
+			<Value>Assam</Value>
+		</Entry>
+		<Entry>
+			<Value>Bihar</Value>
+		</Entry>
+		<Entry>
+			<Value>Chandigarh</Value>
+		</Entry>
+		<Entry>
+			<Value>Chhattisgarh</Value>
+		</Entry>
+		<Entry>
+			<Value>Dadra and Nagar Haveli</Value>
+		</Entry>
+		<Entry>
+			<Value>Daman and Diu</Value>
+		</Entry>
+		<Entry>
+			<Value>Delhi</Value>
+		</Entry>
+		<Entry>
+			<Value>Goa</Value>
+		</Entry>
+		<Entry>
+			<Value>Gujarat</Value>
+		</Entry>
+		<Entry>
+			<Value>Haryana</Value>
+		</Entry>
+		<Entry>
+			<Value>Himachal Pradesh</Value>
+		</Entry>
+		<Entry>
+			<Value>Jammu and Kashmir</Value>
+		</Entry>
+		<Entry>
+			<Value>Jharkhand</Value>
+		</Entry>
+		<Entry>
+			<Value>Karnataka</Value>
+		</Entry>
+		<Entry>
+			<Value>Kerala</Value>
+		</Entry>
+		<Entry>
+			<Value>Lakshadweep</Value>
+		</Entry>
+		<Entry>
+			<Value>Madhya Pradesh</Value>
+		</Entry>
+		<Entry>
+			<Value>Maharashtra</Value>
+		</Entry>
+		<Entry>
+			<Value>Manipur</Value>
+		</Entry>
+		<Entry>
+			<Value>Meghalaya</Value>
+		</Entry>
+		<Entry>
+			<Value>Mizoram</Value>
+		</Entry>
+		<Entry>
+			<Value>Nagaland</Value>
+		</Entry>
+		<Entry>
+			<Value>Odisha</Value>
+		</Entry>
+		<Entry>
+			<Value>Puducherry</Value>
+		</Entry>
+		<Entry>
+			<Value>Punjab</Value>
+		</Entry>
+		<Entry>
+			<Value>Rajasthan</Value>
+		</Entry>
+		<Entry>
+			<Value>Sikkim</Value>
+		</Entry>
+		<Entry>
+			<Value>Tamil Nadu</Value>
+		</Entry>
+		<Entry>
+			<Value>Tripura</Value>
+		</Entry>
+		<Entry>
+			<Value>Uttar Pradesh</Value>
+		</Entry>
+		<Entry>
+			<Value>Uttarakhand</Value>
+		</Entry>
+		<Entry>
+			<Value>West Bengal</Value>
+		</Entry>
+	</Entries>
+</Dataset>

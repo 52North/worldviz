@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This sample dataset holds the complete information needed to set-up a visualization for the BO's ENE project. 
+Author: Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<Dataset version="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/Dataset.xsd">
+	<GeneralInformation>
+		<Theme>
+			<Title language="EN">India States without Telangana as shape-file</Title>
+			<Title language="DE">Shape mit indischen Staatsgrenzen ohne Telangana(mit deutschen Bundesländern zu vergleichen)</Title>
+			<Description language="DE">
+				Dieses Dokument verweist auf die Quelldatei mit den vereinfachten Geometrien der indischen Staatsgrenzen ohne den State Telangana(ESRI-Shape-Format). 
+				In der Shape-Datei sind die Namen der States in der Spalte "NAME" eingetragen, sodass ueber die "IndiaStateNames_withoutTelangana.xml"
+				eine Georeferenzierung laenderbezogener statistischer Daten moeglich wird.
+			</Description>
+		</Theme>
+		<Unit />
+		<PublicReference>Devdatta Tengshe</PublicReference>
+		<MetadataReference>IndiaStates_withoutTelangana_simplifiedBorders_meta.xml</MetadataReference>
+	</GeneralInformation>
+	<TableStructure>
+		<Property dataType="String">
+			<Title>Shape file name</Title>
+			<GeoReference featureType="ENE:EsriShape">
+				<CRS>EPSG:4326</CRS>
+			</GeoReference>
+		</Property>
+		<Property dataType="String">
+			<Title>Database file name</Title>
+		</Property>
+		<Property dataType="String">
+			<Title>Spatial extent</Title>
+			<Description />
+		</Property>
+	</TableStructure>
+	<Entries>
+		<Entry>
+			<Value>India_States/India_Admin2_without_Telangana_simplifiedBorders.shp</Value>
+			<Value>India_States/India_Admin2_without_Telangana_simplifiedBorders.dbf</Value>
+			<Value>68.0,6.8,97.4,37.1</Value>
+		</Entry>
+	</Entries>
+</Dataset>

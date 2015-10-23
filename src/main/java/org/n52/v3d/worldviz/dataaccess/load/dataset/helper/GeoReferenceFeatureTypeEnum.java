@@ -39,6 +39,6 @@ import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
  */
 public enum GeoReferenceFeatureTypeEnum {
 
-	Point, EsriShape, CountryCode, Bitmap
+	Point, EsriShape, CountryCode, Bitmap, StateName
 
 }

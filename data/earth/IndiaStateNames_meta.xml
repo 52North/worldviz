@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>India</SpatialScaleHint>
+ <!-- Weltweite Informationen-->
+	<CovereredTime/>
+	<DatasetReference>IndiaStateNames.xml</DatasetReference>
+ <!-- Name der Datei-->
+	<SourceFileReference format="CSV">sourceFiles/IndiaAdmin2.csv</SourceFileReference>
+	<Source>
+ <!-- Quelle-->
+		<ContactPersons>Devdatta Tengshe</ContactPersons>
+ <!-- Kontaktperson betreffend des abgegriffenen Datensatzes-->
+		<URI accessDate="2015-10-20 +12:00">https://github.com/datameet/maps/tree/master/States</URI>
+ <!-- Datum sowie Quelle des abgegriffenen Datensatzes-->
+		<AlternativeURIs><!--The following URI represents the direkt download link to the shape file-->
+			<URI>https://github.com/datameet/maps/</URI>
+		</AlternativeURIs>
+		<Notes/>
+	</Source>
+	<CopyrightInformation>Devdatta Tengshe</CopyrightInformation>
+ <!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Erklaerung der Arbeitsschritte-->
+	   		Die Shape-Datei kann direkt zusammen mit den ergaenzenden DBF-, PRJ- sowie SHX-Dateien heruntergeladen werden. 
+			Anschließend wurde die Schreibweise einiger indischen States manuell korrigiert 
+			und der Spaltenname für die Bezeichner der States wurde zu "NAME" geändert (per QGIS die Attribut-Tabelle bearbeitet.)
+	   		
+	   		Hinweis: Die DBF-Datei wurde zusaetzlich mit Hilfe von Microsoft Excel in eine aequivalente CSV-Datei umgewandelt, um den Datensatz "IndiaStateNames.xml" zu erzeugen. 
+			Siehe auch "IndiaStateNames_meta.xml".
+	   		Die DBF-/CSV-Datei umfasste bereits die englischen Bezeichner jedes States. 
+	   		Somit konnte mittels eines eigens entwickelten Java-Programms der 'Entry'-Abschnitt der "IndiaStateNames.xml"-Datei mit dieser Information gefuellt werden.
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>

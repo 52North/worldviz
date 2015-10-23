@@ -70,6 +70,10 @@ public class DatasetLoader {
 
 	private String xmlFilePath;
 
+	private String customShapeFilePath;
+
+	private String customJoinHeader;
+
 	/**
 	 * Constructor.
 	 * 
@@ -91,6 +95,14 @@ public class DatasetLoader {
 		this.xmlFilePath = xmlFilePath;
 
 		this.countryBordersLOD = countryBordersLOD;
+	}
+	
+	public DatasetLoader(String xmlFilePath,
+			String customShapeFilePath, String customJoinHeader) {
+		this.xmlFilePath = xmlFilePath;
+
+		this.customShapeFilePath = customShapeFilePath;
+		this.customJoinHeader = customJoinHeader;
 	}
 
 	/**
@@ -223,6 +235,9 @@ public class DatasetLoader {
 		else if (featureType.equals(GeoReferenceFeatureTypeEnum.Point
 				.toString()))
 			return new XmlPointDataset(doc);
+		else if (featureType.equals(GeoReferenceFeatureTypeEnum.StateName
+				.toString()))
+			return new XmlCustomStateNameDataset(doc, customShapeFilePath, customJoinHeader);
 		else
 			throw new NoValidFeatureTypeException("The featureType '"
 					+ featureType + "' is not valid!");
