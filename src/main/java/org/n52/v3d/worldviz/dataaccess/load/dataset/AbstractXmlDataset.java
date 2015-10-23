@@ -34,6 +34,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
+import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.CustomShapeReader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.GeoReferenceFeatureTypeEnum;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.ShapeReader;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.helper.ShapeReader_Detailed;
@@ -79,6 +80,8 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 
 	protected ShapeReader shapeReader;
 	protected CountryBordersLODEnum countryBordersLOD = CountryBordersLODEnum.DETAILED;
+
+	protected String customJoinHeader;
 
 	/**
 	 * Constructor
@@ -130,6 +133,39 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 		this.countryBordersLOD = countryBordersLOD;
 
 		this.shapeReader = determineEneShapeReader();
+
+		processGeneralInformation();
+
+		generateFeatures();
+
+	}
+
+	/**
+	 * Constructor
+	 * 
+	 * @param doc
+	 *            the XmlDataset-document that shall be parsed.
+	 * @param customShapeFilePath
+	 *            a file path to a custom shapefile.
+	 * @param customJoinHeader
+	 *            the name of the shape-column that contains the join attribute
+	 * @throws Exception
+	 * @see {@link DatasetLoader} the method <code>loadDataset()</code> creates
+	 *      an instance of <code>XmlDataset</code>
+	 * 
+	 * 
+	 */
+	public AbstractXmlDataset(DatasetDocument doc, String customShapeFilePath,
+			String customJoinHeader) throws Exception {
+
+		this.xmlDoc = doc;
+
+		this.features = new ArrayList<VgAttrFeature>(this.xmlDoc.getDataset()
+				.getEntries().sizeOfEntryArray());
+
+		this.shapeReader = createCustomShapeReader(customShapeFilePath);
+
+		this.customJoinHeader = customJoinHeader;
 
 		processGeneralInformation();
 
@@ -414,6 +450,11 @@ public abstract class AbstractXmlDataset implements XmlDataset {
 			break;
 		}
 		return shapeReader;
+	}
+
+	private ShapeReader createCustomShapeReader(String customShapeFilePath)
+			throws IOException {
+		return new CustomShapeReader(customShapeFilePath);
 	}
 
 	@Override
