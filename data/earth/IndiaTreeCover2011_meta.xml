@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This document holds additional meta-information that is not part of an actual shape file to be processed 
+in the context of the BO's ENE project. 
+Author: Christian Danowski, Benno Schmidt, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>India</SpatialScaleHint>
+	<CovereredTime/>
+	<DatasetReference>IndiaTreeCover2011.xml</DatasetReference><!-- Dateiname-->
+	<SourceFileReference/>
+	<Source>
+		<ContactPersons>ENVIS Centre, Ministry of Environment and Forest, Govt. of India</ContactPersons><!-- Kontaktpersonen betreffend der abgegriffenen Informationen-->
+		<URI accessDate="2015-10-27 +12:00">http://www.wwfenvis.nic.in/Database/NationalForestPolicy_4518.aspx?format=Print</URI><!-- Datum des Zugriffes sowie deren Quelle-->
+		<AlternativeURIs><!--The follwing URI links to the website where the direct download link from above is from.-->
+		</AlternativeURIs>
+		<Notes>Bie diesem Datensatz handelt es sich um die mit Bäumen bedeckte Fläche der indischen States.</Notes>
+	</Source>
+	<CopyrightInformation>ENVIS Centre, Ministry of Environment and Forest, Govt. of India</CopyrightInformation><!-- Copyright Informationen-->
+	<ImportProcess>
+		<Description language="DE"><!-- Erklaerung der Arbeitsabfolge-->
+	   		Die Daten wurden in eine CSV-Datei übertragen (hier: India_TreeCover2011.csv). 
+			
+			Die in der CSV-Datei enthaltenen Parameter konnten mittels eines eigens entwickelten Java-Programms in den 'Entry'-Abschnitt der "IndiaTreeCover2011.xml"-Datei überführt werden.	   		
+	   	</Description>
+	</ImportProcess>
+</DatasetDescription>
