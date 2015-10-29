@@ -76,6 +76,10 @@ public class VsCartographicSymbolsOnASphereScene extends
 	public VsCartographicSymbolsOnASphereScene(String filePath) {
 		super(filePath);
 	}
+	
+	public VsCartographicSymbolsOnASphereScene() {
+		super();
+	}
 
 	/**
 	 * Gets the radius of the reference sphere, that is used to project the

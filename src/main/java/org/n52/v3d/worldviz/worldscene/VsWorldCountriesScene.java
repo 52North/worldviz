@@ -91,6 +91,12 @@ public class VsWorldCountriesScene extends VsAbstractWorldScene {
 
 		this.worldCountries.clear();
 	}
+	
+	public VsWorldCountriesScene() {
+		super();
+
+		this.worldCountries.clear();
+	}
 
 	/**
 	 * This parameter defines whether the border of each world country should be
