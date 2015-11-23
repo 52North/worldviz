@@ -36,6 +36,9 @@ or to bring in innovative visualization ideas!
 The community's vision is to establish a creative surrounding, which allows efficient and sustainable 
 development of innovative software solutions in the context of 3d geovisualization at world scale.
 
+## Examples page:
+Find some examples on our [examples page](http://52north.github.io/worldviz/).
+
 ## Installation
 Since this is a Maven project, the typical Maven installation tasks can be executed to build this project.
 To compile the Triturus WorldViz library, please execute the following [Maven](http://maven.apache.org/) task 
