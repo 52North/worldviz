@@ -33,7 +33,10 @@ import org.n52.v3d.triturus.gisimplm.GmSimpleElevationGrid;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgElevationGrid;
+import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
+import org.n52.v3d.worldviz.projections.Wgs84ToSphereCoordsTransform;
 
 /**
  * Class to create a scene description that consists of a sphere-object and an
@@ -45,6 +48,8 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  */
 public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 
+	private AxisSwitchTransform axisSwitchTransform = new AxisSwitchTransform();
+	
 	private String pathToMainSphereTexture;
 	private String[] additionalTexturePaths;
 	private double defaultRadiusForSphere = 1.f;
@@ -234,7 +239,7 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 	private void writeAsIndexedFaceSet(boolean asX3DOM) {
 
 		if (this.earthElevGrid == null) {
-			VgElevationGrid flatElevationGrid = new GmSimpleElevationGrid(361, 181, new GmPoint(0, 0, 0), 1., 1.);
+			VgElevationGrid flatElevationGrid = new GmSimpleElevationGrid(361, 181, new GmPoint(-180, -90, 0), 1., 1.);
 
 			for (int i = 0; i < flatElevationGrid.numberOfColumns(); i++) {
 				for (int j = 0; j < flatElevationGrid.numberOfRows(); j++) {
@@ -302,7 +307,7 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		// VsColoredWoorldCountriesOnASphereScene act as an overlay of
 		// the
 		// sphere; otherwise the texture will not fit the countries.
-		wl("    <Transform rotation='0 1 0 3.1416'>");
+		wl("    <Transform>");
 		wl("      <Shape>");
 		wl("        <Appearance>");
 		wl("          <Material></Material>");
@@ -393,8 +398,20 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 			for (int j = 0; j < elevationGrid.numberOfColumns(); j++) {
 
 				VgPoint cellPoint = ((GmSimpleElevationGrid) elevationGrid).getPoint(i, j);
+				cellPoint.setZ(elevationGrid.getValue(i, j));
 
-				w(this.polar(cellPoint.getX(), cellPoint.getY(), elevationGrid.getValue(i, j)));
+				cellPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
+
+				VgPoint sphereCoordinates = Wgs84ToSphereCoordsTransform.wgs84ToSphere(cellPoint,
+						defaultRadiusForSphere);
+
+				T3dVector sceneCoordinates = axisSwitchTransform.transform(sphereCoordinates);
+
+				String sceneCoordinateString = "" + this.decimalFormatter.format(sceneCoordinates.getX()) + " "
+						+ this.decimalFormatter.format(sceneCoordinates.getY()) + " "
+						+ this.decimalFormatter.format(sceneCoordinates.getZ());
+
+				w(sceneCoordinateString);
 
 				if (i != (elevationGrid.numberOfRows() - 1) || j != (elevationGrid.numberOfColumns() - 1)) {
 					// for all elements, except the final one, a comma is set
@@ -414,7 +431,7 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 				// von 0,1 nach 1,0 in 360/180 schritten
 				
 				w("" + (double) j / (elevationGrid.numberOfColumns() - 1)
-						+ " " + (double) ((elevationGrid.numberOfRows() - 1) -i) / (elevationGrid.numberOfRows() - 1) + " ");
+						+ " " + (double) i / (elevationGrid.numberOfRows() - 1) + " ");
 
 				if (i != (elevationGrid.numberOfRows() - 1) || j != (elevationGrid.numberOfColumns() - 1)) {
 					// for all elements, except the final one, a comma is set
@@ -431,30 +448,5 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		wl("      </IndexedFaceSet>");
 		wl("    </Shape>");
 		wl("  </Transform>");
-	}
-
-	private String polar(double pX, double pY, double pElev) {
-
-		// double R = 1. + 0.025 * (pElev / 8848.);
-		double R = defaultRadiusForSphere + pElev;
-		double x = R * Math.sin(pY * Math.PI / 180.) * Math.cos(pX * Math.PI / 180.);
-		double y = R * Math.sin(pY * Math.PI / 180.) * Math.sin(pX * Math.PI / 180.);
-		double z = R * Math.cos(pY * Math.PI / 180.);
-
-		// TODO pElev ist noch reinzurechnen! bezogen auf R = 1
-		if (Math.abs(x) > 2. * R)
-			if (logger.isWarnEnabled())
-				logger.warn("Warning: x = " + x);
-		if (Math.abs(y) > 2. * R)
-			if (logger.isWarnEnabled())
-				logger.warn("Warning: y = " + y);
-		if (Math.abs(z) > 2. * R)
-			if (logger.isWarnEnabled())
-				logger.warn("Warning: z = " + z);
-		// System.out.println("" + pX + " " + pY + " -> " + x + " " + y);
-		String coordinateString = "" + this.decimalFormatter.format(x) + " " + this.decimalFormatter.format(z) + " "
-				+ this.decimalFormatter.format(-y);
-
-		return coordinateString;
 	}
 }
