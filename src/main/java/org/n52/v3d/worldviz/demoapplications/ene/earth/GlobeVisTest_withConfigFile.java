@@ -33,22 +33,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
-import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlCountryCodeDataset;
-import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
-import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
-import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
-import org.n52.v3d.worldviz.featurenet.impl.WvizFlowNet;
 import org.apache.xmlbeans.XmlException;
-import org.n52.v3d.triturus.vgis.VgFeature;
-import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
-import org.n52.v3d.worldviz.featurenet.impl.Parse.PajekException;
-import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
-import org.n52.v3d.worldviz.featurenet.scene.MpFeatureNetVisualizer;
-import org.n52.v3d.worldviz.featurenet.scene.MprConnectionMapGenerator;
-import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
-import org.n52.v3d.worldviz.featurenet.scene.WvizVirtualConnectionMapScene;
-import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
+import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
+import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
@@ -60,9 +47,10 @@ import de.hsbo.fbg.worldviz.WvizConfigDocument;
 import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.GlobeVisualization.WorldCountries.PolygonVisualizer.LevelOfDetail;
 
 /**
- * Simple demonstrator illustrating how to construct a feature-net.
+ * Simple demonstrator illustrating how to construct a globe-visualization from
+ * a configuration file.
  *
- * @author Benno Schmidt, Adhitya Kamakshidasan
+ * @author Christian Danowski
  */
 
 public class GlobeVisTest_withConfigFile {
@@ -102,23 +90,23 @@ public class GlobeVisTest_withConfigFile {
 	public void run() {
 		try {
 			parseConfigFile();
-			
-			/*TODO
-			 * Wir brauchen hier mehreer Szenen:
-			 * 1. Den Globus als Grundlage!
-			 * 2. Die zusätzliche Szene mit Geoobjekten
-			 * 3. die verknüpfte Szene, die beide Szenen kombiniert. 
+
+			/*
+			 * TODO Wir brauchen hier mehreer Szenen: 1. Den Globus als
+			 * Grundlage! 2. Die zusätzliche Szene mit Geoobjekten 3. die
+			 * verknüpfte Szene, die beide Szenen kombiniert.
 			 */
 
 			XmlDataset countrydataset = this.parseXmlDataset();
 
 			VsAbstractWorldScene result = this.generateX3dScene(countrydataset, attributeNameForMapping);
-			
+
 			result.writeToFile(outputFilePath);
-			
+
 			logger.info("Result written to file! " + outputFilePath);
 		} catch (Exception ex) {
 			logger.error(xmlDatasetFile);
+			ex.printStackTrace();
 		}
 
 	}
@@ -130,25 +118,25 @@ public class GlobeVisTest_withConfigFile {
 
 	}
 
-	private XmlDataset parseXmlDataset(){
-		LevelOfDetail levelOfDetail = this.wVizConfigFile.getWvizConfig().getGlobeVisualization().getWorldCountries().getPolygonVisualizer().getLevelOfDetail();
-		
+	private XmlDataset parseXmlDataset() {
+		LevelOfDetail levelOfDetail = this.wVizConfigFile.getWvizConfig().getGlobeVisualization().getWorldCountries()
+				.getPolygonVisualizer().getLevelOfDetail();
+
 		String lod = levelOfDetail.getLod();
-		
+
 		this.countryBorderLOD = CountryBordersLODEnum.SIMPLIFIED_50m;
-		
+
 		if (lod.equalsIgnoreCase(CountryBordersLODEnum.DETAILED.toString()))
 			countryBorderLOD = CountryBordersLODEnum.DETAILED;
-		
+
 		else if (lod.equalsIgnoreCase(CountryBordersLODEnum.SIMPLIFIED_50m.toString()))
 			countryBorderLOD = CountryBordersLODEnum.SIMPLIFIED_50m;
-		
+
 		else
 			countryBorderLOD = CountryBordersLODEnum.SIMPLIFIED_110m;
-		
-		
+
 		DatasetLoader datasetLoader = new DatasetLoader(xmlDatasetFile, countryBorderLOD);
-		
+
 		XmlDataset globeVisDataset = datasetLoader.loadDataset();
 
 		return globeVisDataset;
@@ -157,11 +145,14 @@ public class GlobeVisTest_withConfigFile {
 	private VsAbstractWorldScene generateX3dScene(XmlDataset countrydataset, String attributeNameForMapping) {
 
 		MpXmlDatasetVisualizer datasetMapper = new MpXmlDatasetVisualizer(wVizConfigFile, attributeNameForMapping);
-		
+
 		datasetMapper.setStyle(wVizConfigFile);
 		datasetMapper.setCountryBorderLOD(this.countryBorderLOD);
 		VsAbstractWorldScene scene = datasetMapper.transform(countrydataset);
-		
+
+		if (scene.getOutputFile() == null)
+			scene.setOutputFile(new File(this.outputFilePath));
+
 		return scene;
 	}
 }

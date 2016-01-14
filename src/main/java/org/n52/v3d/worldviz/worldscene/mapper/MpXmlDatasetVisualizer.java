@@ -18,8 +18,16 @@ public class MpXmlDatasetVisualizer extends MpAbstractXmlDatasetVisualizer {
 	public VsAbstractWorldScene transform(XmlDataset xmlDataset) {
 		MpAbstractXmlDatasetVisualizer mapper = null;
 
-		if (xmlDataset instanceof XmlCountryCodeDataset)
-			mapper = new MpWorldCountriesMapper(this.wVizConfigFile, this.attributeNameForMapping);
+		if (xmlDataset instanceof XmlCountryCodeDataset){
+			String deformGlobeString = this.wVizConfigFile.getWvizConfig().getGlobeVisualization().getGlobe().getDeformation().getDeformGlobe();
+			boolean deformGlobe = Boolean.parseBoolean(deformGlobeString);
+			
+			if(deformGlobe)
+				mapper = new MpXmlDatasetToDeformedGlobe(this.wVizConfigFile, this.attributeNameForMapping);
+			else
+				mapper = new MpWorldCountriesMapper(this.wVizConfigFile, this.attributeNameForMapping);
+		
+		}
 
 		else if (xmlDataset instanceof XmlPointDataset)
 			mapper = new MpCartographicSymbolsMapper(this.wVizConfigFile, this.attributeNameForMapping);

@@ -185,6 +185,7 @@ public class GlobeVisTest_withConfigFile_GUI extends javax.swing.JFrame {
 		getContentPane().setLayout(layout);
 
 		pack();
+		
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed

@@ -8,6 +8,7 @@ import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
+import org.n52.v3d.worldviz.helper.StringParser;
 import org.n52.v3d.worldviz.worldscene.OutputFormatEnum;
 import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesOnASphereScene;
@@ -73,7 +74,7 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 
 		// BACKGROUND COLOR
 		String skyColorString = wVizConfigFile.getWvizConfig().getBackground().getSkyColor();
-		T3dColor backgroundColorRGB = parseStringAsRgbColor(skyColorString);
+		T3dColor backgroundColorRGB = StringParser.parseStringAsRgbColor(skyColorString);
 		worldCountriesScene.setBackgroundColor(backgroundColorRGB);
 
 		PolygonVisualizer polygonVisualizer = globeVisualization.getWorldCountries().getPolygonVisualizer();
@@ -82,7 +83,7 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 		CountryBorders countryBorders = polygonVisualizer.getCountryBorders();
 		BorderColor borderColor = countryBorders.getBorderColor();
 		String borderRgbColorAsString = borderColor.getStringValue();
-		T3dColor borderColorRGB = parseStringAsRgbColor(borderRgbColorAsString);
+		T3dColor borderColorRGB = StringParser.parseStringAsRgbColor(borderRgbColorAsString);
 
 		worldCountriesScene.setDefaultCountryBordersColor(borderColorRGB);
 
@@ -105,17 +106,6 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 		// RADIUS FOR GLOBE-TRANSFORMATION
 		worldCountriesScene.setRadius(globeVisualization.getGlobe().getGlobeRadius());
 
-	}
-
-	private T3dColor parseStringAsRgbColor(String rgbColorAsString) {
-		float[] borderColorRGB = new float[3];
-		String[] borderColorRGBString = rgbColorAsString.split(" ");
-		for (int i = 0; i < 3; i++) {
-			borderColorRGB[i] = Float.parseFloat(borderColorRGBString[i]);
-		}
-
-		T3dColor borderColorT3d = new T3dColor(borderColorRGB[0], borderColorRGB[1], borderColorRGB[2]);
-		return borderColorT3d;
 	}
 
 	private MpValue2ColoredAttrFeature initializeColorMapper(WvizConfigDocument wVizConfigFile) {
@@ -146,14 +136,14 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 
 			String outputColorString = colorEntry.getOutputColor().getStringValue();
 
-			colors[i] = parseStringAsRgbColor(outputColorString);
+			colors[i] = StringParser.parseStringAsRgbColor(outputColorString);
 		}
 
 		colorMapper.setPalette(attributeValues, colors, linearInterpolation);
 
 		String neutralColorConfig = this.wVizConfigFile.getWvizConfig().getGlobeVisualization().getWorldCountries()
 				.getPolygonVisualizer().getColorMapper().getNeutralColor().getStringValue();
-		colorMapper.setNeutralColor(parseStringAsRgbColor(neutralColorConfig));
+		colorMapper.setNeutralColor(StringParser.parseStringAsRgbColor(neutralColorConfig));
 
 		return colorMapper;
 	}
