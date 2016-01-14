@@ -299,7 +299,7 @@ properties, a TimeReference element should be present: -->
 			<Value>NODATA</Value>
 			<Value>NODATA</Value>
 			<Value>NODATA</Value>
-		</Entry>
+		</Entry>		
 		<Entry>
 			<Value>AU</Value>
 			<Value>397505</Value>

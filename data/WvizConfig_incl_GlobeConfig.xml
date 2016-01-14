@@ -4,7 +4,7 @@
 <WvizConfig>
 	<!-- Here is an example for a 3-d connection net visualization: -->
 	<Background skyColor='1 1 1'/>
-	<Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/> 
+	<Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/>
 	<ConnectionNet>
 		<BackgroundWorldMap useWorldMap='true' texturePath='http://rawgit.com/cDanowski/worldviz/master/demo/resources/worldmap1_reduced.jpg'/>
 		<Mapper>
@@ -101,7 +101,7 @@
 			</Relations>
 		</Mapper>
 	</ConnectionNet>
-	<!-- Here, there could follow configurations for ENE globe visualization etc. … -->
+	<!-- Here, there could follow configurations for ENE globe visualization etc. … -->	
 	<GlobeVisualization>
 		<OutputFormat format="X3D" />
 		<!--Mandatory Definition of a globe-->
@@ -114,6 +114,21 @@
 					<AdditionalTexture texturePath="/test.jpg"/>
 				</AdditionalTextures>
 			</GlobeTexture>
+			<Deformation deformGlobe="true">
+				<DeformationMapper>
+					<InterpolationMode type="linear"/>
+					<DeformationPalette>
+						<DeformationEntry>
+							<InputValue>1.0</InputValue>
+							<OutputDeformation>1.0</OutputDeformation>
+						</DeformationEntry>
+						<DeformationEntry>
+							<InputValue>8766510</InputValue>
+							<OutputDeformation>5.0</OutputDeformation>
+						</DeformationEntry>
+					</DeformationPalette>
+				</DeformationMapper>
+			</Deformation>
 		</Globe>
 		<!--Definition of world countries-->
 		<WorldCountries>
