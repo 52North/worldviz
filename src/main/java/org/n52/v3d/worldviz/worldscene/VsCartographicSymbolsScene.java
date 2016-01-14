@@ -75,6 +75,12 @@ public class VsCartographicSymbolsScene extends VsAbstractWorldScene {
 
 		cartographicSymbols = new ArrayList<T3dAttrSymbolInstance>();
 	}
+	
+	public VsCartographicSymbolsScene() {
+		super();
+
+		cartographicSymbols = new ArrayList<T3dAttrSymbolInstance>();
+	}
 
 	/**
 	 * The default color is used to color any {@link T3dAttrSymbolInstance}

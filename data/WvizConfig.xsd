@@ -1,0 +1,602 @@
+﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WvizConfig">
+    <xs:annotation>
+      <xs:documentation>This configuration file should be used to specify cartographic mapping parameters inside Triturus WorldViz.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Background">
+          <xs:annotation>
+            <xs:documentation>Here is an example for a 3-d connection net visualization:</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="skyColor"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Viewpoint">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="position"/>
+                <xs:attribute type="xs:string" name="orientation"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ConnectionNet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BackgroundWorldMap">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="useWorldMap"/>
+                      <xs:attribute type="xs:anyURI" name="texturePath"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Mapper">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Features">
+                      <xs:annotation>
+                        <xs:documentation>Note: The elements used to specify the cartographic mapping should resemble the OGC/ISO SLD ('styled layer 
+        descriptors') elements! E.g.: PointVisualizer, LineSymbolizer, PolygonSymbolizer, TextSymbolizer, CssParameter, 
+        etc.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PointVisualizer">
+                            <xs:annotation>
+                              <xs:documentation>Visualize feature-net nodes using red spheres with red text annotations showing the ID entry from the Pajek 
+          input file:</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="T3dSymbol">
+                                  <xs:annotation>
+                                    <xs:documentation>To perform 3-d cartography, 52°North Triturus symbols should be used (instead of the 3D-SLD spec):</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                        <xs:attribute type="xs:float" name="size"/>
+                                        <xs:attribute type="xs:string" name="normalColor"/>
+                                        <xs:attribute type="xs:string" name="normalGlow"/>
+                                        <xs:attribute type="xs:string" name="currentColor"/>
+                                        <xs:attribute type="xs:string" name="currentGlow"/>
+                                        <xs:attribute type="xs:string" name="highlightColor"/>
+                                        <xs:attribute type="xs:string" name="highlightGlow"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TextVisualizer">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Label">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="PropertyName"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Font">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="SvgParameter" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="name" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="LabelPlacement">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="PointPlacement">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Displacement">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element type="xs:byte" name="DisplacementX"/>
+                                                  <xs:element type="xs:float" name="DisplacementY"/>
+                                                  <xs:element type="xs:float" name="DisplacementZ"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="BillboardAxis"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Fill">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="SvgParameter">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="name"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Relations">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LineVisualizer">
+                            <xs:annotation>
+                              <xs:documentation>Visualize feature-net edges using straight lines with blue stroke-colour and a 2pt line-width:</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Geometry" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="type"/>
+                                      <xs:element type="xs:float" name="CreaseAngle" minOccurs="0"/>
+                                      <xs:element type="xs:byte" name="CircleTurns" minOccurs="0"/>
+                                      <xs:element type="xs:byte" name="HelixTurns" minOccurs="0"/>
+                                      <xs:element type="xs:float" name="RibbonStep" minOccurs="0"/>
+                                      <xs:element type="xs:byte" name="EllipseTurns" minOccurs="0"/>
+                                      <xs:element type="xs:float" name="Ratio" minOccurs="0"/>
+                                      <xs:element type="xs:byte" name="HeightRatio" minOccurs="0"/>
+                                      <xs:element type="xs:float" name="RadiusRatio" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ColorMapper">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="InterpolationMode">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="type"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="ColorPalette">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="ColorEntry" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element type="xs:float" name="InputValue"/>
+                                                  <xs:element name="OutputColor">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="type" use="optional"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="WidthMapper">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="InterpolationMode">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="type"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="WidthPalette">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="WidthEntry" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element type="xs:float" name="InputValue"/>
+                                                  <xs:element type="xs:float" name="OutputWidth"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GlobeVisualization">
+          <xs:annotation>
+            <xs:documentation>Here, there could follow configurations for ENE globe visualization etc. …</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OutputFormat">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="format"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Globe">
+                <xs:annotation>
+                  <xs:documentation>Mandatory Definition of a globe</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:float" name="GlobeRadius"/>
+                    <xs:element name="GlobeColor">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="GlobeTexture">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="MainTexture">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:anyURI" name="texturePath"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="AdditionalTextures">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="AdditionalTexture">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="texturePath"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="mode"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Deformation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DeformationMapper">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="InterpolationMode">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="DeformationPalette">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DeformationEntry" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:float" name="InputValue"/>
+                                            <xs:element type="xs:float" name="OutputDeformation"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="deformGlobe"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WorldCountries">
+                <xs:annotation>
+                  <xs:documentation>Definition of world countries</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PolygonVisualizer">
+                      <xs:annotation>
+                        <xs:documentation>declares how detailed each country's borders are defined. possible values are: DETAILED; SIMPLIFIED_50m; SIMPLIFIED_110m</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LevelOfDetail">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="lod"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="CountryBorders">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="BorderColor">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element type="xs:float" name="OffsetForBorder"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="drawborders"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Extrusion">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="extrudeCountries"/>
+                                  <xs:attribute type="xs:float" name="defaultExtrusionHeight"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SteinerPoints">
+                            <xs:annotation>
+                              <xs:documentation>Steiner points are additional generated points within the countries that are used for the triangulation of the polygon. 
+		The rasterWidth-parameters define the cell size of the raster in which these points are added.</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="generateSteinerPoints"/>
+                                  <xs:attribute type="xs:float" name="xRasterWidth"/>
+                                  <xs:attribute type="xs:float" name="yRasterWidth"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ColorMapper">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="NeutralColor">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="InterpolationMode">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ColorPalette">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ColorEntry" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:float" name="InputValue"/>
+                                            <xs:element name="OutputColor">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute type="xs:string" name="type" use="optional"/>
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ExtrusionMapper">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="InterpolationMode">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ExtrusionPalette">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ExtrusionEntry" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:float" name="InputValue"/>
+                                            <xs:element type="xs:float" name="OutputExtrusion"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CartographicObjects">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SymbolVisualizer">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SymbolMapper">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="T3dSymbol">
+                                  <xs:annotation>
+                                    <xs:documentation>To perform 3-d cartography, 52°North Triturus symbols should be used (instead of the 3D-SLD spec): valid symbol types are: Sphere, Cylinder, Cone, Cube, Box</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="type"/>
+                                        <xs:attribute type="xs:float" name="size"/>
+                                        <xs:attribute type="xs:string" name="defaultColor"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ScaleMapper">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="InterpolationMode">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="type"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="ScalePalette">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="ScaleEntry" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element type="xs:float" name="InputValue"/>
+                                                  <xs:element type="xs:float" name="OutputScale"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ColorMapper">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="InterpolationMode">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="type"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="ColorPalette">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="ColorEntry" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element type="xs:float" name="InputValue"/>
+                                                  <xs:element name="OutputColor">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="type" use="optional"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

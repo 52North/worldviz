@@ -33,7 +33,10 @@ import org.n52.v3d.triturus.gisimplm.GmSimpleElevationGrid;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.t3dutil.T3dVector;
 import org.n52.v3d.triturus.vgis.VgElevationGrid;
+import org.n52.v3d.triturus.vgis.VgGeomObject;
 import org.n52.v3d.triturus.vgis.VgPoint;
+import org.n52.v3d.worldviz.projections.AxisSwitchTransform;
+import org.n52.v3d.worldviz.projections.Wgs84ToSphereCoordsTransform;
 
 /**
  * Class to create a scene description that consists of a sphere-object and an
@@ -45,12 +48,14 @@ import org.n52.v3d.triturus.vgis.VgPoint;
  */
 public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 
+	private AxisSwitchTransform axisSwitchTransform = new AxisSwitchTransform();
+	
 	private String pathToMainSphereTexture;
 	private String[] additionalTexturePaths;
 	private double defaultRadiusForSphere = 1.f;
 
 	// the backupColor if the imageTexture cannot be loaded
-	private T3dColor backupColorForSphere = new T3dColor(0.2f, 0.2f, 0.2f);
+	private T3dColor sphereColor = new T3dColor(0.2f, 0.2f, 0.2f);
 
 	// GeoElevationGrid and IndexedFaceSet are two specific geometry-types in
 	// X3D
@@ -75,6 +80,15 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 	// height is the height parameter for each field. For a simple world globe
 	// without any height differences, we just use o
 	private float defaultHeight = 0;
+	private VgElevationGrid earthElevGrid;
+
+	/**
+	 * Standard constructor. Note that all parameters like textures or
+	 * outputFile path must be set manually when using this constructor.
+	 */
+	public VsDrapedWorldSphereScene() {
+
+	}
 
 	/**
 	 * Constructor
@@ -105,8 +119,7 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 	 *            one or more paths to additional images (e.g. for use as a bump
 	 *            map) that will be used in combination with the main texture.
 	 */
-	public VsDrapedWorldSphereScene(String filePath, String mainImagePath,
-			String[] furtherImages) {
+	public VsDrapedWorldSphereScene(String filePath, String mainImagePath, String[] furtherImages) {
 		super(filePath);
 
 		this.pathToMainSphereTexture = mainImagePath;
@@ -150,6 +163,10 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		return defaultRadiusForSphere;
 	}
 
+	public void setDefaultRadiusForSphere(double defaultRadiusForSphere) {
+		this.defaultRadiusForSphere = defaultRadiusForSphere;
+	}
+
 	/**
 	 * This parameter is only relevant when the output format is set to 'X3D'
 	 * and indicates whether the world sphere shall be created as a
@@ -176,9 +193,24 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 	 * 
 	 * @param useGeoElevationGridInsteadOfSphere
 	 */
-	public void setUseGeoElevationGridInsteadOfSphere(
-			boolean useGeoElevationGridInsteadOfSphere) {
+	public void setUseGeoElevationGridInsteadOfSphere(boolean useGeoElevationGridInsteadOfSphere) {
 		this.useGeoElevationGridInsteadOfIndexedFaceSet = useGeoElevationGridInsteadOfSphere;
+	}
+
+	public VgElevationGrid getEarthElevGrid() {
+		return earthElevGrid;
+	}
+
+	public void setEarthElevGrid(VgElevationGrid earthElevGrid) {
+		this.earthElevGrid = earthElevGrid;
+	}
+
+	public T3dColor getSphereColor() {
+		return sphereColor;
+	}
+
+	public void setSphereColor(T3dColor sphereColor) {
+		this.sphereColor = sphereColor;
 	}
 
 	@Override
@@ -206,17 +238,20 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 
 	private void writeAsIndexedFaceSet(boolean asX3DOM) {
 
-		VgElevationGrid elevationGrid = new GmSimpleElevationGrid(181, 361,
-				new GmPoint(0, 0, 0), 1., 1.);
+		if (this.earthElevGrid == null) {
+			VgElevationGrid flatElevationGrid = new GmSimpleElevationGrid(361, 181, new GmPoint(-180, -90, 0), 1., 1.);
 
-		for (int i = 0; i < elevationGrid.numberOfColumns(); i++) {
-			for (int j = 0; j < elevationGrid.numberOfRows(); j++) {
-				elevationGrid.setValue(j, i, 0.0);
+			for (int i = 0; i < flatElevationGrid.numberOfColumns(); i++) {
+				for (int j = 0; j < flatElevationGrid.numberOfRows(); j++) {
+					flatElevationGrid.setValue(j, i, 0.0);
+				}
 			}
+
+			this.earthElevGrid = flatElevationGrid;
 		}
 
 		try {
-			writeToX3dSphere(elevationGrid, asX3DOM);
+			writeToX3dSphere(this.earthElevGrid, asX3DOM);
 
 		} catch (Exception e) {
 			if (logger.isErrorEnabled())
@@ -227,15 +262,14 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 
 	private void writeAsGeoElevationGrid(boolean asX3DOM) {
 
-		wl("<Transform scale='" + defaultRadiusForSphere + " "
-				+ defaultRadiusForSphere + " " + defaultRadiusForSphere + "'>");
+		wl("<Transform scale='" + defaultRadiusForSphere + " " + defaultRadiusForSphere + " " + defaultRadiusForSphere
+				+ "'>");
 		wl("	<Shape>");
 		wl("		<Appearance>");
 		// set a backup color that is rendered if the imageTexture cannot be
 		// loaded.
-		wl("			<Material diffuseColor='" + backupColorForSphere.getRed() + " "
-				+ backupColorForSphere.getGreen() + " "
-				+ backupColorForSphere.getBlue() + "'/>");
+		wl("			<Material diffuseColor='" + sphereColor.getRed() + " "
+				+ sphereColor.getGreen() + " " + sphereColor.getBlue() + "'/>");
 		wl("			<ImageTexture url='" + pathToMainSphereTexture + "'/>");
 		// the texture has to be translated in order to place vector overlays
 		// properly on top of the countries.
@@ -245,8 +279,8 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		// GeoElevationGrid
 		w("		<GeoElevationGrid ");
 		// write all attributes of GeoElevationGrid
-		w("geoGridOrigin='" + geoGridOrigin.getX() + " " + geoGridOrigin.getY()
-				+ " " + geoGridOrigin.getZ() + "'" + " ");
+		w("geoGridOrigin='" + geoGridOrigin.getX() + " " + geoGridOrigin.getY() + " " + geoGridOrigin.getZ() + "'"
+				+ " ");
 		w("solid='" + solid + "'" + " ");
 		w("xDimension='" + xDimension + "'" + " ");
 		w("zDimension='" + zDimension + "'" + " ");
@@ -273,7 +307,7 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		// VsColoredWoorldCountriesOnASphereScene act as an overlay of
 		// the
 		// sphere; otherwise the texture will not fit the countries.
-		wl("    <Transform rotation='0 1 0 3.1416'>");
+		wl("    <Transform>");
 		wl("      <Shape>");
 		wl("        <Appearance>");
 		wl("          <Material></Material>");
@@ -285,17 +319,11 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		// 'X3DOM', then there is no working method of supporting multiple
 		// textures yet (03.2015)
 		// then we simply ignore this and only display the main texture!
-		if (this.additionalTexturePaths == null
-				|| this.additionalTexturePaths.length == 0
+		if (this.additionalTexturePaths == null || this.additionalTexturePaths.length == 0
 				|| this.getOutputFormat().equals(OutputFormatEnum.X3DOM)) {
 			// here there are no additional textures defined. Thus only one
 			// texture needs to be written.
-			wl("          <ImageTexture url='" + this.pathToMainSphereTexture
-					+ "'></ImageTexture>");
-			// translation is necessary, if other scenes like
-			// VsColoredWoorldCountriesOnASphereScene act as an overlay of the
-			// sphere; otherwise the texture will not fit the countries.
-			wl("          <TextureTransform translation='.5 .0'></TextureTransform>");
+			wl("          <ImageTexture url='" + this.pathToMainSphereTexture + "'></ImageTexture>");
 
 		} else {
 			// here there are additional textures defined. Thus we need
@@ -304,8 +332,7 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 			wl("          <MultiTexture mode='BLENDDIFFUSEALPHA'>");
 
 			// main texture
-			wl("            <ImageTexture url='" + this.pathToMainSphereTexture
-					+ "'/>");
+			wl("            <ImageTexture url='" + this.pathToMainSphereTexture + "'/>");
 
 			// additional textures
 			for (String additionalTexture : this.additionalTexturePaths) {
@@ -324,14 +351,11 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 				long idxLL = (i) * elevationGrid.numberOfColumns() + (j);
 				long idxLR = (i) * elevationGrid.numberOfColumns() + (j + 1);
 				long idxUL = (i + 1) * elevationGrid.numberOfColumns() + (j);
-				long idxUR = (i + 1) * elevationGrid.numberOfColumns()
-						+ (j + 1);
+				long idxUR = (i + 1) * elevationGrid.numberOfColumns() + (j + 1);
 
-				w("" + idxLL + ", " + idxLR + ", " + idxUR + ", " + idxUL
-						+ " -1");
+				w("" + idxLL + ", " + idxLR + ", " + idxUR + ", " + idxUL + " -1");
 
-				if (i != (elevationGrid.numberOfRows() - 2)
-						|| j != (elevationGrid.numberOfColumns() - 2)) {
+				if (i != (elevationGrid.numberOfRows() - 2) || j != (elevationGrid.numberOfColumns() - 2)) {
 					// for all elements, except the final one, a comma is set
 					// and the next elements starts in a new line
 					w(",");
@@ -347,16 +371,14 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		w("             texCoordIndex='");
 		for (int i = 0; i < elevationGrid.numberOfRows() - 1; i++) {
 			for (int j = 0; j < elevationGrid.numberOfColumns() - 1; j++) {
-				long idxLL = (i) * elevationGrid.numberOfColumns() + (j), idxLR = (i)
-						* elevationGrid.numberOfColumns() + (j + 1), idxUL = (i + 1)
-						* elevationGrid.numberOfColumns() + (j), idxUR = (i + 1)
-						* elevationGrid.numberOfColumns() + (j + 1);
+				long idxLL = (i) * elevationGrid.numberOfColumns() + (j),
+						idxLR = (i) * elevationGrid.numberOfColumns() + (j + 1),
+						idxUL = (i + 1) * elevationGrid.numberOfColumns() + (j),
+						idxUR = (i + 1) * elevationGrid.numberOfColumns() + (j + 1);
 
-				w("" + idxLL + ", " + idxLR + ", " + idxUR + ", " + idxUL
-						+ ", -1");
+				w("" + idxLL + ", " + idxLR + ", " + idxUR + ", " + idxUL + ", -1");
 
-				if (i != (elevationGrid.numberOfRows() - 2)
-						|| j != (elevationGrid.numberOfColumns() - 2)) {
+				if (i != (elevationGrid.numberOfRows() - 2) || j != (elevationGrid.numberOfColumns() - 2)) {
 					// for all elements, except the final one, a comma is set
 					// and the next elements starts in a new line
 					w(",");
@@ -375,14 +397,23 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		for (int i = 0; i < elevationGrid.numberOfRows(); i++) {
 			for (int j = 0; j < elevationGrid.numberOfColumns(); j++) {
 
-				VgPoint cellPoint = ((GmSimpleElevationGrid) elevationGrid)
-						.getPoint(i, j);
+				VgPoint cellPoint = ((GmSimpleElevationGrid) elevationGrid).getPoint(i, j);
+				cellPoint.setZ(elevationGrid.getValue(i, j));
 
-				w(this.polar(cellPoint.getX(), cellPoint.getY(),
-						elevationGrid.getValue(i, j)));
+				cellPoint.setSRS(VgGeomObject.SRSLatLonWgs84);
 
-				if (i != (elevationGrid.numberOfRows() - 1)
-						|| j != (elevationGrid.numberOfColumns() - 1)) {
+				VgPoint sphereCoordinates = Wgs84ToSphereCoordsTransform.wgs84ToSphere(cellPoint,
+						defaultRadiusForSphere);
+
+				T3dVector sceneCoordinates = axisSwitchTransform.transform(sphereCoordinates);
+
+				String sceneCoordinateString = "" + this.decimalFormatter.format(sceneCoordinates.getX()) + " "
+						+ this.decimalFormatter.format(sceneCoordinates.getY()) + " "
+						+ this.decimalFormatter.format(sceneCoordinates.getZ());
+
+				w(sceneCoordinateString);
+
+				if (i != (elevationGrid.numberOfRows() - 1) || j != (elevationGrid.numberOfColumns() - 1)) {
 					// for all elements, except the final one, a comma is set
 					// and the next elements starts in a new line
 					w(",");
@@ -398,12 +429,11 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		for (int i = 0; i < elevationGrid.numberOfRows(); i++) {
 			for (int j = 0; j < elevationGrid.numberOfColumns(); j++) {
 				// von 0,1 nach 1,0 in 360/180 schritten
-				w("" + (double) i / (elevationGrid.numberOfRows() - 1) + " "
-						+ (double) ((elevationGrid.numberOfColumns() - 1) - j)
-						/ (elevationGrid.numberOfColumns() - 1));
+				
+				w("" + (double) j / (elevationGrid.numberOfColumns() - 1)
+						+ " " + (double) i / (elevationGrid.numberOfRows() - 1) + " ");
 
-				if (i != (elevationGrid.numberOfRows() - 1)
-						|| j != (elevationGrid.numberOfColumns() - 1)) {
+				if (i != (elevationGrid.numberOfRows() - 1) || j != (elevationGrid.numberOfColumns() - 1)) {
 					// for all elements, except the final one, a comma is set
 					// and the next elements starts in a new line
 					w(",");
@@ -418,33 +448,5 @@ public class VsDrapedWorldSphereScene extends VsAbstractWorldScene {
 		wl("      </IndexedFaceSet>");
 		wl("    </Shape>");
 		wl("  </Transform>");
-	}
-
-	private String polar(double pX, double pY, double pElev) {
-
-		// double R = 1. + 0.025 * (pElev / 8848.);
-		double R = defaultRadiusForSphere;
-		double x = R * Math.sin(pX * Math.PI / 180.)
-				* Math.cos(pY * Math.PI / 180.);
-		double y = R * Math.sin(pX * Math.PI / 180.)
-				* Math.sin(pY * Math.PI / 180.);
-		double z = R * Math.cos(pX * Math.PI / 180.);
-
-		// TODO pElev ist noch reinzurechnen! bezogen auf R = 1
-		if (Math.abs(x) > 2. * R)
-			if (logger.isWarnEnabled())
-				logger.warn("Warning: x = " + x);
-		if (Math.abs(y) > 2. * R)
-			if (logger.isWarnEnabled())
-				logger.warn("Warning: y = " + y);
-		if (Math.abs(z) > 2. * R)
-			if (logger.isWarnEnabled())
-				logger.warn("Warning: z = " + z);
-		// System.out.println("" + pX + " " + pY + " -> " + x + " " + y);
-		String coordinateString = "" + this.decimalFormatter.format(x) + " "
-				+ this.decimalFormatter.format(z) + " "
-				+ this.decimalFormatter.format(-y);
-
-		return coordinateString;
 	}
 }

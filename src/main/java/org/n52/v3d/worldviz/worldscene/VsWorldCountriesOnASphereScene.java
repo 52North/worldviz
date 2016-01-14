@@ -73,6 +73,10 @@ public class VsWorldCountriesOnASphereScene extends VsWorldCountriesScene {
 	public VsWorldCountriesOnASphereScene(String filePath) {
 		super(filePath);
 	}
+	
+	public VsWorldCountriesOnASphereScene() {
+		super();
+	}
 
 	/**
 	 * Gets the radius of the reference sphere, that is used to project the
@@ -94,6 +98,7 @@ public class VsWorldCountriesOnASphereScene extends VsWorldCountriesScene {
 	 */
 	public void setRadius(double radius) {
 		this.radius = radius;
+		this.radiusForBorder = radius + this.offsetForBorders;
 	}
 
 	/**
