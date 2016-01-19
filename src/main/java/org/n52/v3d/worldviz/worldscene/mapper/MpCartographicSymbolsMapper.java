@@ -1,5 +1,8 @@
 package org.n52.v3d.worldviz.worldscene.mapper;
 
+import java.util.List;
+
+import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
@@ -7,17 +10,22 @@ import org.n52.v3d.worldviz.worldscene.VsCartographicSymbolsOnASphereScene;
 
 import de.hsbo.fbg.worldviz.WvizConfigDocument;
 
-public class MpCartographicSymbolsMapper extends MpAbstractXmlDatasetVisualizer {
+public class MpCartographicSymbolsMapper extends MpAbstractXmlDatasetToGlobeVisualizer {
 
 	public MpCartographicSymbolsMapper(WvizConfigDocument wVizConfigFile, String attributeNameForMapping) {
 		super(wVizConfigFile, attributeNameForMapping);
 	}
 
 	@Override
-	public VsAbstractWorldScene transform(XmlDataset xmlDataset) {
-		VsCartographicSymbolsOnASphereScene cartographicSymbolsScene = new VsCartographicSymbolsOnASphereScene();
+	public List<VsAbstractWorldScene> transformToMultipleScenes(XmlDataset xmlDataset, String outputFilePath,
+			String fileName) {
+		throw new T3dException(
+				"This mapper ist not able to create multiple scenes as output. Please use method {@link #transformToSingleScene(XmlDataset)}");
+	}
 
-		throw new T3dNotYetImplException();
+	@Override
+	public VsAbstractWorldScene transformToSingleScene(XmlDataset xmlDataset) {
+		VsCartographicSymbolsOnASphereScene cartographicSymbolsScene = new VsCartographicSymbolsOnASphereScene();
 
 		// parameterizeScene(cartographicSymbolsScene, this.wVizConfigFile);
 		//
@@ -33,6 +41,7 @@ public class MpCartographicSymbolsMapper extends MpAbstractXmlDatasetVisualizer 
 		// addSceneObjectsToWorldScene(cartographicSymbolsScene, sceneObjects);
 		//
 		// return cartographicSymbolsScene;
+		throw new T3dNotYetImplException();
 	}
 
 }

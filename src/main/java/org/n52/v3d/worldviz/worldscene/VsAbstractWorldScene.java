@@ -167,6 +167,10 @@ public abstract class VsAbstractWorldScene extends VsScene {
 	 */
 	private void startSceneDescription() {
 
+		if (!this.outputFile.exists()) {
+			this.outputFile.getParentFile().mkdirs();
+		}
+
 		switch (outputFormat) {
 		case X3D:
 			startX3dDescription(false);
@@ -184,6 +188,7 @@ public abstract class VsAbstractWorldScene extends VsScene {
 			throw new T3dException("The output format '" + outputFormat.toString()
 					+ "' is not yet supported! Please consider to use format 'X3D' instead.");
 		}
+
 	}
 
 	/**

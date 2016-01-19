@@ -32,6 +32,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 import org.apache.xmlbeans.XmlException;
 import org.n52.v3d.worldviz.dataaccess.load.DatasetLoader;
@@ -61,6 +62,7 @@ public class GlobeVisTest_withConfigFile {
 	private WvizConfigDocument wVizConfigFile;
 	private String attributeNameForMapping;
 	private CountryBordersLODEnum countryBorderLOD;
+	private String fileName;
 
 	final static Logger logger = LoggerFactory.getLogger(GlobeVisTest_withConfigFile.class);
 
@@ -69,14 +71,8 @@ public class GlobeVisTest_withConfigFile {
 		this.attributeNameForMapping = attributeName;
 		this.xmlDatasetFile = xmlDatasetFile;
 		Path path = Paths.get(xmlDatasetFile);
-		String fileName = path.getFileName().toString();
-		fileName = fileName.split("\\.")[0];
-		if (X3DOMMode) {
-			fileName = fileName + ".html";
-		} else {
-			fileName = fileName + ".x3d";
-		}
-		outputFilePath = new File(outputFilePath, fileName).toString();
+		String fileName_withEnding = path.getFileName().toString();
+		this.fileName = fileName_withEnding.split("\\.")[0];
 	}
 
 	public void setOutputFile(String outputFile) {
@@ -91,17 +87,9 @@ public class GlobeVisTest_withConfigFile {
 		try {
 			parseConfigFile();
 
-			/*
-			 * TODO Wir brauchen hier mehreer Szenen: 1. Den Globus als
-			 * Grundlage! 2. Die zusätzliche Szene mit Geoobjekten 3. die
-			 * verknüpfte Szene, die beide Szenen kombiniert.
-			 */
-
 			XmlDataset countrydataset = this.parseXmlDataset();
 
-			VsAbstractWorldScene result = this.generateX3dScene(countrydataset, attributeNameForMapping);
-
-			result.writeToFile(outputFilePath);
+			this.generateX3dScenes(countrydataset, attributeNameForMapping);
 
 			logger.info("Result written to file! " + outputFilePath);
 		} catch (Exception ex) {
@@ -142,17 +130,41 @@ public class GlobeVisTest_withConfigFile {
 		return globeVisDataset;
 	}
 
-	private VsAbstractWorldScene generateX3dScene(XmlDataset countrydataset, String attributeNameForMapping) {
+	private void generateX3dScenes(XmlDataset countrydataset, String attributeNameForMapping) {
 
 		MpXmlDatasetVisualizer datasetMapper = new MpXmlDatasetVisualizer(wVizConfigFile, attributeNameForMapping);
 
 		datasetMapper.setStyle(wVizConfigFile);
 		datasetMapper.setCountryBorderLOD(this.countryBorderLOD);
-		VsAbstractWorldScene scene = datasetMapper.transform(countrydataset);
 
-		if (scene.getOutputFile() == null)
-			scene.setOutputFile(new File(this.outputFilePath));
+		/*
+		 * The returned list of scenes has the following order of elements:
+		 * 
+		 * 1. (optional) deformed globe
+		 * 
+		 * 2. Basic (flat) globe
+		 * 
+		 * 3. either countries scene or point symbols scene (which acts as an
+		 * overlay on top of the base globe)
+		 * 
+		 * 4. joined scene that combines both prior scenes to a single scene
+		 * 
+		 * 
+		 * 
+		 */
+		List<VsAbstractWorldScene> worldScenes = datasetMapper.transformToMultipleScenes(countrydataset,
+				this.outputFilePath, this.fileName);
 
-		return scene;
+		int size = worldScenes.size();
+		if (size != 3 && size != 4) {
+			logger.error(
+					"The size of the list with world scenes for a thematic dataset should be equal to 3 or 4. It is: {}",
+					size);
+		}
+
+		for (VsAbstractWorldScene worldScene : worldScenes) {
+			worldScene.generateScene();
+		}
+
 	}
 }
