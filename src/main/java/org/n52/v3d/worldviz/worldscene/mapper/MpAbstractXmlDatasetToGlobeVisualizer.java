@@ -1,5 +1,7 @@
 package org.n52.v3d.worldviz.worldscene.mapper;
 
+import java.util.List;
+
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
 import org.n52.v3d.worldviz.worldscene.helper.CountryBordersLODEnum;
@@ -15,7 +17,7 @@ import de.hsbo.fbg.worldviz.WvizConfigDocument;
  * @author Christian Danowski
  *
  */
-public abstract class MpAbstractXmlDatasetVisualizer {
+public abstract class MpAbstractXmlDatasetToGlobeVisualizer {
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -33,7 +35,7 @@ public abstract class MpAbstractXmlDatasetVisualizer {
 	 *            name of the attribute of the features that is used to color
 	 *            and extrude each feature.
 	 */
-	public MpAbstractXmlDatasetVisualizer(WvizConfigDocument wVizConfigFile, String attributeNameForMapping) {
+	public MpAbstractXmlDatasetToGlobeVisualizer(WvizConfigDocument wVizConfigFile, String attributeNameForMapping) {
 		this.wVizConfigFile = wVizConfigFile;
 		this.attributeNameForMapping = attributeNameForMapping;
 	}
@@ -60,11 +62,30 @@ public abstract class MpAbstractXmlDatasetVisualizer {
 
 	/**
 	 * Transforms the content of the xmlDataset-object (these are GEO-objects)
-	 * to visualization objects.
+	 * to a scene description.
 	 * 
 	 * @param xmlDataset
 	 * @return
 	 */
-	public abstract VsAbstractWorldScene transform(XmlDataset xmlDataset);
+	public abstract VsAbstractWorldScene transformToSingleScene(XmlDataset xmlDataset);
+
+	/**
+	 * Transforms the content of the xmlDataset-object (these are GEO-objects)
+	 * to multiple scene descriptions. <br/>
+	 * <br/>
+	 * 
+	 * The returned list of scenes has the following order of elements: <list>
+	 * <li>(optional) 1. deformed globe</li>
+	 * <li>2. Basic (flat) globe</li>
+	 * <li>3. either countries scene or point symbols scene (which acts as an
+	 * overlay on top of the base globe)</li>
+	 * <li>4. joined scene that combines both prior scenes to a single scene
+	 * </li> </list>
+	 * 
+	 * @param xmlDataset
+	 * @return
+	 */
+	public abstract List<VsAbstractWorldScene> transformToMultipleScenes(XmlDataset xmlDataset, String outputFilePath,
+			String fileName);
 
 }

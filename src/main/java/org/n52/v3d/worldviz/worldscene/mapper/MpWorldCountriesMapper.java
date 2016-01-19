@@ -2,6 +2,7 @@ package org.n52.v3d.worldviz.worldscene.mapper;
 
 import java.util.List;
 
+import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
@@ -27,7 +28,7 @@ import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.GlobeVisualization.Wor
 import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.GlobeVisualization.WorldCountries.PolygonVisualizer.ExtrusionMapper.ExtrusionPalette.ExtrusionEntry;
 import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.GlobeVisualization.WorldCountries.PolygonVisualizer.SteinerPoints;
 
-public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
+public class MpWorldCountriesMapper extends MpAbstractXmlDatasetToGlobeVisualizer {
 
 	private MpValue2ColoredAttrFeature colorMapper;
 	private MpValue2ExtrudedAttrFeature extrusionMapper;
@@ -37,7 +38,7 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 	}
 
 	@Override
-	public VsAbstractWorldScene transform(XmlDataset xmlDataset) {
+	public VsAbstractWorldScene transformToSingleScene(XmlDataset xmlDataset) {
 
 		VsWorldCountriesOnASphereScene worldCountriesScene = new VsWorldCountriesOnASphereScene();
 
@@ -205,8 +206,9 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 
 		// missingCountriesHelper.findExtrudeAndColorMissingCountries(alreadyExtrudedAndColoredCountries,
 		// neutralColor, neutralExtrusionHeight)
-		List<VgAttrFeature> allSceneObjects = missingCountriesHelper
-				.findExtrudeAndColorMissingCountries(extrudedColoredSceneObjects);
+		List<VgAttrFeature> allSceneObjects = missingCountriesHelper.findExtrudeAndColorMissingCountries(
+				extrudedColoredSceneObjects, this.colorMapper.getNeutralColor(),
+				this.extrusionMapper.getNeutralExtrusionHeight());
 
 		return allSceneObjects;
 	}
@@ -217,6 +219,13 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetVisualizer {
 			worldCountriesScene.addWorldCountry(sceneObject);
 		}
 
+	}
+
+	@Override
+	public List<VsAbstractWorldScene> transformToMultipleScenes(XmlDataset xmlDataset, String outputFilePath,
+			String fileName) {
+		throw new T3dException(
+				"This mapper ist not able to create multiple scenes as output. Please use method {@link #transformToSingleScene(XmlDataset)}");
 	}
 
 }
