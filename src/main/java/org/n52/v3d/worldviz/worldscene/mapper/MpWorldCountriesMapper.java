@@ -3,14 +3,12 @@ package org.n52.v3d.worldviz.worldscene.mapper;
 import java.util.List;
 
 import org.n52.v3d.triturus.core.T3dException;
-import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgAttrFeature;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ColoredAttrFeature;
 import org.n52.v3d.worldviz.extensions.mappers.MpValue2ExtrudedAttrFeature;
 import org.n52.v3d.worldviz.helper.StringParser;
-import org.n52.v3d.worldviz.worldscene.OutputFormatEnum;
 import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
 import org.n52.v3d.worldviz.worldscene.VsWorldCountriesOnASphereScene;
 import org.n52.v3d.worldviz.worldscene.helper.FindExtrudeAndColorMissingCountriesHelper;
@@ -42,7 +40,7 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetToGlobeVisualize
 
 		VsWorldCountriesOnASphereScene worldCountriesScene = new VsWorldCountriesOnASphereScene();
 
-		parameterizeScene(worldCountriesScene, this.wVizConfigFile);
+		this.parameterizeScene(worldCountriesScene, this.wVizConfigFile);
 
 		this.colorMapper = initializeColorMapper(this.wVizConfigFile);
 
@@ -58,25 +56,13 @@ public class MpWorldCountriesMapper extends MpAbstractXmlDatasetToGlobeVisualize
 
 	}
 
-	private void parameterizeScene(VsWorldCountriesOnASphereScene worldCountriesScene,
-			WvizConfigDocument wVizConfigFile) {
+	@Override
+	protected void parameterizeScene(VsAbstractWorldScene scene, WvizConfigDocument wVizConfigFile) {
+		super.parameterizeScene(scene, wVizConfigFile);
+
+		VsWorldCountriesOnASphereScene worldCountriesScene = (VsWorldCountriesOnASphereScene) scene;
 
 		GlobeVisualization globeVisualization = wVizConfigFile.getWvizConfig().getGlobeVisualization();
-
-		// OUTPUT FORMAT
-		String outputFormat = globeVisualization.getOutputFormat().getFormat();
-
-		if (outputFormat.equalsIgnoreCase(OutputFormatEnum.X3D.toString()))
-			worldCountriesScene.setOutputFormat(OutputFormatEnum.X3D);
-		else if (outputFormat.equalsIgnoreCase(OutputFormatEnum.X3DOM.toString()))
-			worldCountriesScene.setOutputFormat(OutputFormatEnum.X3DOM);
-		else
-			throw new T3dNotYetImplException();
-
-		// BACKGROUND COLOR
-		String skyColorString = wVizConfigFile.getWvizConfig().getBackground().getSkyColor();
-		T3dColor backgroundColorRGB = StringParser.parseStringAsRgbColor(skyColorString);
-		worldCountriesScene.setBackgroundColor(backgroundColorRGB);
 
 		PolygonVisualizer polygonVisualizer = globeVisualization.getWorldCountries().getPolygonVisualizer();
 
