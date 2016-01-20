@@ -4,19 +4,13 @@ import java.util.List;
 
 import org.n52.v3d.triturus.core.T3dNotYetImplException;
 
-import de.hsbo.fbg.worldviz.WvizConfigDocument;
-import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.Viewpoint;
-
 public class VsJoinedInlineScene extends VsAbstractWorldScene {
 
 	private List<VsAbstractWorldScene> combinableWorldScenes;
-	private WvizConfigDocument configFile;
 
-	public VsJoinedInlineScene(String filePath, List<VsAbstractWorldScene> combinableWorldScenes,
-			WvizConfigDocument configFile) {
+	public VsJoinedInlineScene(String filePath, List<VsAbstractWorldScene> combinableWorldScenes) {
 		super(filePath);
 		this.combinableWorldScenes = combinableWorldScenes;
-		this.configFile = configFile;
 	}
 
 	@Override
@@ -33,14 +27,6 @@ public class VsJoinedInlineScene extends VsAbstractWorldScene {
 
 	@Override
 	protected void generateSceneContentX3D(boolean asX3DOM) {
-		/*
-		 * Viewpoint
-		 */
-		Viewpoint viewpoint = this.configFile.getWvizConfig().getViewpoint();
-		String position = viewpoint.getPosition();
-		String orientation = viewpoint.getOrientation();
-
-		wl("<Viewpoint position=\"" + position + "\" orientation=\"" + orientation + "\"/> ");
 
 		/*
 		 * Inline each scene
