@@ -92,6 +92,24 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	}
 
 	/**
+	 * sets the mapping of inputValues to output factors. Here, the value
+	 * <i>inputValues[i]</i> will be mapped to the factor
+	 * <i>outputFactors[i]</i>. Any other value will be interpolated using the
+	 * {@link MpValue2NumericExtent}-mapper, if the parameter 'interpolate' is
+	 * set to TRUE.
+	 * 
+	 * @param inputValues
+	 * @param outputFactors
+	 * @param interpolate
+	 *            if set to TRUE, then any value will be linearly interpolated
+	 * 
+	 * @see MpValue2NumericExtent#setPalette(double[], double[], boolean)
+	 */
+	public void setPalette(double[] inputValues, double[] outputFactors, boolean interpolate) {
+		this.scaleMapper.setPalette(inputValues, outputFactors, interpolate);
+	}
+
+	/**
 	 * This methods takes an already existing {@link T3dAttrSymbolInstance} and
 	 * an {@link AttributeValuePair} and sets the scale of the object in
 	 * x-direction (along coordinate axis x). In addition, the
@@ -110,8 +128,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *         {@link MpValue2NumericExtent} -mapper and double value of the
 	 *         attribute
 	 */
-	public T3dAttrSymbolInstance scaleX(T3dAttrSymbolInstance symbol,
-			AttributeValuePair attrValuePair) {
+	public T3dAttrSymbolInstance scaleX(T3dAttrSymbolInstance symbol, AttributeValuePair attrValuePair) {
 		Object attributeValue = attrValuePair.getAttributeValue();
 
 		double doubleValue = parseDoubleValue(attrValuePair, attributeValue);
@@ -124,8 +141,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 		if (logger.isDebugEnabled())
 			logger.debug(
 					"The symbol {} will be scaled along the X-axis. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
-					symbol, attributeValue, attrValuePair.getAttributeName(),
-					scaleFactor);
+					symbol, attributeValue, attrValuePair.getAttributeName(), scaleFactor);
 
 		return symbol;
 
@@ -150,8 +166,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *         {@link MpValue2NumericExtent} -mapper and double value of the
 	 *         attribute
 	 */
-	public T3dAttrSymbolInstance scaleY(T3dAttrSymbolInstance symbol,
-			AttributeValuePair attrValuePair) {
+	public T3dAttrSymbolInstance scaleY(T3dAttrSymbolInstance symbol, AttributeValuePair attrValuePair) {
 		Object attributeValue = attrValuePair.getAttributeValue();
 
 		double doubleValue = parseDoubleValue(attrValuePair, attributeValue);
@@ -164,8 +179,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 		if (logger.isDebugEnabled())
 			logger.debug(
 					"The symbol {} will be scaled along the Y-axis. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
-					symbol, attributeValue, attrValuePair.getAttributeName(),
-					scaleFactor);
+					symbol, attributeValue, attrValuePair.getAttributeName(), scaleFactor);
 
 		return symbol;
 
@@ -190,8 +204,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *         {@link MpValue2NumericExtent} -mapper and double value of the
 	 *         attribute
 	 */
-	public T3dAttrSymbolInstance scaleZ(T3dAttrSymbolInstance symbol,
-			AttributeValuePair attrValuePair) {
+	public T3dAttrSymbolInstance scaleZ(T3dAttrSymbolInstance symbol, AttributeValuePair attrValuePair) {
 		Object attributeValue = attrValuePair.getAttributeValue();
 
 		double doubleValue = parseDoubleValue(attrValuePair, attributeValue);
@@ -204,8 +217,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 		if (logger.isDebugEnabled())
 			logger.debug(
 					"The symbol {} will be scaled along the Z-axis. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
-					symbol, attributeValue, attrValuePair.getAttributeName(),
-					scaleFactor);
+					symbol, attributeValue, attrValuePair.getAttributeName(), scaleFactor);
 
 		return symbol;
 
@@ -228,8 +240,7 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 	 *         {@link MpValue2NumericExtent}-mapper and double value of the
 	 *         attribute
 	 */
-	public T3dAttrSymbolInstance scaleTotal(T3dAttrSymbolInstance symbol,
-			AttributeValuePair attrValuePair) {
+	public T3dAttrSymbolInstance scaleTotal(T3dAttrSymbolInstance symbol, AttributeValuePair attrValuePair) {
 		Object attributeValue = attrValuePair.getAttributeValue();
 
 		double doubleValue = parseDoubleValue(attrValuePair, attributeValue);
@@ -242,15 +253,13 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 		if (logger.isDebugEnabled())
 			logger.debug(
 					"The symbol {} will be scaled along all axes equally. Mapped the value '{}' of the attribute '{}'to the scaleFactor '{}'.",
-					symbol, attributeValue, attrValuePair.getAttributeName(),
-					scaleFactor);
+					symbol, attributeValue, attrValuePair.getAttributeName(), scaleFactor);
 
 		return symbol;
 
 	}
 
-	private double parseDoubleValue(AttributeValuePair attrValuePair,
-			Object attributeValue) {
+	private double parseDoubleValue(AttributeValuePair attrValuePair, Object attributeValue) {
 		double doubleValue = 0;
 		if (attributeValue instanceof String) {
 			String attributeValueString = (String) attributeValue;
@@ -261,13 +270,11 @@ public class MpValue2ScaledSymbol extends MpValue2Symbol {
 				if (logger.isWarnEnabled())
 					logger.warn(
 							"The attributeValue '{}' of the attribute '{}' cannot be parsed as a double-value! Thus the defaultDoubleValue '{}' will be used!",
-							attributeValue, attrValuePair.getAttributeName(),
-							doubleValue);
+							attributeValue, attrValuePair.getAttributeName(), doubleValue);
 			}
 		}
 
-		else if (attributeValue instanceof Double
-				|| attributeValue instanceof Float)
+		else if (attributeValue instanceof Double || attributeValue instanceof Float)
 			doubleValue = (Double) attributeValue;
 
 		return doubleValue;

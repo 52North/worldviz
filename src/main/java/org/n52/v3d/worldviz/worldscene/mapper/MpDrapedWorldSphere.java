@@ -3,13 +3,11 @@ package org.n52.v3d.worldviz.worldscene.mapper;
 import java.util.List;
 
 import org.n52.v3d.triturus.core.T3dException;
-import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.gisimplm.GmPoint;
 import org.n52.v3d.triturus.gisimplm.GmSimpleElevationGrid;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.worldviz.dataaccess.load.dataset.XmlDataset;
 import org.n52.v3d.worldviz.helper.StringParser;
-import org.n52.v3d.worldviz.worldscene.OutputFormatEnum;
 import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
 import org.n52.v3d.worldviz.worldscene.VsDrapedWorldSphereScene;
 
@@ -36,7 +34,7 @@ public class MpDrapedWorldSphere extends MpAbstractXmlDatasetToGlobeVisualizer {
 
 		VsDrapedWorldSphereScene deformedGlobeScene = new VsDrapedWorldSphereScene();
 
-		parameterizeGlobeScene(deformedGlobeScene, this.wVizConfigFile);
+		this.parameterizeScene(deformedGlobeScene, this.wVizConfigFile);
 
 		GmSimpleElevationGrid earthElevGrid = createFlatEarthElevationGrid();
 
@@ -45,25 +43,14 @@ public class MpDrapedWorldSphere extends MpAbstractXmlDatasetToGlobeVisualizer {
 		return deformedGlobeScene;
 	}
 
-	protected void parameterizeGlobeScene(VsDrapedWorldSphereScene deformedGlobeScene,
-			WvizConfigDocument wVizConfigFile) {
+	@Override
+	protected void parameterizeScene(VsAbstractWorldScene scene, WvizConfigDocument wVizConfigFile) {
+
+		super.parameterizeScene(scene, wVizConfigFile);
+
+		VsDrapedWorldSphereScene deformedGlobeScene = (VsDrapedWorldSphereScene) scene;
 
 		GlobeVisualization globeVisualization = wVizConfigFile.getWvizConfig().getGlobeVisualization();
-
-		// OUTPUT FORMAT
-		String outputFormat = globeVisualization.getOutputFormat().getFormat();
-
-		if (outputFormat.equalsIgnoreCase(OutputFormatEnum.X3D.toString()))
-			deformedGlobeScene.setOutputFormat(OutputFormatEnum.X3D);
-		else if (outputFormat.equalsIgnoreCase(OutputFormatEnum.X3DOM.toString()))
-			deformedGlobeScene.setOutputFormat(OutputFormatEnum.X3DOM);
-		else
-			throw new T3dNotYetImplException();
-
-		// BACKGROUND COLOR
-		String skyColorString = wVizConfigFile.getWvizConfig().getBackground().getSkyColor();
-		T3dColor backgroundColorRGB = StringParser.parseStringAsRgbColor(skyColorString);
-		deformedGlobeScene.setBackgroundColor(backgroundColorRGB);
 
 		Globe globe = globeVisualization.getGlobe();
 
@@ -98,7 +85,8 @@ public class MpDrapedWorldSphere extends MpAbstractXmlDatasetToGlobeVisualizer {
 	}
 
 	@Override
-	public List<VsAbstractWorldScene> transformToMultipleScenes(XmlDataset xmlDataset, String outputFilePath, String fileName) {
+	public List<VsAbstractWorldScene> transformToMultipleScenes(XmlDataset xmlDataset, String outputFilePath,
+			String fileName) {
 		throw new T3dException(
 				"This mapper ist not able to create multiple scenes as output. Please use method {@link #transformToSingleScene(XmlDataset)}");
 	}

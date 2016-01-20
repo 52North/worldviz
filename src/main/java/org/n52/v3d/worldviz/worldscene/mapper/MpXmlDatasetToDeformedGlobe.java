@@ -40,7 +40,7 @@ public class MpXmlDatasetToDeformedGlobe extends MpDrapedWorldSphere {
 
 		VsDrapedWorldSphereScene deformedGlobeScene = new VsDrapedWorldSphereScene();
 
-		parameterizeGlobeScene(deformedGlobeScene, this.wVizConfigFile);
+		this.parameterizeScene(deformedGlobeScene, this.wVizConfigFile);
 
 		this.deformationMapper = initializeDeformationMapper(this.wVizConfigFile);
 
@@ -89,8 +89,6 @@ public class MpXmlDatasetToDeformedGlobe extends MpDrapedWorldSphere {
 
 	private void deformElevationGrid(List<VgAttrFeature> geoObjects, GmSimpleElevationGrid earthElevGrid) {
 		for (VgAttrFeature feature : geoObjects) {
-				if (feature.getAttributeValue("Country code").equals("PW"))
-					System.out.println("jetzt");
 			 
 			double deformationValue = calculateDeformationValue(feature);
 

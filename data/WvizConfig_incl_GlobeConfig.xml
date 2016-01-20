@@ -4,7 +4,7 @@
 <WvizConfig>
 	<!-- Here is an example for a 3-d connection net visualization: -->
 	<Background skyColor='1 1 1'/>
-	<Viewpoint position='0 0.5 2.5' orientation='1 0 0 -0.1'/>
+	<Viewpoint position='0 0 30' orientation='1 0 0 -0.0'/>
 	<ConnectionNet>
 		<BackgroundWorldMap useWorldMap='true' texturePath='http://rawgit.com/cDanowski/worldviz/master/demo/resources/worldmap1_reduced.jpg'/>
 		<Mapper>
@@ -134,12 +134,12 @@
 		<WorldCountries>
 			<!--declares how detailed each country's borders are defined. possible values are: DETAILED; SIMPLIFIED_50m; SIMPLIFIED_110m-->
 			<PolygonVisualizer>
-				<LevelOfDetail lod="SIMPLIFIED_50m"/>
+				<LevelOfDetail lod="SIMPLIFIED_110m"/>
 				<CountryBorders drawborders="true">
 					<BorderColor type="RGB">0.0 0.0 0.0</BorderColor>
 					<OffsetForBorder>0.001</OffsetForBorder>
 				</CountryBorders>
-				<Extrusion extrudeCountries="true" defaultExtrusionHeight="0.2"/>
+				<Extrusion extrudeCountries="true" defaultExtrusionHeight="1.0"/>
 				<!--Steiner points are additional generated points within the countries that are used for the triangulation of the polygon. 
 		The rasterWidth-parameters define the cell size of the raster in which these points are added.-->
 				<SteinerPoints generateSteinerPoints="true" xRasterWidth="1.0" yRasterWidth="1.0"/>
@@ -152,11 +152,11 @@
 							<OutputColor type="RGB">0 1 0</OutputColor>
 						</ColorEntry>
 						<ColorEntry>
-							<InputValue>10.0</InputValue>
+							<InputValue>2000000</InputValue>
 							<OutputColor type="RGB">1 1 0</OutputColor>
 						</ColorEntry>
 						<ColorEntry>
-							<InputValue>40.0</InputValue>
+							<InputValue>8000000</InputValue>
 							<OutputColor type="RGB">1 0 0</OutputColor>
 						</ColorEntry>
 					</ColorPalette>
@@ -166,11 +166,11 @@
 					<ExtrusionPalette>
 						<ExtrusionEntry>
 							<InputValue>0.0</InputValue>
-							<OutputExtrusion>0.2</OutputExtrusion>
+							<OutputExtrusion>1</OutputExtrusion>
 						</ExtrusionEntry>
 						<ExtrusionEntry>
-							<InputValue>40.0</InputValue>
-							<OutputExtrusion>0.7</OutputExtrusion>
+							<InputValue>8000000</InputValue>
+							<OutputExtrusion>5</OutputExtrusion>
 						</ExtrusionEntry>
 					</ExtrusionPalette>
 				</ExtrusionMapper>
@@ -187,11 +187,11 @@
 						<ScalePalette>
 							<ScaleEntry>
 								<InputValue>0.0</InputValue>
-								<OutputScale>0.01</OutputScale>
+								<OutputScale>0.1</OutputScale>
 							</ScaleEntry>
 							<ScaleEntry>
-								<InputValue>367.0</InputValue>
-								<OutputScale>0.1</OutputScale>
+								<InputValue>5.0</InputValue>
+								<OutputScale>0.5</OutputScale>
 							</ScaleEntry>
 						</ScalePalette>
 					</ScaleMapper>
@@ -203,11 +203,11 @@
 								<OutputColor type="RGB">0 1 0</OutputColor>
 							</ColorEntry>
 							<ColorEntry>
-								<InputValue>150.0</InputValue>
+								<InputValue>2.5</InputValue>
 								<OutputColor type="RGB">1 1 0</OutputColor>
 							</ColorEntry>
 							<ColorEntry>
-								<InputValue>367.0</InputValue>
+								<InputValue>5.0</InputValue>
 								<OutputColor type="RGB">1 0 0</OutputColor>
 							</ColorEntry>
 						</ColorPalette>

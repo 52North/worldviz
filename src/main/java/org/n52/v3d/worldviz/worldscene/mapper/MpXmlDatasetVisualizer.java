@@ -12,6 +12,7 @@ import org.n52.v3d.worldviz.worldscene.VsAbstractWorldScene;
 import org.n52.v3d.worldviz.worldscene.VsJoinedInlineScene;
 
 import de.hsbo.fbg.worldviz.WvizConfigDocument;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.Viewpoint;
 
 public class MpXmlDatasetVisualizer extends MpAbstractXmlDatasetToGlobeVisualizer {
 
@@ -148,8 +149,17 @@ public class MpXmlDatasetVisualizer extends MpAbstractXmlDatasetToGlobeVisualize
 			joinableWorldScenes.add(worldScenes.get(1));
 		}
 
-		VsJoinedInlineScene joinedScene = new VsJoinedInlineScene(outputFilePath_joinedScene, joinableWorldScenes,
-				this.wVizConfigFile);
+		VsJoinedInlineScene joinedScene = new VsJoinedInlineScene(outputFilePath_joinedScene, joinableWorldScenes);	
+		
+		/*
+		 * set Viewpoint
+		 */
+		Viewpoint viewpoint = this.wVizConfigFile.getWvizConfig().getViewpoint();
+		String position = viewpoint.getPosition();
+		String orientation = viewpoint.getOrientation();
+		
+		joinedScene.setX3dViewpointPosition(position);
+		joinedScene.setX3dViewpointOrientation(orientation);
 
 		worldScenes.add(joinedScene);
 

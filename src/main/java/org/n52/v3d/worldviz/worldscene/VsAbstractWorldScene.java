@@ -61,6 +61,9 @@ public abstract class VsAbstractWorldScene extends VsScene {
 
 	private T3dColor backgroundColor = new T3dColor(1.f, 1.f, 1.f);
 
+	private String x3dViewpointPosition;
+	private String x3dViewpointOrientation;
+
 	private BufferedWriter docWriter;
 
 	protected DecimalFormat decimalFormatter;
@@ -119,6 +122,22 @@ public abstract class VsAbstractWorldScene extends VsScene {
 
 	public void setBackgroundColor(T3dColor backgroundColor) {
 		this.backgroundColor = backgroundColor;
+	}
+
+	public String getX3dViewpointPosition() {
+		return x3dViewpointPosition;
+	}
+
+	public void setX3dViewpointPosition(String x3dViewpointPosition) {
+		this.x3dViewpointPosition = x3dViewpointPosition;
+	}
+
+	public String getX3dViewpointOrientation() {
+		return x3dViewpointOrientation;
+	}
+
+	public void setX3dViewpointOrientation(String x3dViewpointOrientation) {
+		this.x3dViewpointOrientation = x3dViewpointOrientation;
 	}
 
 	/**
@@ -321,6 +340,14 @@ public abstract class VsAbstractWorldScene extends VsScene {
 			wl("    <NavigationInfo type='\"EXAMINE\",\"ANY\"'></NavigationInfo>");
 			wl("    <Background skyColor='" + backgroundColor.getRed() + " " + backgroundColor.getGreen() + " "
 					+ backgroundColor.getBlue() + "'></Background>");
+
+			// camera/viewpoint
+			if (this.x3dViewpointPosition != null) {
+				w("    <Viewpoint position='" + this.x3dViewpointPosition + "'");
+				if (this.x3dViewpointOrientation != null)
+					w(" orientation='" + this.x3dViewpointOrientation + "'");
+				wl("></Viewpoint>");
+			}
 
 		} catch (FileNotFoundException e) {
 			throw new T3dException("Could not access file '" + outputFile + "'.");

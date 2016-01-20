@@ -88,6 +88,23 @@ public class MpValue2ColoredSymbol extends MpValue2Symbol {
 	}
 
 	/**
+	 * sets the hypsometric color palette. Here, the value <i>pValues[i]</i>
+	 * will be mapped to the color <i>pColors[i]</i>. Any other value will be
+	 * interpolated between colors in HSV color space (hue/saturation/value) if
+	 * the 'interpolate'-parameter is set to TRUE.
+	 * 
+	 * @param pValues
+	 * @param pColors
+	 * @param interpolate
+	 *            if set to TRUE, then any value will be linearly interpolated
+	 * 
+	 * @see MpSimpleHypsometricColor#setPalette(double[], T3dColor[], boolean)
+	 */
+	public void setPalette(double[] pValues, T3dColor[] pColors, boolean interpolate) {
+		this.colorMapper.setPalette(pValues, pColors, interpolate);
+	}
+
+	/**
 	 * This methods takes an already existing {@link T3dAttrSymbolInstance} and
 	 * an {@link AttributeValuePair} and determines the appropriate color for
 	 * the symbol. In addition, the attribute-value-combination is added to the
@@ -102,13 +119,12 @@ public class MpValue2ColoredSymbol extends MpValue2Symbol {
 	 *         using the {@link MpHypsometricColor}-mapper of the
 	 *         Triturus-framework and double value of the attribute
 	 */
-	public T3dAttrSymbolInstance transform(T3dAttrSymbolInstance symbol,
-			AttributeValuePair attrValuePair) {
+	public T3dAttrSymbolInstance transform(T3dAttrSymbolInstance symbol, AttributeValuePair attrValuePair) {
 		Object attributeValue = attrValuePair.getAttributeValue();
 
 		if (logger.isDebugEnabled())
-			logger.debug("Mapping the value '{}' of the attribute '{}' to a color.",
-					attributeValue, attrValuePair.getAttributeName());
+			logger.debug("Mapping the value '{}' of the attribute '{}' to a color.", attributeValue,
+					attrValuePair.getAttributeName());
 
 		double doubleValue = parseDoubleValue(attrValuePair, attributeValue);
 
@@ -118,15 +134,13 @@ public class MpValue2ColoredSymbol extends MpValue2Symbol {
 		symbol.setColor(color);
 
 		if (logger.isDebugEnabled())
-			logger.debug("Attribute value: '{}';    interpolated color: '{}'",
-					attributeValue, color);
+			logger.debug("Attribute value: '{}';    interpolated color: '{}'", attributeValue, color);
 
 		return symbol;
 
 	}
 
-	private double parseDoubleValue(AttributeValuePair attrValuePair,
-			Object attributeValue) {
+	private double parseDoubleValue(AttributeValuePair attrValuePair, Object attributeValue) {
 		double doubleValue = 0;
 		if (attributeValue instanceof String) {
 			String attributeValueString = (String) attributeValue;
@@ -137,13 +151,11 @@ public class MpValue2ColoredSymbol extends MpValue2Symbol {
 				if (logger.isWarnEnabled())
 					logger.warn(
 							"The attributeValue '{}' of the attribute '{}' cannot be parsed as a double-value! Thus the defaultDoubleValue '{}' will be used!!",
-							attributeValue, attrValuePair.getAttributeName(),
-							doubleValue);
+							attributeValue, attrValuePair.getAttributeName(), doubleValue);
 			}
 		}
 
-		else if (attributeValue instanceof Double
-				|| attributeValue instanceof Float)
+		else if (attributeValue instanceof Double || attributeValue instanceof Float)
 			doubleValue = (Double) attributeValue;
 
 		return doubleValue;
