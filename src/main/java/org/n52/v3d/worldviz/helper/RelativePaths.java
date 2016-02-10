@@ -76,6 +76,14 @@ public final class RelativePaths {
 			+ "CarbonEmissionsPerCapita_meta.xml";
 	public static final String CARBON_EMISSIONS_PER_CAPITA_CSV = DATA_SOURCE_FILES_FOLDER
 			+ "UNEP-EDE__CO2_emissions_wb__1420442209.csv";
+	
+	// drinking water coverage, rural population
+		public static final String DRINKING_WATER_RURAL_POPULATION_XML = EARTH_SUB_FOLDER
+				+ "DrinkingWater_ruralPopulation.xml";
+		public static final String DRINKING_WATER_RURAL_POPULATION_META_XML = EARTH_SUB_FOLDER
+				+ "DrinkingWater_ruralPopulation_meta.xml";
+		public static final String DRINKING_WATER_RURAL_POPULATION_CSV = DATA_SOURCE_FILES_FOLDER
+				+ "UNEP-EDE__pop_rural_drinking_water_perc__1455095111.csv";
 
 	// electricity generation
 	public static final String ELECTRICITY_GENERATION_XML = EARTH_SUB_FOLDER
