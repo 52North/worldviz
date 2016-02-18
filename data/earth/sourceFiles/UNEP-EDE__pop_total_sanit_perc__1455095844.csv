@@ -1,0 +1,245 @@
+Variable: Improved Sanitation Coverage - Total Population as Percentage of Total Population
+Units: Percent of Total Population
+Data Source: WHO
+Provider: UNEP Environmental Data Explorer (http://ede.grid.unep.ch/)
+Country Name,Sovereign,GEO Region,GEO Subregion,GEO ID,ISO 2 Code,ISO 3 Code,UN Code,Developed,Least Developed,OECD,Sub-saharan,Small Island Dev. States,Arab World,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012
+Afghanistan,Afghanistan,Asia + Pacific,South Asia,4,AF,AFG,,0,1,0,0,0,,NULL,21,21,21,21,21,21,22,22,23,23,24,24,25,25,26,26,26,27,27,28,28,29
+Albania,Albania,Europe,Central Europe,8,AL,ALB,,0,0,0,0,0,,79,79,80,80,80,81,81,82,83,83,84,84,85,86,87,87,88,88,89,90,90,91,91
+Algeria,Algeria,Africa,Northern Africa,12,DZ,DZA,,0,0,0,0,1,,89,89,89,89,90,90,90,91,91,92,92,93,93,93,94,94,94,95,95,95,95,95,95
+American Samoa,United States of America,Asia + Pacific,South Pacific,16,AS,ASM,,0,0,0,0,0,,61,61,61,61,61,61,61,61,61,61,62,62,62,62,62,62,62,62,62,62,62,62,62
+Andorra,Andorra,Europe,Western Europe,20,AD,AND,,0,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Angola,Angola,Africa,Southern Africa,24,AO,AGO,,0,1,0,1,0,,29,30,31,32,33,35,36,38,39,41,42,44,45,47,48,50,51,53,54,56,57,59,60
+Anguilla,United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,Caribbean,28,AI,AIA,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,91,91,91,91,91,92,93,93,94,94,95,95,96,96,97,97,98,98
+Antarctica,Antarctic,Polar,Antarctic,32,AQ,ATA,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Antigua and Barbuda,Antigua and Barbuda,Latin America + Caribbean,Caribbean,36,AG,ATG,,0,0,0,0,0,,75,76,77,78,79,80,81,82,83,84,85,86,87,88,88,89,90,91,91,91,91,91,NULL
+Argentina,Argentina,Latin America + Caribbean,South America,40,AR,ARG,,0,0,0,0,0,,86,87,88,88,89,89,90,90,91,91,92,92,93,93,94,94,95,95,95,96,96,97,97
+Armenia,Armenia,Europe,Eastern Europe,44,AM,ARM,,0,0,0,0,0,,NULL,NULL,89,89,89,89,89,89,89,89,89,89,89,89,89,90,90,90,90,90,90,90,91
+Aruba,Netherlands,Latin America + Caribbean,Caribbean,48,AW,ABW,,0,0,0,0,0,,99,99,99,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98
+Australia,Australia,Asia + Pacific,Australia + New Zealand,52,AU,AUS,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Austria,Austria,Europe,Western Europe,56,AT,AUT,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Azerbaijan,Azerbaijan,Europe,Eastern Europe,60,AZ,AZE,,0,0,0,0,0,,NULL,NULL,NULL,NULL,57,57,57,57,57,60,62,65,67,70,72,75,77,80,82,82,82,82,82
+Bahamas,Bahamas,Latin America + Caribbean,Caribbean,64,BS,BHS,,0,0,0,0,0,,NULL,NULL,NULL,NULL,88,88,88,88,88,88,89,89,89,89,90,90,90,91,91,91,91,92,92
+Bahrain,Bahrain,West Asia,Arabian Peninsula,68,BH,BHR,,0,0,0,0,1,,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99
+Bangladesh,Bangladesh,Asia + Pacific,South Asia,76,BD,BGD,,0,1,0,0,0,,33,35,36,37,38,39,40,41,42,43,45,46,47,48,49,50,51,52,53,54,55,56,57
+Barbados,Barbados,Latin America + Caribbean,Caribbean,80,BB,BRB,,0,0,0,0,0,,82,83,84,85,85,86,87,88,89,89,90,91,92,92,92,92,92,NULL,NULL,NULL,NULL,NULL,NULL
+Belarus,Belarus,Europe,Eastern Europe,84,BY,BLR,,0,0,0,0,0,,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,94,94,94,94,94
+Belgium,Belgium,Europe,Western Europe,88,BE,BEL,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Belize,Belize,Latin America + Caribbean,Meso America,92,BZ,BLZ,,0,0,0,0,0,,76,77,77,78,79,79,80,81,81,82,83,83,84,85,85,86,87,87,88,89,89,90,91
+Benin,Benin,Africa,Western Africa,96,BJ,BEN,,0,1,0,1,0,,5,5,6,6,7,7,7,8,8,9,9,9,10,10,11,11,12,12,13,13,14,14,14
+Bermuda,United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,Caribbean,100,BM,BMU,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Bhutan,Bhutan,Asia + Pacific,South Asia,104,BT,BTN,,0,1,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,34,34,35,35,35,37,38,39,40,41,42,43,44,45,46,47
+Bolivia (Plurinational State of),Bolivia,Latin America + Caribbean,South America,108,BO,BOL,,0,0,0,0,0,,28,29,30,31,32,33,34,35,35,36,37,38,39,40,40,41,42,43,44,45,45,46,46
+Bosnia and Herzegovina,Bosnia and Herzegovina,Europe,Central Europe,112,BA,BIH,,0,0,0,0,0,,NULL,NULL,NULL,NULL,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95
+Botswana,Botswana,Africa,Southern Africa,116,BW,BWA,,0,0,0,1,0,,39,41,42,43,45,46,47,48,50,51,52,53,54,56,57,58,59,60,62,63,64,64,64
+Brazil,Brazil,Latin America + Caribbean,South America,124,BR,BRA,,0,0,0,0,0,,67,68,68,69,70,71,72,72,73,74,75,75,76,76,77,78,78,79,79,80,80,81,81
+British Virgin Islands,United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,Caribbean,132,VG,VGB,,0,0,0,0,0,,98,98,98,98,97,98,98,97,97,97,98,98,97,98,98,97,98,97,98,98,98,97,97
+Brunei Darussalam,Brunei Darussalam,Asia + Pacific,South East Asia,136,BN,BRN,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Bulgaria,Bulgaria,Europe,Central Europe,140,BG,BGR,,0,0,0,0,0,,99,99,99,99,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Burkina Faso,Burkina Faso,Africa,Western Africa,144,BF,BFA,,0,1,0,0,0,,8,8,8,9,9,9,10,10,11,11,12,12,13,13,14,14,15,16,16,17,17,18,19
+Burundi,Burundi,Africa,Eastern Africa,148,BI,BDI,,0,1,0,1,0,,42,42,42,42,43,43,43,44,44,44,44,45,45,45,45,46,46,46,46,47,47,47,47
+Cabo Verde,Cabo Verde,Africa,Western Africa,164,CV,CPV,,0,0,0,0,0,,NULL,NULL,35,36,36,37,37,39,41,42,44,46,48,50,51,53,55,57,58,60,62,63,65
+Cambodia,Cambodia,Asia + Pacific,South East Asia,152,KH,KHM,,0,1,0,0,0,,3,3,3,5,6,8,10,11,13,15,16,18,20,21,23,25,26,28,30,32,33,35,37
+Cameroon,Cameroon,Africa,Central Africa,156,CM,CMR,,0,0,0,1,0,,40,40,40,41,41,41,41,41,42,42,42,42,43,43,43,43,44,44,44,44,45,45,45
+Canada,Canada,North America,North America,160,CA,CAN,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Cayman Islands,United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,Caribbean,168,KY,CYM,,0,0,0,0,0,,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96
+Central African Republic,Central African Republic,Africa,Central Africa,172,CF,CAF,,0,1,0,1,0,,15,15,15,15,15,16,16,16,17,17,17,18,18,18,19,19,19,20,20,20,21,21,22
+Chad,Chad,Africa,Central Africa,176,TD,TCD,,0,1,0,1,0,,8,8,8,8,9,9,9,9,9,10,10,10,10,10,10,11,11,11,11,11,12,12,12
+Chile,Chile,Latin America + Caribbean,South America,180,CL,CHL,,0,0,1,0,0,,85,85,86,87,88,88,89,90,90,91,92,92,93,94,94,95,95,96,97,97,98,98,99
+China,China,Asia + Pacific,North East Asia,184,CN,CHN,,0,0,0,0,0,,24,26,28,30,32,34,36,38,40,43,45,47,49,51,53,55,57,59,61,63,65,65,65
+China Hong Kong Special Administrative Region,China,Asia + Pacific,North East Asia,187,HK,HKG,,,,,,,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+China Macao Special Administrative Region,China,Asia + Pacific,North East Asia,186,MO,MAC,,,,,,,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Christmas Island,Australia,Asia + Pacific,South East Asia,188,CX,CXR,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Cocos (Keeling) Islands,Australia,Asia + Pacific,South Pacific,192,CC,CCK,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Colombia,Colombia,Latin America + Caribbean,South America,196,CO,COL,,0,0,0,0,0,,69,70,70,71,71,72,73,73,74,74,75,75,76,76,77,77,78,78,78,79,79,80,80
+Comoros,Comoros,Africa,Western Indian Ocean,200,KM,COM,,0,1,0,1,1,,18,19,20,20,21,22,24,25,26,27,28,29,31,32,33,34,35,35,35,35,35,NULL,NULL
+Congo,Congo,Africa,Central Africa,204,CG,COG,,0,0,0,1,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,13,13,13,13,13,13,13,13,13,14,14,14,14,14,14,15
+Cook Islands,New Zealand,Asia + Pacific,South Pacific,208,CK,COK,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,92,92,92,92,92,92,93,93,93,94,94,95,95,96,96,96,97,97
+Costa Rica,Costa Rica,Latin America + Caribbean,Meso America,212,CR,CRI,,0,0,0,0,0,,88,89,89,89,90,90,90,91,91,91,91,92,92,92,92,92,93,93,93,93,94,94,94
+Croatia,Croatia,Europe,Central Europe,220,HR,HRV,,0,0,0,0,0,,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98
+Cuba,Cuba,Latin America + Caribbean,Caribbean,224,CU,CUB,,0,0,0,0,0,,81,82,83,83,84,84,85,85,86,86,87,87,88,88,89,89,90,90,91,91,92,92,93
+Cyprus,Cyprus,Europe,Central Europe,228,CY,CYP,,1,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Czech Republic,Czech Republic,Europe,Central Europe,232,CZ,CZE,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Côte d'Ivoire,Côte d'Ivoire,Africa,Western Africa,216,CI,CIV,,0,0,0,0,0,,15,15,15,16,16,16,16,17,17,17,18,18,18,19,19,19,20,20,20,21,21,21,22
+Democratic People's Republic of Korea,Democratic People's Republic of Korea,Asia + Pacific,North East Asia,236,KP,PRK,,0,0,0,0,0,,NULL,NULL,53,53,53,53,53,55,57,59,61,63,65,67,68,70,72,74,76,78,80,82,82
+Democratic Republic of the Congo,Democratic Republic of the Congo,Africa,Central Africa,240,CD,COD,,0,1,0,1,0,,17,17,17,17,18,19,19,20,21,22,23,23,24,25,26,26,27,28,29,29,30,31,31
+Denmark,Denmark,Europe,Western Europe,244,DK,DNK,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Djibouti,Djibouti,Africa,Eastern Africa,248,DJ,DJI,,0,1,0,1,1,,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,61,61,61,61,61,61
+Dominica,Dominica,Latin America + Caribbean,Caribbean,252,DM,DMA,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,81,81,81,81,81,81,81,81,81,81,81,81,81,NULL,NULL,NULL,NULL,NULL
+Dominican Republic,Dominican Republic,Latin America + Caribbean,Caribbean,256,DO,DOM,,0,0,0,0,0,,73,73,74,74,75,75,76,76,77,77,77,78,78,79,79,79,80,80,81,81,81,82,82
+Ecuador,Ecuador,Latin America + Caribbean,South America,260,EC,ECU,,0,0,0,0,0,,57,58,60,61,62,64,65,66,67,68,70,71,72,73,74,75,77,78,79,80,81,82,83
+Egypt,Egypt,Africa,Northern Africa,264,EG,EGY,,0,0,0,0,1,,72,73,74,76,77,79,80,81,83,84,86,87,88,90,91,93,94,95,95,95,95,95,96
+El Salvador,El Salvador,Latin America + Caribbean,Meso America,268,SV,SLV,,0,0,0,0,0,,50,51,52,53,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,69,70,70,70
+Equatorial Guinea,Equatorial Guinea,Africa,Central Africa,272,GQ,GNQ,,0,1,0,1,0,,NULL,NULL,NULL,NULL,89,89,89,89,89,89,89,89,89,89,89,89,89,NULL,NULL,NULL,NULL,NULL,NULL
+Eritrea,Eritrea,Africa,Eastern Africa,276,ER,ERI,,0,1,0,1,0,,9,9,9,9,10,10,10,10,11,11,11,12,12,12,13,13,13,13,13,NULL,NULL,NULL,NULL
+Estonia,Estonia,Europe,Central Europe,280,EE,EST,,0,0,1,0,0,,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95
+Ethiopia,Ethiopia,Africa,Eastern Africa,284,ET,ETH,,0,1,0,1,0,,2,2,2,3,3,3,3,4,6,7,8,10,11,12,13,15,16,17,19,20,21,22,24
+Falkland Islands (Malvinas),United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,South America,288,FK,FLK,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Faroe Islands,Denmark,Europe,Western Europe,292,FO,FRO,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Fiji,Fiji,Asia + Pacific,South Pacific,296,FJ,FJI,,0,0,0,0,0,,57,59,61,63,65,66,68,70,71,73,74,76,77,79,80,81,83,84,86,87,87,87,87
+Finland,Finland,Europe,Western Europe,300,FI,FIN,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+France,France,Europe,Western Europe,304,FR,FRA,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+French Guiana,France,Latin America + Caribbean,South America,308,GF,GUF,,0,0,0,0,0,,NULL,NULL,76,76,76,76,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,90,90
+Gabon,Gabon,Africa,Central Africa,320,GA,GAB,,0,0,0,1,0,,NULL,NULL,NULL,NULL,38,38,38,38,38,39,39,39,39,39,40,40,40,40,40,41,41,41,41
+Gambia,Gambia,Africa,Western Africa,324,GM,GMB,,0,1,0,0,0,,NULL,NULL,61,61,61,61,61,61,61,61,61,61,61,61,61,60,60,60,60,60,60,60,60
+Georgia,Georgia,Europe,Eastern Europe,328,GE,GEO,,0,0,0,0,0,,96,96,96,96,96,96,96,96,96,96,95,95,95,95,95,94,94,94,94,94,94,93,93
+Germany,Germany,Europe,Western Europe,332,DE,DEU,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Ghana,Ghana,Africa,Western Africa,336,GH,GHA,,0,0,0,0,0,,7,7,8,8,8,9,9,9,10,10,10,11,11,11,12,12,12,13,13,13,14,14,14
+Gibraltar,United Kingdom of Great Britain and Northern Ireland,Europe,Western Europe,340,GI,GIB,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Greece,Greece,Europe,Western Europe,348,GR,GRC,,1,0,1,0,0,,97,97,97,97,97,97,98,98,98,98,98,98,98,99,99,99,99,99,99,99,99,99,99
+Greenland,Denmark,Polar,Arctic,352,GL,GRL,,0,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Grenada,Grenada,Latin America + Caribbean,Caribbean,356,GD,GRD,,0,0,0,0,0,,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98
+Guadeloupe,France,Latin America + Caribbean,Caribbean,360,GP,GLP,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,95,95,95,95,96,96,96,97,97,97,97
+Guam,United States of America,Asia + Pacific,South Pacific,364,GU,GUM,,0,0,0,0,0,,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,90,90,90,90,90,90,90
+Guatemala,Guatemala,Latin America + Caribbean,Meso America,368,GT,GTM,,0,0,0,0,0,,62,63,64,65,66,67,67,68,69,70,71,72,73,74,74,75,76,77,78,79,79,80,80
+Guernsey,United Kingdom of Great Britain and Northern Ireland,Europe,Western Europe,372,GG,GGY,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Guinea,Guinea,Africa,Western Africa,376,GN,GIN,,0,1,0,0,0,,8,9,9,10,10,11,11,11,12,12,13,13,14,14,15,15,16,16,17,17,18,18,19
+Guinea-Bissau,Guinea-Bissau,Africa,Western Africa,380,GW,GNB,,0,1,0,0,0,,NULL,NULL,NULL,NULL,10,11,11,11,11,12,12,13,13,14,15,15,16,17,17,18,18,19,20
+Guyana,Guyana,Latin America + Caribbean,South America,384,GY,GUY,,0,0,0,0,0,,76,76,76,77,77,77,78,78,78,79,79,80,80,80,81,81,82,82,82,83,83,84,84
+Haiti,Haiti,Latin America + Caribbean,Caribbean,388,HT,HTI,,0,1,0,0,0,,19,19,19,20,20,20,20,20,20,21,21,21,22,22,22,23,23,23,23,24,24,24,24
+Holy See,Holy See,Europe,Western Europe,396,VA,VAT,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Honduras,Honduras,Latin America + Caribbean,Meso America,400,HN,HND,,0,0,0,0,0,,48,50,51,53,54,56,57,59,60,62,63,65,66,68,69,71,72,73,75,76,77,79,80
+Hungary,Hungary,Europe,Central Europe,408,HU,HUN,,0,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Iceland,Iceland,Europe,Western Europe,412,IS,ISL,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+India,India,Asia + Pacific,South Asia,416,IN,IND,,0,0,0,0,0,,18,18,19,20,20,21,22,23,24,25,25,26,27,28,29,30,31,32,32,33,34,35,36
+Indonesia,Indonesia,Asia + Pacific,South East Asia,420,ID,IDN,,0,0,0,0,0,,35,36,38,39,40,41,42,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59
+Iran (Islamic Republic of),Iran (Islamic Republic of),Asia + Pacific,South Asia,424,IR,IRN,,0,0,0,0,0,,71,71,72,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,87,88,89,89
+Iraq,Iraq,West Asia,Mashriq,428,IQ,IRQ,,0,0,0,0,1,,NULL,72,72,72,72,72,72,73,74,74,75,76,77,77,78,79,80,81,81,82,83,84,85
+Ireland,Ireland,Europe,Western Europe,432,IE,IRL,,1,0,1,0,0,,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99
+Isle of Man,United Kingdom of Great Britain and Northern Ireland,Europe,Western Europe,436,,IMY,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Israel,Israel,Europe,Western Europe,440,IL,ISR,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Italy,Italy,Europe,Western Europe,444,IT,ITA,,1,0,1,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Jamaica,Jamaica,Latin America + Caribbean,Caribbean,448,JM,JAM,,0,0,0,0,0,,79,79,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80
+Japan,Japan,Asia + Pacific,North East Asia,452,JP,JPN,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Jersey,United Kingdom of Great Britain and Northern Ireland,Europe,Western Europe,460,JE,JEY,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Johnston Atoll,United States of America,Asia + Pacific,South Pacific,464,,JTN,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Jordan,Jordan,West Asia,Mashriq,468,JO,JOR,,0,0,0,0,1,,97,97,97,97,97,97,97,97,97,97,98,98,98,98,98,98,98,98,98,98,98,98,98
+Kazakhstan,Kazakhstan,Europe,Central Asia,476,KZ,KAZ,,0,0,0,0,0,,96,96,96,96,96,96,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97
+Kenya,Kenya,Africa,Eastern Africa,480,KE,KEN,,0,0,0,1,0,,25,25,25,25,26,26,26,26,26,27,27,27,27,28,28,28,28,28,29,29,29,29,30
+Kiribati,Kiribati,Asia + Pacific,South Pacific,484,KI,KIR,,0,1,0,0,0,,28,28,29,30,30,31,31,32,33,33,34,35,35,36,36,37,37,37,38,38,39,39,40
+Kuwait,Kuwait,West Asia,Arabian Peninsula,488,KW,KWT,,0,0,0,0,1,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Kyrgyzstan,Kyrgyzstan,Europe,Central Asia,492,KG,KGZ,,0,0,0,0,0,,91,91,91,91,91,91,91,91,91,91,91,92,92,92,92,92,92,92,92,92,92,92,92
+Lao People's Democratic Republic,Lao People's Democratic Republic,Asia + Pacific,South East Asia,496,LA,LAO,,0,1,0,0,0,,NULL,NULL,NULL,NULL,20,20,21,21,22,25,28,31,34,37,40,43,47,50,53,56,59,62,65
+Latvia,Latvia,Europe,Central Europe,500,LV,LVA,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,79,79,79,79,79,79,79,79,79,79,79,79,79,NULL,NULL,NULL
+Lebanon,Lebanon,West Asia,Mashriq,504,LB,LBN,,0,0,0,0,1,,NULL,NULL,NULL,98,98,98,98,98,98,98,98,98,98,98,98,98,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Lesotho,Lesotho,Africa,Southern Africa,508,LS,LSO,,0,1,0,1,0,,NULL,NULL,NULL,NULL,23,23,23,23,23,23,24,24,25,25,26,26,27,27,28,28,29,29,30
+Liberia,Liberia,Africa,Western Africa,512,LR,LBR,,0,1,0,0,0,,NULL,NULL,NULL,NULL,13,13,13,13,13,13,14,14,14,14,15,15,15,15,16,16,16,17,17
+Libya,Libyan Arab Jamahiriya,Africa,Northern Africa,516,LY,LBY,,0,0,0,0,1,,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97
+Liechtenstein,Liechtenstein,Europe,Western Europe,520,LI,LIE,,1,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Lithuania,Lithuania,Europe,Central Europe,524,LT,LTU,,0,0,0,0,0,,84,85,85,86,86,86,87,87,88,88,89,89,90,90,91,91,91,92,92,93,93,94,94
+Luxembourg,Luxembourg,Europe,Western Europe,528,LU,LUX,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Madagascar,Madagascar,Africa,Western Indian Ocean,536,MG,MDG,,0,1,0,1,0,,8,8,8,9,9,9,10,10,10,10,11,11,11,11,12,12,12,12,13,13,13,14,14
+Malawi,Malawi,Africa,Southern Africa,540,MW,MWI,,0,1,0,1,0,,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+Malaysia,Malaysia,Asia + Pacific,South East Asia,544,MY,MYS,,0,0,0,0,0,,84,85,86,87,88,88,89,90,91,92,92,93,94,94,95,96,96,96,96,96,96,96,96
+Maldives,Maldives,Asia + Pacific,South Asia,548,MV,MDV,,0,0,0,0,0,,68,68,68,68,68,70,72,74,76,77,79,81,83,85,87,89,91,93,94,96,97,99,99
+Mali,Mali,Africa,Western Africa,552,ML,MLI,,0,0,0,1,0,,15,16,16,16,16,17,17,17,18,18,18,18,19,19,19,20,20,20,21,21,21,22,22
+Malta,Malta,Europe,Western Europe,556,MT,MLT,,1,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Marshall Islands,Marshall Islands,Asia + Pacific,South Pacific,560,MH,MHL,,0,0,0,0,0,,65,65,66,66,67,67,68,68,69,70,70,71,71,72,72,73,73,74,74,75,75,76,76
+Martinique,France,Latin America + Caribbean,Caribbean,564,MQ,MTQ,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,92,92,92,92,92,92,92,92,92,92,92
+Mauritania,Mauritania,Africa,Western Africa,568,MR,MRT,,0,1,0,0,1,,16,16,16,16,17,18,18,19,19,20,21,21,22,22,23,24,24,25,26,26,26,27,27
+Mauritius,Mauritius,Africa,Western Indian Ocean,572,MU,MUS,,0,0,0,1,0,,89,89,89,89,89,89,89,89,89,89,89,89,89,90,90,90,90,90,90,90,90,91,91
+Mayotte,France,Africa,Western Indian Ocean,576,YT,MYT,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Mexico,Mexico,Latin America + Caribbean,Meso America,580,MX,MEX,,0,0,1,0,0,,66,67,68,69,70,71,72,73,74,74,75,76,77,78,79,80,80,81,82,83,84,85,85
+Micronesia (Federated States of),Micronesia (Federated States of),Asia + Pacific,South Pacific,584,FM,FSM,,0,0,0,0,0,,19,19,19,21,23,25,27,28,30,32,34,36,38,39,41,43,45,47,49,51,53,55,57
+Midway Island,United States of America,Asia + Pacific,South Pacific,588,,MID,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Monaco,Monaco,Europe,Western Europe,596,MC,MCO,,1,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Mongolia,Mongolia,Asia + Pacific,North East Asia,600,MN,MNG,,0,0,0,0,0,,NULL,NULL,47,47,47,47,47,47,48,48,49,49,50,51,51,52,53,53,54,55,55,56,56
+Montenegro,Montenegro,Europe,Central Europe,602,ME,MNE,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90
+Montserrat,United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,Caribbean,604,MS,MSR,,0,0,0,0,0,,70,71,72,73,74,75,76,77,78,79,80,81,82,83,83,83,83,83,NULL,NULL,NULL,NULL,NULL
+Morocco,Morocco,Africa,Northern Africa,608,MA,MAR,,0,0,0,0,1,,52,54,55,56,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,74,75
+Mozambique,Mozambique,Africa,Southern Africa,612,MZ,MOZ,,0,1,0,1,0,,8,9,9,9,10,11,11,12,13,14,14,15,15,16,16,17,18,18,19,19,20,20,21
+Myanmar,Myanmar,Asia + Pacific,South East Asia,616,MM,MMR,,0,1,0,0,0,,NULL,53,53,53,53,53,55,56,58,59,61,62,63,65,66,68,69,71,72,73,75,76,77
+Namibia,Namibia,Africa,Southern Africa,620,NA,NAM,,0,0,0,1,0,,24,24,24,25,25,26,26,26,27,27,28,28,28,29,29,30,30,30,31,31,31,32,32
+Nauru,Nauru,Asia + Pacific,South Pacific,624,NR,NRU,,0,0,0,0,0,,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66
+Nepal,Nepal,Asia + Pacific,South Asia,628,NP,NPL,,0,1,0,0,0,,6,8,9,11,12,13,15,16,18,19,21,22,23,25,26,27,29,30,31,33,34,35,37
+Netherlands,Netherlands,Europe,Western Europe,632,NL,NLD,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Netherlands Antilles,Netherlands,Latin America + Caribbean,Caribbean,636,AN,ANT,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+New Caledonia,France,Asia + Pacific,South Pacific,640,NC,NCL,,0,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+New Zealand,New Zealand,Asia + Pacific,Australia + New Zealand,644,NZ,NZL,,1,0,1,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Nicaragua,Nicaragua,Latin America + Caribbean,Meso America,648,NI,NIC,,0,0,0,0,0,,43,44,44,45,45,46,46,47,47,48,48,48,49,49,50,50,51,51,52,52,52,52,52
+Niger,Niger,Africa,Western Africa,652,NE,NER,,0,1,0,0,0,,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,8,8,8,8,8,9,9,9
+Nigeria,Nigeria,Africa,Western Africa,656,NG,NGA,,0,0,0,0,0,,37,36,36,36,35,35,34,34,33,33,32,32,32,31,31,30,30,30,29,29,29,28,28
+Niue,New Zealand,Asia + Pacific,South Pacific,660,NU,NIU,,0,0,0,0,0,,NULL,69,69,69,69,69,71,73,75,77,79,81,84,86,88,90,92,94,96,98,100,100,100
+Norfolk Island,Australia,Asia + Pacific,South Pacific,664,NF,NFK,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Northern Mariana Islands,United States of America,Asia + Pacific,South Pacific,668,MP,MNP,,0,0,0,0,0,,69,69,70,70,71,71,72,72,73,73,74,74,75,75,76,76,77,77,78,78,79,79,80
+Norway,Norway,Europe,Western Europe,672,NO,NOR,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Oman,Oman,West Asia,Arabian Peninsula,680,OM,OMN,,0,0,0,0,1,,82,82,83,84,84,85,86,86,87,88,89,90,91,92,92,93,94,95,96,97,97,97,97
+Pakistan,Pakistan,Asia + Pacific,South Asia,684,PK,PAK,,0,0,0,0,0,,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,47,48
+Palau,Palau,Asia + Pacific,South Pacific,688,PW,PLW,,0,0,0,0,0,,46,50,54,57,61,64,68,71,74,78,81,85,89,92,96,98,99,100,100,100,100,100,100
+Panama,Panama,Latin America + Caribbean,Meso America,692,PA,PAN,,0,0,0,0,0,,60,61,61,62,63,64,64,65,66,66,67,68,68,69,69,70,70,71,71,72,72,73,73
+Papua New Guinea,Papua New Guinea,Asia + Pacific,South Pacific,696,PG,PNG,,0,0,0,0,0,,20,20,20,20,20,20,20,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19
+Paraguay,Paraguay,Latin America + Caribbean,South America,704,PY,PRY,,0,0,0,0,0,,37,39,42,44,46,48,50,52,54,56,58,61,63,65,67,69,71,73,75,77,79,80,80
+Peru,Peru,Latin America + Caribbean,South America,708,PE,PER,,0,0,0,0,0,,54,55,56,57,58,59,60,60,61,62,63,64,65,66,67,67,68,69,70,71,72,72,73
+Philippines,Philippines,Asia + Pacific,South East Asia,712,PH,PHL,,0,0,0,0,0,,57,58,59,60,60,61,62,63,64,65,66,66,67,68,69,70,71,72,73,73,74,74,74
+Pitcairn,United Kingdom of Great Britain and Northern Ireland,Asia + Pacific,South Pacific,716,PN,PCN,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Poland,Poland,Europe,Central Europe,720,PL,POL,,1,0,1,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,90,90,90,90,90,90,90,90,90,90,90,89,89,NULL,NULL,NULL,NULL
+Portugal,Portugal,Europe,Western Europe,724,PT,PRT,,1,0,1,0,0,,94,94,95,95,95,96,96,97,97,97,98,98,98,99,99,99,100,100,100,100,100,100,100
+Puerto Rico,United States of America,Latin America + Caribbean,Caribbean,728,PR,PRI,,0,0,0,0,0,,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99
+Qatar,Qatar,West Asia,Arabian Peninsula,732,QA,QAT,,0,0,0,0,1,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Republic of Korea,Republic of Korea,Asia + Pacific,North East Asia,736,KR,KOR,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Republic of Moldova,Moldova,Europe,Eastern Europe,592,MD,MDA,,0,0,0,0,0,,NULL,NULL,76,76,76,76,76,77,77,78,79,79,80,80,81,82,82,83,84,85,85,86,87
+Romania,Romania,Europe,Central Europe,744,RO,ROU,,0,0,0,0,0,,71,71,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,NULL,NULL,NULL,NULL
+Russian Federation,Russian Federation,Europe,Eastern Europe,748,RU,RUS,,0,0,0,0,0,,74,74,73,73,73,73,73,73,72,72,72,72,72,72,71,71,71,71,71,71,70,70,70
+Rwanda,Rwanda,Africa,Eastern Africa,752,RW,RWA,,0,1,0,1,0,,30,32,34,35,37,39,40,42,44,46,47,49,50,52,53,55,56,57,59,60,61,62,64
+Réunion,France,Africa,Western Indian Ocean,740,RE,REU,,0,0,0,0,0,,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98
+Saint Helena,United Kingdom of Great Britain and Northern Ireland,Africa,Southern Africa,756,SH,SHN,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Saint Kitts and Nevis,Saint Kitts and Nevis,Latin America + Caribbean,Caribbean,760,KN,KNA,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,87,87,87,87,87,87,87,87,87,87,87,87,87,NULL,NULL,NULL,NULL,NULL
+Saint Lucia,Saint Lucia,Latin America + Caribbean,Caribbean,764,LC,LCA,,0,0,0,0,0,,58,58,59,59,60,60,61,61,61,62,62,63,63,64,64,65,65,65,65,65,65,65,NULL
+Saint Pierre and Miquelon,France,North America,North America,768,PM,SPM,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,Latin America + Caribbean,Caribbean,772,VC,VCT,,0,0,0,0,0,,63,64,65,66,67,68,69,70,71,72,73,74,75,76,76,76,76,76,NULL,NULL,NULL,NULL,NULL
+Samoa,Samoa,Asia + Pacific,South Pacific,776,WS,WSM,,0,1,0,0,0,,93,93,93,93,93,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92
+San Marino,San Marino,Europe,Western Europe,780,SM,SMR,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Sao Tome and Principe,Sao Tome and Principe,Africa,Central Africa,784,ST,STP,,0,1,0,1,0,,NULL,NULL,NULL,NULL,18,18,18,18,19,20,21,22,23,24,26,27,28,29,31,32,33,34,34
+Saudi Arabia,Saudi Arabia,West Asia,Arabian Peninsula,788,SA,SAU,,0,0,0,0,1,,92,92,92,93,93,94,94,95,96,96,97,97,98,98,99,100,100,100,100,100,100,100,100
+Senegal,Senegal,Africa,Western Africa,792,SN,SEN,,0,1,0,0,0,,35,36,37,37,38,39,40,40,41,42,43,43,44,45,46,47,47,48,49,50,50,51,52
+Serbia,Serbia,Europe,Central Europe,794,RS,SRB,,0,0,0,0,0,,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,97,97,97,97,97,97,97,97
+Seychelles,Seychelles,Africa,Western Indian Ocean,796,SC,SYC,,0,0,0,1,0,,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97
+Sierra Leone,Sierra Leone,Africa,Western Africa,800,SL,SLE,,0,1,0,0,0,,11,11,11,11,11,11,11,12,12,12,12,12,12,12,12,12,12,13,13,13,13,13,13
+Singapore,Singapore,Asia + Pacific,South East Asia,804,SG,SGP,,1,0,0,0,0,,99,99,99,99,99,99,99,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Slovakia,Slovakia,Europe,Central Europe,808,SK,SVK,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Slovenia,Slovenia,Europe,Central Europe,812,SI,SVN,,1,0,0,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Solomon Islands,Solomon Islands,Asia + Pacific,South Pacific,816,SB,SLB,,0,1,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,25,26,26,26,27,27,27,27,28,28,28,29,29
+Somalia,Somalia,Africa,Eastern Africa,820,SO,SOM,,0,1,0,1,1,,NULL,NULL,NULL,21,21,21,22,22,22,22,22,22,22,22,22,22,23,23,23,23,23,24,NULL
+South Africa,South Africa,Africa,Southern Africa,824,ZA,ZAF,,0,0,0,1,0,,58,58,58,59,60,61,62,63,63,64,65,66,67,68,68,69,70,71,71,72,73,74,74
+South Sudan,South Sudan,Africa,Eastern Africa,846,SS,SSD,,0,1,0,1,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,9,9
+Spain,Spain,Europe,Western Europe,832,ES,ESP,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Sri Lanka,Sri Lanka,Asia + Pacific,South Asia,840,LK,LKA,,0,0,0,0,0,,68,69,70,71,72,73,74,75,76,78,79,80,81,82,83,84,85,87,88,89,90,91,92
+State of Palestine,State of Palestine,West Asia,Mashriq,676,PS,PSE,,0,0,0,0,1,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Sudan,Sudan,Africa,Northern Africa,844,SD,SDN,,0,1,0,1,1,,27,27,27,27,27,27,27,26,26,26,25,25,25,25,24,24,24,23,23,23,22,24,24
+Suriname,Suriname,Latin America + Caribbean,South America,848,SR,SUR,,0,0,0,0,0,,NULL,NULL,NULL,NULL,80,80,80,80,81,81,81,80,80,80,80,80,80,80,80,80,80,80,80
+Svalbard and Jan Mayen Islands,Norway,Europe,Western Europe,852,SJ,SJM,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Swaziland,Swaziland,Africa,Southern Africa,856,SZ,SWZ,,0,0,0,1,0,,49,49,49,49,49,49,50,50,51,51,52,52,53,53,54,54,55,55,56,56,56,57,57
+Sweden,Sweden,Europe,Western Europe,860,SE,SWE,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Switzerland,Switzerland,Europe,Western Europe,864,CH,CHE,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Syrian Arab Republic,Syrian Arab Republic,West Asia,Mashriq,868,SY,SYR,,0,0,0,0,1,,85,85,85,85,85,85,86,87,87,88,89,89,90,91,91,92,92,93,93,94,95,95,96
+Taiwan Province of China,China,Asia + Pacific,North East Asia,185,TW,TWN,,,,,,,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Tajikistan,Tajikistan,Europe,Central Asia,876,TJ,TJK,,0,0,0,0,0,,NULL,NULL,NULL,90,90,89,89,89,90,90,90,91,91,91,92,92,92,93,93,93,94,94,94
+Thailand,Thailand,Asia + Pacific,South East Asia,880,TH,THA,,0,0,0,0,0,,82,83,84,85,86,87,88,88,89,90,91,92,93,94,94,94,94,94,94,93,93,93,93
+The former Yugoslav Republic of Macedonia,The former Yugoslav Republic of Macedonia,Europe,Central Europe,884,MK,MKD,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,90,90,90,90,90,90,90,90,91,91,91,91,91
+Timor-Leste,Timor-Leste,Asia + Pacific,South East Asia,886,TL,TLS,,0,1,0,0,0,,NULL,NULL,NULL,NULL,NULL,37,37,37,37,37,37,37,37,38,38,38,38,38,38,38,39,39,39
+Togo,Togo,Africa,Western Africa,888,TG,TGO,,0,1,0,0,0,,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,12,12,12,12,12,11,11,11
+Tokelau,New Zealand,Asia + Pacific,South Pacific,892,TK,TKL,,0,0,0,0,0,,41,41,41,41,41,45,49,52,56,60,63,67,71,74,78,82,86,89,93,93,93,93,93
+Tonga,Tonga,Asia + Pacific,South Pacific,896,TO,TON,,0,0,0,0,0,,95,95,95,95,95,94,94,94,94,94,94,93,93,93,93,93,92,92,92,92,92,92,91
+Trinidad and Tobago,Trinidad and Tobago,Latin America + Caribbean,Caribbean,900,TT,TTO,,0,0,0,0,0,,93,93,93,93,93,93,93,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92
+Tunisia,Tunisia,Africa,Northern Africa,904,TN,TUN,,0,0,0,0,1,,73,74,75,76,77,78,79,79,80,81,82,83,84,84,85,86,86,87,88,88,89,90,90
+Turkey,Turkey,Europe,Central Europe,908,TR,TUR,,0,0,1,0,0,,84,84,84,85,85,85,86,86,86,87,87,88,88,88,89,89,89,89,90,90,91,91,91
+Turkmenistan,Turkmenistan,Europe,Central Asia,912,TM,TKM,,0,0,0,0,0,,98,98,98,98,98,98,98,98,98,98,98,98,98,99,99,99,99,99,99,99,99,99,99
+Turks and Caicos Islands,United Kingdom of Great Britain and Northern Ireland,Latin America + Caribbean,Caribbean,916,TC,TCA,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,81,81,81,81,81,81,81,81,81,81,81,81,81,NULL,NULL,NULL,NULL,NULL
+Tuvalu,Tuvalu,Asia + Pacific,South Pacific,920,TV,TUV,,0,1,0,0,0,,73,74,74,75,75,76,76,77,77,78,78,79,79,80,81,81,82,82,83,83,83,83,83
+Uganda,Uganda,Africa,Eastern Africa,924,UG,UGA,,0,1,0,1,0,,26,27,27,27,28,28,28,29,29,29,30,30,30,31,31,32,32,32,33,33,33,34,34
+Ukraine,Ukraine,Europe,Eastern Europe,928,UA,UKR,,0,0,0,0,0,,NULL,NULL,NULL,NULL,95,95,95,95,95,95,95,95,95,95,95,95,95,94,94,94,94,94,94
+United Arab Emirates,United Arab Emirates,West Asia,Arabian Peninsula,932,AE,ARE,,0,0,0,0,1,,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,98,98,98,98,98
+United Kingdom of Great Britain and Northern Ireland,United Kingdom of Great Britain and Northern Ireland,Europe,Western Europe,936,GB,GBR,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+United Republic of Tanzania,United Republic of Tanzania,Africa,Southern Africa,940,TZ,TZA,,0,1,0,1,0,,7,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,12,12,12
+United States Virgin Islands,United States of America,Latin America + Caribbean,Caribbean,948,VI,VIR,,0,0,0,0,0,,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96,96
+United States of America,United States of America,North America,North America,944,US,USA,,1,0,1,0,0,,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+Uruguay,Uruguay,Latin America + Caribbean,South America,952,UY,URY,,0,0,0,0,0,,92,92,92,92,92,93,93,93,93,94,94,94,94,94,95,95,95,95,96,96,96,96,96
+Uzbekistan,Uzbekistan,Europe,Central Asia,956,UZ,UZB,,0,0,0,0,0,,84,84,84,84,83,85,86,87,88,90,91,92,93,95,96,97,99,100,100,100,100,100,100
+Vanuatu,Vanuatu,Asia + Pacific,South Pacific,960,VU,VUT,,0,1,0,0,0,,NULL,NULL,35,35,36,36,36,37,39,40,42,43,45,46,48,49,51,52,53,55,56,58,58
+Venezuela (Bolivarian Republic of),Venezuela Bolivarian Republic of,Latin America + Caribbean,South America,964,VE,VEN,,0,0,0,0,0,,82,83,83,84,85,86,86,87,87,88,89,89,90,90,91,91,91,91,NULL,NULL,NULL,NULL,NULL
+Viet Nam,Viet Nam,Asia + Pacific,South East Asia,968,VN,VNM,,0,0,0,0,0,,37,39,41,42,44,46,48,49,51,53,54,56,58,60,61,63,65,66,68,70,72,73,75
+Wake Island,United States of America,Asia + Pacific,South Pacific,972,,WAK,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Wallis and Futuna,France,Asia + Pacific,South Pacific,976,WF,WLF,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Western Sahara,Western Sahara,Africa,Northern Africa,980,EH,ESH,,0,0,0,0,0,,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Yemen,Yemen,West Asia,Arabian Peninsula,984,YE,YEM,,0,1,0,0,1,,24,25,27,28,30,32,33,35,36,38,39,41,43,44,46,47,49,50,52,52,53,53,53
+Zambia,Zambia,Africa,Southern Africa,992,ZM,ZMB,,0,1,0,1,0,,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,42,42,42,42,42,42,43,43
+Zimbabwe,Zimbabwe,Africa,Southern Africa,996,ZW,ZWE,,0,0,0,1,0,,41,41,41,41,41,41,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40

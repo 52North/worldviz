@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/Dataformat.xsl"?>
+<!--
+This example shows how to hold additional meta-information that is not part of an actual data file to be processed 
+in the context of the BO's ENE project. 
+Primarly, meta-data which document the underlying data-source should be given
+ in such DatasetDescriptions.
+Authors: Benno Schmidt, Christian Danowski, Department of Geodesy, Bochum University of Applied Sciences.
+-->
+<DatasetDescription version="0.1" xsi:noNamespaceSchemaLocation="xsd/DatasetDescription.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SpatialScaleHint>World-wide</SpatialScaleHint><!-- 
+	For the GI-project "Gespraech mit der Erde", this scale hint always will be "World-wide". In the future, regional data will
+	be processed, so that other values might appear. 
+	-->
+	<CovereredTime>
+	<!-- 
+	Zeitraum, fuer den die thematischen Daten vorliegen
+	-->
+		<TimePeriod>
+			<begin>1990-01-01+01:00</begin>
+ <!-- Startzeitraum 
+-->	
+			<end>2012-12-31+01:00</end>
+ <!-- Endzeitraum  
+-->
+		</TimePeriod>
+	</CovereredTime>
+	<DatasetReference>Sanitation_urbanPopulation.xml</DatasetReference>
+ <!-- Dateiname der xml Datenquelle 
+-->
+	<SourceFileReference format="CSV">sourceFiles/UNEP-EDE__pop_urban_sanit_perc__1455784563.csv</SourceFileReference>
+ <!-- Dateiformat der Quelledatei: Hier Daten stammen aus einer csv Datei 
+-->
+	<Source>
+  <!-- Quelle 
+-->
+		<ContactPersons/>
+ <!-- Falls Kontaktpersonen, fuer die Quelldatei, vorhanden sind 
+-->
+		<URI accessDate="2016-02-10 +10:00">http://geodata.grid.unep.ch/</URI>
+  <!-- Datum, andem die Daten abgerufen wurden, mit Link zur Quelle  
+-->
+		<AlternativeURIs><!-- Here additional URLs can be documented. -->
+			<URI/>
+		</AlternativeURIs>
+		<Notes/>
+ <!-- Zusaetzliche Informationen zu den Daten 
+-->
+	</Source>
+	<CopyrightInformation>UNEP - United Nations Environment Programme; European Commission, Joint Research Centre (JRC)/PBL Netherlands Environmental Assessment Agency.</CopyrightInformation>
+  <!-- Anzugebene Copyright Informationen 
+-->
+	<ImportProcess>
+		<Description language="DE">
+ <!-- Hier werden die noetigen Schritte beschrieben die noetig waren, um aus der Qulldatei die noetigen Informationen zu extrahieren 
+-->
+	   		Von obiger URL (siehe 'URI'-Tag) wurde der Datensatz 'Improved Sanitation Coverage - Urban Population as Percentage of Urban Population' als CSV-Datei bezogen. 
+			Die ersten vier Zeilen der CSV-Datei enthalten Metadaten wie Titel, Einheit und URL. Diese Zeilen muessen beim Auslesen der Datei geskipped werden. Erst in Zeile fuenf befinden sich die Spaltenueberschriften.
+	   		Die CSV-Datei wurde schließlich genutzt, um ueber ein eigens entwickeltes Java-Programm den 'Entries'-Abschnitt der 'CarbonEmissions.xml'-Datei (siehe 'DatasetReference'-Tag) zu erstellen.
+	   		Die weiteren Informationen der 'CarbonEmissions.xml'-Datei wurden per Hand eingetragen.
+	   	</Description>
+		<QualityCheck date="2016-02-10 +11:30" responsiblePerson="Christian Danowski">
+ <!-- Datum, andem die Daten auf ihre Qualitaet kontrolliert wurden 
+-->
+	   		Datensaetze aus generiertem XML-Dokument stichprobenhaft von Hand mit Tabelle im Web verglichen.
+	   	</QualityCheck>
+	</ImportProcess>
+</DatasetDescription>
