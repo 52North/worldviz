@@ -29,24 +29,28 @@
 package org.n52.v3d.worldviz.demoapplications;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
-import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
-import org.n52.v3d.worldviz.featurenet.impl.WvizFlowNet;
 
+import org.apache.xmlbeans.XmlException;
+import org.n52.v3d.triturus.core.T3dException;
 import org.n52.v3d.triturus.vgis.VgFeature;
+import org.n52.v3d.worldviz.featurenet.VgFeatureNet;
 import org.n52.v3d.worldviz.featurenet.impl.PajekReader;
 import org.n52.v3d.worldviz.featurenet.impl.Parse.PajekException;
+import org.n52.v3d.worldviz.featurenet.impl.WvizFlow;
+import org.n52.v3d.worldviz.featurenet.impl.WvizFlowNet;
 import org.n52.v3d.worldviz.featurenet.impl.WvizUniversalFeatureNet;
 import org.n52.v3d.worldviz.featurenet.scene.MpFeatureNetVisualizer;
 import org.n52.v3d.worldviz.featurenet.scene.MprConnectionMapGenerator;
 import org.n52.v3d.worldviz.featurenet.scene.WvizConnectionMapSceneX3d;
 import org.n52.v3d.worldviz.featurenet.scene.WvizVirtualConnectionMapScene;
-import org.n52.v3d.worldviz.featurenet.xstream.WvizConfig;
 import org.n52.v3d.worldviz.helper.RelativePaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import de.hsbo.fbg.worldviz.WvizConfigDocument;
 
 /**
  * Simple demonstrator illustrating how to construct a feature-net.
@@ -172,9 +176,26 @@ public class FeatureNetTest implements FeatureNetInterface{
         // Construct virtual connection-map scene:
 
         MpFeatureNetVisualizer t1 = new MpFeatureNetVisualizer();
-        WvizConfig style = new WvizConfig(configurationFile);
-        style = style.getConfiguration();
-        t1.setStyle(style);
+        
+        WvizConfigDocument wVisConfigDoc;
+        de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig configFile;
+        
+        try {
+			wVisConfigDoc = WvizConfigDocument.Factory.parse(new File(configurationFile));
+			
+			configFile = wVisConfigDoc.getWvizConfig();
+		
+        }catch (XmlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new T3dException("Error while parsing the config file!");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new T3dException("Error while parsing the config file!");
+		}
+		 
+        t1.setStyle(configFile);
         WvizVirtualConnectionMapScene s = t1.transform(net);
 
         // Export abstract scene to concrete scene descriptions:
@@ -182,6 +203,8 @@ public class FeatureNetTest implements FeatureNetInterface{
 
         // Then generate an X3D file:
         t2.setTargetFormat(MprConnectionMapGenerator.TargetFormats.X3D);
+        
+        
         Object result = t2.transform(s);
 
         if (result instanceof WvizConnectionMapSceneX3d) {
