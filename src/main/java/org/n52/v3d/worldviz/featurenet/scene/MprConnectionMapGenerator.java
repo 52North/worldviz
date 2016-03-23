@@ -29,7 +29,6 @@
 package org.n52.v3d.worldviz.featurenet.scene;
 
 import org.n52.v3d.triturus.core.T3dException;
-import org.n52.v3d.triturus.core.T3dNotYetImplException;
 import org.n52.v3d.triturus.core.T3dProcRendererMapper;
 
 /**

@@ -32,13 +32,39 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.n52.v3d.triturus.gisimplm.GmAttrFeature;
 import org.n52.v3d.triturus.t3dutil.T3dColor;
 import org.n52.v3d.triturus.vgis.VgFeature;
-import org.n52.v3d.worldviz.featurenet.xstream.*;
+
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.BackgroundWorldMap;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.PointVisualizer;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.PointVisualizer.T3DSymbol;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.Fill;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.Font;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.Font.SvgParameter;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.Label;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.LabelPlacement;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.LabelPlacement.PointPlacement;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.LabelPlacement.PointPlacement.Displacement;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.ColorMapper;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.ColorMapper.ColorPalette;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.ColorMapper.ColorPalette.ColorEntry;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.ColorMapper.ColorPalette.ColorEntry.OutputColor;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.ColorMapper.InterpolationMode;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.Geometry;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.WidthMapper;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.WidthMapper.WidthPalette;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.WidthMapper.WidthPalette.WidthEntry;
+import de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.Viewpoint;
 
 /**
  * Abstract base class for 3D 'Connection Map' scene descriptions. The class
@@ -49,7 +75,9 @@ import org.n52.v3d.worldviz.featurenet.xstream.*;
  */
 public abstract class WvizConcreteConnectionMapScene {
 
-    protected WvizVirtualConnectionMapScene scene;
+    private static final String LINEAR_INTERPOLATION_CONFIG_STRING = "linear";
+
+	protected WvizVirtualConnectionMapScene scene;
 
     protected String symbolType;
 
@@ -111,21 +139,23 @@ public abstract class WvizConcreteConnectionMapScene {
         // For specific configuration, we should change our current XML schema
         WvizConfig wvizConfig = scene.getStyle();
         
-        Background background = (Background) wvizConfig.getBackground().get(0);
-        skyColor = background.getSkyColor();
+        // Background
+        skyColor = wvizConfig.getBackground().getSkyColor();
         
-        Viewpoint viewpoint = (Viewpoint) wvizConfig.getViewpoint().get(0);
+        //Viewpoint
+        Viewpoint viewpoint = wvizConfig.getViewpoint();
         position = viewpoint.getPosition();
         orientation = viewpoint.getOrientation();
         
-        ConnectionNet connectionNet = (ConnectionNet) wvizConfig.getConnectionNet().get(0);
-        BackgroundWorldMap backgroundWorldMap = (BackgroundWorldMap) connectionNet.getBackgroundWorldMap().get(0);
-        isUseWorldMap = backgroundWorldMap.isUseWorldMap();
+        //Connection Net
+        ConnectionNet connectionNet = wvizConfig.getConnectionNet();
+        BackgroundWorldMap backgroundWorldMap = connectionNet.getBackgroundWorldMap();
+        isUseWorldMap = backgroundWorldMap.isSetUseWorldMap();
         texturePath = backgroundWorldMap.getTexturePath();
-        Mapper mapper = (Mapper) connectionNet.getMapper().get(0);
-        Features features = (Features) mapper.getFeatures().get(0);
-        PointVisualizer pointVisualizer = (PointVisualizer) features.getPointVisualizer().get(0);
-        T3dSymbol t3dSymbol = (T3dSymbol) pointVisualizer.getT3dSymbol().get(0);
+        Mapper mapper = connectionNet.getMapper();
+        Features features = mapper.getFeatures();
+        PointVisualizer pointVisualizer = features.getPointVisualizer();
+        T3DSymbol t3dSymbol = pointVisualizer.getT3DSymbol();
         symbolType = t3dSymbol.getType();
         symbolSize = t3dSymbol.getSize();
         
@@ -137,42 +167,42 @@ public abstract class WvizConcreteConnectionMapScene {
         currentGlow = t3dSymbol.getCurrentGlow();
         highlightGlow = t3dSymbol.getHighlightGlow();
         
-        TextVisualizer textVisualizer = (TextVisualizer) features.getTextVisualizer().get(0);
-        Label label = (Label) textVisualizer.getLabel().get(0);
+        TextVisualizer textVisualizer = features.getTextVisualizer();
+        Label label = (Label) textVisualizer.getLabel();
         propertyName = label.getPropertyName();
 
-        Font font = (Font) textVisualizer.getFont().get(0);
-        List svgParameter = font.getSvgParameter();
+        Font font = textVisualizer.getFont();
+        SvgParameter[] svgParameter = font.getSvgParameterArray();
 
         for (Object object : svgParameter) {
             String name = ((SvgParameter) object).getName();
-            String value = ((SvgParameter) object).getValue();
+            String value = ((SvgParameter) object).getStringValue();
             svgMap.put(name, value);
         }
 
-        LabelPlacement labelPlacement = (LabelPlacement) textVisualizer.getLabelPlacement().get(0);
+        LabelPlacement labelPlacement = textVisualizer.getLabelPlacement();
         billboardAxis = labelPlacement.getBillboardAxis();
-        PointPlacement pointPlacement = (PointPlacement) labelPlacement.getPointPlacement().get(0);
-        Displacement displacement = (Displacement) pointPlacement.getDisplacement().get(0);
+        PointPlacement pointPlacement = labelPlacement.getPointPlacement();
+        Displacement displacement = pointPlacement.getDisplacement();
 
         displacementX = displacement.getDisplacementX();
         displacementY = displacement.getDisplacementY();
         displacementZ = displacement.getDisplacementZ();
 
-        Fill fill = (Fill) textVisualizer.getFill().get(0);
-        svgParameter = fill.getSvgParameter();
+        Fill fill = textVisualizer.getFill();
+        de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Features.TextVisualizer.Fill.SvgParameter svgParameter_fill;
+        svgParameter_fill = fill.getSvgParameter();
 
-        for (Object object : svgParameter) {
-            String name = ((SvgParameter) object).getName();
-            String value = ((SvgParameter) object).getValue();
-            svgMap.put(name, value);
-        }
+        String name = svgParameter_fill.getName();
+        String value = svgParameter_fill.getStringValue();
+        svgMap.put(name, value);
 
-        Relations relations = (Relations) mapper.getRelations().get(0);
-        LineVisualizer lineVisualizer = (LineVisualizer) relations.getLineVisualizer().get(0);
-        List <Geometry> geometryList = (List <Geometry>) lineVisualizer.getGeometry();
+        //Relations
+        Relations relations = mapper.getRelations();
+        LineVisualizer lineVisualizer = relations.getLineVisualizer();
+        Geometry[] geometries = lineVisualizer.getGeometryArray();
         
-        for(Geometry geometry:geometryList){
+        for(Geometry geometry:geometries){
             geometryType = geometry.getType();
             if(geometryType.equalsIgnoreCase("ribbon")){
                 ribbonCreaseAngle = geometry.getCreaseAngle();
@@ -192,29 +222,28 @@ public abstract class WvizConcreteConnectionMapScene {
             }
         }
 
-        ColorMapper colorMapper = (ColorMapper) lineVisualizer.getColorMapper().get(0);
-        InterpolationMode colorInterpolationMode = (InterpolationMode) colorMapper.getInterpolationMode().get(0); 
+        ColorMapper colorMapper = lineVisualizer.getColorMapper();
+        InterpolationMode colorInterpolationMode = colorMapper.getInterpolationMode(); 
         
         String colorInterpolationType = colorInterpolationMode.getType();
         
-        if ("linear".equals(colorInterpolationType.toLowerCase()) ){
+        if (LINEAR_INTERPOLATION_CONFIG_STRING.equals(colorInterpolationType.toLowerCase()) ){
             linearColorInterpolation = true;
         }
         
-        ColorPalette colorPalette = (ColorPalette) colorMapper.getColorPalette().get(0);
+        ColorPalette colorPalette = colorMapper.getColorPalette();
         
-        List colorEntries = colorPalette.getColorEntry();
+        ColorEntry[] colorEntries = colorPalette.getColorEntryArray();
         
         ArrayList<Double> inputColorValueList = new ArrayList<Double>();
         ArrayList<T3dColor> outputColorValueList = new ArrayList<T3dColor>();
         float red,blue,green;
         
-        for (Object object : colorEntries) {
-            ColorEntry colorEntry = (ColorEntry) object;
+        for (ColorEntry colorEntry : colorEntries) {
             double inputValue = colorEntry.getInputValue();
-            OutputColor outputColor = (OutputColor)(colorEntry.getOutputColor().get(0));
+            OutputColor outputColor = colorEntry.getOutputColor();
             String colorType = outputColor.getType();
-            String colorValue = outputColor.getValue();
+            String colorValue = outputColor.getStringValue();
             
             if(colorType.equalsIgnoreCase("rgb")){
                 String[] parts = colorValue.split(" ");
@@ -245,25 +274,24 @@ public abstract class WvizConcreteConnectionMapScene {
         }
 
         
-        WidthMapper widthMapper = (WidthMapper) lineVisualizer.getWidthMapper().get(0);
-        InterpolationMode widthInterpolationMode = (InterpolationMode) widthMapper.getInterpolationMode().get(0); 
+        WidthMapper widthMapper = lineVisualizer.getWidthMapper();
+        de.hsbo.fbg.worldviz.WvizConfigDocument.WvizConfig.ConnectionNet.Mapper.Relations.LineVisualizer.WidthMapper.InterpolationMode widthInterpolationMode = widthMapper.getInterpolationMode(); 
         
         String widthInterpolationType = widthInterpolationMode.getType();
         
-        if ("linear".equalsIgnoreCase(widthInterpolationType.toLowerCase()) ){
+        if (LINEAR_INTERPOLATION_CONFIG_STRING.equalsIgnoreCase(widthInterpolationType.toLowerCase()) ){
             linearWidthInterpolation = true;
         }
         
-        WidthPalette widthPalette = (WidthPalette) widthMapper.getWidthPalette().get(0);
+        WidthPalette widthPalette = widthMapper.getWidthPalette();
         
-        List widthEntries = widthPalette.getWidthEntry();
+        WidthEntry[] widthEntries = widthPalette.getWidthEntryArray();
         
         ArrayList<Double> inputWidthValueList = new ArrayList<Double>();
         ArrayList<Double> outputWidthValueList = new ArrayList<Double>();
         
         
-        for (Object object : widthEntries) {
-            WidthEntry widthEntry = (WidthEntry) object;
+        for (WidthEntry widthEntry : widthEntries) {
             double inputValue = widthEntry.getInputValue();
             double outputWidth = widthEntry.getOutputWidth();
             inputWidthValueList.add(inputValue);
